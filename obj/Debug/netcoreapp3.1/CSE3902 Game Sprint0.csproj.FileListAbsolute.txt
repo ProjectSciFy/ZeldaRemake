@@ -37,3 +37,12 @@ G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\obj\Debug\netcoreapp3.
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.genruntimeconfig.cache
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csprojAssemblyReference.cache
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Level 1 (Eagle).xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Bosses.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Dungeon Enemies.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Dungeon Tileset.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Fonts.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - HUD & Pause Screen.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Items & Weapons.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - NPCs.xnb
