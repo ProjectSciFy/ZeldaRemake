@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Interfaces;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,11 +9,14 @@ namespace CSE3902_Game_Sprint0.Classes
     public class Link : IPlayer
     {
         private StateMachine linkState;
+        public ISprite LinkSprite;
+        public Vector2 drawLocation = new Vector2(0, 0);
+        public Vector2 velocity = new Vector2(0, 0);
 
         //Initialize Link's default state(s) in a new stateMachine
         public Link(EeveeSim game)
         {
-            linkState = new StateMachine();
+            linkState = new StateMachine(game, this);
         }
 
         //Sets direction of Link's sprite (0, 90, 180, 270 degrees moving counter-clockwise from east)
