@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,20 +10,53 @@ namespace CSE3902_Game_Sprint0.Classes
 
         // comment
 
+        private EeveeSim game;
+        private Link link;
+        private ISprite LinkSprite;
+        private LinkSpriteFactory spriteFactory;
         //Starting condition should be bomb
-        private int direction = 270;
+        private enum Direction {right, up, left, down};
+        private Direction direction = Direction.down;
         //enum for item selected?
         // private Tool = bomb or something
         private bool useTool = false;
         private bool useSword = false;
 
+        public StateMachine(EeveeSim game, Link link)
+        {
+            this.game = game;
+            this.link = link;
+            spriteFactory = new LinkSpriteFactory(game, link);
+        }
+
         public void MoveUp()
         {
             // construct animated link moving up with sprite factory
         }
-        public void IdleUp()
+
+        //Sets link to an idle state based on the value of direction var
+        public void Idle()
         {
             // construct nonanimated link facing up with sprite factory
+
+            switch (direction)
+            {
+                case Direction.right:
+                    break;
+
+                case Direction.up:
+                    spriteFactory.IdleUp();
+                    break;
+
+                case Direction.left:
+                    break;
+
+                case Direction.down:
+                    break;
+
+                default:
+                    break;
+            }
         }
         public void MoveDown()
         {
