@@ -8,6 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes
 {
     public class Link : IPlayer
     {
+        public EeveeSim game;
         private StateMachine linkState;
         public ISprite LinkSprite;
         public Vector2 drawLocation = new Vector2(0, 0);
@@ -16,7 +17,8 @@ namespace CSE3902_Game_Sprint0.Classes
         //Initialize Link's default state(s) in a new stateMachine
         public Link(EeveeSim game)
         {
-            linkState = new StateMachine(game, this);
+            this.game = game;
+            linkState = new StateMachine(this);
         }
 
         //Sets direction of Link's sprite (0, 90, 180, 270 degrees moving counter-clockwise from east)

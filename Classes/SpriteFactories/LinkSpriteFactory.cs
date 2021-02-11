@@ -13,10 +13,10 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         private Texture2D linkTexture;
         private Rectangle spriteIndex;
 
-        public LinkSpriteFactory(EeveeSim game, Link link)
+        public LinkSpriteFactory(Link link)
         {
-            this.game = game;
-            linkTexture = this.game.Content.Load<Texture2D>("NES - The Legend of Zelda - Link");
+            game = link.game;
+            linkTexture = game.Content.Load<Texture2D>("NES - The Legend of Zelda - Link");
             this.link = link;
         }
         
