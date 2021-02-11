@@ -25,5 +25,20 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             spriteIndex = new Rectangle(69, 11, 16, 16);
             link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White);
         }
+        public void IdleDown()
+        {
+            spriteIndex = new Rectangle(1, 11, 16, 16);
+            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White);
+        }
+        public void IdleRight()
+        {
+            spriteIndex = new Rectangle(35, 11, 16, 16);
+            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White);
+        }
+        public void IdleLeft() //Not sure where we are drawing sprites but when drawn need to flip the IdleRight Sprite
+        {
+            spriteIndex = new Rectangle(35, 11, 16, 16);
+            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White);
+        }
     }
 }
