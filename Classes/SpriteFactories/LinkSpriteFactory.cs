@@ -20,6 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             this.link = link;
         }
         
+
         public void IdleUp()
         {
             spriteIndex = new Rectangle(69, 11, 16, 16);
@@ -41,22 +42,87 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.FlipHorizontally);
         }
 
-        public void movingUp()
+
+        public void MovingUp()
         {
             // set new spriteIndex
             // update link.LinkSprite = new AnimatedSprite
         }
-        public void movingDown()
+        public void MovingDown()
         {
             // set new spriteIndex
             // update link.LinkSprite = new AnimatedSprite
         }
-        public void movingRight()
+        public void MovingRight()
         {
             // set new spriteIndex
             // update link.LinkSprite = new AnimatedSprite
         }
-        public void movingLeft()
+        public void MovingLeft()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+
+
+        public void SwordUp()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void SwordDown()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void SwordRight()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void SwordLeft()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+
+        public void BoomerangUp()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void BoomerangDown()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void BoomerangRight()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void BoomerangLeft()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+
+        public void ArrowUp()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void ArrowDown()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void ArrowRight()
+        {
+            // set new spriteIndex
+            // update link.LinkSprite = new AnimatedSprite
+        }
+        public void ArrowLeft()
         {
             // set new spriteIndex
             // update link.LinkSprite = new AnimatedSprite
