@@ -15,7 +15,8 @@ namespace CSE3902_Game_Sprint0.Classes
         private Vector2 velocity;
         private Rectangle spriteIndex;
         private Color color;
-        public StaticSprite(EeveeSim game, Texture2D texture, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color)
+        private SpriteEffects spriteEffects;
+        public StaticSprite(EeveeSim game, Texture2D texture, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects)
         {
             this.game = game;
             myTexture = texture;
@@ -24,6 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes
             this.velocity = velocity;
             this.spriteIndex = spriteIndex;
             this.color = color;
+            this.spriteEffects = spriteEffects;
         }
 
         public void Update()
@@ -53,7 +55,9 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Draw()
         {
             mySpriteBatch.Begin();
-            mySpriteBatch.Draw(myTexture, drawLocation, spriteIndex, color);
+            //Refactored to public void Draw(Texture2D texture, Vector2 position, Rectangle? sourceRectangle, Color color, float rotation, Vector2 origin, float scale, SpriteEffects effects, float layerDepth) to allow sprite flipping & layer control
+            //mySpriteBatch.Draw(myTexture, drawLocation, spriteIndex, color);
+            mySpriteBatch.Draw(myTexture, drawLocation, spriteIndex, color, 0, new Vector2(0, 0), 1, spriteEffects, 1);
             mySpriteBatch.End();
         }
     }

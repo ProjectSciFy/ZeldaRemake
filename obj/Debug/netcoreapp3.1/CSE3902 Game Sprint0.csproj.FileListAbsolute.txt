@@ -141,3 +141,4 @@ D:\School\CSE3902\PROJECT\SPRINT2\Version 1\obj\Debug\netcoreapp3.1\CSE3902 Game
 D:\School\CSE3902\PROJECT\SPRINT2\Version 1\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
 D:\School\CSE3902\PROJECT\SPRINT2\Version 1\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
 D:\School\CSE3902\PROJECT\SPRINT2\Version 1\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.genruntimeconfig.cache
+D:\School\CSE3902\PROJECT\SPRINT2\Version 1\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csprojAssemblyReference.cache

@@ -17,8 +17,9 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         private Color color;
         private bool isAnimated;
         private Vector2 frameGrid;
+        private SpriteEffects spriteEffects;
 
-        public DrawSprite(EeveeSim game, Texture2D texture, ISprite sprite, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, Vector2 frameGrid)
+        public DrawSprite(EeveeSim game, Texture2D texture, ISprite sprite, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid)
         {
             this.game = game;
             this.texture = texture;
@@ -27,6 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
             this.velocity = velocity;
             this.spriteIndex = spriteIndex;
             this.color = color;
+            this.spriteEffects = spriteEffects;
             if ((int)(frameGrid.X * frameGrid.Y) > 1)
             {
                 this.isAnimated = true;
@@ -38,11 +40,11 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         {
             if (isAnimated)
             {
-                game.eeveeSprite = new AnimatedSprite(game, texture, drawLocation, velocity, spriteIndex, color, frameGrid);
+                game.eeveeSprite = new AnimatedSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects, frameGrid);
             } 
             else
             {
-                game.eeveeSprite = new StaticSprite(game, texture, drawLocation, velocity, spriteIndex, color);
+                game.eeveeSprite = new StaticSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects);
             }
         }
     }
