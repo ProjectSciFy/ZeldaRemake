@@ -16,29 +16,29 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         public LinkSpriteFactory(Link link)
         {
             game = link.game;
-            linkTexture = game.Content.Load<Texture2D>("NES - The Legend of Zelda - Link");
+            game.spriteSheets.TryGetValue("Link", out linkTexture);
             this.link = link;
         }
         
         public void IdleUp()
         {
             spriteIndex = new Rectangle(69, 11, 16, 16);
-            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White);
+            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.None);
         }
         public void IdleDown()
         {
             spriteIndex = new Rectangle(1, 11, 16, 16);
-            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White);
+            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.None);
         }
         public void IdleRight()
         {
             spriteIndex = new Rectangle(35, 11, 16, 16);
-            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White);
+            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.None);
         }
         public void IdleLeft() //Not sure where we are drawing sprites but when drawn need to flip the IdleRight Sprite
         {
             spriteIndex = new Rectangle(35, 11, 16, 16);
-            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White);
+            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.FlipHorizontally);
         }
     }
 }
