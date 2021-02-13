@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
+using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Controllers;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
@@ -22,6 +23,7 @@ namespace CSE3902_Game_Sprint0
         private SpriteFont credits;
         private string creditsText = "Credits:\nProgram made by: Mark Maher (maher.159)\nSprites from: https://www.spriters-resource.com/ds_dsi/pokemonmysterydungeonexplorersofsky/sheet/131043/";
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
+        public EnemySpriteFactory enemySpriteFactory;
 
         public EeveeSim()
         {
@@ -38,6 +40,7 @@ namespace CSE3902_Game_Sprint0
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
+            enemySpriteFactory = new EnemySpriteFactory(this);
         }
 
         protected override void LoadContent()
