@@ -110,7 +110,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         public void ArrowUp()
         {
             // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            // update link.LinkSprite = new AnimatedSprite 
         }
         public void ArrowDown()
         {
