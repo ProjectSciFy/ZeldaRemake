@@ -42,6 +42,7 @@ namespace CSE3902_Game_Sprint0.Classes
             switch (direction)
             {
                 case Direction.right:
+                    spriteFactory.IdleRight();
                     break;
 
                 case Direction.up:
@@ -49,12 +50,16 @@ namespace CSE3902_Game_Sprint0.Classes
                     break;
 
                 case Direction.left:
+                    spriteFactory.IdleLeft();
                     break;
 
                 case Direction.down:
+                    spriteFactory.IdleDown();
                     break;
 
                 default:
+                    // default is facing down (looking forward at us)
+                    spriteFactory.IdleDown();
                     break;
             }
         }
