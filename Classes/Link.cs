@@ -19,6 +19,7 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             this.game = game;
             linkState = new StateMachine(this);
+            
         }
 
         //Sets direction of Link's sprite (0, 90, 180, 270 degrees moving counter-clockwise from east)
