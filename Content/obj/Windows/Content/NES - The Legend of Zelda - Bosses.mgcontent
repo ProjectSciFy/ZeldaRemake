@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/School/CSE3902/PROJECT/SPRINT2/Version 1/Content/NES - The Legend of Zelda - Bosses.png</SourceFile>
-  <SourceTime>2021-02-08T16:41:59.9506561-05:00</SourceTime>
-  <DestFile>D:/School/CSE3902/PROJECT/SPRINT2/Version 1/Content/bin/Windows/Content/NES - The Legend of Zelda - Bosses.xnb</DestFile>
-  <DestTime>2021-02-13T16:46:24.8439162-05:00</DestTime>
+  <SourceFile>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Bosses.png</SourceFile>
+  <SourceTime>2021-02-08T15:25:26.3126009-06:00</SourceTime>
+  <DestFile>C:/Users/Jared/source/repos/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - Bosses.xnb</DestFile>
+  <DestTime>2021-02-15T13:57:02.581-06:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
+  <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2020-08-10T16:17:54-04:00</ProcessorTime>
+  <ProcessorTime>2020-08-10T16:17:54-05:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
