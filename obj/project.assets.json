@@ -7373,29 +7373,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\Andrew\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
-=======
     "C:\\Users\\12628\\.nuget\\packages\\": {}
->>>>>>> a2e5a77ae8795febce705df751ed8b387352d0cb
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Andrew\\Source\\Repos\\ProjectSciFy\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
-      "projectName": "CSE3902 Game Sprint0",
-      "projectPath": "C:\\Users\\Andrew\\Source\\Repos\\ProjectSciFy\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
-      "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andrew\\Source\\Repos\\ProjectSciFy\\ZeldaRemake\\obj\\",
-      "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
-      "configFilePaths": [
-        "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
       "projectUniqueName": "D:\\School\\CSE3902\\PROJECT\\SPRINT2\\Version 1\\CSE3902 Game Sprint0.csproj",
       "projectName": "CSE3902 Game Sprint0",
       "projectPath": "D:\\School\\CSE3902\\PROJECT\\SPRINT2\\Version 1\\CSE3902 Game Sprint0.csproj",
@@ -7404,7 +7386,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\12628\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> a2e5a77ae8795febce705df751ed8b387352d0cb
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7457,11 +7438,7 @@
             "privateAssets": "none"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
-=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
->>>>>>> a2e5a77ae8795febce705df751ed8b387352d0cb
       }
     }
   },
