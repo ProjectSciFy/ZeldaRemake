@@ -15,7 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes
         private ISprite LinkSprite;
         private LinkSpriteFactory spriteFactory;
         //Starting condition should be bomb
-        private enum Direction {right, up, left, down};
+        public enum Direction {right, up, left, down};
         private Direction direction = Direction.down;
         //enum for item selected?
         // private Tool = bomb or something
@@ -29,9 +29,10 @@ namespace CSE3902_Game_Sprint0.Classes
             spriteFactory = new LinkSpriteFactory(link);
         }
 
-        public void MoveUp()
+        // Call this method in Keyboard class when a key that changes direction is pressed
+        public void ChangeDirection(Direction toThis)
         {
-            // construct animated link moving up with sprite factory
+            this.direction = toThis;
         }
 
         //Sets link to an idle state based on the value of direction var
@@ -42,6 +43,7 @@ namespace CSE3902_Game_Sprint0.Classes
             switch (direction)
             {
                 case Direction.right:
+                    spriteFactory.IdleRight();
                     break;
 
                 case Direction.up:
@@ -49,87 +51,137 @@ namespace CSE3902_Game_Sprint0.Classes
                     break;
 
                 case Direction.left:
+                    spriteFactory.IdleLeft();
                     break;
 
                 case Direction.down:
+                    spriteFactory.IdleDown();
                     break;
 
                 default:
+                    // default is facing down (looking forward at us)
+                    spriteFactory.IdleDown();
                     break;
             }
         }
-        public void MoveDown()
+
+        //Sets link to a moving state based on the value of direction var
+        public void Moving()
         {
-            // construct animated link moving down with sprite factory
+            // construct animated link facing up with sprite factory
+
+            switch (direction)
+            {
+                case Direction.right:
+                    spriteFactory.MovingRight();
+                    break;
+
+                case Direction.up:
+                    spriteFactory.MovingUp();
+                    break;
+
+                case Direction.left:
+                    spriteFactory.MovingLeft();
+                    break;
+
+                case Direction.down:
+                    spriteFactory.MovingDown();
+                    break;
+
+                default:
+                    // default is... huh??? (assuming that it moves down; not really needed because default is Idle)
+                    spriteFactory.MovingDown();
+                    break;
+            }
         }
-        public void IdleDown()
+
+        //Sets link to an animated state using sword based on the value of direction var
+        public void Sword()
         {
-            // construct nonanimated link facing down with sprite factory
+            // construct animated link facing up with sprite factory
+
+            switch (direction)
+            {
+                case Direction.right:
+                    spriteFactory.SwordRight();
+                    break;
+
+                case Direction.up:
+                    spriteFactory.SwordUp();
+                    break;
+
+                case Direction.left:
+                    spriteFactory.SwordLeft();
+                    break;
+
+                case Direction.down:
+                    spriteFactory.SwordDown();
+                    break;
+
+                default:
+                    spriteFactory.SwordDown();
+                    break;
+            }
         }
-        public void MoveRight()
+
+        //Sets link to an animated state using boomerang based on the value of direction var
+        public void Boomerang()
         {
-            // construct animated link moving right with sprite factory
+            // construct animated link facing up with sprite factory
+
+            switch (direction)
+            {
+                case Direction.right:
+                    spriteFactory.BoomerangRight();
+                    break;
+
+                case Direction.up:
+                    spriteFactory.BoomerangUp();
+                    break;
+
+                case Direction.left:
+                    spriteFactory.BoomerangLeft();
+                    break;
+
+                case Direction.down:
+                    spriteFactory.BoomerangDown();
+                    break;
+
+                default:
+                    spriteFactory.BoomerangDown();
+                    break;
+            }
         }
-        public void IdleRight()
+
+        //Sets link to an animated state using arrow based on the value of direction var
+        public void Arrow()
         {
-            // construct nonanimated link facing right with sprite factory
+            // construct animated link facing up with sprite factory
+
+            switch (direction)
+            {
+                case Direction.right:
+                    spriteFactory.ArrowRight();
+                    break;
+
+                case Direction.up:
+                    spriteFactory.ArrowUp();
+                    break;
+
+                case Direction.left:
+                    spriteFactory.ArrowLeft();
+                    break;
+
+                case Direction.down:
+                    spriteFactory.ArrowDown();
+                    break;
+
+                default:
+                    spriteFactory.ArrowDown();
+                    break;
+            }
         }
-        public void MoveLeft()
-        {
-            // construct animated link moving left with sprite factory
-        }
-        public void IdleLeft()
-        {
-            // construct nonanimated link facing left with sprite factory
-        }
-        public void UpSword()
-        {
-            // construct animated link using sword up
-        }
-        public void DownSword()
-        {
-            // construct animated link using sword down
-        }
-        public void RightSword()
-        {
-            // construct animated link using sword right
-        }
-        public void LeftSword()
-        {
-            // construct animated link using sword left
-        }
-        public void BoomerangUp()
-        {
-            // construct animated link using boomerang up
-        }
-        public void BoomerangDown()
-        {
-            // construct animated link using boomerang down
-        }
-        public void BoomerangRight()
-        {
-            // construct animated link using boomerang right
-        }
-        public void BoomerangLeft()
-        {
-            // construct animated link using boomerang left
-        }
-        public void ArrowUp()
-        {
-            // construct animated link using arrow up
-        }
-        public void ArrowDown()
-        {
-            // construct animated link using arrow down
-        }
-        public void ArrowRight()
-        {
-            // construct animated link using arrow right
-        }
-        public void ArrowLeft()
-        {
-            // construct animated link using arrow left
-        }
+
         //TODO setup more initial states we think we may need & method bodies for adjusting them when called by Link.cs
     }
 }

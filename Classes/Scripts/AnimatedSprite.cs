@@ -15,13 +15,14 @@ namespace CSE3902_Game_Sprint0.Classes
         private Vector2 velocity;
         private Rectangle spriteIndex;
         private Color color;
+        private SpriteEffects spriteEffects;
         private int frameCount;
         private int frame;
         private int fpsBrakes;
         private Vector2 frameGrid;
         private Rectangle frameIndex;
 
-        public AnimatedSprite(EeveeSim game, Texture2D texture, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, Vector2 frameGrid)
+        public AnimatedSprite(EeveeSim game, Texture2D texture, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid)
         {
             this.game = game;
             myTexture = texture;
@@ -31,6 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes
             this.spriteIndex = spriteIndex;
             this.frameIndex = new Rectangle(spriteIndex.X, spriteIndex.Y, spriteIndex.Width, spriteIndex.Height);
             this.color = color;
+            this.spriteEffects = spriteEffects;
             this.frameGrid = frameGrid;
             frameCount = (int) (frameGrid.X * frameGrid.Y);
             frame = 0;
@@ -86,7 +88,8 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Draw()
         {
             mySpriteBatch.Begin();
-            mySpriteBatch.Draw(myTexture, drawLocation, frameIndex, color);
+            //mySpriteBatch.Draw(myTexture, drawLocation, frameIndex, color);
+            mySpriteBatch.Draw(myTexture, drawLocation, frameIndex, color, 0, new Vector2(0, 0), 1, spriteEffects, 1);
             mySpriteBatch.End();
         }
     }

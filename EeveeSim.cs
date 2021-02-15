@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
+using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Controllers;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
@@ -10,9 +11,6 @@ namespace CSE3902_Game_Sprint0
 {
 
     // Gal tell me if you can see this comment.
-    // Adding another test comment here -Gage
-    // Here's another comment -Mark
-
     public class EeveeSim : Game
     {
         private GraphicsDeviceManager _graphics;
@@ -24,6 +22,8 @@ namespace CSE3902_Game_Sprint0
         public Vector2 eevelocity = new Vector2(0, 0);
         private SpriteFont credits;
         private string creditsText = "Credits:\nProgram made by: Mark Maher (maher.159)\nSprites from: https://www.spriters-resource.com/ds_dsi/pokemonmysterydungeonexplorersofsky/sheet/131043/";
+        public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
+        public EnemySpriteFactory enemySpriteFactory;
 
         public EeveeSim()
         {
@@ -40,6 +40,7 @@ namespace CSE3902_Game_Sprint0
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
+            enemySpriteFactory = new EnemySpriteFactory(this);
         }
 
         protected override void LoadContent()
@@ -48,9 +49,20 @@ namespace CSE3902_Game_Sprint0
 
             // TODO: use this.Content to load your game content here
 
+            //Loading all of our textures into a texture dictionary
+            spriteSheets.Add("Eevee", Content.Load<Texture2D>("DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER"));
+            spriteSheets.Add("Link", Content.Load<Texture2D>("NES - The Legend of Zelda - Link"));
+            spriteSheets.Add("HUD", Content.Load<Texture2D>("NES - The Legend of Zelda - HUD & Pause Screen"));
+            spriteSheets.Add("ItemsAndWeapons", Content.Load<Texture2D>("NES - The Legend of Zelda - Items & Weapons"));
+            spriteSheets.Add("NPC", Content.Load<Texture2D>("NES - The Legend of Zelda - NPCs"));
+            spriteSheets.Add("DungeonEnemies", Content.Load<Texture2D>("NES - The Legend of Zelda - Dungeon Enemies"));
+            spriteSheets.Add("Bosses", Content.Load<Texture2D>("NES - The Legend of Zelda - Bosses"));
+            spriteSheets.Add("DungeonBackgrounds", Content.Load<Texture2D>("Level 1 (Eagle)"));
+            spriteSheets.Add("DungeonTileset", Content.Load<Texture2D>("NES - The Legend of Zelda - Dungeon Tileset"));
+
             eeveeTexture = Content.Load<Texture2D>("DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER");
             eeveeLocation = new Vector2((GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
-            eeveeSprite = new StaticSprite(this, eeveeTexture, eeveeLocation, eevelocity, new Rectangle(21, 0, 21, 24), Color.White);
+            eeveeSprite = new StaticSprite(this, eeveeTexture, eeveeLocation, eevelocity, new Rectangle(21, 0, 21, 24), Color.White, SpriteEffects.None);
             credits = Content.Load<SpriteFont>("Credits");
         }
 

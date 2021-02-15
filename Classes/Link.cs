@@ -22,12 +22,6 @@ namespace CSE3902_Game_Sprint0.Classes
             
         }
 
-        //Sets direction of Link's sprite (0, 90, 180, 270 degrees moving counter-clockwise from east)
-        public void setDirection()
-        {
-            //Call statemachine & have it adjust it adjust stored direction
-        }
-
         //Set Link to be using an item
         public void useItem()
         {
