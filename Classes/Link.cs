@@ -13,12 +13,18 @@ namespace CSE3902_Game_Sprint0.Classes
         public ISprite LinkSprite;
         public Vector2 drawLocation = new Vector2(0, 0);
         public Vector2 velocity = new Vector2(0, 0);
+        
 
         //Initialize Link's default state(s) in a new stateMachine
         public Link(EeveeSim game)
         {
             this.game = game;
             linkState = new StateMachine(this);
+        }
+
+        public void setState(StateMachine empty)
+        {
+            this.linkState = empty;
         }
 
         //Set Link to be using an item

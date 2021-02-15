@@ -24,7 +24,8 @@ namespace CSE3902_Game_Sprint0
         private string creditsText = "Credits:\nProgram made by: Mark Maher (maher.159)\nSprites from: https://www.spriters-resource.com/ds_dsi/pokemonmysterydungeonexplorersofsky/sheet/131043/";
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         public EnemySpriteFactory enemySpriteFactory;
-
+        public Link link;
+ 
         public EeveeSim()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -35,8 +36,15 @@ namespace CSE3902_Game_Sprint0
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            
             base.Initialize();
+
+            //set StateMachine and Link to be used:
+            link = new Link(this);
+            StateMachine linkStateMachine = new StateMachine(link);
+
+            //link is now created, maintains an instance of StateMachine to be passed around for commands:
+            link.setState(linkStateMachine);
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));

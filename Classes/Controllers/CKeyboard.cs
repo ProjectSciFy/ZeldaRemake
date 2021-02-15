@@ -12,12 +12,13 @@ namespace CSE3902_Game_Sprint0
     public class CKeyboard : IController
     {
         Dictionary<Keys, ICommand> keyBinds = new Dictionary<Keys, ICommand>();
-
+       
         public CKeyboard(EeveeSim game)
         {
             //Change commands in future--
 
             //Up and W -- change direction (switch case/state machine?) and movement
+            // direction added as new parameter being sent to DrawSprite:
             keyBinds.Add(Keys.Up, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2)), new Vector2(0, 0), new Rectangle(21, 0, 21, 24), Color.White, SpriteEffects.None, new Vector2(1, 1)));
             keyBinds.Add(Keys.W, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (22 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(0, 0), new Rectangle(75, 70, 22, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
 
