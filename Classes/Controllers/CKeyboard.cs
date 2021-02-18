@@ -12,6 +12,7 @@ namespace CSE3902_Game_Sprint0
     public class CKeyboard : IController
     {
         Dictionary<Keys, ICommand> keyBinds = new Dictionary<Keys, ICommand>();
+        HashSet<Keys> heldKeys = new HashSet<Keys>();
        
         public CKeyboard(EeveeSim game)
         {
@@ -68,15 +69,24 @@ namespace CSE3902_Game_Sprint0
         public void Update()
         {
             KeyboardState keyState = Keyboard.GetState();
-
+            HashSet<Keys> releasedKeys = new HashSet<Keys>(heldKeys);
             Keys[] pressedKeys = keyState.GetPressedKeys();
 
             for (int i = 0; i < pressedKeys.Length; i++)
             {
-                if (keyBinds.ContainsKey(pressedKeys[i]))
+
+                releasedKeys.Remove(pressedKeys[i]);
+
+                if (keyBinds.ContainsKey(pressedKeys[i]) && !heldKeys.Contains(pressedKeys[i]))
                 {
                     keyBinds[pressedKeys[i]].Execute();
+                    heldKeys.Add(pressedKeys[i]);
                 }
+            }
+
+            foreach (Keys releasedKey in releasedKeys)
+            {
+                heldKeys.Remove(releasedKey);
             }
         }
     }
