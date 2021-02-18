@@ -16,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes
         private LinkSpriteFactory spriteFactory;
         //Starting condition should be bomb
         public enum Direction {right, up, left, down};
-        private Direction direction = Direction.down;
+        public Direction direction = Direction.down;
         //enum for item selected?
         // private Tool = bomb or something
         private bool useTool = false;
@@ -27,6 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes
             game = link.game;
             this.link = link;
             spriteFactory = new LinkSpriteFactory(link);
+            spriteFactory.IdleDown();
         }
 
         // Call this method in Keyboard class when a key that changes direction is pressed
@@ -89,8 +90,6 @@ namespace CSE3902_Game_Sprint0.Classes
                     break;
 
                 default:
-                    // default is... huh??? (assuming that it moves down; not really needed because default is Idle)
-                    spriteFactory.MovingDown();
                     break;
             }
         }

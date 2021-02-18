@@ -25,6 +25,7 @@ namespace CSE3902_Game_Sprint0
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         public EnemySpriteFactory enemySpriteFactory;
         public Link link;
+        public StateMachine linkStateMachine;
  
         public EeveeSim()
         {
@@ -41,7 +42,7 @@ namespace CSE3902_Game_Sprint0
 
             //set StateMachine and Link to be used:
             link = new Link(this);
-            StateMachine linkStateMachine = new StateMachine(link);
+            linkStateMachine = new StateMachine(link);
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.setState(linkStateMachine);
