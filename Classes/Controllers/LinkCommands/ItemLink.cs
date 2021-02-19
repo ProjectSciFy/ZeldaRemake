@@ -4,21 +4,22 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
-    public class SwordLink : ICommand
+    public class ItemLink : ICommand
     {
         private StateMachine linkState;
+        private StateMachine.Item itemSelected;
 
-        public SwordLink(StateMachine linkState)
+        public ItemLink(StateMachine linkState, StateMachine.Item item)
         {
             this.linkState = linkState;
+            this.itemSelected = item;
         }
 
         public void Execute()
         { 
             linkState.moving = false;
-            // TO DO:
-            // need to update link's state so that he is now drawn with a sword.
-
+            // need to update link's state so that he is now drawn with the item.
+            // equpping item animation code below?
             
         }
     }
