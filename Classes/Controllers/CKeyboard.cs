@@ -53,7 +53,7 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.D1, new ItemLink(linkState, StateMachine.Item.sword)); // sword item
             keyBinds.Add(Keys.D2, new ItemLink(linkState, StateMachine.Item.bomb)); // bomb item 
             keyBinds.Add(Keys.D3, new ItemLink(linkState, StateMachine.Item.arrow)); // bow & arrow item
-            keyBinds.Add(Keys.D4, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
+            keyBinds.Add(Keys.D4, new ItemLink(linkState, StateMachine.Item.boomerang)); // boomerang item
 
             //T and Y -- test block animation
             keyBinds.Add(Keys.T, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
