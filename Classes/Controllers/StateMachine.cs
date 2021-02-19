@@ -14,11 +14,14 @@ namespace CSE3902_Game_Sprint0.Classes
         private Link link;
         private ISprite LinkSprite;
         private LinkSpriteFactory spriteFactory;
-        //Starting condition should be bomb
+        
         public enum Direction {right, up, left, down};
         public Direction direction = Direction.down;
         public bool moving = false;
         //enum for item selected?
+        //Starting condition should be bomb
+        public enum Item {sword, bomb, arrow};
+        public Item itemSelected = Item.bomb;
         // private Tool = bomb or something
         private bool useTool = false;
         private bool useSword = false;
