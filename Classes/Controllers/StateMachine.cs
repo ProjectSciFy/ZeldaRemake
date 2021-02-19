@@ -18,11 +18,14 @@ namespace CSE3902_Game_Sprint0.Classes
         public enum Direction {right, up, left, down};
         public Direction direction = Direction.down;
         public bool moving = false;
+
         //enum for item selected?
         //Starting condition should be bomb
-        public enum Item {sword, bomb, arrow};
+        public enum Item {sword, bomb, arrow, boomerang};
         public Item itemSelected = Item.bomb;
+
         // private Tool = bomb or something
+
         private bool useTool = false;
         private bool useSword = false;
         private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
