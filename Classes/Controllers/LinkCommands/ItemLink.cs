@@ -22,19 +22,19 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
             switch (itemSelected)
             {
                 case StateMachine.Item.sword:
-                    //start sword animation
+                    linkState.itemSelected = StateMachine.Item.sword;
                     break;
 
                 case StateMachine.Item.bomb:
-                    //start bomb animation
+                    linkState.itemSelected = StateMachine.Item.bomb;
                     break;
 
                 case StateMachine.Item.arrow:
-                    //start arrow animation
+                    linkState.itemSelected = StateMachine.Item.arrow;
                     break;
 
                 case StateMachine.Item.boomerang:
-                    //start boomerang animation
+                    linkState.itemSelected = StateMachine.Item.boomerang;
                     break;
             }
             
