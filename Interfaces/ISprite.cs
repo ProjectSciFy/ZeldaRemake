@@ -9,6 +9,6 @@ namespace CSE3902_Game_Sprint0
     {
         void Update();
 
-        void Draw();
+        void Draw(Vector2 drawLocation);
     }
 }

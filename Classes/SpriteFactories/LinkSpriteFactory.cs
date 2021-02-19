@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CSE3902_Game_Sprint0.Classes.Scripts;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -23,109 +24,171 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 
         public void IdleUp()
         {
-            spriteIndex = new Rectangle(69, 11, 16, 16);
-            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.None);
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
         public void IdleDown()
         {
-            spriteIndex = new Rectangle(1, 11, 16, 16);
-            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.None);
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
         public void IdleRight()
         {
-            spriteIndex = new Rectangle(35, 11, 16, 16);
-            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.None);
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
         public void IdleLeft() //Not sure where we are drawing sprites but when drawn need to flip the IdleRight Sprite
         {
-            spriteIndex = new Rectangle(35, 11, 16, 16);
-            link.LinkSprite = new StaticSprite(game, linkTexture, link.drawLocation, link.velocity = new Vector2(0, 0), spriteIndex, Color.White, SpriteEffects.FlipHorizontally);
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
 
 
         public void MovingUp()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = -2;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2));
         }
         public void MovingDown()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 2;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2));
         }
         public void MovingRight()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 2;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2));
         }
         public void MovingLeft()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = -2;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2));
         }
 
-
+        //item sprites:
         public void SwordUp()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1,1));
         }
         public void SwordDown()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
         public void SwordRight()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
         public void SwordLeft()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
+
 
         public void BoomerangUp()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
         public void BoomerangDown()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
         public void BoomerangRight()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
         public void BoomerangLeft()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
+
 
         public void ArrowUp()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite 
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
         public void ArrowDown()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
         public void ArrowRight()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
         public void ArrowLeft()
         {
-            // set new spriteIndex
-            // update link.LinkSprite = new AnimatedSprite
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
     }
 }
