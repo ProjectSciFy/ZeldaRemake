@@ -164,7 +164,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(29, 185, 5, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
         }
         public void ArrowDown()
         {
@@ -172,7 +172,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(29, 185, 5, 16), Color.White, SpriteEffects.FlipVertically, new Vector2(1, 1));
         }
         public void ArrowRight()
         {
@@ -180,7 +180,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(36, 190, 16, 5), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
         public void ArrowLeft()
         {
@@ -188,7 +188,23 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(36, 190, 16, 5), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
+        }
+        public void PickUpNormal()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(213, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+        }
+        public void PickUpTriForce()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(230, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
     }
 }
