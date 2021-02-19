@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
+using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,29 +12,33 @@ namespace CSE3902_Game_Sprint0
 {
     public class CKeyboard : IController
     {
+        private StateMachine linkState;
         Dictionary<Keys, ICommand> keyBinds = new Dictionary<Keys, ICommand>();
         HashSet<Keys> heldKeys = new HashSet<Keys>();
        
         public CKeyboard(EeveeSim game)
         {
+
+            linkState = game.linkStateMachine;
+
             //Change commands in future--
 
             //Up and W -- change direction (switch case/state machine?) and movement
             // direction added as new parameter being sent to DrawSprite:
             keyBinds.Add(Keys.Up, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2)), new Vector2(0, 0), new Rectangle(21, 0, 21, 24), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.W, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (22 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(0, 0), new Rectangle(75, 70, 22, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
+            keyBinds.Add(Keys.W, new MoveLink(linkState, StateMachine.Direction.up));
 
             //Left and A
             keyBinds.Add(Keys.Left, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.A, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
+            keyBinds.Add(Keys.A, new MoveLink(linkState, StateMachine.Direction.left));
 
             //Down and S
             keyBinds.Add(Keys.Down, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.S, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
+            keyBinds.Add(Keys.S, new MoveLink(linkState, StateMachine.Direction.down));
 
             //Right and D
             keyBinds.Add(Keys.Right, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.D, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
+            keyBinds.Add(Keys.D, new MoveLink(linkState, StateMachine.Direction.right));
 
             //Z and N -- attack and animation
             keyBinds.Add(Keys.Z, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
@@ -79,7 +84,7 @@ namespace CSE3902_Game_Sprint0
 
                 if (keyBinds.ContainsKey(pressedKeys[i]) && !heldKeys.Contains(pressedKeys[i]))
                 {
-                    keyBinds[pressedKeys[i]].Execute();
+                   keyBinds[pressedKeys[i]].Execute();
                     heldKeys.Add(pressedKeys[i]);
                 }
             }
@@ -87,6 +92,12 @@ namespace CSE3902_Game_Sprint0
             foreach (Keys releasedKey in releasedKeys)
             {
                 heldKeys.Remove(releasedKey);
+            }
+
+            if (!heldKeys.Contains(Keys.W) && !heldKeys.Contains(Keys.A) && !heldKeys.Contains(Keys.S) && !heldKeys.Contains(Keys.D))
+            {
+                //New Idle command
+                new IdleLink(linkState).Execute();
             }
         }
     }

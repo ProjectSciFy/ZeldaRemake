@@ -17,10 +17,13 @@ namespace CSE3902_Game_Sprint0.Classes
         //Starting condition should be bomb
         public enum Direction {right, up, left, down};
         public Direction direction = Direction.down;
+        public bool moving = false;
         //enum for item selected?
         // private Tool = bomb or something
         private bool useTool = false;
         private bool useSword = false;
+        private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
+        private CurrentState currentState = CurrentState.idleDown;
 
         public StateMachine(Link link)
         {
@@ -44,23 +47,40 @@ namespace CSE3902_Game_Sprint0.Classes
             switch (direction)
             {
                 case Direction.right:
-                    spriteFactory.IdleRight();
+                    if (currentState != CurrentState.idleRight)
+                    {
+                        currentState = CurrentState.idleRight;
+                        spriteFactory.IdleRight();
+                    }
                     break;
 
                 case Direction.up:
-                    spriteFactory.IdleUp();
+                    if (currentState != CurrentState.idleUp)
+                    {
+                        currentState = CurrentState.idleUp;
+                        spriteFactory.IdleUp();
+                    }
                     break;
 
                 case Direction.left:
-                    spriteFactory.IdleLeft();
+                    if (currentState != CurrentState.idleLeft)
+                    {
+                        currentState = CurrentState.idleLeft;
+                        spriteFactory.IdleLeft();
+                    }
                     break;
 
                 case Direction.down:
-                    spriteFactory.IdleDown();
+                    if (currentState != CurrentState.idleDown)
+                    {
+                        currentState = CurrentState.idleDown;
+                        spriteFactory.IdleDown();
+                    }
                     break;
 
                 default:
                     // default is facing down (looking forward at us)
+                    currentState = CurrentState.idleDown;
                     spriteFactory.IdleDown();
                     break;
             }
@@ -74,19 +94,35 @@ namespace CSE3902_Game_Sprint0.Classes
             switch (direction)
             {
                 case Direction.right:
-                    spriteFactory.MovingRight();
+                    if (currentState != CurrentState.movingRight)
+                    {
+                        currentState = CurrentState.movingRight;
+                        spriteFactory.MovingRight();
+                    }
                     break;
 
                 case Direction.up:
-                    spriteFactory.MovingUp();
+                    if (currentState != CurrentState.movingUp)
+                    {
+                        currentState = CurrentState.movingUp;
+                        spriteFactory.MovingUp();
+                    }
                     break;
 
                 case Direction.left:
-                    spriteFactory.MovingLeft();
+                    if (currentState != CurrentState.movingLeft)
+                    {
+                        currentState = CurrentState.movingLeft;
+                        spriteFactory.MovingLeft();
+                    }
                     break;
 
                 case Direction.down:
-                    spriteFactory.MovingDown();
+                    if (currentState != CurrentState.movingDown)
+                    {
+                        currentState = CurrentState.movingDown;
+                        spriteFactory.MovingDown();
+                    }
                     break;
 
                 default:
@@ -182,5 +218,39 @@ namespace CSE3902_Game_Sprint0.Classes
         }
 
         //TODO setup more initial states we think we may need & method bodies for adjusting them when called by Link.cs
+
+        public void Update()
+        {
+            if (moving)
+            {
+                if (useSword)
+                {
+
+                }
+                else if (useTool)
+                {
+
+                }
+                else
+                {
+                    Moving();
+                }
+            } 
+            else
+            {
+                if (useSword)
+                {
+
+                }
+                else if (useTool)
+                {
+
+                }
+                else
+                {
+                    Idle();
+                }
+            }
+        }
     }
 }

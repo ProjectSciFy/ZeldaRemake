@@ -6,21 +6,21 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Scripts
 {
-    class MoveLink : ICommand
+    public class MoveLink : ICommand
     {
-        private EeveeSim game;
         private StateMachine linkState;
         private StateMachine.Direction direction;
 
-        public MoveLink(EeveeSim game, StateMachine.Direction direction)
+        public MoveLink(StateMachine linkState, StateMachine.Direction direction)
         {
-            this.game = game;
-            this.linkState = game.linkStateMachine;
+            this.linkState = linkState;
             this.direction = direction;
         }
 
         public void Execute()
         {
+            linkState.moving = true;
+
             switch (direction)
             {
                 case StateMachine.Direction.up:
@@ -42,8 +42,8 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
                 default:
                     break;
             }
-
-            linkState.Moving();
+            //GET RID OF THIS ONCE WE SETUP STATEMACHINE UPDATE()
+            //linkState.Moving();
         }
     }
 }

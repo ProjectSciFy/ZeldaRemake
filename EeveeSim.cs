@@ -2,6 +2,7 @@
 using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Controllers;
 using CSE3902_Game_Sprint0.Classes.Scripts;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -45,7 +46,7 @@ namespace CSE3902_Game_Sprint0
             linkStateMachine = new StateMachine(link);
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
-            link.setState(linkStateMachine);
+            link.SetState(linkStateMachine);
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -88,6 +89,8 @@ namespace CSE3902_Game_Sprint0
             }
             base.Update(gameTime);
             eeveeSprite.Update();
+
+            link.Update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -98,7 +101,8 @@ namespace CSE3902_Game_Sprint0
 
             base.Draw(gameTime);
 
-            eeveeSprite.Draw();
+            eeveeSprite.Draw(new Vector2(0, 0));
+            link.Draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
