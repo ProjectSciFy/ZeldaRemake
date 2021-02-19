@@ -26,8 +26,8 @@ namespace CSE3902_Game_Sprint0.Classes
 
         // private Tool = bomb or something
 
-        private bool useTool = false;
-        private bool useSword = false;
+        public bool useTool = false;
+        public bool useSword = false;
         private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
         private CurrentState currentState = CurrentState.idleDown;
 
@@ -246,7 +246,7 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 if (useSword)
                 {
-
+                
                 }
                 else if (useTool)
                 {

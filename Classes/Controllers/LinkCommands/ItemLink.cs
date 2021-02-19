@@ -19,7 +19,24 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
         { 
             linkState.moving = false;
             // need to update link's state so that he is now drawn with the item.
-            // equpping item animation code below?
+            switch (itemSelected)
+            {
+                case StateMachine.Item.sword:
+                    linkState.itemSelected = StateMachine.Item.sword;
+                    break;
+
+                case StateMachine.Item.bomb:
+                    linkState.itemSelected = StateMachine.Item.bomb;
+                    break;
+
+                case StateMachine.Item.arrow:
+                    linkState.itemSelected = StateMachine.Item.arrow;
+                    break;
+
+                case StateMachine.Item.boomerang:
+                    linkState.itemSelected = StateMachine.Item.boomerang;
+                    break;
+            }
             
         }
     }
