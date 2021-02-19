@@ -52,7 +52,7 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
-        public void Draw()
+        public void Draw(Vector2 drawLocationD)
         {
             mySpriteBatch.Begin();
             //Refactored to public void Draw(Texture2D texture, Vector2 position, Rectangle? sourceRectangle, Color color, float rotation, Vector2 origin, float scale, SpriteEffects effects, float layerDepth) to allow sprite flipping & layer control

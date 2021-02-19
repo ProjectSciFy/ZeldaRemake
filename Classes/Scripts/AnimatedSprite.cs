@@ -85,7 +85,7 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
-        public void Draw()
+        public void Draw(Vector2 drawLocationD)
         {
             mySpriteBatch.Begin();
             //mySpriteBatch.Draw(myTexture, drawLocation, frameIndex, color);
