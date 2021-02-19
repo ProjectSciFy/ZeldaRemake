@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Classes",
+    "\\Classes\\Controllers",
+    "\\Classes\\Scripts",
+    "\\Classes\\SpriteFactories",
+    "\\Interfaces"
   ],
-  "SelectedNode": "\\CSE3902 Game Sprint0.sln",
+  "SelectedNode": "\\Classes\\Scripts\\DrawSprite.cs",
   "PreviewInSolutionExplorer": false
 }
