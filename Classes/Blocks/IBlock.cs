@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes.Blocks
 {
-    interface IBlock
+    public interface IBlock
     {
         void update();
 
