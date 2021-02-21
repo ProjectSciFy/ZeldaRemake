@@ -13,7 +13,7 @@ namespace CSE3902_Game_Sprint0.Classes.Blocks
         private TilesSpriteFactory spriteFactory;
         public Vector2 drawLocation;
         public ISprite blockSprite;
-        public Vector2 blockSize = new Vector2(200, 200);
+        public Vector2 blockSize = new Vector2(5, 5);
         public Vector2 velocity = new Vector2(0, 0);
 
         public Block(EeveeSim game, Vector2 drawHere)

@@ -28,7 +28,7 @@ namespace CSE3902_Game_Sprint0
         public void Block1()
         {
             //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0,0,0,0), Color.White, SpriteEffects.None);
+            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
         }
         public void Block2()
         {
