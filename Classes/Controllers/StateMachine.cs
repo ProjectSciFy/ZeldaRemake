@@ -12,7 +12,6 @@ namespace CSE3902_Game_Sprint0.Classes
 
         private EeveeSim game;
         private Link link;
-        private ISprite LinkSprite;
         private LinkSpriteFactory spriteFactory;
         
         public enum Direction {right, up, left, down};

@@ -7,39 +7,62 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemyStalfos : IEnemy
     {
-        //When defeated, can frop a heart, rupee, 5rupee or a clock
+        //When defeated, can drop a heart, rupee, 5rupee or a clock
         //Pathing is random, no sense of direction
         //Method of attack is melee, bumping into the player
 
         public EeveeSim game;
-        private EnemyStateMachine myState;
-        private EnemySpriteFactory spriteFactory;
+        private StalfosStateMachine myState;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
+        public Vector2 spriteSize = new Vector2(0, 0);
 
         public EnemyStalfos(EeveeSim game, Vector2 spawnLocation)
         {
             this.game = game;
-            spriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
-            myState = new EnemyStateMachine(this);
-            spawn();
+            myState = new StalfosStateMachine(this);
+            Spawn();
         }
 
-        public void spawn()
+        public void Spawn()
         {
-            spriteFactory.spawnStalfos(this);
+
         }
 
-        public void update()
+        public void Update()
         {
+            myState.Update();
+            mySprite.Update();
+
+            //Update the position of Link here
+            drawLocation.X = drawLocation.X + velocity.X;
+            drawLocation.Y = drawLocation.Y + velocity.Y;
+
+            if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
+            {
+                drawLocation.X = 0 - spriteSize.X;
+            }
+            else if (drawLocation.X + spriteSize.X <= 0 && velocity.X < 0)
+            {
+                drawLocation.X = game.GraphicsDevice.Viewport.Bounds.Width;
+            }
+
+            if (drawLocation.Y >= game.GraphicsDevice.Viewport.Bounds.Height && velocity.Y > 0)
+            {
+                drawLocation.Y = 0 - spriteSize.Y;
+            }
+            else if (drawLocation.Y + spriteSize.Y <= 0 && velocity.Y < 0)
+            {
+                drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
+            }
 
         }
 
         public void draw()
         {
-
+            mySprite.Draw(drawLocation);
         }
     }
 }
