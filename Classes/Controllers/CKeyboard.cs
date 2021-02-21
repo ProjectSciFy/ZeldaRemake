@@ -51,10 +51,10 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.E, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
 
             //1, 2, 3, 4 -- change between items animation
-            keyBinds.Add(Keys.D1, new ItemLink(linkState, StateMachine.Item.sword)); // sword item
-            keyBinds.Add(Keys.D2, new ItemLink(linkState, StateMachine.Item.bomb)); // bomb item 
-            keyBinds.Add(Keys.D3, new ItemLink(linkState, StateMachine.Item.arrow)); // bow & arrow item 
-            keyBinds.Add(Keys.D4, new ItemLink(linkState, StateMachine.Item.boomerang)); // boomerang item 
+            keyBinds.Add(Keys.D1, new ItemLink(linkState, StateMachine.Item.sword, linkState.direction)); // sword item
+            keyBinds.Add(Keys.D2, new ItemLink(linkState, StateMachine.Item.bomb, linkState.direction)); // bomb item 
+            keyBinds.Add(Keys.D3, new ItemLink(linkState, StateMachine.Item.arrow, linkState.direction)); // bow & arrow item 
+            keyBinds.Add(Keys.D4, new ItemLink(linkState, StateMachine.Item.boomerang, linkState.direction)); // boomerang item 
 
             //T and Y -- test block animation
             keyBinds.Add(Keys.T, new DecrementBlock(game.tileSpriteFactory));
