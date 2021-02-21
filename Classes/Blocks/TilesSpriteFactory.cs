@@ -12,7 +12,8 @@ namespace CSE3902_Game_Sprint0
     {
         private EeveeSim game;
         private Block block;
-        private Texture2D tileSpriteSheet;
+        public Texture2D tileSpriteSheet;
+        public int currentBlock = 0;
 
         public TilesSpriteFactory(Block block)
         {
@@ -22,58 +23,57 @@ namespace CSE3902_Game_Sprint0
         }
 
         //TILES LAYOUT IN SPRITE SHEET:
-        // [1]  [2]  [3]  [4]
-        // [5]  [6]  [7]  [8]
-        // [9]  [10]
-        public void Block1()
+        // [0]  [1]  [2]  [3]
+        // [4]  [5]  [6]  [7]
+        // [8]  [9]
+        public void changeBlock(int newBlock)
         {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0,0,0,0), Color.White, SpriteEffects.None);
-        }
-        public void Block2()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
-        }
-        public void Block3()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
-        }
-        public void Block4()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
-        }
-        public void Block5()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
-        }
-        public void Block6()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
-        }
-        public void Block7()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
-        }
-        public void Block8()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
-        }
-        public void Block9()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
-        }
-        public void Block10()
-        {
-            //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-            block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None);
+            this.currentBlock = newBlock;
+            switch (newBlock)
+            {
+                case 0:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(984, 11, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 1:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 2:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1018, 11, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 3:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1035, 11, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 4:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(984, 28, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 5:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1001, 28, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 6:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1018, 28, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 7:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1035, 28, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 8:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(984, 45, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                case 9:
+                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
+                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1001, 45, 16, 16), Color.White, SpriteEffects.None);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
