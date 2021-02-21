@@ -52,7 +52,7 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             enemySpriteFactory = new EnemySpriteFactory(this);
-            tileSpriteFactory = new TilesSpriteFactory(this);
+            //tileSpriteFactory = new TilesSpriteFactory(this); COMMENTING OUT SO PROJECT COMPILES. cannot pass "this", we need to be passing a block object
         }
 
         protected override void LoadContent()
