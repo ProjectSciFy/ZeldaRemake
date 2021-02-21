@@ -27,8 +27,11 @@ namespace CSE3902_Game_Sprint0.Classes
 
         // private Tool = bomb or something
 
-        public bool useTool = false;
         public bool useSword = false;
+        public bool useBomb = false;
+        public bool useArrow = false;
+        public bool useBoomerang = false;
+
         private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
         private CurrentState currentState = CurrentState.idleDown;
 
@@ -285,12 +288,20 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 if (useSword)
                 {
-                    //can't be possible
+                    //sword animation stops movement:
                     Sword();
                 }
-                else if (useTool)
+                else if (useBomb)
                 {
-
+                    Bomb();
+                }
+                else if (useArrow)
+                {
+                    Arrow();
+                }
+                else if (useBoomerang)
+                {
+                    Boomerang();
                 }
                 else
                 {
@@ -301,11 +312,19 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 if (useSword)
                 {
-                
+                    Sword();
                 }
-                else if (useTool)
+                else if (useBomb)
                 {
-
+                    Bomb();
+                }
+                else if (useArrow)
+                {
+                    Arrow();
+                }
+                else if (useBoomerang)
+                {
+                    Boomerang();
                 }
                 else
                 {
