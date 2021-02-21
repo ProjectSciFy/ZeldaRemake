@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Level 1 (Eagle).png</SourceFile>
-  <SourceTime>2021-02-05T11:01:11.8446821-05:00</SourceTime>
-  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/Level 1 (Eagle).xnb</DestFile>
-  <DestTime>2021-02-21T16:23:34.5557866-05:00</DestTime>
+  <SourceFile>C:/Users/Jared/source/repos/ZeldaRemake/Content/Level 1 (Eagle).png</SourceFile>
+  <SourceTime>2021-02-08T15:25:26.3126009-06:00</SourceTime>
+  <DestFile>C:/Users/Jared/source/repos/ZeldaRemake/Content/bin/Windows/Content/Level 1 (Eagle).xnb</DestFile>
+  <DestTime>2021-02-21T17:38:44.857-06:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
+  <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2020-08-10T16:17:54-04:00</ProcessorTime>
+  <ProcessorTime>2020-08-10T16:17:54-05:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
