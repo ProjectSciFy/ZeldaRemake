@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes;
+using CSE3902_Game_Sprint0.Classes.Scripts;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -32,44 +33,34 @@ namespace CSE3902_Game_Sprint0
             switch (newBlock)
             {
                 case 0:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(984, 11, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 1:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 2:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1018, 11, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1018, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 3:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1035, 11, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 4:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(984, 28, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 5:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1001, 28, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 6:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1018, 28, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1018, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 7:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1035, 28, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 8:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(984, 45, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 45, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 case 9:
-                    //CHANGE RECTANGLE TO SIZE AND LOCATION IN .png FILE
-                    block.blockSprite = new StaticSprite(game, tileSpriteSheet, block.drawLocation, block.velocity, new Rectangle(1001, 45, 16, 16), Color.White, SpriteEffects.None);
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 45, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
                     break;
                 default:
                     break;
