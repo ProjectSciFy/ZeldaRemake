@@ -13,7 +13,7 @@ namespace CSE3902_Game_Sprint0
         private EeveeSim game;
         private Block block;
         public Texture2D tileSpriteSheet;
-        public int currentBlock;
+        public int currentBlock = 0;
 
         public TilesSpriteFactory(Block block)
         {

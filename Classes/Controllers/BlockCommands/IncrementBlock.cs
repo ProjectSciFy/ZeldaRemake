@@ -15,11 +15,11 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.BlockCommands
         {
             if (this.blockFactory.currentBlock < 9)
             {
-                this.blockFactory.currentBlock++;
+                this.blockFactory.changeBlock(this.blockFactory.currentBlock + 1);
             }
             else //last block in list, currentBlock == 9, cycle to first in list, index 0
             {
-                this.blockFactory.currentBlock = 0;
+                this.blockFactory.changeBlock(0);
             }
         }
     }

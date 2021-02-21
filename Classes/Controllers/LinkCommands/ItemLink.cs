@@ -30,6 +30,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 
                 case StateMachine.Item.bomb:
                     linkState.itemSelected = StateMachine.Item.bomb;
+                    linkState.Bomb();
+                    
                     break;
 
                 case StateMachine.Item.arrow:
