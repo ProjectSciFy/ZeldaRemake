@@ -164,6 +164,35 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
+        //Sets link to an animated state using sword based on the value of direction var
+        public void Bomb()
+        {
+            // construct animated link facing up with sprite factory
+
+            switch (direction)
+            {
+                case Direction.right:
+                    spriteFactory.BombRight();
+                    break;
+
+                case Direction.up:
+                    spriteFactory.BombUp();
+                    break;
+
+                case Direction.left:
+                    spriteFactory.BombLeft();
+                    break;
+
+                case Direction.down:
+                    spriteFactory.BombDown();
+                    break;
+
+                default:
+                    spriteFactory.BombDown();
+                    break;
+            }
+        }
+
         //Sets link to an animated state using boomerang based on the value of direction var
         public void Boomerang()
         {

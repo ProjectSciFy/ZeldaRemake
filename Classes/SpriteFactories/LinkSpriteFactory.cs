@@ -89,6 +89,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
 
         //item sprites:
+        //Sword:
         public void SwordUp()
         {
             link.spriteSize.X = 16;
@@ -111,7 +112,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(65, 47, 27, 16), Color.White, SpriteEffects.None, new Vector2(4, 1));
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.None, new Vector2(4, 1));
         }
         public void SwordLeft()
         {
@@ -119,10 +120,47 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(65, 47, 27, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1));
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1));
         }
 
+        //Bomb:
+        public void BombUp()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(341, 153, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1));
+        }
 
+        public void BombDown()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(324, 153, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1));
+        }
+
+        public void BombRight()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(307, 153, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1));
+        }
+
+        public void BombLeft()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(307, 153, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(5, 1));
+        }
+
+        //Boomerang:
         public void BoomerangUp()
         {
             link.spriteSize.X = 16;
@@ -157,6 +195,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
 
 
+        //Arrow:
         public void ArrowUp()
         {
             link.spriteSize.X = 5;
