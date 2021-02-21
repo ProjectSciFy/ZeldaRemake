@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
 using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Blocks;
 using CSE3902_Game_Sprint0.Classes.Controllers;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
@@ -28,6 +29,7 @@ namespace CSE3902_Game_Sprint0
         public TilesSpriteFactory tileSpriteFactory;
         public Link link;
         public StateMachine linkStateMachine;
+        public Block block;
  
         public EeveeSim()
         {
@@ -44,7 +46,10 @@ namespace CSE3902_Game_Sprint0
 
             //set StateMachine and Link to be used:
             link = new Link(this);
+            block = new Block(this);
             linkStateMachine = new StateMachine(link);
+
+            
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
@@ -52,6 +57,7 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             enemySpriteFactory = new EnemySpriteFactory(this);
+            tileSpriteFactory = new TilesSpriteFactory(block);
             //tileSpriteFactory = new TilesSpriteFactory(this); COMMENTING OUT SO PROJECT COMPILES. cannot pass "this", we need to be passing a block object
         }
 
