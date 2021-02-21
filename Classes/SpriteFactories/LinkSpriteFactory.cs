@@ -12,8 +12,6 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         private EeveeSim game;
         private Link link;
         private Texture2D linkTexture;
-        private Rectangle spriteIndex;
-        public enum PickUpItems { boomerang, triforce };
 
         public LinkSpriteFactory(Link link)
         {
@@ -94,7 +92,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         public void SwordUp()
         {
             link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
+            link.spriteSize.Y = 28;
             link.velocity.X = 0;
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 83, 16, 28), Color.White, SpriteEffects.None, new Vector2(1,4));
@@ -102,14 +100,14 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         public void SwordDown()
         {
             link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
+            link.spriteSize.Y = 27;
             link.velocity.X = 0;
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 47, 16, 27), Color.White, SpriteEffects.None, new Vector2(1, 4));
         }
         public void SwordRight()
         {
-            link.spriteSize.X = 16;
+            link.spriteSize.X = 27;
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
@@ -117,7 +115,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
         public void SwordLeft()
         {
-            link.spriteSize.X = 16;
+            link.spriteSize.X = 27;
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
@@ -161,7 +159,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 
         public void ArrowUp()
         {
-            link.spriteSize.X = 16;
+            link.spriteSize.X = 5;
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
@@ -169,7 +167,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
         public void ArrowDown()
         {
-            link.spriteSize.X = 16;
+            link.spriteSize.X = 5;
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
@@ -178,7 +176,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         public void ArrowRight()
         {
             link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
+            link.spriteSize.Y = 5;
             link.velocity.X = 0;
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(36, 190, 16, 5), Color.White, SpriteEffects.None, new Vector2(1, 1));
@@ -186,7 +184,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         public void ArrowLeft()
         {
             link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
+            link.spriteSize.Y = 5;
             link.velocity.X = 0;
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(36, 190, 16, 5), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1));
@@ -207,6 +205,5 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(230, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
-
     }
 }

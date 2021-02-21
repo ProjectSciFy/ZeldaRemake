@@ -7373,23 +7373,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jaden\\.nuget\\packages\\": {},
+    "C:\\Users\\Mark\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jaden\\Source\\Repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
+      "projectUniqueName": "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
       "projectName": "CSE3902 Game Sprint0",
-      "projectPath": "C:\\Users\\jaden\\Source\\Repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
-      "packagesPath": "C:\\Users\\jaden\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jaden\\Source\\Repos\\ZeldaRemake\\obj\\",
+      "projectPath": "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
+      "packagesPath": "C:\\Users\\Mark\\.nuget\\packages\\",
+      "outputPath": "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\jaden\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mark\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -7446,5 +7446,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
