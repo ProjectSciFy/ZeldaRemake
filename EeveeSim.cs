@@ -55,8 +55,8 @@ namespace CSE3902_Game_Sprint0
             link.SetState(linkStateMachine);
 
             //Setting up block spritefactory
+            tileSpriteFactory = new TilesSpriteFactory(this);
             block = new Block(this, new Vector2(160, 200));
-            tileSpriteFactory = new TilesSpriteFactory(block);
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
@@ -65,7 +65,8 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             enemySpriteFactory = new EnemySpriteFactory(this);
-            
+            tileSpriteFactory = new TilesSpriteFactory(this);
+
         }
 
         protected override void LoadContent()

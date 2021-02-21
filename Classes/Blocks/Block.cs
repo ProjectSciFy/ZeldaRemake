@@ -8,7 +8,8 @@ namespace CSE3902_Game_Sprint0.Classes.Blocks
     public class Block : IBlock
     {
         public EeveeSim game;
-        private TilesSpriteFactory spriteFactory;
+        public TileStateMachine tileState;
+        public TilesSpriteFactory spriteFactory;
         public Vector2 drawLocation;
         public ISprite blockSprite;
         public Vector2 velocity = new Vector2(0, 0);
@@ -20,10 +21,12 @@ namespace CSE3902_Game_Sprint0.Classes.Blocks
             this.game = game;
             this.spriteFactory = game.tileSpriteFactory;
             drawLocation = location;
+            tileState = new TileStateMachine(this);
         }
 
         public void update()
         {
+            tileState.Update();
             blockSprite.Update();
         }
 
