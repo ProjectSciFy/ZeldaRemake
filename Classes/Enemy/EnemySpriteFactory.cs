@@ -31,7 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //Keese methods
 
         //Stalfos methods
-        public void spawnStalfos(EnemyStalfos stalfos)
+        public void SpawnStalfos(EnemyStalfos stalfos)
         {
             stalfos.spriteSize.X = 16;
             stalfos.spriteSize.Y = 16;

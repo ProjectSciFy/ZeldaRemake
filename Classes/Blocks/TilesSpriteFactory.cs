@@ -33,34 +33,34 @@ namespace CSE3902_Game_Sprint0
             switch (newBlock)
             {
                 case 0:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 1:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 2:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1018, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1018, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 3:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 4:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 5:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 6:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1018, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1018, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 7:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 8:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 45, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 45, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 case 9:
-                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 45, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
+                    block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 45, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
                     break;
                 default:
                     break;
