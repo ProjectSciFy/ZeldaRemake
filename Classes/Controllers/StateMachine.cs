@@ -20,8 +20,10 @@ namespace CSE3902_Game_Sprint0.Classes
 
         //enum for item selected?
         //Starting condition should be bomb
-        public enum Item {sword, bomb, arrow, boomerang};
-        public Item itemSelected = Item.bomb;
+        public enum Item {none, sword, bomb, arrow, boomerang};
+        public Item itemSelected = Item.none;
+
+        private int timer = 0;
 
         // private Tool = bomb or something
 
@@ -48,46 +50,48 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Idle()
         {
             // construct nonanimated link facing up with sprite factory
-
-            switch (direction)
+            if (timer == 0)
             {
-                case Direction.right:
-                    if (currentState != CurrentState.idleRight)
-                    {
-                        currentState = CurrentState.idleRight;
-                        spriteFactory.IdleRight();
-                    }
-                    break;
+                switch (direction)
+                {
+                    case Direction.right:
+                        if (currentState != CurrentState.idleRight)
+                        {
+                            currentState = CurrentState.idleRight;
+                            spriteFactory.IdleRight();
+                        }
+                        break;
 
-                case Direction.up:
-                    if (currentState != CurrentState.idleUp)
-                    {
-                        currentState = CurrentState.idleUp;
-                        spriteFactory.IdleUp();
-                    }
-                    break;
+                    case Direction.up:
+                        if (currentState != CurrentState.idleUp)
+                        {
+                            currentState = CurrentState.idleUp;
+                            spriteFactory.IdleUp();
+                        }
+                        break;
 
-                case Direction.left:
-                    if (currentState != CurrentState.idleLeft)
-                    {
-                        currentState = CurrentState.idleLeft;
-                        spriteFactory.IdleLeft();
-                    }
-                    break;
+                    case Direction.left:
+                        if (currentState != CurrentState.idleLeft)
+                        {
+                            currentState = CurrentState.idleLeft;
+                            spriteFactory.IdleLeft();
+                        }
+                        break;
 
-                case Direction.down:
-                    if (currentState != CurrentState.idleDown)
-                    {
+                    case Direction.down:
+                        if (currentState != CurrentState.idleDown)
+                        {
+                            currentState = CurrentState.idleDown;
+                            spriteFactory.IdleDown();
+                        }
+                        break;
+
+                    default:
+                        // default is facing down (looking forward at us)
                         currentState = CurrentState.idleDown;
                         spriteFactory.IdleDown();
-                    }
-                    break;
-
-                default:
-                    // default is facing down (looking forward at us)
-                    currentState = CurrentState.idleDown;
-                    spriteFactory.IdleDown();
-                    break;
+                        break;
+                }
             }
         }
 
@@ -95,43 +99,45 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Moving()
         {
             // construct animated link facing up with sprite factory
-
-            switch (direction)
+            if (timer == 0)
             {
-                case Direction.right:
-                    if (currentState != CurrentState.movingRight)
-                    {
-                        currentState = CurrentState.movingRight;
-                        spriteFactory.MovingRight();
-                    }
-                    break;
+                switch (direction)
+                {
+                    case Direction.right:
+                        if (currentState != CurrentState.movingRight)
+                        {
+                            currentState = CurrentState.movingRight;
+                            spriteFactory.MovingRight();
+                        }
+                        break;
 
-                case Direction.up:
-                    if (currentState != CurrentState.movingUp)
-                    {
-                        currentState = CurrentState.movingUp;
-                        spriteFactory.MovingUp();
-                    }
-                    break;
+                    case Direction.up:
+                        if (currentState != CurrentState.movingUp)
+                        {
+                            currentState = CurrentState.movingUp;
+                            spriteFactory.MovingUp();
+                        }
+                        break;
 
-                case Direction.left:
-                    if (currentState != CurrentState.movingLeft)
-                    {
-                        currentState = CurrentState.movingLeft;
-                        spriteFactory.MovingLeft();
-                    }
-                    break;
+                    case Direction.left:
+                        if (currentState != CurrentState.movingLeft)
+                        {
+                            currentState = CurrentState.movingLeft;
+                            spriteFactory.MovingLeft();
+                        }
+                        break;
 
-                case Direction.down:
-                    if (currentState != CurrentState.movingDown)
-                    {
-                        currentState = CurrentState.movingDown;
-                        spriteFactory.MovingDown();
-                    }
-                    break;
+                    case Direction.down:
+                        if (currentState != CurrentState.movingDown)
+                        {
+                            currentState = CurrentState.movingDown;
+                            spriteFactory.MovingDown();
+                        }
+                        break;
 
-                default:
-                    break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -139,28 +145,32 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Sword()
         {
             // construct animated link facing up with sprite factory
-
-            switch (direction)
+            if (timer == 0)
             {
-                case Direction.right:
-                    spriteFactory.SwordRight();
-                    break;
+                timer = 8;
 
-                case Direction.up:
-                    spriteFactory.SwordUp();
-                    break;
+                switch (direction)
+                {
+                    case Direction.right:
+                        spriteFactory.SwordRight();
+                        break;
 
-                case Direction.left:
-                    spriteFactory.SwordLeft();
-                    break;
+                    case Direction.up:
+                        spriteFactory.SwordUp();
+                        break;
 
-                case Direction.down:
-                    spriteFactory.SwordDown();
-                    break;
+                    case Direction.left:
+                        spriteFactory.SwordLeft();
+                        break;
 
-                default:
-                    spriteFactory.SwordDown();
-                    break;
+                    case Direction.down:
+                        spriteFactory.SwordDown();
+                        break;
+
+                    default:
+                        spriteFactory.SwordDown();
+                        break;
+                }
             }
         }
 
@@ -168,28 +178,32 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Bomb()
         {
             // construct animated link facing up with sprite factory
-
-            switch (direction)
+            if (timer == 0)
             {
-                case Direction.right:
-                    spriteFactory.BombRight();
-                    break;
+                timer = 25;
 
-                case Direction.up:
-                    spriteFactory.BombUp();
-                    break;
+                switch (direction)
+                {
+                    case Direction.right:
+                        spriteFactory.BombRight();
+                        break;
 
-                case Direction.left:
-                    spriteFactory.BombLeft();
-                    break;
+                    case Direction.up:
+                        spriteFactory.BombUp();
+                        break;
 
-                case Direction.down:
-                    spriteFactory.BombDown();
-                    break;
+                    case Direction.left:
+                        spriteFactory.BombLeft();
+                        break;
 
-                default:
-                    spriteFactory.BombDown();
-                    break;
+                    case Direction.down:
+                        spriteFactory.BombDown();
+                        break;
+
+                    default:
+                        spriteFactory.BombDown();
+                        break;
+                }
             }
         }
 
@@ -197,28 +211,32 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Boomerang()
         {
             // construct animated link facing up with sprite factory
-
-            switch (direction)
+            if (timer == 0)
             {
-                case Direction.right:
-                    spriteFactory.BoomerangRight();
-                    break;
+                timer = 25;
 
-                case Direction.up:
-                    spriteFactory.BoomerangUp();
-                    break;
+                switch (direction)
+                {
+                    case Direction.right:
+                        spriteFactory.BoomerangRight();
+                        break;
 
-                case Direction.left:
-                    spriteFactory.BoomerangLeft();
-                    break;
+                    case Direction.up:
+                        spriteFactory.BoomerangUp();
+                        break;
 
-                case Direction.down:
-                    spriteFactory.BoomerangDown();
-                    break;
+                    case Direction.left:
+                        spriteFactory.BoomerangLeft();
+                        break;
 
-                default:
-                    spriteFactory.BoomerangDown();
-                    break;
+                    case Direction.down:
+                        spriteFactory.BoomerangDown();
+                        break;
+
+                    default:
+                        spriteFactory.BoomerangDown();
+                        break;
+                }
             }
         }
 
@@ -226,28 +244,31 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Arrow()
         {
             // construct animated link facing up with sprite factory
-
-            switch (direction)
+            if (timer == 0)
             {
-                case Direction.right:
-                    spriteFactory.ArrowRight();
-                    break;
+                timer = 25;
+                switch (direction)
+                {
+                    case Direction.right:
+                        spriteFactory.ArrowRight();
+                        break;
 
-                case Direction.up:
-                    spriteFactory.ArrowUp();
-                    break;
+                    case Direction.up:
+                        spriteFactory.ArrowUp();
+                        break;
 
-                case Direction.left:
-                    spriteFactory.ArrowLeft();
-                    break;
+                    case Direction.left:
+                        spriteFactory.ArrowLeft();
+                        break;
 
-                case Direction.down:
-                    spriteFactory.ArrowDown();
-                    break;
+                    case Direction.down:
+                        spriteFactory.ArrowDown();
+                        break;
 
-                default:
-                    spriteFactory.ArrowDown();
-                    break;
+                    default:
+                        spriteFactory.ArrowDown();
+                        break;
+                }
             }
         }
 
@@ -255,11 +276,17 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public void Update()
         {
+            if (timer > 0)
+            {
+                timer--;
+            }
+
             if (moving)
             {
                 if (useSword)
                 {
-                //can't be possible
+                    //can't be possible
+                    Sword();
                 }
                 else if (useTool)
                 {

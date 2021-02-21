@@ -13,8 +13,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
         bool moving = true;
-        private int timer = 0;
-        private enum CurrentState { idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
+        bool spawning = true;
+        private int timer = 90;
+        private enum CurrentState { idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, spawning};
         private CurrentState currentState = CurrentState.idleDown;
 
         public StalfosStateMachine(EnemyStalfos stalfos)
@@ -25,7 +26,20 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public void Spawning()
         {
+            if (timer > 0)
+            {
+                timer--;
+            }
+            else
+            {
+                spawning = false;
+            }
 
+            if (currentState != CurrentState.spawning)
+            {
+                currentState = CurrentState.spawning;
+                enemySpriteFactory.spawnStalfos(stalfos);
+            }
         }
 
         public void Idle()
@@ -83,7 +97,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public void Update()
         {
-            if (timer == 0)
+            if (timer == 0 && !spawning)
             {
                 var random = new Random();
                 timer = 60;
@@ -111,13 +125,20 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 timer--;
             }
 
-            if (moving)
+            if (spawning)
             {
-                Moving();
+                Spawning();
             }
             else
             {
-                Idle();
+                if (moving)
+                {
+                    Moving();
+                }
+                else
+                {
+                    Idle();
+                }
             }
         }
     }
