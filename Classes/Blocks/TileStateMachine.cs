@@ -10,6 +10,7 @@ namespace CSE3902_Game_Sprint0
 {
     public class TileStateMachine
     {
+        
         private Block block;
         private TilesSpriteFactory spriteFactory;
         public Texture2D tileSpriteSheet;
@@ -24,6 +25,7 @@ namespace CSE3902_Game_Sprint0
 
         public void Update()
         {
+            /*
             switch (currentBlock)
             {
                 case BlockType.Floor:
@@ -59,6 +61,8 @@ namespace CSE3902_Game_Sprint0
                 default:
                     break;
             }
+            */
         }
+        
     }
 }

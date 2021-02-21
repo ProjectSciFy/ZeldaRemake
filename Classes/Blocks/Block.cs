@@ -7,6 +7,7 @@ namespace CSE3902_Game_Sprint0.Classes.Blocks
 {
     public class Block : IBlock
     {
+        
         public EeveeSim game;
         public TileStateMachine tileState;
         public TilesSpriteFactory spriteFactory;
@@ -26,14 +27,18 @@ namespace CSE3902_Game_Sprint0.Classes.Blocks
 
         public void update()
         {
+            /*
             tileState.Update();
             blockSprite.Update();
+            */
         }
 
         public void draw()
         {
+            /*
             blockSprite.Draw(drawLocation);
+            */
         }
-
+        
     }
 }

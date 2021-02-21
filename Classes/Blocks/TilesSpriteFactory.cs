@@ -11,6 +11,7 @@ namespace CSE3902_Game_Sprint0
 {
     public class TilesSpriteFactory
     {
+        
         private EeveeSim game;
         private Block block;
         public Texture2D tileSpriteSheet;
@@ -26,6 +27,7 @@ namespace CSE3902_Game_Sprint0
         // [0]  [1]  [2]  [3]
         // [4]  [5]  [6]  [7]
         // [8]  [9]
+        /*
         public void Floor()
         {
             block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
@@ -66,5 +68,6 @@ namespace CSE3902_Game_Sprint0
         {
             block.blockSprite = new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 45, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
+        */
     }
 }
