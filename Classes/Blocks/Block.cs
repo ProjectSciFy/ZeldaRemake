@@ -24,7 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes.Blocks
 
         public void update()
         {
-            //empty for now -- no animation.
+            blockSprite.Update();
         }
 
         public void draw()
