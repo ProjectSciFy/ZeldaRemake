@@ -107,6 +107,7 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
             stalfos.Update();
+            block.update();
         }
 
         protected override void Draw(GameTime gameTime)
