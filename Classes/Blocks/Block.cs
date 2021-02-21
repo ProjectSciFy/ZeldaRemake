@@ -12,15 +12,14 @@ namespace CSE3902_Game_Sprint0.Classes.Blocks
         public Vector2 drawLocation;
         public ISprite blockSprite;
         public Vector2 velocity = new Vector2(0, 0);
-        // UPDATE SIZE
-        public Vector2 blockSize = new Vector2(5, 5);
+        public Vector2 blockSize = new Vector2(16, 16);
         
 
-        public Block(EeveeSim game, Vector2 drawHere)
+        public Block(EeveeSim game)
         {
             this.game = game;
             spriteFactory = game.tileSpriteFactory;
-            drawLocation = drawHere;
+            drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (4 * blockSize.X), (game.GraphicsDevice.Viewport.Bounds.Height / 2));
         }
 
         public void update()
