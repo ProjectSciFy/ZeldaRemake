@@ -13,6 +13,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public EeveeSim game;
         private StalfosStateMachine myState;
+        public EnemySpriteFactory enemySpriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
@@ -21,6 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public EnemyStalfos(EeveeSim game, Vector2 spawnLocation)
         {
             this.game = game;
+            this.enemySpriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
             myState = new StalfosStateMachine(this);
             Spawn();
