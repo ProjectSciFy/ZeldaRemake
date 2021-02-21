@@ -26,21 +26,37 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
                 case StateMachine.Item.sword:
                     linkState.itemSelected = StateMachine.Item.sword;
                     linkState.useSword = true;
+                    //make sure no other animations intervene:
+                    linkState.useBomb = false;
+                    linkState.useArrow = false;
+                    linkState.useBoomerang = false;
                     break;
 
                 case StateMachine.Item.bomb:
                     linkState.itemSelected = StateMachine.Item.bomb;
                     linkState.useBomb = true;
+                    //make sure no other animations intervene:
+                    linkState.useSword = false;
+                    linkState.useArrow = false;
+                    linkState.useBoomerang = false;
                     break;
 
                 case StateMachine.Item.arrow:
                     linkState.itemSelected = StateMachine.Item.arrow;
                     linkState.useArrow = true;
+                    //make sure no other animations intervene:
+                    linkState.useBomb = false;
+                    linkState.useSword= false;
+                    linkState.useBoomerang = false;
                     break;
 
                 case StateMachine.Item.boomerang:
                     linkState.itemSelected = StateMachine.Item.boomerang;
                     linkState.useBoomerang = true;
+                    //make sure no other animations intervene:
+                    linkState.useBomb = false;
+                    linkState.useArrow = false;
+                    linkState.useSword = false;
                     break;
             }
             
