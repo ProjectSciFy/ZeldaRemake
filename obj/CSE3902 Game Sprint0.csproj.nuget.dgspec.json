@@ -1,44 +1,25 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {}
+    "C:\\Users\\jaden\\Source\\Repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {}
   },
   "projects": {
-    "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {
+    "C:\\Users\\jaden\\Source\\Repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
+        "projectUniqueName": "C:\\Users\\jaden\\Source\\Repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
         "projectName": "CSE3902 Game Sprint0",
-        "projectPath": "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
-        "packagesPath": "C:\\Users\\Mark\\.nuget\\packages\\",
-        "outputPath": "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\obj\\",
-=======
-    "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
-        "projectName": "CSE3902 Game Sprint0",
-        "projectPath": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
-        "packagesPath": "C:\\Users\\Jared\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\obj\\",
->>>>>>> 17b35f94b982a160a83a65ef3b69dfe3c5a6dcba
+        "projectPath": "C:\\Users\\jaden\\Source\\Repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
+        "packagesPath": "C:\\Users\\jaden\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jaden\\Source\\Repos\\ZeldaRemake\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
-          "C:\\Users\\Mark\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jaden\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-          "C:\\Users\\Jared\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 17b35f94b982a160a83a65ef3b69dfe3c5a6dcba
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -90,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

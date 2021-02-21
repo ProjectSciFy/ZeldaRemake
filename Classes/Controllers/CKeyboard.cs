@@ -91,7 +91,7 @@ namespace CSE3902_Game_Sprint0
                 //If there is a keyBind for the currently pressed key && it is not in heldKeys set (as in, it has not already been executed), execute the associated command & add the key to heldKeys
                 if (keyBinds.ContainsKey(pressedKeys[i]) && !heldKeys.Contains(pressedKeys[i]))
                 {
-                   keyBinds[pressedKeys[i]].Execute();
+                    keyBinds[pressedKeys[i]].Execute();
                     heldKeys.Add(pressedKeys[i]);
 
                     //If any movement key is being pressed, add it to movementKeys & incrememt key priority of all entries by 1

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Credits.spritefont</SourceFile>
-  <SourceTime>2021-01-22T16:55:31.3477064-05:00</SourceTime>
-  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/Credits.xnb</DestFile>
-  <DestTime>2021-02-19T16:11:55.7027978-05:00</DestTime>
+  <SourceFile>C:/Users/jaden/source/repos/ZeldaRemake/Content/Credits.spritefont</SourceFile>
+  <SourceTime>2021-02-10T15:10:28.3155896-05:00</SourceTime>
+  <DestFile>C:/Users/jaden/source/repos/ZeldaRemake/Content/bin/Windows/Content/Credits.xnb</DestFile>
+  <DestTime>2021-02-21T14:00:27.3266005-05:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

@@ -13,6 +13,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         private Link link;
         private Texture2D linkTexture;
         private Rectangle spriteIndex;
+        public enum PickUpItems { boomerang, triforce };
 
         public LinkSpriteFactory(Link link)
         {
@@ -206,5 +207,6 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(230, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1));
         }
+
     }
 }

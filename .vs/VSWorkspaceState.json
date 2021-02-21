@@ -1,12 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Classes",
-    "\\Classes\\Controllers",
-    "\\Classes\\Scripts",
-    "\\Classes\\SpriteFactories",
-    "\\Interfaces"
+    ""
   ],
-  "SelectedNode": "\\Classes\\Scripts\\DrawSprite.cs",
   "PreviewInSolutionExplorer": false
 }

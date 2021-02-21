@@ -52,7 +52,7 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             enemySpriteFactory = new EnemySpriteFactory(this);
-            tileSpriteFactory = new TilesSpriteFactory(this);
+            //tileSpriteFactory = new TilesSpriteFactory(this); //think the constructor needs changed but I'll let Gal check since he did it.
         }
 
         protected override void LoadContent()
