@@ -160,7 +160,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(307, 153, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(5, 1), 5);
         }
 
-        //Boomerang:
+        //Boomerang: TO DO - change sprite index for boomerang animation
         public void BoomerangUp()
         {
             link.spriteSize.X = 16;

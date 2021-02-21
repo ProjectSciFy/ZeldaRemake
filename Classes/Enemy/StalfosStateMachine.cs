@@ -38,7 +38,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             if (currentState != CurrentState.spawning)
             {
                 currentState = CurrentState.spawning;
-                enemySpriteFactory.spawnStalfos(stalfos);
+                enemySpriteFactory.SpawnStalfos(stalfos);
             }
         }
 
