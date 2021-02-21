@@ -47,13 +47,16 @@ namespace CSE3902_Game_Sprint0
 
             //set StateMachine and Link to be used:
             link = new Link(this);
-            block = new Block(this);
             linkStateMachine = new StateMachine(link);
 
             
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
+
+            //Setting up block spritefactory
+            block = new Block(this, new Vector2(160, 200));
+            tileSpriteFactory = new TilesSpriteFactory(block);
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
@@ -62,7 +65,7 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             enemySpriteFactory = new EnemySpriteFactory(this);
-            tileSpriteFactory = new TilesSpriteFactory(block);
+            
         }
 
         protected override void LoadContent()
@@ -117,6 +120,7 @@ namespace CSE3902_Game_Sprint0
             eeveeSprite.Draw(new Vector2(0, 0));
             link.Draw();
             stalfos.draw();
+            block.draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
