@@ -3,6 +3,7 @@ using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Blocks;
 using CSE3902_Game_Sprint0.Classes.Controllers;
 using CSE3902_Game_Sprint0.Classes.Enemy;
+using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
@@ -31,6 +32,7 @@ namespace CSE3902_Game_Sprint0
         public Link link;
         public IEnemy stalfos;
         public IEnemy gel;
+        public IEnemy keese;
         public LinkStateMachine linkStateMachine;
         public Block block;
  
@@ -64,6 +66,7 @@ namespace CSE3902_Game_Sprint0
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
             gel = new EnemyGel(this, new Vector2(200, 100));
+            keese = new EnemyKeese(this, new Vector2(300, 100));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -112,6 +115,7 @@ namespace CSE3902_Game_Sprint0
             link.Update();
             stalfos.Update();
             gel.Update();
+            keese.Update();
             block.update();
         }
 
@@ -127,6 +131,7 @@ namespace CSE3902_Game_Sprint0
             link.Draw();
             stalfos.Draw();
             gel.Draw();
+            keese.Draw();
             block.draw();
 
             _spriteBatch.Begin();
