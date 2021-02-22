@@ -285,23 +285,24 @@ namespace CSE3902_Game_Sprint0.Classes
             }
 
             if (moving)
-            {
+            { 
+                //boolean weapon variables not in use yet because of problems: itemlink its self is calling the sword sprite
                 if (useSword)
                 {
                     //sword animation stops movement:
-                    Sword();
+                    //Sword();
                 }
                 else if (useBomb)
                 {
-                    Bomb();
+                    //Bomb();
                 }
                 else if (useArrow)
                 {
-                    Arrow();
+                    //Arrow();
                 }
                 else if (useBoomerang)
                 {
-                    Boomerang();
+                    //Boomerang();
                 }
                 else
                 {
@@ -312,19 +313,19 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 if (useSword)
                 {
-                    Sword();
+                    //Sword();
                 }
                 else if (useBomb)
                 {
-                    Bomb();
+                    //Bomb();
                 }
                 else if (useArrow)
                 {
-                    Arrow();
+                    //Arrow();
                 }
                 else if (useBoomerang)
                 {
-                    Boomerang();
+                    //Boomerang();
                 }
                 else
                 {

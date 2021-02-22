@@ -6,20 +6,49 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.BlockCommands
 {
     public class IncrementBlock : ICommand
     {
-        private TilesSpriteFactory blockFactory;
-        public IncrementBlock(TilesSpriteFactory blockFactory)
+        private TileStateMachine state;
+        private TileStateMachine.BlockType currentBlock;
+        public IncrementBlock(TileStateMachine state)
         {
-            this.blockFactory = blockFactory;
+            this.state = state;
+            this.currentBlock = state.currentBlock; //Save current block of state machine to decrement.
         }
         public void Execute()
         {
-            if (this.blockFactory.currentBlock < 9)
+            switch (this.currentBlock)
             {
-                this.blockFactory.changeBlock(this.blockFactory.currentBlock + 1);
-            }
-            else //last block in list, currentBlock == 9, cycle to first in list, index 0
-            {
-                this.blockFactory.changeBlock(0);
+                case TileStateMachine.BlockType.Floor:
+                    state.currentBlock = TileStateMachine.BlockType.Wall;
+                    break;
+                case TileStateMachine.BlockType.Wall:
+                    state.currentBlock = TileStateMachine.BlockType.Boss1Tile;
+                    break;
+                case TileStateMachine.BlockType.Boss1Tile:
+                    state.currentBlock = TileStateMachine.BlockType.Boss2Tile;
+                    break;
+                case TileStateMachine.BlockType.Boss2Tile:
+                    state.currentBlock = TileStateMachine.BlockType.Void;
+                    break;
+                case TileStateMachine.BlockType.Void:
+                    state.currentBlock = TileStateMachine.BlockType.Texture;
+                    break;
+                case TileStateMachine.BlockType.Texture:
+                    state.currentBlock = TileStateMachine.BlockType.Empty;
+                    break;
+                case TileStateMachine.BlockType.Empty:
+                    state.currentBlock = TileStateMachine.BlockType.Stairs;
+                    break;
+                case TileStateMachine.BlockType.Stairs:
+                    state.currentBlock = TileStateMachine.BlockType.Bricks;
+                    break;
+                case TileStateMachine.BlockType.Bricks:
+                    state.currentBlock = TileStateMachine.BlockType.DungeonWall;
+                    break;
+                case TileStateMachine.BlockType.DungeonWall:
+                    state.currentBlock = TileStateMachine.BlockType.Floor;
+                    break;
+                default:
+                    break;
             }
         }
     }
