@@ -24,23 +24,19 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
             switch (weaponSelected)
             {
                 case LinkStateMachine.Weapon.sword:
-                    linkState.weaponSelected = LinkStateMachine.Weapon.sword;
-                    linkState.Sword();
+                    linkState.useSword = true;
                     break;
 
                 case LinkStateMachine.Weapon.bomb:
-                    linkState.weaponSelected = LinkStateMachine.Weapon.bomb;
-                    linkState.Bomb();
+                    linkState.useBomb = true;
                     break;
 
                 case LinkStateMachine.Weapon.arrow:
-                    linkState.weaponSelected = LinkStateMachine.Weapon.arrow;
-                    linkState.Arrow();
+                    linkState.useArrow = true;
                     break;
 
                 case LinkStateMachine.Weapon.boomerang:
-                    linkState.weaponSelected = LinkStateMachine.Weapon.boomerang;
-                    linkState.Boomerang();
+                    linkState.useBoomerang = true;
                     break;
             }
         }
