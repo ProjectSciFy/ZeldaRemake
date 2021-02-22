@@ -29,6 +29,7 @@ namespace CSE3902_Game_Sprint0
         public TilesSpriteFactory tileSpriteFactory;
         public Link link;
         public IEnemy stalfos;
+        public IEnemy bladeTrap;
         public StateMachine linkStateMachine;
         public Block block;
  
@@ -58,6 +59,7 @@ namespace CSE3902_Game_Sprint0
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
+            bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(100, 100), link);
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -104,6 +106,7 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
             stalfos.Update();
+            bladeTrap.Update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -117,6 +120,7 @@ namespace CSE3902_Game_Sprint0
             eeveeSprite.Draw(new Vector2(0, 0));
             link.Draw();
             stalfos.draw();
+            bladeTrap.draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);

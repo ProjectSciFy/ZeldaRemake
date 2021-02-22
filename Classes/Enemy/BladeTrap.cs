@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
-    public class EnemyBladeTrap : IEnemy
+    public class BladeTrap : IEnemy
     {
         //When link walks parallel to one it attacks
         //waits on link
@@ -15,15 +15,18 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private BladeTrapStateMachine myState;
         public ISprite mySprite;
         public Vector2 drawLocation;
+        public Vector2 spawnLocation;
+        public Vector2 range;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
 
-        public EnemyBladeTrap(EeveeSim game, Vector2 spawnLocation)
+        public BladeTrap(EeveeSim game, Vector2 spawnLocation, Vector2 range, Link link)
         {
             this.game = game;
+            this.spawnLocation = spawnLocation;
+            this.range = range;
             drawLocation = spawnLocation;
-            myState = new BladeTrapStateMachine(this);
-            Spawn();
+            myState = new BladeTrapStateMachine(this, link);
         }
 
         public void Spawn()
