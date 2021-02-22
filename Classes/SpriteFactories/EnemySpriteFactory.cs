@@ -91,11 +91,67 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
         public void GoriyaMovingUp(EnemyGoriya goriya)
         {
-            stalfos.spriteSize.X = 16;
-            stalfos.spriteSize.Y = 16;
-            stalfos.velocity.X = 0;
-            stalfos.velocity.Y = -1;
-            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(22, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 1);
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = 0;
+            goriya.velocity.Y = -1;
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+        public void GoriyaMovingDown(EnemyGoriya goriya)
+        {
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = 0;
+            goriya.velocity.Y = 1;
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+        public void GoriyaMovingRight(EnemyGoriya goriya)
+        {
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = 1;
+            goriya.velocity.Y = 0;
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+        public void GoriyaMovingLeft(EnemyGoriya goriya)
+        {
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = -1;
+            goriya.velocity.Y = 0;
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10);
+        }
+        public void GoriyaIdleDown(EnemyGoriya goriya)
+        {
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = 0;
+            goriya.velocity.Y = 0;
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+        public void GoriyaIdleUp(EnemyGoriya goriya)
+        {
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = 0;
+            goriya.velocity.Y = 0;
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+        public void GoriyaIdleRight(EnemyGoriya goriya)
+        {
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = 0;
+            goriya.velocity.Y = 0;
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+        public void GoriyaIdleLeft(EnemyGoriya goriya)
+        {
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = 0;
+            goriya.velocity.Y = 0;
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10);
         }
 
         //Keese methods

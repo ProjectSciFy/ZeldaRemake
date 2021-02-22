@@ -26,9 +26,12 @@ namespace CSE3902_Game_Sprint0
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         public EnemySpriteFactory enemySpriteFactory;
         public Link link;
+        // test enemy draws
         public IEnemy stalfos;
         public IEnemy gel;
         public IEnemy bladeTrap;
+        public IEnemy goriya;
+
         public LinkStateMachine linkStateMachine;
         public TileStateMachine tileStateMachine;
         public Tile tile;
@@ -65,6 +68,7 @@ namespace CSE3902_Game_Sprint0
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
             gel = new EnemyGel(this, new Vector2(200, 100));
             bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(100, 100), link);
+            goriya = new EnemyGoriya(this, new Vector2(175, 175));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -114,6 +118,7 @@ namespace CSE3902_Game_Sprint0
             gel.Update();
             tile.Update();
             bladeTrap.Update();
+            goriya.Update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -130,6 +135,7 @@ namespace CSE3902_Game_Sprint0
             gel.Draw();
             tile.Draw();
             bladeTrap.Draw();
+            goriya.Draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);

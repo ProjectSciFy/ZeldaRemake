@@ -15,7 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         bool moving = true;
         bool spawning = true;
         private int timer = 90;
-        private enum CurrentState {none, idle, movingUp, movingDown, movingLeft, movingRight, spawning};
+        private enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning};
         private CurrentState currentState = CurrentState.none;
 
         public GoriyaStateMachine(EnemyGoriya goriya)
@@ -42,10 +42,42 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public void Idle()
         {
             // construct nonanimated link facing up with sprite factory
-            if (currentState != CurrentState.idle)
+            switch (direction)
             {
-                currentState = CurrentState.idle;
-                //enemySpriteFactory.GoriyaIdle(goriya);
+                case Direction.right:
+                    if (currentState != CurrentState.idleRight)
+                    {
+                        currentState = CurrentState.idleRight;
+                        enemySpriteFactory.GoriyaIdleRight(goriya);
+                    }
+                    break;
+
+                case Direction.up:
+                    if (currentState != CurrentState.idleUp)
+                    {
+                        currentState = CurrentState.idleUp;
+                        enemySpriteFactory.GoriyaIdleUp(goriya);
+                    }
+                    break;
+
+                case Direction.left:
+                    if (currentState != CurrentState.idleLeft)
+                    {
+                        currentState = CurrentState.idleLeft;
+                        enemySpriteFactory.GoriyaIdleLeft(goriya);
+                    }
+                    break;
+
+                case Direction.down:
+                    if (currentState != CurrentState.idleDown)
+                    {
+                        currentState = CurrentState.idleDown;
+                        enemySpriteFactory.GoriyaIdleDown(goriya);
+                    }
+                    break;
+
+                default:
+                    break;
             }
         }
 
@@ -57,7 +89,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingRight)
                     {
                         currentState = CurrentState.movingRight;
-                       // enemySpriteFactory.GoriyaMovingRight(goriya);
+                        enemySpriteFactory.GoriyaMovingRight(goriya);
                     }
                     break;
 
@@ -65,7 +97,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingUp)
                     {
                         currentState = CurrentState.movingUp;
-                       // enemySpriteFactory.GoriyaMovingUp(Goriya);
+                        enemySpriteFactory.GoriyaMovingUp(goriya);
                     }
                     break;
 
@@ -73,7 +105,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingLeft)
                     {
                         currentState = CurrentState.movingLeft;
-                      //  enemySpriteFactory.GoriyaMovingLeft(goriya);
+                        enemySpriteFactory.GoriyaMovingLeft(goriya);
                     }
                     break;
 
@@ -81,7 +113,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingDown)
                     {
                         currentState = CurrentState.movingDown;
-                       // enemySpriteFactory.GoriyaMovingDown(goriya);
+                        enemySpriteFactory.GoriyaMovingDown(goriya);
                     }
                     break;
 
