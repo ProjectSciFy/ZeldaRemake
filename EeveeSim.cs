@@ -31,7 +31,7 @@ namespace CSE3902_Game_Sprint0
         public Link link;
         public IEnemy stalfos;
         public IEnemy gel;
-        public StateMachine linkStateMachine;
+        public LinkStateMachine linkStateMachine;
         public Block block;
  
         public EeveeSim()
@@ -49,7 +49,7 @@ namespace CSE3902_Game_Sprint0
 
             //set StateMachine and Link to be used:
             link = new Link(this);
-            linkStateMachine = new StateMachine(link);
+            linkStateMachine = new LinkStateMachine(link);
 
             
 

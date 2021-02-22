@@ -6,9 +6,9 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
     public class IdleLink : ICommand
     {
-        private StateMachine linkState;
+        private LinkStateMachine linkState;
 
-        public IdleLink(StateMachine linkState)
+        public IdleLink(LinkStateMachine linkState)
         {
             this.linkState = linkState;
         }

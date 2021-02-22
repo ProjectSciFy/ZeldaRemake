@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes
 {
-    public class StateMachine
+    public class LinkStateMachine
     {
 
         // comment
@@ -35,7 +35,7 @@ namespace CSE3902_Game_Sprint0.Classes
         private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
         private CurrentState currentState = CurrentState.idleDown;
 
-        public StateMachine(Link link)
+        public LinkStateMachine(Link link)
         {
             game = link.game;
             this.link = link;

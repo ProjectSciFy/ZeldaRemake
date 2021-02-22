@@ -9,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes
     public class Link : IPlayer
     {
         public EeveeSim game;
-        private StateMachine linkState;
+        private LinkStateMachine linkState;
         public ISprite linkSprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
@@ -23,7 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes
             drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
         }
 
-        public void SetState(StateMachine empty)
+        public void SetState(LinkStateMachine empty)
         {
             linkState = empty;
         }

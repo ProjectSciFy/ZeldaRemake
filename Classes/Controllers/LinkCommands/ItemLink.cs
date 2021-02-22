@@ -6,11 +6,11 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
     public class ItemLink : ICommand
     {
-        private StateMachine linkState;
-        private StateMachine.Item itemSelected;
-        private StateMachine.Direction direction;
+        private LinkStateMachine linkState;
+        private LinkStateMachine.Item itemSelected;
+        private LinkStateMachine.Direction direction;
 
-        public ItemLink(StateMachine linkState, StateMachine.Item item, StateMachine.Direction direction)
+        public ItemLink(LinkStateMachine linkState, LinkStateMachine.Item item, LinkStateMachine.Direction direction)
         {
             this.linkState = linkState;
             this.itemSelected = item;
@@ -23,23 +23,23 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
             // need to update link's state so that corresponding animation is drawn.
             switch (itemSelected)
             {
-                case StateMachine.Item.sword:
-                    linkState.itemSelected = StateMachine.Item.sword;
+                case LinkStateMachine.Item.sword:
+                    linkState.itemSelected = LinkStateMachine.Item.sword;
                     linkState.Sword();
                     break;
 
-                case StateMachine.Item.bomb:
-                    linkState.itemSelected = StateMachine.Item.bomb;
+                case LinkStateMachine.Item.bomb:
+                    linkState.itemSelected = LinkStateMachine.Item.bomb;
                     linkState.Bomb();
                     break;
 
-                case StateMachine.Item.arrow:
-                    linkState.itemSelected = StateMachine.Item.arrow;
+                case LinkStateMachine.Item.arrow:
+                    linkState.itemSelected = LinkStateMachine.Item.arrow;
                     linkState.Arrow();
                     break;
 
-                case StateMachine.Item.boomerang:
-                    linkState.itemSelected = StateMachine.Item.boomerang;
+                case LinkStateMachine.Item.boomerang:
+                    linkState.itemSelected = LinkStateMachine.Item.boomerang;
                     linkState.Boomerang();
                     break;
             }

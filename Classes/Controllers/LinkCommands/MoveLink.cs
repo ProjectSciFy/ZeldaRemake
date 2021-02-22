@@ -8,10 +8,10 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
 {
     public class MoveLink : ICommand
     {
-        private StateMachine linkState;
-        private StateMachine.Direction direction;
+        private LinkStateMachine linkState;
+        private LinkStateMachine.Direction direction;
 
-        public MoveLink(StateMachine linkState, StateMachine.Direction direction)
+        public MoveLink(LinkStateMachine linkState, LinkStateMachine.Direction direction)
         {
             this.linkState = linkState;
             this.direction = direction;
@@ -23,20 +23,20 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
 
             switch (direction)
             {
-                case StateMachine.Direction.up:
-                    linkState.direction = StateMachine.Direction.up;
+                case LinkStateMachine.Direction.up:
+                    linkState.direction = LinkStateMachine.Direction.up;
                     break;
 
-                case StateMachine.Direction.down:
-                    linkState.direction = StateMachine.Direction.down;
+                case LinkStateMachine.Direction.down:
+                    linkState.direction = LinkStateMachine.Direction.down;
                     break;
 
-                case StateMachine.Direction.left:
-                    linkState.direction = StateMachine.Direction.left;
+                case LinkStateMachine.Direction.left:
+                    linkState.direction = LinkStateMachine.Direction.left;
                     break;
 
-                case StateMachine.Direction.right:
-                    linkState.direction = StateMachine.Direction.right;
+                case LinkStateMachine.Direction.right:
+                    linkState.direction = LinkStateMachine.Direction.right;
                     break;
 
                 default:
