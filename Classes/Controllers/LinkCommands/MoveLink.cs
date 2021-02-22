@@ -20,6 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         public void Execute()
         {
             linkState.moving = true;
+            
 
             switch (direction)
             {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Threading;
 namespace CSE3902_Game_Sprint0.Classes
 {
     public class LinkStateMachine
@@ -150,7 +150,7 @@ namespace CSE3902_Game_Sprint0.Classes
             // construct animated link facing up with sprite factory
             if (timer == 0)
             {
-                timer = 8;
+                timer = 60;
 
                 switch (direction)
                 {
@@ -183,7 +183,7 @@ namespace CSE3902_Game_Sprint0.Classes
             // construct animated link facing up with sprite factory
             if (timer == 0)
             {
-                timer = 25;
+                timer = 60;
 
                 switch (direction)
                 {
@@ -316,10 +316,9 @@ namespace CSE3902_Game_Sprint0.Classes
 
             if (moving)
             { 
-                //boolean weapon variables not in use yet because of problems: itemlink its self is calling the sword sprite
+                //boolean weapon variables not in use yet because of problems: WeaponLink its self is calling the sword sprite
                 if (useSword)
                 {
-                    //sword animation stops movement:
                     //Sword();
                 }
                 else if (useBomb)

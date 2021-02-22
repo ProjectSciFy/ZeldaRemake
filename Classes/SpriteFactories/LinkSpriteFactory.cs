@@ -96,7 +96,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 28;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 83, 16, 28), Color.White, SpriteEffects.None, new Vector2(1,4), 2);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 83, 16, 28), Color.White, SpriteEffects.None, new Vector2(1,4), 15);
         }
         public void SwordDown()
         {
@@ -104,7 +104,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 27;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 47, 16, 27), Color.White, SpriteEffects.None, new Vector2(1, 4), 2);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 47, 16, 27), Color.White, SpriteEffects.None, new Vector2(1, 4), 15);
         }
         public void SwordRight()
         {
@@ -112,7 +112,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 2);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 15);
         }
         public void SwordLeft()
         {
@@ -120,7 +120,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 2);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 15);
         }
 
         //Bomb:
