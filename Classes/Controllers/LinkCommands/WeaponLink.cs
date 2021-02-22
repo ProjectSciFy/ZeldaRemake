@@ -4,16 +4,16 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
-    public class ItemLink : ICommand
+    public class WeaponLink : ICommand
     {
         private LinkStateMachine linkState;
-        private LinkStateMachine.Item itemSelected;
+        private LinkStateMachine.Weapon weaponSelected;
         private LinkStateMachine.Direction direction;
 
-        public ItemLink(LinkStateMachine linkState, LinkStateMachine.Item item, LinkStateMachine.Direction direction)
+        public WeaponLink(LinkStateMachine linkState, LinkStateMachine.Weapon weapon, LinkStateMachine.Direction direction)
         {
             this.linkState = linkState;
-            this.itemSelected = item;
+            this.weaponSelected = weapon;
             this.direction = direction;
         }
 
@@ -21,25 +21,25 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
         { 
             linkState.moving = false;
             // need to update link's state so that corresponding animation is drawn.
-            switch (itemSelected)
+            switch (weaponSelected)
             {
-                case LinkStateMachine.Item.sword:
-                    linkState.itemSelected = LinkStateMachine.Item.sword;
+                case LinkStateMachine.Weapon.sword:
+                    linkState.weaponSelected = LinkStateMachine.Weapon.sword;
                     linkState.Sword();
                     break;
 
-                case LinkStateMachine.Item.bomb:
-                    linkState.itemSelected = LinkStateMachine.Item.bomb;
+                case LinkStateMachine.Weapon.bomb:
+                    linkState.weaponSelected = LinkStateMachine.Weapon.bomb;
                     linkState.Bomb();
                     break;
 
-                case LinkStateMachine.Item.arrow:
-                    linkState.itemSelected = LinkStateMachine.Item.arrow;
+                case LinkStateMachine.Weapon.arrow:
+                    linkState.weaponSelected = LinkStateMachine.Weapon.arrow;
                     linkState.Arrow();
                     break;
 
-                case LinkStateMachine.Item.boomerang:
-                    linkState.itemSelected = LinkStateMachine.Item.boomerang;
+                case LinkStateMachine.Weapon.boomerang:
+                    linkState.weaponSelected = LinkStateMachine.Weapon.boomerang;
                     linkState.Boomerang();
                     break;
             }

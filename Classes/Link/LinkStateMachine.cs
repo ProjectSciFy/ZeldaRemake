@@ -20,8 +20,8 @@ namespace CSE3902_Game_Sprint0.Classes
 
         //enum for item selected?
         //Starting condition should be bomb
-        public enum Item {none, sword, bomb, arrow, boomerang};
-        public Item itemSelected = Item.none;
+        public enum Weapon {none, sword, bomb, arrow, boomerang};
+        public Weapon weaponSelected = Weapon.none;
 
         private int timer = 0;
 
@@ -275,6 +275,36 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
+        public void Damaged()
+        {
+            // construct animated link facing up with sprite factory
+            if (timer == 0)
+            {
+                timer = 120;
+                switch (direction)
+                {
+                    case Direction.right:
+                        spriteFactory.DamageRight();
+                        break;
+
+                    case Direction.up:
+                        spriteFactory.DamageUp();
+                        break;
+
+                    case Direction.left:
+                        spriteFactory.DamageLeft();
+                        break;
+
+                    case Direction.down:
+                        spriteFactory.DamageDown();
+                        break;
+
+                    default:
+                        spriteFactory.DamageDown();
+                        break;
+                }
+            }
+        }
         //TODO setup more initial states we think we may need & method bodies for adjusting them when called by Link.cs
 
         public void Update()

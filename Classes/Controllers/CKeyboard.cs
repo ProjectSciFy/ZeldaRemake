@@ -49,13 +49,13 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.N, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
 
             //E -- test damage taken animation
-            keyBinds.Add(Keys.E, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
+            keyBinds.Add(Keys.E, new DamagedLink(linkState, linkState.direction));
 
             //1, 2, 3, 4 -- change between items animation
-            keyBinds.Add(Keys.D1, new ItemLink(linkState, LinkStateMachine.Item.sword, linkState.direction)); // sword item
-            keyBinds.Add(Keys.D2, new ItemLink(linkState, LinkStateMachine.Item.bomb, linkState.direction)); // bomb item 
-            keyBinds.Add(Keys.D3, new ItemLink(linkState, LinkStateMachine.Item.arrow, linkState.direction)); // bow & arrow item 
-            keyBinds.Add(Keys.D4, new ItemLink(linkState, LinkStateMachine.Item.boomerang, linkState.direction)); // boomerang item 
+            keyBinds.Add(Keys.D1, new WeaponLink(linkState, LinkStateMachine.Weapon.sword, linkState.direction)); // sword item
+            keyBinds.Add(Keys.D2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb, linkState.direction)); // bomb item 
+            keyBinds.Add(Keys.D3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow, linkState.direction)); // bow & arrow item 
+            keyBinds.Add(Keys.D4, new WeaponLink(linkState, LinkStateMachine.Weapon.boomerang, linkState.direction)); // boomerang item 
 
             //T and Y -- test block animation
             keyBinds.Add(Keys.T, new PreviousTile(game.tileStateMachine));
@@ -191,7 +191,7 @@ namespace CSE3902_Game_Sprint0
             {
                 int newMoveKeyCount = movementKeys.Count;
                 Keys currentMoveKey;
-                //WASD
+                //WASD & KEYS
                 if (movementKeys.ContainsKey(Keys.W) && movementKeys[Keys.W] == 1)
                 {
                     currentMoveKey = Keys.W;
@@ -204,12 +204,11 @@ namespace CSE3902_Game_Sprint0
                 {
                     currentMoveKey = Keys.S;
                 }
-                else
+                else if (movementKeys.ContainsKey(Keys.D) && movementKeys[Keys.D] == 1)
                 {
                     currentMoveKey = Keys.D;
                 } 
-                //ARROWS
-                if (movementKeys.ContainsKey(Keys.Up) && movementKeys[Keys.Up] == 1)
+                else if (movementKeys.ContainsKey(Keys.Up) && movementKeys[Keys.Up] == 1)
                 {
                     currentMoveKey = Keys.Up;
                 }
