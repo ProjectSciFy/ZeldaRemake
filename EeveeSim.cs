@@ -31,6 +31,7 @@ namespace CSE3902_Game_Sprint0
         public Link link;
         public IEnemy stalfos;
         public IEnemy gel;
+        public IEnemy bladeTrap;
         public LinkStateMachine linkStateMachine;
         public Block block;
  
@@ -64,6 +65,7 @@ namespace CSE3902_Game_Sprint0
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
             gel = new EnemyGel(this, new Vector2(200, 100));
+            bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(75, 75), link);
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -113,6 +115,7 @@ namespace CSE3902_Game_Sprint0
             stalfos.Update();
             gel.Update();
             block.update();
+            bladeTrap.Update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -128,6 +131,7 @@ namespace CSE3902_Game_Sprint0
             stalfos.Draw();
             gel.Draw();
             block.draw();
+            bladeTrap.Draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
