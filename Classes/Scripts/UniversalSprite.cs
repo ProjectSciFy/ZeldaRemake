@@ -19,8 +19,9 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         private Texture2D myTexture;
         private Color color;
         private SpriteEffects spriteEffects;
+        private int fpsLimiter;
 
-        public UniversalSprite(EeveeSim game, Texture2D texture, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid)
+        public UniversalSprite(EeveeSim game, Texture2D texture, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid, int fpsLimiter)
         {
             this.game = game;
             mySpriteBatch = new SpriteBatch(this.game.GraphicsDevice);
@@ -30,6 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
             this.color = color;
             this.spriteEffects = spriteEffects;
             this.frameGrid = frameGrid;
+            this.fpsLimiter = fpsLimiter;
             frameCount = (int)(frameGrid.X * frameGrid.Y);
             frame = 0;
             fpsBrakes = 0;
@@ -43,7 +45,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
 
             fpsBrakes++;
 
-            if (fpsBrakes >= 10)
+            if (fpsBrakes >= fpsLimiter)
             {
                 frame++;
                 fpsBrakes = 0;

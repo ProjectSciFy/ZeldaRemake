@@ -1,36 +1,27 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSE3902_Game_Sprint0.Classes._21._2._13
+namespace CSE3902_Game_Sprint0.Classes.Enemy
 {
-    public class EnemyStalfos : IEnemy
+    public class EnemyGel : IEnemy
     {
-        //When defeated, can drop a heart, rupee, 5rupee or a clock
-        //Pathing is random, no sense of direction
-        //Method of attack is melee, bumping into the player
-
         public EeveeSim game;
-        private StalfosStateMachine myState;
+        private GelStateMachine myState;
         public EnemySpriteFactory enemySpriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
 
-        public EnemyStalfos(EeveeSim game, Vector2 spawnLocation)
+        public EnemyGel(EeveeSim game, Vector2 spawnLocation)
         {
             this.game = game;
             this.enemySpriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
-            myState = new StalfosStateMachine(this);
-            Spawn();
-        }
-
-        public void Spawn()
-        {
-
+            myState = new GelStateMachine(this);
         }
 
         public void Update()
@@ -59,10 +50,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             {
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
-
         }
 
-        public void draw()
+        public void Draw()
         {
             mySprite.Draw(drawLocation);
         }

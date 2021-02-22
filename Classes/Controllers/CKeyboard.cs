@@ -13,7 +13,7 @@ namespace CSE3902_Game_Sprint0
 {
     public class CKeyboard : IController
     {
-        private StateMachine linkState;
+        private LinkStateMachine linkState;
         Dictionary<Keys, ICommand> keyBinds = new Dictionary<Keys, ICommand>();
         HashSet<Keys> heldKeys = new HashSet<Keys>();
         Dictionary<Keys, int> movementKeys = new Dictionary<Keys, int>();
@@ -29,19 +29,19 @@ namespace CSE3902_Game_Sprint0
             //Up and W -- change direction (switch case/state machine?) and movement
             // direction added as new parameter being sent to DrawSprite:
             keyBinds.Add(Keys.Up, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2)), new Vector2(0, 0), new Rectangle(21, 0, 21, 24), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.W, new MoveLink(linkState, StateMachine.Direction.up));
+            keyBinds.Add(Keys.W, new MoveLink(linkState, LinkStateMachine.Direction.up));
 
             //Left and A
             keyBinds.Add(Keys.Left, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.A, new MoveLink(linkState, StateMachine.Direction.left));
+            keyBinds.Add(Keys.A, new MoveLink(linkState, LinkStateMachine.Direction.left));
 
             //Down and S
             keyBinds.Add(Keys.Down, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.S, new MoveLink(linkState, StateMachine.Direction.down));
+            keyBinds.Add(Keys.S, new MoveLink(linkState, LinkStateMachine.Direction.down));
 
             //Right and D
             keyBinds.Add(Keys.Right, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.D, new MoveLink(linkState, StateMachine.Direction.right));
+            keyBinds.Add(Keys.D, new MoveLink(linkState, LinkStateMachine.Direction.right));
 
             //Z and N -- attack and animation
             keyBinds.Add(Keys.Z, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
@@ -51,14 +51,14 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.E, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
 
             //1, 2, 3, 4 -- change between items animation
-            keyBinds.Add(Keys.D1, new ItemLink(linkState, StateMachine.Item.sword, linkState.direction)); // sword item
-            keyBinds.Add(Keys.D2, new ItemLink(linkState, StateMachine.Item.bomb, linkState.direction)); // bomb item 
-            keyBinds.Add(Keys.D3, new ItemLink(linkState, StateMachine.Item.arrow, linkState.direction)); // bow & arrow item 
-            keyBinds.Add(Keys.D4, new ItemLink(linkState, StateMachine.Item.boomerang, linkState.direction)); // boomerang item 
+            keyBinds.Add(Keys.D1, new ItemLink(linkState, LinkStateMachine.Item.sword, linkState.direction)); // sword item
+            keyBinds.Add(Keys.D2, new ItemLink(linkState, LinkStateMachine.Item.bomb, linkState.direction)); // bomb item 
+            keyBinds.Add(Keys.D3, new ItemLink(linkState, LinkStateMachine.Item.arrow, linkState.direction)); // bow & arrow item 
+            keyBinds.Add(Keys.D4, new ItemLink(linkState, LinkStateMachine.Item.boomerang, linkState.direction)); // boomerang item 
 
             //T and Y -- test block animation
-            keyBinds.Add(Keys.T, new DecrementBlock(game.tileSpriteFactory));
-            keyBinds.Add(Keys.Y, new IncrementBlock(game.tileSpriteFactory));
+            //keyBinds.Add(Keys.T, new DecrementBlock(game.block.tileState));
+            //keyBinds.Add(Keys.Y, new IncrementBlock(game.block.tileState));
 
             //U and I -- cycle through items
             keyBinds.Add(Keys.U, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));

@@ -2,6 +2,7 @@
 using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Blocks;
 using CSE3902_Game_Sprint0.Classes.Controllers;
+using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
@@ -29,8 +30,8 @@ namespace CSE3902_Game_Sprint0
         public TilesSpriteFactory tileSpriteFactory;
         public Link link;
         public IEnemy stalfos;
-        public IEnemy bladeTrap;
-        public StateMachine linkStateMachine;
+        public IEnemy gel;
+        public LinkStateMachine linkStateMachine;
         public Block block;
  
         public EeveeSim()
@@ -48,23 +49,27 @@ namespace CSE3902_Game_Sprint0
 
             //set StateMachine and Link to be used:
             link = new Link(this);
-            block = new Block(this);
-            linkStateMachine = new StateMachine(link);
+            linkStateMachine = new LinkStateMachine(link);
 
             
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
 
+            //Setting up block spritefactory
+            tileSpriteFactory = new TilesSpriteFactory(this);
+            block = new Block(this, new Vector2(160, 200));
+
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
-            bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(100, 100), link);
+            gel = new EnemyGel(this, new Vector2(200, 100));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             enemySpriteFactory = new EnemySpriteFactory(this);
-            tileSpriteFactory = new TilesSpriteFactory(block);
+            tileSpriteFactory = new TilesSpriteFactory(this);
+
         }
 
         protected override void LoadContent()
@@ -106,7 +111,8 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
             stalfos.Update();
-            bladeTrap.Update();
+            gel.Update();
+            block.update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -119,8 +125,9 @@ namespace CSE3902_Game_Sprint0
 
             eeveeSprite.Draw(new Vector2(0, 0));
             link.Draw();
-            stalfos.draw();
-            bladeTrap.draw();
+            stalfos.Draw();
+            gel.Draw();
+            block.draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);

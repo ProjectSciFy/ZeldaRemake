@@ -13,9 +13,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
         bool moving = true;
-        private int timer = 0;
-        private enum CurrentState { idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
-        private CurrentState currentState = CurrentState.idleDown;
+        bool spawning = true;
+        private int timer = 90;
+        private enum CurrentState {none, idle, movingUp, movingDown, movingLeft, movingRight, spawning};
+        private CurrentState currentState = CurrentState.none;
 
         public StalfosStateMachine(EnemyStalfos stalfos)
         {
@@ -25,15 +26,25 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public void Spawning()
         {
+            if (currentState != CurrentState.spawning)
+            {
+                currentState = CurrentState.spawning;
+                enemySpriteFactory.SpawnStalfos(stalfos);
+            }
 
+            if (timer <= 0)
+            {
+                spawning = false;
+                currentState = CurrentState.none;
+            }
         }
 
         public void Idle()
         {
             // construct nonanimated link facing up with sprite factory
-            if (currentState != CurrentState.idleRight)
+            if (currentState != CurrentState.idle)
             {
-                currentState = CurrentState.idleRight;
+                currentState = CurrentState.idle;
                 enemySpriteFactory.StalfosIdle(stalfos);
             }
         }
@@ -83,27 +94,34 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public void Update()
         {
-            if (timer == 0)
+            if (!spawning)
             {
-                var random = new Random();
-                timer = 60;
-                switch (random.Next(4))
+                if (timer <= 0)
                 {
-                    case 0:
-                        direction = Direction.up;
-                        break;
-                    case 1:
-                        direction = Direction.down;
-                        break;
-                    case 2:
-                        direction = Direction.left;
-                        break;
-                    case 3:
-                        direction = Direction.right;
-                        break;
-                    default:
-                        direction = Direction.down;
-                        break;
+                    var random = new Random();
+                    timer = 60;
+                    switch (random.Next(4))
+                    {
+                        case 0:
+                            direction = Direction.up;
+                            break;
+                        case 1:
+                            direction = Direction.down;
+                            break;
+                        case 2:
+                            direction = Direction.left;
+                            break;
+                        case 3:
+                            direction = Direction.right;
+                            break;
+                        default:
+                            direction = Direction.down;
+                            break;
+                    }
+                }
+                else
+                {
+                    timer--;
                 }
             }
             else
@@ -111,13 +129,20 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 timer--;
             }
 
-            if (moving)
+            if (spawning)
             {
-                Moving();
+                Spawning();
             }
             else
             {
-                Idle();
+                if (moving)
+                {
+                    Moving();
+                }
+                else
+                {
+                    Idle();
+                }
             }
         }
     }
