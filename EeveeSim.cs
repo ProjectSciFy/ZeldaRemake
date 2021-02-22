@@ -1,11 +1,11 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
 using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Blocks;
 using CSE3902_Game_Sprint0.Classes.Controllers;
 using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -28,13 +28,16 @@ namespace CSE3902_Game_Sprint0
         private string creditsText = "Credits:\nProgram made by: Mark Maher (maher.159)\nSprites from: https://www.spriters-resource.com/ds_dsi/pokemonmysterydungeonexplorersofsky/sheet/131043/";
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         public EnemySpriteFactory enemySpriteFactory;
-        public TilesSpriteFactory tileSpriteFactory;
         public Link link;
+        // test enemy draws
         public IEnemy stalfos;
         public IEnemy gel;
         public IEnemy keese;
+        public IEnemy bladeTrap;
+        public IEnemy goriya;
         public LinkStateMachine linkStateMachine;
-        public Block block;
+        public TileStateMachine tileStateMachine;
+        public Tile tile;
  
         public EeveeSim()
         {
@@ -53,25 +56,27 @@ namespace CSE3902_Game_Sprint0
             link = new Link(this);
             linkStateMachine = new LinkStateMachine(link);
 
-            
-
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
 
             //Setting up block spritefactory
-            tileSpriteFactory = new TilesSpriteFactory(this);
-            block = new Block(this, new Vector2(160, 200));
+            tile = new Tile(this);
+            tileStateMachine = new TileStateMachine(tile);
+
+            //tile is created, maintains an instance of its StateMachine to be passed for commands:
+            tile.SetState(tileStateMachine);
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
             gel = new EnemyGel(this, new Vector2(200, 100));
             keese = new EnemyKeese(this, new Vector2(300, 100));
+            bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(100, 100), link);
+            goriya = new EnemyGoriya(this, new Vector2(175, 175));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             enemySpriteFactory = new EnemySpriteFactory(this);
-            tileSpriteFactory = new TilesSpriteFactory(this);
 
         }
 
@@ -116,7 +121,9 @@ namespace CSE3902_Game_Sprint0
             stalfos.Update();
             gel.Update();
             keese.Update();
-            block.update();
+            tile.Update();
+            bladeTrap.Update();
+            goriya.Update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -132,7 +139,8 @@ namespace CSE3902_Game_Sprint0
             stalfos.Draw();
             gel.Draw();
             keese.Draw();
-            block.draw();
+            tile.Draw();
+            bladeTrap.Draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
