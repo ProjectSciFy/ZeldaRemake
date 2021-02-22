@@ -74,6 +74,47 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
 
         //Blade trap methods
+        public void BladeTrapIdle(BladeTrap bladetrap)
+        {
+            bladetrap.spriteSize.X = 16;
+            bladetrap.spriteSize.Y = 16;
+            bladetrap.velocity.X = 0;
+            bladetrap.velocity.Y = 0;
+            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+        public void BladeTrapUp(BladeTrap bladetrap)
+        {
+            bladetrap.spriteSize.X = 16;
+            bladetrap.spriteSize.Y = 16;
+            bladetrap.velocity.X = 0;
+            bladetrap.velocity.Y = -1;
+            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+
+        public void BladeTrapDown(BladeTrap bladetrap)
+        {
+            bladetrap.spriteSize.X = 16;
+            bladetrap.spriteSize.Y = 16;
+            bladetrap.velocity.X = 0;
+            bladetrap.velocity.Y = 1;
+            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+        public void BladeTrapRight(BladeTrap bladetrap)
+        {
+            bladetrap.spriteSize.X = 16;
+            bladetrap.spriteSize.Y = 16;
+            bladetrap.velocity.X = 1;
+            bladetrap.velocity.Y = 0;
+            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+        public void BladeTrapLeft(BladeTrap bladetrap)
+        {
+            bladetrap.spriteSize.X = 16;
+            bladetrap.spriteSize.Y = 16;
+            bladetrap.velocity.X = -1;
+            bladetrap.velocity.Y = 0;
+            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
 
         //Gel methods
         public void SpawnGel(EnemyGel gel)
@@ -422,47 +463,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
-        public void BladeTrapIdle(BladeTrap bladetrap)
-        {
-            bladetrap.spriteSize.X = 16;
-            bladetrap.spriteSize.Y = 16;
-            bladetrap.velocity.X = 0;
-            bladetrap.velocity.Y = 0;
-            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
-        }
-        public void BladeTrapUp(BladeTrap bladetrap)
-        {
-            bladetrap.spriteSize.X = 16;
-            bladetrap.spriteSize.Y = 16;
-            bladetrap.velocity.X = 0;
-            bladetrap.velocity.Y = -1;
-            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
-        }
-
-        public void BladeTrapDown(BladeTrap bladetrap)
-        {
-            bladetrap.spriteSize.X = 16;
-            bladetrap.spriteSize.Y = 16;
-            bladetrap.velocity.X = 0;
-            bladetrap.velocity.Y = 1;
-            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
-        }
-        public void BladeTrapRight(BladeTrap bladetrap)
-        {
-            bladetrap.spriteSize.X = 16;
-            bladetrap.spriteSize.Y = 16;
-            bladetrap.velocity.X = 1;
-            bladetrap.velocity.Y = 0;
-            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
-        }
-        public void BladeTrapLeft(BladeTrap bladetrap)
-        {
-            bladetrap.spriteSize.X = 16;
-            bladetrap.spriteSize.Y = 16;
-            bladetrap.velocity.X = -1;
-            bladetrap.velocity.Y = 0;
-            bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
-        }
 
         //Wallmaster methods
 
