@@ -57,8 +57,8 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.D4, new ItemLink(linkState, LinkStateMachine.Item.boomerang, linkState.direction)); // boomerang item 
 
             //T and Y -- test block animation
-            //keyBinds.Add(Keys.T, new DecrementBlock(game.block.tileState));
-            //keyBinds.Add(Keys.Y, new IncrementBlock(game.block.tileState));
+            keyBinds.Add(Keys.T, new PreviousTile(game.tileStateMachine));
+            keyBinds.Add(Keys.Y, new NextTile(game.tileStateMachine));
 
             //U and I -- cycle through items
             keyBinds.Add(Keys.U, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
