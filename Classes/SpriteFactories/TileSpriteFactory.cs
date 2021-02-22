@@ -17,7 +17,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         public TileSpriteFactory(Tile tile)
         {
             this.game = tile.game;
-            game.spriteSheets.TryGetValue("DungeonEnemies", out tileSpriteSheet);
+            game.spriteSheets.TryGetValue("DungeonTileset", out tileSpriteSheet);
             this.tile = tile;
         }
 
