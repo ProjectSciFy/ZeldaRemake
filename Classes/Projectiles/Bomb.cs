@@ -18,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Vector2 drawLocation;
         public Vector2 spawnLocation;
         public Vector2 spriteSize = new Vector2(0, 0);
-        public int BombTimer = 
+        //public int BombTimer = 
         public enum Direction { right, up, left, down }; 
         public Direction direction = Direction.down;
 

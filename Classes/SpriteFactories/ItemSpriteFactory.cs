@@ -138,69 +138,69 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             item.itemSprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(232, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
-        public void BoomerangDown(Boomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 0;
-            boomerang.velocity.Y = 1;
-            boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangUp(Boomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 0;
-            boomerang.velocity.Y = -1;
-            boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangRight(Boomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 1;
-            boomerang.velocity.Y = 0;
-            boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangLeft(Boomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = -1;
-            boomerang.velocity.Y = 0;
-            boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangNE(Boomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 1;
-            boomerang.velocity.Y = -1;
-            boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangSE(Boomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 1;
-            boomerang.velocity.Y = 1;
-            boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangSW(Boomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = -1;
-            boomerang.velocity.Y = 1;
-            boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangNW(Boomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = -1;
-            boomerang.velocity.Y = -1;
-            boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
+        //public void BoomerangDown(Boomerang boomerang)
+        //{
+        //    boomerang.spriteSize.X = 16;
+        //    boomerang.spriteSize.Y = 16;
+        //    boomerang.velocity.X = 0;
+        //    boomerang.velocity.Y = 1;
+        //    boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        //}
+        //public void BoomerangUp(Boomerang boomerang)
+        //{
+        //    boomerang.spriteSize.X = 16;
+        //    boomerang.spriteSize.Y = 16;
+        //    boomerang.velocity.X = 0;
+        //    boomerang.velocity.Y = -1;
+        //    boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        //}
+        //public void BoomerangRight(Boomerang boomerang)
+        //{
+        //    boomerang.spriteSize.X = 16;
+        //    boomerang.spriteSize.Y = 16;
+        //    boomerang.velocity.X = 1;
+        //    boomerang.velocity.Y = 0;
+        //    boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        //}
+        //public void BoomerangLeft(Boomerang boomerang)
+        //{
+        //    boomerang.spriteSize.X = 16;
+        //    boomerang.spriteSize.Y = 16;
+        //    boomerang.velocity.X = -1;
+        //    boomerang.velocity.Y = 0;
+        //    boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        //}
+        //public void BoomerangNE(Boomerang boomerang)
+        //{
+        //    boomerang.spriteSize.X = 16;
+        //    boomerang.spriteSize.Y = 16;
+        //    boomerang.velocity.X = 1;
+        //    boomerang.velocity.Y = -1;
+        //    boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        //}
+        //public void BoomerangSE(Boomerang boomerang)
+        //{
+        //    boomerang.spriteSize.X = 16;
+        //    boomerang.spriteSize.Y = 16;
+        //    boomerang.velocity.X = 1;
+        //    boomerang.velocity.Y = 1;
+        //    boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        //}
+        //public void BoomerangSW(Boomerang boomerang)
+        //{
+        //    boomerang.spriteSize.X = 16;
+        //    boomerang.spriteSize.Y = 16;
+        //    boomerang.velocity.X = -1;
+        //    boomerang.velocity.Y = 1;
+        //    boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        //}
+        //public void BoomerangNW(Boomerang boomerang)
+        //{
+        //    boomerang.spriteSize.X = 16;
+        //    boomerang.spriteSize.Y = 16;
+        //    boomerang.velocity.X = -1;
+        //    boomerang.velocity.Y = -1;
+        //    boomerang.mySprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(179, 17, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        //}
     }
 }

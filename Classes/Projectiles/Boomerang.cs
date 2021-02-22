@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Scripts;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
@@ -15,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public LinkStateMachine linkState = null;
         public EnemyGoriya goriya = null;
         public GoriyaStateMachine goriyaState = null;
-        public ItemSpriteFactory spriteFactory;
+        public EnemySpriteFactory spriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 spawnLocation;
@@ -33,6 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         {
             this.game = game;
             this.link = link;
+            this.spriteFactory = game.enemySpriteFactory;
             this.drawLocation = link.drawLocation;
             this.spawnLocation = link.drawLocation;
             this.linkState = linkState;
@@ -43,6 +45,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         {
             this.game = game;
             this.goriya = goriya;
+            this.spriteFactory = game.enemySpriteFactory;
             this.drawLocation = goriya.drawLocation;
             this.spawnLocation = goriya.drawLocation;
             this.goriyaState = goriyaState;
@@ -107,6 +110,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 
         public void Update()
         {
+            if (newItem)
+            {
+                spriteFactory.BoomerangDown(this);
+            }
             mySprite.Update();
             if (linkState == null)
             {

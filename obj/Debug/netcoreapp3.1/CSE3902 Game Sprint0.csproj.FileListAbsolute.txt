@@ -97,7 +97,6 @@ C:\Users\Jared\source\repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Spr
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.AssemblyInfoInputs.cache
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.AssemblyInfo.cs
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CoreCompileInputs.cache
-C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csprojAssemblyReference.cache
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Credits.xnb
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.xnb
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.xnb
