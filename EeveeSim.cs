@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using CSE3902_Game_Sprint0.Classes.Items;
+using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -36,6 +37,7 @@ namespace CSE3902_Game_Sprint0
         public IEnemy keese;
         public IEnemy bladeTrap;
         public IEnemy goriya;
+        public IEnemy aquamentus;
         public LinkStateMachine linkStateMachine;
         public TileStateMachine tileStateMachine;
         public ItemStateMachine itemStateMachine;
@@ -80,9 +82,10 @@ namespace CSE3902_Game_Sprint0
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
             gel = new EnemyGel(this, new Vector2(200, 100));
-            keese = new EnemyKeese(this, new Vector2(300, 100));
+            keese = new EnemyKeese(this, new Vector2(350, 100));
             bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(100, 100), link);
             goriya = new EnemyGoriya(this, new Vector2(175, 175));
+            aquamentus = new EnemyAquamentus(this, new Vector2(400, 100));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -134,6 +137,7 @@ namespace CSE3902_Game_Sprint0
             tile.Update();
             bladeTrap.Update();
             goriya.Update();
+            aquamentus.Update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -152,6 +156,7 @@ namespace CSE3902_Game_Sprint0
             tile.Draw();
             bladeTrap.Draw();
             goriya.Draw();
+            aquamentus.Draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);

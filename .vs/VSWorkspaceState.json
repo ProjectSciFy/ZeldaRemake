@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Classes",
-    "\\Classes\\Enemy",
-    "\\Classes\\Enemy\\BladeTrap"
+    ""
   ],
-  "SelectedNode": "\\Classes\\Enemy\\BladeTrap\\BladeTrapStateMachine.cs",
+  "SelectedNode": "\\CSE3902 Game Sprint0.sln",
   "PreviewInSolutionExplorer": false
 }
