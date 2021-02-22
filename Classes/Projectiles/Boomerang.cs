@@ -139,6 +139,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             {
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
+
             // Logic for trajectory
             if ((Math.Abs(drawLocation.X - spawnLocation.X) < RANGE && newItem == true) || (Math.Abs(drawLocation.Y - spawnLocation.Y) < RANGE && newItem == true))
             {
@@ -191,6 +192,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                     }
                 }
                 Inward();
+            }
+            else
+            {
+                //despawn boomerang somehow
             }
         }
         public void Draw()
