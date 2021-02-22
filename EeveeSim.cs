@@ -55,6 +55,7 @@ namespace CSE3902_Game_Sprint0
             
             base.Initialize();
 
+            /* LINK */
             //set StateMachine and Link to be used:
             link = new Link(this);
             linkStateMachine = new LinkStateMachine(link);
@@ -62,10 +63,15 @@ namespace CSE3902_Game_Sprint0
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
 
+            /* TILE */
             //Setting up block state machine
             tile = new Tile(this);
             tileStateMachine = new TileStateMachine(tile);
 
+            //tile is created, maintains an instance of its StateMachine to be passed for commands:
+            tile.SetState(tileStateMachine);
+
+            /* ITEM */
             //Setting up item state machine
             item = new Item(this);
             itemStateMachine = new ItemStateMachine(item);
@@ -73,8 +79,6 @@ namespace CSE3902_Game_Sprint0
             //item is created, maintains an instance of its StateMachine to be passed for commands:
             item.SetState(itemStateMachine);
 
-            //tile is created, maintains an instance of its StateMachine to be passed for commands:
-            tile.SetState(tileStateMachine);
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
@@ -128,10 +132,14 @@ namespace CSE3902_Game_Sprint0
             eeveeSprite.Update();
 
             link.Update();
+
+            tile.Update();
+
+            item.Update();
+
             stalfos.Update();
             gel.Update();
             keese.Update();
-            tile.Update();
             bladeTrap.Update();
             goriya.Update();
         }
@@ -145,11 +153,16 @@ namespace CSE3902_Game_Sprint0
             base.Draw(gameTime);
 
             eeveeSprite.Draw(new Vector2(0, 0));
+
             link.Draw();
+
+            tile.Draw();
+
+            item.Draw();
+
             stalfos.Draw();
             gel.Draw();
             keese.Draw();
-            tile.Draw();
             bladeTrap.Draw();
             goriya.Draw();
 

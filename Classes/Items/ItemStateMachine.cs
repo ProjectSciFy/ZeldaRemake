@@ -11,7 +11,6 @@ namespace CSE3902_Game_Sprint0.Classes.Items
         private Item item;
         private ItemSpriteFactory spriteFactory;
 
-        private int timer = 0;
         public enum ItemType { Boomerang, Bomb, Bow, Arrow, Key, Compass, Shard, Heart, HeartContainer, Clock, Food, YellowRupee, RedPotion, Map, BlueRupee, SecondPotion, Letter, Sword, Shield, RedCandle, BlueCandle, RedRing, BlueRing, Bracelet, Flute, Raft, Stepladder, Rod, Book };
         public ItemType currentState = ItemType.Heart;
 

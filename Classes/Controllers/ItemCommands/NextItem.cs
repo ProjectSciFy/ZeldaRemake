@@ -17,101 +17,129 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.ItemCommands
         }
 
         public void Execute()
-        {
-            /*
-            switch (currentItem)
+        { 
+            this.currentItem = itemStateMachine.currentState;
+            switch (this.currentItem)
             {
-                case ItemType.Boomerang:
-                    spriteFactory.Boomerang();
+                case ItemStateMachine.ItemType.Boomerang:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Bomb;
+                    this.currentItem = ItemStateMachine.ItemType.Bomb;
                     break;
-                case ItemType.Bomb:
-                    spriteFactory.Bomb();
+                case ItemStateMachine.ItemType.Bomb:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Bow;
+                    this.currentItem = ItemStateMachine.ItemType.Bow;
                     break;
-                case ItemType.Bow:
-                    spriteFactory.Bow();
+                case ItemStateMachine.ItemType.Bow:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Arrow;
+                    this.currentItem = ItemStateMachine.ItemType.Arrow;
                     break;
-                case ItemType.Arrow:
-                    spriteFactory.Arrow();
+                case ItemStateMachine.ItemType.Arrow:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Key;
+                    this.currentItem = ItemStateMachine.ItemType.Key;
                     break;
-                case ItemType.Key:
-                    spriteFactory.Key();
+                case ItemStateMachine.ItemType.Key:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Compass;
+                    this.currentItem = ItemStateMachine.ItemType.Compass;
                     break;
-                case ItemType.Compass:
-                    spriteFactory.Compass();
+                case ItemStateMachine.ItemType.Compass:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Shard;
+                    this.currentItem = ItemStateMachine.ItemType.Shard;
                     break;
-                case ItemType.Shard:
-                    spriteFactory.Shard();
+                case ItemStateMachine.ItemType.Shard:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Heart;
+                    this.currentItem = ItemStateMachine.ItemType.Heart;
                     break;
-                case ItemType.Heart:
-                    spriteFactory.Heart();
+                case ItemStateMachine.ItemType.Heart:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.HeartContainer;
+                    this.currentItem = ItemStateMachine.ItemType.HeartContainer;
                     break;
-                case ItemType.HeartContainer:
-                    spriteFactory.HeartContainer();
+                case ItemStateMachine.ItemType.HeartContainer:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Clock;
+                    this.currentItem = ItemStateMachine.ItemType.Clock;
                     break;
-                case ItemType.Clock:
-                    spriteFactory.Clock();
+                case ItemStateMachine.ItemType.Clock:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Food;
+                    this.currentItem = ItemStateMachine.ItemType.Food;
                     break;
-                case ItemType.Food:
-                    spriteFactory.Food();
+                case ItemStateMachine.ItemType.Food:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.YellowRupee;
+                    this.currentItem = ItemStateMachine.ItemType.YellowRupee;
                     break;
-                case ItemType.YellowRupee:
-                    spriteFactory.YellowRupee();
+                case ItemStateMachine.ItemType.YellowRupee:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.RedPotion;
+                    this.currentItem = ItemStateMachine.ItemType.RedPotion;
                     break;
-                case ItemType.RedPotion:
-                    spriteFactory.RedPotion();
+                case ItemStateMachine.ItemType.RedPotion:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Map;
+                    this.currentItem = ItemStateMachine.ItemType.Map;
                     break;
-                case ItemType.Map:
-                    spriteFactory.Map();
+                case ItemStateMachine.ItemType.Map:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.BlueRupee;
+                    this.currentItem = ItemStateMachine.ItemType.BlueRupee;
                     break;
-                case ItemType.BlueRupee:
-                    spriteFactory.BlueRupee();
+                case ItemStateMachine.ItemType.BlueRupee:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.SecondPotion;
+                    this.currentItem = ItemStateMachine.ItemType.SecondPotion;
                     break;
-                case ItemType.SecondPotion:
-                    spriteFactory.SecondPotion();
+                case ItemStateMachine.ItemType.SecondPotion:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Letter;
+                    this.currentItem = ItemStateMachine.ItemType.Letter;
                     break;
-                case ItemType.Letter:
-                    spriteFactory.Letter();
+                case ItemStateMachine.ItemType.Letter:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Sword;
+                    this.currentItem = ItemStateMachine.ItemType.Sword;
                     break;
-                case ItemType.Sword:
-                    spriteFactory.Sword();
+                case ItemStateMachine.ItemType.Sword:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Shield;
+                    this.currentItem = ItemStateMachine.ItemType.Shield;
                     break;
-                case ItemType.Shield:
-                    spriteFactory.Shield();
+                case ItemStateMachine.ItemType.Shield:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.RedCandle;
+                    this.currentItem = ItemStateMachine.ItemType.RedCandle;
                     break;
-                case ItemType.RedCandle:
-                    spriteFactory.RedCandle();
+                case ItemStateMachine.ItemType.RedCandle:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.BlueCandle;
+                    this.currentItem = ItemStateMachine.ItemType.BlueCandle;
                     break;
-                case ItemType.BlueCandle:
-                    spriteFactory.BlueCandle();
+                case ItemStateMachine.ItemType.BlueCandle:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.RedRing;
+                    this.currentItem = ItemStateMachine.ItemType.RedRing;
                     break;
-                case ItemType.RedRing:
-                    spriteFactory.RedRing();
+                case ItemStateMachine.ItemType.RedRing:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.BlueRing;
+                    this.currentItem = ItemStateMachine.ItemType.BlueRing;
                     break;
-                case ItemType.BlueRing:
-                    spriteFactory.BlueRing();
+                case ItemStateMachine.ItemType.BlueRing:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Bracelet;
+                    this.currentItem = ItemStateMachine.ItemType.Bracelet;
                     break;
-                case ItemType.Bracelet:
-                    spriteFactory.Bracelet();
+                case ItemStateMachine.ItemType.Bracelet:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Flute;
+                    this.currentItem = ItemStateMachine.ItemType.Flute;
                     break;
-                case ItemType.Flute:
-                    spriteFactory.Flute();
+                case ItemStateMachine.ItemType.Flute:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Raft;
+                    this.currentItem = ItemStateMachine.ItemType.Raft;
                     break;
-                case ItemType.Raft:
-                    spriteFactory.Raft();
+                case ItemStateMachine.ItemType.Raft:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Stepladder;
+                    this.currentItem = ItemStateMachine.ItemType.Stepladder;
                     break;
-                case ItemType.Stepladder:
-                    spriteFactory.Stepladder();
+                case ItemStateMachine.ItemType.Stepladder:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Rod;
+                    this.currentItem = ItemStateMachine.ItemType.Rod;
                     break;
-                case ItemType.Rod:
-                    spriteFactory.Rod();
+                case ItemStateMachine.ItemType.Rod:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Book;
+                    this.currentItem = ItemStateMachine.ItemType.Book;
                     break;
-                case ItemType.Book:
-                    spriteFactory.Book();
+                case ItemStateMachine.ItemType.Book:
+                    itemStateMachine.currentState = ItemStateMachine.ItemType.Boomerang;
+                    this.currentItem = ItemStateMachine.ItemType.Boomerang;
                     break;
                 default:
                     break;
             }
-            */
         }
     }
 }
