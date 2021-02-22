@@ -1,6 +1,7 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
+using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -465,6 +466,48 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
 
         //Wallmaster methods
+        public void WallmasterIdle(EnemyWallmaster wallmaster)
+        {
+            wallmaster.spriteSize.X = 16;
+            wallmaster.spriteSize.Y = 16;
+            wallmaster.velocity.X = 0;
+            wallmaster.velocity.Y = 0;
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+        public void WallmasterMovingUp(EnemyWallmaster wallmaster)
+        {
+            wallmaster.spriteSize.X = 16;
+            wallmaster.spriteSize.Y = 16;
+            wallmaster.velocity.X = 0;
+            wallmaster.velocity.Y = -1;
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
 
+        public void WallmasterMovingRight(EnemyWallmaster wallmaster)
+        {
+            wallmaster.spriteSize.X = 16;
+            wallmaster.spriteSize.Y = 16;
+            wallmaster.velocity.X = 1;
+            wallmaster.velocity.Y = 0;
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void WallmasterMovingDown(EnemyWallmaster wallmaster)
+        {
+            wallmaster.spriteSize.X = 16;
+            wallmaster.spriteSize.Y = 16;
+            wallmaster.velocity.X = 0;
+            wallmaster.velocity.Y = 1;
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void WallmasterMovingLeft(EnemyWallmaster wallmaster)
+        {
+            wallmaster.spriteSize.X = 16;
+            wallmaster.spriteSize.Y = 16;
+            wallmaster.velocity.X = -1;
+            wallmaster.velocity.Y = 0;
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
     }
 }
