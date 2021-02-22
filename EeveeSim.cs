@@ -31,6 +31,7 @@ namespace CSE3902_Game_Sprint0
         private string creditsText = "Credits:\nProgram made by: Mark Maher (maher.159)\nSprites from: https://www.spriters-resource.com/ds_dsi/pokemonmysterydungeonexplorersofsky/sheet/131043/";
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         public EnemySpriteFactory enemySpriteFactory;
+        public ItemSpriteFactory itemSpriteFactory;
         public Link link;
         // test enemy draws
         public IEnemy stalfos;

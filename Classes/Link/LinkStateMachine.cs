@@ -28,7 +28,9 @@ namespace CSE3902_Game_Sprint0.Classes
         // private Tool = bomb or something
 
         public bool useSword = false;
+        int swordcount = 0;
         public bool useBomb = false;
+        int bombcount = 0;
         public bool useArrow = false;
         public bool useBoomerang = false;
 
@@ -52,6 +54,8 @@ namespace CSE3902_Game_Sprint0.Classes
         //Sets link to an idle state based on the value of direction var
         public void Idle()
         {
+            useSword = false;
+            useBomb = false;
             // construct nonanimated link facing up with sprite factory
             if (timer == 0)
             {
@@ -101,6 +105,8 @@ namespace CSE3902_Game_Sprint0.Classes
         //Sets link to a moving state based on the value of direction var
         public void Moving()
         {
+            useSword = false;
+            useBomb = false;
             // construct animated link facing up with sprite factory
             if (timer == 0)
             {
@@ -319,11 +325,11 @@ namespace CSE3902_Game_Sprint0.Classes
                 //boolean weapon variables not in use yet because of problems: WeaponLink its self is calling the sword sprite
                 if (useSword)
                 {
-                    //Sword();
+                    Sword();  
                 }
                 else if (useBomb)
                 {
-                    //Bomb();
+                    Bomb();
                 }
                 else if (useArrow)
                 {
@@ -342,19 +348,31 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 if (useSword)
                 {
-                    this.Sword();
+                    swordcount++;
+                    Sword();
+                    if (swordcount > 60)
+                    {
+                        useSword = false;
+                        swordcount = 0;
+                    }
                 }
                 else if (useBomb)
                 {
-                    //Bomb();
+                    bombcount++;
+                    Bomb();
+                    if (bombcount > 60)
+                    {
+                        useBomb = false;
+                        bombcount = 0;
+                    }
                 }
                 else if (useArrow)
                 {
-                    //Arrow();
+                    //shootin arrow animation //Arrow();
                 }
                 else if (useBoomerang)
                 {
-                    //Boomerang();
+                    //throwing boomerang animation //Boomerang();
                 }
                 else
                 {

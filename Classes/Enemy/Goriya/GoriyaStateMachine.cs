@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Interfaces;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,12 +13,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
-        bool moving = true;
-        bool spawning = true;
+        public bool moving = true;
+        public bool spawning = true;
         private int timer = 90;
         private enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning};
         private CurrentState currentState = CurrentState.none;
-
         public GoriyaStateMachine(EnemyGoriya goriya)
         {
             this.goriya = goriya;
@@ -150,6 +150,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                             direction = Direction.down;
                             break;
                     }
+                    moving = !moving;
                 }
                 else
                 {

@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.Scripts;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -130,7 +131,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(341, 153, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 5);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(342, 153, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 5);
         }
 
         public void BombDown()
