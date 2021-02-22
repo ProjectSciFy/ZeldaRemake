@@ -16,6 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
         public void Execute()
         {
             linkState.moving = false;
+           
         }
     }
 }
