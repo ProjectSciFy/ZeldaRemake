@@ -190,7 +190,7 @@ namespace CSE3902_Game_Sprint0
             {
                 int newMoveKeyCount = movementKeys.Count;
                 Keys currentMoveKey;
-                //WASD
+                //WASD & KEYS
                 if (movementKeys.ContainsKey(Keys.W) && movementKeys[Keys.W] == 1)
                 {
                     currentMoveKey = Keys.W;
@@ -203,12 +203,11 @@ namespace CSE3902_Game_Sprint0
                 {
                     currentMoveKey = Keys.S;
                 }
-                else
+                else if (movementKeys.ContainsKey(Keys.D) && movementKeys[Keys.D] == 1)
                 {
                     currentMoveKey = Keys.D;
                 } 
-                //ARROWS
-                if (movementKeys.ContainsKey(Keys.Up) && movementKeys[Keys.Up] == 1)
+                else if (movementKeys.ContainsKey(Keys.Up) && movementKeys[Keys.Up] == 1)
                 {
                     currentMoveKey = Keys.Up;
                 }

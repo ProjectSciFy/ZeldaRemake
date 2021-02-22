@@ -334,7 +334,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             stalfos.spriteSize.Y = 16;
             stalfos.velocity.X = 0;
             stalfos.velocity.Y = -1;
-            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 1);
+            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
         public void StalfosMovingDown(EnemyStalfos stalfos)

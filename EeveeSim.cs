@@ -141,6 +141,7 @@ namespace CSE3902_Game_Sprint0
             keese.Draw();
             tile.Draw();
             bladeTrap.Draw();
+            goriya.Draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
