@@ -81,6 +81,22 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
 
         //Goriya methods
+        public void SpawnGoriya(EnemyGoriya goriya)
+        {
+            goriya.spriteSize.X = 16;
+            goriya.spriteSize.Y = 16;
+            goriya.velocity.X = 0;
+            goriya.velocity.Y = 0;
+            goriya.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30);
+        }
+        public void GoriyaMovingUp(EnemyGoriya goriya)
+        {
+            stalfos.spriteSize.X = 16;
+            stalfos.spriteSize.Y = 16;
+            stalfos.velocity.X = 0;
+            stalfos.velocity.Y = -1;
+            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(22, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 1);
+        }
 
         //Keese methods
 
@@ -152,7 +168,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             bladetrap.spriteSize.X = 16;
             bladetrap.spriteSize.Y = 16;
             bladetrap.velocity.X = 0;
-            bladetrap.velocity.Y = -2;
+            bladetrap.velocity.Y = -1;
             bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
 
@@ -161,14 +177,14 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             bladetrap.spriteSize.X = 16;
             bladetrap.spriteSize.Y = 16;
             bladetrap.velocity.X = 0;
-            bladetrap.velocity.Y = 2;
+            bladetrap.velocity.Y = 1;
             bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
         public void BladeTrapRight(BladeTrap bladetrap)
         {
             bladetrap.spriteSize.X = 16;
             bladetrap.spriteSize.Y = 16;
-            bladetrap.velocity.X = 2;
+            bladetrap.velocity.X = 1;
             bladetrap.velocity.Y = 0;
             bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
@@ -176,7 +192,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             bladetrap.spriteSize.X = 16;
             bladetrap.spriteSize.Y = 16;
-            bladetrap.velocity.X = -2;
+            bladetrap.velocity.X = -1;
             bladetrap.velocity.Y = 0;
             bladetrap.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }

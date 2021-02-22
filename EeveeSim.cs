@@ -64,7 +64,7 @@ namespace CSE3902_Game_Sprint0
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
             gel = new EnemyGel(this, new Vector2(200, 100));
-            bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(75, 75), link);
+            bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(100, 100), link);
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));

@@ -94,9 +94,13 @@ C:\Users\Jared\source\repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Spr
 C:\Users\Jared\source\repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
 C:\Users\Jared\source\repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
 C:\Users\Jared\source\repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.genruntimeconfig.cache
-C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.AssemblyInfoInputs.cache
-C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.AssemblyInfo.cs
-C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CoreCompileInputs.cache
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.exe
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.dll
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Direct3D11.dll
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.DXGI.dll
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.XInput.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Credits.xnb
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.xnb
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.xnb
@@ -109,26 +113,15 @@ C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - Th
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Items & Weapons.xnb
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Link.xnb
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - NPCs.xnb
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.exe
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.deps.json
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.runtimeconfig.json
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.runtimeconfig.dev.json
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Microsoft.VisualBasic.dll
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Direct2D1.dll
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Direct3D11.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Direct3D9.dll
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.DXGI.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Mathematics.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.MediaFoundation.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.XAudio2.dll
-C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.XInput.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\debian-x64\native\libuv.so
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\fedora-x64\native\libuv.so
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\opensuse-x64\native\libuv.so
@@ -137,7 +130,15 @@ C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\rhel-x6
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\win7-arm\native\libuv.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\libuv.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\libuv.dll
+C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.AssemblyInfoInputs.cache
+C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.AssemblyInfo.cs
+C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CoreCompileInputs.cache
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CopyComplete
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
+C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csprojAssemblyReference.cache
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.deps.json
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.runtimeconfig.json
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.runtimeconfig.dev.json
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.genruntimeconfig.cache
