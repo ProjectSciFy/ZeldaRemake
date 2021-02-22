@@ -228,6 +228,42 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(36, 190, 16, 5), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 5);
         }
+
+        public void DamageUp()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.Red, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+
+        public void DamageDown()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.Red, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+
+        public void DamageRight()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.Red, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+
+        public void DamageLeft()
+        {
+            link.spriteSize.X = 16;
+            link.spriteSize.Y = 16;
+            link.velocity.X = 0;
+            link.velocity.Y = 0;
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.Red, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 10);
+        }
         public void PickUpNormal()
         {
             link.spriteSize.X = 16;

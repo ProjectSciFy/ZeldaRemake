@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CSE3902_Game_Sprint0.Classes.Controllers.ItemCommands;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -28,19 +29,19 @@ namespace CSE3902_Game_Sprint0
 
             //Up and W -- change direction (switch case/state machine?) and movement
             // direction added as new parameter being sent to DrawSprite:
-            keyBinds.Add(Keys.Up, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2)), new Vector2(0, 0), new Rectangle(21, 0, 21, 24), Color.White, SpriteEffects.None, new Vector2(1, 1)));
+            keyBinds.Add(Keys.Up, new MoveLink(linkState, LinkStateMachine.Direction.up));
             keyBinds.Add(Keys.W, new MoveLink(linkState, LinkStateMachine.Direction.up));
 
             //Left and A
-            keyBinds.Add(Keys.Left, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
+            keyBinds.Add(Keys.Left, new MoveLink(linkState, LinkStateMachine.Direction.left));
             keyBinds.Add(Keys.A, new MoveLink(linkState, LinkStateMachine.Direction.left));
 
             //Down and S
-            keyBinds.Add(Keys.Down, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
+            keyBinds.Add(Keys.Down, new MoveLink(linkState, LinkStateMachine.Direction.down));
             keyBinds.Add(Keys.S, new MoveLink(linkState, LinkStateMachine.Direction.down));
 
             //Right and D
-            keyBinds.Add(Keys.Right, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
+            keyBinds.Add(Keys.Right, new MoveLink(linkState, LinkStateMachine.Direction.right));
             keyBinds.Add(Keys.D, new MoveLink(linkState, LinkStateMachine.Direction.right));
 
             //Z and N -- attack and animation
@@ -48,21 +49,21 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.N, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
 
             //E -- test damage taken animation
-            keyBinds.Add(Keys.E, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
+            keyBinds.Add(Keys.E, new DamagedLink(linkState, linkState.direction));
 
             //1, 2, 3, 4 -- change between items animation
-            keyBinds.Add(Keys.D1, new ItemLink(linkState, LinkStateMachine.Item.sword, linkState.direction)); // sword item
-            keyBinds.Add(Keys.D2, new ItemLink(linkState, LinkStateMachine.Item.bomb, linkState.direction)); // bomb item 
-            keyBinds.Add(Keys.D3, new ItemLink(linkState, LinkStateMachine.Item.arrow, linkState.direction)); // bow & arrow item 
-            keyBinds.Add(Keys.D4, new ItemLink(linkState, LinkStateMachine.Item.boomerang, linkState.direction)); // boomerang item 
+            keyBinds.Add(Keys.D1, new WeaponLink(linkState, LinkStateMachine.Weapon.sword, linkState.direction)); // sword item
+            keyBinds.Add(Keys.D2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb, linkState.direction)); // bomb item 
+            keyBinds.Add(Keys.D3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow, linkState.direction)); // bow & arrow item 
+            keyBinds.Add(Keys.D4, new WeaponLink(linkState, LinkStateMachine.Weapon.boomerang, linkState.direction)); // boomerang item 
 
             //T and Y -- test block animation
             keyBinds.Add(Keys.T, new PreviousTile(game.tileStateMachine));
             keyBinds.Add(Keys.Y, new NextTile(game.tileStateMachine));
 
             //U and I -- cycle through items
-            keyBinds.Add(Keys.U, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.I, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
+            keyBinds.Add(Keys.U, new PreviousItem(game.itemStateMachine));
+            keyBinds.Add(Keys.I, new NextItem(game.itemStateMachine));
 
             //O and P -- test other characters/NPCs animation (cycles through sprites)
             keyBinds.Add(Keys.O, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
@@ -96,10 +97,10 @@ namespace CSE3902_Game_Sprint0
                     heldKeys.Add(pressedKeys[i]);
 
                     //If any movement key is being pressed, add it to movementKeys & incrememt key priority of all entries by 1
-                    if (pressedKeys[i] == Keys.W || pressedKeys[i] == Keys.A || pressedKeys[i] == Keys.S || pressedKeys[i] == Keys.D)
+                    if (pressedKeys[i] == Keys.W || pressedKeys[i] == Keys.A || pressedKeys[i] == Keys.S || pressedKeys[i] == Keys.D || pressedKeys[i] == Keys.Up || pressedKeys[i] == Keys.Left || pressedKeys[i] == Keys.Down || pressedKeys[i] == Keys.Right)
                     {
                         movementKeys.Add(pressedKeys[i], 0);
-
+                        //WASD
                         if (movementKeys.ContainsKey(Keys.W))
                         {
                             movementKeys[Keys.W] = movementKeys[Keys.W] + 1;
@@ -116,6 +117,23 @@ namespace CSE3902_Game_Sprint0
                         {
                             movementKeys[Keys.D] = movementKeys[Keys.D] + 1;
                         }
+                        //ARROWS
+                        if (movementKeys.ContainsKey(Keys.Up))
+                        {
+                            movementKeys[Keys.Up] = movementKeys[Keys.Up] + 1;
+                        }
+                        if (movementKeys.ContainsKey(Keys.Left))
+                        {
+                            movementKeys[Keys.Left] = movementKeys[Keys.Left] + 1;
+                        }
+                        if (movementKeys.ContainsKey(Keys.Down))
+                        {
+                            movementKeys[Keys.Down] = movementKeys[Keys.Down] + 1;
+                        }
+                        if (movementKeys.ContainsKey(Keys.Right))
+                        {
+                            movementKeys[Keys.Right] = movementKeys[Keys.Right] + 1;
+                        }
                     }
                 }
             }
@@ -129,7 +147,7 @@ namespace CSE3902_Game_Sprint0
                 if (movementKeys.ContainsKey(releasedKey))
                 {
                     int movePriority = movementKeys[releasedKey];
-
+                    //WASD
                     if (movementKeys.ContainsKey(Keys.W) && movementKeys[Keys.W] > movePriority)
                     {
                         movementKeys[Keys.W] = movementKeys[Keys.W] - 1;
@@ -146,6 +164,23 @@ namespace CSE3902_Game_Sprint0
                     {
                         movementKeys[Keys.D] = movementKeys[Keys.D] - 1;
                     }
+                    //ARROWS
+                    if (movementKeys.ContainsKey(Keys.Up) && movementKeys[Keys.Up] > movePriority)
+                    {
+                        movementKeys[Keys.Up] = movementKeys[Keys.Up] - 1;
+                    }
+                    if (movementKeys.ContainsKey(Keys.Left) && movementKeys[Keys.Left] > movePriority)
+                    {
+                        movementKeys[Keys.Left] = movementKeys[Keys.Left] - 1;
+                    }
+                    if (movementKeys.ContainsKey(Keys.Down) && movementKeys[Keys.Down] > movePriority)
+                    {
+                        movementKeys[Keys.Down] = movementKeys[Keys.Down] - 1;
+                    }
+                    if (movementKeys.ContainsKey(Keys.Right) && movementKeys[Keys.Right] > movePriority)
+                    {
+                        movementKeys[Keys.Right] = movementKeys[Keys.Right] - 1;
+                    }
 
                     movementKeys.Remove(releasedKey);
                 }
@@ -156,7 +191,7 @@ namespace CSE3902_Game_Sprint0
             {
                 int newMoveKeyCount = movementKeys.Count;
                 Keys currentMoveKey;
-
+                //WASD & KEYS
                 if (movementKeys.ContainsKey(Keys.W) && movementKeys[Keys.W] == 1)
                 {
                     currentMoveKey = Keys.W;
@@ -169,11 +204,27 @@ namespace CSE3902_Game_Sprint0
                 {
                     currentMoveKey = Keys.S;
                 }
-                else
+                else if (movementKeys.ContainsKey(Keys.D) && movementKeys[Keys.D] == 1)
                 {
                     currentMoveKey = Keys.D;
+                } 
+                else if (movementKeys.ContainsKey(Keys.Up) && movementKeys[Keys.Up] == 1)
+                {
+                    currentMoveKey = Keys.Up;
                 }
-                
+                else if (movementKeys.ContainsKey(Keys.Left) && movementKeys[Keys.Left] == 1)
+                {
+                    currentMoveKey = Keys.Left;
+                }
+                else if (movementKeys.ContainsKey(Keys.Down) && movementKeys[Keys.Down] == 1)
+                {
+                    currentMoveKey = Keys.Down;
+                }
+                else
+                {
+                    currentMoveKey = Keys.Right;
+                }
+
                 //We need to execute a new movement ONCE, to handle this we only execute a new direction when the movement keys decreases
                 if (newMoveKeyCount < lastMoveKeyCount)
                 {
