@@ -37,35 +37,39 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
         public void Attack()
         {
-            //switch (direction)
-            //{
-            //    case Direction.down:
-            //        if (currentState != CurrentState.attackingDown)
-            //        {
-            //            currentState = CurrentState.attackingDown;
-            //            spriteFactory.BladeTrapDown(BladeTrap);
-            //        }break;
-            //    case Direction.up:
-            //        if (currentState != CurrentState.attackingUp)
-            //        {
-            //            currentState = CurrentState.attackingUp;
-            //            spriteFactory.BladeTrapUp(BladeTrap);
-            //        }break;
-            //    case Direction.right:
-            //        if (currentState != CurrentState.attackingRight)
-            //        {
-            //            currentState = CurrentState.attackingRight;
-            //            spriteFactory.BladeTrapRight(BladeTrap);
-            //        }break;
-            //    case Direction.left:
-            //        if (currentState != CurrentState.attackingLeft)
-            //        {
-            //            currentState = CurrentState.attackingLeft;
+            switch (direction)
+            {
+                case Direction.down:
+                    if (currentState != CurrentState.attackingDown)
+                    {
+                        currentState = CurrentState.attackingDown;
+                        spriteFactory.BladeTrapDown(BladeTrap);
+                    }
+                    break;
+                case Direction.up:
+                    if (currentState != CurrentState.attackingUp)
+                    {
+                        currentState = CurrentState.attackingUp;
+                        spriteFactory.BladeTrapUp(BladeTrap);
+                    }
+                    break;
+                case Direction.right:
+                    if (currentState != CurrentState.attackingRight)
+                    {
+                        currentState = CurrentState.attackingRight;
+                        spriteFactory.BladeTrapRight(BladeTrap);
+                    }
+                    break;
+                case Direction.left:
+                    if (currentState != CurrentState.attackingLeft)
+                    {
+                        currentState = CurrentState.attackingLeft;
                         spriteFactory.BladeTrapLeft(BladeTrap);
-            //        }break;
-            //    default:
-            //        break;
-            //}
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
         public void Retract()
         {
@@ -179,12 +183,13 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             //}
             if (BladeTrap.drawLocation.X <= BladeTrap.spawnLocation.X)
             {
-                direction = Direction.left;
+                direction = Direction.right;
                 Attack();
             }
-            else if (Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) < BladeTrap.range.X)
+            else if (Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) > BladeTrap.range.X)
             {
-                Retract();
+                direction = Direction.left;
+                Attack();
             }
         }
     }

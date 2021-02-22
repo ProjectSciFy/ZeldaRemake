@@ -136,3 +136,9 @@ C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Spr
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CopyComplete
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
+C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csprojAssemblyReference.cache
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.deps.json
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.runtimeconfig.json
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.runtimeconfig.dev.json
+C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
+C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.genruntimeconfig.cache
