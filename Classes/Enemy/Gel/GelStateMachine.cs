@@ -42,7 +42,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
 
         public void Idle()
         {
-            // construct nonanimated link facing up with sprite factory
             if (currentState != CurrentState.idleRight)
             {
                 timer = 52;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/jaden/Source/Repos/ZeldaRemake/Content/NES - The Legend of Zelda - Fonts.png</SourceFile>
-  <SourceTime>2021-02-10T15:10:28.3185927-05:00</SourceTime>
-  <DestFile>C:/Users/jaden/Source/Repos/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - Fonts.xnb</DestFile>
-  <DestTime>2021-02-22T17:27:52.4000677-05:00</DestTime>
+  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Fonts.png</SourceFile>
+  <SourceTime>2021-02-05T11:05:20.7674115-05:00</SourceTime>
+  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - Fonts.xnb</DestFile>
+  <DestTime>2021-02-22T17:31:42.6354217-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
