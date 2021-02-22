@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using CSE3902_Game_Sprint0.Classes.Items;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -34,7 +35,9 @@ namespace CSE3902_Game_Sprint0
 
         public LinkStateMachine linkStateMachine;
         public TileStateMachine tileStateMachine;
+        public ItemStateMachine itemStateMachine;
         public Tile tile;
+        public Item item;
  
         public EeveeSim()
         {
@@ -56,9 +59,16 @@ namespace CSE3902_Game_Sprint0
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
 
-            //Setting up block spritefactory
+            //Setting up block state machine
             tile = new Tile(this);
             tileStateMachine = new TileStateMachine(tile);
+
+            //Setting up item state machine
+            item = new Item(this);
+            itemStateMachine = new ItemStateMachine(item);
+
+            //item is created, maintains an instance of its StateMachine to be passed for commands:
+            item.SetState(itemStateMachine);
 
             //tile is created, maintains an instance of its StateMachine to be passed for commands:
             tile.SetState(tileStateMachine);
