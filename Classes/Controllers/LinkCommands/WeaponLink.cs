@@ -7,13 +7,13 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
     public class WeaponLink : ICommand
     {
         private LinkStateMachine linkState;
-        private LinkStateMachine.Weapon itemSelected;
+        private LinkStateMachine.Weapon weaponSelected;
         private LinkStateMachine.Direction direction;
 
-        public WeaponLink(LinkStateMachine linkState, LinkStateMachine.Weapon item, LinkStateMachine.Direction direction)
+        public WeaponLink(LinkStateMachine linkState, LinkStateMachine.Weapon weapon, LinkStateMachine.Direction direction)
         {
             this.linkState = linkState;
-            this.itemSelected = item;
+            this.weaponSelected = weapon;
             this.direction = direction;
         }
 
@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
         { 
             linkState.moving = false;
             // need to update link's state so that corresponding animation is drawn.
-            switch (itemSelected)
+            switch (weaponSelected)
             {
                 case LinkStateMachine.Weapon.sword:
                     linkState.weaponSelected = LinkStateMachine.Weapon.sword;
