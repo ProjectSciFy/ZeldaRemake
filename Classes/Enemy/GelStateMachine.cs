@@ -1,13 +1,14 @@
-﻿using CSE3902_Game_Sprint0.Interfaces;
+﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSE3902_Game_Sprint0.Classes._21._2._13
+namespace CSE3902_Game_Sprint0.Classes.Enemy
 {
-    public class StalfosStateMachine : IEnemyStateMachine
+    public class GelStateMachine : IEnemyStateMachine
     {
-        private EnemyStalfos stalfos;
+        private EnemyGel gel;
         private EnemySpriteFactory enemySpriteFactory;
 
         public enum Direction { right, up, left, down };
@@ -15,13 +16,13 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         bool moving = true;
         bool spawning = true;
         private int timer = 90;
-        private enum CurrentState {none, idle, movingUp, movingDown, movingLeft, movingRight, spawning};
+        private enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, spawning };
         private CurrentState currentState = CurrentState.none;
 
-        public StalfosStateMachine(EnemyStalfos stalfos)
+        public GelStateMachine(EnemyGel gel)
         {
-            this.stalfos = stalfos;
-            enemySpriteFactory = stalfos.enemySpriteFactory;
+            this.gel = gel;
+            enemySpriteFactory = gel.enemySpriteFactory;
         }
 
         public void Spawning()
@@ -29,7 +30,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             if (currentState != CurrentState.spawning)
             {
                 currentState = CurrentState.spawning;
-                enemySpriteFactory.SpawnStalfos(stalfos);
+                enemySpriteFactory.SpawnGel(gel);
             }
 
             if (timer <= 0)
@@ -42,10 +43,12 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public void Idle()
         {
             // construct nonanimated link facing up with sprite factory
-            if (currentState != CurrentState.idle)
+            if (currentState != CurrentState.idleRight)
             {
-                currentState = CurrentState.idle;
-                enemySpriteFactory.StalfosIdle(stalfos);
+                timer = 52;
+
+                currentState = CurrentState.idleRight;
+                enemySpriteFactory.GelIdle(gel);
             }
         }
 
@@ -56,32 +59,40 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 case Direction.right:
                     if (currentState != CurrentState.movingRight)
                     {
+                        timer = 8;
+
                         currentState = CurrentState.movingRight;
-                        enemySpriteFactory.StalfosMovingRight(stalfos);
+                        enemySpriteFactory.GelMovingRight(gel);
                     }
                     break;
 
                 case Direction.up:
                     if (currentState != CurrentState.movingUp)
                     {
+                        timer = 8;
+
                         currentState = CurrentState.movingUp;
-                        enemySpriteFactory.StalfosMovingUp(stalfos);
+                        enemySpriteFactory.GelMovingUp(gel);
                     }
                     break;
 
                 case Direction.left:
                     if (currentState != CurrentState.movingLeft)
                     {
+                        timer = 8;
+
                         currentState = CurrentState.movingLeft;
-                        enemySpriteFactory.StalfosMovingLeft(stalfos);
+                        enemySpriteFactory.GelMovingLeft(gel);
                     }
                     break;
 
                 case Direction.down:
                     if (currentState != CurrentState.movingDown)
                     {
+                        timer = 8;
+
                         currentState = CurrentState.movingDown;
-                        enemySpriteFactory.StalfosMovingDown(stalfos);
+                        enemySpriteFactory.GelMovingDown(gel);
                     }
                     break;
 
@@ -99,7 +110,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 if (timer <= 0)
                 {
                     var random = new Random();
-                    timer = 60;
                     switch (random.Next(4))
                     {
                         case 0:
@@ -118,6 +128,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                             direction = Direction.down;
                             break;
                     }
+
+                    moving = !moving;
                 }
                 else
                 {

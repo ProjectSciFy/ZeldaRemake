@@ -60,7 +60,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         }
 
-        public void draw()
+        public void Draw()
         {
             mySprite.Draw(drawLocation);
         }

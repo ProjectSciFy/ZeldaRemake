@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.Scripts;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy;
+using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -25,6 +26,59 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //Blade trap methods
 
         //Gel methods
+        public void SpawnGel(EnemyGel gel)
+        {
+            gel.spriteSize.X = 16;
+            gel.spriteSize.Y = 16;
+            gel.velocity.X = 0;
+            gel.velocity.Y = 0;
+            gel.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30);
+        }
+
+        public void GelMovingUp(EnemyGel gel)
+        {
+            gel.spriteSize.X = 8;
+            gel.spriteSize.Y = 16;
+            gel.velocity.X = 0;
+            gel.velocity.Y = -2;
+            gel.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(1, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 2);
+        }
+
+        public void GelMovingDown(EnemyGel gel)
+        {
+            gel.spriteSize.X = 8;
+            gel.spriteSize.Y = 16;
+            gel.velocity.X = 0;
+            gel.velocity.Y = 2;
+            gel.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(1, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 2);
+        }
+
+        public void GelIdle(EnemyGel gel)
+        {
+            gel.spriteSize.X = 8;
+            gel.spriteSize.Y = 16;
+            gel.velocity.X = 0;
+            gel.velocity.Y = 0;
+            gel.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(1, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 2);
+        }
+
+        public void GelMovingLeft(EnemyGel gel)
+        {
+            gel.spriteSize.X = 8;
+            gel.spriteSize.Y = 16;
+            gel.velocity.X = -2;
+            gel.velocity.Y = 0;
+            gel.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(1, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 2);
+        }
+
+        public void GelMovingRight(EnemyGel gel)
+        {
+            gel.spriteSize.X = 8;
+            gel.spriteSize.Y = 16;
+            gel.velocity.X = 2;
+            gel.velocity.Y = 0;
+            gel.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(1, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 2);
+        }
 
         //Goriya methods
 

@@ -2,6 +2,7 @@
 using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Blocks;
 using CSE3902_Game_Sprint0.Classes.Controllers;
+using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
@@ -29,6 +30,7 @@ namespace CSE3902_Game_Sprint0
         public TilesSpriteFactory tileSpriteFactory;
         public Link link;
         public IEnemy stalfos;
+        public IEnemy gel;
         public StateMachine linkStateMachine;
         public Block block;
  
@@ -61,6 +63,7 @@ namespace CSE3902_Game_Sprint0
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(100, 100));
+            gel = new EnemyGel(this, new Vector2(200, 100));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -107,6 +110,7 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
             stalfos.Update();
+            gel.Update();
             block.update();
         }
 
@@ -120,7 +124,8 @@ namespace CSE3902_Game_Sprint0
 
             eeveeSprite.Draw(new Vector2(0, 0));
             link.Draw();
-            stalfos.draw();
+            stalfos.Draw();
+            gel.Draw();
             block.draw();
 
             _spriteBatch.Begin();

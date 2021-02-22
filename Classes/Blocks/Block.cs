@@ -24,12 +24,12 @@ namespace CSE3902_Game_Sprint0.Classes.Blocks
 
         public void update()
         {
-            blockSprite.Update();
+            //blockSprite.Update();
         }
 
         public void draw()
         {
-            blockSprite.Draw(drawLocation);
+            //blockSprite.Draw(drawLocation);
         }
 
     }
