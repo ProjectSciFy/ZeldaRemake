@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy;
+using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -155,6 +156,167 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
 
         //Keese methods
+        public void SpawnKeese(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 0;
+            keese.velocity.Y = 0;
+            keese.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30);
+        }
+
+        public void KeeseIdle(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 0;
+            keese.velocity.Y = 0;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+
+        public void KeeseFlyingNorth(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 0;
+            keese.velocity.Y = -2;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+
+        public void KeeseFlyingNorthEast(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 2;
+            keese.velocity.Y = -2;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+
+        public void KeeseFlyingEast(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 2;
+            keese.velocity.Y = 0;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+
+        public void KeeseFlyingSouthEast(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 2;
+            keese.velocity.Y = 2;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+
+        public void KeeseFlyingSouth(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 0;
+            keese.velocity.Y = 2;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+
+        public void KeeseFlyingSouthWest(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = -2;
+            keese.velocity.Y = 2;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+
+        public void KeeseFlyingWest(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = -2;
+            keese.velocity.Y = 0;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+
+        public void KeeseFlyingNorthWest(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = -2;
+            keese.velocity.Y = -2;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+        }
+
+        public void KeeseLandingNorth(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 0;
+            keese.velocity.Y = -1;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void KeeseLandingNorthEast(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 1;
+            keese.velocity.Y = -1;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void KeeseLandingEast(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 1;
+            keese.velocity.Y = 0;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void KeeseLandingSouthEast(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 1;
+            keese.velocity.Y = 1;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void KeeseLandingSouth(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 0;
+            keese.velocity.Y = 1;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void KeeseLandingSouthWest(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = -1;
+            keese.velocity.Y = 1;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void KeeseLandingWest(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = -1;
+            keese.velocity.Y = 0;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        public void KeeseLandingNorthWest(EnemyKeese keese)
+        {
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = -1;
+            keese.velocity.Y = -1;
+            keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
 
         //Stalfos methods
         public void SpawnStalfos(EnemyStalfos stalfos)
