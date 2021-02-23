@@ -34,9 +34,10 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool useArrow = false;
         public bool useBoomerang = false;
 
-        public bool damaged = false;
+        public bool isDamaged = false;
+        int damcount = 0;
 
-        private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedRight, damagedDown, damagedLeft };
+        private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
         private CurrentState currentState = CurrentState.idleDown;
 
         public LinkStateMachine(Link link)
@@ -56,8 +57,6 @@ namespace CSE3902_Game_Sprint0.Classes
         //Sets link to an idle state based on the value of direction var
         public void Idle()
         {
-            useSword = false;
-            useBomb = false;
             // construct nonanimated link facing up with sprite factory
             if (timer == 0)
             {
@@ -107,8 +106,6 @@ namespace CSE3902_Game_Sprint0.Classes
         //Sets link to a moving state based on the value of direction var
         public void Moving()
         {
-            useSword = false;
-            useBomb = false;
             // construct animated link facing up with sprite factory
             if (timer == 0)
             {
@@ -288,47 +285,27 @@ namespace CSE3902_Game_Sprint0.Classes
             // construct animated link facing up with sprite factory
             if (timer == 0)
             {
-                timer = 120;
+                timer = 60;
                 switch (direction)
                 {
                     case Direction.right:
-                        if (currentState != CurrentState.damagedRight)
-                        {
-                            currentState = CurrentState.damagedRight;
-                            spriteFactory.DamageRight();
-                        }
+                        spriteFactory.DamageRight();
                         break;
 
                     case Direction.up:
-                        if (currentState != CurrentState.damagedUp)
-                        {
-                            currentState = CurrentState.damagedUp;
-                            spriteFactory.DamageUp();
-                        }
+                        spriteFactory.DamageUp();
                         break;
 
                     case Direction.left:
-                        if (currentState != CurrentState.damagedLeft)
-                        {
-                            currentState = CurrentState.damagedLeft;
-                            spriteFactory.DamageLeft();
-                        }
+                        spriteFactory.DamageLeft();
                         break;
 
                     case Direction.down:
-                        if (currentState != CurrentState.damagedDown)
-                        {
-                            currentState = CurrentState.damagedDown;
-                            spriteFactory.DamageRight();
-                        }
+                        spriteFactory.DamageDown();
                         break;
 
                     default:
-                        if (currentState != CurrentState.damagedDown)
-                        {
-                            currentState = CurrentState.damagedDown;
-                            spriteFactory.DamageRight();
-                        }
+                        spriteFactory.DamageDown();
                         break;
                 }
             }
@@ -345,13 +322,20 @@ namespace CSE3902_Game_Sprint0.Classes
             if (moving)
             { 
                 //boolean weapon variables not in use yet because of problems: WeaponLink its self is calling the sword sprite
-                if (useSword)
+                if (isDamaged)
                 {
-                    Sword();  
+                    Damaged();
+                    isDamaged = false;
+                }
+                else if (useSword)
+                {
+                    Sword();
+                    useSword = false;
                 }
                 else if (useBomb)
                 {
                     Bomb();
+                    useBomb = false;
                 }
                 else if (useArrow)
                 {
@@ -368,25 +352,20 @@ namespace CSE3902_Game_Sprint0.Classes
             } 
             else
             {
+                if (isDamaged)
+                {
+                    Damaged();
+                    isDamaged = false;
+                }
                 if (useSword)
                 {
-                    swordcount++;
                     Sword();
-                    if (swordcount > 60)
-                    {
-                        useSword = false;
-                        swordcount = 0;
-                    }
+                    useSword = false;
                 }
                 else if (useBomb)
                 {
-                    bombcount++;
                     Bomb();
-                    if (bombcount > 60)
-                    {
-                        useBomb = false;
-                        bombcount = 0;
-                    }
+                    useBomb = false;
                 }
                 else if (useArrow)
                 {
