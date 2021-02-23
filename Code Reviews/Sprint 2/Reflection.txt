@@ -1,0 +1,9 @@
+﻿Sprint 2 Reflection
+
+To reflect over how our group performed throughout the duration of this sprint, we want 
+to discuss things we felt we excelled with and also areas of improvement. To start with
+our strengths, the structure and design of the code follows a synchronous pattern that is
+pleasing to the eye and easy to maintain. However, our team ran into several time related
+issues that constrained the depth of the code. With that said, our team felt as if we could
+have put the petal down earlier but are proud with the product. Sprint 2 was an amazing team
+bonding experience. 
