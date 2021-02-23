@@ -15,6 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public EnemyAquamentus aquamentus;
         public AquamentusStateMachine aquamentusState;
         public EnemySpriteFactory spriteFactory;
+        public FireballStateMachine myState;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 spawnLocation;
@@ -31,15 +32,12 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.spriteFactory = game.enemySpriteFactory;
             this.drawLocation = aquamentus.drawLocation;
             this.spawnLocation = aquamentus.drawLocation;
+            this.myState = new FireballStateMachine(this);
             this.trajectory = trajectory;
         }
         public void Update()
         {
-            if (newItem)
-            {
-                newItem = false;
-                spriteFactory.FireballAttack(this);
-            }
+            myState.Update();
             aquamentusState.Update();
             mySprite.Update();
 

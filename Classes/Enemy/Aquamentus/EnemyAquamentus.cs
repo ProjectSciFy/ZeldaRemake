@@ -62,8 +62,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             {
                 timer = 200;
                 fireball_1 = new Fireball(game, this, myState, new Vector2(-1, 0));
-                fireball_2 = new Fireball(game, this, myState, new Vector2(-1, 1));
-                fireball_3 = new Fireball(game, this, myState, new Vector2(-1, -1));
+                fireball_2 = new Fireball(game, this, myState, new Vector2(-1, (float)0.15));
+                fireball_3 = new Fireball(game, this, myState, new Vector2(-1, (float)-0.15));
             }
 
             fireball_1.Update();
