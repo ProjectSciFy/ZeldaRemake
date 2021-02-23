@@ -41,6 +41,9 @@ namespace CSE3902_Game_Sprint0
         public IEnemy goriya;
         public IEnemy aquamentus;
         public IEnemy wallmaster;
+        public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster }
+        public Enemies currentEnemy;
+        public IEnemy drawnEnemy;
         public LinkStateMachine linkStateMachine;
         public TileStateMachine tileStateMachine;
         public ItemStateMachine itemStateMachine;
@@ -87,13 +90,15 @@ namespace CSE3902_Game_Sprint0
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
-            stalfos = new EnemyStalfos(this, new Vector2(100, 100));
-            gel = new EnemyGel(this, new Vector2(200, 100));
-            keese = new EnemyKeese(this, new Vector2(350, 100));
-            bladeTrap = new BladeTrap(this, new Vector2(150, 150), new Vector2(100, 100), link);
-            goriya = new EnemyGoriya(this, new Vector2(175, 175));
+            stalfos = new EnemyStalfos(this, new Vector2(400, 100));
+            gel = new EnemyGel(this, new Vector2(400, 100));
+            keese = new EnemyKeese(this, new Vector2(400, 100));
+            bladeTrap = new BladeTrap(this, new Vector2(400, 100), new Vector2(100, 100), link);
+            goriya = new EnemyGoriya(this, new Vector2(400, 100));
             aquamentus = new EnemyAquamentus(this, new Vector2(400, 100));
-            wallmaster = new EnemyWallmaster(this, new Vector2(400, 200));
+            wallmaster = new EnemyWallmaster(this, new Vector2(400, 100));
+            currentEnemy = Enemies.Stalfos;
+            drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -144,13 +149,7 @@ namespace CSE3902_Game_Sprint0
 
             item.Update();
 
-            stalfos.Update();
-            gel.Update();
-            keese.Update();
-            bladeTrap.Update();
-            goriya.Update();
-            aquamentus.Update();
-            wallmaster.Update();
+            drawnEnemy.Update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -169,13 +168,7 @@ namespace CSE3902_Game_Sprint0
 
             item.Draw();
 
-            stalfos.Draw();
-            gel.Draw();
-            keese.Draw();
-            bladeTrap.Draw();
-            goriya.Draw();
-            aquamentus.Draw();
-            wallmaster.Draw();
+            drawnEnemy.Draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
