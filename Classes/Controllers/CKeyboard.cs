@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes.Controllers.ItemCommands;
 using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
+using CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -67,8 +68,8 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.I, new NextItem(game.itemStateMachine));
 
             //O and P -- test other characters/NPCs animation (cycles through sprites)
-            keyBinds.Add(Keys.O, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.P, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
+            keyBinds.Add(Keys.O, new PreviousEnemy(game));
+            keyBinds.Add(Keys.P, new NextEnemy(game));
 
             //Q -- quit game
             keyBinds.Add(Keys.Q, new ShutDownGame(game));

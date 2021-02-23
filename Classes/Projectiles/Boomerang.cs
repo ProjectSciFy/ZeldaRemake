@@ -20,13 +20,15 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 spawnLocation;
-        public Vector2 recieveLocation; // where link is at point of return
+        //public Vector2 recieveLocation; // where link is at point of return
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public enum Direction { right, up, left, down, NE, SE, SW, NW }; // NE = North East
         public Direction direction = Direction.down;
+        private enum CurrentState {movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW};
+        private CurrentState currentState = CurrentState.movingDown;
         public Direction returnDirection;
-        public const int RANGE = 100;
+        public const int RANGE = 125;
         public Boolean newItem = true;
         public Boolean returning = false;
 
@@ -80,28 +82,60 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             switch (returnDirection)
             {
                 case Direction.down:
-                    spriteFactory.BoomerangDown(this);
+                    if (currentState != CurrentState.movingDown)
+                    {
+                        currentState = CurrentState.movingDown;
+                        spriteFactory.BoomerangDown(this);
+                    }
                     break;
                 case Direction.up:
-                    spriteFactory.BoomerangUp(this);
+                    if (currentState != CurrentState.movingUp)
+                    {
+                        currentState = CurrentState.movingUp;
+                        spriteFactory.BoomerangUp(this);
+                    }
                     break;
                 case Direction.right:
-                    spriteFactory.BoomerangRight(this);
+                    if (currentState != CurrentState.movingRight)
+                    {
+                        currentState = CurrentState.movingRight;
+                        spriteFactory.BoomerangRight(this);
+                    }
                     break;
                 case Direction.left:
-                    spriteFactory.BoomerangLeft(this);
+                    if (currentState != CurrentState.movingLeft)
+                    {
+                        currentState = CurrentState.movingLeft;
+                        spriteFactory.BoomerangLeft(this);
+                    }
                     break;
                 case Direction.NE:
-                    spriteFactory.BoomerangNE(this);
+                    if (currentState != CurrentState.movingNE)
+                    {
+                        currentState = CurrentState.movingNE;
+                        spriteFactory.BoomerangNE(this);
+                    }
                     break;
                 case Direction.SE:
-                    spriteFactory.BoomerangSE(this);
+                    if (currentState != CurrentState.movingSE)
+                    {
+                        currentState = CurrentState.movingSE;
+                        spriteFactory.BoomerangSE(this);
+                    }
                     break;
                 case Direction.SW:
-                    spriteFactory.BoomerangSW(this);
+                    if (currentState != CurrentState.movingSW)
+                    {
+                        currentState = CurrentState.movingSW;
+                        spriteFactory.BoomerangSW(this);
+                    }
                     break;
                 case Direction.NW:
-                    spriteFactory.BoomerangNW(this);
+                    if (currentState != CurrentState.movingNW)
+                    {
+                        currentState = CurrentState.movingNW;
+                        spriteFactory.BoomerangNW(this);
+                    }
                     break;
                 default:
                     break;
@@ -112,7 +146,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         {
             if (newItem)
             {
-                spriteFactory.BoomerangDown(this);
+                spriteFactory.BoomerangUp(this);
             }
             mySprite.Update();
             if (linkState == null)
@@ -158,7 +192,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 returning = true;
                 Inward();
             }
-            else if (newItem == false && returning == true && drawLocation == spawnLocation)
+            else if (newItem == false && returning == true && !(drawLocation == spawnLocation))
             {
                 if (linkState == null)
                 {
@@ -177,6 +211,22 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                     else if (drawLocation.X < goriya.drawLocation.X && drawLocation.Y > goriya.drawLocation.Y)
                     {
                         returnDirection = Direction.NE;
+                    }
+                    else if (drawLocation.X == goriya.drawLocation.X && drawLocation.Y > goriya.drawLocation.Y)
+                    {
+                        returnDirection = Direction.up;
+                    }
+                    else if (drawLocation.X == goriya.drawLocation.X && drawLocation.Y < goriya.drawLocation.Y)
+                    {
+                        returnDirection = Direction.down;
+                    }
+                    else if (drawLocation.X < goriya.drawLocation.X && drawLocation.Y == goriya.drawLocation.Y)
+                    {
+                        returnDirection = Direction.right;
+                    }
+                    else if (drawLocation.X > goriya.drawLocation.X && drawLocation.Y == goriya.drawLocation.Y)
+                    {
+                        returnDirection = Direction.left;
                     }
                 }
                 else

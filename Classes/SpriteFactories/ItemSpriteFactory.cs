@@ -14,11 +14,13 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         private EeveeSim game;
         private Item item;
         private Texture2D itemSpriteSheet;
+        private Texture2D linkSpriteSheet;
 
         public ItemSpriteFactory(Item item)
         {
             this.game = item.game;
             game.spriteSheets.TryGetValue("ItemsAndWeapons", out itemSpriteSheet);
+            game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
             this.item = item;
         }
 
@@ -26,6 +28,17 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             item.itemSprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(128, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
+        public void SpawnBomb(Bomb bomb)
+        {
+            bomb.spriteSize.X = 16;
+            bomb.spriteSize.Y = 16;
+            bomb.bombSprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30);
+        }
+
+        //public void ExplodeBomb(Bomb bomb)
+        //{
+        //   bomb.bombSprite = new UniversalSprite(game, )
+        //}
         public void Bomb()
         {
             item.itemSprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(136, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSE3902_Game_Sprint0.Classes.Items;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,11 +10,19 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
     {
         private LinkStateMachine linkState;
         private LinkStateMachine.Weapon weaponSelected;
+        private BombStateMachine bombState;
 
         public WeaponLink(LinkStateMachine linkState, LinkStateMachine.Weapon weapon)
         {
             this.linkState = linkState;
             this.weaponSelected = weapon;
+        }
+        public WeaponLink(BombStateMachine bombState, LinkStateMachine linkState, LinkStateMachine.Weapon weapon)
+        {
+            this.linkState = linkState;
+            this.bombState = bombState;
+            this.weaponSelected = weapon;
+            this.bombState = bombState;
         }
 
         public void Execute()
@@ -26,6 +36,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 
                 case LinkStateMachine.Weapon.bomb:
                     linkState.useBomb = true;
+                    bombState.spawning = true;
                     break;
 
                 case LinkStateMachine.Weapon.arrow:
