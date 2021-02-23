@@ -22,22 +22,23 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Vector2 spawnLocation;
         public Vector2 spriteSize = new Vector2(16, 16);
         private Bomb bomb;
+        private BombStateMachine myState;
 
         public Bomb(EeveeSim game, Link link, LinkStateMachine linkState)
         {
             this.game = game;
             this.link = link;
             drawLocation = link.drawLocation;
-            spriteFactory.SpawnBomb(bomb); // bomb texture
         }
         public void Update()
         {
-            bombSprite.Update();
+            //myState.Update();
+            //bombSprite.Update();
         }
 
         public void Draw()
         {
-            bombSprite.Draw(drawLocation);
+            //bombSprite.Draw(drawLocation);
         }
     }
 }
