@@ -34,7 +34,9 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool useArrow = false;
         public bool useBoomerang = false;
 
-        private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight};
+        public bool damaged = false;
+
+        private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedRight, damagedDown, damagedLeft };
         private CurrentState currentState = CurrentState.idleDown;
 
         public LinkStateMachine(Link link)
@@ -290,23 +292,43 @@ namespace CSE3902_Game_Sprint0.Classes
                 switch (direction)
                 {
                     case Direction.right:
-                        spriteFactory.DamageRight();
+                        if (currentState != CurrentState.damagedRight)
+                        {
+                            currentState = CurrentState.damagedRight;
+                            spriteFactory.DamageRight();
+                        }
                         break;
 
                     case Direction.up:
-                        spriteFactory.DamageUp();
+                        if (currentState != CurrentState.damagedUp)
+                        {
+                            currentState = CurrentState.damagedUp;
+                            spriteFactory.DamageUp();
+                        }
                         break;
 
                     case Direction.left:
-                        spriteFactory.DamageLeft();
+                        if (currentState != CurrentState.damagedLeft)
+                        {
+                            currentState = CurrentState.damagedLeft;
+                            spriteFactory.DamageLeft();
+                        }
                         break;
 
                     case Direction.down:
-                        spriteFactory.DamageDown();
+                        if (currentState != CurrentState.damagedDown)
+                        {
+                            currentState = CurrentState.damagedDown;
+                            spriteFactory.DamageRight();
+                        }
                         break;
 
                     default:
-                        spriteFactory.DamageDown();
+                        if (currentState != CurrentState.damagedDown)
+                        {
+                            currentState = CurrentState.damagedDown;
+                            spriteFactory.DamageRight();
+                        }
                         break;
                 }
             }
