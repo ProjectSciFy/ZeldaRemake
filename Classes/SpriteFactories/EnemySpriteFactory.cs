@@ -2,6 +2,7 @@
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -508,6 +509,72 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             wallmaster.velocity.X = -1;
             wallmaster.velocity.Y = 0;
             wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
+        }
+
+        // need to fix ItemSpriteFactory, Cant use from any other class except an item class. Needs to have game as parameter for constructor. Adding boomerang stuff here till then
+        public void BoomerangDown(Boomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = 0;
+            boomerang.velocity.Y = 1;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void BoomerangUp(Boomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = 0;
+            boomerang.velocity.Y = -1;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void BoomerangRight(Boomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = 1;
+            boomerang.velocity.Y = 0;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void BoomerangLeft(Boomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = -1;
+            boomerang.velocity.Y = 0;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void BoomerangNE(Boomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = 1;
+            boomerang.velocity.Y = -1;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void BoomerangSE(Boomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = 1;
+            boomerang.velocity.Y = 1;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void BoomerangSW(Boomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = -1;
+            boomerang.velocity.Y = 1;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void BoomerangNW(Boomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = -1;
+            boomerang.velocity.Y = -1;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
     }
 }

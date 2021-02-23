@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +19,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
+        public Boomerang boomerang;
 
         public EnemyGoriya(EeveeSim game, Vector2 spawnLocation)
         {
@@ -25,12 +27,14 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.enemySpriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
             myState = new GoriyaStateMachine(this);
+            boomerang = new Boomerang(game, this, myState);
         }
 
         public void Update()
         {
             myState.Update();
             mySprite.Update();
+            boomerang.Update();
 
             //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
@@ -58,6 +62,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public void Draw()
         {
             mySprite.Draw(drawLocation);
+            if (!myState.moving)
+            {
+                boomerang.Draw();
+            }
         }
     }
 }
