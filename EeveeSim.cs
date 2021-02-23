@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -49,7 +50,9 @@ namespace CSE3902_Game_Sprint0
         public ItemStateMachine itemStateMachine;
         public Tile tile;
         public Item item;
- 
+        public BombStateMachine bombStateMachine;
+        public Bomb bomb;
+
         public EeveeSim()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -87,6 +90,9 @@ namespace CSE3902_Game_Sprint0
             //item is created, maintains an instance of its StateMachine to be passed for commands:
             item.SetState(itemStateMachine);
 
+            /* Weapons */
+            bomb = new Bomb(this, link, linkStateMachine);
+            bombStateMachine = new BombStateMachine(bomb);
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
@@ -148,6 +154,8 @@ namespace CSE3902_Game_Sprint0
             tile.Update();
 
             item.Update();
+
+            bomb.Update();
 
             drawnEnemy.Update();
         }
