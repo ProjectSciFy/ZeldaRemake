@@ -196,40 +196,6 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
 
 
-        //Arrow:
-        public void ArrowUp()
-        {
-            link.spriteSize.X = 5;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(29, 185, 5, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 5);
-        }
-        public void ArrowDown()
-        {
-            link.spriteSize.X = 5;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(29, 185, 5, 16), Color.White, SpriteEffects.FlipVertically, new Vector2(1, 1), 5);
-        }
-        public void ArrowRight()
-        {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 5;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(36, 190, 16, 5), Color.White, SpriteEffects.None, new Vector2(1, 1), 5);
-        }
-        public void ArrowLeft()
-        {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 5;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(36, 190, 16, 5), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 5);
-        }
-
         public void DamageUp()
         {
             link.spriteSize.X = 16;

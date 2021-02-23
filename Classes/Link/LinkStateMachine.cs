@@ -312,6 +312,7 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
+        /*
         //Sets link to an animated state using arrow based on the value of direction var
         public void Arrow()
         {
@@ -365,6 +366,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 }
             }
         }
+        */
 
         public void Damaged()
         {
@@ -442,10 +444,10 @@ namespace CSE3902_Game_Sprint0.Classes
                 {
                     Bomb();
                 }
-                else if (useArrow)
-                {
-                    Arrow();
-                }
+                //else if (useArrow)
+                //{
+                //    Arrow();
+                //}
                 else if (useBoomerang)
                 {
                     Boomerang();
@@ -469,10 +471,10 @@ namespace CSE3902_Game_Sprint0.Classes
                 {
                     Bomb();
                 }
-                else if (useArrow)
-                {
-                    Arrow();
-                }
+                //else if (useArrow)
+                //{
+                //    Arrow();
+                //}
                 else if (useBoomerang)
                 {
                     Boomerang();
