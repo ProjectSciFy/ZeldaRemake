@@ -32,13 +32,12 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public void Update()
         {
-            myState.Update();
-            bombSprite.Update();
+            //bombSprite.Update();
         }
 
         public void Draw()
         {
-            bombSprite.Draw(drawLocation);
+            //bombSprite.Draw(drawLocation);
         }
     }
 }
