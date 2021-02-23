@@ -1,0 +1,22 @@
+﻿READABILITY OF ANDREW'S TileStateMachine.cs:
+-Author of review: Gal
+-Date of review: February 22, 2021
+-Sprint Number: 2
+-File Name: TileStateMachine.cs
+-Author of file: Andrew Lewandowski
+-Number of minutes taken to review: 4
+-Comments: Overall, very easy to read since variable, field, enum, and method names are very clear. Switch-case logic was a bit long to follow, but similar format between 
+           cases made readability level high.
+
+
+MAINTAINABILITY OF ANDREW'S TileStateMachine.cs:
+-Author of review: Gal
+-Date of review: February 22, 2021
+-Sprint Number: 2
+-File Name: TileStateMachine.cs
+-Author of file: Andrew Lewandowski
+-Number of minutes taken to review: 6
+-Comments: Currently, relatively high maintainability -- although the file is fairly short, the switch-case logic means that each update call hard-codes the texture changes, 
+           which means that any new textures to be added will require basically copy-pasting these new textures multiple times both in TileStateMachine and in TileSpriteFactory.
+           The same will be true for removing textures.
+-Hypitheitcal changes: Possibly the creation of a list-like object for holding textures would make maintainability easier.
