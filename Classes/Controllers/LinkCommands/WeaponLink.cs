@@ -8,18 +8,15 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
     {
         private LinkStateMachine linkState;
         private LinkStateMachine.Weapon weaponSelected;
-        private LinkStateMachine.Direction direction;
 
-        public WeaponLink(LinkStateMachine linkState, LinkStateMachine.Weapon weapon, LinkStateMachine.Direction direction)
+        public WeaponLink(LinkStateMachine linkState, LinkStateMachine.Weapon weapon)
         {
             this.linkState = linkState;
             this.weaponSelected = weapon;
-            this.direction = direction;
         }
 
         public void Execute()
         { 
-            linkState.moving = false;
             // need to update link's state so that corresponding animation is drawn.
             switch (weaponSelected)
             {

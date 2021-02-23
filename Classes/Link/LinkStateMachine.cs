@@ -37,7 +37,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool isDamaged = false;
         int damcount = 0;
 
-        private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight };
+        private enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft };
         private CurrentState currentState = CurrentState.idleDown;
 
         public LinkStateMachine(Link link)
@@ -156,27 +156,48 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 timer = 60;
+                useSword = false;
 
                 switch (direction)
                 {
                     case Direction.right:
-                        spriteFactory.SwordRight();
+                        if (currentState != CurrentState.swordRight)
+                        {
+                            currentState = CurrentState.swordRight;
+                            spriteFactory.SwordRight();
+                        }
                         break;
 
                     case Direction.up:
-                        spriteFactory.SwordUp();
+                        if (currentState != CurrentState.swordUp)
+                        {
+                            currentState = CurrentState.swordUp;
+                            spriteFactory.SwordUp();
+                        }
                         break;
 
                     case Direction.left:
-                        spriteFactory.SwordLeft();
+                        if (currentState != CurrentState.swordLeft)
+                        {
+                            currentState = CurrentState.swordLeft;
+                            spriteFactory.SwordLeft();
+                        }
                         break;
 
                     case Direction.down:
-                        spriteFactory.SwordDown();
+                        if (currentState != CurrentState.swordDown)
+                        {
+                            currentState = CurrentState.swordDown;
+                            spriteFactory.SwordDown();
+                        }
                         break;
 
                     default:
-                        spriteFactory.SwordDown();
+                        if (currentState != CurrentState.swordDown)
+                        {
+                            currentState = CurrentState.swordDown;
+                            spriteFactory.SwordDown();
+                        }
                         break;
                 }
             }
@@ -189,27 +210,48 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 timer = 60;
+                useBomb = false;
 
                 switch (direction)
                 {
                     case Direction.right:
-                        spriteFactory.BombRight();
+                        if (currentState != CurrentState.bombRight)
+                        {
+                            currentState = CurrentState.bombRight;
+                            spriteFactory.BombRight();
+                        }
                         break;
 
                     case Direction.up:
-                        spriteFactory.BombUp();
+                        if (currentState != CurrentState.bombUp)
+                        {
+                            currentState = CurrentState.bombUp;
+                            spriteFactory.BombUp();
+                        }
                         break;
 
                     case Direction.left:
-                        spriteFactory.BombLeft();
+                        if (currentState != CurrentState.bombLeft)
+                        {
+                            currentState = CurrentState.bombLeft;
+                            spriteFactory.BombLeft();
+                        }
                         break;
 
                     case Direction.down:
-                        spriteFactory.BombDown();
+                        if (currentState != CurrentState.bombDown)
+                        {
+                            currentState = CurrentState.bombDown;
+                            spriteFactory.BombDown();
+                        }
                         break;
 
                     default:
-                        spriteFactory.BombDown();
+                        if (currentState != CurrentState.bombDown)
+                        {
+                            currentState = CurrentState.bombDown;
+                            spriteFactory.BombDown();
+                        }
                         break;
                 }
             }
@@ -222,27 +264,48 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 timer = 25;
+                useBoomerang = false;
 
                 switch (direction)
                 {
                     case Direction.right:
-                        spriteFactory.BoomerangRight();
+                        if (currentState != CurrentState.boomerangRight)
+                        {
+                            currentState = CurrentState.boomerangRight;
+                            spriteFactory.BoomerangRight();
+                        }
                         break;
 
                     case Direction.up:
-                        spriteFactory.BoomerangUp();
+                        if (currentState != CurrentState.boomerangUp)
+                        {
+                            currentState = CurrentState.boomerangUp;
+                            spriteFactory.BoomerangUp();
+                        }
                         break;
 
                     case Direction.left:
-                        spriteFactory.BoomerangLeft();
+                        if (currentState != CurrentState.boomerangLeft)
+                        {
+                            currentState = CurrentState.boomerangLeft;
+                            spriteFactory.BoomerangLeft();
+                        }
                         break;
 
                     case Direction.down:
-                        spriteFactory.BoomerangDown();
+                        if (currentState != CurrentState.boomerangDown)
+                        {
+                            currentState = CurrentState.boomerangDown;
+                            spriteFactory.BoomerangDown();
+                        }
                         break;
 
                     default:
-                        spriteFactory.BoomerangDown();
+                        if (currentState != CurrentState.boomerangDown)
+                        {
+                            currentState = CurrentState.boomerangDown;
+                            spriteFactory.BoomerangDown();
+                        }
                         break;
                 }
             }
@@ -255,26 +318,48 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 timer = 25;
+                useArrow = false;
+
                 switch (direction)
                 {
                     case Direction.right:
-                        spriteFactory.ArrowRight();
+                        if (currentState != CurrentState.arrowRight)
+                        {
+                            currentState = CurrentState.arrowRight;
+                            spriteFactory.ArrowRight();
+                        }
                         break;
 
                     case Direction.up:
-                        spriteFactory.ArrowUp();
+                        if (currentState != CurrentState.arrowUp)
+                        {
+                            currentState = CurrentState.arrowUp;
+                            spriteFactory.ArrowUp();
+                        }
                         break;
 
                     case Direction.left:
-                        spriteFactory.ArrowLeft();
+                        if (currentState != CurrentState.arrowLeft)
+                        {
+                            currentState = CurrentState.arrowLeft;
+                            spriteFactory.ArrowLeft();
+                        }
                         break;
 
                     case Direction.down:
-                        spriteFactory.ArrowDown();
+                        if (currentState != CurrentState.arrowDown)
+                        {
+                            currentState = CurrentState.arrowDown;
+                            spriteFactory.ArrowDown();
+                        }
                         break;
 
                     default:
-                        spriteFactory.ArrowDown();
+                        if (currentState != CurrentState.arrowDown)
+                        {
+                            currentState = CurrentState.arrowDown;
+                            spriteFactory.ArrowDown();
+                        }
                         break;
                 }
             }
@@ -286,10 +371,12 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 timer = 60;
+                isDamaged = false;
+
                 switch (direction)
                 {
                     case Direction.right:
-                        if (currentState == CurrentState.damagedRight)
+                        if (currentState != CurrentState.damagedRight)
                         {
                             currentState = CurrentState.damagedRight;
                             spriteFactory.DamageRight();
@@ -297,7 +384,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         break;
 
                     case Direction.up:
-                        if (currentState == CurrentState.damagedUp)
+                        if (currentState != CurrentState.damagedUp)
                         {
                             currentState = CurrentState.damagedUp;
                             spriteFactory.DamageUp();
@@ -305,7 +392,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         break;
 
                     case Direction.left:
-                        if (currentState == CurrentState.damagedLeft)
+                        if (currentState != CurrentState.damagedLeft)
                         {
                             currentState = CurrentState.damagedLeft;
                             spriteFactory.DamageLeft();
@@ -313,7 +400,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         break;
 
                     case Direction.down:
-                        if (currentState == CurrentState.damagedDown)
+                        if (currentState != CurrentState.damagedDown)
                         {
                             currentState = CurrentState.damagedDown;
                             spriteFactory.DamageDown();
@@ -321,7 +408,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         break;
 
                     default:
-                        if (currentState == CurrentState.damagedDown)
+                        if (currentState != CurrentState.damagedDown)
                         {
                             currentState = CurrentState.damagedDown;
                             spriteFactory.DamageDown();
@@ -334,6 +421,76 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public void Update()
         {
+            if (timer > 0)
+            {
+                timer--;
+            }
+
+            //State calculation
+            if (moving)
+            {
+                if (isDamaged)
+                {
+                    Damaged();
+                }
+                else if (useSword)
+                {
+                    Sword();
+                }
+                else if (useBomb)
+                {
+                    Bomb();
+                }
+                else if (useArrow)
+                {
+                    Arrow();
+                }
+                else if (useBoomerang)
+                {
+                    Boomerang();
+                }
+                else
+                {
+                    Moving();
+                }
+            }
+            else
+            {
+                if (isDamaged)
+                {
+                    Damaged();
+                }
+                else if (useSword)
+                {
+                    Sword();
+                }
+                else if (useBomb)
+                {
+                    Bomb();
+                }
+                else if (useArrow)
+                {
+                    Arrow();
+                }
+                else if (useBoomerang)
+                {
+                    Boomerang();
+                }
+                else
+                {
+                    Idle();
+                }
+            }
+
+
+
+
+
+
+
+
+
+            /*
             if (timer > 0)
             {
                 timer--;
@@ -400,6 +557,7 @@ namespace CSE3902_Game_Sprint0.Classes
                     Idle();
                 }
             }
+            */
         }
     }
 }
