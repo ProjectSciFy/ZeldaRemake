@@ -1,5 +1,9 @@
 ﻿README Document for Sprint 2:
 
+Things to Note About Performance:
+	-Goriya's boomerangs spawn in a very delayed cycle.
+	-Eevee from Sprint 0 is still in the project, PLEASE IGNORE WE WILL REMOVE LATER. IT'S CUTE.
+
 Program Controls (and some incomplete/buggy issues stemming from controls):
 	-[WASD] and [Arrows] keys control vertical and horizontal movement.
 		+No diagonal movement. Key priority-based movement (i.e.: last key pressed is the direction link moves; if key is held and another is pressed, he moves in the new direction)
@@ -13,9 +17,6 @@ Program Controls (and some incomplete/buggy issues stemming from controls):
 	-[R] resets all sprites to original locations and states.
 		+KNOWN ISSUE: if [E] is press directly before resetting with [R], Link's damaged animation continues past the reset and then resets.
 	-[Q] quits the game instantly.
-
-Things to Note About Performance:
-	-Goriya's boomerangs spawn in a very delayed cycle.
 
 Extra Implementations:
 	-[1]...[4] change Link's item AND perform the intended items' animations. Currently the items are not spawning, but their animations are coded.

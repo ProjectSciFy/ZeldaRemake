@@ -2,7 +2,7 @@
 Date: 2/22/2021
 Sprint 2
 Class: WeaponLink.cs
-Class Author: Jerry
+Class Author: Jared
 
 Readability:
 Duration: 5 minutes
