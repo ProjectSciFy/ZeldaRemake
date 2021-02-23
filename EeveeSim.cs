@@ -155,8 +155,6 @@ namespace CSE3902_Game_Sprint0
 
             item.Update();
 
-            bomb.Update();
-
             drawnEnemy.Update();
         }
 
