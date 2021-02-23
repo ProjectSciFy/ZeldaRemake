@@ -17,6 +17,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Fireball fireball_1, fireball_2, fireball_3;
+        public int timer = 0;
 
         public EnemyAquamentus(EeveeSim game, Vector2 spawnLocation)
         {
@@ -24,18 +25,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             this.enemySpriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
             myState = new AquamentusStateMachine(this);
-            fireball_1 = new Fireball(game, this, myState, new Vector2(-1, 0));
-            fireball_2 = new Fireball(game, this, myState, new Vector2(-1, 1));
-            fireball_3 = new Fireball(game, this, myState, new Vector2(-1, -1));
         }
 
         public void Update()
         {
+            if (timer > 0)
+            {
+                timer--;
+            }
             myState.Update();
             mySprite.Update();
-            fireball_1.Update();
-            fireball_2.Update();
-            fireball_3.Update();
 
             //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
@@ -58,6 +57,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             {
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
+
+            if (timer <= 0)
+            {
+                timer = 200;
+                fireball_1 = new Fireball(game, this, myState, new Vector2(-1, 0));
+                fireball_2 = new Fireball(game, this, myState, new Vector2(-1, 1));
+                fireball_3 = new Fireball(game, this, myState, new Vector2(-1, -1));
+            }
+
+            fireball_1.Update();
+            fireball_2.Update();
+            fireball_3.Update();
         }
 
         public void Draw()
