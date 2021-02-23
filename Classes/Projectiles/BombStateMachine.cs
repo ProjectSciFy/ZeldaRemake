@@ -9,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
     {
         private Bomb bomb;
         private ItemSpriteFactory spriteFactory;
-        public bool spawning = false;
+        public bool fuse = true;
 
         private int timer = 90;
 
@@ -20,7 +20,6 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         {
             this.bomb = bomb;
             spriteFactory = bomb.spriteFactory;
-            this.spawning = false;
         }
 
         public void Spawning()
@@ -33,7 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 
             if (timer <= 0)
             {
-                spawning = false;
+                fuse = false;
                 currentState = CurrentState.none;
             }
         }
@@ -43,24 +42,29 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             if (currentState != CurrentState.exploding)
             {
                 currentState = CurrentState.exploding;
-                //spriteFactory.ExplodeBomb(bomb);
+                spriteFactory.ExplodeBomb(bomb);
             }
         }
 
         public void Update()
         {
-            if (timer > 0)
+            if (timer <= 0)
+            {
+                fuse = false;
+                timer = 30;
+            }
+            else
             {
                 timer--;
             }
 
-            if (spawning)
+            if (fuse)
             {
                 Spawning();
             }
             else
             {
-                //do nothing.
+                Exploding();
             }
         }
     }
