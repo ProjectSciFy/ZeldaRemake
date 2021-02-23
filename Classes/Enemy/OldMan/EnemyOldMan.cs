@@ -4,24 +4,24 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSE3902_Game_Sprint0.Classes.Enemy
+namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 {
-    public class EnemyGel : IEnemy
+    public class EnemyOldMan : IEnemy
     {
         public EeveeSim game;
-        private GelStateMachine myState;
+        private OldManStateMachine myState;
         public EnemySpriteFactory enemySpriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
 
-        public EnemyGel(EeveeSim game, Vector2 spawnLocation)
+        public EnemyOldMan(EeveeSim game, Vector2 spawnLocation)
         {
             this.game = game;
             this.enemySpriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
-            myState = new GelStateMachine(this);
+            myState = new OldManStateMachine(this);
         }
 
         public void Update()

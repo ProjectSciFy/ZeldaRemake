@@ -10,6 +10,7 @@ using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands
 {
@@ -26,8 +27,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands
             switch (this.game.currentEnemy)
             {
                 case EeveeSim.Enemies.Stalfos:
-                    this.game.drawnEnemy = new EnemyWallmaster(this.game, new Vector2(400, 100));
-                    this.game.currentEnemy = EeveeSim.Enemies.Wallmaster;
+                    this.game.drawnEnemy = new EnemyOldMan(this.game, new Vector2(400, 100));
+                    this.game.currentEnemy = EeveeSim.Enemies.OldMan;
                     break;
                 case EeveeSim.Enemies.Gel:
                     this.game.drawnEnemy = new EnemyStalfos(this.game, new Vector2(400, 100));
@@ -53,6 +54,10 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands
                 case EeveeSim.Enemies.Wallmaster:
                     this.game.drawnEnemy = new EnemyAquamentus(this.game, new Vector2(400, 100));
                     this.game.currentEnemy = EeveeSim.Enemies.Aquamentus;
+                    break;
+                case EeveeSim.Enemies.OldMan:
+                    this.game.drawnEnemy = new EnemyWallmaster(this.game, new Vector2(400, 100));
+                    this.game.currentEnemy = EeveeSim.Enemies.Wallmaster;
                     break;
                 default:
                     break;

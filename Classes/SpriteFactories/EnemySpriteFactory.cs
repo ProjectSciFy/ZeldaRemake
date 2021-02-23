@@ -1,6 +1,7 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
+using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Scripts;
@@ -20,6 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private Texture2D bossSpriteSheet;
         private Texture2D enemySpriteSheet;
         private Texture2D linkSpriteSheet;
+        private Texture2D NPCSpriteSheet;
 
         public EnemySpriteFactory(EeveeSim game)
         {
@@ -27,6 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             game.spriteSheets.TryGetValue("Bosses", out bossSpriteSheet);
             game.spriteSheets.TryGetValue("DungeonEnemies", out enemySpriteSheet);
             game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
+            game.spriteSheets.TryGetValue("NPC", out NPCSpriteSheet);
         }
 
         //Aquamentus methods
@@ -410,6 +413,16 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
+        //OldMan methods :^]
+        public void OldManIdle(EnemyOldMan oldMan)
+        {
+            oldMan.spriteSize.X = 16;
+            oldMan.spriteSize.Y = 16;
+            oldMan.velocity.X = 0;
+            oldMan.velocity.Y = 0;
+            oldMan.mySprite = new UniversalSprite(game, NPCSpriteSheet, new Rectangle(18, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+
         //Stalfos methods
         public void SpawnStalfos(EnemyStalfos stalfos)
         {
@@ -575,6 +588,14 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.X = -1;
             boomerang.velocity.Y = -1;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void FireballAttack(Fireball fireball)
+        {
+            fireball.spriteSize.X = 16;
+            fireball.spriteSize.Y = 16;
+            fireball.velocity.X = fireball.trajectory.X;
+            fireball.velocity.Y = fireball.trajectory.Y;
+            fireball.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(101, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 5);
         }
     }
 }

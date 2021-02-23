@@ -131,7 +131,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 if (timer <= 0)
                 {
                     var random = new Random();
-                    timer = 800;
+                    timer = 500;
                     switch (random.Next(4))
                     {
                         case 0:
