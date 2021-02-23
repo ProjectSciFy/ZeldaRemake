@@ -168,7 +168,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 5);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 5);
         }
         public void BoomerangDown()
         {
@@ -176,7 +176,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 5);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 5);
         }
         public void BoomerangRight()
         {
@@ -192,7 +192,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 5);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 5);
         }
 
 
@@ -236,7 +236,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.Red, SpriteEffects.None, new Vector2(1, 1), 10);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(287, 202, 16, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 5);
         }
 
         public void DamageDown()
@@ -245,7 +245,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.Red, SpriteEffects.None, new Vector2(1, 1), 10);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(253, 202, 16, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 5);
         }
 
         public void DamageRight()
@@ -254,7 +254,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.Red, SpriteEffects.None, new Vector2(1, 1), 10);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(270, 202, 16, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 5);
         }
 
         public void DamageLeft()
@@ -263,7 +263,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.Red, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 10);
+            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(270, 202, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 5);
         }
         public void PickUpNormal()
         {
