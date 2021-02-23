@@ -9,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes
     public class Link : IPlayer
     {
         public EeveeSim game;
-        private LinkStateMachine linkState;
+        public LinkStateMachine linkState;
         public ISprite linkSprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);

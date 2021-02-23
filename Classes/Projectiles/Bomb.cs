@@ -29,7 +29,6 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.game = game;
             this.link = link;
             drawLocation = link.drawLocation;
-            spriteFactory.SpawnBomb(bomb); // bomb texture
         }
         public void Update()
         {
