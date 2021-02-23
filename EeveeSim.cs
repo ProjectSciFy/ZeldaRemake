@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 
 namespace CSE3902_Game_Sprint0
@@ -42,7 +43,8 @@ namespace CSE3902_Game_Sprint0
         public IEnemy goriya;
         public IEnemy aquamentus;
         public IEnemy wallmaster;
-        public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster }
+        public IEnemy oldMan;
+        public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster, OldMan}
         public Enemies currentEnemy;
         public IEnemy drawnEnemy;
         public LinkStateMachine linkStateMachine;
@@ -103,6 +105,7 @@ namespace CSE3902_Game_Sprint0
             goriya = new EnemyGoriya(this, new Vector2(400, 100));
             aquamentus = new EnemyAquamentus(this, new Vector2(400, 100));
             wallmaster = new EnemyWallmaster(this, new Vector2(400, 100));
+            oldMan = new EnemyOldMan(this, new Vector2(400, 100));
             currentEnemy = Enemies.Stalfos;
             drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
