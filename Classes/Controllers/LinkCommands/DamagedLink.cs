@@ -18,27 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
         {
             linkState.moving = false;
 
-            switch (direction)
-            {
-                case LinkStateMachine.Direction.up:
-                    linkState.Damaged();
-                    break;
-
-                case LinkStateMachine.Direction.down:
-                    linkState.Damaged();
-                    break;
-
-                case LinkStateMachine.Direction.left:
-                    linkState.Damaged();
-                    break;
-
-                case LinkStateMachine.Direction.right:
-                    linkState.Damaged();
-                    break;
-
-                default:
-                    break;
-            }
+            linkState.isDamaged = true;
         }
     }
 }
