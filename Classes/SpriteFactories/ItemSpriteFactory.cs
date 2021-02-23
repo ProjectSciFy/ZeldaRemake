@@ -26,6 +26,10 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             item.itemSprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(128, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
+        public void SpawnBomb(Bomb bomb)
+        {
+            bomb.bombSprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(136, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
         public void Bomb()
         {
             item.itemSprite = new UniversalSprite(game, itemSpriteSheet, new Rectangle(136, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
