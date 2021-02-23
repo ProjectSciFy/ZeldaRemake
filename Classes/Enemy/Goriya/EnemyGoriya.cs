@@ -33,8 +33,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public void Update()
         {
             myState.Update();
-            mySprite.Update();
-            boomerang.Update();
+            mySprite.Update(); 
+            if (!myState.moving)
+            {
+                boomerang.Update();
+            }
 
             //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
