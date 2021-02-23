@@ -1,0 +1,18 @@
+﻿Sprint #2
+Name: Jared Zahn
+Date: 2/22/21
+
+File being reviewed: Boomerang.cs
+Author of code: Gage Odom
+
+Time taken on code review: 15 minutes
+
+REVIEW:
+
+-Important variables were often described through comments which helps the reader understand the purpose and existence of said variables. Important variables are
+also given concise and detailed names to make reading the code feel more logical. In addition to this, comments were usually found above method implementations 
+with a few exceptions. It would help the readability of the code if the author described the reasoning behind the "Inward()" and "Outward()" functions.
+
+-The boomerang movement code is well commented to describe what is being accomplished. The trajectory logic could use a little bit more commenting or just a small
+amount of text paraphrasing the calculations used. Code is overall very easy to read and should be very easy to maintain since Boomerang is its own class. Fascinating
+that the boomerang code can be applied in multiple areas of the game. 
