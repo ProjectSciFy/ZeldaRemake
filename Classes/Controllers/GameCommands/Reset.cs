@@ -11,6 +11,13 @@ using System.Text;
 using CSE3902_Game_Sprint0.Classes.Controllers.ItemCommands;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
+using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
+using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Controllers;
+using CSE3902_Game_Sprint0.Classes.Enemy;
+using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
@@ -36,6 +43,9 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         private Vector2 linkLocation;
 
+        private EeveeSim.Enemies currentEnemy;
+        private IEnemy drawnEnemy;
+
         public Reset(EeveeSim game)
         {
             this.game = game;
@@ -57,6 +67,9 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             isDamaged = game.linkStateMachine.isDamaged;
 
             linkLocation = game.link.drawLocation;
+
+            currentEnemy = game.currentEnemy;
+            drawnEnemy = game.drawnEnemy;
         }
 
         public void Execute()
@@ -98,7 +111,12 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.link.drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
             this.linkLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
 
-
+            this.currentEnemy = game.currentEnemy;
+            this.drawnEnemy = game.drawnEnemy;
+            game.currentEnemy = EeveeSim.Enemies.Stalfos;
+            game.drawnEnemy = new EnemyStalfos(this.game, new Vector2(400, 100));
+            this.currentEnemy = EeveeSim.Enemies.Stalfos;
+            this.drawnEnemy = new EnemyStalfos(this.game, new Vector2(400, 100));
         }
     }
 }
