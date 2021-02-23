@@ -28,7 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private enum CurrentState {movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW};
         private CurrentState currentState = CurrentState.movingDown;
         public Direction returnDirection;
-        public const int RANGE = 200;
+        public const int RANGE = 125;
         public Boolean newItem = true;
         public Boolean returning = false;
 
