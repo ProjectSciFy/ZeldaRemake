@@ -1,0 +1,21 @@
+﻿READABILITY OF MARK'S UniversalSprite.cs:
+-Author of review: Gage Odom
+-Date of review: February 22 2021
+-Sprint Number: 2
+-File Name: UnversalSprite.cs
+-Author of file: Mark Maher
+-Number of minutes taken to review: 10
+-Comments: Looks great! Used alot throughout all of the SpriteFactory. Looking at it initially it may seem confusing since there are 
+alot of constuctor arguments but they have good variable names to show what their purpose is. Logic in Update() seems easy to follow, not terribly complex. Draw method is easy and right to the point.
+I've used this class 100 times throughout the duration of Sprint2 and its very dependable.
+
+MAINTAINABILITY OF MARK'S TileStateMachine.cs:
+-Author of review: Gage
+-Date of review: February 22, 2021
+-Sprint Number: 2
+-File Name: UniversalSprite.cs
+-Author of file: Mark Maher
+-Number of minutes taken to review: 10
+-Comments: Code is easily adabtable to many different sprites. Proven to be useful for idle sprites, animiated sprites and projectiles. I don't think it will be hard at all to maintain the code.
+-Hypothetical changes: Making the frameGrid be able to be adjustable to decimal places will help with precision of movement for our sprites. I know we talked about it already have an idea on how to achieve this.
+Other than that it works great.

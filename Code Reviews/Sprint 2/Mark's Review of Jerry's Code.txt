@@ -1,0 +1,14 @@
+﻿Author: Mark R Maher (maher.159)
+Date: 2/22/2021
+Sprint 2
+Class: WeaponLink.cs
+Class Author: Jerry
+
+Readability:
+Duration: 5 minutes
+Comments: very readable, the switch case in Execute() makes sense as to what its doing & is in little to no way confusing.
+The only think I might personally consider is adding a comment to both constructors to expand upon the purpose for overloading the class.
+
+Code Quality:
+Comments: The quality is pretty solid, owed mostly to the simplicity of the class as a whole.
+As is, the code is very maintainable as well; if new state booleans were to be added into the incoming stateMachine, one could simply increase the size of the switch case to accomodate.
