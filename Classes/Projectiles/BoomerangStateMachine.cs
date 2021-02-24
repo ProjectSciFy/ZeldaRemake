@@ -18,6 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Direction returnDirection;
         public const int RANGE = 175;
         public const int RETURN_WINDOW = 30;
+        public const int DESPAWN_DISTANCE = 5;
         public const float BASE_SPEED = (float)1.5, PIVOT_SPEED = (float) 1.0;
         public Boolean returning = false, newItem = true, brake = false;
 
@@ -280,8 +281,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         // (Math.Abs(boomerang.drawLocation.X - boomerang.spawnLocation.X) < RANGE && newItem == true) || (Math.Abs(boomerang.drawLocation.Y - boomerang.spawnLocation.Y) < RANGE && newItem == true)
         // (Math.Abs(boomerang.drawLocation.X - boomerang.spawnLocation.X) > RANGE && returning == false) || (Math.Abs(boomerang.drawLocation.Y - boomerang.spawnLocation.Y) > RANGE && returning == false)
         public void Update()
-        {
-            int x = (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation);
+        {            
             if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && newItem)
             {
                 if (boomerang.link == null)
@@ -377,7 +377,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 }
                 InwardReturnWindow();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && returning)
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > DESPAWN_DISTANCE && returning)
             {
                 if (!brake)
                 {
@@ -456,9 +456,9 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 }
                 Inward();
             }
-            else
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < DESPAWN_DISTANCE && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > 0 && returning)
             {
-                //despawn boomerang somehow
+                // boomerang.inFlight = false;
             }
         }
     }
