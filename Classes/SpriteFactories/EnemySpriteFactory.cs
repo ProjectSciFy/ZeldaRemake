@@ -273,8 +273,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 0;
-            keese.velocity.Y = -2;
+            //keese.velocity.X = 0;
+            //keese.velocity.Y = -2;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
@@ -282,8 +282,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 2;
-            keese.velocity.Y = -2;
+            //keese.velocity.X = 2;
+            //keese.velocity.Y = -2;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
@@ -291,8 +291,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 2;
-            keese.velocity.Y = 0;
+            //keese.velocity.X = 2;
+            //keese.velocity.Y = 0;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
@@ -300,8 +300,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 2;
-            keese.velocity.Y = 2;
+            //keese.velocity.X = 2;
+            //keese.velocity.Y = 2;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
@@ -309,8 +309,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 0;
-            keese.velocity.Y = 2;
+            //keese.velocity.X = 0;
+            //keese.velocity.Y = 2;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
@@ -318,8 +318,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = -2;
-            keese.velocity.Y = 2;
+            //keese.velocity.X = -2;
+            //keese.velocity.Y = 2;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
@@ -327,8 +327,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = -2;
-            keese.velocity.Y = 0;
+            //keese.velocity.X = -2;
+            //keese.velocity.Y = 0;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
@@ -336,8 +336,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = -2;
-            keese.velocity.Y = -2;
+            //keese.velocity.X = -2;
+            //keese.velocity.Y = -2;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
 
@@ -345,8 +345,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 0;
-            keese.velocity.Y = -1;
+            //keese.velocity.X = 0;
+            //keese.velocity.Y = -1;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
@@ -354,8 +354,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 1;
-            keese.velocity.Y = -1;
+            //keese.velocity.X = 1;
+            //keese.velocity.Y = -1;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
@@ -363,8 +363,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 1;
-            keese.velocity.Y = 0;
+            //keese.velocity.X = 1;
+            //keese.velocity.Y = 0;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
@@ -372,8 +372,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 1;
-            keese.velocity.Y = 1;
+            //keese.velocity.X = 1;
+            //keese.velocity.Y = 1;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
@@ -381,8 +381,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 0;
-            keese.velocity.Y = 1;
+            //keese.velocity.X = 0;
+            //keese.velocity.Y = 1;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
@@ -390,8 +390,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = -1;
-            keese.velocity.Y = 1;
+            //keese.velocity.X = -1;
+            //keese.velocity.Y = 1;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
@@ -399,8 +399,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = -1;
-            keese.velocity.Y = 0;
+            //keese.velocity.X = -1;
+            //keese.velocity.Y = 0;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
@@ -408,8 +408,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = -1;
-            keese.velocity.Y = -1;
+            //keese.velocity.X = -1;
+            //keese.velocity.Y = -1;
             keese.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 

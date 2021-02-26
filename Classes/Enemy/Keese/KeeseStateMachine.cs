@@ -20,6 +20,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         bool spawning = true;
         private int timer = 90;
         private int directionTimer = 0;
+        private float flightTurn = (float).02;
+        private float landingTurn = (float).02;
         private enum CurrentState { none, idle, flyingNorth, flyingNorthEast, flyingEast, flyingSouthEast, flyingSouth, flyingSouthWest, flyingWest, flyingNorthWest, landingNorth, landingNorthEast, landingEast, landingSouthEast, landingSouth, landingSouthWest, landingWest, landingNorthWest, spawning };
         private CurrentState currentState = CurrentState.none;
 
@@ -119,6 +121,20 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             switch (direction)
             {
                 case Direction.north:
+                    if (keese.velocity.Y > -2)
+                    {
+                        keese.velocity.Y = keese.velocity.Y - flightTurn;
+                    }
+
+                    if (keese.velocity.X > 0)
+                    {
+                        keese.velocity.X = keese.velocity.X - flightTurn;
+                    }
+                    else if (keese.velocity.X < 0)
+                    {
+                        keese.velocity.X = keese.velocity.X + flightTurn;
+                    }
+
                     if (currentState != CurrentState.flyingNorth)
                     {
                         currentState = CurrentState.flyingNorth;
@@ -127,6 +143,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.northEast:
+                    if (keese.velocity.Y > -2)
+                    {
+                        keese.velocity.Y = keese.velocity.Y - flightTurn;
+                    }
+
+                    if (keese.velocity.X < 2)
+                    {
+                        keese.velocity.X = keese.velocity.X + flightTurn;
+                    }
+
                     if (currentState != CurrentState.flyingNorthEast)
                     {
                         currentState = CurrentState.flyingNorthEast;
@@ -135,6 +161,20 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.east:
+                    if (keese.velocity.Y > 0)
+                    {
+                        keese.velocity.Y = keese.velocity.Y - flightTurn;
+                    }
+                    else if (keese.velocity.Y < 0)
+                    {
+                        keese.velocity.Y = keese.velocity.Y + flightTurn;
+                    }
+
+                    if (keese.velocity.X < 2)
+                    {
+                        keese.velocity.X = keese.velocity.X + flightTurn;
+                    }
+
                     if (currentState != CurrentState.flyingEast)
                     {
                         currentState = CurrentState.flyingEast;
@@ -143,6 +183,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.southEast:
+                    if (keese.velocity.Y < 2)
+                    {
+                        keese.velocity.Y = keese.velocity.Y + flightTurn;
+                    }
+
+                    if (keese.velocity.X < 2)
+                    {
+                        keese.velocity.X = keese.velocity.X + flightTurn;
+                    }
+
                     if (currentState != CurrentState.flyingSouthEast)
                     {
                         currentState = CurrentState.flyingSouthEast;
@@ -151,6 +201,20 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.south:
+                    if (keese.velocity.Y < 2)
+                    {
+                        keese.velocity.Y = keese.velocity.Y + flightTurn;
+                    }
+
+                    if (keese.velocity.X > 0)
+                    {
+                        keese.velocity.X = keese.velocity.X - flightTurn;
+                    }
+                    else if (keese.velocity.X < 0)
+                    {
+                        keese.velocity.X = keese.velocity.X + flightTurn;
+                    }
+
                     if (currentState != CurrentState.flyingSouth)
                     {
                         currentState = CurrentState.flyingSouth;
@@ -159,6 +223,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.southWest:
+                    if (keese.velocity.Y < 2)
+                    {
+                        keese.velocity.Y = keese.velocity.Y + flightTurn;
+                    }
+
+                    if (keese.velocity.X > -2)
+                    {
+                        keese.velocity.X = keese.velocity.X - flightTurn;
+                    }
+
                     if (currentState != CurrentState.flyingSouthWest)
                     {
                         currentState = CurrentState.flyingSouthWest;
@@ -167,6 +241,20 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.west:
+                    if (keese.velocity.Y > 0)
+                    {
+                        keese.velocity.Y = keese.velocity.Y - flightTurn;
+                    }
+                    else if (keese.velocity.Y < 0)
+                    {
+                        keese.velocity.Y = keese.velocity.Y + flightTurn;
+                    }
+
+                    if (keese.velocity.X > -2)
+                    {
+                        keese.velocity.X = keese.velocity.X - flightTurn;
+                    }
+
                     if (currentState != CurrentState.flyingWest)
                     {
                         currentState = CurrentState.flyingWest;
@@ -175,6 +263,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.northWest:
+                    if (keese.velocity.Y > -2)
+                    {
+                        keese.velocity.Y = keese.velocity.Y - flightTurn;
+                    }
+
+                    if (keese.velocity.X > -2)
+                    {
+                        keese.velocity.X = keese.velocity.X - flightTurn;
+                    }
+
                     if (currentState != CurrentState.flyingNorthWest)
                     {
                         currentState = CurrentState.flyingNorthWest;
@@ -192,6 +290,39 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             switch (direction)
             {
                 case Direction.north:
+                    if (landing)
+                    {
+                        if (keese.velocity.Y < 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X > 0)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                        else if (keese.velocity.X < 0)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+                    else if (takeOff)
+                    {
+                        if (keese.velocity.Y > -2)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+
+                        if (keese.velocity.X > 0)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                        else if (keese.velocity.X < 0)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+
                     if (currentState != CurrentState.landingNorth)
                     {
                         currentState = CurrentState.landingNorth;
@@ -200,6 +331,35 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.northEast:
+                    if (landing)
+                    {
+                        if (keese.velocity.Y < 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X > 0)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                    }
+                    else if (takeOff)
+                    {
+                        if (keese.velocity.Y > -2)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+
+                        if (keese.velocity.X < 2)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+
+                    if (landing && keese.velocity.Y < 0)
+                    {
+                        keese.velocity.Y = keese.velocity.Y + landingTurn;
+                    }
                     if (currentState != CurrentState.landingNorthEast)
                     {
                         currentState = CurrentState.landingNorthEast;
@@ -208,6 +368,39 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.east:
+                    if (landing)
+                    {
+                        if (keese.velocity.Y > 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+                        else if (keese.velocity.Y < 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X > 0)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                    }
+                    else if (takeOff)
+                    {
+                        if (keese.velocity.Y > 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+                        else if (keese.velocity.Y < 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X < 2)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+
                     if (currentState != CurrentState.landingEast)
                     {
                         currentState = CurrentState.landingEast;
@@ -216,6 +409,31 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.southEast:
+                    if (landing)
+                    {
+                        if (keese.velocity.Y > 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+
+                        if (keese.velocity.X > 0)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                    }
+                    else if (takeOff)
+                    {
+                        if (keese.velocity.Y < 2)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X < 2)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+
                     if (currentState != CurrentState.landingSouthEast)
                     {
                         currentState = CurrentState.landingSouthEast;
@@ -224,6 +442,39 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.south:
+                    if (landing)
+                    {
+                        if (keese.velocity.Y > 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+
+                        if (keese.velocity.X > 0)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                        else if (keese.velocity.X < 0)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+                    else if (takeOff)
+                    {
+                        if (keese.velocity.Y < 2)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X > 0)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                        else if (keese.velocity.X < 0)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+
                     if (currentState != CurrentState.landingSouth)
                     {
                         currentState = CurrentState.landingSouth;
@@ -232,6 +483,31 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.southWest:
+                    if (landing)
+                    {
+                        if (keese.velocity.Y > 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+
+                        if (keese.velocity.X < 0)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+                    else if (takeOff)
+                    {
+                        if (keese.velocity.Y < 2)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X > -2)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                    }
+
                     if (currentState != CurrentState.landingSouthWest)
                     {
                         currentState = CurrentState.landingSouthWest;
@@ -240,6 +516,39 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.west:
+                    if (landing)
+                    {
+                        if (keese.velocity.Y > 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+                        else if (keese.velocity.Y < 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X < 0)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+                    else if (takeOff)
+                    {
+                        if (keese.velocity.Y > 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+                        else if (keese.velocity.Y < 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X > -2)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                    }
+
                     if (currentState != CurrentState.landingWest)
                     {
                         currentState = CurrentState.landingWest;
@@ -248,6 +557,31 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     break;
 
                 case Direction.northWest:
+                    if (landing)
+                    {
+                        if (keese.velocity.Y < 0)
+                        {
+                            keese.velocity.Y = keese.velocity.Y + landingTurn;
+                        }
+
+                        if (keese.velocity.X < 0)
+                        {
+                            keese.velocity.X = keese.velocity.X + landingTurn;
+                        }
+                    }
+                    else if (takeOff)
+                    {
+                        if (keese.velocity.Y > -2)
+                        {
+                            keese.velocity.Y = keese.velocity.Y - landingTurn;
+                        }
+
+                        if (keese.velocity.X > -2)
+                        {
+                            keese.velocity.X = keese.velocity.X - landingTurn;
+                        }
+                    }
+
                     if (currentState != CurrentState.landingNorthWest)
                     {
                         currentState = CurrentState.landingNorthWest;
