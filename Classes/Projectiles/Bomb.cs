@@ -10,35 +10,65 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
-    public class Bomb : ISecondaryEntity
+    public class Bomb : IProjectile
     {
-        public EeveeSim game;
-        public Link link = null;
-        public LinkStateMachine linkState = null;
-        public ItemSpriteFactory spriteFactory;
-        private Texture2D bombTexture;
-        public ISprite bombSprite;
+        public ProjectileSpriteFactory projectileSpriteFactory;
+        public ProjectileHandler projectileHandler;
+        public ISprite mySprite;
         public Vector2 drawLocation;
-        public Vector2 spawnLocation;
-        public Vector2 spriteSize = new Vector2(16, 16);
-        private Bomb bomb;
+        public Vector2 spriteSize;
         private BombStateMachine myState;
+        public bool exploding = false;
+        private int explosionTimer = 6;
+        private bool explosionMirror = false;
 
-        public Bomb(EeveeSim game, Link link, LinkStateMachine linkState)
+        public Bomb(EeveeSim game, Vector2 drawLocation, ProjectileHandler projectileHandler)
         {
-            this.game = game;
-            this.link = link;
-            drawLocation = link.drawLocation;
+            this.projectileSpriteFactory = game.projectileSpriteFactory;
+            this.drawLocation = drawLocation;
+            this.projectileHandler = projectileHandler;
+            myState = new BombStateMachine(this);
         }
+
         public void Update()
         {
             myState.Update();
-            bombSprite.Update();
+            mySprite.Update();
         }
 
         public void Draw()
         {
-            bombSprite.Draw(drawLocation);
+            if (!exploding)
+            {
+                mySprite.Draw(drawLocation);
+            }
+            else
+            {
+                if (explosionMirror)
+                {
+                    mySprite.Draw(new Vector2(drawLocation.X - 8, drawLocation.Y - 16));
+                    mySprite.Draw(new Vector2(drawLocation.X + 16, drawLocation.Y));
+                    mySprite.Draw(drawLocation);
+                    mySprite.Draw(new Vector2(drawLocation.X + 8, drawLocation.Y + 16));
+                }
+                else
+                {
+                    mySprite.Draw(new Vector2(drawLocation.X + 8, drawLocation.Y - 16));
+                    mySprite.Draw(new Vector2(drawLocation.X - 16, drawLocation.Y));
+                    mySprite.Draw(drawLocation);
+                    mySprite.Draw(new Vector2(drawLocation.X - 8, drawLocation.Y + 16));
+                }
+
+                if (explosionTimer <= 0)
+                {
+                    explosionMirror = !explosionMirror;
+                    explosionTimer = 6;
+                }
+                else
+                {
+                    explosionTimer--;
+                }
+            }
         }
     }
 }

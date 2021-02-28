@@ -1,15 +1,18 @@
 ﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
-    public class BombStateMachine
+    public class BombStateMachine : IProjectileStateMachine
     {
         private Bomb bomb;
-        private ItemSpriteFactory spriteFactory;
+        private ProjectileSpriteFactory projectileSpriteFactory;
+        public ProjectileHandler projectileHandler;
         public bool fuse = true;
+        private bool deadProjectile = false;
 
         private int timer = 90;
 
@@ -19,7 +22,8 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public BombStateMachine(Bomb bomb)
         {
             this.bomb = bomb;
-            spriteFactory = bomb.spriteFactory;
+            projectileSpriteFactory = bomb.projectileSpriteFactory;
+            projectileHandler = bomb.projectileHandler;
         }
 
         public void Spawning()
@@ -27,13 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             if (currentState != CurrentState.spawning)
             {
                 currentState = CurrentState.spawning;
-                spriteFactory.SpawnBomb(bomb);
-            }
-
-            if (timer <= 0)
-            {
-                fuse = false;
-                currentState = CurrentState.none;
+                projectileSpriteFactory.BombPlaced(bomb);
             }
         }
 
@@ -42,16 +40,21 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             if (currentState != CurrentState.exploding)
             {
                 currentState = CurrentState.exploding;
-                spriteFactory.ExplodeBomb(bomb);
+                projectileSpriteFactory.BombExploding(bomb);
+                bomb.exploding = true;
             }
         }
 
         public void Update()
         {
-            if (timer <= 0)
+            if (timer <= 0 && fuse)
             {
                 fuse = false;
                 timer = 30;
+            }
+            else if (timer <= 0 && !fuse)
+            {
+                projectileHandler.Remove(bomb);
             }
             else
             {

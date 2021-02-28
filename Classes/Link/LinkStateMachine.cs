@@ -1,4 +1,6 @@
-﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes
         private EeveeSim game;
         private Link link;
         private LinkSpriteFactory spriteFactory;
+        public ProjectileHandler projectileHandler;
         
         public enum Direction {right, up, left, down};
         public Direction direction = Direction.down;
@@ -45,6 +48,7 @@ namespace CSE3902_Game_Sprint0.Classes
             game = link.game;
             this.link = link;
             spriteFactory = new LinkSpriteFactory(link);
+            this.projectileHandler = game.projectileHandler;
             spriteFactory.IdleDown();
         }
 
@@ -203,10 +207,8 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
-        //Sets link to an animated state using sword based on the value of direction var
         public void Bomb()
         {
-            // construct animated link facing up with sprite factory
             if (timer == 0)
             {
                 timer = 60;
@@ -219,7 +221,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.bombRight;
                             spriteFactory.BombRight();
-
+                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), projectileHandler));
                         }
                         break;
 
@@ -228,6 +230,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.bombUp;
                             spriteFactory.BombUp();
+                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X, link.drawLocation.Y - 16), projectileHandler));
                         }
                         break;
 
@@ -236,6 +239,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.bombLeft;
                             spriteFactory.BombLeft();
+                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), projectileHandler));
                         }
                         break;
 
@@ -244,6 +248,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.bombDown;
                             spriteFactory.BombDown();
+                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X, link.drawLocation.Y + 16), projectileHandler));
                         }
                         break;
 
@@ -252,6 +257,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.bombDown;
                             spriteFactory.BombDown();
+                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X, link.drawLocation.Y + 16), projectileHandler));
                         }
                         break;
                 }

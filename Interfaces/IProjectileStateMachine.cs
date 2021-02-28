@@ -4,9 +4,8 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Interfaces
 {
-    public interface ISecondaryEntity
+    public interface IProjectileStateMachine
     {
         void Update();
-        void Draw();
     }
 }

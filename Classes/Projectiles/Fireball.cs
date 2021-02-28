@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
-    public class Fireball : ISecondaryEntity
+    public class Fireball : IProjectile
     {
         public EeveeSim game;
         public EnemyAquamentus aquamentus;

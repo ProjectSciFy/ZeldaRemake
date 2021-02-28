@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
-    public class Boomerang : ISecondaryEntity
+    public class Boomerang : IProjectile
     {
         public EeveeSim game;
         public Link link = null;

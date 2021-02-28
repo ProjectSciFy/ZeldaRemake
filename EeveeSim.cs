@@ -32,8 +32,10 @@ namespace CSE3902_Game_Sprint0
         private SpriteFont credits;
         private string creditsText = "Credits:\nProgram made by: Mark Maher (maher.159)\nSprites from: https://www.spriters-resource.com/ds_dsi/pokemonmysterydungeonexplorersofsky/sheet/131043/";
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
+        //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
         public ItemSpriteFactory itemSpriteFactory;
+        public ProjectileSpriteFactory projectileSpriteFactory;
         public Link link;
         // test enemy draws
         public IEnemy stalfos;
@@ -68,6 +70,9 @@ namespace CSE3902_Game_Sprint0
             // TODO: Add your initialization logic here
             
             base.Initialize();
+            //Setting up projectileHandler
+            projectileSpriteFactory = new ProjectileSpriteFactory(this);
+            projectileHandler = new ProjectileHandler(this);
 
             /* LINK */
             //set StateMachine and Link to be used:
@@ -94,8 +99,8 @@ namespace CSE3902_Game_Sprint0
             item.SetState(itemStateMachine);
 
             /* Weapons */
-            bomb = new Bomb(this, link, linkStateMachine);
-            bombStateMachine = new BombStateMachine(bomb);
+            //bomb = new Bomb(this, link, linkStateMachine);
+            //bombStateMachine = new BombStateMachine(bomb);
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
@@ -110,11 +115,8 @@ namespace CSE3902_Game_Sprint0
             currentEnemy = Enemies.Stalfos;
             drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
-            projectileHandler = new ProjectileHandler(this);
-
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
-            enemySpriteFactory = new EnemySpriteFactory(this);
 
         }
 

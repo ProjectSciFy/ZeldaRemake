@@ -36,7 +36,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 
                 case LinkStateMachine.Weapon.bomb:
                     linkState.useBomb = true;
-                    bombState.fuse = true;
                     break;
 
                 case LinkStateMachine.Weapon.arrow:
