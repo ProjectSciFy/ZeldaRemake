@@ -11,42 +11,37 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class Arrow : IProjectile
     {
-        private EeveeSim game;
-        private Link link;
-        //private Texture2D arrowTexture;
-        public ISprite arrowSprite;
+        public ProjectileSpriteFactory projectileSpriteFactory;
+        public ProjectileHandler projectileHandler;
+        public ISprite mySprite;
         public Vector2 drawLocation;
-        public Vector2 spawnLocation;
-        public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
-        //public Vector2 trajectory;
-        private LinkStateMachine linkState;
-        public EnemySpriteFactory spriteFactory;
-        public enum Direction { right, up, left, down }; // NE = North East
-        public Direction direction = Direction.down;
+        public Vector2 velocity;
+        public Vector2 spriteSize;
+        public enum Direction { up, down, left, right};
+        public Direction direction;
+        private ArrowStateMachine myState;
 
-        public Arrow(EeveeSim game)
+        public Arrow(EeveeSim game, Vector2 drawLocation, ProjectileHandler projectileHandler, Direction direction)
         {
-            this.game = game;
-            this.link = game.link;
-            this.linkState = game.link.linkState;
-            this.spriteFactory = game.enemySpriteFactory;
-            this.drawLocation = link.drawLocation;
-            this.spawnLocation = link.drawLocation;
-            spriteFactory.ArrowDown(this);
+            this.projectileSpriteFactory = game.projectileSpriteFactory;
+            this.drawLocation = drawLocation;
+            this.projectileHandler = projectileHandler;
+            this.direction = direction;
+            myState = new ArrowStateMachine(this);
         }
        
         public void Update()
         {
-            linkState.Update();
-            arrowSprite.Update();
+            myState.Update();
+            mySprite.Update();
+
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
         }
 
         public void Draw()
         {
-            arrowSprite.Draw(drawLocation);
+            mySprite.Draw(drawLocation);
         }
     }
 }

@@ -59,7 +59,7 @@ namespace CSE3902_Game_Sprint0
             //1, 2, 3, 4 -- change between items animation
             keyBinds.Add(Keys.D1, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.sword)); // sword item
             keyBinds.Add(Keys.D2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb)); // bomb item 
-            keyBinds.Add(Keys.D3, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
+            keyBinds.Add(Keys.D3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
             keyBinds.Add(Keys.D4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
 
             //T and Y -- test block animation

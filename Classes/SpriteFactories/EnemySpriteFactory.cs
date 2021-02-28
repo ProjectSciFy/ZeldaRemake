@@ -606,39 +606,5 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             fireball.velocity.Y = fireball.trajectory.Y;
             fireball.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(101, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 5);
         }
-
-        //Arrow:
-        public void ArrowUp(Arrow arrow)
-        {
-            arrow.spriteSize.X = 5;
-            arrow.spriteSize.Y = 16;
-            arrow.velocity.X = 0;
-            arrow.velocity.Y = -1;
-            arrow.arrowSprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(3, 185, 5, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 5);
-        }
-        public void ArrowDown(Arrow arrow)
-        {
-            arrow.spriteSize.X = 5;
-            arrow.spriteSize.Y = 16;
-            arrow.velocity.X = 0;
-            arrow.velocity.Y = 1;
-            arrow.arrowSprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(3, 185, 5, 16), Color.White, SpriteEffects.FlipVertically, new Vector2(1, 4), 5);
-        }
-        public void ArrowRight(Arrow arrow)
-        {
-            arrow.spriteSize.X = 16;
-            arrow.spriteSize.Y = 5;
-            arrow.velocity.X = 1;
-            arrow.velocity.Y = 0;
-            arrow.arrowSprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(10, 190, 16, 5), Color.White, SpriteEffects.None, new Vector2(1, 4), 5);
-        }
-        public void ArrowLeft(Arrow arrow)
-        {
-            arrow.spriteSize.X = 16;
-            arrow.spriteSize.Y = 5;
-            arrow.velocity.X = -1;
-            arrow.velocity.Y = 0;
-            arrow.arrowSprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(10, 190, 16, 5), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 4), 5);
-        }
     }
 }

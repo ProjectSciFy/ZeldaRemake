@@ -12,7 +12,6 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private ProjectileSpriteFactory projectileSpriteFactory;
         public ProjectileHandler projectileHandler;
         public bool fuse = true;
-        private bool deadProjectile = false;
 
         private int timer = 90;
 

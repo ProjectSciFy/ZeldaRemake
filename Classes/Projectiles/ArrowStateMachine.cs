@@ -9,48 +9,79 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
     public class ArrowStateMachine
     {
         private Arrow arrow;
-        private Link link;
-        private LinkStateMachine.Direction linkDirection = LinkStateMachine.Direction.down;
-        public enum Direction { right, up, left, down };
-        public Direction direction = Direction.down;
-        public EnemySpriteFactory spriteFactory;
-        public Boolean newItem = true;
-        public ArrowStateMachine(Link link, Arrow arrow)
+        private ProjectileSpriteFactory projectileSpriteFactory;
+        public ProjectileHandler projectileHandler;
+        public bool hit = false;
+
+        private int timer = 180;
+        private enum CurrentState { none, soaring, hitting };
+        private CurrentState currentState = CurrentState.none;
+
+        public ArrowStateMachine(Arrow arrow)
         {
             this.arrow = arrow;
-            this.link = link;
-            this.linkDirection = link.linkState.direction;
-            spriteFactory = arrow.spriteFactory;
+            projectileSpriteFactory = arrow.projectileSpriteFactory;
+            projectileHandler = arrow.projectileHandler;
         }
 
-        public void Attack()
+        public void Soaring()
         {
-            switch (direction)
+            if (currentState != CurrentState.soaring)
             {
-                case Direction.down:
-                    spriteFactory.ArrowDown(this.arrow);
-                    break;
-                case Direction.up:
-                    spriteFactory.ArrowUp(this.arrow);
-                    break;
-                case Direction.right:
-                    spriteFactory.ArrowRight(this.arrow);
-                    break;
-                case Direction.left:
-                    spriteFactory.ArrowLeft(this.arrow);
-                    break;
-                default:
-                    break;
+                currentState = CurrentState.soaring;
+                
+                switch (arrow.direction)
+                {
+                    case Arrow.Direction.up:
+                        projectileSpriteFactory.ArrowUp(arrow);
+                        break;
+                    case Arrow.Direction.down:
+                        projectileSpriteFactory.ArrowDown(arrow);
+                        break;
+                    case Arrow.Direction.left:
+                        projectileSpriteFactory.ArrowLeft(arrow);
+                        break;
+                    case Arrow.Direction.right:
+                        projectileSpriteFactory.ArrowRight(arrow);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public void Hitting()
+        {
+            if (currentState != CurrentState.hitting)
+            {
+                currentState = CurrentState.hitting;
+                projectileSpriteFactory.ArrowStrike(arrow);
             }
         }
 
         public void Update()
         {
-            direction = (Direction)this.link.linkState.direction;
-            if (newItem)
+            if (timer <= 0 && !hit)
             {
-                Attack();
-                newItem = false;
+                hit = true;
+                timer = 15;
+            }
+            else if (timer <= 0 && hit)
+            {
+                projectileHandler.Remove(arrow);
+            }
+            else
+            {
+                timer--;
+            }
+
+            if (!hit)
+            {
+                Soaring();
+            }
+            else
+            {
+                Hitting();
             }
         }
     }

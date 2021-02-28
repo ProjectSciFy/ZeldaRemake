@@ -318,11 +318,9 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
-        /*
         //Sets link to an animated state using arrow based on the value of direction var
         public void Arrow()
         {
-            // construct animated link facing up with sprite factory
             if (timer == 0)
             {
                 timer = 25;
@@ -335,6 +333,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.arrowRight;
                             spriteFactory.ArrowRight();
+                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), projectileHandler, Projectiles.Arrow.Direction.right));
                         }
                         break;
 
@@ -343,6 +342,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.arrowUp;
                             spriteFactory.ArrowUp();
+                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y - 16), projectileHandler, Projectiles.Arrow.Direction.up));
                         }
                         break;
 
@@ -351,6 +351,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.arrowLeft;
                             spriteFactory.ArrowLeft();
+                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), projectileHandler, Projectiles.Arrow.Direction.left));
                         }
                         break;
 
@@ -359,6 +360,7 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.arrowDown;
                             spriteFactory.ArrowDown();
+                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y + 16), projectileHandler, Projectiles.Arrow.Direction.down));
                         }
                         break;
 
@@ -367,12 +369,12 @@ namespace CSE3902_Game_Sprint0.Classes
                         {
                             currentState = CurrentState.arrowDown;
                             spriteFactory.ArrowDown();
+                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y + 16), projectileHandler, Projectiles.Arrow.Direction.down));
                         }
                         break;
                 }
             }
         }
-        */
 
         public void Damaged()
         {
@@ -450,10 +452,10 @@ namespace CSE3902_Game_Sprint0.Classes
                 {
                     Bomb();
                 }
-                //else if (useArrow)
-                //{
-                //    Arrow();
-                //}
+                else if (useArrow)
+                {
+                    Arrow();
+                }
                 else if (useBoomerang)
                 {
                     Boomerang();
@@ -477,10 +479,10 @@ namespace CSE3902_Game_Sprint0.Classes
                 {
                     Bomb();
                 }
-                //else if (useArrow)
-                //{
-                //    Arrow();
-                //}
+                else if (useArrow)
+                {
+                    Arrow();
+                }
                 else if (useBoomerang)
                 {
                     Boomerang();
