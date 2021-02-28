@@ -54,6 +54,7 @@ namespace CSE3902_Game_Sprint0
         public Item item;
         public BombStateMachine bombStateMachine;
         public Bomb bomb;
+        public ProjectileHandler projectileHandler;
 
         public EeveeSim()
         {
@@ -109,6 +110,8 @@ namespace CSE3902_Game_Sprint0
             currentEnemy = Enemies.Stalfos;
             drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
+            projectileHandler = new ProjectileHandler(this);
+
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             enemySpriteFactory = new EnemySpriteFactory(this);
@@ -159,6 +162,8 @@ namespace CSE3902_Game_Sprint0
             item.Update();
 
             drawnEnemy.Update();
+
+            projectileHandler.Update();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -178,6 +183,8 @@ namespace CSE3902_Game_Sprint0
             item.Draw();
 
             drawnEnemy.Draw();
+
+            projectileHandler.Draw();
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
