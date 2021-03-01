@@ -212,7 +212,6 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 timer = 60;
-                useBomb = false;
 
                 switch (direction)
                 {
@@ -324,7 +323,6 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 timer = 25;
-                useArrow = false;
 
                 switch (direction)
                 {
@@ -451,10 +449,12 @@ namespace CSE3902_Game_Sprint0.Classes
                 else if (useBomb)
                 {
                     Bomb();
+                    useBomb = false;
                 }
                 else if (useArrow)
                 {
                     Arrow();
+                    useArrow = false;
                 }
                 else if (useBoomerang)
                 {
@@ -478,10 +478,12 @@ namespace CSE3902_Game_Sprint0.Classes
                 else if (useBomb)
                 {
                     Bomb();
+                    useBomb = false;
                 }
                 else if (useArrow)
                 {
                     Arrow();
+                    useArrow = false;
                 }
                 else if (useBoomerang)
                 {
