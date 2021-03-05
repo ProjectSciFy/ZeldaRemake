@@ -1,1 +1,9 @@
-﻿
+﻿15
+L
+F,F,F,F,F,F,F,F,F,F,F,F
+F,W,W,W,W,W,W,W,W,W,W,F
+F,W,F,F,B1,F,F,B2,F,F,W,F
+F,W,F,B1,F,F,F,F,D2,F,W,F
+F,W,F,F,F,F,F,F,F,F,W,F
+F,W,W,W,W,F,F,W,W,W,W,F
+F,F,F,F,F,F,F,F,F,F,F,F

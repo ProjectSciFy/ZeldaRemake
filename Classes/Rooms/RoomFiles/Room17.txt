@@ -1,1 +1,9 @@
-﻿
+﻿17
+R
+F,F,F,F,F,F,F,F,F,F,F,F
+F,F,F,F,F,F,W,F,F,F,F,F
+F,F,F,F,F,W,F,W,F,F,F,F
+F,F,F,F,W,F,S,F,W,F,F,F
+F,F,F,F,F,W,F,W,F,F,F,F
+F,F,F,F,F,F,W,F,F,F,F,F
+F,F,F,F,F,F,F,F,F,F,F,F
