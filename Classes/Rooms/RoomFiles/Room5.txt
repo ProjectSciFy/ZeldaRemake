@@ -1,1 +1,9 @@
-﻿
+﻿5
+R,T
+F,F,F,F,F,F,F,F,F,F,F,F
+F,F,F,F,F,F,F,F,F,F,F,F
+F,F,F,F,F,W,W,F,F,F,F,F
+F,F,F,F,F,W,W,F,F,F,F,F
+F,F,F,F,F,W,W,F,F,F,F,F
+F,F,F,F,F,F,F,F,F,F,F,F
+F,F,F,F,F,F,F,F,F,F,F,F

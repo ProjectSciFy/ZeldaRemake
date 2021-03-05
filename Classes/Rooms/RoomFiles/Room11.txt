@@ -1,1 +1,9 @@
-﻿
+﻿11
+L,R
+F,F,F,F,F,F,F,F,F,F,F,F
+F,F,F,F,F,F,F,F,F,F,F,F
+F,F,W,F,F,F,F,F,F,W,F,F
+F,F,F,F,F,F,F,F,F,F,F,F
+F,F,W,F,F,F,F,F,F,W,F,F
+F,F,F,F,F,F,F,F,F,F,F,F
+F,F,F,F,F,F,F,F,F,F,F,F

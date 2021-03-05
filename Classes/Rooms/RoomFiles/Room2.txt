@@ -1,1 +1,9 @@
-﻿
+﻿2
+B,L,R,T
+F,F,F,F,F,F,F,F,F,F,F,F
+F,B1,F,F,B1,F,F,B2,F,F,B2,F
+F,F,F,F,F,F,F,F,F,F,F,F
+F,B1,F,F,B1,F,F,B2,F,F,B2,F
+F,F,F,F,F,T,T,F,F,F,F,F
+F,B1,F,T,B1,T,T,B2,T,F,B2,F
+F,F,F,T,T,T,T,T,T,F,F,F
