@@ -1,1 +1,9 @@
-﻿
+﻿12
+L,T
+F,F,F,F,F,F,F,F,F,F,F,F
+F,W,F,W,F,W,W,F,W,F,W,F
+F,F,F,F,F,F,F,F,F,F,F,F
+F,W,F,W,F,W,W,F,W,F,W,F
+F,F,F,F,F,F,F,F,F,F,F,F
+F,W,F,W,F,W,W,F,W,F,W,F
+F,F,F,F,F,F,F,F,F,F,F,F
