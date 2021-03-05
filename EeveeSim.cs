@@ -15,6 +15,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.Collision;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -58,6 +59,8 @@ namespace CSE3902_Game_Sprint0
         public Bomb bomb;
         public ProjectileHandler projectileHandler;
 
+        public CollisionManager collisionManager;
+
         public EeveeSim()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -70,6 +73,10 @@ namespace CSE3902_Game_Sprint0
             // TODO: Add your initialization logic here
             
             base.Initialize();
+
+            //Setting up CollisionManager
+            collisionManager = new CollisionManager(this);
+
             //Setting up projectileHandler
             projectileSpriteFactory = new ProjectileSpriteFactory(this);
             projectileHandler = new ProjectileHandler(this);
@@ -166,6 +173,8 @@ namespace CSE3902_Game_Sprint0
             drawnEnemy.Update();
 
             projectileHandler.Update();
+
+            collisionManager.Update();
         }
 
         protected override void Draw(GameTime gameTime)

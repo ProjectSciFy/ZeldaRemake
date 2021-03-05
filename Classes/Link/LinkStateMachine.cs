@@ -26,7 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public enum Weapon {none, sword, bomb, arrow, boomerang};
         public Weapon weaponSelected = Weapon.none;
 
-        private int timer = 0;
+        public int timer = 0;
 
         // private Tool = bomb or something
 
@@ -379,7 +379,7 @@ namespace CSE3902_Game_Sprint0.Classes
             // construct animated link facing up with sprite factory
             if (timer == 0)
             {
-                timer = 60;
+                timer = 12;
                 isDamaged = false;
 
                 switch (direction)

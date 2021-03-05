@@ -237,7 +237,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.X = 16;
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
-            link.velocity.Y = 0;
+            link.velocity.Y = 4;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(287, 202, 16, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 5);
         }
 
@@ -246,7 +246,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.spriteSize.X = 16;
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
-            link.velocity.Y = 0;
+            link.velocity.Y = -4;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(253, 202, 16, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 5);
         }
 
@@ -254,7 +254,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             link.spriteSize.X = 16;
             link.spriteSize.Y = 16;
-            link.velocity.X = 0;
+            link.velocity.X = -4;
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(270, 202, 16, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 5);
         }
@@ -263,7 +263,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             link.spriteSize.X = 16;
             link.spriteSize.Y = 16;
-            link.velocity.X = 0;
+            link.velocity.X = 4;
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(270, 202, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 5);
         }
