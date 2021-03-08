@@ -1,4 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Enemy;
+using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -54,9 +56,40 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
             //Link on Enemy Collisions
             foreach (KeyValuePair<IEnemy, Rectangle> pair in collisionManager.enemies)
             {
-                if (collisionManager.link.collisionRectangle.Intersects(((EnemyStalfos)pair.Key).collisionRectangle))
+                if (pair.Key.GetType() == typeof(EnemyAquamentus))
                 {
-                    collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
+                    if (collisionManager.link.collisionRectangle.Intersects(((EnemyAquamentus)pair.Key).collisionRectangle))
+                    {
+                        collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
+                    }
+                } 
+                else if (pair.Key.GetType() == typeof(BladeTrap))
+                {
+                    if (collisionManager.link.collisionRectangle.Intersects(((BladeTrap)pair.Key).collisionRectangle))
+                    {
+                        collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
+                    }
+                }
+                else if (pair.Key.GetType() == typeof(EnemyGel))
+                {
+                    if (collisionManager.link.collisionRectangle.Intersects(((EnemyGel)pair.Key).collisionRectangle))
+                    {
+                        collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
+                    }
+                }
+                else if (pair.Key.GetType() == typeof(EnemyGoriya))
+                {
+                    if (collisionManager.link.collisionRectangle.Intersects(((EnemyGoriya)pair.Key).collisionRectangle))
+                    {
+                        collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
+                    }
+                }
+                else if (pair.Key.GetType() == typeof(EnemyStalfos))
+                {
+                    if (collisionManager.link.collisionRectangle.Intersects(((EnemyStalfos)pair.Key).collisionRectangle))
+                    {
+                        collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
+                    }
                 }
             }
         }

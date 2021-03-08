@@ -15,6 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
+        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
         public EnemyGel(EeveeSim game, Vector2 spawnLocation)
         {
@@ -22,6 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             this.enemySpriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
             myState = new GelStateMachine(this);
+            game.collisionManager.enemies.Add(this, collisionRectangle);
         }
 
         public void Update()
@@ -49,6 +51,13 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             {
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
+
+            collisionRectangle.X = (int)drawLocation.X;
+            collisionRectangle.Y = (int)drawLocation.Y;
+            collisionRectangle.Width = (int)spriteSize.X;
+            collisionRectangle.Height = (int)spriteSize.Y;
+
+            game.collisionManager.enemies[this] = collisionRectangle;
         }
 
         public void Draw()

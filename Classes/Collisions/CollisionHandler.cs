@@ -1,6 +1,8 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Collision;
 using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
+using CSE3902_Game_Sprint0.Classes.Enemy;
+using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,30 +26,27 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                 if (tuple.Item1.GetType() == typeof(Link))
                 {
                     //Enemies
-                    if (tuple.Item2.GetType() == typeof(EnemyStalfos))
+                    if (tuple.Item2.GetType() == typeof(EnemyAquamentus))
                     {
-                        //Set Link's direction
-                        switch (tuple.Item3)
-                        {
-                            case Collision.Collision.Direction.up:
-                                ((Link)tuple.Item1).linkState.ChangeDirection(LinkStateMachine.Direction.up);
-                                break;
-                            case Collision.Collision.Direction.down:
-                                ((Link)tuple.Item1).linkState.ChangeDirection(LinkStateMachine.Direction.down);
-                                break;
-                            case Collision.Collision.Direction.left:
-                                ((Link)tuple.Item1).linkState.ChangeDirection(LinkStateMachine.Direction.left);
-                                break;
-                            case Collision.Collision.Direction.right:
-                                ((Link)tuple.Item1).linkState.ChangeDirection(LinkStateMachine.Direction.right);
-                                break;
-                            default:
-                                break;
-                        }
-
                         //Execute command to hurt link
-                        new DamagedLink(((Link) tuple.Item1).linkState).Execute();
+                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
                     }
+                    else if (tuple.Item2.GetType() == typeof(BladeTrap))
+                    {
+                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
+                    }
+                    else if (tuple.Item2.GetType() == typeof(EnemyGel))
+                    {
+                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
+                    }
+                    else if (tuple.Item2.GetType() == typeof(EnemyGoriya))
+                    {
+                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
+                    }
+                    else if (tuple.Item2.GetType() == typeof(EnemyStalfos))
+                    {
+                        new DamagedLink(((Link) tuple.Item1).linkState).Execute();
+                    } 
                 }
             }
 
