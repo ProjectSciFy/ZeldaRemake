@@ -1,6 +1,8 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
+using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
+using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -84,9 +86,23 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
                         collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
                     }
                 }
+                else if (pair.Key.GetType() == typeof(EnemyKeese))
+                {
+                    if (collisionManager.link.collisionRectangle.Intersects(((EnemyKeese)pair.Key).collisionRectangle))
+                    {
+                        collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
+                    }
+                }
                 else if (pair.Key.GetType() == typeof(EnemyStalfos))
                 {
                     if (collisionManager.link.collisionRectangle.Intersects(((EnemyStalfos)pair.Key).collisionRectangle))
+                    {
+                        collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
+                    }
+                }
+                else if (pair.Key.GetType() == typeof(EnemyWallmaster))
+                {
+                    if (collisionManager.link.collisionRectangle.Intersects(((EnemyWallmaster)pair.Key).collisionRectangle))
                     {
                         collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
                     }
