@@ -3,6 +3,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -64,7 +65,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
                     {
                         collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
                     }
-                } 
+                }
                 else if (pair.Key.GetType() == typeof(BladeTrap))
                 {
                     if (collisionManager.link.collisionRectangle.Intersects(((BladeTrap)pair.Key).collisionRectangle))
@@ -107,6 +108,17 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
                         collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
                     }
                 }
+            }
+            foreach (KeyValuePair<ITile, Rectangle> pair in collisionManager.walls)
+            {
+                /*if (pair.Key.GetType() == typeof(Wall))
+                {
+                }
+
+
+                else if (pair.Key.GetType() == typeof(DungeonWall))
+                {
+                }*/
             }
         }
     }

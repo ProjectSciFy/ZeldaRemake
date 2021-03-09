@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Collisions;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
@@ -29,6 +30,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
         //public KeyValuePair<Link, Rectangle> link;
         public Dictionary<IEnemy, Rectangle> enemies = new Dictionary<IEnemy, Rectangle>();
         public Dictionary<IProjectile, Rectangle> projectiles = new Dictionary<IProjectile, Rectangle>();
+        public Dictionary<ITile, Rectangle> walls = new Dictionary<ITile, Rectangle>();
 
         public CollisionManager(EeveeSim game)
         {
