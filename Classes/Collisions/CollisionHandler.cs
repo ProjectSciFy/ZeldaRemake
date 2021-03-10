@@ -20,6 +20,31 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
             this.collisionManager = collisionManager;
         }
 
+        private bool IsLinkHurt(Link link)
+        {
+            bool result = false;
+
+            switch (link.linkState.currentState)
+            {
+                case LinkStateMachine.CurrentState.damagedUp:
+                    result = true;
+                    break;
+                case LinkStateMachine.CurrentState.damagedDown:
+                    result = true;
+                    break;
+                case LinkStateMachine.CurrentState.damagedLeft:
+                    result = true;
+                    break;
+                case LinkStateMachine.CurrentState.damagedRight:
+                    result = true;
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
+        }
+
         public void Update()
         {
             foreach (Tuple<object, object, Collision.Collision.Direction> tuple in collisionManager.collisionSet)
@@ -28,28 +53,28 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                 if (tuple.Item1.GetType() == typeof(Link))
                 {
                     //Enemies
-                    if (tuple.Item2.GetType() == typeof(EnemyAquamentus))
+                    if (tuple.Item2.GetType() == typeof(EnemyAquamentus) && !IsLinkHurt((Link)tuple.Item1))
                     {
                         //Execute command to hurt link
                         new DamagedLink(((Link)tuple.Item1).linkState).Execute();
                     }
-                    else if (tuple.Item2.GetType() == typeof(BladeTrap))
+                    else if (tuple.Item2.GetType() == typeof(BladeTrap) && !IsLinkHurt((Link)tuple.Item1))
                     {
                         new DamagedLink(((Link)tuple.Item1).linkState).Execute();
                     }
-                    else if (tuple.Item2.GetType() == typeof(EnemyGel))
+                    else if (tuple.Item2.GetType() == typeof(EnemyGel) && !IsLinkHurt((Link)tuple.Item1))
                     {
                         new DamagedLink(((Link)tuple.Item1).linkState).Execute();
                     }
-                    else if (tuple.Item2.GetType() == typeof(EnemyGoriya))
+                    else if (tuple.Item2.GetType() == typeof(EnemyGoriya) && !IsLinkHurt((Link)tuple.Item1))
                     {
                         new DamagedLink(((Link)tuple.Item1).linkState).Execute();
                     }
-                    else if (tuple.Item2.GetType() == typeof(EnemyKeese))
+                    else if (tuple.Item2.GetType() == typeof(EnemyKeese) && !IsLinkHurt((Link)tuple.Item1))
                     {
                         new DamagedLink(((Link)tuple.Item1).linkState).Execute();
                     }
-                    else if (tuple.Item2.GetType() == typeof(EnemyStalfos))
+                    else if (tuple.Item2.GetType() == typeof(EnemyStalfos) && !IsLinkHurt((Link)tuple.Item1))
                     {
                         new DamagedLink(((Link) tuple.Item1).linkState).Execute();
                     }
