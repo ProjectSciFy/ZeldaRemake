@@ -525,7 +525,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
 
         // need to fix ItemSpriteFactory, Cant use from any other class except an item class. Needs to have game as parameter for constructor. Adding boomerang stuff here till then
-        public void BoomerangDown(Boomerang boomerang)
+        public void BoomerangDown(LinkBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;
@@ -533,7 +533,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.Y = 1;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
-        public void BoomerangUp(Boomerang boomerang)
+        public void BoomerangUp(LinkBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;
@@ -541,7 +541,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.Y = -1;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
-        public void BoomerangRight(Boomerang boomerang)
+        public void BoomerangRight(LinkBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;
@@ -549,7 +549,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.Y = 0;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
-        public void BoomerangLeft(Boomerang boomerang)
+        public void BoomerangLeft(LinkBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;
@@ -557,7 +557,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.Y = 0;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
-        public void BoomerangNE(Boomerang boomerang)
+        public void BoomerangNE(LinkBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;
@@ -565,7 +565,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.Y = -1;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
-        public void BoomerangSE(Boomerang boomerang)
+        public void BoomerangSE(LinkBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;
@@ -573,7 +573,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.Y = 1;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
-        public void BoomerangSW(Boomerang boomerang)
+        public void BoomerangSW(LinkBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;
@@ -581,7 +581,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.Y = 1;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
-        public void BoomerangNW(Boomerang boomerang)
+        public void BoomerangNW(LinkBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;
@@ -589,7 +589,15 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.velocity.Y = -1;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
-        public void BoomerangAttack(Boomerang boomerang)
+        public void LinkBoomerangAttack(LinkBoomerang boomerang)
+        {
+            boomerang.spriteSize.X = 16;
+            boomerang.spriteSize.Y = 16;
+            boomerang.velocity.X = boomerang.trajectory.X;
+            boomerang.velocity.Y = boomerang.trajectory.Y;
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+        }
+        public void GoriyaBoomerangAttack(GoriyaBoomerang boomerang)
         {
             boomerang.spriteSize.X = 16;
             boomerang.spriteSize.Y = 16;

@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public Boomerang boomerang;
+        public GoriyaBoomerang boomerang;
 
         public EnemyGoriya(EeveeSim game, Vector2 spawnLocation)
         {
@@ -29,7 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             drawLocation = spawnLocation;
             myState = new GoriyaStateMachine(this);
             game.collisionManager.enemies.Add(this, collisionRectangle);
-            boomerang = new Boomerang(game, this, myState);
+            boomerang = new GoriyaBoomerang(game, this, myState);
         }
 
         public void Update()
