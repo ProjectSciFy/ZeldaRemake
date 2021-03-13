@@ -22,7 +22,6 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             this.game = game;
             drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
-
         }
 
         public void SetState(LinkStateMachine empty)

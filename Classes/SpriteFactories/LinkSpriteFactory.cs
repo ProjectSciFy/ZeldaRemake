@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             this.link = link;
         }
         
-
+        /*
         public void IdleUp()
         {
             link.spriteSize.X = 16;
@@ -30,63 +30,42 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             link.velocity.Y = 0;
             link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
-        public void IdleDown()
+        */
+
+        public UniversalSprite IdleUp()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+            return new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
-        public void IdleRight()
+
+        public UniversalSprite IdleDown()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+            return new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
-        public void IdleLeft() //Not sure where we are drawing sprites but when drawn need to flip the IdleRight Sprite
+        public UniversalSprite IdleRight()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 10);
+            return new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+        public UniversalSprite IdleLeft() //Not sure where we are drawing sprites but when drawn need to flip the IdleRight Sprite
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 10);
         }
 
 
-        public void MovingUp()
+        public UniversalSprite MovingUp()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = -2;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+            return new UniversalSprite(game, linkTexture, new Rectangle(69, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
-        public void MovingDown()
+        public UniversalSprite MovingDown()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 2;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+            return new UniversalSprite(game, linkTexture, new Rectangle(1, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
-        public void MovingRight()
+        public UniversalSprite MovingRight()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 2;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
+            return new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
-        public void MovingLeft()
+        public UniversalSprite MovingLeft()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = -2;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10);
+            return new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10);
         }
 
         //item sprites:
