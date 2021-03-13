@@ -40,11 +40,11 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         {
             if (isAnimated)
             {
-                game.eeveeSprite = new AnimatedSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects, frameGrid);
+                //game.eeveeSprite = new AnimatedSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects, frameGrid);
             }
             else
             {
-                game.eeveeSprite = new StaticSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects);
+                //game.eeveeSprite = new StaticSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects);
             }
             
             
