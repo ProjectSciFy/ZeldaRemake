@@ -80,7 +80,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                     }
                     else if (tuple.Item2.GetType() == typeof(EnemyWallmaster))
                     {
-                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
+                        if (!IsLinkHurt((Link)tuple.Item1))
+                        {
+                            new DamagedLink(((Link)tuple.Item1).linkState).Execute();
+                        }
                         //Setting Link's drawLocation to Wallmaster's
                         ((Link)tuple.Item1).drawLocation = ((EnemyWallmaster)tuple.Item2).drawLocation;
                     }

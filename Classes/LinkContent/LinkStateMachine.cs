@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+﻿using CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
 using System;
@@ -41,7 +42,7 @@ namespace CSE3902_Game_Sprint0.Classes
         int damcount = 0;
 
         public enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft };
-        public CurrentState currentState = CurrentState.idleDown;
+        public CurrentState currentState;
 
         public LinkStateMachine(Link link)
         {
@@ -61,95 +62,18 @@ namespace CSE3902_Game_Sprint0.Classes
         //Sets link to an idle state based on the value of direction var
         public void Idle()
         {
-            // construct nonanimated link facing up with sprite factory
             if (timer == 0)
             {
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.idleRight)
-                        {
-                            currentState = CurrentState.idleRight;
-                            spriteFactory.IdleRight();
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.idleUp)
-                        {
-                            currentState = CurrentState.idleUp;
-                            spriteFactory.IdleUp();
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.idleLeft)
-                        {
-                            currentState = CurrentState.idleLeft;
-                            spriteFactory.IdleLeft();
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.idleDown)
-                        {
-                            currentState = CurrentState.idleDown;
-                            spriteFactory.IdleDown();
-                        }
-                        break;
-
-                    default:
-                        // default is facing down (looking forward at us)
-                        currentState = CurrentState.idleDown;
-                        spriteFactory.IdleDown();
-                        break;
-                }
+                new LinkIdle(link, spriteFactory, this).Execute();
             }
         }
 
         //Sets link to a moving state based on the value of direction var
         public void Moving()
         {
-            // construct animated link facing up with sprite factory
             if (timer == 0)
             {
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.movingRight)
-                        {
-                            currentState = CurrentState.movingRight;
-                            spriteFactory.MovingRight();
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.movingUp)
-                        {
-                            currentState = CurrentState.movingUp;
-                            spriteFactory.MovingUp();
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.movingLeft)
-                        {
-                            currentState = CurrentState.movingLeft;
-                            spriteFactory.MovingLeft();
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.movingDown)
-                        {
-                            currentState = CurrentState.movingDown;
-                            spriteFactory.MovingDown();
-                        }
-                        break;
-
-                    default:
-                        break;
-                }
+                new LinkMoving(link, spriteFactory, this).Execute();
             }
         }
 
@@ -161,49 +85,8 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 timer = 60;
                 useSword = false;
-
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.swordRight)
-                        {
-                            currentState = CurrentState.swordRight;
-                            spriteFactory.SwordRight();
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.swordUp)
-                        {
-                            currentState = CurrentState.swordUp;
-                            spriteFactory.SwordUp();
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.swordLeft)
-                        {
-                            currentState = CurrentState.swordLeft;
-                            spriteFactory.SwordLeft();
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.swordDown)
-                        {
-                            currentState = CurrentState.swordDown;
-                            spriteFactory.SwordDown();
-                        }
-                        break;
-
-                    default:
-                        if (currentState != CurrentState.swordDown)
-                        {
-                            currentState = CurrentState.swordDown;
-                            spriteFactory.SwordDown();
-                        }
-                        break;
-                }
+                new LinkSword(link, spriteFactory, this).Execute();
+                new LinkOffset(link, false).Execute();
             }
         }
 
@@ -433,6 +316,14 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer > 0)
             {
                 timer--;
+            }
+
+            if (timer == 0)
+            {
+                //Reverse offset
+                new LinkOffset(link, true).Execute();
+                link.drawOffset.X = 0;
+                link.drawOffset.Y = 0;
             }
 
             //State calculation
