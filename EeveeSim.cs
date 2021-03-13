@@ -64,8 +64,8 @@ namespace CSE3902_Game_Sprint0
         {
             _graphics = new GraphicsDeviceManager(this);
             //SIZE OF SCREEN 
-            //_graphics.PreferredBackBufferWidth = 1024;
-            //_graphics.PreferredBackBufferHeight = 768;
+            _graphics.PreferredBackBufferWidth = 1024;
+            _graphics.PreferredBackBufferHeight = 768;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -128,7 +128,6 @@ namespace CSE3902_Game_Sprint0
             // TODO: use this.Content to load your game content here
 
             //Loading all of our textures into a texture dictionary
-            spriteSheets.Add("Eevee", Content.Load<Texture2D>("DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER"));
             spriteSheets.Add("Link", Content.Load<Texture2D>("NES - The Legend of Zelda - Link"));
             spriteSheets.Add("HUD", Content.Load<Texture2D>("NES - The Legend of Zelda - HUD & Pause Screen"));
             spriteSheets.Add("ItemsAndWeapons", Content.Load<Texture2D>("NES - The Legend of Zelda - Items & Weapons"));
@@ -157,7 +156,6 @@ namespace CSE3902_Game_Sprint0
                 controller.Update();
             }
             base.Update(gameTime);
-            eeveeSprite.Update();
 
             link.Update();
 
@@ -178,8 +176,6 @@ namespace CSE3902_Game_Sprint0
 
             base.Draw(gameTime);
 
-            eeveeSprite.Draw(new Vector2(0, 0));
-
             link.Draw();
 
             item.Draw();
@@ -188,9 +184,6 @@ namespace CSE3902_Game_Sprint0
 
             projectileHandler.Draw();
 
-            _spriteBatch.Begin();
-            _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
-            _spriteBatch.End();
         }
     }
 }
