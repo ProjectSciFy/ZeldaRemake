@@ -1,5 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
-using CSE3902_Game_Sprint0.Classes.Controllers.TileCommands;
 using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
@@ -61,10 +60,6 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.D2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb)); // bomb item 
             keyBinds.Add(Keys.D3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
             keyBinds.Add(Keys.D4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
-
-            //T and Y -- test block animation
-            keyBinds.Add(Keys.T, new PreviousTile(game.tileStateMachine));
-            keyBinds.Add(Keys.Y, new NextTile(game.tileStateMachine));
 
             //U and I -- cycle through items
             keyBinds.Add(Keys.U, new PreviousItem(game.itemStateMachine));

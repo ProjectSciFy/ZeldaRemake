@@ -52,9 +52,7 @@ namespace CSE3902_Game_Sprint0
         public Enemies currentEnemy;
         public IEnemy drawnEnemy;
         public LinkStateMachine linkStateMachine;
-        public TileStateMachine tileStateMachine;
         public ItemStateMachine itemStateMachine;
-        public Tile tile;
         public Item item;
         public BombStateMachine bombStateMachine;
         public Bomb bomb;
@@ -65,6 +63,9 @@ namespace CSE3902_Game_Sprint0
         public EeveeSim()
         {
             _graphics = new GraphicsDeviceManager(this);
+            //SIZE OF SCREEN 
+            //_graphics.PreferredBackBufferWidth = 1024;
+            //_graphics.PreferredBackBufferHeight = 768;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -89,14 +90,6 @@ namespace CSE3902_Game_Sprint0
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
-
-            /* TILE */
-            //Setting up block state machine
-            tile = new Tile(this);
-            tileStateMachine = new TileStateMachine(tile);
-
-            //tile is created, maintains an instance of its StateMachine to be passed for commands:
-            tile.SetState(tileStateMachine);
 
             /* ITEM */
             //Setting up item state machine
@@ -168,8 +161,6 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
 
-            tile.Update();
-
             item.Update();
 
             drawnEnemy.Update();
@@ -190,8 +181,6 @@ namespace CSE3902_Game_Sprint0
             eeveeSprite.Draw(new Vector2(0, 0));
 
             link.Draw();
-
-            tile.Draw();
 
             item.Draw();
 

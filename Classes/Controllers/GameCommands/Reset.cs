@@ -1,5 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
-using CSE3902_Game_Sprint0.Classes.Controllers.TileCommands;
 using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
@@ -28,9 +27,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
         private ItemStateMachine itemStateMachine;
         private ItemStateMachine.ItemType currentItem;
 
-        private TileStateMachine tileStateMachine;
-        private TileStateMachine.TileType currentTile;
-
         private LinkStateMachine linkState;
         private LinkStateMachine.Direction direction;
         private LinkStateMachine.Weapon weaponSelected;
@@ -53,9 +49,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             itemStateMachine = game.itemStateMachine;
             currentItem = game.itemStateMachine.currentState;
 
-            tileStateMachine = game.tileStateMachine;
-            currentTile = game.tileStateMachine.currentState;
-
             linkState = game.linkStateMachine;
             direction = game.linkStateMachine.direction;
             weaponSelected = game.linkStateMachine.weaponSelected;
@@ -77,10 +70,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             this.currentItem = itemStateMachine.currentState;
             itemStateMachine.currentState = ItemStateMachine.ItemType.Heart;
             this.currentItem = ItemStateMachine.ItemType.Heart;
-
-            this.currentTile = tileStateMachine.currentState;
-            tileStateMachine.currentState = TileStateMachine.TileType.Wall;
-            this.currentTile = TileStateMachine.TileType.Wall;
 
             this.direction = linkState.direction;
             this.weaponSelected = linkState.weaponSelected;
