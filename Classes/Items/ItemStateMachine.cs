@@ -7,7 +7,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 {
     public class ItemStateMachine
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private Item item;
         private ItemSpriteFactory spriteFactory;
 

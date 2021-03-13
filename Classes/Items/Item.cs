@@ -7,14 +7,14 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 {
     public class Item : IItem
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         private ItemStateMachine itemState;
         public ISprite itemSprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
 
-        public Item(EeveeSim game)
+        public Item(ZeldaGame game)
         {
             this.game = game;
             //Arbitrary location

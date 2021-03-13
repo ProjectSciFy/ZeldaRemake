@@ -9,9 +9,9 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
     {
         public HashSet<IProjectile> projectileSet = new HashSet<IProjectile>();
         public HashSet<IProjectile> differenceSet = new HashSet<IProjectile>();
-        private EeveeSim game;
+        private ZeldaGame game;
 
-        public ProjectileHandler(EeveeSim game)
+        public ProjectileHandler(ZeldaGame game)
         {
             this.game = game;
         }

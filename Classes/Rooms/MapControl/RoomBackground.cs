@@ -17,7 +17,7 @@ namespace CSE3902_Game_Sprint0.Classes.Rooms.MapControl
         private Rectangle rightDoorLoc;
         private Rectangle topDoorLoc;
 
-        public RoomBackground(EeveeSim game)
+        public RoomBackground(ZeldaGame game)
         {
 
         }

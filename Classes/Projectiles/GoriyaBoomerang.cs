@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class GoriyaBoomerang
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         public EnemyGoriya goriya = null;
         public GoriyaStateMachine goriyaState = null;
         public EnemySpriteFactory spriteFactory;
@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Vector2 trajectory = new Vector2(0, 0);
 
 
-        public GoriyaBoomerang(EeveeSim game, EnemyGoriya goriya, GoriyaStateMachine goriyaState)
+        public GoriyaBoomerang(ZeldaGame game, EnemyGoriya goriya, GoriyaStateMachine goriyaState)
         {
             this.game = game;
             this.goriya = goriya;

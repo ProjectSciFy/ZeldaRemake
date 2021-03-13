@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
         //Checks major object types against eachother by use of CollisionChecker
         //If a collision is detected, a tuple is created of the colliding objects & from which direction, then sent to collisionHandler
         //At the end, removeSet clears unloaded entities from respective lists
-        public EeveeSim game;
+        public ZeldaGame game;
         public CollisionChecker collisionChecker;
         public CollisionHandler collisionHandler;
 
@@ -32,7 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
         public Dictionary<IProjectile, Rectangle> projectiles = new Dictionary<IProjectile, Rectangle>();
         public Dictionary<ITile, Rectangle> walls = new Dictionary<ITile, Rectangle>();
 
-        public CollisionManager(EeveeSim game)
+        public CollisionManager(ZeldaGame game)
         {
             this.game = game;
             collisionChecker = new CollisionChecker(this);

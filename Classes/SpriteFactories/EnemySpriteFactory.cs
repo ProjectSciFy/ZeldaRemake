@@ -15,7 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemySpriteFactory
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private EnemyStalfos stalfos;
         private IEnemy enemy;
         private Texture2D bossSpriteSheet;
@@ -23,7 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private Texture2D linkSpriteSheet;
         private Texture2D NPCSpriteSheet;
 
-        public EnemySpriteFactory(EeveeSim game)
+        public EnemySpriteFactory(ZeldaGame game)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("Bosses", out bossSpriteSheet);

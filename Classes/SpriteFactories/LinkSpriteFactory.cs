@@ -10,7 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class LinkSpriteFactory
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private Link link;
         private Texture2D linkTexture;
 

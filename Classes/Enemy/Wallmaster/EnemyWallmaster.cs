@@ -8,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 {
     public class EnemyWallmaster : IEnemy
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         private WallmasterStateMachine myState;
         public EnemySpriteFactory enemySpriteFactory;
         public ISprite mySprite;
@@ -17,7 +17,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
-        public EnemyWallmaster(EeveeSim game, Vector2 spawnLocation)
+        public EnemyWallmaster(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
             this.enemySpriteFactory = game.enemySpriteFactory;

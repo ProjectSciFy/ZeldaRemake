@@ -14,7 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         private Texture2D spriteSheet;
         private Rectangle voidTile = TileSpriteFactory.VoidTile;
         public Vector2 position;
-        public Void(EeveeSim game, Vector2 location)
+        public Void(ZeldaGame game, Vector2 location)
         {
             game.spriteSheets.TryGetValue("DungeonTileset", out this.spriteSheet);
             this.batch = new SpriteBatch(game.GraphicsDevice);

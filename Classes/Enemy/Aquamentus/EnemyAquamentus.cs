@@ -9,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
     public class EnemyAquamentus : IEnemy
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         private AquamentusStateMachine myState;
         public EnemySpriteFactory enemySpriteFactory;
         public ISprite mySprite;
@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public Fireball fireball_1, fireball_2, fireball_3;
         public int timer = 0;
 
-        public EnemyAquamentus(EeveeSim game, Vector2 spawnLocation)
+        public EnemyAquamentus(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
             this.enemySpriteFactory = game.enemySpriteFactory;

@@ -14,14 +14,14 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         private Vector2 frameGrid;
         private Rectangle frameIndex;
         private Rectangle spriteIndex;
-        private EeveeSim game;
+        private ZeldaGame game;
         private SpriteBatch mySpriteBatch;
         private Texture2D myTexture;
         private Color color;
         private SpriteEffects spriteEffects;
         private int fpsLimiter;
 
-        public UniversalSprite(EeveeSim game, Texture2D texture, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid, int fpsLimiter)
+        public UniversalSprite(ZeldaGame game, Texture2D texture, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid, int fpsLimiter)
         {
             this.game = game;
             mySpriteBatch = new SpriteBatch(this.game.GraphicsDevice);

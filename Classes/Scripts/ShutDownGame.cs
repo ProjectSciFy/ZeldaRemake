@@ -7,10 +7,10 @@ namespace CSE3902_Game_Sprint0.Classes
     public class ShutDownGame : ICommand
     {
         //TheGame var to close
-        private EeveeSim closeThis;
+        private ZeldaGame closeThis;
 
         //Constructor
-        public ShutDownGame(EeveeSim ongoingGame)
+        public ShutDownGame(ZeldaGame ongoingGame)
         {
             closeThis = ongoingGame;
         }

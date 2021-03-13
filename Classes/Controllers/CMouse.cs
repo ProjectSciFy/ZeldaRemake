@@ -12,9 +12,9 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers
     {
         Dictionary<int, ICommand> keyBinds = new Dictionary<int, ICommand>();
         private int currentQuad;
-        private EeveeSim game;
+        private ZeldaGame game;
 
-        public CMouse(EeveeSim game)
+        public CMouse(ZeldaGame game)
         {
             this.game = game;
             keyBinds.Add(0, new ShutDownGame(game));

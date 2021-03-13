@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class Fireball : IProjectile
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         public EnemyAquamentus aquamentus;
         public AquamentusStateMachine aquamentusState;
         public EnemySpriteFactory spriteFactory;
@@ -24,7 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Vector2 trajectory;
         public bool newItem = true;
         
-        public Fireball(EeveeSim game, EnemyAquamentus aquamentus, AquamentusStateMachine aquamentusState, Vector2 trajectory)
+        public Fireball(ZeldaGame game, EnemyAquamentus aquamentus, AquamentusStateMachine aquamentusState, Vector2 trajectory)
         {
             this.game = game;
             this.aquamentus = aquamentus;

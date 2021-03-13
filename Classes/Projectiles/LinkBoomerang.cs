@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class LinkBoomerang : IProjectile
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         public Link link;
         public LinkStateMachine linkState;
         
@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public bool newItem;
         public Vector2 trajectory = new Vector2(0, 0);
 
-        public LinkBoomerang(EeveeSim game, Link link, LinkStateMachine linkState)
+        public LinkBoomerang(ZeldaGame game, Link link, LinkStateMachine linkState)
         {
             this.game = game;
             this.link = link;

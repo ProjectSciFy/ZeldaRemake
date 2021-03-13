@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class ItemSpriteFactory
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private Item item;
         private Texture2D itemSpriteSheet;
         private Texture2D linkSpriteSheet;

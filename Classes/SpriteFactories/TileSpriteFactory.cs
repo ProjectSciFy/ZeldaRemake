@@ -10,7 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class TileSpriteFactory
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private Texture2D tileSpriteSheet;
 
         public static Rectangle WallTile = new Rectangle(1001, 11, 16, 16);
@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         public static Rectangle VoidTile = new Rectangle(984, 28, 16, 16);
         public static Rectangle EmptyTile = new Rectangle(1018, 28, 16, 16);
 
-        public TileSpriteFactory(EeveeSim game)
+        public TileSpriteFactory(ZeldaGame game)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("DungeonTileset", out tileSpriteSheet);

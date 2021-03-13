@@ -23,7 +23,7 @@ namespace CSE3902_Game_Sprint0
         Dictionary<Keys, int> movementKeys = new Dictionary<Keys, int>();
 
        
-        public CKeyboard(EeveeSim game)
+        public CKeyboard(ZeldaGame game)
         {
 
             linkState = game.linkStateMachine;
