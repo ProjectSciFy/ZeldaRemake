@@ -85,49 +85,8 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 timer = 60;
                 useSword = false;
-
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.swordRight)
-                        {
-                            currentState = CurrentState.swordRight;
-                            spriteFactory.SwordRight();
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.swordUp)
-                        {
-                            currentState = CurrentState.swordUp;
-                            spriteFactory.SwordUp();
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.swordLeft)
-                        {
-                            currentState = CurrentState.swordLeft;
-                            spriteFactory.SwordLeft();
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.swordDown)
-                        {
-                            currentState = CurrentState.swordDown;
-                            spriteFactory.SwordDown();
-                        }
-                        break;
-
-                    default:
-                        if (currentState != CurrentState.swordDown)
-                        {
-                            currentState = CurrentState.swordDown;
-                            spriteFactory.SwordDown();
-                        }
-                        break;
-                }
+                new LinkSword(link, spriteFactory, this).Execute();
+                new LinkOffset(link, false).Execute();
             }
         }
 
@@ -357,6 +316,14 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer > 0)
             {
                 timer--;
+            }
+
+            if (timer == 0)
+            {
+                //Reverse offset
+                new LinkOffset(link, true).Execute();
+                link.drawOffset.X = 0;
+                link.drawOffset.Y = 0;
             }
 
             //State calculation
