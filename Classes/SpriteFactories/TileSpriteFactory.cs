@@ -19,6 +19,16 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             game.spriteSheets.TryGetValue("DungeonTileset", out tileSpriteSheet);
         }
 
+        public UniversalSprite CollisionTile()
+        {
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1054, 11, 16, 16), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+        public UniversalSprite StairsTile()
+        {
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 28, 16, 16), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10);
+        }
+
+        /*
         public UniversalSprite WallTile()
         {
             return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
@@ -47,7 +57,6 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1018, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
         }
-        /*
         public UniversalSprite BrickTile()
         {
             return new UniversalSprite(game, tileSpriteSheet, new Rectangle(984, 45, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
