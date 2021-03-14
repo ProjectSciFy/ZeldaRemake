@@ -21,7 +21,17 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             background = new Background(game, roomNumber);
 
             string cwdPath = Directory.GetCurrentDirectory();
-            string roomPath = @"01.csv";
+
+            string roomPath = "";
+            if(roomNumber < 10)
+            {
+                roomPath = @"0" + (roomNumber.ToString()) + ".csv";
+            }
+            else
+            {
+                roomPath = @"" + (roomNumber.ToString()) + ".csv";
+            }
+            
      
             cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
             cwdPath = Path.Combine(cwdPath, roomPath);
@@ -39,7 +49,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                 {
                     string[] segments = line.Split(new string[] { "," },
                                         StringSplitOptions.None);
-                    Vector2 position = new Vector2(float.Parse(segments[1]), float.Parse(segments[2]));
+                    Vector2 position = new Vector2(float.Parse(segments[2]), float.Parse(segments[1]));
                     tiles.Add(new TempTile(game,position));
 
                 }

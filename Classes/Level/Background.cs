@@ -28,6 +28,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             int xloc = 1 + ((roomNumber - 1) % 6) * 195;
             int yloc = 192 + ((roomNumber - 1)/ 6) * 115;
+            xloc = 1;
+            yloc = 192;
             roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(xloc, yloc, 192, 112), Color.White, SpriteEffects.None, new Vector2(1, 1), 10,0.0f);
 
 
