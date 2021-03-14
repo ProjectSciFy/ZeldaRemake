@@ -21,7 +21,6 @@ using CSE3902_Game_Sprint0.Classes.Collision;
 namespace CSE3902_Game_Sprint0
 {
 
-    // Gal tell me if you can see this comment.
     public class ZeldaGame : Game
     {
         private GraphicsDeviceManager _graphics;
