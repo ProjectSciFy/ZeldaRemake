@@ -8,17 +8,19 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CSE3902_Game_Sprint0.Classes.Tiles
 {
-    public class Empty : ITile
+    public class Collision : ITile
     {
-        private SpriteBatch batch;
-        private Texture2D spriteSheet;
-        private Rectangle emptyTile = TileSpriteFactory.EmptyTile;
+        private ZeldaGame game;
+        private ISprite tileSprite;
+        private TileSpriteFactory tileFactory;
+        public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
         public Vector2 position;
-        public Empty(ZeldaGame game, Vector2 location)
+        public Collision(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
-            game.spriteSheets.TryGetValue("DungeonTileset", out this.spriteSheet);
-            this.batch = new SpriteBatch(game.GraphicsDevice);
+            this.game = game;
             this.position = location;
+            this.tileFactory = tileFactory;
+            this.tileSprite = tileFactory.CollisionTile();
         }
         public void Update()
         {
@@ -26,7 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 
         public void Draw()
         {
-            batch.Draw(spriteSheet, position, emptyTile, Color.White);
+            tileSprite.Draw(position);
         }
     }
 }

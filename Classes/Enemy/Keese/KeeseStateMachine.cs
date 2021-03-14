@@ -63,31 +63,22 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             {
                 case 0:
                     return Direction.north;
-                    break;
                 case 1:
                     return Direction.northEast;
-                    break;
                 case 2:
                     return Direction.east;
-                    break;
                 case 3:
                     return Direction.southEast;
-                    break;
                 case 4:
                     return Direction.south;
-                    break;
                 case 5:
                     return Direction.southWest;
-                    break;
                 case 6:
                     return Direction.west;
-                    break;
                 case 7:
                     return Direction.northWest;
-                    break;
                 default:
                     return Direction.north;
-                    break;
             }
         }
 

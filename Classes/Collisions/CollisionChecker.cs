@@ -4,6 +4,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
+using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -56,6 +57,22 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
 
         public void Update()
         {
+            //Check each collisionEntity against each collisionEntity, if they are the same skip over them, if not, get the direcetion of the collision & create a tuple for them in collisionSet
+            foreach (KeyValuePair<ICollisionEntity, Rectangle> entity1 in collisionManager.collisionEntities)
+            {
+                foreach (KeyValuePair<ICollisionEntity, Rectangle> entity2 in collisionManager.collisionEntities)
+                {
+                    if (!entity1.Equals(entity2))
+                    {
+                        if (entity1.Value.Intersects(entity2.Value))
+                        {
+                            collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(entity1.Key, entity2.Key, CollisionDirection(entity1.Value, entity2.Value)));
+                        }
+                    }
+                }
+            }
+
+            /*
             //Link on Enemy Collisions
             foreach (KeyValuePair<IEnemy, Rectangle> pair in collisionManager.enemies)
             {
@@ -109,6 +126,12 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
                     }
                 }
             }
+            */
+            //Link on projectiles
+
+            //Link on items
+
+            //Link on Tiles
             foreach (KeyValuePair<ITile, Rectangle> pair in collisionManager.walls)
             {
                 /*if (pair.Key.GetType() == typeof(Wall))
@@ -120,6 +143,14 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
                 {
                 }*/
             }
+
+            //Enemies on projectiles
+
+            //Enemies on Items (like Stalfos carrying key)
+
+            //Enemies on Tiles (like running into walls)
+
+            //Projectiles on Tiles
         }
     }
 }

@@ -16,12 +16,12 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Collision;
+using CSE3902_Game_Sprint0.Classes.Level;
 
 
 namespace CSE3902_Game_Sprint0
 {
 
-    // Gal tell me if you can see this comment.
     public class ZeldaGame : Game
     {
         private GraphicsDeviceManager _graphics;
@@ -30,7 +30,6 @@ namespace CSE3902_Game_Sprint0
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
-        public ItemSpriteFactory itemSpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
         public Classes.Link link;
         // test enemy draws
@@ -46,13 +45,15 @@ namespace CSE3902_Game_Sprint0
         public Enemies currentEnemy;
         public IEnemy drawnEnemy;
         public LinkStateMachine linkStateMachine;
-        public ItemStateMachine itemStateMachine;
-        public Item item;
         public BombStateMachine bombStateMachine;
-        public Bomb bomb;
+        public Classes.Projectiles.Bomb bomb;
         public ProjectileHandler projectileHandler;
 
         public CollisionManager collisionManager;
+
+        public int roomNumber;
+        public List<Room> roomList;
+
 
         public ZeldaGame()
         {
@@ -60,6 +61,7 @@ namespace CSE3902_Game_Sprint0
             //SIZE OF SCREEN 
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.PreferredBackBufferHeight = 768;
+            //_graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -67,11 +69,11 @@ namespace CSE3902_Game_Sprint0
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            
+
             base.Initialize();
 
             //Setting up CollisionManager
-            collisionManager = new CollisionManager(this);
+            collisionManager = new CollisionManager();
 
             //Setting up projectileHandler
             projectileSpriteFactory = new ProjectileSpriteFactory(this);
@@ -84,14 +86,6 @@ namespace CSE3902_Game_Sprint0
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
-
-            /* ITEM */
-            //Setting up item state machine
-            item = new Item(this);
-            itemStateMachine = new ItemStateMachine(item);
-
-            //item is created, maintains an instance of its StateMachine to be passed for commands:
-            item.SetState(itemStateMachine);
 
             /* Weapons */
             //bomb = new Bomb(this, link, linkStateMachine);
@@ -112,6 +106,12 @@ namespace CSE3902_Game_Sprint0
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
+
+            roomList = new List<Room>();
+            for (int i = 1; i < 5; i++)
+            {
+                roomList.Add(new Room(this, i));
+            }
 
         }
 
@@ -148,8 +148,6 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
 
-            item.Update();
-
             drawnEnemy.Update();
 
             projectileHandler.Update();
@@ -157,6 +155,18 @@ namespace CSE3902_Game_Sprint0
             collisionManager.Update();
         }
 
+        public void changeRoom()
+        {
+            if (roomNumber == 5)
+            {
+                roomNumber = 1;
+            }
+            else
+            {
+                roomNumber++;
+            }
+
+        }
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
@@ -164,14 +174,20 @@ namespace CSE3902_Game_Sprint0
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
-
+            foreach (Room r in roomList)
+            {
+                if (r.getRoomNumber() == roomNumber)
+                {
+                    r.Draw();
+                }
+            }
             link.Draw();
-
-            item.Draw();
 
             drawnEnemy.Draw();
 
             projectileHandler.Draw();
+
+
 
         }
     }
