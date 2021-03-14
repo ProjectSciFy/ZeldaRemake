@@ -11,18 +11,17 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class Fireball : IProjectile
     {
-        public ZeldaGame game;
-        public EnemyAquamentus aquamentus;
-        public AquamentusStateMachine aquamentusState;
-        public EnemySpriteFactory spriteFactory;
-        public FireballStateMachine myState;
-        public ISprite mySprite;
-        public Vector2 drawLocation;
-        public Vector2 spawnLocation;
-        public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
-        public Vector2 trajectory;
-        public bool newItem = true;
+        private ZeldaGame game;
+        private EnemyAquamentus aquamentus;
+        private AquamentusStateMachine aquamentusState;
+        public EnemySpriteFactory spriteFactory { get; set; }
+        private FireballStateMachine myState;
+        private ISprite mySprite;
+        private Vector2 drawLocation;
+        private Vector2 velocity = new Vector2(0, 0);
+        private Vector2 spriteSize = new Vector2(0, 0);
+        private Vector2 trajectory;
+        private bool newItem = true;
         
         public Fireball(ZeldaGame game, EnemyAquamentus aquamentus, AquamentusStateMachine aquamentusState, Vector2 trajectory)
         {
@@ -31,7 +30,6 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.aquamentusState = aquamentusState;
             this.spriteFactory = game.enemySpriteFactory;
             this.drawLocation = aquamentus.drawLocation;
-            this.spawnLocation = aquamentus.drawLocation;
             this.myState = new FireballStateMachine(this);
             this.trajectory = trajectory;
         }
@@ -41,26 +39,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             aquamentusState.Update();
             mySprite.Update();
 
-            drawLocation.X = drawLocation.X + velocity.X;
-            drawLocation.Y = drawLocation.Y + velocity.Y;
-
-            //if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
-            //{
-            //    drawLocation.X = 0 - spriteSize.X;
-            //}
-            //else if (drawLocation.X + spriteSize.X <= 0 && velocity.X < 0)
-            //{
-            //    drawLocation.X = game.GraphicsDevice.Viewport.Bounds.Width;
-            //}
-
-            //if (drawLocation.Y >= game.GraphicsDevice.Viewport.Bounds.Height && velocity.Y > 0)
-            //{
-            //    drawLocation.Y = 0 - spriteSize.Y;
-            //}
-            //else if (drawLocation.Y + spriteSize.Y <= 0 && velocity.Y < 0)
-            //{
-            //    drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
-            //}
+            drawLocation = drawLocation + velocity;
         }
         public void Draw()
         {

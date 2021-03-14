@@ -7,11 +7,11 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class FireballStateMachine
     {
-        public Fireball fireball;
+        private Fireball fireball;
         private EnemySpriteFactory enemySpriteFactory;
-        public enum Direction { right, left }; // NE = North East
-        public Direction direction = Direction.left;
-        public bool fired = false;
+        private enum Direction { right, left }; // NE = North East
+        private Direction direction = Direction.left;
+        private bool fired = false;
 
         public FireballStateMachine(Fireball fireball)
         {

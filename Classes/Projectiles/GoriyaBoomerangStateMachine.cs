@@ -8,13 +8,13 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class GoriyaBoomerangStatemachine
     {
-        public GoriyaBoomerang boomerang;
+        private GoriyaBoomerang boomerang;
         private EnemySpriteFactory spriteFactory;
-        public enum Direction { right, up, left, down, NE, SE, SW, NW };
-        public Direction direction = Direction.down;
+        private enum Direction { right, up, left, down, NE, SE, SW, NW };
+        private Direction direction = Direction.down;
         private enum CurrentState { movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW, none };
         private CurrentState currentState;
-        public Direction returnDirection;
+        private Direction returnDirection;
         private const int RANGE = 175;
         private const int RETURN_WINDOW = 30;
         private const int DESPAWN_DISTANCE = 5;

@@ -11,19 +11,19 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class LinkBoomerang : IProjectile
     {
-        public ZeldaGame game;
-        public Link link;
-        public LinkStateMachine linkState;
-        
-        public EnemySpriteFactory spriteFactory;
-        public ISprite mySprite;
-        public LinkBoomerangStateMachine myState;
-        public Vector2 drawLocation;
-        public Vector2 spawnLocation;
-        public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2 (0, 0);
-        public bool newItem;
-        public Vector2 trajectory = new Vector2(0, 0);
+        private ZeldaGame game;
+        public Link link { get; protected set; }
+        public LinkStateMachine linkState { get; protected set; }
+
+        public EnemySpriteFactory spriteFactory { get; protected set; }
+        public ISprite mySprite { protected get; set; }
+        public LinkBoomerangStateMachine myState { get; protected set; }
+        public Vector2 drawLocation { get; set; }
+        public Vector2 spawnLocation { get; set; }
+        public Vector2 velocity { get; set; } = new Vector2(0, 0);
+        public Vector2 spriteSize { get; set; } = new Vector2(0, 0);
+        public bool newItem { get; set; }
+        public Vector2 trajectory { get; set; } = new Vector2(0, 0);
 
         public LinkBoomerang(ZeldaGame game, Link link, LinkStateMachine linkState)
         {
@@ -43,9 +43,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             linkState.Update();
 
             //Update position of boomerang
-            drawLocation.X = drawLocation.X + velocity.X;
-            drawLocation.Y = drawLocation.Y + velocity.Y;
-            
+            drawLocation = drawLocation + velocity;
         }
         public void Draw()
         {

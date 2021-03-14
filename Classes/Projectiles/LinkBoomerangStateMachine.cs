@@ -9,18 +9,18 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class LinkBoomerangStateMachine
     {
-        public LinkBoomerang boomerang;
+        private LinkBoomerang boomerang;
         private EnemySpriteFactory spriteFactory;
-        public enum Direction { right, up, left, down, NE, SE, SW, NW }; // NE = North East
-        public Direction direction = Direction.down;
+        private enum Direction { right, up, left, down, NE, SE, SW, NW }; // NE = North East
+        private Direction direction = Direction.down;
         private enum CurrentState { movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW, none };
         private CurrentState currentState;
-        public Direction returnDirection;
-        public const int RANGE = 175;
-        public const int RETURN_WINDOW = 30;
-        public const int DESPAWN_DISTANCE = 5;
-        public const float BASE_SPEED = (float)1.5, PIVOT_SPEED = (float) 1.0;
-        public Boolean returning = false, newItem = true, brake = false;
+        private Direction returnDirection;
+        private const int RANGE = 175;
+        private const int RETURN_WINDOW = 30;
+        private const int DESPAWN_DISTANCE = 5;
+        private const float BASE_SPEED = (float)1.5, PIVOT_SPEED = (float) 1.0;
+        private Boolean returning = false, newItem = true, brake = false;
 
 
         public LinkBoomerangStateMachine(LinkBoomerang boomerang)

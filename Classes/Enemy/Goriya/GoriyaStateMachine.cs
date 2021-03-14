@@ -11,10 +11,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private EnemyGoriya goriya;
         private EnemySpriteFactory enemySpriteFactory;
 
-        public enum Direction { right, up, left, down };
-        public Direction direction = Direction.down;
-        public bool moving = true;
-        public bool spawning = true;
+        private enum Direction { right, up, left, down };
+        private Direction direction = Direction.down;
+        private bool moving = true;
+        private bool spawning = true;
         private int timer = 90;
         private enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning};
         private CurrentState currentState = CurrentState.none;
