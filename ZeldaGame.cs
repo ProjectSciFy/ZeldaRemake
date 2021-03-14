@@ -108,7 +108,7 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CMouse(this));
 
             roomList = new List<Room>();
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i < 18; i++)
             {
                 roomList.Add(new Room(this, i));
             }
@@ -157,7 +157,7 @@ namespace CSE3902_Game_Sprint0
 
         public void changeRoom()
         {
-            if (roomNumber == 5)
+            if (roomNumber == 18)
             {
                 roomNumber = 1;
             }
