@@ -126,49 +126,7 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 timer = 12;
                 isDamaged = false;
-
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.damagedRight)
-                        {
-                            currentState = CurrentState.damagedRight;
-                            spriteFactory.DamageRight();
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.damagedUp)
-                        {
-                            currentState = CurrentState.damagedUp;
-                            spriteFactory.DamageUp();
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.damagedLeft)
-                        {
-                            currentState = CurrentState.damagedLeft;
-                            spriteFactory.DamageLeft();
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.damagedDown)
-                        {
-                            currentState = CurrentState.damagedDown;
-                            spriteFactory.DamageDown();
-                        }
-                        break;
-
-                    default:
-                        if (currentState != CurrentState.damagedDown)
-                        {
-                            currentState = CurrentState.damagedDown;
-                            spriteFactory.DamageDown();
-                        }
-                        break;
-                }
+                new LinkDamaged(link, spriteFactory, this).Execute();
             }
         }
         //TODO setup more initial states we think we may need & method bodies for adjusting them when called by Link.cs

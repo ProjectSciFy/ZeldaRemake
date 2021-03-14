@@ -33,7 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowRight)
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.arrowRight;
-                        spriteFactory.ArrowRight();
+                        link.linkSprite = spriteFactory.ArrowRight();
                         linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.right));
                     }
                     break;
@@ -41,7 +41,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowUp)
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.arrowUp;
-                        spriteFactory.ArrowUp();
+                        link.linkSprite = spriteFactory.ArrowUp();
                         linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y - 16), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.up));
                     }
                     break;
@@ -49,7 +49,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowLeft)
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.arrowLeft;
-                        spriteFactory.ArrowLeft();
+                        link.linkSprite = spriteFactory.ArrowLeft();
                         linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.left));
                     }
                     break;
@@ -57,7 +57,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowDown)
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.arrowDown;
-                        spriteFactory.ArrowDown();
+                        link.linkSprite = spriteFactory.ArrowDown();
                         linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y + 16), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.down));
                     }
                     break;
