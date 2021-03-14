@@ -23,15 +23,15 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         {
             this.game = game;
             game.spriteSheets.TryGetValue("DungeonTileset", out itemSpriteSheet);
-            drawLocation = new Vector2(32, 32);
+            drawLocation = new Vector2(96, 96);
             drawLocation2 = new Vector2(0, 0);
 
             int xloc = 1 + ((roomNumber - 1) % 6) * 195;
             int yloc = 192 + ((roomNumber - 1)/ 6) * 115;
-            roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(xloc, yloc, 192, 112), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+            roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(xloc, yloc, 192, 112), Color.White, SpriteEffects.None, new Vector2(1, 1), 10,0.0f);
 
 
-            roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+            roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), 10,0.0f);
 
             
         }

@@ -14,6 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         private Texture2D bossSpriteSheet;
         private Texture2D enemySpriteSheet;
         private Texture2D linkSpriteSheet;
+        private float projectileLayerDepth = .5f;
 
         public ProjectileSpriteFactory(ZeldaGame game)
         {
@@ -28,14 +29,14 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             bomb.spriteSize.X = 16;
             bomb.spriteSize.Y = 16;
-            bomb.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 201, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+            bomb.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 201, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, projectileLayerDepth);
         }
 
         public void BombExploding(Bomb bomb)
         {
             bomb.spriteSize.X = 16;
             bomb.spriteSize.Y = 16;
-            bomb.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+            bomb.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, projectileLayerDepth);
         }
 
         //Arrow methods
@@ -45,7 +46,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             arrow.spriteSize.Y = 16;
             arrow.velocity.X = 0;
             arrow.velocity.Y = -2;
-            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(1, 185, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(1, 185, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, projectileLayerDepth);
         }
 
         public void ArrowDown(Arrow arrow)
@@ -54,7 +55,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             arrow.spriteSize.Y = 16;
             arrow.velocity.X = 0;
             arrow.velocity.Y = 2;
-            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(1, 185, 8, 16), Color.White, SpriteEffects.FlipVertically, new Vector2(1, 1), 10);
+            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(1, 185, 8, 16), Color.White, SpriteEffects.FlipVertically, new Vector2(1, 1), 10, projectileLayerDepth);
         }
 
         public void ArrowLeft(Arrow arrow)
@@ -63,7 +64,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             arrow.spriteSize.Y = 16;
             arrow.velocity.X = -2;
             arrow.velocity.Y = 0;
-            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(10, 185, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 10);
+            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(10, 185, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 10, projectileLayerDepth);
         }
 
         public void ArrowRight(Arrow arrow)
@@ -72,7 +73,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             arrow.spriteSize.Y = 16;
             arrow.velocity.X = 2;
             arrow.velocity.Y = 0;
-            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(10, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(10, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, projectileLayerDepth);
         }
 
         public void ArrowStrike(Arrow arrow)
@@ -81,7 +82,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             arrow.spriteSize.Y = 16;
             arrow.velocity.X = 0;
             arrow.velocity.Y = 0;
-            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(53, 185, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);
+            arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(53, 185, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, projectileLayerDepth);
         }
     }
 }

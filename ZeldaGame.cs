@@ -61,6 +61,7 @@ namespace CSE3902_Game_Sprint0
             //SIZE OF SCREEN 
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.PreferredBackBufferHeight = 768;
+            //_graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -173,13 +174,6 @@ namespace CSE3902_Game_Sprint0
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
-
-            link.Draw();
-
-            drawnEnemy.Draw();
-
-            projectileHandler.Draw();
-
             foreach (Room r in roomList)
             {
                 if (r.getRoomNumber() == roomNumber)
@@ -187,6 +181,13 @@ namespace CSE3902_Game_Sprint0
                     r.Draw();
                 }
             }
+            link.Draw();
+
+            drawnEnemy.Draw();
+
+            projectileHandler.Draw();
+
+
 
         }
     }
