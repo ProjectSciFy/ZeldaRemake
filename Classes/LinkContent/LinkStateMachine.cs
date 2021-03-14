@@ -50,7 +50,6 @@ namespace CSE3902_Game_Sprint0.Classes
             this.link = link;
             spriteFactory = new LinkSpriteFactory(link);
             this.projectileHandler = game.projectileHandler;
-            spriteFactory.IdleDown();
         }
 
         // Call this method in Keyboard class when a key that changes direction is pressed
@@ -80,7 +79,6 @@ namespace CSE3902_Game_Sprint0.Classes
         //Sets link to an animated state using sword based on the value of direction var
         public void Sword()
         {
-            // construct animated link facing up with sprite factory
             if (timer == 0)
             {
                 timer = 60;
@@ -94,55 +92,8 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             if (timer == 0)
             {
-                timer = 60;
-
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.bombRight)
-                        {
-                            currentState = CurrentState.bombRight;
-                            spriteFactory.BombRight();
-                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), projectileHandler));
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.bombUp)
-                        {
-                            currentState = CurrentState.bombUp;
-                            spriteFactory.BombUp();
-                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X, link.drawLocation.Y - 16), projectileHandler));
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.bombLeft)
-                        {
-                            currentState = CurrentState.bombLeft;
-                            spriteFactory.BombLeft();
-                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), projectileHandler));
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.bombDown)
-                        {
-                            currentState = CurrentState.bombDown;
-                            spriteFactory.BombDown();
-                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X, link.drawLocation.Y + 16), projectileHandler));
-                        }
-                        break;
-
-                    default:
-                        if (currentState != CurrentState.bombDown)
-                        {
-                            currentState = CurrentState.bombDown;
-                            spriteFactory.BombDown();
-                            projectileHandler.Add(new Bomb(game, new Vector2(link.drawLocation.X, link.drawLocation.Y + 16), projectileHandler));
-                        }
-                        break;
-                }
+                timer = 15;
+                new LinkBomb(link, spriteFactory, this).Execute();
             }
         }
 
@@ -152,51 +103,9 @@ namespace CSE3902_Game_Sprint0.Classes
             // construct animated link facing up with sprite factory
             if (timer == 0)
             {
-                timer = 25;
+                timer = 15;
                 useBoomerang = false;
-
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.boomerangRight)
-                        {
-                            currentState = CurrentState.boomerangRight;
-                            spriteFactory.BoomerangRight();
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.boomerangUp)
-                        {
-                            currentState = CurrentState.boomerangUp;
-                            spriteFactory.BoomerangUp();
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.boomerangLeft)
-                        {
-                            currentState = CurrentState.boomerangLeft;
-                            spriteFactory.BoomerangLeft();
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.boomerangDown)
-                        {
-                            currentState = CurrentState.boomerangDown;
-                            spriteFactory.BoomerangDown();
-                        }
-                        break;
-
-                    default:
-                        if (currentState != CurrentState.boomerangDown)
-                        {
-                            currentState = CurrentState.boomerangDown;
-                            spriteFactory.BoomerangDown();
-                        }
-                        break;
-                }
+                new LinkContent.LinkScripts.LinkBoomerang(link, spriteFactory, this).Execute();
             }
         }
 
