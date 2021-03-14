@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Collision;
+using CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts;
 using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
 using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
@@ -7,6 +8,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Collisions
@@ -49,6 +51,19 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
         {
             foreach (Tuple<object, object, Collision.Collision.Direction> tuple in collisionManager.collisionSet)
             {
+                if (tuple.Item1.GetType() == typeof(Link))
+                {
+                    if (tuple.Item2 is IEnemy)
+                    {
+                        new LinkOnEnemy((Link)tuple.Item1, (IEnemy)tuple.Item2, tuple.Item3).Execute();
+                    }
+                }
+            }
+
+            //New stuff ^^^
+            /*
+            foreach (Tuple<object, object, Collision.Collision.Direction> tuple in collisionManager.collisionSet)
+            {
                 //Link colliding with things
                 if (tuple.Item1.GetType() == typeof(Link))
                 {
@@ -89,7 +104,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                     }
                 }
             }
-
+            */
             //Clear the collision set
             collisionManager.collisionSet.Clear();
         }

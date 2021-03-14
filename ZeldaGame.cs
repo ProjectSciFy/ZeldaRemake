@@ -73,7 +73,7 @@ namespace CSE3902_Game_Sprint0
             base.Initialize();
 
             //Setting up CollisionManager
-            collisionManager = new CollisionManager(this);
+            collisionManager = new CollisionManager();
 
             //Setting up projectileHandler
             projectileSpriteFactory = new ProjectileSpriteFactory(this);

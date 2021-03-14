@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 {
-    public class EnemyWallmaster : IEnemy
+    public class EnemyWallmaster : IEnemy, ICollisionEntity
     {
         public ZeldaGame game;
         private WallmasterStateMachine myState;
@@ -23,7 +24,13 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             this.enemySpriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
             myState = new WallmasterStateMachine(this);
-            game.collisionManager.enemies.Add(this, collisionRectangle);
+            //game.collisionManager.enemies.Add(this, collisionRectangle);
+            game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
+        }
+
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
         }
 
         public void Update()
@@ -58,7 +65,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             collisionRectangle.Width = (int)spriteSize.X;
             collisionRectangle.Height = (int)spriteSize.Y;
 
-            game.collisionManager.enemies[this] = collisionRectangle;
+            //game.collisionManager.enemies[this] = collisionRectangle;
+
+            game.collisionManager.collisionEntities[this] = this.CollisionRectangle();
         }
 
         public void Draw()
