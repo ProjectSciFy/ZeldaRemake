@@ -20,21 +20,30 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
         //Checks major object types against eachother by use of CollisionChecker
         //If a collision is detected, a tuple is created of the colliding objects & from which direction, then sent to collisionHandler
         //At the end, removeSet clears unloaded entities from respective lists
-        public ZeldaGame game;
         public CollisionChecker collisionChecker;
         public CollisionHandler collisionHandler;
 
+        //Set of detected collisions
         public HashSet<Tuple<Object, Object, Collision.Direction>> collisionSet = new HashSet<Tuple<Object, Object, Collision.Direction>>();
 
+        //Link's collision rectangle accessed directly
         public Link link;
-        //public KeyValuePair<Link, Rectangle> link;
+        //Dictionary of all enemies & their respective collision rectangle
         public Dictionary<IEnemy, Rectangle> enemies = new Dictionary<IEnemy, Rectangle>();
+        //Dictionary of all projectiles & their respective collision rectangle
         public Dictionary<IProjectile, Rectangle> projectiles = new Dictionary<IProjectile, Rectangle>();
+        //Dictionary of all Items & their respective collision rectangle
+        //Dictionary of all Tiles & their respective collision rectangle
         public Dictionary<ITile, Rectangle> walls = new Dictionary<ITile, Rectangle>();
 
-        public CollisionManager(ZeldaGame game)
+        //LEGACY ^^^
+
+
+        //Dictionary of all collision entities loaded
+        public Dictionary<ICollisionEntity, Rectangle> collisionEntities = new Dictionary<ICollisionEntity, Rectangle>();
+
+        public CollisionManager()
         {
-            this.game = game;
             collisionChecker = new CollisionChecker(this);
             collisionHandler = new CollisionHandler(this);
         }

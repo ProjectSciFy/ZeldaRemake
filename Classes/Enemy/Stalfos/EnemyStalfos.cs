@@ -1,11 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CSE3902_Game_Sprint0.Interfaces;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
-    public class EnemyStalfos : IEnemy
+    public class EnemyStalfos : IEnemy, ICollisionEntity
     {
         //When defeated, can drop a heart, rupee, 5rupee or a clock
         //Pathing is random, no sense of direction
@@ -26,7 +27,13 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.enemySpriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
             myState = new StalfosStateMachine(this);
-            game.collisionManager.enemies.Add(this, collisionRectangle);
+            //game.collisionManager.enemies.Add(this, collisionRectangle);
+            game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
+        }
+
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
         }
 
         public void Update()
@@ -61,7 +68,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             collisionRectangle.Width = (int)spriteSize.X;
             collisionRectangle.Height = (int)spriteSize.Y;
 
-            game.collisionManager.enemies[this] = collisionRectangle;
+            //game.collisionManager.enemies[this] = collisionRectangle;
+
+            game.collisionManager.collisionEntities[this] = this.CollisionRectangle();
         }
 
         public void Draw()
