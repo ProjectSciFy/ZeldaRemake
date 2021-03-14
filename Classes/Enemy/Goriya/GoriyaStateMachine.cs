@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public GoriyaStateMachine(EnemyGoriya goriya)
         {
             this.goriya = goriya;
-            enemySpriteFactory = goriya.enemySpriteFactory;
+            enemySpriteFactory = goriya.SpriteFactory;
         }
 
         public void Spawning()

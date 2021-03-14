@@ -24,7 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public GoriyaBoomerangStatemachine(GoriyaBoomerang boomerang)
         {
             this.boomerang = boomerang;
-            this.spriteFactory = boomerang.spriteFactory;
+            this.spriteFactory = boomerang.SpriteFactory;
         }
         public void Outward()
         {
@@ -236,100 +236,100 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public void Update()
         {
-            if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && newItem)
+            if ((int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && newItem)
             {
-                direction = (Direction)boomerang.goriyaState.direction;
+                direction = (Direction)boomerang.GoriyaState.direction;
                 Outward();
                 newItem = false;
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < RANGE && !returning)
+            else if ((int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) > (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) < RANGE && !returning)
             {
                 OutwardReturnWindow();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > RANGE && !returning)
+            else if ((int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) > RANGE && !returning)
             {
                 returning = true;
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > (RANGE - RETURN_WINDOW) && returning)
+            else if ((int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) > (RANGE - RETURN_WINDOW) && returning)
             {
                 
-                if (boomerang.drawLocation.X > boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y > boomerang.goriya.drawLocation.Y)
+                if (boomerang.DrawLocation.X > boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y > boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.NW;
                 }
-                else if (boomerang.drawLocation.X > boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y < boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X > boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y < boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.SW;
                 }
-                else if (boomerang.drawLocation.X < boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y < boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X < boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y < boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.SE;
                 }
-                else if (boomerang.drawLocation.X < boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y > boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X < boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y > boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.NE;
                 }
-                else if (boomerang.drawLocation.X == boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y > boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X == boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y > boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.up;
                 }
-                else if (boomerang.drawLocation.X == boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y < boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X == boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y < boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.down;
                 }
-                else if (boomerang.drawLocation.X < boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y == boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X < boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y == boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.right;
                 }
-                else if (boomerang.drawLocation.X > boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y == boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X > boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y == boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.left;
                 }
                 InwardReturnWindow();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > DESPAWN_DISTANCE && returning)
+            else if ((int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) > DESPAWN_DISTANCE && returning)
             {
                 if (!brake)
                 {
                     currentState = CurrentState.none;
                     brake = true;
                 }
-                if (boomerang.drawLocation.X > boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y > boomerang.goriya.drawLocation.Y)
+                if (boomerang.DrawLocation.X > boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y > boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.NW;
                 }
-                else if (boomerang.drawLocation.X > boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y < boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X > boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y < boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.SW;
                 }
-                else if (boomerang.drawLocation.X < boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y < boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X < boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y < boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.SE;
                 }
-                else if (boomerang.drawLocation.X < boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y > boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X < boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y > boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.NE;
                 }
-                else if (boomerang.drawLocation.X == boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y > boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X == boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y > boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.up;
                 }
-                else if (boomerang.drawLocation.X == boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y < boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X == boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y < boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.down;
                 }
-                else if (boomerang.drawLocation.X < boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y == boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X < boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y == boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.right;
                 }
-                else if (boomerang.drawLocation.X > boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y == boomerang.goriya.drawLocation.Y)
+                else if (boomerang.DrawLocation.X > boomerang.Goriya.DrawLocation.X && boomerang.DrawLocation.Y == boomerang.Goriya.DrawLocation.Y)
                 {
                     returnDirection = Direction.left;
                 }
                 
                 Inward();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < DESPAWN_DISTANCE && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > 0 && returning)
+            else if ((int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) < DESPAWN_DISTANCE && (int)Vector2.Distance(boomerang.DrawLocation, boomerang.spawnLocation) > 0 && returning)
             {
                 // boomerang.inFlight = false;
             }

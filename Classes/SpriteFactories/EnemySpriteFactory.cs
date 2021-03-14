@@ -179,74 +179,56 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //Goriya methods
         public void SpawnGoriya(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30);
         }
         public void GoriyaMovingUp(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = -1;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(0, -1);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaMovingDown(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 1;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(0, 1);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaMovingRight(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 1;
-            goriya.velocity.Y = 0;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(1, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaMovingLeft(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = -1;
-            goriya.velocity.Y = 0;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(-1, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10);
         }
         public void GoriyaIdleDown(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaIdleUp(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaIdleRight(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaIdleLeft(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.SpriteSize = new Vector2(16, 16);
+            goriya.Velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10);
         }
 
@@ -603,7 +585,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             boomerang.spriteSize.Y = 16;
             boomerang.velocity.X = boomerang.trajectory.X;
             boomerang.velocity.Y = boomerang.trajectory.Y;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+            boomerang.MySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
         //fireball
         public void FireballAttack(Fireball fireball)

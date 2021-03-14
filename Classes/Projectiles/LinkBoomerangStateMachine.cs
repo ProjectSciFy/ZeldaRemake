@@ -331,10 +331,11 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 }
                 Inward();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < DESPAWN_DISTANCE && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > 0 && returning)
-            {
-                // boomerang.inFlight = false;
-            }
+            // despawn handled by collision
+            //else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < DESPAWN_DISTANCE && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > 0 && returning)
+            //{
+            //    // boomerang.inFlight = false;
+            //}
         }
     }
 }
