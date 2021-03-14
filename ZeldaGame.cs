@@ -68,7 +68,7 @@ namespace CSE3902_Game_Sprint0
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            
+
             base.Initialize();
 
             //Setting up CollisionManager
@@ -107,7 +107,7 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CMouse(this));
 
             roomList = new List<Room>();
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 1; i++)
             {
                 roomList.Add(new Room(this, i));
             }
@@ -156,10 +156,10 @@ namespace CSE3902_Game_Sprint0
 
         public void changeRoom()
         {
-            if(roomNumber == 10)
+            if (roomNumber == 1)
             {
                 roomNumber = 0;
-            }   
+            }
             else
             {
                 roomNumber++;
@@ -180,9 +180,9 @@ namespace CSE3902_Game_Sprint0
 
             projectileHandler.Draw();
 
-            foreach(Room r in roomList)
+            foreach (Room r in roomList)
             {
-                if(r.getRoomNumber() == roomNumber)
+                if (r.getRoomNumber() == roomNumber)
                 {
                     r.Draw();
                 }
