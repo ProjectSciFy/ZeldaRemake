@@ -29,7 +29,6 @@ namespace CSE3902_Game_Sprint0
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
-        public ItemSpriteFactory itemSpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
         public Link link;
         // test enemy draws
