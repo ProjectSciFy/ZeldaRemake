@@ -12,14 +12,14 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     class TempTile
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         public Vector2 drawLocation;
         public Vector2 drawLocation2;
         public ISprite tile;
         private SpriteBatch mySpriteBatch;
 
         private Texture2D itemSpriteSheet;
-        public TempTile(EeveeSim game, Vector2 position)
+        public TempTile(ZeldaGame game, Vector2 position)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("DungeonTileset", out itemSpriteSheet);

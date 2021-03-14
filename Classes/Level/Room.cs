@@ -14,7 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private Background background;
         private List<TempTile> tiles;
         private int roomNumber;
-        public Room(EeveeSim game, int RoomNumber)
+        public Room(ZeldaGame game, int RoomNumber)
         {
             roomNumber = RoomNumber;
             tiles = new List<TempTile>();

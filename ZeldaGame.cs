@@ -16,6 +16,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Collision;
+using CSE3902_Game_Sprint0.Classes.Level;
 
 
 namespace CSE3902_Game_Sprint0
@@ -49,6 +50,10 @@ namespace CSE3902_Game_Sprint0
         public ProjectileHandler projectileHandler;
 
         public CollisionManager collisionManager;
+
+        public int roomNumber;
+        public List<Room> roomList;
+
 
         public ZeldaGame()
         {
@@ -101,6 +106,12 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
 
+            roomList = new List<Room>();
+            for(int i = 0; i < 10; i++)
+            {
+                roomList.Add(new Room(this, i));
+            }
+
         }
 
         protected override void LoadContent()
@@ -143,6 +154,18 @@ namespace CSE3902_Game_Sprint0
             collisionManager.Update();
         }
 
+        public void changeRoom()
+        {
+            if(roomNumber == 10)
+            {
+                roomNumber = 0;
+            }   
+            else
+            {
+                roomNumber++;
+            }
+
+        }
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
@@ -156,6 +179,14 @@ namespace CSE3902_Game_Sprint0
             drawnEnemy.Draw();
 
             projectileHandler.Draw();
+
+            foreach(Room r in roomList)
+            {
+                if(r.getRoomNumber() == roomNumber)
+                {
+                    r.Draw();
+                }
+            }
 
         }
     }

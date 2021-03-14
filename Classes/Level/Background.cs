@@ -12,14 +12,14 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     class Background
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         public Vector2 drawLocation;
         public Vector2 drawLocation2;
         public ISprite roominterior;
         public ISprite roomexterior;
 
         private Texture2D itemSpriteSheet;
-        public Background(EeveeSim game, int roomNumber)
+        public Background(ZeldaGame game, int roomNumber)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("DungeonTileset", out itemSpriteSheet);
