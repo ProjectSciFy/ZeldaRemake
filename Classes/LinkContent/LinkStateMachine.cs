@@ -115,54 +115,7 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 timer = 25;
-
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.arrowRight)
-                        {
-                            currentState = CurrentState.arrowRight;
-                            spriteFactory.ArrowRight();
-                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), projectileHandler, Projectiles.Arrow.Direction.right));
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.arrowUp)
-                        {
-                            currentState = CurrentState.arrowUp;
-                            spriteFactory.ArrowUp();
-                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y - 16), projectileHandler, Projectiles.Arrow.Direction.up));
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.arrowLeft)
-                        {
-                            currentState = CurrentState.arrowLeft;
-                            spriteFactory.ArrowLeft();
-                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), projectileHandler, Projectiles.Arrow.Direction.left));
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.arrowDown)
-                        {
-                            currentState = CurrentState.arrowDown;
-                            spriteFactory.ArrowDown();
-                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y + 16), projectileHandler, Projectiles.Arrow.Direction.down));
-                        }
-                        break;
-
-                    default:
-                        if (currentState != CurrentState.arrowDown)
-                        {
-                            currentState = CurrentState.arrowDown;
-                            spriteFactory.ArrowDown();
-                            projectileHandler.Add(new Arrow(game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y + 16), projectileHandler, Projectiles.Arrow.Direction.down));
-                        }
-                        break;
-                }
+                new LinkArrow(link, spriteFactory, this).Execute();
             }
         }
 
