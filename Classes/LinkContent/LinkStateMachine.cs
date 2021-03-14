@@ -103,51 +103,9 @@ namespace CSE3902_Game_Sprint0.Classes
             // construct animated link facing up with sprite factory
             if (timer == 0)
             {
-                timer = 25;
+                timer = 15;
                 useBoomerang = false;
-
-                switch (direction)
-                {
-                    case Direction.right:
-                        if (currentState != CurrentState.boomerangRight)
-                        {
-                            currentState = CurrentState.boomerangRight;
-                            spriteFactory.BoomerangRight();
-                        }
-                        break;
-
-                    case Direction.up:
-                        if (currentState != CurrentState.boomerangUp)
-                        {
-                            currentState = CurrentState.boomerangUp;
-                            spriteFactory.BoomerangUp();
-                        }
-                        break;
-
-                    case Direction.left:
-                        if (currentState != CurrentState.boomerangLeft)
-                        {
-                            currentState = CurrentState.boomerangLeft;
-                            spriteFactory.BoomerangLeft();
-                        }
-                        break;
-
-                    case Direction.down:
-                        if (currentState != CurrentState.boomerangDown)
-                        {
-                            currentState = CurrentState.boomerangDown;
-                            spriteFactory.BoomerangDown();
-                        }
-                        break;
-
-                    default:
-                        if (currentState != CurrentState.boomerangDown)
-                        {
-                            currentState = CurrentState.boomerangDown;
-                            spriteFactory.BoomerangDown();
-                        }
-                        break;
-                }
+                new LinkContent.LinkScripts.LinkBoomerang(link, spriteFactory, this).Execute();
             }
         }
 
