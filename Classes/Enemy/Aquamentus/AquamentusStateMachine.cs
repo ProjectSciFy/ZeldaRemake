@@ -8,6 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
     public class AquamentusStateMachine : IEnemyStateMachine
     {
+        private ZeldaGame game;
         private EnemyAquamentus aquamentus;
         private EnemySpriteFactory enemySpriteFactory;
 
@@ -21,8 +22,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 
         public AquamentusStateMachine(EnemyAquamentus aquamentus)
         {
+            game=aquamentus.game;
             this.aquamentus = aquamentus;
-            enemySpriteFactory = aquamentus.enemySpriteFactory;
+            /*enemySpriteFactory = aquamentus.enemySpriteFactory;*/
+            enemySpriteFactory = new EnemySpriteFactory(game);
         }
 
         public void Spawning()
