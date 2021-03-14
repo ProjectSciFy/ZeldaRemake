@@ -16,11 +16,11 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private AquamentusStateMachine aquamentusState;
         public EnemySpriteFactory spriteFactory { get; set; }
         private FireballStateMachine myState;
-        public ISprite mySprite;
+        public ISprite mySprite { get; set; }
         private Vector2 drawLocation;
-        public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
-        public Vector2 trajectory;
+        public Vector2 velocity { get; set; }  = new Vector2(0, 0);
+        public Vector2 spriteSize { get; set; }  = new Vector2(0, 0);
+        public Vector2 trajectory { get; set; }
         private bool newItem = true;
         
         public Fireball(ZeldaGame game, EnemyAquamentus aquamentus, AquamentusStateMachine aquamentusState, Vector2 trajectory)

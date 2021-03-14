@@ -24,4 +24,7 @@
     <Folder Include="Classes\Controllers\ItemCommands\" />
     <Folder Include="Classes\Controllers\TileCommands\" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\Enemy\Stalfos\StalfosScripts\" />
+  </ItemGroup>
 </Project>

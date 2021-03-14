@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes
 {
-    public class Link : IPlayer
+    public class Link : IPlayer, ICollisionEntity
     {
         public ZeldaGame game;
         public LinkStateMachine linkState;
@@ -24,11 +24,15 @@ namespace CSE3902_Game_Sprint0.Classes
             this.game = game;
             drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
         }
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
+        }
 
         public void SetState(LinkStateMachine empty)
         {
             linkState = empty;
-            game.collisionManager.link = this;
+            game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
         }
 
         //Set Link to be using an item
@@ -76,6 +80,8 @@ namespace CSE3902_Game_Sprint0.Classes
             collisionRectangle.Y = (int)drawLocation.Y;
             collisionRectangle.Width = (int)spriteSize.X;
             collisionRectangle.Height = (int)spriteSize.Y;
+
+            game.collisionManager.collisionEntities[this] = this.CollisionRectangle();
         }
 
         public void Draw()

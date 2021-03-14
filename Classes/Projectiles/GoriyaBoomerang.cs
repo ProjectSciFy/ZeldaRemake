@@ -16,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public GoriyaStateMachine goriyaState { get; protected set; }
         public EnemySpriteFactory spriteFactory { get; protected set; }
         public ISprite mySprite { protected get; set; }
-        private GoriyaBoomerangStatemachine myState;
+        public GoriyaBoomerangStatemachine myState { get; set; }
         public Vector2 drawLocation { get; set; }
         public Vector2 SpawnLocation { get; set; }
         public Vector2 velocity { get; set; } = new Vector2 (0,0);

@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿    using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -66,8 +66,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         public void Draw(Vector2 drawLocation)
         {
             mySpriteBatch.Begin();
-            
-            mySpriteBatch.Draw(myTexture, drawLocation, frameIndex, color, 0, new Vector2(0, 0), 3, spriteEffects, layerDepth);
+            mySpriteBatch.Draw(myTexture, drawLocation, frameIndex, color, 0, new Vector2(0, 0), 3f, spriteEffects, layerDepth);
             mySpriteBatch.End();
         }
     }

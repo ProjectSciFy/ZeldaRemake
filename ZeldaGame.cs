@@ -31,7 +31,7 @@ namespace CSE3902_Game_Sprint0
         //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
-        public Link link;
+        public Classes.Link link;
         // test enemy draws
         public IEnemy stalfos;
         public IEnemy gel;
@@ -73,7 +73,7 @@ namespace CSE3902_Game_Sprint0
             base.Initialize();
 
             //Setting up CollisionManager
-            collisionManager = new CollisionManager(this);
+            collisionManager = new CollisionManager();
 
             //Setting up projectileHandler
             projectileSpriteFactory = new ProjectileSpriteFactory(this);
@@ -81,7 +81,7 @@ namespace CSE3902_Game_Sprint0
 
             /* LINK */
             //set StateMachine and Link to be used:
-            link = new Link(this);
+            link = new Classes.Link(this);
             linkStateMachine = new LinkStateMachine(link);
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
