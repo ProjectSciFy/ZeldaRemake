@@ -8,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes
 {
     public class StaticSprite : ISprite
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private Texture2D myTexture;
         private SpriteBatch mySpriteBatch;
         private Vector2 drawLocation;
@@ -16,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes
         private Rectangle spriteIndex;
         private Color color;
         private SpriteEffects spriteEffects;
-        public StaticSprite(EeveeSim game, Texture2D texture, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects)
+        public StaticSprite(ZeldaGame game, Texture2D texture, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects)
         {
             this.game = game;
             myTexture = texture;

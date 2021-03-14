@@ -8,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
 {
     class DrawSprite : ICommand
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private Texture2D texture;
         private ISprite sprite;
         private Vector2 drawLocation;
@@ -19,7 +19,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         private Vector2 frameGrid;
         private SpriteEffects spriteEffects;
 
-        public DrawSprite(EeveeSim game, Texture2D texture, ISprite sprite, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid)
+        public DrawSprite(ZeldaGame game, Texture2D texture, ISprite sprite, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid)
         {
             this.game = game;
             this.texture = texture;
@@ -40,11 +40,11 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         {
             if (isAnimated)
             {
-                game.eeveeSprite = new AnimatedSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects, frameGrid);
+                //game.eeveeSprite = new AnimatedSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects, frameGrid);
             }
             else
             {
-                game.eeveeSprite = new StaticSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects);
+                //game.eeveeSprite = new StaticSprite(game, texture, drawLocation, velocity, spriteIndex, color, spriteEffects);
             }
             
             

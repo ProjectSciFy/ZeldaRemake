@@ -22,7 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private int explosionTimer = 6;
         private bool explosionMirror = false;
 
-        public Bomb(EeveeSim game, Vector2 drawLocation, ProjectileHandler projectileHandler)
+        public Bomb(ZeldaGame game, Vector2 drawLocation, ProjectileHandler projectileHandler)
         {
             this.projectileSpriteFactory = game.projectileSpriteFactory;
             this.drawLocation = drawLocation;

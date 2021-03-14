@@ -14,14 +14,14 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
         public bool moving = true;
-        public bool spawning = true;
+        private bool spawning = true;
         private int timer = 90;
         private enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning};
         private CurrentState currentState = CurrentState.none;
         public GoriyaStateMachine(EnemyGoriya goriya)
         {
             this.goriya = goriya;
-            enemySpriteFactory = goriya.enemySpriteFactory;
+            enemySpriteFactory = goriya.spriteFactory;
         }
 
         public void Spawning()

@@ -7,7 +7,7 @@ namespace CSE3902_Game_Sprint0
         [STAThread]
         static void Main()
         {
-            using (var game = new EeveeSim())
+            using (var game = new ZeldaGame())
                 game.Run();
         }
     }

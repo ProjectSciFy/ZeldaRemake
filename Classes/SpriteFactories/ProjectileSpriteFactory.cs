@@ -10,12 +10,12 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class ProjectileSpriteFactory
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private Texture2D bossSpriteSheet;
         private Texture2D enemySpriteSheet;
         private Texture2D linkSpriteSheet;
 
-        public ProjectileSpriteFactory(EeveeSim game)
+        public ProjectileSpriteFactory(ZeldaGame game)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("Bosses", out bossSpriteSheet);

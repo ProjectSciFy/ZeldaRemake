@@ -7,7 +7,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class BladeTrapStateMachine
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private BladeTrap BladeTrap;
         private EnemySpriteFactory spriteFactory;
         private Link link;

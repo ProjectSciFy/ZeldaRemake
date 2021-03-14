@@ -1,5 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
-using CSE3902_Game_Sprint0.Classes.Controllers.TileCommands;
 using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
@@ -8,7 +7,6 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using CSE3902_Game_Sprint0.Classes.Controllers.ItemCommands;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
@@ -23,14 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
     public class Reset : ICommand
     {
-        private EeveeSim game;
-
-        private ItemStateMachine itemStateMachine;
-        private ItemStateMachine.ItemType currentItem;
-
-        private TileStateMachine tileStateMachine;
-        private TileStateMachine.TileType currentTile;
-
+        private ZeldaGame game;
         private LinkStateMachine linkState;
         private LinkStateMachine.Direction direction;
         private LinkStateMachine.Weapon weaponSelected;
@@ -43,19 +34,12 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         private Vector2 linkLocation;
 
-        private EeveeSim.Enemies currentEnemy;
+        private ZeldaGame.Enemies currentEnemy;
         private IEnemy drawnEnemy;
 
-        public Reset(EeveeSim game)
+        public Reset(ZeldaGame game)
         {
             this.game = game;
-
-            itemStateMachine = game.itemStateMachine;
-            currentItem = game.itemStateMachine.currentState;
-
-            tileStateMachine = game.tileStateMachine;
-            currentTile = game.tileStateMachine.currentState;
-
             linkState = game.linkStateMachine;
             direction = game.linkStateMachine.direction;
             weaponSelected = game.linkStateMachine.weaponSelected;
@@ -74,14 +58,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         public void Execute()
         {
-            this.currentItem = itemStateMachine.currentState;
-            itemStateMachine.currentState = ItemStateMachine.ItemType.Heart;
-            this.currentItem = ItemStateMachine.ItemType.Heart;
-
-            this.currentTile = tileStateMachine.currentState;
-            tileStateMachine.currentState = TileStateMachine.TileType.Wall;
-            this.currentTile = TileStateMachine.TileType.Wall;
-
             this.direction = linkState.direction;
             this.weaponSelected = linkState.weaponSelected;
             this.moving = linkState.moving;
@@ -113,9 +89,9 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
             this.currentEnemy = game.currentEnemy;
             this.drawnEnemy = game.drawnEnemy;
-            game.currentEnemy = EeveeSim.Enemies.Stalfos;
+            game.currentEnemy = ZeldaGame.Enemies.Stalfos;
             game.drawnEnemy = new EnemyStalfos(this.game, new Vector2(400, 100));
-            this.currentEnemy = EeveeSim.Enemies.Stalfos;
+            this.currentEnemy = ZeldaGame.Enemies.Stalfos;
             this.drawnEnemy = new EnemyStalfos(this.game, new Vector2(400, 100));
         }
     }

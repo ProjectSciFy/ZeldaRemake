@@ -8,21 +8,21 @@ namespace CSE3902_Game_Sprint0.Classes
 {
     public class Link : IPlayer
     {
-        public EeveeSim game;
+        public ZeldaGame game;
         public LinkStateMachine linkState;
         public ISprite linkSprite;
         public Vector2 drawLocation;
+        public Vector2 drawOffset = new Vector2(0, 0);
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         
 
         //Initialize Link's default state(s) in a new stateMachine
-        public Link(EeveeSim game)
+        public Link(ZeldaGame game)
         {
             this.game = game;
             drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
-
         }
 
         public void SetState(LinkStateMachine empty)

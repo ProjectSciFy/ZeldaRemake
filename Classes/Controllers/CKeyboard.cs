@@ -1,5 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
-using CSE3902_Game_Sprint0.Classes.Controllers.TileCommands;
 using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
@@ -8,7 +7,6 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using CSE3902_Game_Sprint0.Classes.Controllers.ItemCommands;
 using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
 using CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
@@ -24,7 +22,7 @@ namespace CSE3902_Game_Sprint0
         Dictionary<Keys, int> movementKeys = new Dictionary<Keys, int>();
 
        
-        public CKeyboard(EeveeSim game)
+        public CKeyboard(ZeldaGame game)
         {
 
             linkState = game.linkStateMachine;
@@ -50,8 +48,6 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.D, new MoveLink(linkState, LinkStateMachine.Direction.right));
 
             //Z and N -- attack and animation
-            keyBinds.Add(Keys.Z, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (24 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (25 / 2)), new Vector2(0, 2), new Rectangle(0, 112, 24, 25), Color.White, SpriteEffects.None, new Vector2(1, 1)));
-            keyBinds.Add(Keys.N, new DrawSprite(game, game.eeveeTexture, game.eeveeSprite, game.eeveeLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (25 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (21 / 2)), new Vector2(2, 0), new Rectangle(75, 48, 25, 21), Color.White, SpriteEffects.None, new Vector2(1, 3)));
 
             //E -- test damage taken animation
             keyBinds.Add(Keys.E, new DamagedLink(linkState));
@@ -61,14 +57,6 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.D2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb)); // bomb item 
             keyBinds.Add(Keys.D3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
             keyBinds.Add(Keys.D4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
-
-            //T and Y -- test block animation
-            keyBinds.Add(Keys.T, new PreviousTile(game.tileStateMachine));
-            keyBinds.Add(Keys.Y, new NextTile(game.tileStateMachine));
-
-            //U and I -- cycle through items
-            keyBinds.Add(Keys.U, new PreviousItem(game.itemStateMachine));
-            keyBinds.Add(Keys.I, new NextItem(game.itemStateMachine));
 
             //O and P -- test other characters/NPCs animation (cycles through sprites)
             keyBinds.Add(Keys.O, new PreviousEnemy(game));

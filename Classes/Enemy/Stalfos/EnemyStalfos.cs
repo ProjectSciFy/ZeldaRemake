@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //Pathing is random, no sense of direction
         //Method of attack is melee, bumping into the player
 
-        public EeveeSim game;
+        public ZeldaGame game;
         private StalfosStateMachine myState;
         public EnemySpriteFactory enemySpriteFactory;
         public ISprite mySprite;
@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
-        public EnemyStalfos(EeveeSim game, Vector2 spawnLocation)
+        public EnemyStalfos(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
             this.enemySpriteFactory = game.enemySpriteFactory;

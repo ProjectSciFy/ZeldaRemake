@@ -8,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes
 {
     public class AnimatedSprite : ISprite
     {
-        private EeveeSim game;
+        private ZeldaGame game;
         private Texture2D myTexture;
         private SpriteBatch mySpriteBatch;
         private Vector2 drawLocation;
@@ -22,7 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes
         private Vector2 frameGrid;
         private Rectangle frameIndex;
 
-        public AnimatedSprite(EeveeSim game, Texture2D texture, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid)
+        public AnimatedSprite(ZeldaGame game, Texture2D texture, Vector2 drawLocation, Vector2 velocity, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid)
         {
             this.game = game;
             myTexture = texture;

@@ -16,8 +16,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands
 {
     public class NextEnemy : ICommand
     {
-        private EeveeSim game;
-        public NextEnemy(EeveeSim game)
+        private ZeldaGame game;
+        public NextEnemy(ZeldaGame game)
         {
             this.game = game;
         }
@@ -26,37 +26,37 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands
         {
             switch (this.game.currentEnemy)
             {
-                case EeveeSim.Enemies.Stalfos:
+                case ZeldaGame.Enemies.Stalfos:
                     this.game.drawnEnemy = new EnemyGel(this.game, new Vector2(400, 100));
-                    this.game.currentEnemy = EeveeSim.Enemies.Gel;
+                    this.game.currentEnemy = ZeldaGame.Enemies.Gel;
                     break;
-                case EeveeSim.Enemies.Gel:
+                case ZeldaGame.Enemies.Gel:
                     this.game.drawnEnemy = new EnemyKeese(this.game, new Vector2(400, 100));
-                    this.game.currentEnemy = EeveeSim.Enemies.Keese;
+                    this.game.currentEnemy = ZeldaGame.Enemies.Keese;
                     break;
-                case EeveeSim.Enemies.Keese:
+                case ZeldaGame.Enemies.Keese:
                     this.game.drawnEnemy = new BladeTrap(this.game, new Vector2(400, 100), new Vector2(100, 100), this.game.link);
-                    this.game.currentEnemy = EeveeSim.Enemies.BladeTrap;
+                    this.game.currentEnemy = ZeldaGame.Enemies.BladeTrap;
                     break;
-                case EeveeSim.Enemies.BladeTrap:
+                case ZeldaGame.Enemies.BladeTrap:
                     this.game.drawnEnemy = new EnemyGoriya(this.game, new Vector2(400, 100));
-                    this.game.currentEnemy = EeveeSim.Enemies.Goriya;
+                    this.game.currentEnemy = ZeldaGame.Enemies.Goriya;
                     break;
-                case EeveeSim.Enemies.Goriya:
+                case ZeldaGame.Enemies.Goriya:
                     this.game.drawnEnemy = new EnemyAquamentus(this.game, new Vector2(400, 100));
-                    this.game.currentEnemy = EeveeSim.Enemies.Aquamentus;
+                    this.game.currentEnemy = ZeldaGame.Enemies.Aquamentus;
                     break;
-                case EeveeSim.Enemies.Aquamentus:
+                case ZeldaGame.Enemies.Aquamentus:
                     this.game.drawnEnemy = new EnemyWallmaster(this.game, new Vector2(400, 100));
-                    this.game.currentEnemy = EeveeSim.Enemies.Wallmaster;
+                    this.game.currentEnemy = ZeldaGame.Enemies.Wallmaster;
                     break;
-                case EeveeSim.Enemies.Wallmaster:
+                case ZeldaGame.Enemies.Wallmaster:
                     this.game.drawnEnemy = new EnemyOldMan(this.game, new Vector2(400, 100));
-                    this.game.currentEnemy = EeveeSim.Enemies.OldMan;
+                    this.game.currentEnemy = ZeldaGame.Enemies.OldMan;
                     break;
-                case EeveeSim.Enemies.OldMan:
+                case ZeldaGame.Enemies.OldMan:
                     this.game.drawnEnemy = new EnemyStalfos(this.game, new Vector2(400, 100));
-                    this.game.currentEnemy = EeveeSim.Enemies.Stalfos;
+                    this.game.currentEnemy = ZeldaGame.Enemies.Stalfos;
                     break;
                 default:
                     break;

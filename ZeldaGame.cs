@@ -16,28 +16,19 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Collision;
-using CSE3902_Game_Sprint0.Classes.Level;
 
 
 namespace CSE3902_Game_Sprint0
 {
 
-    // Gal tell me if you can see this comment.
-    public class EeveeSim : Game
+    public class ZeldaGame : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private List<IController> controllerList = new List<IController>();
-        public Texture2D eeveeTexture;
-        public ISprite eeveeSprite;
-        public Vector2 eeveeLocation;
-        public Vector2 eevelocity = new Vector2(0, 0);
-        private SpriteFont credits;
-        private string creditsText = "Credits:\nProgram made by: Mark Maher (maher.159)\nSprites from: https://www.spriters-resource.com/ds_dsi/pokemonmysterydungeonexplorersofsky/sheet/131043/";
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
-        public ItemSpriteFactory itemSpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
         public Link link;
         // test enemy draws
@@ -53,20 +44,18 @@ namespace CSE3902_Game_Sprint0
         public Enemies currentEnemy;
         public IEnemy drawnEnemy;
         public LinkStateMachine linkStateMachine;
-        public TileStateMachine tileStateMachine;
-        public ItemStateMachine itemStateMachine;
-        public Tile tile;
-        public Item item;
         public BombStateMachine bombStateMachine;
-        public Bomb bomb;
+        public Classes.Projectiles.Bomb bomb;
         public ProjectileHandler projectileHandler;
 
         public CollisionManager collisionManager;
-        public List<Room> rooms;
-        public int currentRoom;
-        public EeveeSim()
+
+        public ZeldaGame()
         {
             _graphics = new GraphicsDeviceManager(this);
+            //SIZE OF SCREEN 
+            _graphics.PreferredBackBufferWidth = 1024;
+            _graphics.PreferredBackBufferHeight = 768;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -92,22 +81,6 @@ namespace CSE3902_Game_Sprint0
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
 
-            /* TILE */
-            //Setting up block state machine
-            tile = new Tile(this);
-            tileStateMachine = new TileStateMachine(tile);
-
-            //tile is created, maintains an instance of its StateMachine to be passed for commands:
-            tile.SetState(tileStateMachine);
-
-            /* ITEM */
-            //Setting up item state machine
-            item = new Item(this);
-            itemStateMachine = new ItemStateMachine(item);
-
-            //item is created, maintains an instance of its StateMachine to be passed for commands:
-            item.SetState(itemStateMachine);
-
             /* Weapons */
             //bomb = new Bomb(this, link, linkStateMachine);
             //bombStateMachine = new BombStateMachine(bomb);
@@ -125,16 +98,9 @@ namespace CSE3902_Game_Sprint0
             currentEnemy = Enemies.Stalfos;
             drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
-            currentRoom = 1;
-            rooms = new List<Room>();
-            for(int i =0; i<40; i++)
-            {
-                rooms.Add(new Room(this, i));
-            }
-            
-
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
+
         }
 
         protected override void LoadContent()
@@ -144,7 +110,6 @@ namespace CSE3902_Game_Sprint0
             // TODO: use this.Content to load your game content here
 
             //Loading all of our textures into a texture dictionary
-            spriteSheets.Add("Eevee", Content.Load<Texture2D>("DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER"));
             spriteSheets.Add("Link", Content.Load<Texture2D>("NES - The Legend of Zelda - Link"));
             spriteSheets.Add("HUD", Content.Load<Texture2D>("NES - The Legend of Zelda - HUD & Pause Screen"));
             spriteSheets.Add("ItemsAndWeapons", Content.Load<Texture2D>("NES - The Legend of Zelda - Items & Weapons"));
@@ -153,24 +118,9 @@ namespace CSE3902_Game_Sprint0
             spriteSheets.Add("Bosses", Content.Load<Texture2D>("NES - The Legend of Zelda - Bosses"));
             spriteSheets.Add("DungeonBackgrounds", Content.Load<Texture2D>("Level 1 (Eagle)"));
             spriteSheets.Add("DungeonTileset", Content.Load<Texture2D>("NES - The Legend of Zelda - Dungeon Tileset"));
-
-            eeveeTexture = Content.Load<Texture2D>("DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER");
-            eeveeLocation = new Vector2((GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
-            eeveeSprite = new StaticSprite(this, eeveeTexture, eeveeLocation, eevelocity, new Rectangle(21, 0, 21, 24), Color.White, SpriteEffects.None);
-            credits = Content.Load<SpriteFont>("Credits");
         }
 
-        public void changeRoom()
-        {
-            if(currentRoom == 40)
-            {
-                currentRoom = 0;
-            }
-            else
-            {
-                currentRoom = currentRoom + 1;
-            }
-        }
+
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -183,13 +133,8 @@ namespace CSE3902_Game_Sprint0
                 controller.Update();
             }
             base.Update(gameTime);
-            eeveeSprite.Update();
 
             link.Update();
-
-            tile.Update();
-
-            item.Update();
 
             drawnEnemy.Update();
 
@@ -200,37 +145,18 @@ namespace CSE3902_Game_Sprint0
 
         protected override void Draw(GameTime gameTime)
         {
-            // GraphicsDevice.Clear(Color.CornflowerBlue);
-            GraphicsDevice.Clear(Color.Transparent);
+            GraphicsDevice.Clear(Color.Black);
+
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
 
-            eeveeSprite.Draw(new Vector2(0, 0));
-
             link.Draw();
-
-            tile.Draw();
-
-            item.Draw();
 
             drawnEnemy.Draw();
 
             projectileHandler.Draw();
 
-            foreach (Room r in rooms)
-            {
-                if(r.getRoomNumber() == currentRoom)
-                {
-                    r.Draw();
-                }
-            }
-
-
-
-            _spriteBatch.Begin();
-            _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
-            _spriteBatch.End();
         }
     }
 }

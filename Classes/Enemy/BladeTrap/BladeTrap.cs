@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //waits on link
         //Method of attack is collision.
 
-        public EeveeSim game;
+        public ZeldaGame game;
         private BladeTrapStateMachine myState;
         public ISprite mySprite;
         public Vector2 drawLocation;
@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
-        public BladeTrap(EeveeSim game, Vector2 spawnLocation, Vector2 range, Link link)
+        public BladeTrap(ZeldaGame game, Vector2 spawnLocation, Vector2 range, Link link)
         {
             this.game = game;
             this.spawnLocation = spawnLocation;

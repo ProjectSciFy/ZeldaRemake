@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Direction direction;
         private ArrowStateMachine myState;
 
-        public Arrow(EeveeSim game, Vector2 drawLocation, ProjectileHandler projectileHandler, Direction direction)
+        public Arrow(ZeldaGame game, Vector2 drawLocation, ProjectileHandler projectileHandler, Direction direction)
         {
             this.projectileSpriteFactory = game.projectileSpriteFactory;
             this.drawLocation = drawLocation;
