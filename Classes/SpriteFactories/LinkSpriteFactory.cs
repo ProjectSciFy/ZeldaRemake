@@ -77,40 +77,24 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
 
         //Bomb:
-        public void BombUp()
+        public UniversalSprite BombUp()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(342, 154, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 5);
+            return new UniversalSprite(game, linkTexture, new Rectangle(342, 154, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 3);
         }
 
-        public void BombDown()
+        public UniversalSprite BombDown()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(325, 154, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 5);
+            return new UniversalSprite(game, linkTexture, new Rectangle(325, 154, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 3);
         }
 
-        public void BombRight()
+        public UniversalSprite BombRight()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(308, 154, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 5);
+            return new UniversalSprite(game, linkTexture, new Rectangle(308, 154, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 3);
         }
 
-        public void BombLeft()
+        public UniversalSprite BombLeft()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(308, 154, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(5, 1), 5);
+            return new UniversalSprite(game, linkTexture, new Rectangle(308, 154, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(5, 1), 3);
         }
 
         //Boomerang: TO DO - change sprite index for boomerang animation
