@@ -509,22 +509,26 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public void LinkBoomerangAttack(LinkBoomerang boomerang)
         {
             boomerang.spriteSize = new Vector2(16, 16);
-            boomerang.velocity = new Vector2(boomerang.trajectory.X, boomerang.trajectory.Y);
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+            boomerang.velocity = boomerang.trajectory;
+            if (boomerang.myState.newItem)
+            {
+                boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+            }
         }
         public void GoriyaBoomerangAttack(GoriyaBoomerang boomerang)
         {
             boomerang.spriteSize = new Vector2 (16,16);
             boomerang.velocity = boomerang.trajectory;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+            if (boomerang.myState.newItem)
+            {
+                boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
+            }  
         }
         //fireball
         public void FireballAttack(Fireball fireball)
         {
-            fireball.spriteSize.X = 16;
-            fireball.spriteSize.Y = 16;
-            fireball.velocity.X = fireball.trajectory.X;
-            fireball.velocity.Y = fireball.trajectory.Y;
+            fireball.spriteSize = new Vector2(16, 16);
+            fireball.velocity = new Vector2(fireball.trajectory.X, fireball.trajectory.Y);
             fireball.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(101, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 5);
         }
     }

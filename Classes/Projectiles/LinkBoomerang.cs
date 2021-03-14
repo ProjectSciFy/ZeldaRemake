@@ -12,7 +12,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
     public class LinkBoomerang : IProjectile
     {
         private ZeldaGame game;
-        public Link link { get; protected set; }
+        public Classes.Link link { get; protected set; }
         public LinkStateMachine linkState { get; protected set; }
 
         public EnemySpriteFactory spriteFactory { get; protected set; }
@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public bool newItem { get; set; }
         public Vector2 trajectory { get; set; } = new Vector2(0, 0);
 
-        public LinkBoomerang(ZeldaGame game, Link link, LinkStateMachine linkState)
+        public LinkBoomerang(ZeldaGame game, Classes.Link link, LinkStateMachine linkState)
         {
             this.game = game;
             this.link = link;
