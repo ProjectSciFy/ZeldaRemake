@@ -82,7 +82,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
                 }
                 else if (pair.Key.GetType() == typeof(EnemyGoriya))
                 {
-                    if (collisionManager.link.collisionRectangle.Intersects(((EnemyGoriya)pair.Key).CollisionRectangle))
+                    if (collisionManager.link.collisionRectangle.Intersects(((EnemyGoriya)pair.Key).collisionRectangle))
                     {
                         collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(collisionManager.link, pair.Key, CollisionDirection(collisionManager.link.collisionRectangle, pair.Value)));
                     }
