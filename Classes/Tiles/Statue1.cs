@@ -10,15 +10,17 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 {
     public class Statue1 : ITile
     {
-        private SpriteBatch batch;
-        private Texture2D spriteSheet;
-        private Rectangle statue1Tile = TileSpriteFactory.Statue1Tile;
+        private ZeldaGame game;
+        private ISprite tileSprite;
+        private TileSpriteFactory tileFactory;
+        public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
         public Vector2 position;
-        public Statue1(ZeldaGame game, Vector2 location)
+        public Statue1(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
-            game.spriteSheets.TryGetValue("DungeonTileset", out this.spriteSheet);
-            this.batch = new SpriteBatch(game.GraphicsDevice);
+            this.game = game;
             this.position = location;
+            this.tileFactory = tileFactory;
+            this.tileSprite = tileFactory.Statue1Tile();
         }
         public void Update()
         {
@@ -26,7 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 
         public void Draw()
         {
-            batch.Draw(spriteSheet, position, statue1Tile, Color.White);
+            tileSprite.Draw(position);
         }
     }
 }

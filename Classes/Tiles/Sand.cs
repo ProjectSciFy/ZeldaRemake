@@ -10,15 +10,17 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 {
     public class Sand : ITile
     {
-        private SpriteBatch batch;
-        private Texture2D spriteSheet;
-        private Rectangle sandTile = TileSpriteFactory.SandTile;
+        private ZeldaGame game;
+        private ISprite tileSprite;
+        private TileSpriteFactory tileFactory;
+        public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
         public Vector2 position;
-        public Sand(ZeldaGame game, Vector2 location)
+        public Sand(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
-            game.spriteSheets.TryGetValue("DungeonTileset", out this.spriteSheet);
-            this.batch = new SpriteBatch(game.GraphicsDevice);
+            this.game = game;
             this.position = location;
+            this.tileFactory = tileFactory;
+            this.tileSprite = tileFactory.SandTile();
         }
         public void Update()
         {
@@ -26,7 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 
         public void Draw()
         {
-            batch.Draw(spriteSheet, position, sandTile, Color.White);
+            tileSprite.Draw(position);
         }
     }
 }

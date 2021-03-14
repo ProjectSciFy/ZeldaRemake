@@ -10,15 +10,17 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 {
     public class Wall : ITile
     {
-        private SpriteBatch batch;
-        private Texture2D spriteSheet;
-        private Rectangle wallTile = TileSpriteFactory.WallTile;
+        private ZeldaGame game;
+        private ISprite tileSprite;
+        private TileSpriteFactory tileFactory;
+        public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
         public Vector2 position;
-        public Wall(ZeldaGame game, Vector2 location)
+        public Wall(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
-            game.spriteSheets.TryGetValue("DungeonTileset", out this.spriteSheet);
-            this.batch = new SpriteBatch(game.GraphicsDevice);
+            this.game = game;
             this.position = location;
+            this.tileFactory = tileFactory;
+            this.tileSprite = tileFactory.WallTile();
         }
 
         public void Update()
@@ -28,7 +30,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 
         public void Draw()
         {
-            batch.Draw(spriteSheet, position, wallTile, Color.White);
+            tileSprite.Draw(position);
         }
     }
 }
