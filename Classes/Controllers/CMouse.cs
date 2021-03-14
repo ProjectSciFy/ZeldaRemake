@@ -45,6 +45,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers
             else if (mouseState.LeftButton == ButtonState.Pressed)
             {
                 keyBinds[currentQuad].Execute();
+                game.changeRoom();
             }
 
             currentQuad = 1;

@@ -16,6 +16,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Collision;
+using CSE3902_Game_Sprint0.Classes.Level;
 
 
 namespace CSE3902_Game_Sprint0
@@ -61,7 +62,8 @@ namespace CSE3902_Game_Sprint0
         public ProjectileHandler projectileHandler;
 
         public CollisionManager collisionManager;
-
+        public List<Room> rooms;
+        public int currentRoom;
         public EeveeSim()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -123,9 +125,16 @@ namespace CSE3902_Game_Sprint0
             currentEnemy = Enemies.Stalfos;
             drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
+            currentRoom = 1;
+            rooms = new List<Room>();
+            for(int i =0; i<40; i++)
+            {
+                rooms.Add(new Room(this, i));
+            }
+            
+
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
-
         }
 
         protected override void LoadContent()
@@ -151,7 +160,17 @@ namespace CSE3902_Game_Sprint0
             credits = Content.Load<SpriteFont>("Credits");
         }
 
-
+        public void changeRoom()
+        {
+            if(currentRoom == 40)
+            {
+                currentRoom = 0;
+            }
+            else
+            {
+                currentRoom = currentRoom + 1;
+            }
+        }
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -181,8 +200,8 @@ namespace CSE3902_Game_Sprint0
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            // GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Transparent);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
@@ -198,6 +217,16 @@ namespace CSE3902_Game_Sprint0
             drawnEnemy.Draw();
 
             projectileHandler.Draw();
+
+            foreach (Room r in rooms)
+            {
+                if(r.getRoomNumber() == currentRoom)
+                {
+                    r.Draw();
+                }
+            }
+
+
 
             _spriteBatch.Begin();
             _spriteBatch.DrawString(credits, creditsText, new Vector2(20, (this.GraphicsDevice.Viewport.Height / 4) * 3), Color.Black);
