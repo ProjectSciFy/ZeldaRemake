@@ -23,6 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private Texture2D linkSpriteSheet;
         private Texture2D NPCSpriteSheet;
         private float linkLayerDepth = 0.2f;
+     
 
         public EnemySpriteFactory(ZeldaGame game)
         {
@@ -77,7 +78,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             aquamentus.velocity.X = -1;
             aquamentus.velocity.Y = 0;
             aquamentus.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(1, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, linkLayerDepth);
-        }
+        } 
 
         //Blade trap methods
         public void BladeTrapIdle(BladeTrap bladetrap)

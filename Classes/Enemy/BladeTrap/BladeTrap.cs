@@ -18,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Vector2 spawnLocation;
         public Vector2 range;
         public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
+        public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
         public BladeTrap(ZeldaGame game, Vector2 spawnLocation, Vector2 range, Link link)

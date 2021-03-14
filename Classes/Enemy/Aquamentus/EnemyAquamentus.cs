@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
     {
         public ZeldaGame game;
         private AquamentusStateMachine myState;
-        public EnemySpriteFactory enemySpriteFactory;
+        public AquamentusSpriteFactory enemySpriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
@@ -23,7 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public EnemyAquamentus(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.enemySpriteFactory = game.enemySpriteFactory;
+            this.enemySpriteFactory = new AquamentusSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new AquamentusStateMachine(this);
             game.collisionManager.enemies.Add(this, collisionRectangle);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CSE3902_Game_Sprint0.Classes.Enemy.BladeTrap;
 using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
@@ -9,7 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
     {
         private ZeldaGame game;
         private BladeTrap BladeTrap;
-        private EnemySpriteFactory spriteFactory;
+        private BladeTrapSpriteFactory spriteFactory;
         private Link link;
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
@@ -23,8 +24,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.BladeTrap = enemy;
             this.game = BladeTrap.game;
             this.link = link;
-            spriteFactory = new EnemySpriteFactory(this.game);
-            spriteFactory.BladeTrapIdle(BladeTrap);
+            spriteFactory = new BladeTrapSpriteFactory(this.game);
+            this.BladeTrap.mySprite = spriteFactory.BladeTrapIdle();
+
         }
 
         public void Idle()
@@ -43,28 +45,36 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.attackingDown)
                     {
                         currentState = CurrentState.attackingDown;
-                        spriteFactory.BladeTrapDown(BladeTrap);
+                        this.BladeTrap.velocity.X = 0;
+                        this.BladeTrap.velocity.Y = -1;
+                        this.BladeTrap.mySprite = spriteFactory.BladeTrapDown();
                     }
                     break;
                 case Direction.up:
                     if (currentState != CurrentState.attackingUp)
                     {
                         currentState = CurrentState.attackingUp;
-                        spriteFactory.BladeTrapUp(BladeTrap);
+                        this.BladeTrap.velocity.X = 0;
+                        this.BladeTrap.velocity.Y = 1;
+                        this.BladeTrap.mySprite = spriteFactory.BladeTrapUp();
                     }
                     break;
                 case Direction.right:
                     if (currentState != CurrentState.attackingRight)
                     {
                         currentState = CurrentState.attackingRight;
-                        spriteFactory.BladeTrapRight(BladeTrap);
+                        this.BladeTrap.velocity.X = 1;
+                        this.BladeTrap.velocity.Y = 0;
+                        this.BladeTrap.mySprite = spriteFactory.BladeTrapRight();
                     }
                     break;
                 case Direction.left:
                     if (currentState != CurrentState.attackingLeft)
                     {
                         currentState = CurrentState.attackingLeft;
-                        spriteFactory.BladeTrapLeft(BladeTrap);
+                        this.BladeTrap.velocity.X = -1;
+                        this.BladeTrap.velocity.Y = 0;
+                        this.BladeTrap.mySprite = spriteFactory.BladeTrapLeft();
                     }
                     break;
                 default:
@@ -100,7 +110,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             //        if (currentState != CurrentState.retractingLeft)
             //        {
             //            currentState = CurrentState.retractingLeft;
-                        spriteFactory.BladeTrapRight(BladeTrap);
+            //            spriteFactory.BladeTrapRight(BladeTrap);
             //        }
             //        break;
             //    default:
