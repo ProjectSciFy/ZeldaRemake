@@ -12,20 +12,20 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //Pathing is random, no sense of direction
         //Method of attack is melee, bumping into the player
 
-        public ZeldaGame game;
+        private ZeldaGame game;
         private GoriyaStateMachine myState;
-        public EnemySpriteFactory enemySpriteFactory;
-        public ISprite mySprite;
-        public Vector2 drawLocation;
-        public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
-        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public GoriyaBoomerang boomerang;
+        public EnemySpriteFactory spriteFactory { get; protected set; }
+        public Vector2 drawLocation { get; set; }
+        public Vector2 velocity { get; set; } = new Vector2(0, 0);
+        public Vector2 spriteSize { get; set; } = new Vector2(0, 0);
+        public Rectangle collisionRectangle { get; set; } = new Rectangle(0, 0, 0, 0);
+        private GoriyaBoomerang boomerang;
+        public ISprite mySprite { protected get; set; }
 
         public EnemyGoriya(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.enemySpriteFactory = game.enemySpriteFactory;
+            this.spriteFactory = game.enemySpriteFactory;
             drawLocation = spawnLocation;
             myState = new GoriyaStateMachine(this);
             game.collisionManager.enemies.Add(this, collisionRectangle);
@@ -40,37 +40,29 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             {
                 boomerang.Update();
             }
-
             //Update the position of Link here
-            drawLocation.X = drawLocation.X + velocity.X;
-            drawLocation.Y = drawLocation.Y + velocity.Y;
+            drawLocation = drawLocation + velocity;
 
             if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
             {
-                drawLocation.X = 0 - spriteSize.X;
+                drawLocation = new Vector2(0 - spriteSize.X, drawLocation.Y);
             }
             else if (drawLocation.X + spriteSize.X <= 0 && velocity.X < 0)
             {
-                drawLocation.X = game.GraphicsDevice.Viewport.Bounds.Width;
+                drawLocation = new Vector2(game.GraphicsDevice.Viewport.Bounds.Width, drawLocation.Y);
             }
 
             if (drawLocation.Y >= game.GraphicsDevice.Viewport.Bounds.Height && velocity.Y > 0)
             {
-                drawLocation.Y = 0 - spriteSize.Y;
+                drawLocation = new Vector2(drawLocation.X, 0 - spriteSize.Y);
             }
             else if (drawLocation.Y + spriteSize.Y <= 0 && velocity.Y < 0)
             {
-                drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
+                drawLocation = new Vector2(drawLocation.X, game.GraphicsDevice.Viewport.Bounds.Height);
             }
-
-            collisionRectangle.X = (int)drawLocation.X;
-            collisionRectangle.Y = (int)drawLocation.Y;
-            collisionRectangle.Width = (int)spriteSize.X;
-            collisionRectangle.Height = (int)spriteSize.Y;
-
+            collisionRectangle = new Rectangle((int)drawLocation.X, (int)drawLocation.Y, (int)spriteSize.X, (int)spriteSize.Y);
             game.collisionManager.enemies[this] = collisionRectangle;
         }
-
         public void Draw()
         {
             mySprite.Draw(drawLocation);

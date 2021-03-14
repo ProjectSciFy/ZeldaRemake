@@ -26,12 +26,6 @@ namespace CSE3902_Game_Sprint0
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private List<IController> controllerList = new List<IController>();
-        public Texture2D eeveeTexture;
-        public ISprite eeveeSprite;
-        public Vector2 eeveeLocation;
-        public Vector2 eevelocity = new Vector2(0, 0);
-        private SpriteFont credits;
-        private string creditsText = "Credits:\nProgram made by: Mark Maher (maher.159)\nSprites from: https://www.spriters-resource.com/ds_dsi/pokemonmysterydungeonexplorersofsky/sheet/131043/";
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
@@ -135,11 +129,6 @@ namespace CSE3902_Game_Sprint0
             spriteSheets.Add("Bosses", Content.Load<Texture2D>("NES - The Legend of Zelda - Bosses"));
             spriteSheets.Add("DungeonBackgrounds", Content.Load<Texture2D>("Level 1 (Eagle)"));
             spriteSheets.Add("DungeonTileset", Content.Load<Texture2D>("NES - The Legend of Zelda - Dungeon Tileset"));
-
-            eeveeTexture = Content.Load<Texture2D>("DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER");
-            eeveeLocation = new Vector2((GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
-            eeveeSprite = new StaticSprite(this, eeveeTexture, eeveeLocation, eevelocity, new Rectangle(21, 0, 21, 24), Color.White, SpriteEffects.None);
-            credits = Content.Load<SpriteFont>("Credits");
         }
 
 

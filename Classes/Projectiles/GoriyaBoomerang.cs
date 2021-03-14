@@ -11,19 +11,18 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class GoriyaBoomerang
     {
-        public ZeldaGame game;
-        public EnemyGoriya goriya = null;
-        public GoriyaStateMachine goriyaState = null;
-        public EnemySpriteFactory spriteFactory;
-        public ISprite mySprite;
-        public GoriyaBoomerangStatemachine myState;
-        public Vector2 drawLocation;
-        public Vector2 spawnLocation;
-        public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
-        public bool newItem;
-        public Vector2 trajectory = new Vector2(0, 0);
-
+        private ZeldaGame game;
+        public EnemyGoriya goriya { get; protected set; }
+        public GoriyaStateMachine goriyaState { get; protected set; }
+        public EnemySpriteFactory spriteFactory { get; protected set; }
+        public ISprite mySprite { protected get; set; }
+        private GoriyaBoomerangStatemachine myState;
+        public Vector2 drawLocation { get; set; }
+        public Vector2 SpawnLocation { get; set; }
+        public Vector2 velocity { get; set; } = new Vector2 (0,0);
+        public Vector2 spriteSize { get; set; }  = new Vector2(0, 0);
+        public bool newItem { get; set; }
+        public Vector2 trajectory { get; set; } = new Vector2(0, 0);
 
         public GoriyaBoomerang(ZeldaGame game, EnemyGoriya goriya, GoriyaStateMachine goriyaState)
         {
@@ -32,7 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.goriyaState = goriyaState;
             this.spriteFactory = game.enemySpriteFactory;
             this.drawLocation = goriya.drawLocation;
-            this.spawnLocation = goriya.drawLocation;
+            this.SpawnLocation = goriya.drawLocation;
             this.myState = new GoriyaBoomerangStatemachine(this);
         }
 
@@ -43,8 +42,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             goriyaState.Update();
 
             //Update position of boomerang
-            drawLocation.X = drawLocation.X + velocity.X;
-            drawLocation.Y = drawLocation.Y + velocity.Y;
+            drawLocation = drawLocation + velocity;
 
         }
         public void Draw()

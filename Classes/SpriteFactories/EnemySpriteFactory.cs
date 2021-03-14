@@ -179,74 +179,56 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //Goriya methods
         public void SpawnGoriya(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30);
         }
         public void GoriyaMovingUp(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = -1;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(0, -1);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaMovingDown(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 1;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(0, 1);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaMovingRight(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 1;
-            goriya.velocity.Y = 0;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(1, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaMovingLeft(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = -1;
-            goriya.velocity.Y = 0;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(-1, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10);
         }
         public void GoriyaIdleDown(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaIdleUp(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaIdleRight(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10);
         }
         public void GoriyaIdleLeft(EnemyGoriya goriya)
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
-            goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;
+            goriya.spriteSize = new Vector2(16, 16);
+            goriya.velocity = new Vector2(0, 0);
             goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10);
         }
 
@@ -524,85 +506,16 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20);
         }
 
-        // need to fix ItemSpriteFactory, Cant use from any other class except an item class. Needs to have game as parameter for constructor. Adding boomerang stuff here till then
-        public void BoomerangDown(LinkBoomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 0;
-            boomerang.velocity.Y = 1;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangUp(LinkBoomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 0;
-            boomerang.velocity.Y = -1;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangRight(LinkBoomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 1;
-            boomerang.velocity.Y = 0;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangLeft(LinkBoomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = -1;
-            boomerang.velocity.Y = 0;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangNE(LinkBoomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 1;
-            boomerang.velocity.Y = -1;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangSE(LinkBoomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = 1;
-            boomerang.velocity.Y = 1;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangSW(LinkBoomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = -1;
-            boomerang.velocity.Y = 1;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
-        public void BoomerangNW(LinkBoomerang boomerang)
-        {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = -1;
-            boomerang.velocity.Y = -1;
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
-        }
         public void LinkBoomerangAttack(LinkBoomerang boomerang)
         {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = boomerang.trajectory.X;
-            boomerang.velocity.Y = boomerang.trajectory.Y;
+            boomerang.spriteSize = new Vector2(16, 16);
+            boomerang.velocity = new Vector2(boomerang.trajectory.X, boomerang.trajectory.Y);
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
         public void GoriyaBoomerangAttack(GoriyaBoomerang boomerang)
         {
-            boomerang.spriteSize.X = 16;
-            boomerang.spriteSize.Y = 16;
-            boomerang.velocity.X = boomerang.trajectory.X;
-            boomerang.velocity.Y = boomerang.trajectory.Y;
+            boomerang.spriteSize = new Vector2 (16,16);
+            boomerang.velocity = boomerang.trajectory;
             boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10);
         }
         //fireball

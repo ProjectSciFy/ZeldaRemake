@@ -8,13 +8,13 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class GoriyaBoomerangStatemachine
     {
-        public GoriyaBoomerang boomerang;
+        private GoriyaBoomerang boomerang;
         private EnemySpriteFactory spriteFactory;
-        public enum Direction { right, up, left, down, NE, SE, SW, NW };
-        public Direction direction = Direction.down;
+        private enum Direction { right, up, left, down, NE, SE, SW, NW };
+        private Direction direction = Direction.down;
         private enum CurrentState { movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW, none };
         private CurrentState currentState;
-        public Direction returnDirection;
+        private Direction returnDirection;
         private const int RANGE = 175;
         private const int RETURN_WINDOW = 30;
         private const int DESPAWN_DISTANCE = 5;
@@ -236,21 +236,21 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public void Update()
         {
-            if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && newItem)
+            if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < (RANGE - RETURN_WINDOW) && newItem)
             {
                 direction = (Direction)boomerang.goriyaState.direction;
                 Outward();
                 newItem = false;
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < RANGE && !returning)
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < RANGE && !returning)
             {
                 OutwardReturnWindow();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > RANGE && !returning)
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > RANGE && !returning)
             {
                 returning = true;
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > (RANGE - RETURN_WINDOW) && returning)
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > (RANGE - RETURN_WINDOW) && returning)
             {
                 
                 if (boomerang.drawLocation.X > boomerang.goriya.drawLocation.X && boomerang.drawLocation.Y > boomerang.goriya.drawLocation.Y)
@@ -287,7 +287,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 }
                 InwardReturnWindow();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > DESPAWN_DISTANCE && returning)
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > DESPAWN_DISTANCE && returning)
             {
                 if (!brake)
                 {
@@ -329,7 +329,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 
                 Inward();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < DESPAWN_DISTANCE && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > 0 && returning)
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < DESPAWN_DISTANCE && (int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > 0 && returning)
             {
                 // boomerang.inFlight = false;
             }

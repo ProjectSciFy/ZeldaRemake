@@ -14,7 +14,6 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         private Vector2 frameGrid;
         private Rectangle frameIndex;
         private Rectangle spriteIndex;
-        private ZeldaGame game;
         private SpriteBatch mySpriteBatch;
         private Texture2D myTexture;
         private Color color;
@@ -23,8 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
 
         public UniversalSprite(ZeldaGame game, Texture2D texture, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid, int fpsLimiter)
         {
-            this.game = game;
-            mySpriteBatch = new SpriteBatch(this.game.GraphicsDevice);
+            mySpriteBatch = new SpriteBatch(game.GraphicsDevice);
             myTexture = texture;
             this.spriteIndex = spriteIndex;
             frameIndex = new Rectangle(spriteIndex.X, spriteIndex.Y, spriteIndex.Width, spriteIndex.Height);
