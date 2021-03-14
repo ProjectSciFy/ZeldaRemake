@@ -45,10 +45,8 @@ namespace CSE3902_Game_Sprint0
         public Enemies currentEnemy;
         public IEnemy drawnEnemy;
         public LinkStateMachine linkStateMachine;
-        public ItemStateMachine itemStateMachine;
-        public Item item;
         public BombStateMachine bombStateMachine;
-        public Bomb bomb;
+        public Classes.Projectiles.Bomb bomb;
         public ProjectileHandler projectileHandler;
 
         public CollisionManager collisionManager;
@@ -83,14 +81,6 @@ namespace CSE3902_Game_Sprint0
 
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
-
-            /* ITEM */
-            //Setting up item state machine
-            item = new Item(this);
-            itemStateMachine = new ItemStateMachine(item);
-
-            //item is created, maintains an instance of its StateMachine to be passed for commands:
-            item.SetState(itemStateMachine);
 
             /* Weapons */
             //bomb = new Bomb(this, link, linkStateMachine);
@@ -147,8 +137,6 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
 
-            item.Update();
-
             drawnEnemy.Update();
 
             projectileHandler.Update();
@@ -165,8 +153,6 @@ namespace CSE3902_Game_Sprint0
             base.Draw(gameTime);
 
             link.Draw();
-
-            item.Draw();
 
             drawnEnemy.Draw();
 
