@@ -101,7 +101,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         break;
                     case "Gel":
                         position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
-                        enemies.Add(new EnemyGel(game, position));
+                        //enemies.Add(new EnemyGel(game, position));
                         break;
                     case "Kreese":
                         position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
