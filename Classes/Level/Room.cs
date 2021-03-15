@@ -56,6 +56,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
+            foreach (IDoor door in doors)
+            {
+                door.Draw();
+            }
             foreach (ITile tile in tiles)
             {
                 tile.Draw();
@@ -68,10 +72,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 enemy.Draw();
             }
-            foreach (IDoor door in doors)
-            {
-                door.Draw();
-            }
+
 
         }
     }

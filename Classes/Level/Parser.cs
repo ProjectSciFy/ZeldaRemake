@@ -87,6 +87,38 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         items.Add(new Key(game, new ItemSpriteFactory(game), position));
                         break;
+                    case "BlueRupee":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        items.Add(new BlueRupee(game, new ItemSpriteFactory(game), position));
+                        break;
+                    case "Bomb":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        items.Add(new Bomb(game, new ItemSpriteFactory(game), position));
+                        break;
+                    case "Boomerang":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        items.Add(new Boomerang(game, new ItemSpriteFactory(game), position));
+                        break;
+                    case "Bow":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        items.Add(new Bow(game, new ItemSpriteFactory(game), position));
+                        break;
+                    case "HeartContainer":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        items.Add(new HeartContainer(game, new ItemSpriteFactory(game), position));
+                        break;
+                    case "Map":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        items.Add(new Map(game, new ItemSpriteFactory(game), position));
+                        break;
+                    case "Triforce":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        items.Add(new Triforce(game, new ItemSpriteFactory(game), position));
+                        break;
+                    case "YellowRupee":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        items.Add(new YellowRupee(game, new ItemSpriteFactory(game), position));
+                        break;
                     case "Goriya":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         enemies.Add(new EnemyGoriya(game, position));
