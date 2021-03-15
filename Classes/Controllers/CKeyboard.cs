@@ -47,16 +47,21 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.Right, new MoveLink(linkState, LinkStateMachine.Direction.right));
             keyBinds.Add(Keys.D, new MoveLink(linkState, LinkStateMachine.Direction.right));
 
-            //Z and N -- attack and animation
+            //Z and N -- attack animation
+            keyBinds.Add(Keys.N, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.sword)); // sword item
+            keyBinds.Add(Keys.Z, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.sword)); // sword item
 
             //E -- test damage taken animation
             keyBinds.Add(Keys.E, new DamagedLink(linkState));
 
-            //1, 2, 3, 4 -- change between items animation
-            keyBinds.Add(Keys.D1, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.sword)); // sword item
+            //1, 2, 3, 4 -- change link's current item
+            //NEED TO CHANGE FROM USING WEAPON TO SIMPLY CHANGING IT. ALSO NEED TO ADD SWORD CHANGE [Keys.D1]
             keyBinds.Add(Keys.D2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb)); // bomb item 
+            keyBinds.Add(Keys.NumPad2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb)); // bomb item 
             keyBinds.Add(Keys.D3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
+            keyBinds.Add(Keys.NumPad3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
             keyBinds.Add(Keys.D4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
+            keyBinds.Add(Keys.NumPad4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
 
             //O and P -- test other characters/NPCs animation (cycles through sprites)
             keyBinds.Add(Keys.O, new PreviousEnemy(game));
