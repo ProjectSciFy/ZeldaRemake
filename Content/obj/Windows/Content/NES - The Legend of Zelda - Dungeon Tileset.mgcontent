@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Tileset.png</SourceFile>
-  <SourceTime>2021-03-15T15:20:21.8994556-04:00</SourceTime>
+  <SourceTime>2021-03-15T15:26:49.1950213-04:00</SourceTime>
   <DestFile>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - Dungeon Tileset.xnb</DestFile>
-  <DestTime>2021-03-15T15:26:04.523335-04:00</DestTime>
+  <DestTime>2021-03-15T15:27:10.4013118-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
