@@ -23,7 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 
         public UniversalSprite Boomerang()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(128, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(127, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
         }
         public UniversalSprite Bomb()
         {
@@ -31,7 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
         public UniversalSprite Bow()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(144, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(145, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
         }
         public UniversalSprite Key()
         {
