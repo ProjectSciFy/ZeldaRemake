@@ -13,14 +13,12 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
     {
         private ZeldaGame game;
         private Texture2D itemSpriteSheet;
-        private Texture2D linkSpriteSheet;
         private float itemDepth = .4f;
         
         public ItemSpriteFactory(ZeldaGame game)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("ItemsAndWeapons", out itemSpriteSheet);
-            game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
         }
 
         public UniversalSprite Boomerang()
