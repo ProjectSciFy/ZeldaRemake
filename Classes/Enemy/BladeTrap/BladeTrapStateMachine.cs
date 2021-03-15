@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.game = BladeTrap.game;
             this.link = link;
             spriteFactory = new BladeTrapSpriteFactory(this.game);
-            this.BladeTrap.mySprite = spriteFactory.BladeTrapIdle();
+            this.BladeTrap.mySprite = spriteFactory.SpawnBladeTrap();
         }
 
         public void Idle()
