@@ -156,6 +156,13 @@ namespace CSE3902_Game_Sprint0
             projectileHandler.Update();
 
             collisionManager.Update();
+            foreach (Room r in roomList)
+            {
+                if (r.getRoomNumber() == roomNumber)
+                {
+                    r.Update();
+                }
+            }
         }
 
         public void changeRoom()
