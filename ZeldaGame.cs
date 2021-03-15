@@ -33,8 +33,6 @@ namespace CSE3902_Game_Sprint0
         public ProjectileSpriteFactory projectileSpriteFactory;
         public Classes.Link link;
         public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster, OldMan}
-        public Enemies currentEnemy;
-        public IEnemy drawnEnemy;
         public LinkStateMachine linkStateMachine;
         public BombStateMachine bombStateMachine;
         public Classes.Projectiles.Bomb bomb;
@@ -87,8 +85,6 @@ namespace CSE3902_Game_Sprint0
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
-            currentEnemy = Enemies.Stalfos;
-            drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -138,8 +134,6 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
 
-            drawnEnemy.Update();
-
             projectileHandler.Update();
 
             collisionManager.Update();
@@ -155,9 +149,9 @@ namespace CSE3902_Game_Sprint0
         public void changeRoom(int newRoom)
         {
             roomNumber = newRoom;
-            
             //Wait for a quarter of a second before transition to next room
             //Fixes holding down mouse -> spamming through each room
+            //Clear the collision set
             System.Threading.Thread.Sleep(100);
         }
         protected override void Draw(GameTime gameTime)
@@ -174,8 +168,6 @@ namespace CSE3902_Game_Sprint0
                     r.Draw();
                 }
             }
-
-            drawnEnemy.Draw();
 
             link.Draw();
 

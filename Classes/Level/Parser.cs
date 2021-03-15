@@ -84,39 +84,39 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         items.Add(new Heart(game, new ItemSpriteFactory(game), position));
                         break;
                     case "Key":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 12);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         items.Add(new Key(game, new ItemSpriteFactory(game), position));
                         break;
                     case "Goriya":
-                        position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         enemies.Add(new EnemyGoriya(game, position));
                         break;
                     case "Aquamentus":
-                        position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         enemies.Add(new EnemyAquamentus(game, position));
                         break;
                     case "BladeTrap":
-                        position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         //enemies.Add(new BladeTrap(game, position));
                         break;
                     case "Gel":
-                        position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         enemies.Add(new EnemySlime(game, position));
                         break;
-                    case "Kreese":
-                        position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
+                    case "Keese":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         enemies.Add(new EnemyKeese(game, position));
                         break;
                     case "OldMan":
-                        position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         enemies.Add(new EnemyOldMan(game, position));
                         break;
                     case "Stalfos":
-                        position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         enemies.Add(new EnemyStalfos(game, position));
                         break;
                     case "WallMaster":
-                        position = new Vector2(windowWidthFloor + 3 * 1 * 16 + 48, windowHeightFloor + 3 * 2 * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         enemies.Add(new EnemyWallmaster(game, position));
                         break;
 
