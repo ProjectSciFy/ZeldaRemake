@@ -26,7 +26,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.link = link;
             spriteFactory = new BladeTrapSpriteFactory(this.game);
             this.BladeTrap.mySprite = spriteFactory.BladeTrapIdle();
-
         }
 
         public void Idle()
@@ -46,7 +45,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     {
                         currentState = CurrentState.attackingDown;
                         this.BladeTrap.velocity.X = 0;
-                        this.BladeTrap.velocity.Y = -1;
+                        this.BladeTrap.velocity.Y = 1;
                         this.BladeTrap.mySprite = spriteFactory.BladeTrapDown();
                     }
                     break;
@@ -55,7 +54,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     {
                         currentState = CurrentState.attackingUp;
                         this.BladeTrap.velocity.X = 0;
-                        this.BladeTrap.velocity.Y = 1;
+                        this.BladeTrap.velocity.Y = -1;
                         this.BladeTrap.mySprite = spriteFactory.BladeTrapUp();
                     }
                     break;

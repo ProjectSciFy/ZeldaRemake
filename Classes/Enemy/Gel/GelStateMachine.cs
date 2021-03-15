@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Interfaces;
+using CSE3902_Game_Sprint0.Classes.Enemy.Gel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,8 +9,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
 {
     public class GelStateMachine : IEnemyStateMachine
     {
+        private ZeldaGame game;
         private EnemyGel gel;
-        private EnemySpriteFactory enemySpriteFactory;
+        private GelSpriteFactory enemySpriteFactory;
 
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
@@ -22,7 +24,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         public GelStateMachine(EnemyGel gel)
         {
             this.gel = gel;
-            enemySpriteFactory = gel.enemySpriteFactory;
+            game = gel.game;
+            enemySpriteFactory = new GelSpriteFactory(game);
+            this.gel.mySprite = enemySpriteFactory.GelIdle();
         }
 
         public void Spawning()
@@ -30,7 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             if (currentState != CurrentState.spawning)
             {
                 currentState = CurrentState.spawning;
-                enemySpriteFactory.SpawnGel(gel);
+                enemySpriteFactory.SpawnGel();
             }
 
             if (timer <= 0)
@@ -47,7 +51,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                 timer = 52;
 
                 currentState = CurrentState.idleRight;
-                enemySpriteFactory.GelIdle(gel);
+                enemySpriteFactory.GelIdle();
             }
         }
 
@@ -61,7 +65,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                         timer = 8;
 
                         currentState = CurrentState.movingRight;
-                        enemySpriteFactory.GelMovingRight(gel);
+                        this.gel.velocity.X = 2;
+                        this.gel.velocity.Y = 0;
+                        this.gel.mySprite = enemySpriteFactory.GelMovingRight();
                     }
                     break;
 
@@ -71,7 +77,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                         timer = 8;
 
                         currentState = CurrentState.movingUp;
-                        enemySpriteFactory.GelMovingUp(gel);
+                        this.gel.velocity.X = 0;
+                        this.gel.velocity.Y = -2;
+                        this.gel.mySprite = enemySpriteFactory.GelMovingUp();
                     }
                     break;
 
@@ -81,7 +89,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                         timer = 8;
 
                         currentState = CurrentState.movingLeft;
-                        enemySpriteFactory.GelMovingLeft(gel);
+                        this.gel.velocity.X = -2;
+                        this.gel.velocity.Y = 0;
+                        this.gel.mySprite = enemySpriteFactory.GelMovingLeft();
                     }
                     break;
 
@@ -91,7 +101,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                         timer = 8;
 
                         currentState = CurrentState.movingDown;
-                        enemySpriteFactory.GelMovingDown(gel);
+                        this.gel.velocity.X = 0;
+                        this.gel.velocity.Y = 2;
+                        this.gel.mySprite = enemySpriteFactory.GelMovingDown();
                     }
                     break;
 

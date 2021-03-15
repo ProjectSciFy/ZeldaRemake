@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Enemy.Gel;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,17 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
     {
         public ZeldaGame game;
         private GelStateMachine myState;
-        public EnemySpriteFactory enemySpriteFactory;
+        public GelSpriteFactory enemySpriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
+        public Vector2 spriteSize = new Vector2(8, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
         public EnemyGel(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.enemySpriteFactory = game.enemySpriteFactory;
+            this.enemySpriteFactory = new GelSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new GelStateMachine(this);
             game.collisionManager.enemies.Add(this, collisionRectangle);
