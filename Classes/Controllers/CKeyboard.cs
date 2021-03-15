@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
-using CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 
 namespace CSE3902_Game_Sprint0
@@ -62,10 +61,6 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.NumPad3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
             keyBinds.Add(Keys.D4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
             keyBinds.Add(Keys.NumPad4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
-
-            //O and P -- test other characters/NPCs animation (cycles through sprites)
-            keyBinds.Add(Keys.O, new PreviousEnemy(game));
-            keyBinds.Add(Keys.P, new NextEnemy(game));
 
             //Q -- quit game
             keyBinds.Add(Keys.Q, new ShutDownGame(game));

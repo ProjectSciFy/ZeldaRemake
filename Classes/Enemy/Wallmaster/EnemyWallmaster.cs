@@ -17,10 +17,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public float spriteScalar;
 
         public EnemyWallmaster(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
+            this.spriteScalar = game.spriteScalar;
             this.enemySpriteFactory = new WallmasterSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new WallmasterStateMachine(this);
@@ -62,8 +64,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 
             collisionRectangle.X = (int)drawLocation.X;
             collisionRectangle.Y = (int)drawLocation.Y;
-            collisionRectangle.Width = (int)spriteSize.X;
-            collisionRectangle.Height = (int)spriteSize.Y;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar);
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar);
 
             //game.collisionManager.enemies[this] = collisionRectangle;
 

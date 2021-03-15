@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts;
+using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         bool spawning = true;
         private int timer = 90;
         private int directionTimer = 0;
-        private float flightTurn = (float).02;
-        private float landingTurn = (float).02;
-        private enum CurrentState { none, idle, flyingNorth, flyingNorthEast, flyingEast, flyingSouthEast, flyingSouth, flyingSouthWest, flyingWest, flyingNorthWest, landingNorth, landingNorthEast, landingEast, landingSouthEast, landingSouth, landingSouthWest, landingWest, landingNorthWest, spawning };
-        private CurrentState currentState = CurrentState.none;
+        public enum CurrentState { none, idle, flyingNorth, flyingNorthEast, flyingEast, flyingSouthEast, flyingSouth, flyingSouthWest, flyingWest, flyingNorthWest, landingNorth, landingNorthEast, landingEast, landingSouthEast, landingSouth, landingSouthWest, landingWest, landingNorthWest, spawning };
+        public CurrentState currentState = CurrentState.none;
 
         public KeeseStateMachine(EnemyKeese keese)
         {
@@ -86,504 +85,41 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
         public void Spawning()
         {
-            if (currentState != CurrentState.spawning)
-            {
-                currentState = CurrentState.spawning;
-                this.keese.mySprite= enemySpriteFactory.SpawnKeese();
-            }
+            timer=90;
+            spawning=false;
+            new spawning(keese, enemySpriteFactory, this).Execute();
+            
 
-            if (timer <= 0)
+          /*  if (timer <= 0)
             {
                 spawning = false;
                 currentState = CurrentState.none;
-            }
+            }*/
         }
 
         public void Idle()
         {
-            if (currentState != CurrentState.idle)
-            {
-                currentState = CurrentState.idle;
-                this.keese.mySprite=enemySpriteFactory.KeeseIdle();
+            if(timer<=0){
+            new idle(keese, enemySpriteFactory, this).Execute();
             }
+           
         }
 
         public void Flying()
         {
-            switch (direction)
-            {
-                case Direction.north:
-                    if (keese.velocity.Y > -2)
-                    {
-                        keese.velocity.Y = keese.velocity.Y - flightTurn;
-                    }
-
-                    if (keese.velocity.X > 0)
-                    {
-                        keese.velocity.X = keese.velocity.X - flightTurn;
-                    }
-                    else if (keese.velocity.X < 0)
-                    {
-                        keese.velocity.X = keese.velocity.X + flightTurn;
-                    }
-
-                    if (currentState != CurrentState.flyingNorth)
-                    {
-                        currentState = CurrentState.flyingNorth;
-                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingNorth();
-                    }
-                    break;
-
-                case Direction.northEast:
-                    if (keese.velocity.Y > -2)
-                    {
-                        keese.velocity.Y = keese.velocity.Y - flightTurn;
-                    }
-
-                    if (keese.velocity.X < 2)
-                    {
-                        keese.velocity.X = keese.velocity.X + flightTurn;
-                    }
-
-                    if (currentState != CurrentState.flyingNorthEast)
-                    {
-                        currentState = CurrentState.flyingNorthEast;
-                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingNorthEast();
-                    }
-                    break;
-
-                case Direction.east:
-                    if (keese.velocity.Y > 0)
-                    {
-                        keese.velocity.Y = keese.velocity.Y - flightTurn;
-                    }
-                    else if (keese.velocity.Y < 0)
-                    {
-                        keese.velocity.Y = keese.velocity.Y + flightTurn;
-                    }
-
-                    if (keese.velocity.X < 2)
-                    {
-                        keese.velocity.X = keese.velocity.X + flightTurn;
-                    }
-
-                    if (currentState != CurrentState.flyingEast)
-                    {
-                        currentState = CurrentState.flyingEast;
-                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingEast();
-                    }
-                    break;
-
-                case Direction.southEast:
-                    if (keese.velocity.Y < 2)
-                    {
-                        keese.velocity.Y = keese.velocity.Y + flightTurn;
-                    }
-
-                    if (keese.velocity.X < 2)
-                    {
-                        keese.velocity.X = keese.velocity.X + flightTurn;
-                    }
-
-                    if (currentState != CurrentState.flyingSouthEast)
-                    {
-                        currentState = CurrentState.flyingSouthEast;
-                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingSouthEast();
-                    }
-                    break;
-
-                case Direction.south:
-                    if (keese.velocity.Y < 2)
-                    {
-                        keese.velocity.Y = keese.velocity.Y + flightTurn;
-                    }
-
-                    if (keese.velocity.X > 0)
-                    {
-                        keese.velocity.X = keese.velocity.X - flightTurn;
-                    }
-                    else if (keese.velocity.X < 0)
-                    {
-                        keese.velocity.X = keese.velocity.X + flightTurn;
-                    }
-
-                    if (currentState != CurrentState.flyingSouth)
-                    {
-                        currentState = CurrentState.flyingSouth;
-                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingSouth();
-                    }
-                    break;
-
-                case Direction.southWest:
-                    if (keese.velocity.Y < 2)
-                    {
-                        keese.velocity.Y = keese.velocity.Y + flightTurn;
-                    }
-
-                    if (keese.velocity.X > -2)
-                    {
-                        keese.velocity.X = keese.velocity.X - flightTurn;
-                    }
-
-                    if (currentState != CurrentState.flyingSouthWest)
-                    {
-                        currentState = CurrentState.flyingSouthWest;
-                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingSouthWest();
-                    }
-                    break;
-
-                case Direction.west:
-                    if (keese.velocity.Y > 0)
-                    {
-                        keese.velocity.Y = keese.velocity.Y - flightTurn;
-                    }
-                    else if (keese.velocity.Y < 0)
-                    {
-                        keese.velocity.Y = keese.velocity.Y + flightTurn;
-                    }
-
-                    if (keese.velocity.X > -2)
-                    {
-                        keese.velocity.X = keese.velocity.X - flightTurn;
-                    }
-
-                    if (currentState != CurrentState.flyingWest)
-                    {
-                        currentState = CurrentState.flyingWest;
-                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingWest();
-                    }
-                    break;
-
-                case Direction.northWest:
-                    if (keese.velocity.Y > -2)
-                    {
-                        keese.velocity.Y = keese.velocity.Y - flightTurn;
-                    }
-
-                    if (keese.velocity.X > -2)
-                    {
-                        keese.velocity.X = keese.velocity.X - flightTurn;
-                    }
-
-                    if (currentState != CurrentState.flyingNorthWest)
-                    {
-                        currentState = CurrentState.flyingNorthWest;
-                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingNorthWest();
-                    }
-                    break;
-
-                default:
-                    break;
-            }
+           if(timer<=0){
+                timer=60;
+            new flying(keese, enemySpriteFactory, this).Execute();
+                }
         }
 
         public void Landing()
         {
-            switch (direction)
-            {
-                case Direction.north:
-                    if (landing)
-                    {
-                        if (keese.velocity.Y < 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X > 0)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                        else if (keese.velocity.X < 0)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-                    else if (takeOff)
-                    {
-                        if (keese.velocity.Y > -2)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-
-                        if (keese.velocity.X > 0)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                        else if (keese.velocity.X < 0)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-
-                    if (currentState != CurrentState.landingNorth)
-                    {
-                        currentState = CurrentState.landingNorth;
-                        this.keese.mySprite=enemySpriteFactory.KeeseLandingNorth();
-                    }
-                    break;
-
-                case Direction.northEast:
-                    if (landing)
-                    {
-                        if (keese.velocity.Y < 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X > 0)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                    }
-                    else if (takeOff)
-                    {
-                        if (keese.velocity.Y > -2)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-
-                        if (keese.velocity.X < 2)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-
-                    if (landing && keese.velocity.Y < 0)
-                    {
-                        keese.velocity.Y = keese.velocity.Y + landingTurn;
-                    }
-                    if (currentState != CurrentState.landingNorthEast)
-                    {
-                        currentState = CurrentState.landingNorthEast;
-                        this.keese.mySprite=enemySpriteFactory.KeeseLandingNorthEast();
-                    }
-                    break;
-
-                case Direction.east:
-                    if (landing)
-                    {
-                        if (keese.velocity.Y > 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-                        else if (keese.velocity.Y < 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X > 0)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                    }
-                    else if (takeOff)
-                    {
-                        if (keese.velocity.Y > 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-                        else if (keese.velocity.Y < 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X < 2)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-
-                    if (currentState != CurrentState.landingEast)
-                    {
-                        currentState = CurrentState.landingEast;
-                        this.keese.mySprite=enemySpriteFactory.KeeseLandingEast();
-                    }
-                    break;
-
-                case Direction.southEast:
-                    if (landing)
-                    {
-                        if (keese.velocity.Y > 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-
-                        if (keese.velocity.X > 0)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                    }
-                    else if (takeOff)
-                    {
-                        if (keese.velocity.Y < 2)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X < 2)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-
-                    if (currentState != CurrentState.landingSouthEast)
-                    {
-                        currentState = CurrentState.landingSouthEast;
-                        this.keese.mySprite=enemySpriteFactory.KeeseLandingSouthEast();
-                    }
-                    break;
-
-                case Direction.south:
-                    if (landing)
-                    {
-                        if (keese.velocity.Y > 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-
-                        if (keese.velocity.X > 0)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                        else if (keese.velocity.X < 0)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-                    else if (takeOff)
-                    {
-                        if (keese.velocity.Y < 2)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X > 0)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                        else if (keese.velocity.X < 0)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-
-                    if (currentState != CurrentState.landingSouth)
-                    {
-                        currentState = CurrentState.landingSouth;
-                        this.keese.mySprite=enemySpriteFactory.KeeseLandingSouth();
-                    }
-                    break;
-
-                case Direction.southWest:
-                    if (landing)
-                    {
-                        if (keese.velocity.Y > 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-
-                        if (keese.velocity.X < 0)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-                    else if (takeOff)
-                    {
-                        if (keese.velocity.Y < 2)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X > -2)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                    }
-
-                    if (currentState != CurrentState.landingSouthWest)
-                    {
-                        currentState = CurrentState.landingSouthWest;
-                        this.keese.mySprite=enemySpriteFactory.KeeseLandingSouthWest();
-                    }
-                    break;
-
-                case Direction.west:
-                    if (landing)
-                    {
-                        if (keese.velocity.Y > 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-                        else if (keese.velocity.Y < 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X < 0)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-                    else if (takeOff)
-                    {
-                        if (keese.velocity.Y > 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-                        else if (keese.velocity.Y < 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X > -2)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                    }
-
-                    if (currentState != CurrentState.landingWest)
-                    {
-                        currentState = CurrentState.landingWest;
-                        this.keese.mySprite=enemySpriteFactory.KeeseLandingWest();
-                    }
-                    break;
-
-                case Direction.northWest:
-                    if (landing)
-                    {
-                        if (keese.velocity.Y < 0)
-                        {
-                            keese.velocity.Y = keese.velocity.Y + landingTurn;
-                        }
-
-                        if (keese.velocity.X < 0)
-                        {
-                            keese.velocity.X = keese.velocity.X + landingTurn;
-                        }
-                    }
-                    else if (takeOff)
-                    {
-                        if (keese.velocity.Y > -2)
-                        {
-                            keese.velocity.Y = keese.velocity.Y - landingTurn;
-                        }
-
-                        if (keese.velocity.X > -2)
-                        {
-                            keese.velocity.X = keese.velocity.X - landingTurn;
-                        }
-                    }
-
-                    if (currentState != CurrentState.landingNorthWest)
-                    {
-                        currentState = CurrentState.landingNorthWest;
-                        this.keese.mySprite=enemySpriteFactory.KeeseLandingNorthWest();
-                    }
-                    break;
-
-                default:
-                    break;
-            }
+            if(timer<=0){
+                timer=60;
+            new Landing(keese, enemySpriteFactory, this, landing, takeOff).Execute();
+                }
+           
         }
 
         public void Update()
