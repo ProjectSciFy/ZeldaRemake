@@ -97,7 +97,7 @@ namespace CSE3902_Game_Sprint0
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
             stalfos = new EnemyStalfos(this, new Vector2(400, 100));
-            gel = new EnemyGel(this, new Vector2(400, 100));
+            gel = new EnemySlime(this, new Vector2(400, 100));
             keese = new EnemyKeese(this, new Vector2(400, 100));
             bladeTrap = new BladeTrap(this, new Vector2(400, 100), new Vector2(100, 100), link);
             goriya = new EnemyGoriya(this, new Vector2(400, 100));

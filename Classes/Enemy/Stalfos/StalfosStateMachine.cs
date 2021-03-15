@@ -15,7 +15,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
-        bool moving = true;
         bool spawning = true;
         public int timer = 0;
         public enum CurrentState {none, idle, movingUp, movingDown, movingLeft, movingRight, spawning};
@@ -35,15 +34,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             new StalfosSpawning(stalfos, stalfosSpriteFactory, this).Execute();
         }
 
-
-        public void Idle()
-        {
-            if (timer <= 0)
-            {
-                new StalfosIdle(stalfos, stalfosSpriteFactory, this).Execute();
-            }
-        }
-
         public void Moving()
         {
             if (timer <= 0)
@@ -52,8 +42,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 new StalfosMoving(stalfos, stalfosSpriteFactory, this).Execute();
             }
         }
-
-
 
         public void Update()
         {
@@ -91,14 +79,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             }
             else
             {
-                if (moving)
-                {
-                    Moving();
-                }
-                else
-                {
-                    Idle();
-                }
+                Moving();
             }
         }
     }

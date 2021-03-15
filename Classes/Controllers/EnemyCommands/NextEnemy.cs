@@ -27,7 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.EnemyCommands
             switch (this.game.currentEnemy)
             {
                 case ZeldaGame.Enemies.Stalfos:
-                    this.game.drawnEnemy = new EnemyGel(this.game, new Vector2(400, 100));
+                    this.game.drawnEnemy = new EnemySlime(this.game, new Vector2(400, 100));
                     this.game.currentEnemy = ZeldaGame.Enemies.Gel;
                     break;
                 case ZeldaGame.Enemies.Gel:
