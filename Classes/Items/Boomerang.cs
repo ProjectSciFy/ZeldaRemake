@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Items
 {
-    public class Boomerang
+    public class Boomerang : IItem
     {
         private ZeldaGame game;
         private ISprite itemSprite;

@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Interfaces;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Stalfos;
+using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,8 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class StalfosStateMachine : IEnemyStateMachine
     {
+        private ZeldaGame game;
         private EnemyStalfos stalfos;
-        private EnemySpriteFactory enemySpriteFactory;
+        private StalfosSpriteFactory enemySpriteFactory;
 
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
@@ -20,8 +22,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public StalfosStateMachine(EnemyStalfos stalfos)
         {
+            this.game = stalfos.game;
             this.stalfos = stalfos;
-            enemySpriteFactory = stalfos.enemySpriteFactory;
+            enemySpriteFactory = new StalfosSpriteFactory(game);
         }
 
         public void Spawning()
@@ -29,7 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             if (currentState != CurrentState.spawning)
             {
                 currentState = CurrentState.spawning;
-                enemySpriteFactory.SpawnStalfos(stalfos);
+                this.stalfos.mySprite=enemySpriteFactory.SpawnStalfos();
             }
 
             if (timer <= 0)
@@ -45,7 +48,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             if (currentState != CurrentState.idle)
             {
                 currentState = CurrentState.idle;
-                enemySpriteFactory.StalfosIdle(stalfos);
+                this.stalfos.mySprite=enemySpriteFactory.StalfosIdle();
             }
         }
 
@@ -57,7 +60,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingRight)
                     {
                         currentState = CurrentState.movingRight;
-                        enemySpriteFactory.StalfosMovingRight(stalfos);
+                        this.stalfos.mySprite = enemySpriteFactory.StalfosMovingRight();
                     }
                     break;
 
@@ -65,7 +68,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingUp)
                     {
                         currentState = CurrentState.movingUp;
-                        enemySpriteFactory.StalfosMovingUp(stalfos);
+                        this.stalfos.mySprite = enemySpriteFactory.StalfosMovingUp();
                     }
                     break;
 
@@ -73,7 +76,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingLeft)
                     {
                         currentState = CurrentState.movingLeft;
-                        enemySpriteFactory.StalfosMovingLeft(stalfos);
+                        this.stalfos.mySprite = enemySpriteFactory.StalfosMovingLeft();
                     }
                     break;
 
@@ -81,7 +84,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingDown)
                     {
                         currentState = CurrentState.movingDown;
-                        enemySpriteFactory.StalfosMovingDown(stalfos);
+                        this.stalfos.mySprite = enemySpriteFactory.StalfosMovingDown();
                     }
                     break;
 
