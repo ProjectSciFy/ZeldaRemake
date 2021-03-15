@@ -519,12 +519,13 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
         public void GoriyaBoomerangAttack(GoriyaBoomerang boomerang)
         {
-            boomerang.spriteSize = new Vector2 (16,16);
-            boomerang.velocity = boomerang.trajectory;
-            if (boomerang.myState.newItem)
-            {
-                boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, linkLayerDepth);
-            }  
+            //boomerang.spriteSize = new Vector2 (16,16);
+            //boomerang.velocity = boomerang.trajectory;
+            //if (boomerang.myState.newItem)
+            //{
+            //    boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, linkLayerDepth);
+            //}  
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, linkLayerDepth);
         }
         //fireball
         public void FireballAttack(Fireball fireball)
