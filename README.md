@@ -13,6 +13,8 @@ Program Controls:
 		+Currently, [2]...[4] simply use the item; [2] makes Link place a bomb, [3] makes Link use a bow and arrow, and [4] should make Link use a boomerang although it does not at the moment.
 	-[R] resets game to starting state.
 	-[Q] and [esc] quit the game instantly.
+	-MOUSE CONTROLS:
+		+Left clicking will cycle through rooms. You cannot cycle backwards at the moment.
 
 Program Future Implementations:
 	-Un-implemented collisions will be implemented prior to Sprint 4 submission. This includes:
