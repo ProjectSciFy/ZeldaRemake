@@ -39,8 +39,8 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     {
                         link.spriteSize.X = 16;
                         link.spriteSize.Y = 28;
-                        link.drawOffset.X = 0;
-                        link.drawOffset.Y = -12;
+                        link.drawOffset.X = 0 * link.spriteScalar;
+                        link.drawOffset.Y = -12 * link.spriteScalar;
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.swordUp;
                         link.linkSprite = spriteFactory.SwordUp();
                     }
@@ -50,8 +50,8 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     {
                         link.spriteSize.X = 27;
                         link.spriteSize.Y = 16;
-                        link.drawOffset.X = -11;
-                        link.drawOffset.Y = 0;
+                        link.drawOffset.X = -11 * link.spriteScalar;
+                        link.drawOffset.Y = 0 * link.spriteScalar;
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.swordLeft;
                         link.linkSprite = spriteFactory.SwordLeft();
                     }
