@@ -108,7 +108,8 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CMouse(this));
 
             roomList = new List<Room>();
-            for (int i = 1; i < 18; i++)
+            roomNumber = 1;
+            for (int i = 1; i < 19; i++)
             {
                 roomList.Add(new Room(this, i));
             }
