@@ -115,6 +115,13 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             return new UniversalSprite(game, linkTexture, new Rectangle(308, 154, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(5, 1), 3, linkLayerDepth);
         }
 
+        public void LinkBoomerangAttack(LinkBoomerangProjectile boomerang)
+        {
+            boomerang.spriteSize = new Vector2(16, 16);
+            boomerang.velocity = boomerang.trajectory;
+            boomerang.mySprite = new UniversalSprite(game, linkTexture, new Rectangle(64, 189, 8, 8), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, linkLayerDepth);
+        }
+
         //Arrow
         public UniversalSprite ArrowUp()
         {

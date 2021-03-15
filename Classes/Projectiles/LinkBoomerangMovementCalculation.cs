@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -13,7 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private enum Direction { right, up, left, down, NE, SE, SW, NW, none }; // NE = North East
         private Direction returnDirection;
         private Direction direction;
-        private EnemySpriteFactory spriteFactory;
+        private LinkSpriteFactory spriteFactory;
         public LinkBoomerangMovementCalculation(LinkBoomerangStateMachine boomerangState)
         {
             this.boomerangState = boomerangState;

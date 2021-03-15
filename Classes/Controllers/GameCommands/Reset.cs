@@ -51,9 +51,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             isDamaged = game.linkStateMachine.isDamaged;
 
             linkLocation = game.link.drawLocation;
-
-            currentEnemy = game.currentEnemy;
-            drawnEnemy = game.drawnEnemy;
         }
 
         public void Execute()
@@ -86,13 +83,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             this.linkLocation = game.link.drawLocation;
             game.link.drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
             this.linkLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
-
-            this.currentEnemy = game.currentEnemy;
-            this.drawnEnemy = game.drawnEnemy;
-            game.currentEnemy = ZeldaGame.Enemies.Stalfos;
-            game.drawnEnemy = new EnemyStalfos(this.game, new Vector2(400, 100));
-            this.currentEnemy = ZeldaGame.Enemies.Stalfos;
-            this.drawnEnemy = new EnemyStalfos(this.game, new Vector2(400, 100));
         }
     }
 }

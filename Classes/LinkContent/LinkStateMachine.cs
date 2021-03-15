@@ -15,7 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes
 
         private ZeldaGame game;
         private Link link;
-        private LinkSpriteFactory spriteFactory;
+        public LinkSpriteFactory spriteFactory;
         public ProjectileHandler projectileHandler;
         
         public enum Direction {right, up, left, down};
