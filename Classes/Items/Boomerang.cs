@@ -18,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
             this.game = game;
             this.position = location;
             this.itemFactory = itemFactory;
-            this.itemSprite = itemFactory.Bomb();
+            this.itemSprite = itemFactory.Boomerang();
         }
         public void Update()
         {

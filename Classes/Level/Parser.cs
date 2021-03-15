@@ -92,7 +92,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         items.Add(new BlueRupee(game, new ItemSpriteFactory(game), position));
                         break;
                     case "Bomb":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 2);
                         items.Add(new Bomb(game, new ItemSpriteFactory(game), position));
                         break;
                     case "Boomerang":
@@ -104,7 +104,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         items.Add(new Bow(game, new ItemSpriteFactory(game), position));
                         break;
                     case "HeartContainer":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
                         items.Add(new HeartContainer(game, new ItemSpriteFactory(game), position));
                         break;
                     case "Map":
@@ -112,7 +112,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         items.Add(new Map(game, new ItemSpriteFactory(game), position));
                         break;
                     case "Triforce":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 8);
                         items.Add(new Triforce(game, new ItemSpriteFactory(game), position));
                         break;
                     case "YellowRupee":
