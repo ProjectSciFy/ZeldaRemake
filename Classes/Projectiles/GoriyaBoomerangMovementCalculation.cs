@@ -13,16 +13,12 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private enum Direction { right, up, left, down, NE, SE, SW, NW, none}; // NE = North East
         private Direction returnDirection;
         private Direction direction;
-        public enum CurrentState { movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW, none };
-        public CurrentState currentState;
         private EnemySpriteFactory spriteFactory;
         public GoriyaBoomerangMovementCalculation(GoriyaBoomerangStatemachine boomerangState)
         {
             this.boomerangState = boomerangState;
             this.boomerang = boomerangState.boomerang;
-            this.currentState = (CurrentState)boomerangState.currentState;
             this.spriteFactory = boomerangState.spriteFactory;
-            this.returnDirection = (Direction) boomerangState.returnDirection;
         }
         public void MovementCalculationInward(float speed)
         {
