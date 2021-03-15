@@ -33,7 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             if (currentState != CurrentState.spawning)
             {
                 currentState = CurrentState.spawning;
-                enemySpriteFactory.SpawnAquamentus(aquamentus);
+                this.aquamentus.mySprite = enemySpriteFactory.SpawnAquamentus();
             }
 
             if (timer <= 0)
@@ -53,14 +53,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
                         if (currentState != CurrentState.roaringLeft)
                         {
                             currentState = CurrentState.roaringLeft;
-                            enemySpriteFactory.AquamentusRoaringLeft(aquamentus);
+                            this.aquamentus.velocity.X = -1;
+                            this.aquamentus.velocity.Y = 0;
+                            this.aquamentus.mySprite = enemySpriteFactory.AquamentusRoaringLeft();
                         }
                         break;
                     case Direction.right:
                         if (currentState != CurrentState.roaringRight)
                         {
                             currentState = CurrentState.roaringRight;
-                            enemySpriteFactory.AquamentusRoaringRight(aquamentus);
+                            this.aquamentus.velocity.X = 1;
+                            this.aquamentus.velocity.Y = 0;
+                            this.aquamentus.mySprite = enemySpriteFactory.AquamentusRoaringRight();
                         }
                         break;
                     default:
@@ -75,14 +79,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
                         if (currentState != CurrentState.movingLeft)
                         {
                             currentState = CurrentState.movingLeft;
-                            enemySpriteFactory.AquamentusMovingLeft(aquamentus);
+                            this.aquamentus.velocity.X = -1;
+                            this.aquamentus.velocity.Y = 0;
+                            this.aquamentus.mySprite = enemySpriteFactory.AquamentusMovingLeft();
                         }
                         break;
                     case Direction.right:
                         if (currentState != CurrentState.movingRight)
                         {
                             currentState = CurrentState.movingRight;
-                            enemySpriteFactory.AquamentusMovingRight(aquamentus);
+                            this.aquamentus.velocity.X = 1;
+                            this.aquamentus.velocity.Y = 0;
+                            this.aquamentus.mySprite = enemySpriteFactory.AquamentusMovingRight();
                         }
                         break;
                     default:

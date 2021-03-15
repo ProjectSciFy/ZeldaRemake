@@ -22,49 +22,29 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         }
 
         //Aquamentus methods
-        public void SpawnAquamentus(EnemyAquamentus aquamentus)
+        public UniversalSprite SpawnAquamentus()
         {
-            aquamentus.spriteSize.X = 16;
-            aquamentus.spriteSize.Y = 16;
-            aquamentus.velocity.X = 0;
-            aquamentus.velocity.Y = 0;
-            aquamentus.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, enemyLayerDepth);
+            return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, enemyLayerDepth);
         }
 
-        public void AquamentusMovingRight(EnemyAquamentus aquamentus)
+        public UniversalSprite AquamentusMovingRight()
         {
-            aquamentus.spriteSize.X = 24;
-            aquamentus.spriteSize.Y = 32;
-            aquamentus.velocity.X = 1;
-            aquamentus.velocity.Y = 0;
-            aquamentus.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(49, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, enemyLayerDepth);
+            return new UniversalSprite(game, bossSpriteSheet, new Rectangle(49, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, enemyLayerDepth);
         }
 
-        public void AquamentusMovingLeft(EnemyAquamentus aquamentus)
+        public UniversalSprite AquamentusMovingLeft()
         {
-            aquamentus.spriteSize.X = 24;
-            aquamentus.spriteSize.Y = 32;
-            aquamentus.velocity.X = -1;
-            aquamentus.velocity.Y = 0;
-            aquamentus.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(49, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, enemyLayerDepth);
+            return new UniversalSprite(game, bossSpriteSheet, new Rectangle(49, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, enemyLayerDepth);
         }
 
-        public void AquamentusRoaringRight(EnemyAquamentus aquamentus)
+        public UniversalSprite AquamentusRoaringRight()
         {
-            aquamentus.spriteSize.X = 24;
-            aquamentus.spriteSize.Y = 32;
-            aquamentus.velocity.X = 1;
-            aquamentus.velocity.Y = 0;
-            aquamentus.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(1, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, enemyLayerDepth);
+            return new UniversalSprite(game, bossSpriteSheet, new Rectangle(1, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, enemyLayerDepth);
         }
 
-        public void AquamentusRoaringLeft(EnemyAquamentus aquamentus)
+        public UniversalSprite AquamentusRoaringLeft()
         {
-            aquamentus.spriteSize.X = 24;
-            aquamentus.spriteSize.Y = 32;
-            aquamentus.velocity.X = -1;
-            aquamentus.velocity.Y = 0;
-            aquamentus.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(1, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, enemyLayerDepth);
+            return new UniversalSprite(game, bossSpriteSheet, new Rectangle(1, 11, 24, 32), Color.White, SpriteEffects.None, new Vector2(1, 2), 15, enemyLayerDepth);
         }
     }
 }
