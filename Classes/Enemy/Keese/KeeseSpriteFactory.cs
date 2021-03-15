@@ -1,4 +1,6 @@
 using CSE3902_Game_Sprint0.Classes.Scripts;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,19 +21,19 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         }
         public UniversalSprite SpawnKeese()
         {
-                  return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, linkLayerDepth);
+            return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, linkLayerDepth);
         }
 
         public UniversalSprite KeeseIdle()
         {
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingNorth()
         {
             //keese.velocity.X = 0;
             //keese.velocity.Y = -2;
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingNorthEast()

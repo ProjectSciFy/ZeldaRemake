@@ -28,8 +28,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
         public KeeseStateMachine(EnemyKeese keese)
         {
-            game=keese.game;
-            this.keese.mySprite = enemySpriteFactory.KeeseIdle();
+            this.game = keese.game;
+            this.keese = keese;
             enemySpriteFactory = new KeeseSpriteFactory(game);
         }
 
