@@ -9,13 +9,14 @@ using System.Diagnostics;
 using System.IO;
 using CSE3902_Game_Sprint0.Classes.Tiles;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class Room
     {
         private Background background;
-        private List<BlockTile> tiles;
+        private List<ITile> tiles;
         private int roomNumber;
         private int windowWidth;
         private int windowHeight;
@@ -28,7 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
 
             roomNumber = RoomNumber;
-            tiles = new List<BlockTile>();
+            tiles = new List<ITile>();
             background = new Background(game, roomNumber);
 
             string cwdPath = Directory.GetCurrentDirectory();
@@ -78,7 +79,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
-            foreach (BlockTile tile in tiles)
+            foreach (ITile tile in tiles)
             {
                 tile.Draw();
             }
