@@ -111,10 +111,13 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CMouse(this));
 
             roomList = new List<Room>();
-            roomNumber = 1;
+            roomNumber = 2;
+
+
+
             for (int i = 1; i < 19; i++)
             {
-                roomList.Add(new Room(this, i));
+                roomList.Add(Parser.ParseRoomCSV(this, i));
             }
 
         }
@@ -166,16 +169,10 @@ namespace CSE3902_Game_Sprint0
             }
         }
 
-        public void changeRoom()
+        public void changeRoom(int newRoom)
         {
-            if (roomNumber == 18)
-            {
-                roomNumber = 1;
-            }
-            else
-            {
-                roomNumber++;
-            }
+            roomNumber = newRoom;
+            
             //Wait for a quarter of a second before transition to next room
             //Fixes holding down mouse -> spamming through each room
             System.Threading.Thread.Sleep(100);

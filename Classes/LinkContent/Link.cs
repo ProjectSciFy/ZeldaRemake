@@ -50,7 +50,6 @@ namespace CSE3902_Game_Sprint0.Classes
         }
 
         //TODO more state altering 
-
         public void Update()
         {
             linkState.Update();
