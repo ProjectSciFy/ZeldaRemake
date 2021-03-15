@@ -8,8 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
     public class KeeseStateMachine : IEnemyStateMachine
     {
+        private ZeldaGame game;
         private EnemyKeese keese;
-        private EnemySpriteFactory enemySpriteFactory;
+        private KeeseSpriteFactory enemySpriteFactory;
 
         public enum Direction { north, northEast, east, southEast, south, southWest, west, northWest };
         public Direction direction = Direction.north;
@@ -27,8 +28,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
         public KeeseStateMachine(EnemyKeese keese)
         {
-            this.keese = keese;
-            enemySpriteFactory = keese.enemySpriteFactory;
+            game=keese.game;
+            this.keese.mySprite = enemySpriteFactory.KeeseIdle();
+            enemySpriteFactory = new KeeseSpriteFactory(game);
         }
 
         private Direction ChangeDirection(ref int directionNumber)
@@ -87,7 +89,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             if (currentState != CurrentState.spawning)
             {
                 currentState = CurrentState.spawning;
-                enemySpriteFactory.SpawnKeese(keese);
+                this.keese.mySprite= enemySpriteFactory.SpawnKeese();
             }
 
             if (timer <= 0)
@@ -102,7 +104,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             if (currentState != CurrentState.idle)
             {
                 currentState = CurrentState.idle;
-                enemySpriteFactory.KeeseIdle(keese);
+                this.keese.mySprite=enemySpriteFactory.KeeseIdle();
             }
         }
 
@@ -128,7 +130,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.flyingNorth)
                     {
                         currentState = CurrentState.flyingNorth;
-                        enemySpriteFactory.KeeseFlyingNorth(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingNorth();
                     }
                     break;
 
@@ -146,7 +148,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.flyingNorthEast)
                     {
                         currentState = CurrentState.flyingNorthEast;
-                        enemySpriteFactory.KeeseFlyingNorthEast(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingNorthEast();
                     }
                     break;
 
@@ -168,7 +170,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.flyingEast)
                     {
                         currentState = CurrentState.flyingEast;
-                        enemySpriteFactory.KeeseFlyingEast(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingEast();
                     }
                     break;
 
@@ -186,7 +188,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.flyingSouthEast)
                     {
                         currentState = CurrentState.flyingSouthEast;
-                        enemySpriteFactory.KeeseFlyingSouthEast(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingSouthEast();
                     }
                     break;
 
@@ -208,7 +210,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.flyingSouth)
                     {
                         currentState = CurrentState.flyingSouth;
-                        enemySpriteFactory.KeeseFlyingSouth(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingSouth();
                     }
                     break;
 
@@ -226,7 +228,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.flyingSouthWest)
                     {
                         currentState = CurrentState.flyingSouthWest;
-                        enemySpriteFactory.KeeseFlyingSouthWest(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingSouthWest();
                     }
                     break;
 
@@ -248,7 +250,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.flyingWest)
                     {
                         currentState = CurrentState.flyingWest;
-                        enemySpriteFactory.KeeseFlyingWest(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingWest();
                     }
                     break;
 
@@ -266,7 +268,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.flyingNorthWest)
                     {
                         currentState = CurrentState.flyingNorthWest;
-                        enemySpriteFactory.KeeseFlyingNorthWest(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseFlyingNorthWest();
                     }
                     break;
 
@@ -316,7 +318,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.landingNorth)
                     {
                         currentState = CurrentState.landingNorth;
-                        enemySpriteFactory.KeeseLandingNorth(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseLandingNorth();
                     }
                     break;
 
@@ -353,7 +355,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.landingNorthEast)
                     {
                         currentState = CurrentState.landingNorthEast;
-                        enemySpriteFactory.KeeseLandingNorthEast(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseLandingNorthEast();
                     }
                     break;
 
@@ -394,7 +396,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.landingEast)
                     {
                         currentState = CurrentState.landingEast;
-                        enemySpriteFactory.KeeseLandingEast(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseLandingEast();
                     }
                     break;
 
@@ -427,7 +429,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.landingSouthEast)
                     {
                         currentState = CurrentState.landingSouthEast;
-                        enemySpriteFactory.KeeseLandingSouthEast(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseLandingSouthEast();
                     }
                     break;
 
@@ -468,7 +470,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.landingSouth)
                     {
                         currentState = CurrentState.landingSouth;
-                        enemySpriteFactory.KeeseLandingSouth(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseLandingSouth();
                     }
                     break;
 
@@ -501,7 +503,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.landingSouthWest)
                     {
                         currentState = CurrentState.landingSouthWest;
-                        enemySpriteFactory.KeeseLandingSouthWest(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseLandingSouthWest();
                     }
                     break;
 
@@ -542,7 +544,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.landingWest)
                     {
                         currentState = CurrentState.landingWest;
-                        enemySpriteFactory.KeeseLandingWest(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseLandingWest();
                     }
                     break;
 
@@ -575,7 +577,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     if (currentState != CurrentState.landingNorthWest)
                     {
                         currentState = CurrentState.landingNorthWest;
-                        enemySpriteFactory.KeeseLandingNorthWest(keese);
+                        this.keese.mySprite=enemySpriteFactory.KeeseLandingNorthWest();
                     }
                     break;
 
