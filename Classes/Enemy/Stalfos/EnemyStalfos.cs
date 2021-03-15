@@ -1,5 +1,7 @@
-﻿using CSE3902_Game_Sprint0.Interfaces;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Stalfos;
+using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,17 +16,17 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public ZeldaGame game;
         private StalfosStateMachine myState;
-        public EnemySpriteFactory enemySpriteFactory;
+        public StalfosSpriteFactory enemySpriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
+        public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
         public EnemyStalfos(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.enemySpriteFactory = game.enemySpriteFactory;
+            this.enemySpriteFactory = new StalfosSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new StalfosStateMachine(this);
             //game.collisionManager.enemies.Add(this, collisionRectangle);

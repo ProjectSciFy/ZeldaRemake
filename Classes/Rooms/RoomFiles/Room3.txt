@@ -1,9 +1,0 @@
-﻿3
-L
-F,F,F,F,F,F,F,F,F,F,F,F
-F,F,F,F,F,F,F,F,F,F,F,F
-F,F,W,W,F,F,F,F,W,W,F,F
-F,F,W,W,F,F,F,F,W,W,F,F
-F,F,W,W,F,F,F,F,W,W,F,F
-F,F,F,F,F,F,F,F,F,F,F,F
-F,F,F,F,F,F,F,F,F,F,F,F

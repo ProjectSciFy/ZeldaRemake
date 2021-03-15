@@ -8,16 +8,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using CSE3902_Game_Sprint0.Classes.Tiles;
-
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class Room
     {
         private Background background;
-        private List<BlockTile> tiles;
-        private List<TempDoor> doors;
+        private List<ITile> tiles;
         private int roomNumber;
         private int windowWidth;
         private int windowHeight;
@@ -29,10 +28,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
             int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
 
-            int doorvalue = 0;
             roomNumber = RoomNumber;
-            tiles = new List<BlockTile>();
-            doors = new List<TempDoor>();
+            tiles = new List<ITile>();
             background = new Background(game, roomNumber);
 
             string cwdPath = Directory.GetCurrentDirectory();
@@ -57,50 +54,21 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             Debug.Write("\n");
 
             // string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Andrew\source\repos\ProjectSciFy\ZeldaRemake\Classes\Level\RoomCSV\01.csv");
-            string[] lines = System.IO.File.ReadAllLines(cwdPath);
+             string[] lines = System.IO.File.ReadAllLines(cwdPath);
 
-            foreach (string line in lines)
-            {
-                string[] segments = line.Split(new string[] { "," },
-                                    StringSplitOptions.None);
-                Vector2 position = new Vector2(windowWidthFloor + 3*float.Parse(segments[2])*16+48+6,windowHeightFloor + 3 * float.Parse(segments[1])*16 +48+6);
-                tiles.Add(new BlockTile(game, new TileSpriteFactory(game),position));
-
-            }
-            cwdPath = Directory.GetCurrentDirectory();
-            cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
-            cwdPath = Path.Combine(cwdPath, "doors.csv");
-            lines = System.IO.File.ReadAllLines(cwdPath);
-            foreach (string line in lines)
-            {
-                string[] segments = line.Split(new string[] { "," },
-                                    StringSplitOptions.None);
-                if(int.Parse(segments[0]) == RoomNumber)
+                foreach (string line in lines)
                 {
-                    for(int i = 0; i < 4; i++)
-                    {
-                        if(int.Parse(segments[i+1]) != 0)
-                        {
-                            doorvalue = i * 10 + int.Parse(segments[i + 1]) + 1;
-                            doors.Add(new TempDoor(game, doorvalue));
-                            //Debug.Write(doorvalue.ToString());
-                            //Debug.Write("\n");
-                            
-                        }
-                        else
-                        {
-                            doorvalue = i * 10 + int.Parse(segments[i + 1]);
-                            doors.Add(new TempDoor(game, doorvalue));
-                        }
-                    }
+                    string[] segments = line.Split(new string[] { "," },
+                                        StringSplitOptions.None);
+                    Vector2 position = new Vector2(windowWidthFloor + 3*float.Parse(segments[2])*16+48+6,windowHeightFloor + 3 * float.Parse(segments[1])*16 +48+6);
+                Debug.Write(position);
+                    tiles.Add(new BlockTile(game, new TileSpriteFactory(game),position));
+
                 }
 
+
+
             }
-        
-          // doors.Add(new TopDoor(game, new RoomTextureStorage(game), 2));
-
-
-        }
         public void Update()
         {
         }
@@ -111,16 +79,11 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
-            foreach (BlockTile tile in tiles)
+            foreach (ITile tile in tiles)
             {
                 tile.Draw();
             }
-            foreach (TempDoor door in doors)
-            {
-                door.Draw();
-            }
-
-
+            
         }
     }
 }

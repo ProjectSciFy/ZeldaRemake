@@ -8,8 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 {
     public class WallmasterStateMachine : IEnemyStateMachine
     {
+        private ZeldaGame game;
         private EnemyWallmaster wallmaster;
-        private EnemySpriteFactory enemySpriteFactory;
+        private WallmasterSpriteFactory enemySpriteFactory;
 
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.up;
@@ -23,7 +24,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         public WallmasterStateMachine(EnemyWallmaster wallmaster)
         {
             this.wallmaster = wallmaster;
-            enemySpriteFactory = wallmaster.enemySpriteFactory;
+            game = wallmaster.game;
+            enemySpriteFactory = new WallmasterSpriteFactory(game);
+            this.wallmaster.mySprite = enemySpriteFactory.WallmasterIdle();
         }
 
         public void Idle()
@@ -31,7 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             if (currentState != CurrentState.idle)
             {
                 currentState = CurrentState.idle;
-                enemySpriteFactory.WallmasterIdle(wallmaster);
+                enemySpriteFactory.WallmasterIdle();
             }
         }
 
@@ -43,28 +46,36 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
                     if (currentState != CurrentState.movingUp)
                     {
                         currentState = CurrentState.movingUp;
-                        enemySpriteFactory.WallmasterMovingUp(wallmaster);
+                        this.wallmaster.velocity.X = 0;
+                        this.wallmaster.velocity.Y = -1;
+                        this.wallmaster.mySprite = enemySpriteFactory.WallmasterMovingUp();
                     }
                     break;
                 case Direction.right:
                     if (currentState != CurrentState.movingRight)
                     {
                         currentState = CurrentState.movingRight;
-                        enemySpriteFactory.WallmasterMovingRight(wallmaster);
+                        this.wallmaster.velocity.X = 1;
+                        this.wallmaster.velocity.Y = 0;
+                        this.wallmaster.mySprite = enemySpriteFactory.WallmasterMovingRight();
                     }
                     break;
                 case Direction.down:
                     if (currentState != CurrentState.movingDown)
                     {
                         currentState = CurrentState.movingDown;
-                        enemySpriteFactory.WallmasterMovingDown(wallmaster);
+                        this.wallmaster.velocity.X = 0;
+                        this.wallmaster.velocity.Y = 1;
+                        this.wallmaster.mySprite = enemySpriteFactory.WallmasterMovingDown();
                     }
                     break;
                 case Direction.left:
                     if (currentState != CurrentState.movingLeft)
                     {
                         currentState = CurrentState.movingLeft;
-                        enemySpriteFactory.WallmasterMovingLeft(wallmaster);
+                        this.wallmaster.velocity.X = -1;
+                        this.wallmaster.velocity.Y = 0;
+                        this.wallmaster.mySprite = enemySpriteFactory.WallmasterMovingLeft();
                     }
                     break;
                 default:

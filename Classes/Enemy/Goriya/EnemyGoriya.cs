@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Goriya;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,12 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //Pathing is random, no sense of direction
         //Method of attack is melee, bumping into the player
 
-        private ZeldaGame game;
+        public ZeldaGame game;
         private GoriyaStateMachine myState;
-        public EnemySpriteFactory spriteFactory { get; protected set; }
+        public GoriyaSpriteFactory spriteFactory { get; protected set; }
         public Vector2 drawLocation { get; set; }
-        public Vector2 velocity { get; set; } = new Vector2(0, 0);
-        public Vector2 spriteSize { get; set; } = new Vector2(0, 0);
+        public Vector2 velocity = new Vector2(0, 0);
+        public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
         public Rectangle collisionRectangle { get; set; } = new Rectangle(0, 0, 0, 0);
         private GoriyaBoomerang boomerang;
         public ISprite mySprite { protected get; set; }
@@ -25,7 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public EnemyGoriya(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.spriteFactory = game.enemySpriteFactory;
+            this.spriteFactory = new GoriyaSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new GoriyaStateMachine(this);
             game.collisionManager.enemies.Add(this, collisionRectangle);
