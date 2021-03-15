@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Goriya;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class GoriyaStateMachine : IEnemyStateMachine
     {
+        private ZeldaGame game;
         private EnemyGoriya goriya;
-        private EnemySpriteFactory enemySpriteFactory;
+        private GoriyaSpriteFactory enemySpriteFactory;
 
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none };
         public Direction direction { get; set; }  = Direction.down;
@@ -21,7 +23,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public GoriyaStateMachine(EnemyGoriya goriya)
         {
             this.goriya = goriya;
-            enemySpriteFactory = goriya.spriteFactory;
+            game = goriya.game;
+            enemySpriteFactory = new GoriyaSpriteFactory(game);
+            this.goriya.mySprite = enemySpriteFactory.GoriyaIdleDown();
         }
 
         public void Spawning()
@@ -29,7 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             if (currentState != CurrentState.spawning)
             {
                 currentState = CurrentState.spawning;
-                enemySpriteFactory.SpawnGoriya(goriya);
+                this.goriya.mySprite = enemySpriteFactory.SpawnGoriya();
             }
 
             if (timer <= 0)
@@ -48,7 +52,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.idleRight)
                     {
                         currentState = CurrentState.idleRight;
-                        enemySpriteFactory.GoriyaIdleRight(goriya);
+                        this.goriya.mySprite = enemySpriteFactory.GoriyaIdleRight();
                     }
                     break;
 
@@ -56,7 +60,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.idleUp)
                     {
                         currentState = CurrentState.idleUp;
-                        enemySpriteFactory.GoriyaIdleUp(goriya);
+                        this.goriya.mySprite = enemySpriteFactory.GoriyaIdleUp();
                     }
                     break;
 
@@ -64,7 +68,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.idleLeft)
                     {
                         currentState = CurrentState.idleLeft;
-                        enemySpriteFactory.GoriyaIdleLeft(goriya);
+                        this.goriya.mySprite = enemySpriteFactory.GoriyaIdleLeft();
                     }
                     break;
 
@@ -72,7 +76,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.idleDown)
                     {
                         currentState = CurrentState.idleDown;
-                        enemySpriteFactory.GoriyaIdleDown(goriya);
+                        this.goriya.mySprite = enemySpriteFactory.GoriyaIdleDown();
                     }
                     break;
 
@@ -89,7 +93,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingRight)
                     {
                         currentState = CurrentState.movingRight;
-                        enemySpriteFactory.GoriyaMovingRight(goriya);
+                        this.goriya.velocity.X = 1;
+                        this.goriya.velocity.Y = 0;
+                        this.goriya.mySprite = enemySpriteFactory.GoriyaMovingRight();
                     }
                     break;
 
@@ -97,7 +103,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingUp)
                     {
                         currentState = CurrentState.movingUp;
-                        enemySpriteFactory.GoriyaMovingUp(goriya);
+                        this.goriya.velocity.X = 0;
+                        this.goriya.velocity.Y = -1;
+                        this.goriya.mySprite = enemySpriteFactory.GoriyaMovingUp();
                     }
                     break;
 
@@ -105,7 +113,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingLeft)
                     {
                         currentState = CurrentState.movingLeft;
-                        enemySpriteFactory.GoriyaMovingLeft(goriya);
+                        this.goriya.velocity.X = -1;
+                        this.goriya.velocity.Y = 0;
+                        this.goriya.mySprite = enemySpriteFactory.GoriyaMovingLeft();
                     }
                     break;
 
@@ -113,7 +123,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     if (currentState != CurrentState.movingDown)
                     {
                         currentState = CurrentState.movingDown;
-                        enemySpriteFactory.GoriyaMovingDown(goriya);
+                        this.goriya.velocity.X = 0;
+                        this.goriya.velocity.Y = 1;
+                        this.goriya.mySprite = enemySpriteFactory.GoriyaMovingDown();
                     }
                     break;
 
