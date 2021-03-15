@@ -7,17 +7,28 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using CSE3902_Game_Sprint0.Classes.Tiles;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class Room
     {
         private Background background;
-        private List<TempTile> tiles;
+        private List<BlockTile> tiles;
         private int roomNumber;
+        private int windowWidth;
+        private int windowHeight;
         public Room(ZeldaGame game, int RoomNumber)
         {
+            windowWidth = game.GraphicsDevice.Viewport.Width;
+            windowHeight = game.GraphicsDevice.Viewport.Height;
+
+            int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
+            int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
+
             roomNumber = RoomNumber;
-            tiles = new List<TempTile>();
+            tiles = new List<BlockTile>();
             background = new Background(game, roomNumber);
 
             string cwdPath = Directory.GetCurrentDirectory();
@@ -41,7 +52,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             Debug.Write(cwdPath);
             Debug.Write("\n");
 
-            //TileSpriteFactory TSF = new TileSpriteFactory();
             // string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Andrew\source\repos\ProjectSciFy\ZeldaRemake\Classes\Level\RoomCSV\01.csv");
              string[] lines = System.IO.File.ReadAllLines(cwdPath);
 
@@ -49,8 +59,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                 {
                     string[] segments = line.Split(new string[] { "," },
                                         StringSplitOptions.None);
-                    Vector2 position = new Vector2(float.Parse(segments[2]), float.Parse(segments[1]));
-                   // tiles.Add(new Collision(game, TSF,position));
+                    Vector2 position = new Vector2(windowWidthFloor + 3*float.Parse(segments[2])*16+48+6,windowHeightFloor + 3 * float.Parse(segments[1])*16 +48+6);
+                Debug.Write(position);
+                    tiles.Add(new BlockTile(game, new TileSpriteFactory(game),position));
 
                 }
 
@@ -67,7 +78,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
-            foreach (TempTile tile in tiles)
+            foreach (BlockTile tile in tiles)
             {
                 tile.Draw();
             }
