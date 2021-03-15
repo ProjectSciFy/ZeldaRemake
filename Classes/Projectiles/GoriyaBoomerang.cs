@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Vector2 drawLocation { get; set; }
         public Vector2 SpawnLocation { get; set; }
         public Vector2 velocity { get; set; } = new Vector2 (0,0);
-        public Vector2 spriteSize { get; set; }  = new Vector2(0, 0);
+        public Vector2 spriteSize { get; set; }  = new Vector2(16, 16);
         public bool newItem { get; set; }
         public Vector2 trajectory { get; set; } = new Vector2(0, 0);
 

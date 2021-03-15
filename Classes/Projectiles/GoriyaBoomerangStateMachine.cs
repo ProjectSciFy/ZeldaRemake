@@ -29,78 +29,23 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.spriteFactory = boomerang.spriteFactory;
             this.directionalCalc = new GoriyaBoomerangDirectionalCalulation(this);
             this.movementCalc = new GoriyaBoomerangMovementCalculation(this);
+            spriteFactory.GoriyaBoomerangAttack(boomerang);
         }
         public void Outward()
         {
-            switch (direction)
-            {
-                case Direction.down:
-                    boomerang.trajectory = new Vector2(0, BASE_SPEED);
-                    spriteFactory.GoriyaBoomerangAttack(boomerang);
-                    break;
-                case Direction.up:
-                    boomerang.trajectory = new Vector2(0, -BASE_SPEED);
-                    spriteFactory.GoriyaBoomerangAttack(boomerang);
-                    break;
-                case Direction.right:
-                    boomerang.trajectory = new Vector2(BASE_SPEED, 0);
-                    spriteFactory.GoriyaBoomerangAttack(boomerang);
-                    break;
-                case Direction.left:
-                    boomerang.trajectory = new Vector2(-BASE_SPEED, 0);
-                    spriteFactory.GoriyaBoomerangAttack(boomerang);
-                    break;
-                default:
-                    break;
-            }
+            movementCalc.MovementCalculationOutward(BASE_SPEED);
         }
         public void OutwardReturnWindow()
         {
-            switch (direction)
-            {
-                case Direction.down:
-                    if (currentState != CurrentState.movingDown)
-                    {
-                        currentState = CurrentState.movingDown;
-                        boomerang.trajectory = new Vector2(0, PIVOT_SPEED);
-                        spriteFactory.GoriyaBoomerangAttack(boomerang);
-                    }
-                    break;
-                case Direction.up:
-                    if (currentState != CurrentState.movingUp)
-                    {
-                        currentState = CurrentState.movingUp;
-                        boomerang.trajectory = new Vector2(0, -PIVOT_SPEED);
-                        spriteFactory.GoriyaBoomerangAttack(boomerang);
-                    }
-                    break;
-                case Direction.right:
-                    if (currentState != CurrentState.movingRight)
-                    {
-                        currentState = CurrentState.movingRight;
-                        boomerang.trajectory = new Vector2(PIVOT_SPEED, 0);
-                        spriteFactory.GoriyaBoomerangAttack(boomerang);
-                    }
-                    break;
-                case Direction.left:
-                    if (currentState != CurrentState.movingLeft)
-                    {
-                        currentState = CurrentState.movingLeft;
-                        boomerang.trajectory = new Vector2(-PIVOT_SPEED, 0);
-                        spriteFactory.GoriyaBoomerangAttack(boomerang);
-                    }
-                    break;
-                default:
-                    break;
-            }
+            movementCalc.MovementCalculationOutward(PIVOT_SPEED);
         }
         public void Inward()
         {
-            currentState = (CurrentState) movementCalc.MovementCalculation(BASE_SPEED);
+            movementCalc.MovementCalculationInward(BASE_SPEED);
         }
         public void InwardReturnWindow()
         {
-            currentState = (CurrentState) movementCalc.MovementCalculation(PIVOT_SPEED);
+            movementCalc.MovementCalculationInward(PIVOT_SPEED);
         }
         public void Update()
         {
