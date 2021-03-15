@@ -40,8 +40,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             Debug.Write("Path:\n");
             Debug.Write(cwdPath);
             Debug.Write("\n");
-            
 
+            //TileSpriteFactory TSF = new TileSpriteFactory();
             // string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Andrew\source\repos\ProjectSciFy\ZeldaRemake\Classes\Level\RoomCSV\01.csv");
              string[] lines = System.IO.File.ReadAllLines(cwdPath);
 
@@ -50,7 +50,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     string[] segments = line.Split(new string[] { "," },
                                         StringSplitOptions.None);
                     Vector2 position = new Vector2(float.Parse(segments[2]), float.Parse(segments[1]));
-                    tiles.Add(new TempTile(game,position));
+                   // tiles.Add(new Collision(game, TSF,position));
 
                 }
 
@@ -67,11 +67,11 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
-            foreach(TempTile tile in tiles)
+            foreach (TempTile tile in tiles)
             {
                 tile.Draw();
             }
-              
+            
         }
     }
 }
