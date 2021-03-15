@@ -15,6 +15,8 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         private TileSpriteFactory tileFactory;
         public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
         public Vector2 position;
+
+
         public StairsTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
             this.game = game;

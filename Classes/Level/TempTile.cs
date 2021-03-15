@@ -7,7 +7,8 @@ using CSE3902_Game_Sprint0.Classes.Items;
 using Microsoft.Xna.Framework;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
-
+using System;
+using System.Collections.Generic;
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
     class TempTile
@@ -30,6 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             int y = 32 + 16 * rnd.Next(1,7);
             drawLocation = new Vector2((float) 3*(position.X*16 + 16), (float) 3*(position.Y*16 + 16));
 
+            
     
             tile = new UniversalSprite(game, itemSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10,0.2f);
            // roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(1, 192, 192, 112), Color.White, SpriteEffects.None, new Vector2(1, 1), 10);

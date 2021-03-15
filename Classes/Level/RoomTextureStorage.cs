@@ -15,6 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private float tileLayerDepth = .3f;
         private static int INTERIOR_WIDTH = 192;
         private static int INTERIOR_LENGTH = 112;
+        private static int DOOR_SIZE = 32;
 
         public static Dictionary<int, Rectangle> INTERIOR_DIMENSIONS = new Dictionary<int, Rectangle>()
         {
@@ -39,10 +40,27 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             [18] = new Rectangle(196, 422, INTERIOR_WIDTH, INTERIOR_LENGTH),
 
         };
+        public static Dictionary<int, Rectangle> DOOR_DIMENSIONS = new Dictionary<int, Rectangle>()
+        {
+            [0] = new Rectangle(815, 11, DOOR_SIZE, DOOR_SIZE), //
+            [1] = new Rectangle(848, 11, DOOR_SIZE, DOOR_SIZE),//
+            [2] = new Rectangle(881, 11, DOOR_SIZE, DOOR_SIZE),//
+            [10] = new Rectangle(815, 44, DOOR_SIZE, DOOR_SIZE),//
+            [11] = new Rectangle(848, 44, DOOR_SIZE, DOOR_SIZE),//
+            [12] = new Rectangle(881, 44, DOOR_SIZE, DOOR_SIZE),//
+            [20] = new Rectangle(815, 110, DOOR_SIZE, DOOR_SIZE),//
+            [21] = new Rectangle(848, 110, DOOR_SIZE, DOOR_SIZE),//
+            [22] = new Rectangle(881, 110, DOOR_SIZE, DOOR_SIZE),//
+            [30] = new Rectangle(815, 77, DOOR_SIZE, DOOR_SIZE),//
+            [31] = new Rectangle(848, 77, DOOR_SIZE, DOOR_SIZE),//
+            [32] = new Rectangle(881, 77, DOOR_SIZE, DOOR_SIZE),//
+
+
+        };
+
         public Texture2D tileSpriteSheet;
 
         public Texture2D itemSpriteSheet;
-
         
 
         public RoomTextureStorage(ZeldaGame game)
@@ -60,6 +78,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public UniversalSprite getRoom(int roomNumber)
         {
             return new UniversalSprite(game, roomSpriteSheet, INTERIOR_DIMENSIONS[roomNumber], Color.White, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
+        }
+        public UniversalSprite getDoor(int doorValue)
+        {
+            return new UniversalSprite(game, roomSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
         }
     }
 }
