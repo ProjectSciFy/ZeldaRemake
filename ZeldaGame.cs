@@ -111,7 +111,8 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CMouse(this));
 
             roomList = new List<Room>();
-            for (int i = 1; i < 18; i++)
+            roomNumber = 1;
+            for (int i = 1; i < 19; i++)
             {
                 roomList.Add(new Room(this, i));
             }
@@ -175,7 +176,9 @@ namespace CSE3902_Game_Sprint0
             {
                 roomNumber++;
             }
-
+            //Wait for a quarter of a second before transition to next room
+            //Fixes holding down mouse -> spamming through each room
+            System.Threading.Thread.Sleep(100);
         }
         protected override void Draw(GameTime gameTime)
         {
@@ -191,9 +194,10 @@ namespace CSE3902_Game_Sprint0
                     r.Draw();
                 }
             }
-            link.Draw();
 
             drawnEnemy.Draw();
+
+            link.Draw();
 
             projectileHandler.Draw();
 
