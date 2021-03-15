@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus.AquamentusScripts;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         bool spawning = true;
         bool roaring = false;
         private int timer = 90;
-        private enum CurrentState { none, movingLeft, movingRight, roaringLeft, roaringRight, spawning };
-        private CurrentState currentState = CurrentState.none;
+        public enum CurrentState { none, movingLeft, movingRight, roaringLeft, roaringRight, spawning };
+        public CurrentState currentState = CurrentState.none;
 
         public AquamentusStateMachine(EnemyAquamentus aquamentus)
         {
@@ -30,71 +31,25 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 
         public void Spawning()
         {
-            if (currentState != CurrentState.spawning)
-            {
-                currentState = CurrentState.spawning;
-                this.aquamentus.mySprite = enemySpriteFactory.SpawnAquamentus();
-            }
-
-            if (timer <= 0)
-            {
-                spawning = false;
-                currentState = CurrentState.none;
-            }
+            timer = 90;
+            spawning = false;
+            new AquamentusSpawning(aquamentus, enemySpriteFactory, this).Execute();
         }
 
         public void Moving()
         {
             if (roaring)
             {
-                switch (direction)
+                if (timer <= 0)
                 {
-                    case Direction.left:
-                        if (currentState != CurrentState.roaringLeft)
-                        {
-                            currentState = CurrentState.roaringLeft;
-                            this.aquamentus.velocity.X = -1;
-                            this.aquamentus.velocity.Y = 0;
-                            this.aquamentus.mySprite = enemySpriteFactory.AquamentusRoaringLeft();
-                        }
-                        break;
-                    case Direction.right:
-                        if (currentState != CurrentState.roaringRight)
-                        {
-                            currentState = CurrentState.roaringRight;
-                            this.aquamentus.velocity.X = 1;
-                            this.aquamentus.velocity.Y = 0;
-                            this.aquamentus.mySprite = enemySpriteFactory.AquamentusRoaringRight();
-                        }
-                        break;
-                    default:
-                        break;
+                    new AquamentusRoaring(aquamentus, enemySpriteFactory, this).Execute();
                 }
             }
             else
             {
-                switch (direction)
+                if (timer <= 0)
                 {
-                    case Direction.left:
-                        if (currentState != CurrentState.movingLeft)
-                        {
-                            currentState = CurrentState.movingLeft;
-                            this.aquamentus.velocity.X = -1;
-                            this.aquamentus.velocity.Y = 0;
-                            this.aquamentus.mySprite = enemySpriteFactory.AquamentusMovingLeft();
-                        }
-                        break;
-                    case Direction.right:
-                        if (currentState != CurrentState.movingRight)
-                        {
-                            currentState = CurrentState.movingRight;
-                            this.aquamentus.velocity.X = 1;
-                            this.aquamentus.velocity.Y = 0;
-                            this.aquamentus.mySprite = enemySpriteFactory.AquamentusMovingRight();
-                        }
-                        break;
-                    default:
-                        break;
+                    new AquamentusMoving(aquamentus, enemySpriteFactory, this).Execute();
                 }
             }
         }
