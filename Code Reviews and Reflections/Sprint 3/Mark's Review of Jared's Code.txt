@@ -1,0 +1,19 @@
+﻿READABILITY OF JARED'S AquamentusSpriteFactory.cs, EnemyAquamentus.cs, and AquamentusStateMachine.cs (all 3 were refactored):
+-Author of review: Mark Maher
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: AquamentusSpriteFactory.cs, EnemyAquamentus.cs, and AquamentusStateMachine.cs
+-Author of file: Jared Zahn
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF JARED'S AquamentusSpriteFactory.cs, EnemyAquamentus.cs, and AquamentusStateMachine.cs (all 3 were refactored):
+-Author of review: Mark Maher
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: AquamentusSpriteFactory.cs, EnemyAquamentus.cs, and AquamentusStateMachine.cs
+-Author of file: Jared Zahn
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 

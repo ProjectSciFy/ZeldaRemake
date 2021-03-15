@@ -1,0 +1,19 @@
+﻿READABILITY OF MARK'S CollisionManager.cs:
+-Author of review: Gal Pinhasi
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: CollisionManager.cs
+-Author of file: Mark Maher
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF MARK'S CollisionManager.cs:
+-Author of review: Gal Pinhasi
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: CollisionManager.cs
+-Author of file: Mark Maher
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 

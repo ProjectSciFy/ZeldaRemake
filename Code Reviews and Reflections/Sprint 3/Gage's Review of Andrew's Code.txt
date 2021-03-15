@@ -1,0 +1,19 @@
+﻿READABILITY OF ANDREW'S Room.cs:
+-Author of review: Gage Odom
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: Room.cs
+-Author of file: Andrew Lewandowski
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF ANDREW'S Room.cs:
+-Author of review: Gage Odom
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: Room.cs
+-Author of file: Andrew Lewandowski 
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 

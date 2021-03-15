@@ -1,0 +1,19 @@
+﻿READABILITY OF GAL'S BlockTile.cs, StairsTile.cs, and TileSpriteFactory.cs (all 3 were refactored):
+-Author of review: Andrew Lewandowski
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: BlockTile.cs, StairsTile.cs, and TileSpriteFactory.cs
+-Author of file: Gal Pinhasi
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF GAL'S BlockTile.cs, StairsTile.cs, and TileSpriteFactory.cs (all 3 were refactored):
+-Author of review: Andrew Lewandowski
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: BlockTile.cs, StairsTile.cs, and TileSpriteFactory.cs
+-Author of file: Gal Pinhasi 
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 

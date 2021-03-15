@@ -1,0 +1,19 @@
+﻿READABILITY OF GAGE'S GoriyaBoomerang.cs:
+-Author of review: Devan
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: GoriyaBoomerang.cs
+-Author of file: Gage Odom
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF GAGE'S GoriyaBoomerang.cs:
+-Author of review: Devan
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: GoriyaBoomerang.cs
+-Author of file: Gage Odom
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 
