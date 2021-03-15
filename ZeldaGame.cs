@@ -172,7 +172,9 @@ namespace CSE3902_Game_Sprint0
             {
                 roomNumber++;
             }
-
+            //Wait for a quarter of a second before transition to next room
+            //Fixes holding down mouse -> spamming through each room
+            System.Threading.Thread.Sleep(250);
         }
         protected override void Draw(GameTime gameTime)
         {
@@ -188,9 +190,10 @@ namespace CSE3902_Game_Sprint0
                     r.Draw();
                 }
             }
-            link.Draw();
 
             drawnEnemy.Draw();
+
+            link.Draw();
 
             projectileHandler.Draw();
 
