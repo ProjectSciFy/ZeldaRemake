@@ -177,7 +177,7 @@ namespace CSE3902_Game_Sprint0
             }
             //Wait for a quarter of a second before transition to next room
             //Fixes holding down mouse -> spamming through each room
-            System.Threading.Thread.Sleep(250);
+            System.Threading.Thread.Sleep(100);
         }
         protected override void Draw(GameTime gameTime)
         {
