@@ -10,17 +10,17 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
     {
         public ZeldaGame game;
         private KeeseStateMachine myState;
-        public EnemySpriteFactory enemySpriteFactory;
+        public KeeseSpriteFactory enemySpriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
+        public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
         public EnemyKeese(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.enemySpriteFactory = game.enemySpriteFactory;
+            this.enemySpriteFactory = new KeeseSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new KeeseStateMachine(this);
             game.collisionManager.enemies.Add(this, collisionRectangle);
