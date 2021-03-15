@@ -16,12 +16,14 @@ namespace CSE3902_Game_Sprint0.Classes
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public float spriteScalar;
         
 
         //Initialize Link's default state(s) in a new stateMachine
         public Link(ZeldaGame game)
         {
             this.game = game;
+            this.spriteScalar = game.spriteScalar;
             drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
         }
         public Rectangle CollisionRectangle()
@@ -78,8 +80,8 @@ namespace CSE3902_Game_Sprint0.Classes
 
             collisionRectangle.X = (int)drawLocation.X;
             collisionRectangle.Y = (int)drawLocation.Y;
-            collisionRectangle.Width = (int)spriteSize.X;
-            collisionRectangle.Height = (int)spriteSize.Y;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar);
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar);
 
             game.collisionManager.collisionEntities[this] = this.CollisionRectangle();
         }

@@ -53,6 +53,9 @@ namespace CSE3902_Game_Sprint0
 
         public int roomNumber;
         public List<Room> roomList;
+        
+        //PASS THIS TO ENTITIES FOR UPSCALING THEM UNIFORMLY
+        public float spriteScalar = 3;
 
 
         public ZeldaGame()
