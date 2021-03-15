@@ -32,15 +32,6 @@ namespace CSE3902_Game_Sprint0
         public EnemySpriteFactory enemySpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
         public Classes.Link link;
-        // test enemy draws
-        public IEnemy stalfos;
-        public IEnemy gel;
-        public IEnemy keese;
-        public IEnemy bladeTrap;
-        public IEnemy goriya;
-        public IEnemy aquamentus;
-        public IEnemy wallmaster;
-        public IEnemy oldMan;
         public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster, OldMan}
         public Enemies currentEnemy;
         public IEnemy drawnEnemy;
@@ -96,14 +87,6 @@ namespace CSE3902_Game_Sprint0
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
-            stalfos = new EnemyStalfos(this, new Vector2(400, 100));
-            gel = new EnemyGel(this, new Vector2(400, 100));
-            keese = new EnemyKeese(this, new Vector2(400, 100));
-            bladeTrap = new BladeTrap(this, new Vector2(400, 100), new Vector2(100, 100), link);
-            goriya = new EnemyGoriya(this, new Vector2(400, 100));
-            aquamentus = new EnemyAquamentus(this, new Vector2(400, 100));
-            wallmaster = new EnemyWallmaster(this, new Vector2(400, 100));
-            oldMan = new EnemyOldMan(this, new Vector2(400, 100));
             currentEnemy = Enemies.Stalfos;
             drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
