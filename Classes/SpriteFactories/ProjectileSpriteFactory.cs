@@ -29,7 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             bomb.spriteSize.X = 16;
             bomb.spriteSize.Y = 16;
-            bomb.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 201, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, projectileLayerDepth);
+            bomb.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 203, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, projectileLayerDepth);
         }
 
         public void BombExploding(Bomb bomb)
