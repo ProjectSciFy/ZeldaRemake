@@ -9,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class LinkBoomerangStateMachine
     {
-        public LinkBoomerang boomerang { get; set; }
+        public LinkBoomerangProjectile boomerang { get; set; }
         public EnemySpriteFactory spriteFactory { get; set; }
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none }; // NE = North East
         public Direction direction = Direction.down;
@@ -23,7 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Boolean returning = false, newItem = true, brake = false;
         private LinkBoomerangDirectionCalculation directionCalc;
         private LinkBoomerangMovementCalculation movementCalc;
-        public LinkBoomerangStateMachine(LinkBoomerang boomerang)
+        public LinkBoomerangStateMachine(LinkBoomerangProjectile boomerang)
         {
             this.boomerang = boomerang;
             this.spriteFactory = boomerang.spriteFactory;
@@ -49,6 +49,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public void Update()
         {
+            if (newItem)
+            {
+                direction = (Direction)boomerang.linkState.direction;
+            }
             movementCalc.Update();
             if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && newItem)
             {

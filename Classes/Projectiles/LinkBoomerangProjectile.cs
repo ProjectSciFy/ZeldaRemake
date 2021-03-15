@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
-    public class LinkBoomerang : IProjectile
+    public class LinkBoomerangProjectile : IProjectile
     {
         private ZeldaGame game;
         public Classes.Link link { get; protected set; }
@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public bool newItem { get; set; }
         public Vector2 trajectory { get; set; } = new Vector2(0, 0);
 
-        public LinkBoomerang(ZeldaGame game, Classes.Link link, LinkStateMachine linkState)
+        public LinkBoomerangProjectile(ZeldaGame game, Classes.Link link, LinkStateMachine linkState)
         {
             this.game = game;
             this.link = link;

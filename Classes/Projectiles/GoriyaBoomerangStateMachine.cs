@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public GoriyaBoomerang boomerang { get; set; }
         public EnemySpriteFactory spriteFactory { get; set; }
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none };
-        public Direction direction = Direction.down;
+        public Direction direction;
         public enum CurrentState { movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW, none };
         public CurrentState currentState;
         public Direction returnDirection = Direction.none;
@@ -49,6 +49,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public void Update()
         {
+            if (newItem)
+            {
+                direction = (Direction)boomerang.goriyaState.direction;
+            }
             movementCalc.Update();
             if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < (RANGE - RETURN_WINDOW) && newItem)
             {
