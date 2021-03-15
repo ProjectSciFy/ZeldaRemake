@@ -8,8 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 {
     public class OldManStateMachine : IEnemyStateMachine
     {
+        private ZeldaGame game;
         private EnemyOldMan oldMan;
-        private EnemySpriteFactory enemySpriteFactory;
+        private OldManSpriteFactory enemySpriteFactory;
 
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
@@ -20,8 +21,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 
         public OldManStateMachine(EnemyOldMan oldMan)
         {
+            this.game = oldMan.game;
             this.oldMan = oldMan;
-            enemySpriteFactory = oldMan.enemySpriteFactory;
+            enemySpriteFactory = new OldManSpriteFactory(game);
         }
 
         public void Idle()
@@ -29,7 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
             if (currentState != CurrentState.idleDown)
             {
                 currentState = CurrentState.idleDown;
-                enemySpriteFactory.OldManIdle(oldMan);
+                this.oldMan.mySprite = enemySpriteFactory.OldManIdle();
             }
         }
 

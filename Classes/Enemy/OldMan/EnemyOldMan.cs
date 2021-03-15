@@ -10,16 +10,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
     {
         public ZeldaGame game;
         private OldManStateMachine myState;
-        public EnemySpriteFactory enemySpriteFactory;
+        public OldManSpriteFactory enemySpriteFactory;
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
+        public Vector2 spriteSize = new Vector2(16, 16);
 
         public EnemyOldMan(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.enemySpriteFactory = game.enemySpriteFactory;
+            this.enemySpriteFactory = new OldManSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new OldManStateMachine(this);
         }
