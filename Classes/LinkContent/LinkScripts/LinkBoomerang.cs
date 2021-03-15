@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
         private Link link;
         private LinkSpriteFactory spriteFactory;
         private LinkStateMachine linkStateMachine;
+        private LinkBoomerangProjectile boomerang;
 
         public LinkBoomerang(Link link, LinkSpriteFactory spriteFactory, LinkStateMachine linkStateMachine)
         {
@@ -32,6 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.boomerangRight;
                         link.linkSprite = spriteFactory.BoomerangRight();
+                        linkStateMachine.projectileHandler.Add(new LinkBoomerangProjectile(link, linkStateMachine));
                     }
                     break;
                 case LinkStateMachine.Direction.up:
@@ -39,6 +42,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.boomerangUp;
                         link.linkSprite = spriteFactory.BoomerangUp();
+                        linkStateMachine.projectileHandler.Add(new LinkBoomerangProjectile(link, linkStateMachine));
                     }
                     break;
                 case LinkStateMachine.Direction.left:
@@ -46,6 +50,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.boomerangLeft;
                         link.linkSprite = spriteFactory.BoomerangLeft();
+                        linkStateMachine.projectileHandler.Add(new LinkBoomerangProjectile(link, linkStateMachine));
                     }
                     break;
                 case LinkStateMachine.Direction.down:
@@ -53,6 +58,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.boomerangDown;
                         link.linkSprite = spriteFactory.BoomerangDown();
+                        linkStateMachine.projectileHandler.Add(new LinkBoomerangProjectile(link, linkStateMachine));
                     }
                     break;
                 default:
