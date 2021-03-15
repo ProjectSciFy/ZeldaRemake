@@ -25,7 +25,4 @@
     <Folder Include="Classes\Controllers\TileCommands\" />
     <Folder Include="Classes\READMEs\Sprint 3\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\Enemy\Stalfos\StalfosScripts\" />
-  </ItemGroup>
 </Project>
