@@ -9,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
     public class LinkBoomerangMovementCalculation
     {
         private LinkBoomerangStateMachine boomerangState;
-        private LinkBoomerang boomerang;
+        private LinkBoomerangProjectile boomerang;
         private enum Direction { right, up, left, down, NE, SE, SW, NW, none }; // NE = North East
         private Direction returnDirection;
         private Direction direction;

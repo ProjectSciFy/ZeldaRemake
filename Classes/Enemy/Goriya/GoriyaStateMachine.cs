@@ -11,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private EnemyGoriya goriya;
         private EnemySpriteFactory enemySpriteFactory;
 
-        public enum Direction { right, up, left, down };
+        public enum Direction { right, up, left, down, NE, SE, SW, NW, none };
         public Direction direction { get; set; }  = Direction.down;
         public bool moving { get; set; }  = true;
         private bool spawning = true;
