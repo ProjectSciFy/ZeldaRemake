@@ -48,12 +48,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             [10] = new Rectangle(815, 44, DOOR_SIZE, DOOR_SIZE),//
             [11] = new Rectangle(848, 44, DOOR_SIZE, DOOR_SIZE),//
             [12] = new Rectangle(881, 44, DOOR_SIZE, DOOR_SIZE),//
-            [20] = new Rectangle(815, 110, DOOR_SIZE, DOOR_SIZE),//
-            [21] = new Rectangle(848, 110, DOOR_SIZE, DOOR_SIZE),//
-            [22] = new Rectangle(881, 110, DOOR_SIZE, DOOR_SIZE),//
-            [30] = new Rectangle(815, 77, DOOR_SIZE, DOOR_SIZE),//
-            [31] = new Rectangle(848, 77, DOOR_SIZE, DOOR_SIZE),//
-            [32] = new Rectangle(881, 77, DOOR_SIZE, DOOR_SIZE),//
+            [20] = new Rectangle(815, 77, DOOR_SIZE, DOOR_SIZE),//
+            [21] = new Rectangle(848, 77, DOOR_SIZE, DOOR_SIZE),//
+            [22] = new Rectangle(881, 77, DOOR_SIZE, DOOR_SIZE),//
+            [30] = new Rectangle(815, 110, DOOR_SIZE, DOOR_SIZE),//
+            [31] = new Rectangle(848, 110, DOOR_SIZE, DOOR_SIZE),//
+            [32] = new Rectangle(881, 110, DOOR_SIZE, DOOR_SIZE),//
+
 
 
         };

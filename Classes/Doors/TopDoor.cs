@@ -6,10 +6,11 @@ using Microsoft.Xna.Framework;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework.Graphics;
 using CSE3902_Game_Sprint0.Classes.Scripts;
+using CSE3902_Game_Sprint0.Classes.Doors;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
-    public class TopDoor
+    public class TopDoor : IDoor
     {
         private ZeldaGame game;
         private ISprite topDoorSprite;
@@ -26,7 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
             int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
-            windowWidthFloor = windowWidthFloor + 114*3;
+            windowWidthFloor = windowWidthFloor + 112*3;
 
 
             this.position = new Vector2(windowWidthFloor, windowHeightFloor);
