@@ -1,0 +1,19 @@
+﻿READABILITY OF DEVAN'S KeeseSpriteFactory.cs, EnemyKeese.cs, and KeeseStateMachine.cs (all 3 were refactored):
+-Author of review: Jared Zahn
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: KeeseSpriteFactory.cs, EnemyKeese.cs, and KeeseStateMachine.cs
+-Author of file: Devan
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF DEVAN'S KeeseSpriteFactory.cs, EnemyKeese.cs, and KeeseStateMachine.cs (all 3 were refactored):
+-Author of review: Jared Zahn
+-Date of review: March 15, 2021
+-Sprint Number: 3
+-File Name: KeeseSpriteFactory.cs, EnemyKeese.cs, and KeeseStateMachine.cs
+-Author of file: Devan 
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 
