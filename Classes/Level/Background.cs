@@ -30,7 +30,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             int yloc = 192 + ((roomNumber - 1)/ 6) * 115;
             xloc = 1;
             yloc = 192;
-            roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(xloc, yloc, 192, 112), Color.White, SpriteEffects.None, new Vector2(1, 1), 10,0.0f);
+            //roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(xloc, yloc, 192, 112), Color.White, SpriteEffects.None, new Vector2(1, 1), 10,0.0f);
+            RoomTextureStorage roomTextures = new RoomTextureStorage(this.game);
+            roominterior = roomTextures.getRoom(roomNumber);
 
 
             roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), 10,0.0f);

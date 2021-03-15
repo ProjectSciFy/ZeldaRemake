@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 
         public UniversalSprite CollisionTile()
         {
-            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 14, 14), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 14, 14), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
         public UniversalSprite StairsTile()
         {
