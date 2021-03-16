@@ -4,18 +4,18 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/Credits.spritefont</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/Level 1 (Eagle).png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - Bosses.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Enemies.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Tileset.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - Fonts.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - Items &amp; Weapons.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - Link.png</File>
-    <File>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - NPCs.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/Credits.spritefont</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/Level 1 (Eagle).png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Bosses.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Enemies.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Tileset.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Fonts.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Items &amp; Weapons.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Link.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - NPCs.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
