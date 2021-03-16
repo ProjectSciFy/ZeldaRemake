@@ -129,7 +129,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         break;
                     case "BladeTrap":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
-                        enemies.Add(new BladeTrap(game, position, new Vector2 (100, 100), game.link));
+                        enemies.Add(new BladeTrap(game, position, new Vector2(100, 100), game.link));
                         break;
                     case "Gel":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
@@ -211,7 +211,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                             {
                                 case 0:
                                     doors.Add(new TopDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    wallPos = new Vector2(windowWidthFloor + 3 * 6* 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
+                                    wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
                                     tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
                                     wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
                                     tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
@@ -243,6 +243,21 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             }
             return new Room(game, RoomNumber, tiles, items, enemies, doors);
 
+        }
+        public static Dictionary<int, int[]> ParseNeighborCSV()
+        {
+            Dictionary<int, int[]> neighbors = new Dictionary<int, int[]>();
+            String cwdPath = Directory.GetCurrentDirectory();
+            cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
+            cwdPath = Path.Combine(cwdPath, "neighbors.csv");
+            string[] lines = System.IO.File.ReadAllLines(cwdPath);
+            foreach (string line in lines)
+            {
+                string[] segments = line.Split(new string[] { "," },
+                                    StringSplitOptions.None);
+                neighbors.Add(Int32.Parse(segments[0]), new int[4] { Int32.Parse(segments[1]), Int32.Parse(segments[2]), Int32.Parse(segments[3]), Int32.Parse(segments[4]) });
+            }
+            return neighbors;
         }
     }
 }

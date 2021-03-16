@@ -1,6 +1,7 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus.AquamentusScripts;
 using CSE3902_Game_Sprint0.Interfaces;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         private int timer = 90;
         public enum CurrentState { none, movingLeft, movingRight, roaringLeft, roaringRight, spawning };
         public CurrentState currentState = CurrentState.none;
+        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public float spriteScalar;
 
         public AquamentusStateMachine(EnemyAquamentus aquamentus)
         {
@@ -27,6 +30,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             this.aquamentus = aquamentus;
             /*enemySpriteFactory = aquamentus.enemySpriteFactory;*/
             enemySpriteFactory = new AquamentusSpriteFactory(game);
+        }
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
         }
 
         public void Spawning()

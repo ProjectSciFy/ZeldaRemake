@@ -42,10 +42,11 @@ namespace CSE3902_Game_Sprint0
 
         public int roomNumber;
         public List<Room> roomList;
+        public Dictionary<int, int[]> neighbors;
         
         //PASS THIS TO ENTITIES FOR UPSCALING THEM UNIFORMLY
         public float spriteScalar = 3;
-
+        public Room currentRoom;
 
         public ZeldaGame()
         {
@@ -89,16 +90,22 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
 
+            neighbors = Parser.ParseNeighborCSV();
+
             roomList = new List<Room>();
             roomNumber = 2;
-
-
 
             for (int i = 1; i < 19; i++)
             {
                 roomList.Add(Parser.ParseRoomCSV(this, i));
             }
-
+            foreach (Room r in roomList)
+            {
+                if (r.getRoomNumber() == roomNumber)
+                {
+                    currentRoom = r;
+                }
+            }
         }
 
         protected override void LoadContent()
@@ -137,18 +144,20 @@ namespace CSE3902_Game_Sprint0
             projectileHandler.Update();
 
             collisionManager.Update();
-            foreach (Room r in roomList)
-            {
-                if (r.getRoomNumber() == roomNumber)
-                {
-                    r.Update();
-                }
-            }
+
+            currentRoom.Update();
         }
 
         public void changeRoom(int newRoom)
         {
             roomNumber = newRoom;
+            foreach (Room r in roomList)
+            {
+                if (r.getRoomNumber() == newRoom)
+                {
+                    currentRoom = r;
+                }
+            }
             //Wait for a quarter of a second before transition to next room
             //Fixes holding down mouse -> spamming through each room
             //Clear the collision set
@@ -161,13 +170,8 @@ namespace CSE3902_Game_Sprint0
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
-            foreach (Room r in roomList)
-            {
-                if (r.getRoomNumber() == roomNumber)
-                {
-                    r.Draw();
-                }
-            }
+
+            currentRoom.Draw();
 
             link.Draw();
 

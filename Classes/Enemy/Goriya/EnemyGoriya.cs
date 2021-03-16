@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy.Goriya;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
-    public class EnemyGoriya : IEnemy
+    public class EnemyGoriya : IEnemy, ICollisionEntity
     {
         //When defeated, can drop a heart, rupee, 5rupee or a clock
         //Pathing is random, no sense of direction
@@ -19,9 +20,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Vector2 drawLocation { get; set; }
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
-        public Rectangle collisionRectangle { get; set; } = new Rectangle(0, 0, 0, 0);
         private GoriyaBoomerang boomerang;
         public ISprite mySprite { protected get; set; }
+        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        private float spriteScalar;
+        private static int HITBOX_OFFSET = 6;
 
         public EnemyGoriya(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -31,6 +34,12 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             myState = new GoriyaStateMachine(this);
             game.collisionManager.enemies.Add(this, collisionRectangle);
             boomerang = new GoriyaBoomerang(game, this, myState);
+            this.spriteScalar = game.spriteScalar;
+        }
+
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
         }
 
         public void Update()
@@ -61,8 +70,12 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             {
                 drawLocation = new Vector2(drawLocation.X, game.GraphicsDevice.Viewport.Bounds.Height);
             }
-            collisionRectangle = new Rectangle((int)drawLocation.X, (int)drawLocation.Y, (int)spriteSize.X, (int)spriteSize.Y);
-            game.collisionManager.enemies[this] = collisionRectangle;
+            collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+
+            game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
         public void Draw()
         {
