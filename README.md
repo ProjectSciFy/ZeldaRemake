@@ -3,9 +3,16 @@ README Document for Sprint 3:
 
 Program Known Bugs:
 	-We have not implemented the following collisions:
-		+
+		+Collisions that have to do with Goriya enemy.
+		+Collisions that have to do with BladeTrapenemy.
+		+Projectile collisions.
+	-Room transitions are not finalized.
+	-View Program Controls* below for bugs that have to do with keyboard input.
+	-Aquamentus Enemy boss has a sliver of green to its left due to sprite scaling.
 
 Program Controls:
+	-MOUSE CONTROLS:
+		+Left clicking will cycle through rooms. You cannot cycle backwards at the moment.
 	-[WASD] and [Arrows] keys control vertical and horizontal movement.
 		+No diagonal movement. Key priority-based movement (i.e.: last key pressed is the direction link moves; if key is held and another is pressed, he moves in the new direction).	
 	-[N] and [Z] cause Link to attack with his sword.
@@ -13,12 +20,12 @@ Program Controls:
 		+Currently, [2]...[4] simply use the item; [2] makes Link place a bomb, [3] makes Link use a bow and arrow, and [4] should make Link use a boomerang although it does not at the moment.
 	-[R] resets game to starting state.
 	-[Q] and [esc] quit the game instantly.
-	-MOUSE CONTROLS:
-		+Left clicking will cycle through rooms. You cannot cycle backwards at the moment.
 
 Program Future Implementations:
 	-Un-implemented collisions will be implemented prior to Sprint 4 submission. This includes:
-		+
+		+Collisions that have to do with Goriya enemy.
+		+Collisions that have to do with BladeTrapenemy.
+		+Projectile collisions.
 	-Room parser will be cleaned up and refactored.
 	-Room transitions will be implemented to display a smooth change.
 
