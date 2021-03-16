@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</SourceFile>
-  <SourceTime>2021-01-18T22:03:44.0280898-05:00</SourceTime>
-  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.xnb</DestFile>
-  <DestTime>2021-03-15T15:20:13.5974821-04:00</DestTime>
+  <SourceFile>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</SourceFile>
+  <SourceTime>2021-03-11T14:35:31.7404341-05:00</SourceTime>
+  <DestFile>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/bin/Windows/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.xnb</DestFile>
+  <DestTime>2021-03-15T20:43:49.6443306-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
