@@ -129,7 +129,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         break;
                     case "BladeTrap":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
-                        enemies.Add(new BladeTrap(game, position, new Vector2 (200, 200), game.link));
+                        enemies.Add(new BladeTrap(game, position, new Vector2 (100, 100), game.link));
                         break;
                     case "Gel":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);

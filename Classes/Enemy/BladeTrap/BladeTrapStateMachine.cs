@@ -80,42 +80,42 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     break;
             }
         }
-        public void Retract()
-        {
-            switch (direction)
-            {
-                case Direction.down:
-                    if (currentState != CurrentState.retractingDown)
-                    {
-                        currentState = CurrentState.retractingDown;
-                        spriteFactory.BladeTrapUp();
-                    }
-                    break;
-                case Direction.up:
-                    if (currentState != CurrentState.retractingUp)
-                    {
-                        currentState = CurrentState.retractingUp;
-                        spriteFactory.BladeTrapDown();
-                    }
-                    break;
-                case Direction.right:
-                    if (currentState != CurrentState.retractingRight)
-                    {
-                        currentState = CurrentState.retractingRight;
-                        spriteFactory.BladeTrapLeft();
-                    }
-                    break;
-                case Direction.left:
-                    if (currentState != CurrentState.retractingLeft)
-                    {
-                        currentState = CurrentState.retractingLeft;
-                        spriteFactory.BladeTrapRight();
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
+        //public void Retract()
+        //{
+        //    switch (direction)
+        //    {
+        //        case Direction.down:
+        //            if (currentState != CurrentState.retractingDown)
+        //            {
+        //                currentState = CurrentState.retractingDown;
+        //                spriteFactory.BladeTrapUp();
+        //            }
+        //            break;
+        //        case Direction.up:
+        //            if (currentState != CurrentState.retractingUp)
+        //            {
+        //                currentState = CurrentState.retractingUp;
+        //                spriteFactory.BladeTrapDown();
+        //            }
+        //            break;
+        //        case Direction.right:
+        //            if (currentState != CurrentState.retractingRight)
+        //            {
+        //                currentState = CurrentState.retractingRight;
+        //                spriteFactory.BladeTrapLeft();
+        //            }
+        //            break;
+        //        case Direction.left:
+        //            if (currentState != CurrentState.retractingLeft)
+        //            {
+        //                currentState = CurrentState.retractingLeft;
+        //                spriteFactory.BladeTrapRight();
+        //            }
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
         public void Update()
         {
             if ((Math.Abs(link.drawLocation.X - BladeTrap.spawnLocation.X) <= BladeTrap.range.X) && Math.Abs(link.drawLocation.Y - BladeTrap.spawnLocation.Y) < TRAP_WIDTH)
@@ -135,11 +135,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 InRange = true;
                 if (link.drawLocation.Y > BladeTrap.spawnLocation.Y)
                 {
-                    direction = Direction.up;
+                    direction = Direction.down;
                 }
                 else if (link.drawLocation.Y < BladeTrap.spawnLocation.Y)
                 {
-                    direction = Direction.down;
+                    direction = Direction.up;
                 }
             }
             else
@@ -154,8 +154,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             else
             {
                 away = true;
-                if ((Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) == BladeTrap.range.X) && (BladeTrap.drawLocation.Y == BladeTrap.spawnLocation.Y))
+                if ((Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) > BladeTrap.range.X) || (BladeTrap.drawLocation.Y > BladeTrap.spawnLocation.Y))
                 {
+                    InRange = false;
                     if (direction == Direction.right)
                     {
                         direction = Direction.left;
@@ -165,8 +166,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                         direction = Direction.right;
                     }
                 }
-                else if ((Math.Abs(BladeTrap.drawLocation.Y - BladeTrap.spawnLocation.Y) == BladeTrap.range.Y) && (BladeTrap.drawLocation.X == BladeTrap.spawnLocation.X))
+                else if ((Math.Abs(BladeTrap.drawLocation.Y - BladeTrap.spawnLocation.Y) > BladeTrap.range.Y) || (BladeTrap.drawLocation.X > BladeTrap.spawnLocation.X))
                 {
+                    InRange = false;
                     if (direction == Direction.up)
                     {
                         direction = Direction.down;
@@ -185,20 +187,20 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             {
                 Attack();
             }
-            else if (away)
+            else if (away && !InRange)
             {
-                Retract();
-            }
-            if (BladeTrap.drawLocation.X <= BladeTrap.spawnLocation.X)
-            {
-                direction = Direction.right;
                 Attack();
             }
-            else if (Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) > BladeTrap.range.X)
-            {
-                direction = Direction.left;
-                Attack();
-            }
+            //if (BladeTrap.drawLocation.X <= BladeTrap.spawnLocation.X)
+            //{
+            //    direction = Direction.right;
+            //    Attack();
+            //}
+            //else if (Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) > BladeTrap.range.X)
+            //{
+            //    direction = Direction.left;
+            //    Attack();
+            //}
         }
     }
 }
