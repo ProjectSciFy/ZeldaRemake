@@ -202,15 +202,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
-        public void LinkBoomerangAttack(LinkBoomerangProjectile boomerang)
-        {
-            boomerang.spriteSize = new Vector2(16, 16);
-            boomerang.velocity = boomerang.trajectory;
-            if (boomerang.myState.newItem)
-            {
-                boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, linkLayerDepth);
-            }
-        }
         public void GoriyaBoomerangAttack(GoriyaBoomerang boomerang)
         {
             //boomerang.spriteSize = new Vector2 (16,16);

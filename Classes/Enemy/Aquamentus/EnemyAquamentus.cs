@@ -15,7 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public ISprite mySprite;
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(24, 32);
+        public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         public Fireball fireball_1, fireball_2, fireball_3;
         public int timer = 0;

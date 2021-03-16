@@ -32,18 +32,7 @@ namespace CSE3902_Game_Sprint0
         public EnemySpriteFactory enemySpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
         public Classes.Link link;
-        // test enemy draws
-        public IEnemy stalfos;
-        public IEnemy gel;
-        public IEnemy keese;
-        public IEnemy bladeTrap;
-        public IEnemy goriya;
-        public IEnemy aquamentus;
-        public IEnemy wallmaster;
-        public IEnemy oldMan;
         public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster, OldMan}
-        public Enemies currentEnemy;
-        public IEnemy drawnEnemy;
         public LinkStateMachine linkStateMachine;
         public BombStateMachine bombStateMachine;
         public Classes.Projectiles.Bomb bomb;
@@ -96,25 +85,18 @@ namespace CSE3902_Game_Sprint0
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
-            stalfos = new EnemyStalfos(this, new Vector2(400, 100));
-            gel = new EnemySlime(this, new Vector2(400, 100));
-            keese = new EnemyKeese(this, new Vector2(400, 100));
-            bladeTrap = new BladeTrap(this, new Vector2(400, 100), new Vector2(100, 100), link);
-            goriya = new EnemyGoriya(this, new Vector2(400, 100));
-            aquamentus = new EnemyAquamentus(this, new Vector2(400, 100));
-            wallmaster = new EnemyWallmaster(this, new Vector2(400, 100));
-            oldMan = new EnemyOldMan(this, new Vector2(400, 100));
-            currentEnemy = Enemies.Stalfos;
-            drawnEnemy = new EnemyStalfos(this, new Vector2(400, 100));
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
 
             roomList = new List<Room>();
-            roomNumber = 1;
+            roomNumber = 2;
+
+
+
             for (int i = 1; i < 19; i++)
             {
-                roomList.Add(new Room(this, i));
+                roomList.Add(Parser.ParseRoomCSV(this, i));
             }
 
         }
@@ -152,8 +134,6 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
 
-            drawnEnemy.Update();
-
             projectileHandler.Update();
 
             collisionManager.Update();
@@ -166,18 +146,12 @@ namespace CSE3902_Game_Sprint0
             }
         }
 
-        public void changeRoom()
+        public void changeRoom(int newRoom)
         {
-            if (roomNumber == 18)
-            {
-                roomNumber = 1;
-            }
-            else
-            {
-                roomNumber++;
-            }
+            roomNumber = newRoom;
             //Wait for a quarter of a second before transition to next room
             //Fixes holding down mouse -> spamming through each room
+            //Clear the collision set
             System.Threading.Thread.Sleep(100);
         }
         protected override void Draw(GameTime gameTime)
@@ -194,8 +168,6 @@ namespace CSE3902_Game_Sprint0
                     r.Draw();
                 }
             }
-
-            drawnEnemy.Draw();
 
             link.Draw();
 
