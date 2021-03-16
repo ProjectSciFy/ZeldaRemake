@@ -22,7 +22,7 @@ Program Controls:
 	-[Q] and [esc] quit the game instantly.
 	-MOUSE CONTROLS:
 		+Left clicking will cycle through rooms. You cannot cycle backwards at the moment.
-
+		+Right click closes
 Program Future Implementations:
 	-Un-implemented collisions will be implemented prior to Sprint 4 submission.
 	-Room parser will be cleaned up and refactored.

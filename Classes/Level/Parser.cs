@@ -25,21 +25,19 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class Parser
     {
-        private Background background;
-
         private static int roomNumber;
         private static int windowWidth;
         private static int windowHeight;
         public static Room ParseRoomCSV(ZeldaGame game, int RoomNumber)
         {
+            roomNumber = RoomNumber;
             windowWidth = game.GraphicsDevice.Viewport.Width;
             windowHeight = game.GraphicsDevice.Viewport.Height;
 
             int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
             int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
-
             int doorvalue = 0;
-            roomNumber = RoomNumber;
+            
             List<ITile> tiles = new List<ITile>();
             List<IItem> items = new List<IItem>();
             List<IEnemy> enemies = new List<IEnemy>();
@@ -57,15 +55,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                 roomPath = @"" + (roomNumber.ToString()) + ".csv";
             }
 
-
             cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
             cwdPath = Path.Combine(cwdPath, roomPath);
-
-
-            Debug.Write("Path:\n");
-            Debug.Write(cwdPath);
-            Debug.Write("\n");
-
             string[] lines = System.IO.File.ReadAllLines(cwdPath);
 
             foreach (string line in lines)
