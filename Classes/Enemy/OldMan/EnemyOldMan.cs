@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 {
-    public class EnemyOldMan : IEnemy
+    public class EnemyOldMan : IEnemy, ICollisionEntity
     {
         public ZeldaGame game;
         private OldManStateMachine myState;
@@ -15,6 +16,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
+        private float spriteScalar;
+        private static int HITBOX_OFFSET = 6;
+        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
         public EnemyOldMan(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -22,6 +26,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
             this.enemySpriteFactory = new OldManSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new OldManStateMachine(this);
+            this.spriteScalar = game.spriteScalar;
+            game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
+        }
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
         }
 
         public void Update()
@@ -49,6 +59,13 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
             {
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
+
+            collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+
+            game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
 
         public void Draw()

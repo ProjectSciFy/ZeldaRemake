@@ -7373,23 +7373,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jared\\.nuget\\packages\\": {},
+    "C:\\Users\\Andrew\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
+      "projectUniqueName": "C:\\Users\\Andrew\\Source\\Repos\\ProjectSciFy\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
       "projectName": "CSE3902 Game Sprint0",
-      "projectPath": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
-      "packagesPath": "C:\\Users\\Jared\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\obj\\",
+      "projectPath": "C:\\Users\\Andrew\\Source\\Repos\\ProjectSciFy\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
+      "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Andrew\\Source\\Repos\\ProjectSciFy\\ZeldaRemake\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jared\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7442,7 +7442,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

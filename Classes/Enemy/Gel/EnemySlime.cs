@@ -18,7 +18,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(8, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public float spriteScalar;
+        private float spriteScalar;
+        private static int HITBOX_OFFSET = 6;
 
         public EnemySlime(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -62,10 +63,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
 
-            collisionRectangle.X = (int)drawLocation.X;
-            collisionRectangle.Y = (int)drawLocation.Y;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar);
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar);
+            collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 6 * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 3 * HITBOX_OFFSET;
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
