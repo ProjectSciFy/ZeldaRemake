@@ -180,7 +180,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                 string[] segments = line.Split(new string[] { "," },
                                     StringSplitOptions.None);
                 wallPos = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
-                tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
+                WallTile wall;
+                tiles.Add(wall = new WallTile(game, new TileSpriteFactory(game), wallPos));
+                wall.drawLocation = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
             }
 
             cwdPath = Directory.GetCurrentDirectory();

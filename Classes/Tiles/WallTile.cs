@@ -20,7 +20,6 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         private static int HITBOX_OFFSET = 6;
         public Vector2 drawLocation;
         public Vector2 spriteSize = new Vector2(16, 16);
-        private Boolean isLoaded = false;
         public WallTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
             this.game = game;
@@ -36,20 +35,15 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         public void AddToCollision()
         {
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
-            isLoaded = true;
         }
         public void Update()
         {
-            if (isLoaded)
-            {
-                collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
-                collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-                collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
-                collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 4 * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 4 * HITBOX_OFFSET;
 
-                game.collisionManager.collisionEntities[this] = collisionRectangle;
-            }
-            
+            game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
 
         public void Draw()

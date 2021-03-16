@@ -28,15 +28,15 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 }
                 else if (direction == Collision.Collision.Direction.up)
                 {
-                    link.drawLocation.Y = link.drawLocation.Y + link.velocity.Y;
+                    link.drawLocation.Y = link.drawLocation.Y - link.velocity.Y;
                 }
                 else if (direction == Collision.Collision.Direction.right)
                 {
                     link.drawLocation.X = link.drawLocation.X - link.velocity.X;
                 }
-                else if (direction == Collision.Collision.Direction.right)
+                else if (direction == Collision.Collision.Direction.left)
                 {
-                    link.drawLocation.X = link.drawLocation.X + link.velocity.X;
+                    link.drawLocation.X = link.drawLocation.X - link.velocity.X;
                 }
             }
         }
