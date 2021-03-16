@@ -32,18 +32,17 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public void Spawning()
         {
             spawning = false;
-            new spawning(goriya, enemySpriteFactory, this);
-           
+            new GoriyaSpawning(goriya, enemySpriteFactory, this).Execute();
         }
 
         public void Idle()
         {
-            new idle(goriya, enemySpriteFactory, this);
+            new GoriyaIdle(goriya, enemySpriteFactory, this).Execute();
         }
 
         public void Moving()
         {
-            new moving(goriya, enemySpriteFactory, this);
+            new GoriyaMoving(goriya, enemySpriteFactory, this).Execute();
         }
 
 

@@ -6,12 +6,12 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
 {
-    public class spawning : ICommand
+    public class GoriyaSpawning : ICommand
     {
         private EnemyGoriya goriya;
         private GoriyaSpriteFactory enemySpriteFactory;
         private GoriyaStateMachine GoriyaStateMachine;
-        public spawning(EnemyGoriya goriya, GoriyaSpriteFactory enemySpriteFactory, GoriyaStateMachine GoriyaStateMachine)
+        public GoriyaSpawning(EnemyGoriya goriya, GoriyaSpriteFactory enemySpriteFactory, GoriyaStateMachine GoriyaStateMachine)
         {
             this.goriya = goriya;
             this.enemySpriteFactory = enemySpriteFactory;
@@ -19,10 +19,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
         }
         public void Execute()
         {
-            /*goriya.spriteSize.X = 16;
+            /*
+            goriya.spriteSize.X = 16;
             goriya.spriteSize.Y = 16;
             goriya.velocity.X = 0;
-            goriya.velocity.Y = 0;*/
+            goriya.velocity.Y = 0;
+            */
             if (GoriyaStateMachine.currentState != GoriyaStateMachine.CurrentState.spawning)
             {
                 GoriyaStateMachine.currentState = GoriyaStateMachine.CurrentState.spawning;

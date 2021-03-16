@@ -6,12 +6,12 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
 {
-    public class moving: ICommand
+    public class GoriyaMoving: ICommand
     {
         private EnemyGoriya goriya;
         private GoriyaSpriteFactory enemySpriteFactory;
         private GoriyaStateMachine GoriyaStateMachine;
-        public moving(EnemyGoriya goriya, GoriyaSpriteFactory enemySpriteFactory, GoriyaStateMachine GoriyaStateMachine)
+        public GoriyaMoving(EnemyGoriya goriya, GoriyaSpriteFactory enemySpriteFactory, GoriyaStateMachine GoriyaStateMachine)
         {
             this.goriya = goriya;
             this.enemySpriteFactory = enemySpriteFactory;
