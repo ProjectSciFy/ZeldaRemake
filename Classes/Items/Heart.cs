@@ -12,6 +12,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
         private ISprite itemSprite;
         private ItemSpriteFactory itemFactory;
         public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
+        public Vector2 drawLocation;
         public Vector2 position;
         public Heart(ZeldaGame game, ItemSpriteFactory itemFactory, Vector2 location)
         {
