@@ -6,6 +6,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Items;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -56,6 +57,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                     if (tuple.Item2 is IEnemy)
                     {
                         new LinkOnEnemy((Link)tuple.Item1, (IEnemy)tuple.Item2, tuple.Item3).Execute();
+                    }
+                    else if (tuple.Item2 is IItem)
+                    {
+                        new LinkOnItem((Link)tuple.Item1, (IItem)tuple.Item2, tuple.Item3).Execute();
                     }
                 }
             }

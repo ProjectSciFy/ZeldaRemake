@@ -53,6 +53,16 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         {
             return roomNumber;
         }
+
+        public void removeEnemy(IEnemy entity)
+        {
+            enemies.Remove(entity);
+        }
+        public void removeItem(IItem entity)
+        {
+            items.Remove(entity);
+        }
+
         public void Draw()
         {
             background.Draw();
