@@ -21,7 +21,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public float spriteScalar;
+        private float spriteScalar;
+        private static int HITBOX_OFFSET = 6;
 
         public BladeTrap(ZeldaGame game, Vector2 spawnLocation, Vector2 range, Link link)
         {
@@ -71,10 +72,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
 
-            collisionRectangle.X = (int)drawLocation.X;
-            collisionRectangle.Y = (int)drawLocation.Y;
-            collisionRectangle.Width = (int)spriteSize.X;
-            collisionRectangle.Height = (int)spriteSize.Y;
+            collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
+            collisionRectangle.Width = (int)spriteSize.X - 2 * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)spriteSize.Y - 2 * HITBOX_OFFSET;
 
             game.collisionManager.enemies[this] = collisionRectangle;
         }
