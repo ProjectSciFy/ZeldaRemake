@@ -20,8 +20,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
         {
             keese.spriteSize.X = 16;
             keese.spriteSize.Y = 16;
-            keese.velocity.X = 16;
-            keese.velocity.Y = 16;
+            keese.velocity.X = 0;
+            keese.velocity.Y = 0;
             if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.spawning)
             {
                 KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.spawning;

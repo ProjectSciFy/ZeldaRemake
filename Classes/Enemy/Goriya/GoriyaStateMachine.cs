@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy.Goriya;
+using CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
@@ -18,8 +19,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public bool moving { get; set; }  = true;
         private bool spawning = true;
         private int timer = 90;
-        private enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning};
-        private CurrentState currentState = CurrentState.none;
+        public enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning};
+        public CurrentState currentState = CurrentState.none;
         public GoriyaStateMachine(EnemyGoriya goriya)
         {
             this.goriya = goriya;
@@ -30,108 +31,19 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public void Spawning()
         {
-            if (currentState != CurrentState.spawning)
-            {
-                currentState = CurrentState.spawning;
-                this.goriya.mySprite = enemySpriteFactory.SpawnGoriya();
-            }
-
-            if (timer <= 0)
-            {
-                spawning = false;
-                currentState = CurrentState.none;
-            }
+            spawning = false;
+            new spawning(goriya, enemySpriteFactory, this);
+           
         }
 
         public void Idle()
         {
-            // construct nonanimated link facing up with sprite factory
-            switch (direction)
-            {
-                case Direction.right:
-                    if (currentState != CurrentState.idleRight)
-                    {
-                        currentState = CurrentState.idleRight;
-                        this.goriya.mySprite = enemySpriteFactory.GoriyaIdleRight();
-                    }
-                    break;
-
-                case Direction.up:
-                    if (currentState != CurrentState.idleUp)
-                    {
-                        currentState = CurrentState.idleUp;
-                        this.goriya.mySprite = enemySpriteFactory.GoriyaIdleUp();
-                    }
-                    break;
-
-                case Direction.left:
-                    if (currentState != CurrentState.idleLeft)
-                    {
-                        currentState = CurrentState.idleLeft;
-                        this.goriya.mySprite = enemySpriteFactory.GoriyaIdleLeft();
-                    }
-                    break;
-
-                case Direction.down:
-                    if (currentState != CurrentState.idleDown)
-                    {
-                        currentState = CurrentState.idleDown;
-                        this.goriya.mySprite = enemySpriteFactory.GoriyaIdleDown();
-                    }
-                    break;
-
-                default:
-                    break;
-            }
+            new idle(goriya, enemySpriteFactory, this);
         }
 
         public void Moving()
         {
-            switch (direction)
-            {
-                case Direction.right:
-                    if (currentState != CurrentState.movingRight)
-                    {
-                        currentState = CurrentState.movingRight;
-                        this.goriya.velocity.X = 1;
-                        this.goriya.velocity.Y = 0;
-                        this.goriya.mySprite = enemySpriteFactory.GoriyaMovingRight();
-                    }
-                    break;
-
-                case Direction.up:
-                    if (currentState != CurrentState.movingUp)
-                    {
-                        currentState = CurrentState.movingUp;
-                        this.goriya.velocity.X = 0;
-                        this.goriya.velocity.Y = -1;
-                        this.goriya.mySprite = enemySpriteFactory.GoriyaMovingUp();
-                    }
-                    break;
-
-                case Direction.left:
-                    if (currentState != CurrentState.movingLeft)
-                    {
-                        currentState = CurrentState.movingLeft;
-                        this.goriya.velocity.X = -1;
-                        this.goriya.velocity.Y = 0;
-                        this.goriya.mySprite = enemySpriteFactory.GoriyaMovingLeft();
-                    }
-                    break;
-
-                case Direction.down:
-                    if (currentState != CurrentState.movingDown)
-                    {
-                        currentState = CurrentState.movingDown;
-                        this.goriya.velocity.X = 0;
-                        this.goriya.velocity.Y = 1;
-                        this.goriya.mySprite = enemySpriteFactory.GoriyaMovingDown();
-                    }
-                    break;
-
-                default:
-                    break;
-            }
+            new moving(goriya, enemySpriteFactory, this);
         }
 
 
