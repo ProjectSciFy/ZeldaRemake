@@ -8,8 +8,8 @@ Program Known Bugs:
 		+Enemy on Link Collisions (specifically if Link is attacking them)
 		+Enemies on items,walls
 		+Link on blocks (collision rectangles need adjusting)
-	-Items delete themselves when you run into them, the collisions only work for items when running into them in the top right
-	-When clicking through new rooms, the previous room tiles do not get unloaded, potentially causing lag
+	-When clicking through new rooms, the previous room tiles do not get unloaded, potentially causing lag and collision issues
+	
 
 
 Program Controls:
@@ -24,11 +24,11 @@ Program Controls:
 		+Left clicking will cycle through rooms. You cannot cycle backwards at the moment.
 
 Program Future Implementations:
-	-Un-implemented collisions will be implemented prior to Sprint 4 submission. This includes:
-		+
+	-Un-implemented collisions will be implemented prior to Sprint 4 submission.
 	-Room parser will be cleaned up and refactored.
 	-Room transitions will be implemented to display a smooth change.
 	-Keep track of rooms loaded
+	-Fixing bugs
 
 Program Extra Implementations:
 	-We created several items that will become boss loot drops. The drop-rate and actual drop animation is not yet implemented.
