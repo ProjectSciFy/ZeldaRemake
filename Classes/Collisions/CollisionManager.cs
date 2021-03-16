@@ -38,6 +38,25 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
 
         //LEGACY ^^^
 
+        public void ClearNotLink()
+        {
+            HashSet<ICollisionEntity> deleteSet = new HashSet<ICollisionEntity>();
+
+            foreach (KeyValuePair<ICollisionEntity, Rectangle> pair in collisionEntities)
+            {
+                if (!(pair.Key is Link))
+                {
+                    deleteSet.Add(pair.Key);
+                }
+            }
+
+            foreach (ICollisionEntity mask in deleteSet)
+            {
+                collisionEntities.Remove(mask);
+            }
+
+            deleteSet.Clear();
+        }
 
         //Dictionary of all collision entities loaded
         public Dictionary<ICollisionEntity, Rectangle> collisionEntities = new Dictionary<ICollisionEntity, Rectangle>();

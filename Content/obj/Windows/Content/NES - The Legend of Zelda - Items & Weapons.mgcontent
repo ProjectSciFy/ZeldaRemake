@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/NES - The Legend of Zelda - Items &amp; Weapons.png</SourceFile>
-  <SourceTime>2021-03-15T19:51:25.3174684-04:00</SourceTime>
-  <DestFile>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - Items &amp; Weapons.xnb</DestFile>
-  <DestTime>2021-03-15T20:43:49.9480998-04:00</DestTime>
+  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Items &amp; Weapons.png</SourceFile>
+  <SourceTime>2021-03-15T20:03:59.8512896-04:00</SourceTime>
+  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - Items &amp; Weapons.xnb</DestFile>
+  <DestTime>2021-03-15T23:16:14.4803241-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

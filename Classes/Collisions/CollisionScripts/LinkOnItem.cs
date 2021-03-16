@@ -23,6 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         {
             link.game.collisionManager.collisionEntities.Remove((ICollisionEntity)item);
             //TODO - DELETE THE ITEM FROM WHEREVER IT IS BEING STORED!!!
+            link.game.currentRoom.removeItem(item);
         }
     }
 }
