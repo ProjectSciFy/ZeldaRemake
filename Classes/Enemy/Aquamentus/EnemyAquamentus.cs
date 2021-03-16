@@ -81,9 +81,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             fireball_2.Update();
             fireball_3.Update();
 
-            collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
+            collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
