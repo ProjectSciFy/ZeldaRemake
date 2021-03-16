@@ -26,8 +26,6 @@ namespace CSE3902_Game_Sprint0.Classes.Items
         }
         public void Update()
         {
-            itemSprite.Update();
-
             hitbox.X = (int)position.X;
             hitbox.Y = (int)position.Y;
             hitbox.Width = (int)spriteSize.X;
