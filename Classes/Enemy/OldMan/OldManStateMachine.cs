@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Enemy.OldMan.OldManScripts;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,8 +17,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
         public Direction direction = Direction.down;
         bool moving = false;
         private int timer = 0;
-        private enum CurrentState { none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight };
-        private CurrentState currentState = CurrentState.none;
+        public enum CurrentState { none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight };
+        public CurrentState currentState = CurrentState.none;
 
         public OldManStateMachine(EnemyOldMan oldMan)
         {
@@ -28,10 +29,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 
         public void Idle()
         {
-            if (currentState != CurrentState.idleDown)
+            if (timer <= 0)
             {
-                currentState = CurrentState.idleDown;
-                this.oldMan.mySprite = enemySpriteFactory.OldManIdle();
+                timer = 60;
+                new OldManIdle(oldMan, enemySpriteFactory, this).Execute();
             }
         }
 
