@@ -104,7 +104,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         items.Add(new Bow(game, new ItemSpriteFactory(game), position));
                         break;
                     case "HeartContainer":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 4, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
                         items.Add(new HeartContainer(game, new ItemSpriteFactory(game), position));
                         break;
                     case "Map":
@@ -129,7 +129,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         break;
                     case "BladeTrap":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
-                        //enemies.Add(new BladeTrap(game, position));
+                        enemies.Add(new BladeTrap(game, position, new Vector2 (100, 100), game.link));
                         break;
                     case "Gel":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);

@@ -23,7 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.BladeTrap
         //Blade trap methods
         public UniversalSprite SpawnBladeTrap()
         {
-            return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, enemyLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
         }
         public UniversalSprite BladeTrapIdle()
         {

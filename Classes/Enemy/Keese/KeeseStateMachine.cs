@@ -20,7 +20,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         bool landing = false;
         bool takeOff = false;
         bool spawning = true;
-        private int timer = 90;
+        bool spawned = false;
+        private int timer = 3;
         private int directionTimer = 0;
         public enum CurrentState { none, idle, flyingNorth, flyingNorthEast, flyingEast, flyingSouthEast, flyingSouth, flyingSouthWest, flyingWest, flyingNorthWest, landingNorth, landingNorthEast, landingEast, landingSouthEast, landingSouth, landingSouthWest, landingWest, landingNorthWest, spawning };
         public CurrentState currentState = CurrentState.none;
@@ -87,7 +88,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         {
             timer=90;
             spawning=false;
-            new spawning(keese, enemySpriteFactory, this).Execute();
+            new KeeseSpawning(keese, enemySpriteFactory, this).Execute();
             
 
           /*  if (timer <= 0)
@@ -99,83 +100,77 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
         public void Idle()
         {
-            if(timer<=0){
-            new idle(keese, enemySpriteFactory, this).Execute();
-            }
+            new KeeseIdle(keese, enemySpriteFactory, this).Execute();
+            
            
         }
 
         public void Flying()
         {
-           if(timer<=0){
-                timer=60;
-            new flying(keese, enemySpriteFactory, this).Execute();
-                }
+            new KeeseFlying(keese, enemySpriteFactory, this).Execute();
+                
         }
 
         public void Landing()
         {
-            if(timer<=0){
-                timer=60;
-            new Landing(keese, enemySpriteFactory, this, landing, takeOff).Execute();
-                }
+            new KeeseLanding(keese, enemySpriteFactory, this, landing, takeOff).Execute();
+                
            
         }
 
         public void Update()
         {
-            if (!spawning)
+            if (timer > 0)
             {
-                if (directionTimer <= 0)
-                {
-                    directionTimer = 30;
-                    direction = ChangeDirection(ref directionNumber);
-                }
-                else
-                {
-                    directionTimer--;
-                }
+                timer--;
+            }
 
-                if (timer <= 0)
-                {
-                    if (!moving && !landing && !takeOff)
-                    {
-                        timer = 120;
-                        moving = true;
-                        takeOff = true;
-                    }
-                    else if (moving && takeOff)
-                    {
-                        timer = 180;
-                        takeOff = false;
-                    }
-                    else if (moving && !landing && !takeOff)
-                    {
-                        timer = 120;
-                        landing = true;
-                    }
-                    else if (moving && landing)
-                    {
-                        timer = 180;
-                        moving = false;
-                        landing = false;
-                    }
-                }
-                else
-                {
-                    timer--;
-                }
+            if (directionTimer <= 0)
+            {
+                directionTimer = 30;
+                direction = ChangeDirection(ref directionNumber);
             }
             else
             {
-                timer--;
+                directionTimer--;
+            }
+
+            if (timer <= 0)
+            {
+                if (!spawned)
+                {
+                    spawned = true;
+                }
+
+                if (!moving && !landing && !takeOff)
+                {
+                    timer = 120;
+                    moving = true;
+                    takeOff = true;
+                }
+                else if (moving && takeOff)
+                {
+                    timer = 180;
+                    takeOff = false;
+                }
+                else if (moving && !landing && !takeOff)
+                {
+                    timer = 120;
+                    landing = true;
+                }
+                else if (moving && landing)
+                {
+                    timer = 180;
+                    moving = false;
+                    landing = false;
+                }
             }
 
             if (spawning)
             {
                 Spawning();
             }
-            else
+            else if (spawned)
             {
                 if (moving)
                 {
