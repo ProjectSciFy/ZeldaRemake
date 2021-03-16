@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
-    public class EnemyAquamentus : IEnemy
+    public class EnemyAquamentus : IEnemy, ICollisionEntity
     {
         public ZeldaGame game;
         private AquamentusStateMachine myState;
@@ -19,6 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         public Fireball fireball_1, fireball_2, fireball_3;
         public int timer = 0;
+        public float spriteScalar;
 
         public EnemyAquamentus(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -26,7 +28,13 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             this.enemySpriteFactory = new AquamentusSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new AquamentusStateMachine(this);
-            game.collisionManager.enemies.Add(this, collisionRectangle);
+            //game.collisionManager.enemies.Add(this, collisionRectangle);
+            this.spriteScalar = game.spriteScalar;
+            game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
+        }
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
         }
 
         public void Update()
@@ -72,12 +80,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             fireball_2.Update();
             fireball_3.Update();
 
-            collisionRectangle.X = (int)drawLocation.X;
-            collisionRectangle.Y = (int)drawLocation.Y;
-            collisionRectangle.Width = (int)spriteSize.X;
-            collisionRectangle.Height = (int)spriteSize.Y;
+            collisionRectangle.X = (int)drawLocation.X + 6;
+            collisionRectangle.Y = (int)drawLocation.Y + 6;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 12;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 12;
 
-            game.collisionManager.enemies[this] = collisionRectangle;
+            game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
 
         public void Draw()
