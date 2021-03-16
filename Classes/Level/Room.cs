@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualBasic.FileIO;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using CSE3902_Game_Sprint0.Classes.Tiles;
@@ -30,6 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private List<IItem> items;
         private List<IEnemy> enemies;
         private List<IDoor> doors;
+        private ZeldaGame game;
 
         private int roomNumber;
         public Room(ZeldaGame game, int RoomNumber, List<ITile> tilesLoaded, List<IItem> itemsLoaded, List<IEnemy> enemiesLoaded, List<IDoor> doorsLoaded)
@@ -39,14 +38,36 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             items = itemsLoaded;
             enemies = enemiesLoaded;
             doors = doorsLoaded;
+            this.game = game;
             background = new Background(game, roomNumber);
-
+        }
+        public void Initialize()
+        {
+            foreach (ITile tile in tiles)
+            {
+                if (tile is BlockTile)
+                {
+                    ((BlockTile)tile).AddToCollision();
+                }
+                else if (tile is WallTile)
+                {
+                    ((WallTile)tile).AddToCollision();
+                }
+            }
         }
         public void Update()
         {
             foreach (IEnemy enemy in enemies)
             {
                 enemy.Update();
+            }
+            foreach (ITile tile in tiles)
+            {
+                tile.Update();
+            }
+            foreach (IItem item in items)
+            {
+                item.Update();
             }
         }
         public int getRoomNumber()
