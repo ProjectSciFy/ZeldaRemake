@@ -4,8 +4,9 @@
 -Sprint Number: 3
 -File Name: AquamentusSpriteFactory.cs, EnemyAquamentus.cs, and AquamentusStateMachine.cs
 -Author of file: Jared Zahn
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 4
+-Comments: EnemyAquamentus.cs does not have good readability due to the length of the file and how difficult its Update() method is to understand.
+		   The same is true with AquamentusStateMachine.cs. AquamentusSpriteFactory.cs has pretty high readability- file and methods are short and names make sense.
 
 
 MAINTAINABILITY OF JARED'S AquamentusSpriteFactory.cs, EnemyAquamentus.cs, and AquamentusStateMachine.cs (all 3 were refactored):
@@ -14,6 +15,7 @@ MAINTAINABILITY OF JARED'S AquamentusSpriteFactory.cs, EnemyAquamentus.cs, and A
 -Sprint Number: 3
 -File Name: AquamentusSpriteFactory.cs, EnemyAquamentus.cs, and AquamentusStateMachine.cs
 -Author of file: Jared Zahn
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 6
+-Comments: EnemyAquamentus.cs and AquamentusStateMachine.cs both do not have good maintainability due to the length of the files and how complex their Update() method are, 
+		   which would make refactoring difficult. AquamentusSpriteFactory.cs has pretty high maintainability- file overall is simple and the fields are made private.
+-Hypitheitcal changes: Shorten the Update() methods in EnemyAquamentus.cs and AquamentusStateMachine.cs, and possibly change fields to private.

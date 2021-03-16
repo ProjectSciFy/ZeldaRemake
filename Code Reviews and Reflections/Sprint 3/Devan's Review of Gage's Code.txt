@@ -4,8 +4,9 @@
 -Sprint Number: 3
 -File Name: GoriyaBoomerang.cs
 -Author of file: Gage Odom
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 3
+-Comments: Although Goriya and its boomerangs have not been fully implemented for this sprint, this specific file is very readable. 
+		   It is super easy to understand the purpose and reason for each field and variable from their names, and each method was short.
 
 
 MAINTAINABILITY OF GAGE'S GoriyaBoomerang.cs:
@@ -14,6 +15,6 @@ MAINTAINABILITY OF GAGE'S GoriyaBoomerang.cs:
 -Sprint Number: 3
 -File Name: GoriyaBoomerang.cs
 -Author of file: Gage Odom
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 4
+-Comments: There are probably too many public fields, although most use properties.
+-Hypitheitcal changes: Change public fields to private fields wherever applicable.
