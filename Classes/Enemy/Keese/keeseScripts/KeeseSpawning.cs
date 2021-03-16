@@ -5,12 +5,12 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 {
-    public class idle : ICommand
+    public class KeeseSpawning: ICommand
     {
         private EnemyKeese keese;
         private KeeseSpriteFactory enemySpriteFactory;
         private KeeseStateMachine KeeseStateMachine;
-        public idle(EnemyKeese keese, KeeseSpriteFactory enemySpriteFactory, KeeseStateMachine KeeseStateMachine)
+        public KeeseSpawning(EnemyKeese keese, KeeseSpriteFactory enemySpriteFactory, KeeseStateMachine KeeseStateMachine)
         {
             this.keese = keese;
             this.enemySpriteFactory = enemySpriteFactory;
@@ -18,11 +18,19 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
         }
         public void Execute()
         {
-            if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.idle)
+            keese.spriteSize.X = 16;
+            keese.spriteSize.Y = 16;
+            keese.velocity.X = 0;
+            keese.velocity.Y = 0;
+
+            if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.spawning)
             {
-                KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.idle;
-                keese.mySprite = enemySpriteFactory.KeeseIdle();
+                KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.spawning;
+                keese.mySprite = enemySpriteFactory.SpawnKeese();
             }
+
         }
+
     }
+
 }

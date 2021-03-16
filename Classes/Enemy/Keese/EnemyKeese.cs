@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
-    public class EnemyKeese : IEnemy
+    public class EnemyKeese : IEnemy, ICollisionEntity
     {
         public ZeldaGame game;
         private KeeseStateMachine myState;
@@ -16,14 +17,20 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public float spriteScalar;
 
         public EnemyKeese(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
+            this.spriteScalar = game.spriteScalar;
             this.enemySpriteFactory = new KeeseSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new KeeseStateMachine(this);
-            game.collisionManager.enemies.Add(this, collisionRectangle);
+            game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
+        }
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
         }
 
         public void Update()
@@ -55,10 +62,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
             collisionRectangle.X = (int)drawLocation.X;
             collisionRectangle.Y = (int)drawLocation.Y;
-            collisionRectangle.Width = (int)spriteSize.X;
-            collisionRectangle.Height = (int)spriteSize.Y;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar);
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar);
 
-            game.collisionManager.enemies[this] = collisionRectangle;
+            game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
 
         public void Draw()
