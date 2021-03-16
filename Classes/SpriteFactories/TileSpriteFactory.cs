@@ -29,7 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
         public UniversalSprite WallTile()
         {
-            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 12, 12, 12), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 12, 12, 12), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
 
 
