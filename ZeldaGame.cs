@@ -42,6 +42,7 @@ namespace CSE3902_Game_Sprint0
 
         public int roomNumber;
         public List<Room> roomList;
+        public Dictionary<int, int[]> neighbors;
         
         //PASS THIS TO ENTITIES FOR UPSCALING THEM UNIFORMLY
         public float spriteScalar = 3;
@@ -89,10 +90,10 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
 
+            neighbors = Parser.ParseNeighborCSV();
+
             roomList = new List<Room>();
             roomNumber = 2;
-
-
 
             for (int i = 1; i < 19; i++)
             {
