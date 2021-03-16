@@ -17,11 +17,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public ZeldaGame game;
         private GoriyaStateMachine myState;
         public GoriyaSpriteFactory spriteFactory { get; protected set; }
-        public Vector2 drawLocation { get; set; }
-        public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
+        public Vector2 drawLocation;
+        public Vector2 velocity;
+        public Vector2 spriteSize = new Vector2(16, 16);
         private GoriyaBoomerang boomerang;
-        public ISprite mySprite { protected get; set; }
+        public ISprite mySprite;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
