@@ -4,8 +4,10 @@
 -Sprint Number: 3
 -File Name: KeeseSpriteFactory.cs, EnemyKeese.cs, and KeeseStateMachine.cs
 -Author of file: Devan
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 5
+-Comments: EnemyKeese.cs is somewhat difficult to understand due to the length and complexity of its Update() method. KeeseSpriteFactory.cs, although long,
+		   is very readable due to the shortness of its methods and how simple they are. KeeseStateMachine.cs is long and some of its methods are complex, 
+		   but variables are aptly named.
 
 
 MAINTAINABILITY OF DEVAN'S KeeseSpriteFactory.cs, EnemyKeese.cs, and KeeseStateMachine.cs (all 3 were refactored):
@@ -14,6 +16,8 @@ MAINTAINABILITY OF DEVAN'S KeeseSpriteFactory.cs, EnemyKeese.cs, and KeeseStateM
 -Sprint Number: 3
 -File Name: KeeseSpriteFactory.cs, EnemyKeese.cs, and KeeseStateMachine.cs
 -Author of file: Devan 
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 7
+-Comments: EnemyKeese.cs has fairly high maintainability due to the shortness of the file and despite the length and complexity of its Update() method. KeeseSpriteFactory.cs
+		   also has fairly high maintainability since its methods are aptly named and are very simple to refactor. KeeseStateMachine.cs, however, would be difficult to refactor 
+		   on account of both its public fields and the complexity and length of its Update() method.
+-Hypitheitcal changes: Reduce the length and complexity of Update() in EnemyKeese.cs and KeeseStateMachine.cs and make public fields private using properties in all 3 files.
