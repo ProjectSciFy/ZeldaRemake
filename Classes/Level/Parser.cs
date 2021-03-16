@@ -156,10 +156,19 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         break;
                 }
 
-
-
             }
-
+            cwdPath = Directory.GetCurrentDirectory();
+            cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
+            cwdPath = Path.Combine(cwdPath, "walls.csv");
+            lines = System.IO.File.ReadAllLines(cwdPath);
+            Vector2 wallPos = new Vector2(0, 0);
+            foreach (string line in lines)
+            {
+                string[] segments = line.Split(new string[] { "," },
+                                    StringSplitOptions.None);
+                wallPos = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
+            }
 
             cwdPath = Directory.GetCurrentDirectory();
             cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
@@ -202,15 +211,27 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                             {
                                 case 0:
                                     doors.Add(new TopDoor(game, new RoomTextureStorage(game), doorvalue));
+                                    wallPos = new Vector2(windowWidthFloor + 3 * 6* 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
+                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
+                                    wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
+                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
                                     break;
-                                case 1:
+                                case 1: //4,0 4,13
                                     doors.Add(new LeftDoor(game, new RoomTextureStorage(game), doorvalue));
+                                    wallPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
                                     break;
                                 case 2:
                                     doors.Add(new RightDoor(game, new RoomTextureStorage(game), doorvalue));
+                                    wallPos = new Vector2(windowWidthFloor + 3 * 13 * 16 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
                                     break;
                                 case 3:
                                     doors.Add(new BottomDoor(game, new RoomTextureStorage(game), doorvalue));
+                                    wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 8 * 16 + 48 + 6);
+                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
+                                    wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 8 * 16 + 48 + 6);
+                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
                                     break;
                                 default:
                                     break;
