@@ -31,6 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
         {
             return hitbox;
         }
+
         public void Update()
         {
             hitbox.X = (int)position.X;
