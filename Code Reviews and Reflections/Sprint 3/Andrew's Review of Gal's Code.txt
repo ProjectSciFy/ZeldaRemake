@@ -4,8 +4,8 @@
 -Sprint Number: 3
 -File Name: BlockTile.cs, StairsTile.cs, and TileSpriteFactory.cs
 -Author of file: Gal Pinhasi
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 3
+-Comments: All three files are very readable and understandable. Each method is short in terms of lines of code, and field/variable names are clear and relevant.
 
 
 MAINTAINABILITY OF GAL'S BlockTile.cs, StairsTile.cs, and TileSpriteFactory.cs (all 3 were refactored):
@@ -14,6 +14,7 @@ MAINTAINABILITY OF GAL'S BlockTile.cs, StairsTile.cs, and TileSpriteFactory.cs (
 -Sprint Number: 3
 -File Name: BlockTile.cs, StairsTile.cs, and TileSpriteFactory.cs
 -Author of file: Gal Pinhasi 
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 5
+-Comments: The maintainability of BlockTile.cs and StairsTile.cs is very high; not much code needs to be refactored to change any future texture or position. However, 
+		   TileSpriteFactory might be a little difficult to maintain in the future due to the creation of a new Universal Sprite in each method call.
+-Hypitheitcal changes: Perhaps to add the possibility of a state machine in case of moving/sliding tiles.

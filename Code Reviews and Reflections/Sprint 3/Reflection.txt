@@ -1,2 +1,7 @@
 ﻿Sprint 3 Reflection
 
+Overall, our group is proud of what we managed to accomplish given an incredibly busy three weeks for all of us. Although we did not manage to
+complete all of the mentioned requirements of the sprint in time, we believe that we will be able to introduce all of the collisions and graphical
+special cases into the next sprint. We realized we did not set up our Github.com repository and burndown chart tasks correctly, which threw us
+off course and forced us to work last minute again. We have now learned how to set up our project taskboard, and we will be able to work much sooner 
+in the three weeks on sprint 4.

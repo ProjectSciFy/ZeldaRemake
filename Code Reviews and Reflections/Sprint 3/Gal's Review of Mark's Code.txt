@@ -4,8 +4,8 @@
 -Sprint Number: 3
 -File Name: CollisionManager.cs
 -Author of file: Mark Maher
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 2
+-Comments: CollisionManager.cs's readability is high. Lots of comments to explain the purpose of the file and its contents. Methods are short and names of variables have been provided appropriately.
 
 
 MAINTAINABILITY OF MARK'S CollisionManager.cs:
@@ -14,6 +14,6 @@ MAINTAINABILITY OF MARK'S CollisionManager.cs:
 -Sprint Number: 3
 -File Name: CollisionManager.cs
 -Author of file: Mark Maher
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 4
+-Comments: I would argue that CollisionManager.cs would be easy to maintain due to the shortness of its methods and the generalization of fields. However, fields are listed as public.
+-Hypitheitcal changes: Change public fields to private using properties.

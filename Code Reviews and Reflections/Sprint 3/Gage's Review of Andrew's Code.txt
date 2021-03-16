@@ -4,8 +4,8 @@
 -Sprint Number: 3
 -File Name: Room.cs
 -Author of file: Andrew Lewandowski
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 2
+-Comments: Room.cs is exetremely easy to understand, and therefore has high readability. Methods are really short and everything is named aptly.
 
 
 MAINTAINABILITY OF ANDREW'S Room.cs:
@@ -14,6 +14,6 @@ MAINTAINABILITY OF ANDREW'S Room.cs:
 -Sprint Number: 3
 -File Name: Room.cs
 -Author of file: Andrew Lewandowski 
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 3
+-Comments: Room.cs has very high maintainability. Methods are short which allows for easier refactoring, and all fields are set to private with logical names in case of changes.
+-Hypitheitcal changes: None at the moment.
