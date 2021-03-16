@@ -3,7 +3,14 @@ README Document for Sprint 3:
 
 Program Known Bugs:
 	-We have not implemented the following collisions:
-		+
+		+Projectile Collisions
+		+Item and Wall Collisions
+		+Enemy on Link Collisions (specifically if Link is attacking them)
+		+Enemies on items,walls
+		+Link on blocks (collision rectangles need adjusting)
+	-Items delete themselves when you run into them, the collisions only work for items when running into them in the top right
+	-When clicking through new rooms, the previous room tiles do not get unloaded, potentially causing lag
+
 
 Program Controls:
 	-[WASD] and [Arrows] keys control vertical and horizontal movement.
@@ -21,6 +28,7 @@ Program Future Implementations:
 		+
 	-Room parser will be cleaned up and refactored.
 	-Room transitions will be implemented to display a smooth change.
+	-Keep track of rooms loaded
 
 Program Extra Implementations:
 	-We created several items that will become boss loot drops. The drop-rate and actual drop animation is not yet implemented.

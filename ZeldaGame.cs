@@ -106,6 +106,7 @@ namespace CSE3902_Game_Sprint0
                     currentRoom = r;
                 }
             }
+
         }
 
         protected override void LoadContent()

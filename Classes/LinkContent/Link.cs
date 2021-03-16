@@ -37,6 +37,20 @@ namespace CSE3902_Game_Sprint0.Classes
             game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
         } 
 
+        //Set Link to be using an item
+        public void UseItem()
+        {
+            //Call statemachine & have it use its currently selected item
+        }
+
+        //Set Link to be using his sword
+        public void UseSword()
+        {
+            //Call statemachine & have it use Link's sword
+        }
+
+        //TODO more state altering 
+
         public void Update()
         {
             linkState.Update();
