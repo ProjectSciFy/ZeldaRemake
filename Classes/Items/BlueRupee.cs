@@ -15,6 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
         public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
         public Vector2 position;
         public float spriteScalar;
+        public Vector2 drawLocation;
 
         public BlueRupee(ZeldaGame game, ItemSpriteFactory itemFactory, Vector2 location)
         {
