@@ -20,7 +20,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         public Fireball fireball_1, fireball_2, fireball_3;
         public int timer = 0;
-        public float spriteScalar;
+        private float spriteScalar;
+        private static int HITBOX_OFFSET = 6;
 
         public EnemyAquamentus(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -80,10 +81,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             fireball_2.Update();
             fireball_3.Update();
 
-            collisionRectangle.X = (int)drawLocation.X + 6;
-            collisionRectangle.Y = (int)drawLocation.Y + 6;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 12;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 12;
+            collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
