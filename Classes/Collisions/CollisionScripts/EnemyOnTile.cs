@@ -47,7 +47,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     }
                 }
             }
-            else if (enemy is EnemyWallmaster) {}
             else if (enemy is EnemyAquamentus)
             {
                 if (direction == Collision.Collision.Direction.down)
