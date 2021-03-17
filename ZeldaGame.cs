@@ -151,6 +151,7 @@ namespace CSE3902_Game_Sprint0
 
         public void changeRoom(int newRoom)
         {
+            collisionManager.ClearNotLink();
             roomNumber = newRoom;
             foreach (Room r in roomList)
             {
