@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+/*This file is a sprite-factory which will contain otherwise frowned upon "magic numbers".*/
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemySpriteFactory
@@ -23,7 +24,12 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private Texture2D linkSpriteSheet;
         private Texture2D NPCSpriteSheet;
         private float linkLayerDepth = 0.2f;
-     
+
+        // fps limiters:
+        private int spawningLimiter = 30;
+        private int enemyLimiter = 10;
+        private int fireballLimiter = 5;
+        private int wallmasterLimiter = 20;
 
         public EnemySpriteFactory(ZeldaGame game)
         {
@@ -39,55 +45,55 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(0, 0);
-            goriya.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), spawningLimiter, linkLayerDepth);
         }
         public void GoriyaMovingUp(EnemyGoriya goriya)
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(0, -1);
-            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
         public void GoriyaMovingDown(EnemyGoriya goriya)
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(0, 1);
-            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
         public void GoriyaMovingRight(EnemyGoriya goriya)
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(1, 0);
-            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
         public void GoriyaMovingLeft(EnemyGoriya goriya)
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(-1, 0);
-            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
         public void GoriyaIdleDown(EnemyGoriya goriya)
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(0, 0);
-            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
         public void GoriyaIdleUp(EnemyGoriya goriya)
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(0, 0);
-            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(322, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
         public void GoriyaIdleRight(EnemyGoriya goriya)
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(0, 0);
-            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
         public void GoriyaIdleLeft(EnemyGoriya goriya)
         {
             goriya.spriteSize = new Vector2(16, 16);
             goriya.velocity = new Vector2(0, 0);
-            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10, linkLayerDepth);
+            goriya.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(254, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
 
 
@@ -98,7 +104,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             oldMan.spriteSize.Y = 16;
             oldMan.velocity.X = 0;
             oldMan.velocity.Y = 0;
-            oldMan.mySprite = new UniversalSprite(game, NPCSpriteSheet, new Rectangle(18, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
+            oldMan.mySprite = new UniversalSprite(game, NPCSpriteSheet, new Rectangle(18, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), enemyLimiter, linkLayerDepth);
         }
 
         //Stalfos methods
@@ -108,7 +114,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             stalfos.spriteSize.Y = 16;
             stalfos.velocity.X = 0;
             stalfos.velocity.Y = 0;
-            stalfos.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, linkLayerDepth);
+            stalfos.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), spawningLimiter, linkLayerDepth);
         }
 
         public void StalfosMovingUp(EnemyStalfos stalfos)
@@ -117,7 +123,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             stalfos.spriteSize.Y = 16;
             stalfos.velocity.X = 0;
             stalfos.velocity.Y = -1;
-            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
 
         public void StalfosMovingDown(EnemyStalfos stalfos)
@@ -126,7 +132,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             stalfos.spriteSize.Y = 16;
             stalfos.velocity.X = 0;
             stalfos.velocity.Y = 1;
-            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
 
         public void StalfosMovingLeft(EnemyStalfos stalfos)
@@ -135,7 +141,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             stalfos.spriteSize.Y = 16;
             stalfos.velocity.X = -1;
             stalfos.velocity.Y = 0;
-            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
 
         public void StalfosMovingRight(EnemyStalfos stalfos)
@@ -144,7 +150,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             stalfos.spriteSize.Y = 16;
             stalfos.velocity.X = 1;
             stalfos.velocity.Y = 0;
-            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
 
         public void StalfosIdle(EnemyStalfos stalfos)
@@ -153,7 +159,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             stalfos.spriteSize.Y = 16;
             stalfos.velocity.X = 0;
             stalfos.velocity.Y = 0;
-            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            stalfos.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), enemyLimiter, linkLayerDepth);
         }
 
 
@@ -164,7 +170,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             wallmaster.spriteSize.Y = 16;
             wallmaster.velocity.X = 0;
             wallmaster.velocity.Y = 0;
-            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), wallmasterLimiter, linkLayerDepth);
         }
         public void WallmasterMovingUp(EnemyWallmaster wallmaster)
         {
@@ -172,7 +178,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             wallmaster.spriteSize.Y = 16;
             wallmaster.velocity.X = 0;
             wallmaster.velocity.Y = -1;
-            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), wallmasterLimiter, linkLayerDepth);
         }
 
         public void WallmasterMovingRight(EnemyWallmaster wallmaster)
@@ -181,7 +187,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             wallmaster.spriteSize.Y = 16;
             wallmaster.velocity.X = 1;
             wallmaster.velocity.Y = 0;
-            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), wallmasterLimiter, linkLayerDepth);
         }
 
         public void WallmasterMovingDown(EnemyWallmaster wallmaster)
@@ -190,7 +196,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             wallmaster.spriteSize.Y = 16;
             wallmaster.velocity.X = 0;
             wallmaster.velocity.Y = 1;
-            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), wallmasterLimiter, linkLayerDepth);
         }
 
         public void WallmasterMovingLeft(EnemyWallmaster wallmaster)
@@ -199,7 +205,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             wallmaster.spriteSize.Y = 16;
             wallmaster.velocity.X = -1;
             wallmaster.velocity.Y = 0;
-            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            wallmaster.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), wallmasterLimiter, linkLayerDepth);
         }
 
         public void GoriyaBoomerangAttack(GoriyaBoomerang boomerang)
@@ -210,14 +216,14 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             //{
             //    boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, linkLayerDepth);
             //}  
-            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, linkLayerDepth);
+            boomerang.mySprite = new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), enemyLimiter, linkLayerDepth);
         }
         //fireball
         public void FireballAttack(Fireball fireball)
         {
             fireball.spriteSize = new Vector2(16, 16);
             fireball.velocity = new Vector2(fireball.trajectory.X, fireball.trajectory.Y);
-            fireball.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(101, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 5, linkLayerDepth);
+            fireball.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(101, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), fireballLimiter, linkLayerDepth);
         }
     }
 }

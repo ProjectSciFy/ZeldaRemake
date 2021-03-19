@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 
+/*This file is used for storage and will therefore contain otherwise frowned upon "magic numbers"*/
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class RoomTextureStorage
