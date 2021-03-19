@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private int windowHeight;
         private Texture2D itemSpriteSheet;
         private int roomLimiter;
-        private int drawOffset;;
+        private int drawOffset;
         public Background(ZeldaGame game, int roomNumber)
         {
             this.game = game;
