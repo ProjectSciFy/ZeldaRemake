@@ -22,6 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public int timer = 0;
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
+        public int health = 20;
 
         public EnemyAquamentus(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -32,6 +33,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             //game.collisionManager.enemies.Add(this, collisionRectangle);
             this.spriteScalar = game.spriteScalar;
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
+        }
+        public void TakeDamage(int damage)
+        {
+            this.health = this.health - damage;
         }
         public Rectangle CollisionRectangle()
         {

@@ -74,6 +74,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                     {
                         new EnemyOnTile((IEnemy)tuple.Item1, (ITile)tuple.Item2, tuple.Item3).Execute();
                     }
+                    if (tuple.Item2 is Link)
+                    {
+                        new EnemyOnLink((IEnemy)tuple.Item1, (Link)tuple.Item2, tuple.Item3).Execute();
+                    }
                 }
             }
 

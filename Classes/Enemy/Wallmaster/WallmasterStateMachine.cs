@@ -29,7 +29,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             wallmasterSpriteFactory = new WallmasterSpriteFactory(game);
             this.wallmaster.mySprite = wallmasterSpriteFactory.WallmasterIdle();
         }
-
         public void Idle()
         {
             new WallmasterIdle(wallmaster, wallmasterSpriteFactory, this).Execute();

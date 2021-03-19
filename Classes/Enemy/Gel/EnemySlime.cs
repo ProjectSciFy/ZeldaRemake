@@ -20,6 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
+        public int health = 1;
 
         public EnemySlime(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -31,7 +32,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             //game.collisionManager.enemies.Add(this, collisionRectangle);
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
         }
-
+        public void TakeDamage(int damage)
+        {
+            this.health = this.health - damage;
+        }
         public Rectangle CollisionRectangle()
         {
             return collisionRectangle;

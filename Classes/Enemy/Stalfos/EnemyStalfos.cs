@@ -24,6 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
+        public int health = 2;
 
         public EnemyStalfos(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -35,7 +36,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             //game.collisionManager.enemies.Add(this, collisionRectangle);
             game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
         }
-
+        public void TakeDamage(int damage)
+        {
+            this.health = this.health - damage;
+        }
         public Rectangle CollisionRectangle()
         {
             return collisionRectangle;

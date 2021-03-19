@@ -19,7 +19,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.BladeTrap
             game.spriteSheets.TryGetValue("DungeonEnemies", out enemySpriteSheet);
             game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
         }
-
         //Blade trap methods
         public UniversalSprite SpawnBladeTrap()
         {

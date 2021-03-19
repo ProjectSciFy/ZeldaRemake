@@ -35,6 +35,9 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
             //game.collisionManager.enemies.Add(this, collisionRectangle);
         }
+        public void TakeDamage(int damage)
+        {
+        }
         public Rectangle CollisionRectangle()
         {
             return collisionRectangle;

@@ -32,7 +32,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             this.keese = keese;
             enemySpriteFactory = new KeeseSpriteFactory(game);
         }
-
         private Direction ChangeDirection(ref int directionNumber)
         {
             var random = new Random();

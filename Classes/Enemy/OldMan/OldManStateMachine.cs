@@ -26,7 +26,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
             this.oldMan = oldMan;
             enemySpriteFactory = new OldManSpriteFactory(game);
         }
-
         public void Idle()
         {
             if (timer <= 0)
