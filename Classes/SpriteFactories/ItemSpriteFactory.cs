@@ -14,6 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         private ZeldaGame game;
         private Texture2D itemSpriteSheet;
         private float itemDepth = .4f;
+        private int itemLimiter = 10;
         
         public ItemSpriteFactory(ZeldaGame game)
         {
@@ -23,19 +24,19 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 
         public UniversalSprite Boomerang()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(127, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(127, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         public UniversalSprite Bomb()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(136, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(136, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         public UniversalSprite Bow()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(145, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(145, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         public UniversalSprite Key()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(240, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(240, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         //public UniversalSprite Compass()
         //{
@@ -43,15 +44,15 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //}
         public UniversalSprite Triforce()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(275, 3, 10, 10), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(275, 3, 10, 10), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         public UniversalSprite Heart()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(0, 0, 7, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(0, 0, 7, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         public UniversalSprite HeartContainer()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(25, 1, 13, 13), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(25, 1, 13, 13), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         //public UniversalSprite Clock()
         //{
@@ -59,15 +60,15 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //}
         public UniversalSprite YellowRupee()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(72, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(72, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         public UniversalSprite Map()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(88, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(88, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
         public UniversalSprite BlueRupee()
         {
-            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(72, 16, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(72, 16, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
     }
 }
