@@ -79,7 +79,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
             //game.collisionManager.enemies[this] = collisionRectangle;
 
-            game.collisionManager.collisionEntities[this] = this.CollisionRectangle();
+            if (myState.currentState != StalfosStateMachine.CurrentState.dying)
+            {
+                game.collisionManager.collisionEntities[this] = collisionRectangle;
+            }
         }
 
         public void Draw()

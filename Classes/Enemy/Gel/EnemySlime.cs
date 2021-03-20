@@ -72,7 +72,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 6 * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 3 * HITBOX_OFFSET;
 
-            game.collisionManager.collisionEntities[this] = collisionRectangle;
+            if (myState.currentState != GelStateMachine.CurrentState.dying)
+            {
+                game.collisionManager.collisionEntities[this] = collisionRectangle;
+            }
         }
 
         public void Draw()

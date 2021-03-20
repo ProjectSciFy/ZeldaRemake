@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster.WallmasterScripts;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
@@ -19,7 +20,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         bool hiding = false;
         bool idle = true;
         private int timer = 0;
-        public enum CurrentState { none, emerging, hiding, idle, movingUp, movingDown, movingLeft, movingRight };
+        private int deathTimer = 30;
+        public enum CurrentState { none, emerging, hiding, idle, movingUp, movingDown, movingLeft, movingRight, dying };
         public CurrentState currentState = CurrentState.none;
 
         public WallmasterStateMachine(EnemyWallmaster wallmaster)
@@ -28,6 +30,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             game = wallmaster.game;
             wallmasterSpriteFactory = new WallmasterSpriteFactory(game);
             this.wallmaster.mySprite = wallmasterSpriteFactory.WallmasterIdle();
+        }
+        public void Dying()
+        {
+            new WallmasterDying(wallmaster, wallmasterSpriteFactory, this).Execute();
         }
         public void Idle()
         {
@@ -81,6 +87,15 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             else
             {
                 Moving();
+            }
+            if (wallmaster.health <= 0)
+            {
+                Dying();
+                deathTimer--;
+                if (deathTimer == 0)
+                {
+                    wallmaster.game.currentRoom.removeEnemy(wallmaster);
+                }
             }
         }
     }

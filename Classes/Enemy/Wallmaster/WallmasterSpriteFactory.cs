@@ -12,18 +12,24 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
     {
         private ZeldaGame game;
         private Texture2D enemySpriteSheet;
+        private Texture2D linkSpriteSheet;
         private float enemyLayerDepth = 0.2f;
 
         public WallmasterSpriteFactory(ZeldaGame game)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("DungeonEnemies", out enemySpriteSheet);
+            game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
         }
 
         //Wallmaster methods
         public UniversalSprite WallmasterIdle()
         {
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, enemyLayerDepth);
+        }
+        public UniversalSprite KillWallmaster()
+        {
+            return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, enemyLayerDepth);
         }
         public UniversalSprite WallmasterMovingUp()
         {

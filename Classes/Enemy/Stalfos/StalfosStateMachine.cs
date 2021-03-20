@@ -17,7 +17,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Direction direction = Direction.down;
         bool spawning = true;
         public int timer = 0;
-        public enum CurrentState {none, idle, movingUp, movingDown, movingLeft, movingRight, spawning};
+        private int deathTimer = 30;
+        public enum CurrentState {none, idle, movingUp, movingDown, movingLeft, movingRight, spawning, dying};
         public CurrentState currentState = CurrentState.none;
 
         public StalfosStateMachine(EnemyStalfos stalfos)
@@ -32,7 +33,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             spawning = false;
             new StalfosSpawning(stalfos, stalfosSpriteFactory, this).Execute();
         }
-
+        public void Dying()
+        {
+            new StalfosDying(stalfos, stalfosSpriteFactory, this).Execute();
+        }
         public void Moving()
         {
             if (timer <= 0)
@@ -79,6 +83,15 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             else
             {
                 Moving();
+            }
+            if (stalfos.health <= 0)
+            {
+                Dying();
+                deathTimer--;
+                if (deathTimer == 0)
+                {
+                    stalfos.game.currentRoom.removeEnemy(stalfos);
+                }
             }
         }
     }

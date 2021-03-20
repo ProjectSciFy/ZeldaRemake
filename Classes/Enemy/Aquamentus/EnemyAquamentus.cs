@@ -91,7 +91,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
 
-            game.collisionManager.collisionEntities[this] = collisionRectangle;
+            if (myState.currentState != AquamentusStateMachine.CurrentState.dying)
+            {
+                game.collisionManager.collisionEntities[this] = collisionRectangle;
+            }
         }
 
         public void Draw()

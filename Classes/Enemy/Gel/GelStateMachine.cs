@@ -19,7 +19,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         bool moving = true;
         bool spawning = true;
         private int timer = 0;
-        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, spawning };
+        private int deathTimer = 30;
+        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, spawning, dying };
         public CurrentState currentState = CurrentState.none;
 
         public GelStateMachine(EnemySlime gel)
@@ -35,7 +36,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             spawning = false;
             new GelSpawning(gel, gelSpriteFactory, this).Execute();
         }
-
+        public void Dying()
+        {
+            new GelDying(gel, gelSpriteFactory, this).Execute();
+        }
         public void Idle()
         {
             if (timer <= 0)
@@ -60,7 +64,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             {
                 timer--;
             }
-
             if (timer <= 0)
             {
                 var random = new Random();
@@ -98,6 +101,15 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                 else
                 {
                     Idle();
+                }
+            }
+            if (gel.health <= 0)
+            {
+                Dying();
+                deathTimer--;
+                if (deathTimer == 0)
+                {
+                    gel.game.currentRoom.removeEnemy(gel);
                 }
             }
         }

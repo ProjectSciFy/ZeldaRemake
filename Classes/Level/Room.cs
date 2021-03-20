@@ -57,15 +57,15 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         }
         public void Update()
         {
-            foreach (IEnemy enemy in enemies)
+            foreach (IEnemy enemy in enemies.ToArray())
             {
                 enemy.Update();
             }
-            foreach (ITile tile in tiles)
+            foreach (ITile tile in tiles.ToArray())
             {
                 tile.Update();
             }
-            foreach (IItem item in items)
+            foreach (IItem item in items.ToArray())
             {
                 item.Update();
             }

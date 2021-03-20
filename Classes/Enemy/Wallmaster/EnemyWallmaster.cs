@@ -74,7 +74,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 
             //game.collisionManager.enemies[this] = collisionRectangle;
 
-            game.collisionManager.collisionEntities[this] = this.CollisionRectangle();
+            if (myState.currentState != WallmasterStateMachine.CurrentState.dying)
+            {
+                game.collisionManager.collisionEntities[this] = collisionRectangle;
+            }
         }
 
         public void Draw()

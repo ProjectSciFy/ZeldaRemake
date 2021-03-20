@@ -22,8 +22,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         bool spawning = true;
         bool spawned = false;
         private int timer = 3;
+        private int deathTimer = 30;
         private int directionTimer = 0;
-        public enum CurrentState { none, idle, flyingNorth, flyingNorthEast, flyingEast, flyingSouthEast, flyingSouth, flyingSouthWest, flyingWest, flyingNorthWest, landingNorth, landingNorthEast, landingEast, landingSouthEast, landingSouth, landingSouthWest, landingWest, landingNorthWest, spawning };
+        public enum CurrentState { none, idle, flyingNorth, flyingNorthEast, flyingEast, flyingSouthEast, flyingSouth, flyingSouthWest, flyingWest, flyingNorthWest, landingNorth, landingNorthEast, landingEast, landingSouthEast, landingSouth, landingSouthWest, landingWest, landingNorthWest, spawning, dying };
         public CurrentState currentState = CurrentState.none;
 
         public KeeseStateMachine(EnemyKeese keese)
@@ -95,6 +96,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                 spawning = false;
                 currentState = CurrentState.none;
             }*/
+        }
+        public void Dying()
+        {
+            new KeeseDying(keese, enemySpriteFactory, this).Execute();
         }
 
         public void Idle()
@@ -185,6 +190,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                 else
                 {
                     Idle();
+                }
+                if (keese.health <= 0)
+                {
+                    Dying();
+                    deathTimer--;
+                    if (deathTimer == 0)
+                    {
+                        keese.game.collisionManager.collisionEntities.Remove(keese);
+                        keese.game.currentRoom.removeEnemy(keese);
+                    }
                 }
             }
         }
