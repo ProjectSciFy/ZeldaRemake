@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
-    public class EnemyOnLink
+    public class EnemyOnLink : ICommand
     {
         private IEnemy enemy;
         private Link link;

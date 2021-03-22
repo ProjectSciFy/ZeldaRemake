@@ -9,20 +9,24 @@ using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
-    public class GoriyaBoomerang
+    public class GoriyaBoomerang : IProjectile, ICollisionEntity
     {
         private ZeldaGame game;
-        public EnemyGoriya goriya { get; protected set; }
-        public GoriyaStateMachine goriyaState { get; protected set; }
-        public EnemySpriteFactory spriteFactory { get; protected set; }
-        public ISprite mySprite { protected get; set; }
-        public GoriyaBoomerangStatemachine myState { get; set; }
-        public Vector2 drawLocation { get; set; }
-        public Vector2 SpawnLocation { get; set; }
-        public Vector2 velocity { get; set; } = new Vector2 (0,0);
-        public Vector2 spriteSize { get; set; }  = new Vector2(16, 16);
-        public bool newItem { get; set; }
-        public Vector2 trajectory { get; set; } = new Vector2(0, 0);
+        public EnemyGoriya goriya;
+        public GoriyaStateMachine goriyaState;
+        public EnemySpriteFactory spriteFactory;
+        public ISprite mySprite;
+        public GoriyaBoomerangStatemachine myState;
+        public Vector2 drawLocation;
+        public Vector2 SpawnLocation;
+        public Vector2 velocity = new Vector2 (0,0);
+        public Vector2 spriteSize = new Vector2(16, 16);
+        public bool newItem;
+        public Vector2 trajectory = new Vector2(0, 0);
+        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        private float spriteScalar;
+        private static int HITBOX_OFFSET = 6;
+        public bool collided = false;
 
         public GoriyaBoomerang(ZeldaGame game, EnemyGoriya goriya, GoriyaStateMachine goriyaState)
         {
@@ -32,9 +36,13 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.spriteFactory = game.enemySpriteFactory;
             this.drawLocation = goriya.drawLocation;
             this.SpawnLocation = goriya.drawLocation;
+            this.spriteScalar = game.spriteScalar;
             this.myState = new GoriyaBoomerangStatemachine(this);
         }
-
+        public Rectangle CollisionRectangle()
+        {
+            return collisionRectangle;
+        }
         public void Update()
         {
             myState.Update();
@@ -44,6 +52,18 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             //Update position of boomerang
             drawLocation = drawLocation + velocity;
 
+            collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+
+            game.collisionManager.collisionEntities[this] = collisionRectangle;
+
+            if (collided)
+            {
+                game.projectileHandler.Remove(this);
+                game.collisionManager.collisionEntities.Remove(this);
+            }
         }
         public void Draw()
         {

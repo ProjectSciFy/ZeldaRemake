@@ -18,7 +18,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public Fireball fireball_1, fireball_2, fireball_3;
         public int timer = 0;
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
@@ -85,15 +84,11 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 
             if (timer <= 0)
             {
-                timer = 200;
-                fireball_1 = new Fireball(game, this, myState, new Vector2(-1, 0));
-                fireball_2 = new Fireball(game, this, myState, new Vector2(-1, (float)0.15));
-                fireball_3 = new Fireball(game, this, myState, new Vector2(-1, (float)-0.15));
+                timer = 300;
+                game.projectileHandler.Add(new Fireball(game, this, myState, new Vector2(-1, 0)));
+                game.projectileHandler.Add(new Fireball(game, this, myState, new Vector2(-1, (float)0.15)));
+                game.projectileHandler.Add(new Fireball(game, this, myState, new Vector2(-1, (float)-0.15)));
             }
-
-            fireball_1.Update();
-            fireball_2.Update();
-            fireball_3.Update();
 
             collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
@@ -109,9 +104,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         public void Draw()
         {
             mySprite.Draw(drawLocation);
-            fireball_1.Draw();
-            fireball_2.Draw();
-            fireball_3.Draw();
         }
     }
 }
