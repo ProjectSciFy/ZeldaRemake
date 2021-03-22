@@ -22,6 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
         public int health = 20;
+        private int hurtTimer = 0;
 
         public EnemyAquamentus(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -35,12 +36,11 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         }
         public void TakeDamage(int damage)
         {
-            //    if (myState.currentState != AquamentusStateMachine.CurrentState.damaged)
-            //    {
-            //        myState.currentState = AquamentusStateMachine.CurrentState.damaged;
-            //        this.health = this.health - damage;
-            //    }
-            this.health = this.health - damage;
+            if (hurtTimer <= 0)
+            {
+                hurtTimer = 60;
+                this.health = this.health - damage;
+            }
         }
         public Rectangle CollisionRectangle()
         {
@@ -52,6 +52,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             if (timer > 0)
             {
                 timer--;
+            }
+            if (hurtTimer > 0)
+            {
+                hurtTimer--;
             }
             myState.Update();
             mySprite.Update();

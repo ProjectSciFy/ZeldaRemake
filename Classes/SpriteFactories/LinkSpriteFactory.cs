@@ -61,19 +61,19 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //Sword:
         public UniversalSprite SwordUp()
         {
-            return new UniversalSprite(game, linkTexture, new Rectangle(1, 83, 16, 28), Color.White, SpriteEffects.None, new Vector2(1,4), 15, linkLayerDepth);
+            return new UniversalSprite(game, linkTexture, new Rectangle(1, 83, 16, 28), Color.White, SpriteEffects.None, new Vector2(1,4), 3, linkLayerDepth);
         }
         public UniversalSprite SwordDown()
         {
-            return new UniversalSprite(game, linkTexture, new Rectangle(1, 47, 16, 27), Color.White, SpriteEffects.None, new Vector2(1, 4), 15, linkLayerDepth);
+            return new UniversalSprite(game, linkTexture, new Rectangle(1, 47, 16, 27), Color.White, SpriteEffects.None, new Vector2(1, 4), 3, linkLayerDepth);
         }
         public UniversalSprite SwordRight()
         {
-            return new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 15, linkLayerDepth);
+            return new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 3, linkLayerDepth);
         }
         public UniversalSprite SwordLeft()
         {
-            return new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 15, linkLayerDepth);
+            return new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 3, linkLayerDepth);
         }
 
         //Bomb:

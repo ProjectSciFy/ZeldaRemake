@@ -81,7 +81,7 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             if (timer == 0)
             {
-                timer = 60;
+                timer = 12;
                 useSword = false;
                 new LinkSword(link, spriteFactory, this).Execute();
                 new LinkOffset(link, false).Execute();

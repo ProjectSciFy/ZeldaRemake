@@ -20,6 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
         public int health = 3;
+        private int hurtTimer = 0;
 
         public EnemyWallmaster(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -33,7 +34,11 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         }
         public void TakeDamage(int damage)
         {
-            this.health = this.health - damage;
+            if (hurtTimer <= 0)
+            {
+                hurtTimer = 60;
+                this.health = this.health - damage;
+            }
         }
         public Rectangle CollisionRectangle()
         {
@@ -42,6 +47,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 
         public void Update()
         {
+            if (hurtTimer > 0)
+            {
+                hurtTimer--;
+            }
             myState.Update();
             mySprite.Update();
 

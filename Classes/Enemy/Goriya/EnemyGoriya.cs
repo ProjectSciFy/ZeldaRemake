@@ -26,6 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
         public int health = 2;
+        private int hurtTimer = 0;
 
         public EnemyGoriya(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -39,7 +40,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
         public void TakeDamage(int damage)
         {
-            this.health = this.health - damage;
+            if (hurtTimer <= 0)
+            {
+                hurtTimer = 60;
+                this.health = this.health - damage;
+            }
         }
         public Rectangle CollisionRectangle()
         {
@@ -48,6 +53,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public void Update()
         {
+            if (hurtTimer > 0)
+            {
+                hurtTimer--;
+            }
             myState.Update();
             mySprite.Update(); 
             if (!myState.moving)
