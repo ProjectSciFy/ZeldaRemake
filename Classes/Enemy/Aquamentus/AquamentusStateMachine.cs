@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         bool roaring = false;
         private int timer = 90;
         private int deathTimer = 30;
-        public enum CurrentState { none, movingLeft, movingRight, roaringLeft, roaringRight, spawning, dying };
+        public enum CurrentState { none, movingLeft, movingRight, roaringLeft, roaringRight, spawning, dying, damaged };
         public CurrentState currentState = CurrentState.none;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         public float spriteScalar;
