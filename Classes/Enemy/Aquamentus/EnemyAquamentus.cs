@@ -36,9 +36,14 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         }
         public void TakeDamage(int damage)
         {
+            //    if (myState.currentState != AquamentusStateMachine.CurrentState.damaged)
+            //    {
+            //        myState.currentState = AquamentusStateMachine.CurrentState.damaged;
+            //        this.health = this.health - damage;
+            //    }
             this.health = this.health - damage;
         }
-        public Rectangle CollisionRectangle()
+    public Rectangle CollisionRectangle()
         {
             return collisionRectangle;
         }
