@@ -142,11 +142,11 @@ namespace CSE3902_Game_Sprint0
 
             link.Update();
 
+            currentRoom.Update();
+
             projectileHandler.Update();
 
             collisionManager.Update();
-
-            currentRoom.Update();
         }
 
         public void changeRoom(int newRoom)

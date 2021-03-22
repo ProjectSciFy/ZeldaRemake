@@ -8,6 +8,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
+using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -74,9 +75,24 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                     {
                         new EnemyOnTile((IEnemy)tuple.Item1, (ITile)tuple.Item2, tuple.Item3).Execute();
                     }
-                    if (tuple.Item2 is Link)
+                    else if (tuple.Item2 is Link)
                     {
                         new EnemyOnLink((IEnemy)tuple.Item1, (Link)tuple.Item2, tuple.Item3).Execute();
+                    }
+                }
+                if (tuple.Item1 is IProjectile)
+                {
+                    if (tuple.Item2 is Link)
+                    {
+                        new ProjectileOnLink((IProjectile)tuple.Item1, (Link)tuple.Item2, tuple.Item3).Execute();
+                    }
+                    else if (tuple.Item2 is IEnemy)
+                    {
+
+                    }
+                    else if (tuple.Item2 is ITile)
+                    {
+
                     }
                 }
             }

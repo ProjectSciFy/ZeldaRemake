@@ -11,7 +11,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
-    public class EnemyOnTile
+    public class EnemyOnTile : ICommand
     {
         private IEnemy enemy;
         private ITile tile;
