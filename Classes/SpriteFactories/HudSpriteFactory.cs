@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //this tempelate need life, map, level to be added
         public UniversalSprite baseHud()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(257, 10, 256, 56), Color.White, SpriteEfffects.None, new Vector2(1,1), 10, itemDepth);
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(257, 10, 256, 56), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
         }
     }
 }
