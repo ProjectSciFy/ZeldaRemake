@@ -29,8 +29,11 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private List<IItem> items;
         private List<IEnemy> enemies;
         private List<IDoor> doors;
-        private playerHUD pHUD;
         private ZeldaGame game;
+
+        //player hud:
+        private playerHUD pHUD;
+        private HudSpriteFactory hudFactory;
 
         private int roomNumber;
         public Room(ZeldaGame game, int RoomNumber, List<ITile> tilesLoaded, List<IItem> itemsLoaded, List<IEnemy> enemiesLoaded, List<IDoor> doorsLoaded)
@@ -42,6 +45,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             doors = doorsLoaded;
             this.game = game;
             background = new Background(game, roomNumber);
+            //player HUD:
+            this.hudFactory = game.hudSpriteFactory;
+            pHUD = new playerHUD(game, hudFactory);
         }
         public void Initialize()
         {
@@ -90,6 +96,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
+            pHUD.Draw();
+            
             foreach (IDoor door in doors)
             {
                 door.Draw();

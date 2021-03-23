@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.spriteScalar = game.spriteScalar;
             this.position = new Vector2(0, 0);
             this.HudFactory = hudFactory;
-            this.hudSprite = HudFactory.HUD();
+            this.hudSprite = HudFactory.baseHud();
         }
 
         public void Update()

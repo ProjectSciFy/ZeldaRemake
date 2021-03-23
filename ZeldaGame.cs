@@ -31,6 +31,9 @@ namespace CSE3902_Game_Sprint0
         //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
+        //Player HUD:
+        public HudSpriteFactory hudSpriteFactory;
+        //Link:
         public Classes.Link link;
         public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster, OldMan}
         public LinkStateMachine linkStateMachine;
@@ -47,6 +50,7 @@ namespace CSE3902_Game_Sprint0
         //PASS THIS TO ENTITIES FOR UPSCALING THEM UNIFORMLY
         public float spriteScalar = 3;
         public Room currentRoom;
+
 
         public ZeldaGame()
         {
@@ -83,6 +87,9 @@ namespace CSE3902_Game_Sprint0
             /* Weapons */
             //bomb = new Bomb(this, link, linkStateMachine);
             //bombStateMachine = new BombStateMachine(bomb);
+
+            //Setting up playerHudSpriteFactory
+            hudSpriteFactory = new HudSpriteFactory(this);
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
