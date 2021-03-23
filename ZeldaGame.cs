@@ -51,6 +51,13 @@ namespace CSE3902_Game_Sprint0
         public float spriteScalar = 3;
         public Room currentRoom;
 
+        //Seperate scalar for all HUD entities, still needs proper implementation:
+        public float hudScalar = 1;
+        //counter variables that are displayed in HUD graphically:
+        public int numKeys;
+        public int numBrups;
+        public int numYrups;
+        public int numLives;
 
         public ZeldaGame()
         {
@@ -90,9 +97,14 @@ namespace CSE3902_Game_Sprint0
 
             //Setting up playerHudSpriteFactory
             hudSpriteFactory = new HudSpriteFactory(this);
+            //Initialize counter variables for HUD:
+            numKeys = 0;
+            numBrups = 0;
+            numYrups = 0;
+            numLives = 3;
 
-            //Setting up enemy spritefactory
-            enemySpriteFactory = new EnemySpriteFactory(this);
+        //Setting up enemy spritefactory
+        enemySpriteFactory = new EnemySpriteFactory(this);
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
