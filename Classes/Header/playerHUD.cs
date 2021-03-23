@@ -14,11 +14,11 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 position;
         public float spriteScalar;
         public Vector2 drawLocation;
-        public playerHUD(ZeldaGame game, HudSpriteFactory hudFactory, Vector2 location)
+        public playerHUD(ZeldaGame game, HudSpriteFactory hudFactory)
         {
             this.game = game;
             this.spriteScalar = game.spriteScalar;
-            this.position = location;
+            this.position = new Vector2(0, 0);
             this.HudFactory = hudFactory;
             this.hudSprite = HudFactory.HUD();
         }

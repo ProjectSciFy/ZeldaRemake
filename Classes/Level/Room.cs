@@ -18,6 +18,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Header;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -28,6 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private List<IItem> items;
         private List<IEnemy> enemies;
         private List<IDoor> doors;
+        private playerHUD pHUD;
         private ZeldaGame game;
 
         private int roomNumber;
@@ -82,6 +84,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void removeItem(IItem entity)
         {
             items.Remove(entity);
+            //check which type of item it is, specifically key, blue or yellow rupee, will need to update counters accordingly.
         }
 
         public void Draw()
