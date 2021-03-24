@@ -70,67 +70,67 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
                         BlockTile block;
                         tiles.Add(block = new BlockTile(game, new TileSpriteFactory(game), position));
-                        block.drawLocation = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        //block.drawLocation = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
                         break;
                     case "Heart":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 12);
                         Heart heart;
                         items.Add(heart = new Heart(game, new ItemSpriteFactory(game), position));
-                        heart.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 12);
+                        //heart.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 12);
                         break;
                     case "Key":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         Key key;
                         items.Add(key = new Key(game, new ItemSpriteFactory(game), position));
-                        key.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        //key.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         break;
                     case "BlueRupee":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         BlueRupee blueRupee;
                         items.Add(blueRupee =new BlueRupee(game, new ItemSpriteFactory(game), position));
-                        blueRupee.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        //blueRupee.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         break;
                     case "Bomb":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 2);
                         Bomb bomb;
                         items.Add(bomb = new Bomb(game, new ItemSpriteFactory(game), position));
-                        bomb.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 2);
+                        //bomb.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 2);
                         break;
                     case "Boomerang":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         Boomerang boomerang;
                         items.Add(boomerang = new Boomerang(game, new ItemSpriteFactory(game), position));
-                        boomerang.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        //boomerang.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         break;
                     case "Bow":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         Bow bow;
                         items.Add(bow = new Bow(game, new ItemSpriteFactory(game), position));
-                        bow.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        //bow.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         break;
                     case "HeartContainer":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 4, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
                         HeartContainer heartContainer;
                         items.Add(heartContainer = new HeartContainer(game, new ItemSpriteFactory(game), position));
-                        heartContainer.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 4, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        //heartContainer.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 4, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
                         break;
                     case "Map":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         Map map;
                         items.Add(map = new Map(game, new ItemSpriteFactory(game), position));
-                        map.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        //map.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         break;
                     case "Triforce":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 8);
                         Triforce triforce;
                         items.Add(triforce = new Triforce(game, new ItemSpriteFactory(game), position));
-                        triforce.position = position;
+                        //triforce.position = position;
                         break;
                     case "YellowRupee":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         YellowRupee yellowRupee;
                         items.Add(yellowRupee = new YellowRupee(game, new ItemSpriteFactory(game), position));
-                        yellowRupee.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        //yellowRupee.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         break;
                     case "Goriya":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
