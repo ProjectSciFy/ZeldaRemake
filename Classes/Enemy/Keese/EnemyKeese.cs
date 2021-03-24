@@ -44,7 +44,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             myState.Update();
             mySprite.Update();
 
-            //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
 

@@ -70,5 +70,10 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, itemSpriteSheet, new Rectangle(72, 16, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
+
+        public UniversalSprite Fairy()
+        {
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(40, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), itemLimiter, itemDepth);
+        }
     }
 }
