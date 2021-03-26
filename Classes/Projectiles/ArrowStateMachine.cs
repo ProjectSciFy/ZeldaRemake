@@ -14,8 +14,8 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public bool hit = false;
 
         private int timer = 180;
-        private enum CurrentState { none, soaring, hitting };
-        private CurrentState currentState = CurrentState.none;
+        public enum CurrentState { none, soaring, hitting };
+        public CurrentState currentState = CurrentState.none;
 
         public ArrowStateMachine(Arrow arrow)
         {
@@ -56,6 +56,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             {
                 currentState = CurrentState.hitting;
                 projectileSpriteFactory.ArrowStrike(arrow);
+                arrow.game.collisionManager.collisionEntities.Remove(arrow);
             }
         }
 

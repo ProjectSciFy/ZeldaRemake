@@ -36,6 +36,14 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     ((GoriyaBoomerang)projectile).myState.returning = true;
                 }
             }
+            else if (projectile is Arrow)
+            {
+                if (link.linkState.timer <= 0)
+                {
+                    link.linkState.isDamaged = true;
+                    ((Arrow)projectile).myState.hit = true;
+                }
+            }
             if (projectile is LinkBoomerangProjectile)
             {
                 ((LinkBoomerangProjectile)projectile).collided = true;

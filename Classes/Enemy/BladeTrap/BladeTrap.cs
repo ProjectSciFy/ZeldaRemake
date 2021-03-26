@@ -80,7 +80,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             collisionRectangle.Width = (int)spriteSize.X - 2 * HITBOX_OFFSET;
             collisionRectangle.Height = (int)spriteSize.Y - 2 * HITBOX_OFFSET;
 
-            game.collisionManager.enemies[this] = collisionRectangle;
+            game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
 
         public void Draw()

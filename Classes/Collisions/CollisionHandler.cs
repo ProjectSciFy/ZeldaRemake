@@ -25,6 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
             this.collisionManager = collisionManager;
         }
 
+        //DO WE STILL NEED THIS?
         private bool IsLinkHurt(Link link)
         {
             bool result = false;
@@ -88,7 +89,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                     }
                     else if (tuple.Item2 is IEnemy)
                     {
-
+                        new ProjectileOnEnemy((IProjectile)tuple.Item1, (IEnemy)tuple.Item2, tuple.Item3).Execute();
                     }
                     else if (tuple.Item2 is ITile)
                     {
@@ -97,51 +98,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                 }
             }
 
-            //New stuff ^^^
-            /*
-            foreach (Tuple<object, object, Collision.Collision.Direction> tuple in collisionManager.collisionSet)
-            {
-                //Link colliding with things
-                if (tuple.Item1.GetType() == typeof(Link))
-                {
-                    //Enemies
-                    if (tuple.Item2.GetType() == typeof(EnemyAquamentus) && !IsLinkHurt((Link)tuple.Item1))
-                    {
-                        //Execute command to hurt link
-                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
-                    }
-                    else if (tuple.Item2.GetType() == typeof(BladeTrap) && !IsLinkHurt((Link)tuple.Item1))
-                    {
-                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
-                    }
-                    else if (tuple.Item2.GetType() == typeof(EnemyGel) && !IsLinkHurt((Link)tuple.Item1))
-                    {
-                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
-                    }
-                    else if (tuple.Item2.GetType() == typeof(EnemyGoriya) && !IsLinkHurt((Link)tuple.Item1))
-                    {
-                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
-                    }
-                    else if (tuple.Item2.GetType() == typeof(EnemyKeese) && !IsLinkHurt((Link)tuple.Item1))
-                    {
-                        new DamagedLink(((Link)tuple.Item1).linkState).Execute();
-                    }
-                    else if (tuple.Item2.GetType() == typeof(EnemyStalfos) && !IsLinkHurt((Link)tuple.Item1))
-                    {
-                        new DamagedLink(((Link) tuple.Item1).linkState).Execute();
-                    }
-                    else if (tuple.Item2.GetType() == typeof(EnemyWallmaster))
-                    {
-                        if (!IsLinkHurt((Link)tuple.Item1))
-                        {
-                            new DamagedLink(((Link)tuple.Item1).linkState).Execute();
-                        }
-                        //Setting Link's drawLocation to Wallmaster's
-                        ((Link)tuple.Item1).drawLocation = ((EnemyWallmaster)tuple.Item2).drawLocation;
-                    }
-                }
-            }
-            */
             //Clear the collision set
             collisionManager.collisionSet.Clear();
         }
