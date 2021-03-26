@@ -1,4 +1,8 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Enemy;
+using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
+using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
+using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
@@ -25,11 +29,32 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         {
             if (projectile is Arrow)
             {
-                if (enemy is EnemyStalfos)
+                if (enemy is EnemyAquamentus)
+                {
+                    ((EnemyAquamentus)enemy).TakeDamage(ArrowDamage);
+                }
+                else if (enemy is EnemySlime)
+                {
+                    ((EnemySlime)enemy).TakeDamage(ArrowDamage);
+                }
+                else if (enemy is EnemyGoriya)
+                {
+                    ((EnemyGoriya)enemy).TakeDamage(ArrowDamage);
+                }
+                else if (enemy is EnemyKeese)
+                {
+                    ((EnemyKeese)enemy).TakeDamage(ArrowDamage);
+                }
+                else if (enemy is EnemyStalfos)
                 {
                     ((EnemyStalfos)enemy).TakeDamage(ArrowDamage);
-                    ((Arrow)projectile).myState.hit = true;
                 }
+                else if (enemy is EnemyWallmaster)
+                {
+                    ((EnemyWallmaster)enemy).TakeDamage(ArrowDamage);
+                }
+
+                ((Arrow)projectile).myState.hit = true;
             }
         }
     }
