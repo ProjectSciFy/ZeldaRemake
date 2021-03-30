@@ -18,12 +18,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private RoomTextureStorage topDoorTexture;
         private int windowWidth;
         private int windowHeight;
-
+        private int doorValue;
         public LeftDoor(ZeldaGame game, RoomTextureStorage textures, int doorValue)
         {
             this.game = game;
             windowWidth = game.GraphicsDevice.Viewport.Width;
             windowHeight = game.GraphicsDevice.Viewport.Height;
+            this.doorValue = doorValue;
 
             int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
             int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
@@ -41,6 +42,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             topDoorSprite.Draw(position);
+        }
+        public int getDoorValue()
+        {
+            return doorValue;
         }
     }
 }

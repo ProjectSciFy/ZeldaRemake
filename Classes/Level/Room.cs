@@ -90,6 +90,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         {
             return roomNumber;
         }
+        public List<IDoor> getDoors()
+        {
+            return doors;
+        }
 
         public void removeEnemy(IEnemy entity)
         {

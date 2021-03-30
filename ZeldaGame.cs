@@ -17,7 +17,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Collision;
 using CSE3902_Game_Sprint0.Classes.Level;
-
+using CSE3902_Game_Sprint0.Classes.GameState;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -26,7 +26,7 @@ namespace CSE3902_Game_Sprint0
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private List<IController> controllerList = new List<IController>();
+        public List<IController> controllerList = new List<IController>();
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
@@ -58,6 +58,11 @@ namespace CSE3902_Game_Sprint0
         public int numBrups;
         public int numYrups;
         public int numLives;
+
+        public IGameState currentMainGameState;
+        public IGameState currentGameState;
+
+        public bool keyPressedTempVariable = false;
 
         public ZeldaGame()
         {
@@ -103,8 +108,8 @@ namespace CSE3902_Game_Sprint0
             numYrups = 0;
             numLives = 3;
 
-        //Setting up enemy spritefactory
-        enemySpriteFactory = new EnemySpriteFactory(this);
+            //Setting up enemy spritefactory
+            enemySpriteFactory = new EnemySpriteFactory(this);
 
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
@@ -126,6 +131,9 @@ namespace CSE3902_Game_Sprint0
                 }
             }
             currentRoom.Initialize();
+            currentMainGameState = new MainState(this, currentRoom);
+            currentGameState = currentMainGameState;
+
         }
 
         protected override void LoadContent()
@@ -151,25 +159,73 @@ namespace CSE3902_Game_Sprint0
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            if (Keyboard.GetState().IsKeyDown(Keys.D7) && !keyPressedTempVariable)
+            {
+                if (roomNumber == 18)
+                {
+                    changeRoom(0,0);
+                }
+                else
+                {
+                    changeRoom(roomNumber + 1,0);
+                }
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.D8) && !keyPressedTempVariable)
+            {
+                if (roomNumber == 18)
+                {
+                    changeRoom(0,0);
+                }
+                else
+                {
+                    changeRoom(roomNumber + 1, 1);
+                }
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.D9) && !keyPressedTempVariable)
+            {
+                if (roomNumber == 18)
+                {
+                    changeRoom(0,0);
+                }
+                else
+                {
+                    changeRoom(roomNumber + 1, 2);
+                }
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.D0) && !keyPressedTempVariable)
+            {
+                if (roomNumber == 18)
+                {
+                    changeRoom(0,0);
+                }
+                else
+                {
+                    changeRoom(roomNumber + 1, 3);
+                }
+            }
             // TODO: Add your update logic here
 
-            foreach (IController controller in controllerList)
-            {
-                controller.Update();
-            }
+            //sforeach (IController controller in controllerList)
+            //{
+            //   controller.Update();
+            //}
+            //
+            currentGameState.UpdateCollisions();
             base.Update(gameTime);
+            currentGameState.Update();
+            //link.Update();
 
-            link.Update();
+            //currentRoom.Update();
 
-            currentRoom.Update();
+            //projectileHandler.Update();
 
-            projectileHandler.Update();
-
-            collisionManager.Update();
+            //collisionManager.Update();
         }
 
-        public void changeRoom(int newRoom)
+        public void changeRoom(int newRoom, int direction)
         {
+            keyPressedTempVariable = true;
+            Room oldRoom = currentRoom;
             collisionManager.ClearNotLink();
             roomNumber = newRoom;
             foreach (Room r in roomList)
@@ -182,21 +238,25 @@ namespace CSE3902_Game_Sprint0
             //Wait for a quarter of a second before transition to next room
             //Fixes holding down mouse -> spamming through each room
             //Clear the collision set
-            System.Threading.Thread.Sleep(100);
+
+            currentMainGameState = new MainState(this, currentRoom);
+            //currentGameState = currentMainGameState;
+            currentGameState = new TransitionState(this, oldRoom, currentRoom, direction);
+            //7keyPressedTempVariable = false;
         }
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
-
             base.Draw(gameTime);
+            currentGameState.Draw();
 
-            currentRoom.Draw();
 
-            link.Draw();
+            //currentRoom.Draw();
 
-            projectileHandler.Draw();
+            //link.Draw();
+
+            //projectileHandler.Draw();
 
 
 
