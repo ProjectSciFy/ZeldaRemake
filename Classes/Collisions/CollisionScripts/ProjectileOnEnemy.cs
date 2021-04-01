@@ -56,6 +56,39 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 
                 ((Arrow)projectile).myState.hit = true;
             }
+            if (projectile is LinkBoomerangProjectile)
+            {
+                if (enemy is EnemyAquamentus)
+                {
+                    ((EnemyAquamentus)enemy).TakeDamage(ArrowDamage);
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemySlime)
+                {
+                    ((EnemySlime)enemy).TakeDamage(ArrowDamage);
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyGoriya)
+                {
+                    ((EnemyGoriya)enemy).TakeDamage(ArrowDamage);
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyKeese)
+                {
+                    ((EnemyKeese)enemy).TakeDamage(ArrowDamage);
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyStalfos)
+                {
+                    ((EnemyStalfos)enemy).TakeDamage(ArrowDamage);
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyWallmaster)
+                {
+                    ((EnemyWallmaster)enemy).TakeDamage(ArrowDamage);
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+            }
         }
     }
 }

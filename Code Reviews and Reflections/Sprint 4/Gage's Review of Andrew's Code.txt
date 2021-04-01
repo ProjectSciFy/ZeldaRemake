@@ -1,0 +1,19 @@
+﻿READABILITY OF ANDREW'S :
+-Author of review: Gage Odom
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Andrew Lewandowski
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF ANDREW'S :
+-Author of review: Gage Odom
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Andrew Lewandowski
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 

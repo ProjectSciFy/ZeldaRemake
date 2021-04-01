@@ -1,0 +1,19 @@
+﻿READABILITY OF GAGE'S :
+-Author of review: Devan
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Gage Odom
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF GAGE'S :
+-Author of review: Devan
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Gage Odom
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 
