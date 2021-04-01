@@ -108,11 +108,15 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             drawLocationExteriorNext = new Vector2(windowWidthFloor, windowHeightFloor) + newRoomShift;
 
 
-
-            roominteriorOld = roomTextures.getRoom(oldroom.getRoomNumber());
+            int oldRoomNumber = this.oldroom.getRoomNumber();
+            roominteriorOld = roomTextures.getRoom(oldRoomNumber);
+            //roominteriorOld = roomTextures.getRoom(2);
             roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
 
-            roominteriorNext = roomTextures.getRoom(nextroom.getRoomNumber());
+            int nextRoomNumber = nextroom.getRoomNumber();
+            roominteriorNext = roomTextures.getRoom(nextRoomNumber);
+            //roominteriorNext = roomTextures.getRoom(4);
+
             roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
 
             drawLocationTopDoorOld = new Vector2(windowWidthFloor + 112 * 3, windowHeightFloor);

@@ -198,25 +198,23 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 string[] segments = line.Split(new string[] { "," },
                                     StringSplitOptions.None);
-
-                for (int i = 0; i < 4; i++)
+                if (int.Parse(segments[0]) == RoomNumber)
                 {
-                    if (int.Parse(segments[i + 1]) != 0)
+                    for (int i = 0; i < 4; i++)
                     {
                         doorvalue = i * 10 + int.Parse(segments[i + 1]);
                         locked = true;
-                        if (int.Parse(segments[i + 1]) == 1) {
+                        if (int.Parse(segments[i + 1]) == 1)
+                        {
                             locked = false;
                         }
-                            
-
                         switch (i)
                         {
                             case 0:
                                 doors.Add(new TopDoor(game, new RoomTextureStorage(game), doorvalue));
 
                                 wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
-                                
+
                                 tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
@@ -233,10 +231,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
                                 wallPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
 
-                                tiles.Add(gatekeeper=new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
-                                stairPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6 -48, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                stairPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6 - 48, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
                                 tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
                                 stair.drawLocation = stairPos;
                                 break;
@@ -271,13 +269,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                             default:
                                 break;
                         }
+                        }
 
                     }
-                    
                 }
                 
 
-            }
             return new Room(game, RoomNumber, tiles, items, enemies, doors);
         }
         public static Dictionary<int, int[]> ParseNeighborCSV()
@@ -287,11 +284,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
             cwdPath = Path.Combine(cwdPath, "neighbors.csv");
             string[] lines = System.IO.File.ReadAllLines(cwdPath);
+            int roomCounter = 1;
             foreach (string line in lines)
             {
                 string[] segments = line.Split(new string[] { "," },
                                     StringSplitOptions.None);
-                neighbors.Add(Int32.Parse(segments[0]), new int[4] { Int32.Parse(segments[1]), Int32.Parse(segments[2]), Int32.Parse(segments[3]), Int32.Parse(segments[4]) });
+                neighbors.Add(roomCounter, new int[4] { Int32.Parse(segments[1]), Int32.Parse(segments[2]), Int32.Parse(segments[3]), Int32.Parse(segments[4]) });
+                roomCounter = roomCounter + 1;
             }
             return neighbors;
         }

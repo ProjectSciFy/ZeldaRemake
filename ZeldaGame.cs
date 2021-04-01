@@ -50,6 +50,7 @@ namespace CSE3902_Game_Sprint0
         //PASS THIS TO ENTITIES FOR UPSCALING THEM UNIFORMLY
         public float spriteScalar = 3;
         public Room currentRoom;
+        public Room oldRoom;
 
         //Seperate scalar for all HUD entities, still needs proper implementation:
         public float hudScalar = 1;
@@ -115,7 +116,7 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new CMouse(this));
 
             neighbors = Parser.ParseNeighborCSV();
-
+            
             roomList = new List<Room>();
             roomNumber = 2;
 
@@ -159,51 +160,51 @@ namespace CSE3902_Game_Sprint0
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            //if (Keyboard.GetState().IsKeyDown(Keys.D7) && !keyPressedTempVariable)
-            //{
-            //    if (roomNumber == 18)
-            //    {
-            //        changeRoom(0,0);
-            //    }
-            //    else
-            //    {
-            //        changeRoom(roomNumber + 1,0);
-            //    }
-            //}
-            //else if (Keyboard.GetState().IsKeyDown(Keys.D8) && !keyPressedTempVariable)
-            //{
-            //    if (roomNumber == 18)
-            //    {
-            //        changeRoom(0,0);
-            //    }
-            //    else
-            //    {
-            //        changeRoom(roomNumber + 1, 1);
-            //    }
-            //}
-            //else if (Keyboard.GetState().IsKeyDown(Keys.D9) && !keyPressedTempVariable)
-            //{
-            //    if (roomNumber == 18)
-            //    {
-            //        changeRoom(0,0);
-            //    }
-            //    else
-            //    {
-            //        changeRoom(roomNumber + 1, 2);
-            //    }
-            //}
-            //else if (Keyboard.GetState().IsKeyDown(Keys.D0) && !keyPressedTempVariable)
-            //{
-            //    if (roomNumber == 18)
-            //    {
-            //        changeRoom(0,0);
-            //    }
-            //    else
-            //    {
-            //        changeRoom(roomNumber + 1, 3);
-            //    }
-            //}
-            // TODO: Add your update logic here
+            if (Keyboard.GetState().IsKeyDown(Keys.D7) && !keyPressedTempVariable)
+            {
+                if (roomNumber == 18)
+                {
+                    changeRoom(0, 0);
+                }
+                else
+                {
+                    changeRoom(roomNumber + 1, Collision.Direction.up);
+                }
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.D8) && !keyPressedTempVariable)
+            {
+                if (roomNumber == 18)
+                {
+                    changeRoom(0, 0);
+                }
+                else
+                {
+                    changeRoom(roomNumber + 1, Collision.Direction.up);
+                }
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.D9) && !keyPressedTempVariable)
+            {
+                if (roomNumber == 18)
+                {
+                    changeRoom(0, 0);
+                }
+                else
+                {
+                    changeRoom(roomNumber + 1, Collision.Direction.up);
+                }
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.D0) && !keyPressedTempVariable)
+            {
+                if (roomNumber == 18)
+                {
+                    changeRoom(0, 0);
+                }
+                else
+                {
+                    changeRoom(roomNumber + 1, Collision.Direction.up);
+                }
+            }
+       
 
             //sforeach (IController controller in controllerList)
             //{
@@ -225,7 +226,9 @@ namespace CSE3902_Game_Sprint0
         public void changeRoom(int newRoom, Collision.Direction direction)
         {
             keyPressedTempVariable = true;
-            Room oldRoom = currentRoom;
+            oldRoom = currentRoom;
+
+           // oldRoom = roomList[roomNumber];
             collisionManager.ClearNotLink();
             roomNumber = newRoom;
             foreach (Room r in roomList)
@@ -238,7 +241,7 @@ namespace CSE3902_Game_Sprint0
             //Wait for a quarter of a second before transition to next room
             //Fixes holding down mouse -> spamming through each room
             //Clear the collision set
-
+            
             currentMainGameState = new MainState(this, currentRoom);
             //currentGameState = currentMainGameState;
             currentGameState = new TransitionState(this, oldRoom, currentRoom, direction);

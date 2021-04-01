@@ -39,7 +39,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private int yellowrupeeCounter;
 
 
-        private int roomNumber;
+        public int roomNumber;
         public Room(ZeldaGame game, int RoomNumber, List<ITile> tilesLoaded, List<IItem> itemsLoaded, List<IEnemy> enemiesLoaded, List<IDoor> doorsLoaded)
         {
             roomNumber = RoomNumber;

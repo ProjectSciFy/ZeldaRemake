@@ -44,19 +44,19 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             }
             if (tile is StairsTile)
             {
-                if (direction == Collision.Collision.Direction.down)
+                if (direction == Collision.Collision.Direction.down && !game.keyPressedTempVariable)
                 {
                     game.changeRoom(game.neighbors[game.roomNumber][3], direction);
                 }
-                else if (direction == Collision.Collision.Direction.up)
+                else if (direction == Collision.Collision.Direction.up && !game.keyPressedTempVariable)
                 {
                     game.changeRoom(game.neighbors[game.roomNumber][0], direction);
                 }
-                else if (direction == Collision.Collision.Direction.right)
+                else if (direction == Collision.Collision.Direction.right && !game.keyPressedTempVariable)
                 {
                     game.changeRoom(game.neighbors[game.roomNumber][2], direction);
                 }
-                else if (direction == Collision.Collision.Direction.left)
+                else if (direction == Collision.Collision.Direction.left && !game.keyPressedTempVariable)
                 {
                     game.changeRoom(game.neighbors[game.roomNumber][1], direction);
                 }
