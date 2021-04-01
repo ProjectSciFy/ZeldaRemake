@@ -28,6 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
         public bool collided = false;
+        private int boomerangTimer = 30;
 
         public LinkBoomerangProjectile(Link link, LinkStateMachine linkState)
         {
@@ -46,6 +47,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public void Update()
         {
+            if (boomerangTimer > 0)
+            {
+                boomerangTimer--;
+            }
             myState.Update();
             mySprite.Update();
             linkState.Update();
@@ -60,11 +65,12 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
 
-            if (collided)
+            if (collided && boomerangTimer <= 0)
             {
                 game.projectileHandler.Remove(this);
                 game.collisionManager.collisionEntities.Remove(this);
             }
+            collided = false;
         }
         public void Draw()
         {

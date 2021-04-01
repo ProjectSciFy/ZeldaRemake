@@ -85,8 +85,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 
                     if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.flyingEast)
                     {
-                        //keese.velocity.X = 2;
-                        //keese.velocity.Y = 0;
                         KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.flyingEast;
                        keese.mySprite = enemySpriteFactory.KeeseFlyingEast();
                     }
@@ -105,8 +103,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 
                     if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.flyingSouthEast)
                     {
-                        //keese.velocity.X = 2;
-                        //keese.velocity.Y = 2;
                         KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.flyingSouthEast;
                         keese.mySprite = enemySpriteFactory.KeeseFlyingSouthEast();
                     }
@@ -129,8 +125,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 
                     if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.flyingSouth)
                     {
-                        //keese.velocity.X = 0;
-                        //keese.velocity.Y = 2;
                         KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.flyingSouth;
                        keese.mySprite = enemySpriteFactory.KeeseFlyingSouth();
                     }
@@ -149,8 +143,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 
                     if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.flyingSouthWest)
                     {
-                        //keese.velocity.X = -2;
-                        //keese.velocity.Y = 2;
                         KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.flyingSouthWest;
                         keese.mySprite = enemySpriteFactory.KeeseFlyingSouthWest();
                     }
@@ -173,8 +165,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 
                     if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.flyingWest)
                     {
-                        //keese.velocity.X = -2;
-                        //keese.velocity.Y = 0;
                         KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.flyingWest;
                         keese.mySprite = enemySpriteFactory.KeeseFlyingWest();
                     }
@@ -193,8 +183,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 
                     if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.flyingNorthWest)
                     {
-                        //keese.velocity.X = -2;
-                        //keese.velocity.Y = -2;
                         KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.flyingNorthWest;
                         keese.mySprite = enemySpriteFactory.KeeseFlyingNorthWest();
                     }
