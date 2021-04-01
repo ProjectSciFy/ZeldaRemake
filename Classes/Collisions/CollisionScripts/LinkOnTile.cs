@@ -16,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         private TransitionState transition;
         public LinkOnTile(Link link, ITile tile, Collision.Collision.Direction direction)
         {
-            this.game = game;
+            this.game = link.game;
             this.link = link;
             this.tile = tile;
             this.direction = direction;
@@ -46,19 +46,19 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             {
                 if (direction == Collision.Collision.Direction.down)
                 {
-                    // Andrews transition logic
+                    game.changeRoom(game.neighbors[game.roomNumber][3], direction);
                 }
                 else if (direction == Collision.Collision.Direction.up)
                 {
-                    // Andrews transition logic
+                    game.changeRoom(game.neighbors[game.roomNumber][0], direction);
                 }
                 else if (direction == Collision.Collision.Direction.right)
                 {
-                    // Andrews transition logic
+                    game.changeRoom(game.neighbors[game.roomNumber][2], direction);
                 }
                 else if (direction == Collision.Collision.Direction.left)
                 {
-                    // Andrews transition logic
+                    game.changeRoom(game.neighbors[game.roomNumber][1], direction);
                 }
             }
         }

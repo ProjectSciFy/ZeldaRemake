@@ -53,10 +53,11 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private Texture2D itemSpriteSheet;
         private int roomLimiter;
         private int drawOffset;
-        public int transitionDirection = 0;
+        private Collision.Collision.Direction transitionDirection;
+        //public int transitionDirection = 0;
         public int animationSpeed = 6;
        
-        public TransitionState(ZeldaGame game, Room oldroom, Room nextroom, int transitionDirection)
+        public TransitionState(ZeldaGame game, Room oldroom, Room nextroom, Collision.Collision.Direction transitionDirection)
         {
             this.game = game;
             this.oldroom = oldroom;
@@ -81,19 +82,19 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             switch(transitionDirection)
             { 
-                case 0:
+                case Collision.Collision.Direction.up:
                     newRoomShift = new Vector2(0, -176 * 3);
                     timer = 176 * 3 / animationSpeed;
                     break;
-                case 1:
+                case Collision.Collision.Direction.left:
                     newRoomShift = new Vector2(-256 * 3, 0);
                     timer = 256 * 3 / animationSpeed;
                     break;
-                case 2:
+                case Collision.Collision.Direction.right:
                     newRoomShift = new Vector2(256 * 3,0);
                     timer = 256 * 3 / animationSpeed;
                     break;
-                case 3:
+                case Collision.Collision.Direction.down:
                     newRoomShift = new Vector2(0, 176 * 3);
                     timer = 176 * 3 / animationSpeed;
                     break;
@@ -197,19 +198,19 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 game.keyPressedTempVariable = false;
                 switch (transitionDirection)
                 {
-                    case 0:
+                    case Collision.Collision.Direction.up:
                         game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.up);
                         game.link.SetLocation(new Vector2(windowWidthFloor + 112 * 3 + 8*3, windowHeightFloor + 144 * 3));
                         break;
-                    case 1:
+                    case Collision.Collision.Direction.left:
                         game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.left);
                         game.link.SetLocation(new Vector2(windowWidthFloor + 224 * 3, windowHeightFloor + 72 * 3 + 8 *3));
                         break;
-                    case 2:
+                    case Collision.Collision.Direction.right:
                         game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.right);
                         game.link.SetLocation(new Vector2(windowWidthFloor + 16 * 3, windowHeightFloor + 72 * 3 + 8 * 3));
                         break;
-                    case 3:
+                    case Collision.Collision.Direction.down:
                         game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
                         game.link.SetLocation(new Vector2(windowWidthFloor + 112 * 3 + 8 * 3, windowHeightFloor + 16*3));
                         break;
@@ -222,16 +223,16 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             switch (transitionDirection)
             {
-                case 0:
+                case Collision.Collision.Direction.up:
                     animationShift = new Vector2(0, animationSpeed);
                     break;
-                case 1:
+                case Collision.Collision.Direction.left:
                     animationShift = new Vector2(animationSpeed, 0);
                     break;
-                case 2:
+                case Collision.Collision.Direction.right:
                     animationShift = new Vector2(-animationSpeed, 0);
                     break;
-                case 3:
+                case Collision.Collision.Direction.down:
                     animationShift = new Vector2(0, -animationSpeed);
                     break;
             }

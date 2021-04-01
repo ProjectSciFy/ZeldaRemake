@@ -159,50 +159,50 @@ namespace CSE3902_Game_Sprint0
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.D7) && !keyPressedTempVariable)
-            {
-                if (roomNumber == 18)
-                {
-                    changeRoom(0,0);
-                }
-                else
-                {
-                    changeRoom(roomNumber + 1,0);
-                }
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.D8) && !keyPressedTempVariable)
-            {
-                if (roomNumber == 18)
-                {
-                    changeRoom(0,0);
-                }
-                else
-                {
-                    changeRoom(roomNumber + 1, 1);
-                }
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.D9) && !keyPressedTempVariable)
-            {
-                if (roomNumber == 18)
-                {
-                    changeRoom(0,0);
-                }
-                else
-                {
-                    changeRoom(roomNumber + 1, 2);
-                }
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.D0) && !keyPressedTempVariable)
-            {
-                if (roomNumber == 18)
-                {
-                    changeRoom(0,0);
-                }
-                else
-                {
-                    changeRoom(roomNumber + 1, 3);
-                }
-            }
+            //if (Keyboard.GetState().IsKeyDown(Keys.D7) && !keyPressedTempVariable)
+            //{
+            //    if (roomNumber == 18)
+            //    {
+            //        changeRoom(0,0);
+            //    }
+            //    else
+            //    {
+            //        changeRoom(roomNumber + 1,0);
+            //    }
+            //}
+            //else if (Keyboard.GetState().IsKeyDown(Keys.D8) && !keyPressedTempVariable)
+            //{
+            //    if (roomNumber == 18)
+            //    {
+            //        changeRoom(0,0);
+            //    }
+            //    else
+            //    {
+            //        changeRoom(roomNumber + 1, 1);
+            //    }
+            //}
+            //else if (Keyboard.GetState().IsKeyDown(Keys.D9) && !keyPressedTempVariable)
+            //{
+            //    if (roomNumber == 18)
+            //    {
+            //        changeRoom(0,0);
+            //    }
+            //    else
+            //    {
+            //        changeRoom(roomNumber + 1, 2);
+            //    }
+            //}
+            //else if (Keyboard.GetState().IsKeyDown(Keys.D0) && !keyPressedTempVariable)
+            //{
+            //    if (roomNumber == 18)
+            //    {
+            //        changeRoom(0,0);
+            //    }
+            //    else
+            //    {
+            //        changeRoom(roomNumber + 1, 3);
+            //    }
+            //}
             // TODO: Add your update logic here
 
             //sforeach (IController controller in controllerList)
@@ -222,7 +222,7 @@ namespace CSE3902_Game_Sprint0
             //collisionManager.Update();
         }
 
-        public void changeRoom(int newRoom, int direction)
+        public void changeRoom(int newRoom, Collision.Direction direction)
         {
             keyPressedTempVariable = true;
             Room oldRoom = currentRoom;
