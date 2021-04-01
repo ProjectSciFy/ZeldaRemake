@@ -227,6 +227,7 @@ namespace CSE3902_Game_Sprint0
             keyPressedTempVariable = true;
             Room oldRoom = currentRoom;
             collisionManager.ClearNotLink();
+            projectileHandler.Clear();
             roomNumber = newRoom;
             foreach (Room r in roomList)
             {

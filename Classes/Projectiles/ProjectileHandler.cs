@@ -25,7 +25,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         {
             differenceSet.Add(projectile);
         }
-
+        public void Clear()
+        {
+            projectileSet.Clear();
+        }
         public void Update()
         {
             foreach (IProjectile projectile in projectileSet)
