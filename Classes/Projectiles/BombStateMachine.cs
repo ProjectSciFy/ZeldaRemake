@@ -13,10 +13,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public ProjectileHandler projectileHandler;
         public bool fuse = true;
 
-        private int timer = 90;
+        public int timer = 90;
 
-        private enum CurrentState { none, spawning, exploding };
-        private CurrentState currentState = CurrentState.none;
+        public enum CurrentState { none, spawning, exploding };
+        public CurrentState currentState = CurrentState.none;
 
         public BombStateMachine(Bomb bomb)
         {
@@ -41,6 +41,16 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 currentState = CurrentState.exploding;
                 projectileSpriteFactory.BombExploding(bomb);
                 bomb.exploding = true;
+
+                bomb.collisionRectangle.X = (int)(bomb.drawLocation.X - (bomb.spriteSize.X * bomb.spriteScalar / 2));
+                bomb.collisionRectangle.Y = (int)(bomb.drawLocation.Y - (bomb.spriteSize.Y * bomb.spriteScalar / 2));
+                bomb.collisionRectangle.Width = (int)(bomb.spriteSize.X * bomb.spriteScalar * 2);
+                bomb.collisionRectangle.Height = (int)(bomb.spriteSize.Y * bomb.spriteScalar * 2);
+                bomb.game.collisionManager.collisionEntities[bomb] = bomb.CollisionRectangle();
+            }
+            if (currentState == CurrentState.exploding && timer == 29)
+            {
+                bomb.game.collisionManager.collisionEntities.Remove(bomb);
             }
         }
 

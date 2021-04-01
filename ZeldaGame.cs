@@ -230,6 +230,7 @@ namespace CSE3902_Game_Sprint0
 
            // oldRoom = roomList[roomNumber];
             collisionManager.ClearNotLink();
+            projectileHandler.Clear();
             roomNumber = newRoom;
             foreach (Room r in roomList)
             {

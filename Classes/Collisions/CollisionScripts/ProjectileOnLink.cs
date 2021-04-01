@@ -21,7 +21,14 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 
         public void Execute()
         {
-            if (projectile is GoriyaBoomerang || projectile is Fireball)
+            if (projectile is Bomb)
+            {
+                if (link.linkState.timer <= 0)
+                {
+                    link.linkState.isDamaged = true;
+                }
+            }
+            else if (projectile is GoriyaBoomerang || projectile is Fireball)
             {
                 if (link.linkState.timer <= 0)
                 {
