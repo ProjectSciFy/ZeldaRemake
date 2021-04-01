@@ -16,7 +16,8 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         private IEnemy enemy;
         private IProjectile projectile;
         private Collision.Collision.Direction direction;
-        private int ArrowDamage = 1;
+        private int arrowDamage = 1;
+        private int bombDamage = 3;
 
         public ProjectileOnEnemy(IProjectile projectile, IEnemy enemy, Collision.Collision.Direction direction)
         {
@@ -31,61 +32,88 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             {
                 if (enemy is EnemyAquamentus)
                 {
-                    ((EnemyAquamentus)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyAquamentus)enemy).TakeDamage(arrowDamage);
                 }
                 else if (enemy is EnemySlime)
                 {
-                    ((EnemySlime)enemy).TakeDamage(ArrowDamage);
+                    ((EnemySlime)enemy).TakeDamage(arrowDamage);
                 }
                 else if (enemy is EnemyGoriya)
                 {
-                    ((EnemyGoriya)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyGoriya)enemy).TakeDamage(arrowDamage);
                 }
                 else if (enemy is EnemyKeese)
                 {
-                    ((EnemyKeese)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyKeese)enemy).TakeDamage(arrowDamage);
                 }
                 else if (enemy is EnemyStalfos)
                 {
-                    ((EnemyStalfos)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyStalfos)enemy).TakeDamage(arrowDamage);
                 }
                 else if (enemy is EnemyWallmaster)
                 {
-                    ((EnemyWallmaster)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyWallmaster)enemy).TakeDamage(arrowDamage);
                 }
 
                 ((Arrow)projectile).myState.hit = true;
             }
-            if (projectile is LinkBoomerangProjectile)
+            else if (projectile is Bomb)
             {
                 if (enemy is EnemyAquamentus)
                 {
-                    ((EnemyAquamentus)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyAquamentus)enemy).TakeDamage(bombDamage);
+                }
+                else if (enemy is EnemySlime)
+                {
+                    ((EnemySlime)enemy).TakeDamage(bombDamage);
+                }
+                else if (enemy is EnemyGoriya)
+                {
+                    ((EnemyGoriya)enemy).TakeDamage(bombDamage);
+                }
+                else if (enemy is EnemyKeese)
+                {
+                    ((EnemyKeese)enemy).TakeDamage(bombDamage);
+                }
+                else if (enemy is EnemyStalfos)
+                {
+                    ((EnemyStalfos)enemy).TakeDamage(bombDamage);
+                }
+                else if (enemy is EnemyWallmaster)
+                {
+                    ((EnemyWallmaster)enemy).TakeDamage(bombDamage);
+                }
+            }
+            else if (projectile is LinkBoomerangProjectile)
+            {
+                if (enemy is EnemyAquamentus)
+                {
+                    ((EnemyAquamentus)enemy).TakeDamage(arrowDamage);
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemySlime)
                 {
-                    ((EnemySlime)enemy).TakeDamage(ArrowDamage);
+                    ((EnemySlime)enemy).TakeDamage(arrowDamage);
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemyGoriya)
                 {
-                    ((EnemyGoriya)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyGoriya)enemy).TakeDamage(arrowDamage);
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemyKeese)
                 {
-                    ((EnemyKeese)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyKeese)enemy).TakeDamage(arrowDamage);
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemyStalfos)
                 {
-                    ((EnemyStalfos)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyStalfos)enemy).TakeDamage(arrowDamage);
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemyWallmaster)
                 {
-                    ((EnemyWallmaster)enemy).TakeDamage(ArrowDamage);
+                    ((EnemyWallmaster)enemy).TakeDamage(arrowDamage);
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
             }

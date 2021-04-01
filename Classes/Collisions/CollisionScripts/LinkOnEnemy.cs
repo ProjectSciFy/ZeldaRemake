@@ -30,6 +30,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             if (enemy is EnemyWallmaster)
             {
                 link.drawLocation = ((EnemyWallmaster)enemy).drawLocation;
+                link.linkState.currentState = LinkStateMachine.CurrentState.idleDown;
+                link.linkState.Idle();
+                link.linkState.timer = 2;
             }
         }
     }
