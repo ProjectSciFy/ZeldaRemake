@@ -27,7 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         {
             if (enemy is EnemyKeese)
             {
-                if (tile is WallTile || tile is StairsTile)
+                if (tile is WallTile || tile is StairsTile || tile is GatekeeperTile)
                 {
                     if (direction == Collision.Collision.Direction.down)
                     {

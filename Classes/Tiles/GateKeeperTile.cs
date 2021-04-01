@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         private static int HITBOX_OFFSET = 6;
         public Vector2 drawLocation;
         public Vector2 spriteSize = new Vector2(16, 16);
-        private Boolean locked = true;
+        public Boolean locked = true;
         public GatekeeperTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location, Boolean locked)
         {
             this.game = game;

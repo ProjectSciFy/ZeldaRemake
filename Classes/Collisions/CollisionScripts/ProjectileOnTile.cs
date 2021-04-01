@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.Tiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,13 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             if (projectile is Arrow)
             {
                 ((Arrow)projectile).myState.hit = true;
+            }
+            if (projectile is LinkBoomerangProjectile)
+            {
+                if (tile is WallTile || tile is GatekeeperTile)
+                {
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
             }
         }
     }
