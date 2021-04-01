@@ -31,5 +31,9 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 12, 12), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
+        public UniversalSprite GatekeeperTile()
+        {
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 12, 12), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
+        }
     }
 }
