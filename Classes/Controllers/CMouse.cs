@@ -44,11 +44,11 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers
 
                 if(game.roomNumber == 18)
                 {
-                    game.changeRoom(0);
+                    game.changeRoom(0, 0);
                 }
                 else
                 {
-                    game.changeRoom(game.roomNumber + 1);
+                    game.changeRoom(game.roomNumber + 1, 0);
                 }
             }
 

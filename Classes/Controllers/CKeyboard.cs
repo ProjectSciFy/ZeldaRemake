@@ -66,6 +66,7 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.Q, new ShutDownGame(game));
             //R -- reset game to initial state
             keyBinds.Add(Keys.R, new Reset(game));
+            keyBinds.Add(Keys.P, new pause());
         }
 
         public void Update()

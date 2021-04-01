@@ -18,6 +18,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Header;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -30,6 +31,14 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private List<IDoor> doors;
         private ZeldaGame game;
 
+        //player hud related variables:
+        private playerHUD pHUD;
+        private HudSpriteFactory hudFactory;
+        private int keyCounter;
+        private int bluerupeeCounter;
+        private int yellowrupeeCounter;
+
+
         private int roomNumber;
         public Room(ZeldaGame game, int RoomNumber, List<ITile> tilesLoaded, List<IItem> itemsLoaded, List<IEnemy> enemiesLoaded, List<IDoor> doorsLoaded)
         {
@@ -40,6 +49,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             doors = doorsLoaded;
             this.game = game;
             background = new Background(game, roomNumber);
+
+            //player HUD:
+            this.keyCounter = game.numKeys;
+            this.bluerupeeCounter = game.numBrups;
+            this.yellowrupeeCounter = game.numYrups;
+            this.hudFactory = game.hudSpriteFactory;
+            pHUD = new playerHUD(game, hudFactory);
         }
         public void Initialize()
         {
@@ -74,6 +90,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         {
             return roomNumber;
         }
+        public List<IDoor> getDoors()
+        {
+            return doors;
+        }
 
         public void removeEnemy(IEnemy entity)
         {
@@ -82,11 +102,14 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void removeItem(IItem entity)
         {
             items.Remove(entity);
+            //check which type of item it is, specifically key, blue or yellow rupee, will need to update counters accordingly.
         }
 
         public void Draw()
         {
             background.Draw();
+            pHUD.Draw();
+            
             foreach (IDoor door in doors)
             {
                 door.Draw();

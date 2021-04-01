@@ -34,7 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.spriteFactory = new GoriyaSpriteFactory(game);
             drawLocation = spawnLocation;
             myState = new GoriyaStateMachine(this);
-            game.collisionManager.enemies.Add(this, collisionRectangle);
+            game.collisionManager.collisionEntities.Add(this, collisionRectangle);
             boomerang = new GoriyaBoomerang(game, this, myState);
             this.spriteScalar = game.spriteScalar;
         }

@@ -35,7 +35,11 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             linkState = empty;
             game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
-        } 
+        }
+        public void SetLocation(Vector2 newLocation)
+        {
+            drawLocation = newLocation;
+        }
 
         //Set Link to be using an item
         public void UseItem()
