@@ -19,7 +19,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private const int RANGE = 175;
         private const int RETURN_WINDOW = 30;
         private const int DESPAWN_DISTANCE = 5;
-        private const float BASE_SPEED = (float)1.5, PIVOT_SPEED = (float) 1.0;
+        private const float BASE_SPEED = (float)3, PIVOT_SPEED = (float) 2.0;
         public Boolean returning = false, newItem = true, brake = false;
         private LinkBoomerangDirectionCalculation directionCalc;
         private LinkBoomerangMovementCalculation movementCalc;

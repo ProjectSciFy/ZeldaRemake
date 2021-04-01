@@ -17,7 +17,23 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public Direction CalculateReturnDireciton()
         {
-            if (boomerang.drawLocation.X > boomerang.link.drawLocation.X && boomerang.drawLocation.Y > boomerang.link.drawLocation.Y)
+            if (Math.Abs(boomerang.drawLocation.X - boomerang.link.drawLocation.X) < 5 && boomerang.drawLocation.Y > boomerang.link.drawLocation.Y)
+            {
+                returnDirection = Direction.up;
+            }
+            else if (Math.Abs(boomerang.drawLocation.X - boomerang.link.drawLocation.X) < 5 && boomerang.drawLocation.Y < boomerang.link.drawLocation.Y)
+            {
+                returnDirection = Direction.down;
+            }
+            else if (boomerang.drawLocation.X < boomerang.link.drawLocation.X && Math.Abs(boomerang.drawLocation.Y - boomerang.link.drawLocation.Y) < 5)
+            {
+                returnDirection = Direction.right;
+            }
+            else if (boomerang.drawLocation.X > boomerang.link.drawLocation.X && Math.Abs(boomerang.drawLocation.Y - boomerang.link.drawLocation.Y) < 5)
+            {
+                returnDirection = Direction.left;
+            }
+            else if (boomerang.drawLocation.X > boomerang.link.drawLocation.X && boomerang.drawLocation.Y > boomerang.link.drawLocation.Y)
             {
                 returnDirection = Direction.NW;
             }
@@ -32,22 +48,6 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             else if (boomerang.drawLocation.X < boomerang.link.drawLocation.X && boomerang.drawLocation.Y > boomerang.link.drawLocation.Y)
             {
                 returnDirection = Direction.NE;
-            }
-            else if (boomerang.drawLocation.X == boomerang.link.drawLocation.X && boomerang.drawLocation.Y > boomerang.link.drawLocation.Y)
-            {
-                returnDirection = Direction.up;
-            }
-            else if (boomerang.drawLocation.X == boomerang.link.drawLocation.X && boomerang.drawLocation.Y < boomerang.link.drawLocation.Y)
-            {
-                returnDirection = Direction.down;
-            }
-            else if (boomerang.drawLocation.X < boomerang.link.drawLocation.X && boomerang.drawLocation.Y == boomerang.link.drawLocation.Y)
-            {
-                returnDirection = Direction.right;
-            }
-            else if (boomerang.drawLocation.X > boomerang.link.drawLocation.X && boomerang.drawLocation.Y == boomerang.link.drawLocation.Y)
-            {
-                returnDirection = Direction.left;
             }
             return returnDirection;
         }
