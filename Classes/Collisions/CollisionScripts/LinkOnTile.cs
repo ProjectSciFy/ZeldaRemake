@@ -14,7 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         private Collision.Collision.Direction direction;
         private ZeldaGame game;
         private TransitionState transition;
-        public LinkOnTile(ZeldaGame game, Link link, ITile tile, Collision.Collision.Direction direction)
+        public LinkOnTile(Link link, ITile tile, Collision.Collision.Direction direction)
         {
             this.game = game;
             this.link = link;

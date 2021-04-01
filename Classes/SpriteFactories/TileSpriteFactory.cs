@@ -25,15 +25,15 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
         public UniversalSprite StairsTile()
         {
-            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 28, 16, 16), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 28, 12, 12), Color.Pink, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
         public UniversalSprite WallTile()
         {
-            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 12, 12), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 12, 12), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
         public UniversalSprite GatekeeperTile()
         {
-            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 12, 12), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 12, 12), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
     }
 }

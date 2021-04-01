@@ -37,7 +37,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
             int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
             int doorvalue = 0;
-            
+
             List<ITile> tiles = new List<ITile>();
             List<IItem> items = new List<IItem>();
             List<IEnemy> enemies = new List<IEnemy>();
@@ -87,7 +87,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     case "BlueRupee":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         BlueRupee blueRupee;
-                        items.Add(blueRupee =new BlueRupee(game, new ItemSpriteFactory(game), position));
+                        items.Add(blueRupee = new BlueRupee(game, new ItemSpriteFactory(game), position));
                         blueRupee.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         break;
                     case "Bomb":
@@ -189,75 +189,96 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
             cwdPath = Path.Combine(cwdPath, "doors.csv");
             lines = System.IO.File.ReadAllLines(cwdPath);
+
+            Vector2 stairPos = new Vector2(0, 0);
+            GatekeeperTile gatekeeper;
+            StairsTile stair;
+            bool locked;
             foreach (string line in lines)
             {
                 string[] segments = line.Split(new string[] { "," },
                                     StringSplitOptions.None);
-                if (int.Parse(segments[0]) == RoomNumber)
-                {
-                    for (int i = 0; i < 4; i++)
-                    {
-                        if (int.Parse(segments[i + 1]) != 0)
-                        {
-                            doorvalue = i * 10 + int.Parse(segments[i + 1]);
-                            switch (i)
-                            {
-                                case 0:
-                                    doors.Add(new TopDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    break;
-                                case 1:
-                                    doors.Add(new LeftDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    break;
-                                case 2:
-                                    doors.Add(new RightDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    break;
-                                case 3:
-                                    doors.Add(new BottomDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    break;
-                                default:
-                                    break;
-                            }
 
+                for (int i = 0; i < 4; i++)
+                {
+                    if (int.Parse(segments[i + 1]) != 0)
+                    {
+                        doorvalue = i * 10 + int.Parse(segments[i + 1]);
+                        locked = true;
+                        if (int.Parse(segments[i + 1]) == 1) {
+                            locked = false;
                         }
-                        else
+                            
+
+                        switch (i)
                         {
-                            doorvalue = i * 10 + int.Parse(segments[i + 1]);
-                            switch (i)
-                            {
-                                case 0:
-                                    doors.Add(new TopDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
-                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
-                                    wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
-                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
-                                    break;
-                                case 1: //4,0 4,13
-                                    doors.Add(new LeftDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    wallPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
-                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
-                                    break;
-                                case 2:
-                                    doors.Add(new RightDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    wallPos = new Vector2(windowWidthFloor + 3 * 13 * 16 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
-                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
-                                    break;
-                                case 3:
-                                    doors.Add(new BottomDoor(game, new RoomTextureStorage(game), doorvalue));
-                                    wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 8 * 16 + 48 + 6);
-                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
-                                    wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 8 * 16 + 48 + 6);
-                                    tiles.Add(new WallTile(game, new TileSpriteFactory(game), wallPos));
-                                    break;
-                                default:
-                                    break;
-                            }
+                            case 0:
+                                doors.Add(new TopDoor(game, new RoomTextureStorage(game), doorvalue));
+
+                                wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
+                                
+                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                gatekeeper.drawLocation = wallPos;
+
+                                wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
+                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                gatekeeper.drawLocation = wallPos;
+
+                                stairPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6 + 24, windowHeightFloor + 3 * 0 * 16 + 48 + 6 - 48);
+                                tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
+                                stair.drawLocation = stairPos;
+                                break;
+                            case 1: //4,0 4,13
+                                doors.Add(new LeftDoor(game, new RoomTextureStorage(game), doorvalue));
+
+                                wallPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+
+                                tiles.Add(gatekeeper=new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                gatekeeper.drawLocation = wallPos;
+
+                                stairPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6 -48, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
+                                stair.drawLocation = stairPos;
+                                break;
+                            case 2:
+                                doors.Add(new RightDoor(game, new RoomTextureStorage(game), doorvalue));
+
+                                wallPos = new Vector2(windowWidthFloor + 3 * 13 * 16 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+
+                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                gatekeeper.drawLocation = wallPos;
+
+                                stairPos = new Vector2(windowWidthFloor + 3 * 13 * 16 + 48 + 6 + 48, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
+                                stair.drawLocation = stairPos;
+                                break;
+                            case 3:
+                                doors.Add(new BottomDoor(game, new RoomTextureStorage(game), doorvalue));
+
+                                wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 8 * 16 + 48 + 6);
+
+                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                gatekeeper.drawLocation = wallPos;
+                                wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 8 * 16 + 48 + 6);
+
+                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                gatekeeper.drawLocation = wallPos;
+
+                                stairPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6 + 24, windowHeightFloor + 3 * 8 * 16 + 48 + 6 + 48);
+                                tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
+                                stair.drawLocation = stairPos;
+                                break;
+                            default:
+                                break;
                         }
+
                     }
+                    
                 }
+                
 
             }
             return new Room(game, RoomNumber, tiles, items, enemies, doors);
-
         }
         public static Dictionary<int, int[]> ParseNeighborCSV()
         {
