@@ -1,0 +1,19 @@
+﻿READABILITY OF DEVAN'S :
+-Author of review: Jared Zahn
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Devan
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF DEVAN'S :
+-Author of review: Jared Zahn
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Devan
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 

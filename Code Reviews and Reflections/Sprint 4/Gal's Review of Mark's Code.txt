@@ -1,0 +1,19 @@
+﻿READABILITY OF MARK'S :
+-Author of review: Gal Pinhasi
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Mark Maher
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF MARK'S :
+-Author of review: Gal Pinhasi
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Mark Maher
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 
