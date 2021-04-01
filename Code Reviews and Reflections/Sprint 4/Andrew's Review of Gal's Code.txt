@@ -1,0 +1,19 @@
+﻿READABILITY OF GAL'S :
+-Author of review: Andrew Lewandowski
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Gal Pinhasi
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF GAL'S :
+-Author of review: Andrew Lewandowski
+-Date of review: 
+-Sprint Number: 4
+-File Name: 
+-Author of file: Gal Pinhasi 
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 
