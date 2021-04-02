@@ -21,13 +21,15 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private int doorValue;
         public LeftDoor(ZeldaGame game, RoomTextureStorage textures, int doorValue)
         {
+            ParserUtility utility = new ParserUtility(game);
+
             this.game = game;
             windowWidth = game.GraphicsDevice.Viewport.Width;
             windowHeight = game.GraphicsDevice.Viewport.Height;
             this.doorValue = doorValue;
 
-            int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
-            int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
+            int windowHeightFloor = ((windowHeight / utility.SCALE_FACTOR - utility.WINDOW_X_ADJUST / utility.SCALE_FACTOR) / utility.GEN_ADJUST) + utility.GAME_FRAME_ADJUST;
+            int windowWidthFloor = (windowWidth / utility.SCALE_FACTOR - utility.WINDOW_Y_ADJUST / utility.SCALE_FACTOR) / utility.GEN_ADJUST;
             windowHeightFloor = windowHeightFloor + 72 * 3;
 
 
