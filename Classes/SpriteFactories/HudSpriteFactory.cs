@@ -40,9 +40,10 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //{
         //}
 
-        //public UniversalSprite livesHUD()
-        //{
-        //}
+        public UniversalSprite livesHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(645, 117, 8, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
 
         public UniversalSprite levelHUD()
         {
