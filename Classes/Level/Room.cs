@@ -103,6 +103,18 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         {
             items.Remove(entity);
             //check which type of item it is, specifically key, blue or yellow rupee, will need to update counters accordingly.
+            if (entity is Key)
+            {
+                game.numKeys += 1;
+            }
+            else if (entity is BlueRupee)
+            {
+                game.numBrups += 1;
+            }
+            else if (entity is YellowRupee)
+            {
+                game.numYrups += 1;
+            }
         }
 
         public void Draw()
