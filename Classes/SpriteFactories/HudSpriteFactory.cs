@@ -21,31 +21,42 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //this is just the base template sprite. HUD still needs life, map, level, counters to be implemented and updated in real time.
         public UniversalSprite baseHud()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(257, 10, 256, 56), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 255, 55), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
         }
 
         //public UniversalSprite mapHUD()
         //{
         //}
 
-        //public UniversalSprite keyHUD()
+        //public UniversalSprite keysHUD()
         //{
         //}
 
-        //public UniversalSprite bluerupeeHUD()
+        //public UniversalSprite bluerupeesHUD()
         //{
         //}
 
-        //public UniversalSprite yellowrupeeHUD()
+        //public UniversalSprite yellowrupeesHUD()
         //{
         //}
 
-        //public UniversalSprite lifeHUD()
+        //public UniversalSprite livesHUD()
         //{
         //}
 
-        //public UniversalSprite levelHUD()
-        //{
-        //}
+        public UniversalSprite levelHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 1, 64, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
+        public UniversalSprite primaryWeaponHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(555, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
+        public UniversalSprite secondaryWeaponHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
     }
 }
