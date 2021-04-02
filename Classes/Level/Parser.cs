@@ -187,10 +187,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 string[] segments = line.Split(new string[] { "," },
                                     StringSplitOptions.None);
-                wallPos = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                 WallTile wall;
                 tiles.Add(wall = new WallTile(game, new TileSpriteFactory(game), wallPos));
-                wall.drawLocation = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                wall.drawLocation = wallPos;
             }
 
             cwdPath = Directory.GetCurrentDirectory();
@@ -221,66 +221,64 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                             case 0:
                                 doors.Add(new TopDoor(game, new RoomTextureStorage(game), doorvalue));
 
-                                wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
+                                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 6, 0);
 
                                 tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
-                                wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 0 * 16 + 48 + 6);
+                                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 7, 0);
                                 tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
-                                stairPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6 + 24, windowHeightFloor + 3 * 0 * 16 + 48 + 6 - 48);
+                                stairPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 6, 0);
                                 tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
                                 stair.drawLocation = stairPos;
                                 break;
                             case 1: //4,0 4,13
                                 doors.Add(new LeftDoor(game, new RoomTextureStorage(game), doorvalue));
-
-                                wallPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 0, 4);
 
                                 tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
-                                stairPos = new Vector2(windowWidthFloor + 3 * 7 * 0 + 48 + 6 - 48, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                stairPos = utility.GetLeftStairPosition(windowWidthFloor, windowHeightFloor, 0, 4);
                                 tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
                                 stair.drawLocation = stairPos;
                                 break;
                             case 2:
                                 doors.Add(new RightDoor(game, new RoomTextureStorage(game), doorvalue));
 
-                                wallPos = new Vector2(windowWidthFloor + 3 * 13 * 16 + 48 + 6, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 13, 4);
 
                                 tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
-                                stairPos = new Vector2(windowWidthFloor + 3 * 13 * 16 + 48 + 6 + 48, windowHeightFloor + 3 * 4 * 16 + 48 + 6);
+                                stairPos = utility.GetRightStairPosition(windowWidthFloor, windowHeightFloor, 13, 4);
                                 tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
                                 stair.drawLocation = stairPos;
                                 break;
                             case 3:
                                 doors.Add(new BottomDoor(game, new RoomTextureStorage(game), doorvalue));
 
-                                wallPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6, windowHeightFloor + 3 * 8 * 16 + 48 + 6);
+                                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 6, 8);
 
                                 tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
-                                wallPos = new Vector2(windowWidthFloor + 3 * 7 * 16 + 48 + 6, windowHeightFloor + 3 * 8 * 16 + 48 + 6);
+                                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 7, 8);
 
                                 tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
-                                stairPos = new Vector2(windowWidthFloor + 3 * 6 * 16 + 48 + 6 + 24, windowHeightFloor + 3 * 8 * 16 + 48 + 6 + 48);
+                                stairPos = utility.GetBotStairPosition(windowWidthFloor, windowHeightFloor, 6, 8);
                                 tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
                                 stair.drawLocation = stairPos;
                                 break;
                             default:
                                 break;
                         }
-                        }
-
                     }
                 }
+            }
                 
 
             return new Room(game, RoomNumber, tiles, items, enemies, doors);

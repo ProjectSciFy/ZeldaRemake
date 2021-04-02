@@ -69,5 +69,31 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         {
             return new Vector2((windowWidth / GEN_ADJUST) - SPRITE_SIZE, windowHeightFloor + MID_ADJUST * GEN_ADJUST);
         }
+
+
+        public Vector2 GetTopStairPosition(int windowWidthFloor, int windowHeightFloor, float x, float y)
+        {
+            float xDiff = SCALE_FACTOR * x * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST + (SCALE_FACTOR * SPRITE_SIZE / GEN_ADJUST);
+            float yDiff = SCALE_FACTOR * y * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST - (SCALE_FACTOR * SPRITE_SIZE);
+            return new Vector2(windowWidthFloor + xDiff, windowHeightFloor + yDiff);
+        }
+        public Vector2 GetLeftStairPosition(int windowWidthFloor, int windowHeightFloor, float x, float y)
+        {
+            float xDiff = SCALE_FACTOR * x * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST - (SCALE_FACTOR * SPRITE_SIZE);
+            float yDiff = SCALE_FACTOR * y * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST;
+            return new Vector2(windowWidthFloor + xDiff, windowHeightFloor + yDiff);
+        }
+        public Vector2 GetRightStairPosition(int windowWidthFloor, int windowHeightFloor, float x, float y)
+        {
+            float xDiff = SCALE_FACTOR * x * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST + (SCALE_FACTOR * SPRITE_SIZE);
+            float yDiff = SCALE_FACTOR * y * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST;
+            return new Vector2(windowWidthFloor + xDiff, windowHeightFloor + yDiff);
+        }
+        public Vector2 GetBotStairPosition(int windowWidthFloor, int windowHeightFloor, float x, float y)
+        {
+            float xDiff = SCALE_FACTOR * x * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST + (SCALE_FACTOR * SPRITE_SIZE / GEN_ADJUST);
+            float yDiff = SCALE_FACTOR * y * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST + (SCALE_FACTOR * SPRITE_SIZE);
+            return new Vector2(windowWidthFloor + xDiff, windowHeightFloor + yDiff);
+        }
     }
 }
