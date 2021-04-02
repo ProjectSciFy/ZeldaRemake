@@ -15,7 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.down;
         private Boolean InRange;
-        private Boolean away = false;
+        private Boolean attacking = false, nested = true, returning = false, pivot = false;
         private enum CurrentState { idle, attackingUp, attackingDown, attackingRight, attackingLeft, retractingUp, retractingDown, retractingRight, retractingLeft };
         private CurrentState currentState = CurrentState.idle;
         private const int TRAP_WIDTH = 8;
@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.game = BladeTrap.game;
             this.link = link;
             spriteFactory = new BladeTrapSpriteFactory(this.game);
-            this.BladeTrap.mySprite = spriteFactory.SpawnBladeTrap();
+            this.BladeTrap.mySprite = spriteFactory.BladeTrapIdle();
         }
 
         public void Idle()
@@ -33,7 +33,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             if (currentState != CurrentState.idle)
             {
                 currentState = CurrentState.idle;
-            spriteFactory.BladeTrapIdle();
+                this.BladeTrap.velocity = new Vector2(0, 0);
+                this.BladeTrap.mySprite = spriteFactory.BladeTrapIdle();
             }
          }
         public void Attack()
@@ -80,47 +81,12 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     break;
             }
         }
-        //public void Retract()
-        //{
-        //    switch (direction)
-        //    {
-        //        case Direction.down:
-        //            if (currentState != CurrentState.retractingDown)
-        //            {
-        //                currentState = CurrentState.retractingDown;
-        //                spriteFactory.BladeTrapUp();
-        //            }
-        //            break;
-        //        case Direction.up:
-        //            if (currentState != CurrentState.retractingUp)
-        //            {
-        //                currentState = CurrentState.retractingUp;
-        //                spriteFactory.BladeTrapDown();
-        //            }
-        //            break;
-        //        case Direction.right:
-        //            if (currentState != CurrentState.retractingRight)
-        //            {
-        //                currentState = CurrentState.retractingRight;
-        //                spriteFactory.BladeTrapLeft();
-        //            }
-        //            break;
-        //        case Direction.left:
-        //            if (currentState != CurrentState.retractingLeft)
-        //            {
-        //                currentState = CurrentState.retractingLeft;
-        //                spriteFactory.BladeTrapRight();
-        //            }
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
         public void Update()
         {
-            if ((Math.Abs(link.drawLocation.X - BladeTrap.spawnLocation.X) <= BladeTrap.range.X) && Math.Abs(link.drawLocation.Y - BladeTrap.spawnLocation.Y) < TRAP_WIDTH)
+            if ((Math.Abs(link.drawLocation.X - BladeTrap.spawnLocation.X) <= BladeTrap.range.X) && Math.Abs(link.drawLocation.Y - BladeTrap.spawnLocation.Y) < TRAP_WIDTH && !returning)
             {
-                InRange = true;
+                attacking = true;
+                nested = false;
                 if (link.drawLocation.X > BladeTrap.spawnLocation.X)
                 {
                     direction = Direction.right;
@@ -130,9 +96,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     direction = Direction.left;
                 }
             }
-            else if ((Math.Abs(link.drawLocation.Y - BladeTrap.spawnLocation.Y) <= BladeTrap.range.Y) && Math.Abs(link.drawLocation.X - BladeTrap.spawnLocation.X) < TRAP_WIDTH)
+            else if ((Math.Abs(link.drawLocation.Y - BladeTrap.spawnLocation.Y) <= BladeTrap.range.Y) && Math.Abs(link.drawLocation.X - BladeTrap.spawnLocation.X) < TRAP_WIDTH && !returning)
             {
-                InRange = true;
+                attacking = true;
+                nested = false;
                 if (link.drawLocation.Y > BladeTrap.spawnLocation.Y)
                 {
                     direction = Direction.down;
@@ -142,65 +109,48 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                     direction = Direction.up;
                 }
             }
-            else
-            {
-                InRange = false;
-            }
 
-            if (BladeTrap.drawLocation == BladeTrap.spawnLocation)
+            if (((int)Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) > BladeTrap.range.X) && (BladeTrap.drawLocation.Y - BladeTrap.spawnLocation.Y) < TRAP_WIDTH && !returning)
             {
-                away = false;
-            }
-            else
-            {
-                away = true;
-                if ((Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) > BladeTrap.range.X) || (BladeTrap.drawLocation.Y > BladeTrap.spawnLocation.Y))
+                returning = true;
+                if (direction == Direction.right)
                 {
-                    InRange = false;
-                    if (direction == Direction.right)
-                    {
-                        direction = Direction.left;
-                    }
-                    else if (direction == Direction.left)
-                    {
-                        direction = Direction.right;
-                    }
+                    direction = Direction.left;
                 }
-                else if ((Math.Abs(BladeTrap.drawLocation.Y - BladeTrap.spawnLocation.Y) > BladeTrap.range.Y) || (BladeTrap.drawLocation.X > BladeTrap.spawnLocation.X))
+                else if (direction == Direction.left)
                 {
-                    InRange = false;
-                    if (direction == Direction.up)
-                    {
-                        direction = Direction.down;
-                    }
-                    else if (direction == Direction.down)
-                    {
-                        direction = Direction.up;
-                    }
+                    direction = Direction.right;
                 }
             }
-            if (!away && !InRange)
+            else if ((int)Math.Abs(BladeTrap.drawLocation.Y - BladeTrap.spawnLocation.Y) > BladeTrap.range.Y && (BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) < TRAP_WIDTH && !returning)
+            {
+                returning = true;
+                if (direction == Direction.up)
+                {
+                    direction = Direction.down;
+                }
+                else if (direction == Direction.down)
+                {
+                    direction = Direction.up;
+                }
+            }
+            if ((int)Vector2.Distance(BladeTrap.drawLocation, BladeTrap.spawnLocation) == 0 && returning)
+            {
+                nested = true;
+                returning = false;
+            }
+            if (nested)
             {
                 Idle();
             }
-            else if (!away && InRange)
+            else if (attacking && !returning)
             {
                 Attack();
             }
-            else if (away && !InRange)
+            else if (returning)
             {
                 Attack();
             }
-            //if (BladeTrap.drawLocation.X <= BladeTrap.spawnLocation.X)
-            //{
-            //    direction = Direction.right;
-            //    Attack();
-            //}
-            //else if (Math.Abs(BladeTrap.drawLocation.X - BladeTrap.spawnLocation.X) > BladeTrap.range.X)
-            //{
-            //    direction = Direction.left;
-            //    Attack();
-            //}
         }
     }
 }
