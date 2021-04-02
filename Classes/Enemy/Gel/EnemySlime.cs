@@ -27,6 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             this.game = game;
             this.spriteScalar = game.spriteScalar;
             this.enemySpriteFactory = new GelSpriteFactory(game);
+            this.mySprite = this.enemySpriteFactory.GelIdle();
             drawLocation = spawnLocation;
             myState = new GelStateMachine(this);
             //game.collisionManager.enemies.Add(this, collisionRectangle);

@@ -35,7 +35,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             [13] = new Rectangle(586, 307, INTERIOR_WIDTH, INTERIOR_LENGTH),//
             [14] = new Rectangle(781, 307, INTERIOR_WIDTH, INTERIOR_LENGTH),//
             [15] = new Rectangle(976, 307, INTERIOR_WIDTH, INTERIOR_LENGTH),//
-           // [16] = new Rectangle(421, 1009, INTERIOR_WIDTH, INTERIOR_LENGTH),
+            //[16] = new Rectangle(421, 1009, INTERIOR_WIDTH, INTERIOR_LENGTH),
             [16] = new Rectangle(1, 192, INTERIOR_WIDTH, INTERIOR_LENGTH),
             [17] = new Rectangle(1, 422, INTERIOR_WIDTH, INTERIOR_LENGTH),
             [18] = new Rectangle(196, 422, INTERIOR_WIDTH, INTERIOR_LENGTH),

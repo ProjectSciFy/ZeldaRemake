@@ -72,6 +72,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         tiles.Add(block = new BlockTile(game, new TileSpriteFactory(game), position));
                         block.drawLocation = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
                         break;
+                    case "Compass":
+                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        Compass compass;
+                        items.Add(compass = new Compass(game, new ItemSpriteFactory(game), position));
+                        compass.drawLocation = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        break;
                     case "Heart":
                         position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 12);
                         Heart heart;
@@ -121,7 +127,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         map.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
                         break;
                     case "Triforce":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 8);
+                        position = new Vector2((windowWidth / 2) - 16, windowHeightFloor + 129 * 2);
                         Triforce triforce;
                         items.Add(triforce = new Triforce(game, new ItemSpriteFactory(game), position));
                         triforce.position = position;
@@ -153,7 +159,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         enemies.Add(new EnemyKeese(game, position));
                         break;
                     case "OldMan":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = new Vector2((windowWidth / 2) - 24, windowHeightFloor + 128 * 2) ;
                         enemies.Add(new EnemyOldMan(game, position));
                         break;
                     case "Stalfos":

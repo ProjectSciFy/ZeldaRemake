@@ -24,7 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             this.game = game;
             this.spriteScalar = game.spriteScalar;
-            drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - (21 / 2), (game.GraphicsDevice.Viewport.Bounds.Height / 2) - (24 / 2));
+            drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - 24, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + 96);
         }
         public Rectangle CollisionRectangle()
         {

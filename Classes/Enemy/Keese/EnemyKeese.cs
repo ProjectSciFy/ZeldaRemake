@@ -26,6 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             this.game = game;
             this.spriteScalar = game.spriteScalar;
             this.enemySpriteFactory = new KeeseSpriteFactory(game);
+            this.mySprite = this.enemySpriteFactory.KeeseIdle();
             drawLocation = spawnLocation;
             myState = new KeeseStateMachine(this);
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());

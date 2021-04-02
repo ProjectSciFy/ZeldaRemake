@@ -32,6 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.game = game;
             this.spriteScalar = game.spriteScalar;
             this.enemySpriteFactory = new StalfosSpriteFactory(game);
+            this.mySprite = this.enemySpriteFactory.StalfosIdle();
             drawLocation = spawnLocation;
             myState = new StalfosStateMachine(this);
             //game.collisionManager.enemies.Add(this, collisionRectangle);

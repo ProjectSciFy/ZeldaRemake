@@ -27,6 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             this.game = game;
             this.spriteScalar = game.spriteScalar;
             this.enemySpriteFactory = new WallmasterSpriteFactory(game);
+            this.mySprite = this.enemySpriteFactory.WallmasterIdle();
             drawLocation = spawnLocation;
             myState = new WallmasterStateMachine(this);
             //game.collisionManager.enemies.Add(this, collisionRectangle);

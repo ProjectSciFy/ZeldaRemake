@@ -24,6 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
         {
             this.game = game;
             this.enemySpriteFactory = new OldManSpriteFactory(game);
+            this.mySprite = this.enemySpriteFactory.OldManIdle();
             drawLocation = spawnLocation;
             myState = new OldManStateMachine(this);
             this.spriteScalar = game.spriteScalar;

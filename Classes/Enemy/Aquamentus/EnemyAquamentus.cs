@@ -28,6 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         {
             this.game = game;
             this.enemySpriteFactory = new AquamentusSpriteFactory(game);
+            this.mySprite = this.enemySpriteFactory.SpawnAquamentus();
             drawLocation = spawnLocation;
             myState = new AquamentusStateMachine(this);
             //game.collisionManager.enemies.Add(this, collisionRectangle);

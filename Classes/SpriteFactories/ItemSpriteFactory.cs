@@ -38,10 +38,10 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, itemSpriteSheet, new Rectangle(240, 0, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
-        //public UniversalSprite Compass()
-        //{
-        //    return new UniversalSprite(game, itemSpriteSheet, new Rectangle(258, 1, 11, 12), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-        //}
+        public UniversalSprite Compass()
+        {
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(258, 1, 11, 12), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
         public UniversalSprite Triforce()
         {
             return new UniversalSprite(game, itemSpriteSheet, new Rectangle(275, 3, 10, 10), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
