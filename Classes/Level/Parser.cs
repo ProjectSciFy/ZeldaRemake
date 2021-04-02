@@ -30,6 +30,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private static int windowHeight;
         public static Room ParseRoomCSV(ZeldaGame game, int RoomNumber)
         {
+            ParserUtility utility = new ParserUtility(game);
+
             roomNumber = RoomNumber;
             windowWidth = game.GraphicsDevice.Viewport.Width;
             windowHeight = game.GraphicsDevice.Viewport.Height;
@@ -67,107 +69,107 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                 switch (segments[0])
                 {
                     case "Block":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        position = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         BlockTile block;
                         tiles.Add(block = new BlockTile(game, new TileSpriteFactory(game), position));
-                        block.drawLocation = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        block.drawLocation = position;
                         break;
                     case "Compass":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        position = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         Compass compass;
                         items.Add(compass = new Compass(game, new ItemSpriteFactory(game), position));
-                        compass.drawLocation = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 6, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        compass.drawLocation = position;
                         break;
                     case "Heart":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 12);
+                        position = utility.GetHeartPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         Heart heart;
                         items.Add(heart = new Heart(game, new ItemSpriteFactory(game), position));
-                        heart.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 12);
+                        heart.position = position;
                         break;
                     case "Key":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetCommonItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         Key key;
                         items.Add(key = new Key(game, new ItemSpriteFactory(game), position));
-                        key.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        key.position = position;
                         break;
                     case "BlueRupee":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetCommonItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         BlueRupee blueRupee;
                         items.Add(blueRupee = new BlueRupee(game, new ItemSpriteFactory(game), position));
-                        blueRupee.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        blueRupee.position = position;
                         break;
                     case "Bomb":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 2);
+                        position = utility.GetBombPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         Bomb bomb;
                         items.Add(bomb = new Bomb(game, new ItemSpriteFactory(game), position));
-                        bomb.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 2);
+                        bomb.position = position;
                         break;
                     case "Boomerang":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetCommonItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         Boomerang boomerang;
                         items.Add(boomerang = new Boomerang(game, new ItemSpriteFactory(game), position));
-                        boomerang.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        boomerang.position = position;
                         break;
                     case "Bow":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetCommonItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         Bow bow;
                         items.Add(bow = new Bow(game, new ItemSpriteFactory(game), position));
-                        bow.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        bow.position = position;
                         break;
                     case "HeartContainer":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 4, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        position = utility.GetHeartContainerPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         HeartContainer heartContainer;
                         items.Add(heartContainer = new HeartContainer(game, new ItemSpriteFactory(game), position));
-                        heartContainer.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 4, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48 + 6);
+                        heartContainer.position = position;
                         break;
                     case "Map":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetCommonItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         Map map;
                         items.Add(map = new Map(game, new ItemSpriteFactory(game), position));
-                        map.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        map.position = position;
                         break;
                     case "Triforce":
-                        position = new Vector2((windowWidth / 2) - 16, windowHeightFloor + 129 * 2);
+                        position = utility.GetTriforceOldPosition(windowWidth, windowHeightFloor);
                         Triforce triforce;
                         items.Add(triforce = new Triforce(game, new ItemSpriteFactory(game), position));
                         triforce.position = position;
                         break;
                     case "YellowRupee":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetCommonItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         YellowRupee yellowRupee;
                         items.Add(yellowRupee = new YellowRupee(game, new ItemSpriteFactory(game), position));
-                        yellowRupee.position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48 + 12, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        yellowRupee.position = position;
                         break;
                     case "Goriya":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyGoriya(game, position));
                         break;
                     case "Aquamentus":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyAquamentus(game, position));
                         break;
                     case "BladeTrap":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new BladeTrap(game, position, new Vector2(100, 100), game.link));
                         break;
                     case "Gel":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemySlime(game, position));
                         break;
                     case "Keese":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyKeese(game, position));
                         break;
                     case "OldMan":
-                        position = new Vector2((windowWidth / 2) - 24, windowHeightFloor + 128 * 2) ;
+                        position = utility.GetTriforceOldPosition(windowWidth, windowHeightFloor);
                         enemies.Add(new EnemyOldMan(game, position));
                         break;
                     case "Stalfos":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyStalfos(game, position));
                         break;
                     case "WallMaster":
-                        position = new Vector2(windowWidthFloor + 3 * float.Parse(segments[2]) * 16 + 48, windowHeightFloor + 3 * float.Parse(segments[1]) * 16 + 48);
+                        position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyWallmaster(game, position));
                         break;
 
