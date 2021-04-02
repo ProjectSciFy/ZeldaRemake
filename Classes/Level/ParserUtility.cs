@@ -7,6 +7,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class ParserUtility
     {
+        public int GAME_FRAME_ADJUST = 128;
+
         public int WINDOW_X_ADJUST = 176;
         public int WINDOW_Y_ADJUST = 256;
         public int SCALE_FACTOR = 3;

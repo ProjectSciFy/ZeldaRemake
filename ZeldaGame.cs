@@ -70,7 +70,7 @@ namespace CSE3902_Game_Sprint0
             _graphics = new GraphicsDeviceManager(this);
             //SIZE OF SCREEN 
             _graphics.PreferredBackBufferWidth = 1024;
-            _graphics.PreferredBackBufferHeight = 768;
+            _graphics.PreferredBackBufferHeight = 896;
             //_graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -159,52 +159,6 @@ namespace CSE3902_Game_Sprint0
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
-            if (Keyboard.GetState().IsKeyDown(Keys.D7) && !keyPressedTempVariable)
-            {
-                if (roomNumber == 18)
-                {
-                    changeRoom(0, 0);
-                }
-                else
-                {
-                    changeRoom(roomNumber + 1, Collision.Direction.up);
-                }
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.D8) && !keyPressedTempVariable)
-            {
-                if (roomNumber == 18)
-                {
-                    changeRoom(0, 0);
-                }
-                else
-                {
-                    changeRoom(roomNumber + 1, Collision.Direction.up);
-                }
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.D9) && !keyPressedTempVariable)
-            {
-                if (roomNumber == 18)
-                {
-                    changeRoom(0, 0);
-                }
-                else
-                {
-                    changeRoom(roomNumber + 1, Collision.Direction.up);
-                }
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.D0) && !keyPressedTempVariable)
-            {
-                if (roomNumber == 18)
-                {
-                    changeRoom(0, 0);
-                }
-                else
-                {
-                    changeRoom(roomNumber + 1, Collision.Direction.up);
-                }
-            }
-       
 
             //sforeach (IController controller in controllerList)
             //{

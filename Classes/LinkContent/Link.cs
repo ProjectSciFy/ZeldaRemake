@@ -8,6 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes
 {
     public class Link : IPlayer, ICollisionEntity
     {
+        private static int CENTER = 24;
+        private int Y_ADJUST = 0;
+
         public ZeldaGame game;
         public LinkStateMachine linkState;
         public ISprite linkSprite;
@@ -22,9 +25,10 @@ namespace CSE3902_Game_Sprint0.Classes
         //Initialize Link's default state(s) in a new stateMachine
         public Link(ZeldaGame game)
         {
+            this.Y_ADJUST = (game.GraphicsDevice.Viewport.Bounds.Height / 4) - 2 * CENTER;
             this.game = game;
             this.spriteScalar = game.spriteScalar;
-            drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - 24, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + 96);
+            drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - CENTER, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + Y_ADJUST);
         }
         public Rectangle CollisionRectangle()
         {
