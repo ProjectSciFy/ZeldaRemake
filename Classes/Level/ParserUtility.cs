@@ -7,13 +7,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class ParserUtility
     {
-        public int GAME_FRAME_ADJUST = 128;
+        public static int GAME_FRAME_ADJUST = 128;
 
-        public int WINDOW_X_ADJUST = 176;
-        public int WINDOW_Y_ADJUST = 256;
-        public int SCALE_FACTOR = 3;
-        public int GEN_ADJUST = 2;
-        private static int SPRITE_SIZE = 16;
+        public static int WINDOW_X_ADJUST = 176;
+        public static int WINDOW_Y_ADJUST = 256;
+        public static int SCALE_FACTOR = 3;
+        public static int GEN_ADJUST = 2;
+        public static int SPRITE_SIZE = 16;
         private static int BLOCK_ADJUST = 6;
         private static int LARGE_ADJUST = 12;
         private static int CONTAINER_ADJUST = 4;

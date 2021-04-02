@@ -24,8 +24,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private int drawOffset;
         public Background(ZeldaGame game, int roomNumber)
         {
-            ParserUtility utility = new ParserUtility(game);
-
             this.game = game;
             RoomTextureStorage roomTextures = new RoomTextureStorage(this.game);
             game.spriteSheets.TryGetValue("DungeonTileset", out itemSpriteSheet);
@@ -33,8 +31,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             windowWidth = game.GraphicsDevice.Viewport.Width;
             windowHeight = game.GraphicsDevice.Viewport.Height;
 
-            int windowHeightFloor = ((windowHeight / utility.SCALE_FACTOR - utility.WINDOW_X_ADJUST / utility.SCALE_FACTOR) / utility.GEN_ADJUST) + utility.GAME_FRAME_ADJUST;
-            int windowWidthFloor = (windowWidth / utility.SCALE_FACTOR - utility.WINDOW_Y_ADJUST / utility.SCALE_FACTOR) / utility.GEN_ADJUST;
+            int windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
+            int windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
 
             roomLimiter = 10;
             drawOffset = 96;

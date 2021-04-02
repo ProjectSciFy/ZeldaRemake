@@ -21,17 +21,15 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private int doorValue;
         public RightDoor(ZeldaGame game, RoomTextureStorage textures, int doorValue)
         {
-            ParserUtility utility = new ParserUtility(game);
-
             this.game = game;
             windowWidth = game.GraphicsDevice.Viewport.Width;
             windowHeight = game.GraphicsDevice.Viewport.Height;
             this.doorValue = doorValue;
 
-            int windowHeightFloor = ((windowHeight / utility.SCALE_FACTOR - utility.WINDOW_X_ADJUST / utility.SCALE_FACTOR) / utility.GEN_ADJUST) + utility.GAME_FRAME_ADJUST;
-            int windowWidthFloor = (windowWidth / utility.SCALE_FACTOR - utility.WINDOW_Y_ADJUST / utility.SCALE_FACTOR) / utility.GEN_ADJUST;
-            windowWidthFloor = windowWidthFloor + 224 * 3;
-            windowHeightFloor = windowHeightFloor + 72 * 3;
+            int windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
+            int windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
+            windowWidthFloor = windowWidthFloor + 224 * ParserUtility.SCALE_FACTOR;
+            windowHeightFloor = windowHeightFloor + 72 * ParserUtility.SCALE_FACTOR;
 
 
             this.position = new Vector2(windowWidthFloor, windowHeightFloor);
