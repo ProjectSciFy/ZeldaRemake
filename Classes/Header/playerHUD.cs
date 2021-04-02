@@ -14,6 +14,9 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 position;
         public float spriteScalar;
         public Vector2 drawLocation;
+        private int keyCounter;
+        private int bluerupeeCounter;
+        private int yellowrupeeCounter;
         public playerHUD(ZeldaGame game, HudSpriteFactory hudFactory)
         {
             this.game = game;
@@ -24,13 +27,15 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         }
 
         public void Update()
-        {
+        { 
             // this is where the counters for the HUD will be accessed, and graphical output delegated based on counter values.
+
         }
 
         public void Draw()
         {
             hudSprite.Draw(position);
+            
         }
 
 
