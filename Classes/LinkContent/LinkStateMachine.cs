@@ -79,10 +79,10 @@ namespace CSE3902_Game_Sprint0.Classes
         //Sets link to an animated state using sword based on the value of direction var
         public void Sword()
         {
+            useSword = false;
             if (timer == 0)
             {
                 timer = 12;
-                useSword = false;
                 new LinkSword(link, spriteFactory, this).Execute();
                 new LinkOffset(link, false).Execute();
             }
@@ -127,6 +127,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 timer = 12;
                 isDamaged = false;
                 new LinkDamaged(link, spriteFactory, this).Execute();
+                game.numLives -= 1;
             }
         }
         //TODO setup more initial states we think we may need & method bodies for adjusting them when called by Link.cs

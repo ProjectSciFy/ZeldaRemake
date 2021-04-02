@@ -26,10 +26,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             windowHeight = game.GraphicsDevice.Viewport.Height;
             this.doorValue = doorValue;
 
-            int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
-            int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
-            windowWidthFloor = windowWidthFloor + 112 * 3;
-            windowHeightFloor = windowHeightFloor + 144 * 3;
+            int windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
+            int windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
+            windowWidthFloor = windowWidthFloor + 112 * ParserUtility.SCALE_FACTOR;
+            windowHeightFloor = windowHeightFloor + 144 * ParserUtility.SCALE_FACTOR;
 
             
             this.position = new Vector2(windowWidthFloor, windowHeightFloor);

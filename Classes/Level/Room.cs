@@ -34,6 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         //player hud related variables:
         private playerHUD pHUD;
         private HudSpriteFactory hudFactory;
+        private int maxLives = 5;
         private int keyCounter;
         private int bluerupeeCounter;
         private int yellowrupeeCounter;
@@ -114,6 +115,18 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             else if (entity is YellowRupee)
             {
                 game.numYrups += 1;
+            }
+            else if (entity is Heart)
+            {
+                game.numLives += 1;
+            }
+            else if (entity is HeartContainer)
+            {
+                game.numLives = maxLives;
+            }
+            else if (entity is Fairy)
+            {
+                game.numLives += 5;
             }
         }
 

@@ -40,20 +40,24 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //{
         //}
 
-        //public UniversalSprite livesHUD()
-        //{
-        //}
+        public UniversalSprite livesHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(645, 117, 8, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
 
-        //public UniversalSprite levelHUD()
-        //{
-        //}
+        public UniversalSprite levelHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 1, 64, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
 
-        //public UniversalSprite primaryToolHUD()
-        //{
-        //}
+        public UniversalSprite primaryWeaponHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(555, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
 
-        //public UniversalSprite secondaryToolHUD()
-        //{
-        //}
+        public UniversalSprite secondaryWeaponHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
     }
 }
