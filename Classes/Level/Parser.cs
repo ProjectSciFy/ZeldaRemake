@@ -36,8 +36,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             windowWidth = game.GraphicsDevice.Viewport.Width;
             windowHeight = game.GraphicsDevice.Viewport.Height;
 
-            int windowHeightFloor = (windowHeight / 3 - 176 / 3) / 2;
-            int windowWidthFloor = (windowWidth / 3 - 256 / 3) / 2;
+            int windowHeightFloor = (windowHeight / utility.SCALE_FACTOR - utility.WINDOW_X_ADJUST / utility.SCALE_FACTOR) / utility.GEN_ADJUST;
+            int windowWidthFloor = (windowWidth / utility.SCALE_FACTOR - utility.WINDOW_Y_ADJUST / utility.SCALE_FACTOR) / utility.GEN_ADJUST;
             int doorvalue = 0;
 
             List<ITile> tiles = new List<ITile>();
