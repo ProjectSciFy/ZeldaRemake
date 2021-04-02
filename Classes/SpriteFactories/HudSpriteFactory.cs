@@ -21,30 +21,38 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //this is just the base template sprite. HUD still needs life, map, level, counters to be implemented and updated in real time.
         public UniversalSprite baseHud()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(257, 10, 256, 56), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 255, 55), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
         }
 
         //public UniversalSprite mapHUD()
         //{
         //}
 
-        //public UniversalSprite keyHUD()
+        //public UniversalSprite keysHUD()
         //{
         //}
 
-        //public UniversalSprite bluerupeeHUD()
+        //public UniversalSprite bluerupeesHUD()
         //{
         //}
 
-        //public UniversalSprite yellowrupeeHUD()
+        //public UniversalSprite yellowrupeesHUD()
         //{
         //}
 
-        //public UniversalSprite lifeHUD()
+        //public UniversalSprite livesHUD()
         //{
         //}
 
         //public UniversalSprite levelHUD()
+        //{
+        //}
+
+        //public UniversalSprite primaryToolHUD()
+        //{
+        //}
+
+        //public UniversalSprite secondaryToolHUD()
         //{
         //}
     }
