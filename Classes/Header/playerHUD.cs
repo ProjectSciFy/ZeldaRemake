@@ -49,6 +49,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         private int heartOffset;
         private int remainingHearts;
 
+        private Boolean hasMap = false;
+
 
         public float spriteScalar;
         public Vector2 drawLocation;
@@ -179,6 +181,16 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             digit = HudFactory.Digit(digitOffset);
             digit.Draw(new Vector2(digitYrupPos.X + 24, digitYrupPos.Y));
             //----------------------------------------------------------
+
+            //Map:
+            if (hasMap)
+            {
+                //display map
+            }
+            else
+            {
+                //dont display map
+            }
         }
 
 
