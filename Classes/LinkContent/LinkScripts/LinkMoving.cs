@@ -29,7 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     if (linkStateMachine.currentState != LinkStateMachine.CurrentState.movingRight)
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.movingRight;
-                        link.velocity.X = 2;
+                        link.velocity.X = 3;
                         link.velocity.Y = 0;
                         link.linkSprite = spriteFactory.MovingRight();
                     }
@@ -39,7 +39,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.movingUp;
                         link.velocity.X = 0;
-                        link.velocity.Y = -2;
+                        link.velocity.Y = -3;
                         link.linkSprite = spriteFactory.MovingUp();
                     }
                     break;
@@ -47,7 +47,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     if (linkStateMachine.currentState != LinkStateMachine.CurrentState.movingLeft)
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.movingLeft;
-                        link.velocity.X = -2;
+                        link.velocity.X = -3;
                         link.velocity.Y = 0;
                         link.linkSprite = spriteFactory.MovingLeft();
                     }
@@ -57,7 +57,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
                     {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.movingDown;
                         link.velocity.X = 0;
-                        link.velocity.Y = 2;
+                        link.velocity.Y = 3;
                         link.linkSprite = spriteFactory.MovingDown();
                     }
                     break;

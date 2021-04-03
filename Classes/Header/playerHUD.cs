@@ -102,8 +102,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             primWeapSprite.Draw(primWeapPos);
             secWeapSprite.Draw(secWeapPos);
             levelSprite.Draw(levelPos);
-
-            //counter "x" before each number:
             xSprite.Draw(KeyCounterPos);
             xSprite.Draw(YellowCounterPos);
             xSprite.Draw(BlueCounterPos);
@@ -135,77 +133,48 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     heartSprite.Draw(new Vector2(heartPos.X + heartOffset, heartPos.Y + 24));
                 }
             }
+            //-----------------------------------------------------------
             //Keys:
-            if (game.numKeys > 9)
-            {
-                //ones place:
-                keyOneDigit = game.numKeys % 10;
-                keyTenDigit = (game.numKeys) - (keyOneDigit * 10);
-                digitOffset = keyOneDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digit.Draw(digitKeyPos);
-                //tens place:
-                digitOffset = keyTenDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digitKeyPos.X += 24;
-                digit.Draw(digitKeyPos);
-            }
-            else
-            {
-                //ones place:
-                keyOneDigit = game.numKeys % 10;
-                digitOffset = keyOneDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digit.Draw(digitKeyPos);
-            }
+            //digits:
+            keyOneDigit = game.numKeys % 10;
+            keyTenDigit = (game.numKeys - keyOneDigit) / 10;
+            //tens place:
+            digitOffset = keyTenDigit * 9;
+            digit = HudFactory.Digit(digitOffset);
+            digit.Draw(digitKeyPos);
+            //ones place:
+            digitOffset = keyOneDigit * 9;
+            digit = HudFactory.Digit(digitOffset);
+            digit.Draw(new Vector2(digitKeyPos.X + 24, digitKeyPos.Y));
+
             //---------------------------------------------------------
             //Blue Rupees:
-            if (game.numBrups > 9)
-            {
-                //ones place:
-                blueOneDigit = game.numBrups % 10;
-                blueTenDigit = (game.numBrups) - (blueOneDigit * 10);
-                digitOffset = blueOneDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digit.Draw(digitBrupPos);
-                //tens place:
-                digitOffset = blueTenDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digitBrupPos.X += 24;
-                digit.Draw(digitBrupPos);
-            }
-            else
-            {
-                //ones place:
-                blueOneDigit = game.numBrups % 10;
-                digitOffset = blueOneDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digit.Draw(digitBrupPos);
-            }
+            //digits:
+            blueOneDigit = game.numBrups % 10;
+            blueTenDigit = (game.numBrups - blueOneDigit) / 10;
+            //tens place:
+            digitOffset = blueTenDigit * 9;
+            digit = HudFactory.Digit(digitOffset);
+            digit.Draw(digitBrupPos);
+            //ones place:
+            digitOffset = blueOneDigit * 9;
+            digit = HudFactory.Digit(digitOffset);
+            digit.Draw(new Vector2(digitBrupPos.X + 24, digitBrupPos.Y));
+
             //-----------------------------------------------------------
             //Yellow Rupees:
-            if (game.numYrups > 9)
-            {
-                //ones place:
-                yellowOneDigit = game.numYrups % 10;
-                yellowTenDigit = (game.numYrups) - (yellowOneDigit * 10);
-                digitOffset = yellowOneDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digit.Draw(digitYrupPos);
-                //tens place:
-                digitOffset = yellowTenDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digitYrupPos.X += 24;
-                digit.Draw(digitYrupPos);
-            }
-            else
-            {
-                //ones place:
-                yellowOneDigit = game.numYrups % 10;
-                digitOffset = yellowOneDigit * 8;
-                digit = HudFactory.Digit(digitOffset);
-                digit.Draw(digitYrupPos);
-            }
+            //digits:
+            yellowOneDigit = game.numYrups % 10;
+            yellowTenDigit = (game.numYrups - yellowOneDigit) / 10;
+            //tens place:
+            digitOffset = yellowTenDigit * 9;
+            digit = HudFactory.Digit(digitOffset);
+            digit.Draw(digitYrupPos);
+            //ones place:
+            digitOffset = yellowOneDigit * 9;
+            digit = HudFactory.Digit(digitOffset);
+            digit.Draw(new Vector2(digitYrupPos.X + 24, digitYrupPos.Y));
+            //----------------------------------------------------------
         }
 
 
