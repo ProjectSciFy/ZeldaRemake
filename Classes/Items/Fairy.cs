@@ -73,6 +73,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 
         public void Update()
         {
+            itemSprite.Update();
             if (timer <= 0)
             {
                 ChangeDirection();
