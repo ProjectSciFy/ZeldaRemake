@@ -16,6 +16,8 @@ using CSE3902_Game_Sprint0.Classes.Controllers;
 using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using CSE3902_Game_Sprint0.Classes.Level;
+using CSE3902_Game_Sprint0.Classes.GameState;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
@@ -55,8 +57,21 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             //RESET HUD HERE
 
             //RE-PARSE ROOMS HERE
+            game.collisionManager.ClearNotLink();
+            game.projectileHandler.Clear();
+            game.roomList = new List<Room>();
+            game.roomNumber = 2;
+            for (int i = 1; i < 19; i++)
+            {
+                game.roomList.Add(Parser.ParseRoomCSV(game, i));
+            }
+            game.currentRoom = game.roomList[1];
+            
+            game.currentRoom.Initialize();
+            game.currentMainGameState = new MainState(game, game.currentRoom);
+            game.currentGameState = game.currentMainGameState;
 
-            this.game.changeRoomInstantly(2);
+            // this.game.changeRoomInstantly(2);
         }
     }
 }
