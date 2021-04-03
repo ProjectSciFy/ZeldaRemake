@@ -109,6 +109,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //Lives Graphical Displays:
 
             //Hearts/Lives:
+            if (game.numLives > 16)
+            {
+                game.numLives = 16;
+            }
             if (game.numLives < 9)
             {
                 for (int i = 0; i < game.numLives; i++)

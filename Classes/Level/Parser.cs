@@ -128,6 +128,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         items.Add(map = new Map(game, new ItemSpriteFactory(game), position));
                         map.position = position;
                         break;
+                    case "Fairy":
+                        position = utility.GetCommonItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
+                        Fairy fairy;
+                        items.Add(fairy = new Fairy(game, new ItemSpriteFactory(game), position));
+                        fairy.position = position;
+                        break;
                     case "Triforce":
                         position = utility.GetTriforceOldPosition(windowWidth, windowHeightFloor);
                         Triforce triforce;
