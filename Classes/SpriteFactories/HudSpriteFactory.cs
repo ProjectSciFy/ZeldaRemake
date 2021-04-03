@@ -28,17 +28,15 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //{
         //}
 
-        //public UniversalSprite keysHUD()
-        //{
-        //}
+        public UniversalSprite Digit(int offset)
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(528 + offset, 117, 8, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
 
-        //public UniversalSprite bluerupeesHUD()
-        //{
-        //}
-
-        //public UniversalSprite yellowrupeesHUD()
-        //{
-        //}
+        public UniversalSprite xHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(519, 117, 8, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
 
         public UniversalSprite livesHUD()
         {
