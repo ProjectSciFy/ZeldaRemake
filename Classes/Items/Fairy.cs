@@ -77,6 +77,10 @@ namespace CSE3902_Game_Sprint0.Classes.Items
             {
                 ChangeDirection();
             }
+            else
+            {
+                timer--;
+            }
 
             position.X = position.X + velocity.X;
             position.Y = position.Y + velocity.Y;
