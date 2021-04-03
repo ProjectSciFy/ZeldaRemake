@@ -31,7 +31,6 @@ namespace CSE3902_Game_Sprint0
         //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
-        //Player HUD:
         public HudSpriteFactory hudSpriteFactory;
         //Link:
         public Classes.Link link;
@@ -71,36 +70,24 @@ namespace CSE3902_Game_Sprint0
             //SIZE OF SCREEN 
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.PreferredBackBufferHeight = 896;
-            //_graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
-
             //Setting up CollisionManager
             collisionManager = new CollisionManager();
-
             //Setting up projectileHandler
             projectileSpriteFactory = new ProjectileSpriteFactory(this);
             projectileHandler = new ProjectileHandler(this);
-
             /* LINK */
             //set StateMachine and Link to be used:
             link = new Classes.Link(this);
             linkStateMachine = new LinkStateMachine(link);
-
             //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
-
-            /* Weapons */
-            //bomb = new Bomb(this, link, linkStateMachine);
-            //bombStateMachine = new BombStateMachine(bomb);
-
             //Setting up playerHudSpriteFactory
             hudSpriteFactory = new HudSpriteFactory(this);
             //Initialize counter variables for HUD:
@@ -108,18 +95,13 @@ namespace CSE3902_Game_Sprint0
             numBrups = 0;
             numYrups = 0;
             numLives = 10;
-
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
-
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
-
             neighbors = Parser.ParseNeighborCSV();
-            
             roomList = new List<Room>();
             roomNumber = 2;
-
             for (int i = 1; i < 19; i++)
             {
                 roomList.Add(Parser.ParseRoomCSV(this, i));
@@ -134,15 +116,11 @@ namespace CSE3902_Game_Sprint0
             currentRoom.Initialize();
             currentMainGameState = new MainState(this, currentRoom);
             currentGameState = currentMainGameState;
-
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
-
             //Loading all of our textures into a texture dictionary
             spriteSheets.Add("Link", Content.Load<Texture2D>("NES - The Legend of Zelda - Link"));
             spriteSheets.Add("HUD", Content.Load<Texture2D>("NES - The Legend of Zelda - HUD & Pause Screen"));
@@ -159,30 +137,15 @@ namespace CSE3902_Game_Sprint0
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
-            //sforeach (IController controller in controllerList)
-            //{
-            //   controller.Update();
-            //}
-            //
             currentGameState.UpdateCollisions();
             base.Update(gameTime);
             currentGameState.Update();
-            //link.Update();
-
-            //currentRoom.Update();
-
-            //projectileHandler.Update();
-
-            //collisionManager.Update();
         }
 
         public void changeRoom(int newRoom, Collision.Direction direction)
         {
             keyPressedTempVariable = true;
             oldRoom = currentRoom;
-
-           // oldRoom = roomList[roomNumber];
             collisionManager.ClearNotLink();
             projectileHandler.Clear();
             roomNumber = newRoom;
@@ -193,31 +156,32 @@ namespace CSE3902_Game_Sprint0
                     currentRoom = r;
                 }
             }
-            //Wait for a quarter of a second before transition to next room
-            //Fixes holding down mouse -> spamming through each room
-            //Clear the collision set
-            
             currentMainGameState = new MainState(this, currentRoom);
-            //currentGameState = currentMainGameState;
             currentGameState = new TransitionState(this, oldRoom, currentRoom, direction);
-            //7keyPressedTempVariable = false;
         }
+
+        public void changeRoomInstantly(int newRoom)
+        {
+            collisionManager.ClearNotLink();
+            projectileHandler.Clear();
+            roomNumber = newRoom;
+            foreach (Room r in roomList)
+            {
+                if (r.getRoomNumber() == newRoom)
+                {
+                    currentRoom = r;
+                }
+            }
+            currentMainGameState = new MainState(this, currentRoom);
+            currentGameState = currentMainGameState;
+        }
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
 
             base.Draw(gameTime);
             currentGameState.Draw();
-
-
-            //currentRoom.Draw();
-
-            //link.Draw();
-
-            //projectileHandler.Draw();
-
-
-
         }
     }
 }
