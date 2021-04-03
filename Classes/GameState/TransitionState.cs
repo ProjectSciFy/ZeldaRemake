@@ -13,40 +13,40 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 {
     public class TransitionState : IGameState
     {
-        public ZeldaGame game;
-        public Room oldroom;
+        private ZeldaGame game;
+        private Room oldroom;
 
-        public Room nextroom;
+        private Room nextroom;
         int timer = 0;
-        public Vector2 drawLocationInteriorOld;
-        public Vector2 drawLocationExteriorOld;
-        public Vector2 drawLocationInteriorNext;
-        public Vector2 drawLocationExteriorNext;
+        private Vector2 drawLocationInteriorOld;
+        private Vector2 drawLocationExteriorOld;
+        private Vector2 drawLocationInteriorNext;
+        private Vector2 drawLocationExteriorNext;
 
-        public ISprite roominteriorOld;
-        public ISprite roomexteriorOld;
+        private ISprite roominteriorOld;
+        private ISprite roomexteriorOld;
 
-        public ISprite roominteriorNext;
-        public ISprite roomexteriorNext;
+        private ISprite roominteriorNext;
+        private ISprite roomexteriorNext;
 
-        public ISprite topDoorOld;
-        public ISprite leftDoorOld;
-        public ISprite rightDoorOld;
-        public ISprite bottomDoorOld;
+        private ISprite topDoorOld;
+        private ISprite leftDoorOld;
+        private ISprite rightDoorOld;
+        private ISprite bottomDoorOld;
 
-        public ISprite topDoorNext;
-        public ISprite leftDoorNext;
-        public ISprite rightDoorNext;
-        public ISprite bottomDoorNext;
+        private ISprite topDoorNext;
+        private ISprite leftDoorNext;
+        private ISprite rightDoorNext;
+        private ISprite bottomDoorNext;
 
-        public Vector2 drawLocationTopDoorOld;
-        public Vector2 drawLocationLeftDoorOld;
-        public Vector2 drawLocationRightDoorOld;
-        public Vector2 drawLocationBottomDoorOld;
-        public Vector2 drawLocationTopDoorNext;
-        public Vector2 drawLocationLeftDoorNext;
-        public Vector2 drawLocationRightDoorNext;
-        public Vector2 drawLocationBottomDoorNext;
+        private Vector2 drawLocationTopDoorOld;
+        private Vector2 drawLocationLeftDoorOld;
+        private Vector2 drawLocationRightDoorOld;
+        private Vector2 drawLocationBottomDoorOld;
+        private Vector2 drawLocationTopDoorNext;
+        private Vector2 drawLocationLeftDoorNext;
+        private Vector2 drawLocationRightDoorNext;
+        private Vector2 drawLocationBottomDoorNext;
 
         private int windowWidth;
         private int windowHeight;
@@ -55,7 +55,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private int drawOffset;
         private Collision.Collision.Direction transitionDirection;
         //public int transitionDirection = 0;
-        public int animationSpeed = 6;
+        private int animationSpeed = 6;
        
         public TransitionState(ZeldaGame game, Room oldroom, Room nextroom, Collision.Collision.Direction transitionDirection)
         {
