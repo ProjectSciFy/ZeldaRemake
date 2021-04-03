@@ -107,7 +107,7 @@ namespace CSE3902_Game_Sprint0
             numKeys = 0;
             numBrups = 0;
             numYrups = 0;
-            numLives = 3;
+            numLives = 10;
 
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);

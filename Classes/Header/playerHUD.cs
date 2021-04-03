@@ -47,6 +47,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 BlueCounterPos;
         public Vector2 KeyCounterPos;
         private int heartOffset;
+        private int remainingHearts;
 
 
         public float spriteScalar;
@@ -108,11 +109,31 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             xSprite.Draw(BlueCounterPos);
 
             //Lives Graphical Displays:
-            //Lives:
-            for (int i = 0; i < game.numLives; i++)
+
+            //Hearts/Lives:
+            if (game.numLives < 9)
             {
+                for (int i = 0; i < game.numLives; i++)
+                {
                     heartOffset = (i) * (24);
-                    heartSprite.Draw(new Vector2(heartPos.X + heartOffset,heartPos.Y));
+                    heartSprite.Draw(new Vector2(heartPos.X + heartOffset, heartPos.Y));
+                }
+            }
+            else
+            {
+                //1st row:
+                for (int i = 0; i < 8; i++)
+                {
+                    heartOffset = (i) * (24);
+                    heartSprite.Draw(new Vector2(heartPos.X + heartOffset, heartPos.Y));
+                }
+                //2nd row:
+                remainingHearts = game.numLives - 8;
+                for (int i = 0; i < remainingHearts; i++)
+                {
+                    heartOffset = (i) * (24);
+                    heartSprite.Draw(new Vector2(heartPos.X + heartOffset, heartPos.Y + 24));
+                }
             }
             //Keys:
             if (game.numKeys > 9)
