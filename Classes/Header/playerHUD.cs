@@ -67,8 +67,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.digit = HudFactory.Digit(0);
 
             //position of top left corner of hud template is X,Y:
-            X = 0;
-            Y = 0;
+            X = 135;
+            Y = 25;
             this.hudPosition = new Vector2(X, Y);
             //elements of the Hud will be positioned in reference to X and Y so when Hud is moved, only X and Y need to change:
             this.primWeapPos = new Vector2((X + 456), (Y + 72));
