@@ -28,6 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public Weapon weaponSelected = Weapon.none;
 
         public int timer = 0;
+        private int invincibilityFrames = 0;
 
         // private Tool = bomb or something
 
@@ -100,7 +101,6 @@ namespace CSE3902_Game_Sprint0.Classes
         //Sets link to an animated state using boomerang based on the value of direction var
         public void Boomerang()
         {
-            // construct animated link facing up with sprite factory
             if (timer == 0)
             {
                 timer = 15;
@@ -121,16 +121,18 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public void Damaged()
         {
-            // construct animated link facing up with sprite factory
             if (timer == 0)
             {
                 timer = 12;
                 isDamaged = false;
                 new LinkDamaged(link, spriteFactory, this).Execute();
-                game.numLives -= 1;
+                if (invincibilityFrames <= 0)
+                {
+                    invincibilityFrames = 60;
+                    game.numLives -= 1;
+                }
             }
         }
-        //TODO setup more initial states we think we may need & method bodies for adjusting them when called by Link.cs
 
         public void Update()
         {
@@ -138,13 +140,16 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 timer--;
             }
-
             if (timer == 0)
             {
                 //Reverse offset
                 new LinkOffset(link, true).Execute();
                 link.drawOffset.X = 0;
                 link.drawOffset.Y = 0;
+            }
+            if (invincibilityFrames > 0)
+            {
+                invincibilityFrames--;
             }
 
             //State calculation
