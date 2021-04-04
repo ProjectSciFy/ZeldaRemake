@@ -30,7 +30,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public EnemyStalfos(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             this.enemySpriteFactory = new StalfosSpriteFactory(game);
             this.mySprite = this.enemySpriteFactory.StalfosIdle();
             drawLocation = spawnLocation;

@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         public EnemyWallmaster(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             this.enemySpriteFactory = new WallmasterSpriteFactory(game);
             this.mySprite = this.enemySpriteFactory.WallmasterIdle();
             drawLocation = spawnLocation;

@@ -31,7 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.range = range;
             drawLocation = spawnLocation;
             myState = new BladeTrapStateMachine(this, link);
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
             //game.collisionManager.enemies.Add(this, collisionRectangle);
         }

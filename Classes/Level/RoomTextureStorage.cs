@@ -13,7 +13,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
     {
         public ZeldaGame game;
         private Texture2D roomSpriteSheet;
-        private float tileLayerDepth = .3f;
         private static int INTERIOR_WIDTH = 192;
         private static int INTERIOR_LENGTH = 112;
         private static int DOOR_SIZE = 32;

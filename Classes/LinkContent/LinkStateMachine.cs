@@ -129,7 +129,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 if (invincibilityFrames <= 0)
                 {
                     invincibilityFrames = 60;
-                    game.numLives -= 1;
+                    game.util.numLives -= 1;
                 }
             }
         }

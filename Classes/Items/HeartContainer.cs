@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
         public HeartContainer(ZeldaGame game, ItemSpriteFactory itemFactory, Vector2 location)
         {
             this.game = game;
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             this.position = location;
             this.itemFactory = itemFactory;
             this.itemSprite = itemFactory.HeartContainer();

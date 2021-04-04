@@ -35,7 +35,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.spriteFactory = game.enemySpriteFactory;
             this.drawLocation = aquamentus.drawLocation;
             this.myState = new FireballStateMachine(this);
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             this.trajectory = trajectory;
         }
         public Rectangle CollisionRectangle()

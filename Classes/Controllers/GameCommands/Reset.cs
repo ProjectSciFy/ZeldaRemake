@@ -32,9 +32,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         private Vector2 linkLocation;
 
-        private ZeldaGame.Enemies currentEnemy;
-        private IEnemy drawnEnemy;
-
         public Reset(ZeldaGame game)
         {
             this.game = game;
@@ -61,7 +58,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.collisionManager.ClearNotLink();
             game.projectileHandler.Clear();
             game.roomList = new List<Room>();
-            game.roomNumber = 2;
+            game.util.roomNumber = 2;
             for (int i = 1; i < 19; i++)
             {
                 game.roomList.Add(Parser.ParseRoomCSV(game, i));
@@ -71,8 +68,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.currentRoom.Initialize();
             game.currentMainGameState = new MainState(game, game.currentRoom);
             game.currentGameState = game.currentMainGameState;
-
-            // this.game.changeRoomInstantly(2);
         }
     }
 }

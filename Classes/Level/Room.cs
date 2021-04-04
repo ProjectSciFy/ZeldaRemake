@@ -52,9 +52,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             background = new Background(game, roomNumber);
 
             //player HUD:
-            this.keyCounter = game.numKeys;
-            this.bluerupeeCounter = game.numBrups;
-            this.yellowrupeeCounter = game.numYrups;
+            this.keyCounter = game.util.numKeys;
+            this.bluerupeeCounter = game.util.numBrups;
+            this.yellowrupeeCounter = game.util.numYrups;
             this.hudFactory = game.hudSpriteFactory;
             pHUD = new playerHUD(game, hudFactory);
         }
@@ -106,27 +106,27 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             //check which type of item it is, specifically key, blue or yellow rupee, will need to update counters accordingly.
             if (entity is Key)
             {
-                game.numKeys += 1;
+                game.util.numKeys += 1;
             }
             else if (entity is BlueRupee)
             {
-                game.numBrups += 1;
+                game.util.numBrups += 1;
             }
             else if (entity is YellowRupee)
             {
-                game.numYrups += 1;
+                game.util.numYrups += 1;
             }
             else if (entity is Heart)
             {
-                game.numLives += 1;
+                game.util.numLives += 1;
             }
             else if (entity is HeartContainer)
             {
-                game.numLives = maxLives;
+                game.util.numLives = maxLives;
             }
             else if (entity is Fairy)
             {
-                game.numLives += 10;
+                game.util.numLives += 10;
             }
         }
 

@@ -27,45 +27,33 @@ namespace CSE3902_Game_Sprint0
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         public List<IController> controllerList = new List<IController>();
+
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
-        //Sprite factories
         public EnemySpriteFactory enemySpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
         public HudSpriteFactory hudSpriteFactory;
-        //Link:
-        public Classes.Link link;
-        public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster, OldMan}
+
         public LinkStateMachine linkStateMachine;
         public BombStateMachine bombStateMachine;
-        public Classes.Projectiles.Bomb bomb;
-        public ProjectileHandler projectileHandler;
 
+        public Classes.Link link;
+        public Classes.Projectiles.Bomb bomb;
+
+        public ProjectileHandler projectileHandler;
         public CollisionManager collisionManager;
 
-        public int roomNumber;
         public List<Room> roomList;
         public Dictionary<int, int[]> neighbors;
-        
-        //PASS THIS TO ENTITIES FOR UPSCALING THEM UNIFORMLY
-        public float spriteScalar = 3;
         public Room currentRoom;
         public Room oldRoom;
-
-        //Seperate scalar for all HUD entities, still needs proper implementation:
-        public float hudScalar = 1;
-        //counter variables that are displayed in HUD graphically:
-        public int numKeys;
-        public int numBrups;
-        public int numYrups;
-        public int numLives;
 
         public IGameState currentMainGameState;
         public IGameState currentGameState;
 
-        public bool keyPressedTempVariable = false;
-
+        public GameUtility util;
         public ZeldaGame()
         {
+            this.util = new GameUtility();
             _graphics = new GraphicsDeviceManager(this);
             //SIZE OF SCREEN 
             _graphics.PreferredBackBufferWidth = 1024;
@@ -90,25 +78,20 @@ namespace CSE3902_Game_Sprint0
             link.SetState(linkStateMachine);
             //Setting up playerHudSpriteFactory
             hudSpriteFactory = new HudSpriteFactory(this);
-            //Initialize counter variables for HUD:
-            numKeys = 0;
-            numBrups = 0;
-            numYrups = 0;
-            numLives = 3;
             //Setting up enemy spritefactory
             enemySpriteFactory = new EnemySpriteFactory(this);
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
             neighbors = Parser.ParseNeighborCSV();
             roomList = new List<Room>();
-            roomNumber = 2;
+            //18 rooms
             for (int i = 1; i < 19; i++)
             {
                 roomList.Add(Parser.ParseRoomCSV(this, i));
             }
             foreach (Room r in roomList)
             {
-                if (r.getRoomNumber() == roomNumber)
+                if (r.getRoomNumber() == util.roomNumber)
                 {
                     currentRoom = r;
                 }
@@ -144,11 +127,11 @@ namespace CSE3902_Game_Sprint0
 
         public void changeRoom(int newRoom, Collision.Direction direction)
         {
-            keyPressedTempVariable = true;
+            util.keyPressedTempVariable = true;
             oldRoom = currentRoom;
             collisionManager.ClearNotLink();
             projectileHandler.Clear();
-            roomNumber = newRoom;
+            util.roomNumber = newRoom;
             foreach (Room r in roomList)
             {
                 if (r.getRoomNumber() == newRoom)
@@ -158,22 +141,6 @@ namespace CSE3902_Game_Sprint0
             }
             currentMainGameState = new MainState(this, currentRoom);
             currentGameState = new TransitionState(this, oldRoom, currentRoom, direction);
-        }
-
-        public void changeRoomInstantly(int newRoom)
-        {
-            collisionManager.ClearNotLink();
-            projectileHandler.Clear();
-            roomNumber = newRoom;
-            foreach (Room r in roomList)
-            {
-                if (r.getRoomNumber() == newRoom)
-                {
-                    currentRoom = r;
-                }
-            }
-            currentMainGameState = new MainState(this, currentRoom);
-            currentGameState = currentMainGameState;
         }
 
         protected override void Draw(GameTime gameTime)

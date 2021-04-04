@@ -59,7 +59,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public playerHUD(ZeldaGame game, HudSpriteFactory hudFactory)
         {
             this.game = game;
-            this.spriteScalar = game.hudScalar;
+            this.spriteScalar = game.util.hudScalar;
             this.HudFactory = hudFactory;
             this.hudSprite = HudFactory.baseHud();
             this.primWeapSprite = HudFactory.primaryWeaponHUD();
@@ -111,13 +111,13 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //Lives Graphical Displays:
 
             //Hearts/Lives:
-            if (game.numLives > 16)
+            if (game.util.numLives > 16)
             {
-                game.numLives = 16;
+                game.util.numLives = 16;
             }
-            if (game.numLives < 9)
+            if (game.util.numLives < 9)
             {
-                for (int i = 0; i < game.numLives; i++)
+                for (int i = 0; i < game.util.numLives; i++)
                 {
                     heartOffset = (i) * (24);
                     heartSprite.Draw(new Vector2(heartPos.X + heartOffset, heartPos.Y));
@@ -132,7 +132,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     heartSprite.Draw(new Vector2(heartPos.X + heartOffset, heartPos.Y));
                 }
                 //2nd row:
-                remainingHearts = game.numLives - 8;
+                remainingHearts = game.util.numLives - 8;
                 for (int i = 0; i < remainingHearts; i++)
                 {
                     heartOffset = (i) * (24);
@@ -142,8 +142,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //-----------------------------------------------------------
             //Keys:
             //digits:
-            keyOneDigit = game.numKeys % 10;
-            keyTenDigit = (game.numKeys - keyOneDigit) / 10;
+            keyOneDigit = game.util.numKeys % 10;
+            keyTenDigit = (game.util.numKeys - keyOneDigit) / 10;
             //tens place:
             digitOffset = keyTenDigit * 9;
             digit = HudFactory.Digit(digitOffset);
@@ -156,8 +156,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //---------------------------------------------------------
             //Blue Rupees:
             //digits:
-            blueOneDigit = game.numBrups % 10;
-            blueTenDigit = (game.numBrups - blueOneDigit) / 10;
+            blueOneDigit = game.util.numBrups % 10;
+            blueTenDigit = (game.util.numBrups - blueOneDigit) / 10;
             //tens place:
             digitOffset = blueTenDigit * 9;
             digit = HudFactory.Digit(digitOffset);
@@ -170,8 +170,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //-----------------------------------------------------------
             //Yellow Rupees:
             //digits:
-            yellowOneDigit = game.numYrups % 10;
-            yellowTenDigit = (game.numYrups - yellowOneDigit) / 10;
+            yellowOneDigit = game.util.numYrups % 10;
+            yellowTenDigit = (game.util.numYrups - yellowOneDigit) / 10;
             //tens place:
             digitOffset = yellowTenDigit * 9;
             digit = HudFactory.Digit(digitOffset);

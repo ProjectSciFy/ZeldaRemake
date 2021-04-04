@@ -13,7 +13,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         private ITile tile;
         private Collision.Collision.Direction direction;
         private ZeldaGame game;
-        private TransitionState transition;
         public LinkOnTile(Link link, ITile tile, Collision.Collision.Direction direction)
         {
             this.game = link.game;
@@ -44,21 +43,21 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             }
             if (tile is StairsTile)
             {
-                if (direction == Collision.Collision.Direction.down && !game.keyPressedTempVariable)
+                if (direction == Collision.Collision.Direction.down && !game.util.keyPressedTempVariable)
                 {
-                    game.changeRoom(game.neighbors[game.roomNumber][3], direction);
+                    game.changeRoom(game.neighbors[game.util.roomNumber][3], direction);
                 }
-                else if (direction == Collision.Collision.Direction.up && !game.keyPressedTempVariable)
+                else if (direction == Collision.Collision.Direction.up && !game.util.keyPressedTempVariable)
                 {
-                    game.changeRoom(game.neighbors[game.roomNumber][0], direction);
+                    game.changeRoom(game.neighbors[game.util.roomNumber][0], direction);
                 }
-                else if (direction == Collision.Collision.Direction.right && !game.keyPressedTempVariable)
+                else if (direction == Collision.Collision.Direction.right && !game.util.keyPressedTempVariable)
                 {
-                    game.changeRoom(game.neighbors[game.roomNumber][2], direction);
+                    game.changeRoom(game.neighbors[game.util.roomNumber][2], direction);
                 }
-                else if (direction == Collision.Collision.Direction.left && !game.keyPressedTempVariable)
+                else if (direction == Collision.Collision.Direction.left && !game.util.keyPressedTempVariable)
                 {
-                    game.changeRoom(game.neighbors[game.roomNumber][1], direction);
+                    game.changeRoom(game.neighbors[game.util.roomNumber][1], direction);
                 }
             }
         }
