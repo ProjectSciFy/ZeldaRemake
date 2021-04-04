@@ -156,7 +156,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         break;
                     case "BladeTrap":
                         position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
-                        enemies.Add(new BladeTrap(game, position, new Vector2(265, 130), game.link));
+                        enemies.Add(new EnemyBladeTrap(game, position, new Vector2(265, 130), game.link));
                         break;
                     case "Gel":
                         position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));

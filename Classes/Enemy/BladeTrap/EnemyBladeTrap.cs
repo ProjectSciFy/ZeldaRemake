@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
-    public class BladeTrap : IEnemy, ICollisionEntity
+    public class EnemyBladeTrap : IEnemy, ICollisionEntity
     {
         //When link walks parallel to one it attacks
         //waits on link
@@ -24,7 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
 
-        public BladeTrap(ZeldaGame game, Vector2 spawnLocation, Vector2 range, Link link)
+        public EnemyBladeTrap(ZeldaGame game, Vector2 spawnLocation, Vector2 range, Link link)
         {
             this.game = game;
             this.spawnLocation = spawnLocation;
