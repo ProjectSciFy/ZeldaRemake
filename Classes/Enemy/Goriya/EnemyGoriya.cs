@@ -15,7 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         //Method of attack is melee, bumping into the player
 
         public ZeldaGame game;
-        private GoriyaStateMachine myState;
+        public GoriyaStateMachine myState;
         public GoriyaSpriteFactory spriteFactory { get; protected set; }
         public Vector2 drawLocation;
         public Vector2 velocity;
@@ -27,6 +27,8 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         private static int HITBOX_OFFSET = 6;
         public int health = 2;
         private int hurtTimer = 0;
+        private int timer = 0;
+        public bool throwing = false;
 
         public EnemyGoriya(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -51,22 +53,20 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         {
             return collisionRectangle;
         }
-
         public void Update()
         {
+            if (timer > 0)
+            {
+                timer--;
+            }
             if (hurtTimer > 0)
             {
                 hurtTimer--;
             }
             myState.Update();
             mySprite.Update(); 
-            if (!myState.moving)
-            {
-                boomerang.Update();
-            }
             //Update the position of Link here
             drawLocation = drawLocation + velocity;
-
             if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
             {
                 drawLocation = new Vector2(0 - spriteSize.X, drawLocation.Y);
@@ -75,7 +75,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             {
                 drawLocation = new Vector2(game.GraphicsDevice.Viewport.Bounds.Width, drawLocation.Y);
             }
-
             if (drawLocation.Y >= game.GraphicsDevice.Viewport.Bounds.Height && velocity.Y > 0)
             {
                 drawLocation = new Vector2(drawLocation.X, 0 - spriteSize.Y);
@@ -84,20 +83,26 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             {
                 drawLocation = new Vector2(drawLocation.X, game.GraphicsDevice.Viewport.Bounds.Height);
             }
+            if (timer <= 0 && myState.currentState != GoriyaStateMachine.CurrentState.spawning)
+            {
+                timer = 600;
+                game.projectileHandler.Add(new GoriyaBoomerang(game, this, myState));
+                throwing = true;
+                myState.moving = false;
+            }
             collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
 
-            game.collisionManager.collisionEntities[this] = collisionRectangle;
+            if (myState.currentState != GoriyaStateMachine.CurrentState.dying)
+            {
+                game.collisionManager.collisionEntities[this] = collisionRectangle;
+            }
         }
         public void Draw()
         {
             mySprite.Draw(drawLocation);
-            if (!myState.moving)
-            {
-                boomerang.Draw();
-            }
         }
     }
 }

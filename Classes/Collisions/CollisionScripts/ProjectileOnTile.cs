@@ -34,6 +34,13 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
             }
+            if (projectile is GoriyaBoomerang)
+            {
+                if (tile is WallTile || tile is GatekeeperTile)
+                {
+                    ((GoriyaBoomerang)projectile).myState.returning = true;
+                }
+            }
         }
     }
 }
