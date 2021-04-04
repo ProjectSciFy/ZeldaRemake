@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CSE3902_Game_Sprint0.Classes.Tiles
 {
-    public class GatekeeperTile : ITile, ICollisionEntity
+    public class GateKeeperTile : ITile, ICollisionEntity
     {
         private ZeldaGame game;
         private ISprite tileSprite;
@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         public Vector2 drawLocation;
         public Vector2 spriteSize = new Vector2(16, 16);
         public Boolean locked = true;
-        public GatekeeperTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location, Boolean locked)
+        public GateKeeperTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location, Boolean locked)
         {
             this.game = game;
             this.position = location;

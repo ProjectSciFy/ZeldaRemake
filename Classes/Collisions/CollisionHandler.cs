@@ -96,6 +96,13 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                         new ProjectileOnTile((IProjectile)tuple.Item1, (ITile)tuple.Item2, tuple.Item3).Execute();
                     }
                 }
+                if (tuple.Item1 is IItem)
+                {
+                    if (tuple.Item2 is ITile)
+                    {
+                        new ItemOnTile((IItem)tuple.Item1, (ITile)tuple.Item2, tuple.Item3).Execute();
+                    }
+                }
             }
 
             //Clear the collision set
