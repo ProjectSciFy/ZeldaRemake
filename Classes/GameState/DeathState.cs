@@ -9,8 +9,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
     {
         private ZeldaGame game;
 
-        private int deathAnimationTimer = 12;
-
         public DeathState(ZeldaGame game)
         {
             this.game = game;
