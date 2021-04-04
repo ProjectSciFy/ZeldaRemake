@@ -25,13 +25,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         public EnemyWallmaster(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
-            this.spriteScalar = game.util.spriteScalar;
             this.enemySpriteFactory = new WallmasterSpriteFactory(game);
             this.mySprite = this.enemySpriteFactory.WallmasterIdle();
             drawLocation = spawnLocation;
             myState = new WallmasterStateMachine(this);
-            //game.collisionManager.enemies.Add(this, collisionRectangle);
-            game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
+            game.collisionManager.collisionEntities.Add(this, collisionRectangle);
+            this.spriteScalar = game.util.spriteScalar;
         }
         public void TakeDamage(int damage)
         {
@@ -55,7 +54,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             myState.Update();
             mySprite.Update();
 
-            //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
 
@@ -81,8 +79,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             collisionRectangle.Y = (int)drawLocation.Y + 2 * HITBOX_OFFSET;
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 4 * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 4 * HITBOX_OFFSET;
-
-            //game.collisionManager.enemies[this] = collisionRectangle;
 
             if (myState.currentState != WallmasterStateMachine.CurrentState.dying)
             {

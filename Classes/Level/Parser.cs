@@ -172,7 +172,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyStalfos(game, position));
                         break;
-                    case "WallMaster":
+                    case "Wallmaster":
                         position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyWallmaster(game, position));
                         break;
