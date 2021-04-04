@@ -65,7 +65,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             }
             myState.Update();
             mySprite.Update(); 
-            //Update the position of Link here
             drawLocation = drawLocation + velocity;
             if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
             {
