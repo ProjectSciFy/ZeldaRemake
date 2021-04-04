@@ -43,6 +43,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         public void Execute()
         {
+            this.game.linkStateMachine.Idle();
+
             this.direction = linkState.direction;
             linkState.direction = LinkStateMachine.Direction.down;
             this.direction = LinkStateMachine.Direction.down;
