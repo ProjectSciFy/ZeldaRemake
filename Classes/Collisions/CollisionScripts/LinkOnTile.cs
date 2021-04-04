@@ -22,7 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         }
         public void Execute()
         {
-            if (tile is BlockTile || tile is WallTile || (tile is GatekeeperTile && ((GatekeeperTile)tile).locked == true))
+            if (tile is BlockTile || tile is WallTile || (tile is GateKeeperTile && ((GateKeeperTile)tile).locked == true))
             {
                 if (direction == Collision.Collision.Direction.down)
                 {

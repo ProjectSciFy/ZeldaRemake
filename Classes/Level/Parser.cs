@@ -203,7 +203,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             lines = System.IO.File.ReadAllLines(cwdPath);
 
             Vector2 stairPos = new Vector2(0, 0);
-            GatekeeperTile gatekeeper;
+            GateKeeperTile gatekeeper;
             StairsTile stair;
             bool locked;
             foreach (string line in lines)
@@ -227,11 +227,11 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
                                 wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 6, 0);
 
-                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
                                 wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 7, 0);
-                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
                                 stairPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 6, 0);
@@ -242,7 +242,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                                 doors.Add(new LeftDoor(game, new RoomTextureStorage(game), doorvalue));
                                 wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 0, 4);
 
-                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
                                 stairPos = utility.GetLeftStairPosition(windowWidthFloor, windowHeightFloor, 0, 4);
@@ -254,7 +254,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
                                 wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 13, 4);
 
-                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
                                 stairPos = utility.GetRightStairPosition(windowWidthFloor, windowHeightFloor, 13, 4);
@@ -266,11 +266,11 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
                                 wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 6, 8);
 
-                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
                                 wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 7, 8);
 
-                                tiles.Add(gatekeeper = new GatekeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
+                                tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked));
                                 gatekeeper.drawLocation = wallPos;
 
                                 stairPos = utility.GetBotStairPosition(windowWidthFloor, windowHeightFloor, 6, 8);

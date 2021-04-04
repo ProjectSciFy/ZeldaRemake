@@ -88,7 +88,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 
             hitbox.X = (int)position.X;
             hitbox.Y = (int)position.Y;
-            hitbox.Width = (int)(8 * spriteScalar);
+            hitbox.Width = (int)(16 * spriteScalar);
             hitbox.Height = (int)(16 * spriteScalar);
 
             game.collisionManager.collisionEntities[this] = hitbox;
