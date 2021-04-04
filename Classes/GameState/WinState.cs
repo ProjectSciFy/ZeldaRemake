@@ -4,21 +4,27 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
-    class WinState : IGameState
+    public class WinState : IGameState
     {
+        private ZeldaGame game;
+        public WinState(ZeldaGame game)
+        {
+            this.game = game;
+        }
+
         void IGameState.Draw()
         {
-            throw new NotImplementedException();
+            this.game.link.Draw();
         }
 
         void IGameState.Update()
         {
-            throw new NotImplementedException();
+            
         }
 
         void IGameState.UpdateCollisions()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

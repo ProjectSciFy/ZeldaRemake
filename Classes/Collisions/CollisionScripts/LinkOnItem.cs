@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.Items;
+﻿using CSE3902_Game_Sprint0.Classes.GameState;
+using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,11 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             link.game.collisionManager.collisionEntities.Remove((ICollisionEntity)item);
             //TODO - DELETE THE ITEM FROM WHEREVER IT IS BEING STORED!!!
             link.game.currentRoom.removeItem(item);
+
+            if(item is Triforce)
+            {
+                link.game.currentGameState = new WinState(link.game);
+            }
         }
     }
 }
