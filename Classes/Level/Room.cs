@@ -74,6 +74,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         }
         public void Update()
         {
+            pHUD.Update();
             foreach (IEnemy enemy in enemies.ToArray())
             {
                 enemy.Update();

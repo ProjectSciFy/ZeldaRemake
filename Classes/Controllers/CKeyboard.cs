@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -19,14 +20,14 @@ namespace CSE3902_Game_Sprint0
         Dictionary<Keys, ICommand> keyBinds = new Dictionary<Keys, ICommand>();
         HashSet<Keys> heldKeys = new HashSet<Keys>();
         Dictionary<Keys, int> movementKeys = new Dictionary<Keys, int>();
-
+        private ZeldaGame game;
        
         public CKeyboard(ZeldaGame game)
         {
 
             linkState = game.linkStateMachine;
             bombState = game.bombStateMachine;
-
+            this.game = game;
             //Change commands in future--
 
             //Up and W -- change direction (switch case/state machine?) and movement
@@ -47,20 +48,19 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.D, new MoveLink(linkState, LinkStateMachine.Direction.right));
 
             //Z and N -- attack animation
-            keyBinds.Add(Keys.N, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.sword)); // sword item
-            keyBinds.Add(Keys.Z, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.sword)); // sword item
+            keyBinds.Add(Keys.N, new SecondaryWeaponLink(linkState)); // sword item
+            keyBinds.Add(Keys.Z, new PrimaryWeaponLink(linkState)); // sword item
 
             //E -- test damage taken animation
             keyBinds.Add(Keys.E, new DamagedLink(linkState));
 
             //1, 2, 3, 4 -- change link's current item
-            //NEED TO CHANGE FROM USING WEAPON TO SIMPLY CHANGING IT. ALSO NEED TO ADD SWORD CHANGE [Keys.D1]
-            keyBinds.Add(Keys.D2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb)); // bomb item 
-            keyBinds.Add(Keys.NumPad2, new WeaponLink(linkState, LinkStateMachine.Weapon.bomb)); // bomb item 
-            keyBinds.Add(Keys.D3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
-            keyBinds.Add(Keys.NumPad3, new WeaponLink(linkState, LinkStateMachine.Weapon.arrow)); // bow & arrow item 
-            keyBinds.Add(Keys.D4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
-            keyBinds.Add(Keys.NumPad4, new WeaponLink(bombState, linkState, LinkStateMachine.Weapon.boomerang)); // boomerang item 
+            keyBinds.Add(Keys.D2, new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.bomb));
+            keyBinds.Add(Keys.NumPad2, new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.bomb));
+            keyBinds.Add(Keys.D3, new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.arrow));
+            keyBinds.Add(Keys.NumPad3, new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.arrow));
+            keyBinds.Add(Keys.D4, new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.boomerang));
+            keyBinds.Add(Keys.NumPad4, new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.boomerang));
 
             //Q -- quit game
             keyBinds.Add(Keys.Q, new ShutDownGame(game));
@@ -71,6 +71,7 @@ namespace CSE3902_Game_Sprint0
 
         public void Update()
         {
+            linkState = game.linkStateMachine;
             KeyboardState keyState = Keyboard.GetState();
             //Set of all keys released on this update (begins as copy of keys held down)
             HashSet<Keys> releasedKeys = new HashSet<Keys>(heldKeys);

@@ -45,7 +45,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             arrow.spriteSize.X = 8;
             arrow.spriteSize.Y = 16;
             arrow.velocity.X = 0;
-            arrow.velocity.Y = -2;
+            arrow.velocity.Y = -3;
             arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(1, 185, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, projectileLayerDepth);
         }
 
@@ -54,7 +54,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             arrow.spriteSize.X = 8;
             arrow.spriteSize.Y = 16;
             arrow.velocity.X = 0;
-            arrow.velocity.Y = 2;
+            arrow.velocity.Y = 3;
             arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(1, 185, 8, 16), Color.White, SpriteEffects.FlipVertically, new Vector2(1, 1), 10, projectileLayerDepth);
         }
 
@@ -62,7 +62,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             arrow.spriteSize.X = 16;
             arrow.spriteSize.Y = 16;
-            arrow.velocity.X = -2;
+            arrow.velocity.X = -3;
             arrow.velocity.Y = 0;
             arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(10, 185, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 1), 10, projectileLayerDepth);
         }
@@ -71,7 +71,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             arrow.spriteSize.X = 16;
             arrow.spriteSize.Y = 16;
-            arrow.velocity.X = 2;
+            arrow.velocity.X = 3;
             arrow.velocity.Y = 0;
             arrow.mySprite = new UniversalSprite(game, linkSpriteSheet, new Rectangle(10, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, projectileLayerDepth);
         }

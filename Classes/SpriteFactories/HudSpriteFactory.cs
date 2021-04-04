@@ -55,7 +55,22 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 
         public UniversalSprite secondaryWeaponHUD()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.bomb)
+            {
+                return new UniversalSprite(game, hudSpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            }
+            else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.arrow)
+            {
+                return new UniversalSprite(game, hudSpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            }
+            else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.boomerang)
+            {
+                return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            }
+            else
+            {
+                return new UniversalSprite(game, hudSpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            }
         }
 
         public UniversalSprite top()

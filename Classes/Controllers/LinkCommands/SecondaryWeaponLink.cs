@@ -6,34 +6,21 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
-    public class WeaponLink : ICommand
+    public class SecondaryWeaponLink : ICommand
     {
         private LinkStateMachine linkState;
         private LinkStateMachine.Weapon weaponSelected;
-        private BombStateMachine bombState;
 
-        public WeaponLink(LinkStateMachine linkState, LinkStateMachine.Weapon weapon)
+        public SecondaryWeaponLink(LinkStateMachine linkState)
         {
             this.linkState = linkState;
-            this.weaponSelected = weapon;
         }
-        public WeaponLink(BombStateMachine bombState, LinkStateMachine linkState, LinkStateMachine.Weapon weapon)
-        {
-            this.linkState = linkState;
-            this.bombState = bombState;
-            this.weaponSelected = weapon;
-            this.bombState = bombState;
-        }
-
         public void Execute()
-        { 
+        {
+            this.weaponSelected = linkState.weaponSelected;
             // need to update link's state so that corresponding animation is drawn.
             switch (weaponSelected)
             {
-                case LinkStateMachine.Weapon.sword:
-                    linkState.useSword = true;
-                    break;
-
                 case LinkStateMachine.Weapon.bomb:
                     linkState.useBomb = true;
                     break;

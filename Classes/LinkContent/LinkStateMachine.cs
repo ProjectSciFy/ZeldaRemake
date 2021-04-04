@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes
         //enum for item selected?
         //Starting condition should be bomb
         public enum Weapon {none, sword, bomb, arrow, boomerang};
-        public Weapon weaponSelected = Weapon.none;
+        public Weapon weaponSelected = Weapon.bomb;
 
         public int timer = 0;
         private int invincibilityFrames = 0;
