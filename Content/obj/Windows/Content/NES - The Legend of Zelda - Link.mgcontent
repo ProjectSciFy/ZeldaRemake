@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Link.png</SourceFile>
-  <SourceTime>2021-04-03T16:12:09.4739135-04:00</SourceTime>
+  <SourceTime>2021-04-04T16:12:23.352218-04:00</SourceTime>
   <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - Link.xnb</DestFile>
-  <DestTime>2021-04-03T16:50:08.2301167-04:00</DestTime>
+  <DestTime>2021-04-04T16:12:30.5985351-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

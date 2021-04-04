@@ -32,17 +32,18 @@ namespace CSE3902_Game_Sprint0.Classes
 
         // private Tool = bomb or something
 
+        public bool grabItem = false;
+        public bool isTriforce = false;
         public bool useSword = false;
-        int swordcount = 0;
         public bool useBomb = false;
-        int bombcount = 0;
         public bool useArrow = false;
         public bool useBoomerang = false;
-
         public bool isDamaged = false;
-        int damcount = 0;
+        public bool isGrabbed = false;
+        public bool dying = false;
+        public bool dead = false;
 
-        public enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft };
+        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
         public CurrentState currentState;
 
         public LinkStateMachine(Link link)
@@ -134,6 +135,31 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
+        public void Death()
+        {
+            if (!dead)
+            {
+                currentState = CurrentState.dying;
+                timer = 80;
+                new LinkDeath(link, spriteFactory, this).Execute();
+                dead = true;
+            }
+            else if (timer <= 0 && dead)
+            {
+                timer = 180;
+                new LinkDeath(link, spriteFactory, this).Execute();
+                dying = false;
+                dead = false;
+            }
+        }
+
+        public void GrabItem()
+        {
+            timer = 60;
+            grabItem = false;
+            new LinkGrabItem(link, spriteFactory, this).Execute();
+        }
+
         public void Update()
         {
             if (timer > 0)
@@ -153,7 +179,15 @@ namespace CSE3902_Game_Sprint0.Classes
             }
 
             //State calculation
-            if (moving)
+            if (grabItem)
+            {
+                GrabItem();
+            }
+            else if (dying)
+            {
+                Death();
+            }
+            else if (moving)
             {
                 if (isDamaged)
                 {

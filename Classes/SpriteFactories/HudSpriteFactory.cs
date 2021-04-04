@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //this is just the base template sprite. HUD still needs life, map, level, counters to be implemented and updated in real time.
         public UniversalSprite baseHud()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 255, 55), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 260, 55), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
         }
 
         //public UniversalSprite mapHUD()
@@ -45,7 +45,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 
         public UniversalSprite levelHUD()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 1, 64, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 1, 64, 7), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
         }
 
         public UniversalSprite primaryWeaponHUD()

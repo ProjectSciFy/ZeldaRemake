@@ -162,21 +162,24 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, linkTexture, new Rectangle(270, 202, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 5, linkLayerDepth);
         }
-        public void PickUpNormal()
+
+        public UniversalSprite Dying()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(213, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
+            return new UniversalSprite(game, linkTexture, new Rectangle(227, 270, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 5, linkLayerDepth);
         }
-        public void PickUpTriForce()
+
+        public UniversalSprite Death()
         {
-            link.spriteSize.X = 16;
-            link.spriteSize.Y = 16;
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-            link.linkSprite = new UniversalSprite(game, linkTexture, new Rectangle(230, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
+            return new UniversalSprite(game, linkTexture, new Rectangle(227, 288, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 6), 30, linkLayerDepth);
+        }
+
+        public UniversalSprite PickUpNormal()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(213, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
+        }
+        public UniversalSprite PickUpTriForce()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(230, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
         }
     }
 }
