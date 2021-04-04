@@ -40,7 +40,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool dying = false;
         public bool dead = false;
 
-        public enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, dead };
+        public enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying };
         public CurrentState currentState;
 
         public LinkStateMachine(Link link)
@@ -136,6 +136,7 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             if (!dead)
             {
+                currentState = CurrentState.dying;
                 timer = 80;
                 new LinkDeath(link, spriteFactory, this).Execute();
                 dead = true;

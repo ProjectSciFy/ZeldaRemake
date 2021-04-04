@@ -8,6 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
     class DeathState : IGameState
     {
         private ZeldaGame game;
+        private int timer = -1;
 
         public DeathState(ZeldaGame game)
         {
@@ -21,8 +22,23 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.Update()
         {
-            this.game.link.linkState.dying = true;
-            new Reset(game).Execute();
+            if (timer == -1)
+            {
+                this.game.link.linkState.dying = true;
+                timer = 80 + 180;
+            }
+            game.link.Update();
+            game.link.Draw();
+
+            if (timer > 0)
+            {
+                timer--;
+            }
+
+            if (timer <= 0)
+            {
+                new Reset(game).Execute();
+            }
         }
 
         void IGameState.UpdateCollisions()
