@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.Update()
         {
-            //EXECUTE DEATH ANIMATION HERE
+            this.game.link.linkState.dying = true;
             new Reset(game).Execute();
         }
 

@@ -162,6 +162,17 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, linkTexture, new Rectangle(270, 202, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 5, linkLayerDepth);
         }
+
+        public UniversalSprite Dying()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(227, 270, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 5, linkLayerDepth);
+        }
+
+        public UniversalSprite Death()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(227, 288, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 6), 30, linkLayerDepth);
+        }
+
         public void PickUpNormal()
         {
             link.spriteSize.X = 16;
