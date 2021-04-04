@@ -4,21 +4,27 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
-    class ItemSelectState : IGameState
+    public class ItemSelectState : IGameState
     {
+        private ZeldaGame game;
+        public ItemSelectState(ZeldaGame game)
+        {
+            this.game = game;
+        }
+
         void IGameState.Draw()
         {
-            throw new NotImplementedException();
+            
         }
 
         void IGameState.Update()
         {
-            throw new NotImplementedException();
+            
         }
 
         void IGameState.UpdateCollisions()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
