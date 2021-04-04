@@ -25,6 +25,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
                     if (GoriyaStateMachine.currentState != GoriyaStateMachine.CurrentState.idleRight)
                     {
                         GoriyaStateMachine.currentState = GoriyaStateMachine.CurrentState.idleRight;
+                        goriya.velocity.X = 0;
+                        goriya.velocity.Y = 0;
                         goriya.mySprite = enemySpriteFactory.GoriyaIdleRight();
                     }
                     break;
@@ -33,7 +35,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
                     if (GoriyaStateMachine.currentState != GoriyaStateMachine.CurrentState.idleUp)
                     {
                         GoriyaStateMachine.currentState = GoriyaStateMachine.CurrentState.idleUp;
-                       goriya.mySprite = enemySpriteFactory.GoriyaIdleUp();
+                        goriya.velocity.X = 0;
+                        goriya.velocity.Y = 0;
+                        goriya.mySprite = enemySpriteFactory.GoriyaIdleUp();
                     }
                     break;
 
@@ -41,6 +45,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
                     if (GoriyaStateMachine.currentState != GoriyaStateMachine.CurrentState.idleLeft)
                     {
                         GoriyaStateMachine.currentState = GoriyaStateMachine.CurrentState.idleLeft;
+                        goriya.velocity.X = 0;
+                        goriya.velocity.Y = 0;
                         this.goriya.mySprite = enemySpriteFactory.GoriyaIdleLeft();
                     }
                     break;
@@ -49,6 +55,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
                     if (GoriyaStateMachine.currentState != GoriyaStateMachine.CurrentState.idleDown)
                     {
                         GoriyaStateMachine.currentState = GoriyaStateMachine.CurrentState.idleDown;
+                        goriya.velocity.X = 0;
+                        goriya.velocity.Y = 0;
                         goriya.mySprite = enemySpriteFactory.GoriyaIdleDown();
                     }
                     break;

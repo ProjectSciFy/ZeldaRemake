@@ -117,6 +117,14 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
             }
+            else if (projectile is GoriyaBoomerang)
+            {
+                if (enemy is EnemyGoriya && ((GoriyaBoomerang)projectile).myState.returning)
+                {
+                    ((EnemyGoriya)enemy).throwing = false;
+                    ((GoriyaBoomerang)projectile).collided = true;
+                }
+            }
         }
     }
 }

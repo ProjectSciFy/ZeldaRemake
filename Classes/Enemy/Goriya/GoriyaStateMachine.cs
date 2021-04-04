@@ -16,10 +16,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none };
         public Direction direction { get; set; }  = Direction.down;
-        public bool moving { get; set; }  = true;
-        private bool spawning = true;
+        public bool moving { get; set; } = false;
+        public bool spawning = true;
         private int timer = 90;
-        public enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning};
+        private int deathTimer = 30;
+        public enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning, dying};
         public CurrentState currentState = CurrentState.none;
         public GoriyaStateMachine(EnemyGoriya goriya)
         {
@@ -34,27 +35,26 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             spawning = false;
             new GoriyaSpawning(goriya, enemySpriteFactory, this).Execute();
         }
-
+        public void Dying()
+        {
+            new GoriyaDying(goriya, enemySpriteFactory, this).Execute();
+        }
         public void Idle()
         {
             new GoriyaIdle(goriya, enemySpriteFactory, this).Execute();
         }
-
         public void Moving()
         {
             new GoriyaMoving(goriya, enemySpriteFactory, this).Execute();
         }
-
-
-
         public void Update()
         {
             if (!spawning)
             {
-                if (timer <= 0)
+                if (!goriya.throwing && timer <= 0)
                 {
+                    timer = 60;
                     var random = new Random();
-                    timer = 500;
                     switch (random.Next(4))
                     {
                         case 0:
@@ -73,7 +73,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                             direction = Direction.down;
                             break;
                     }
-                    moving = !moving;
+                    moving = true;
                 }
                 else
                 {
@@ -98,6 +98,15 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 else
                 {
                     Idle();
+                }
+            }
+            if (goriya.health <= 0)
+            {
+                Dying();
+                deathTimer--;
+                if (deathTimer == 0)
+                {
+                    goriya.game.currentRoom.removeEnemy(goriya);
                 }
             }
         }
