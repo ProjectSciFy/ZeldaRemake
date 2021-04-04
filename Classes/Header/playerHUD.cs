@@ -91,8 +91,9 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         }
 
         public void Update()
-        { 
+        {
             //this is where a keystate can be accessed to either show/not show the HUD or other functionalities.
+            secWeapSprite = HudFactory.secondaryWeaponHUD();
         }
 
         public void Draw()
