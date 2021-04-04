@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.Doors;
+using CSE3902_Game_Sprint0.Classes.Header;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
@@ -54,11 +55,13 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private int drawOffset;
         private Collision.Collision.Direction transitionDirection;
         private int animationSpeed = 6;
+
+        private playerHUD pHUD;
        
         public TransitionState(ZeldaGame game, Room oldroom, Room nextroom, Collision.Collision.Direction transitionDirection)
         {
-
             this.game = game;
+            this.pHUD = new playerHUD(game, game.hudSpriteFactory);
             this.oldroom = oldroom;
             this.nextroom = nextroom;
             timer = 128;
@@ -183,7 +186,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             leftDoorNext.Draw(drawLocationLeftDoorNext);
             rightDoorNext.Draw(drawLocationRightDoorNext);
             bottomDoorNext.Draw(drawLocationBottomDoorNext);
-
+            pHUD.Draw();
         }
         public void UpdateCollisions()
         {

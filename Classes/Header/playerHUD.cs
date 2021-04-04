@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using CSE3902_Game_Sprint0.Classes.Level;
 
 namespace CSE3902_Game_Sprint0.Classes.Header
 {
@@ -51,7 +52,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
         private Boolean hasMap = false;
 
-
         public float spriteScalar;
         public Vector2 drawLocation;
 
@@ -70,7 +70,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.digit = HudFactory.Digit(0);
 
             //position of top left corner of hud template is X,Y:
-            X = 135;
+            X = (game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST - ParserUtility.GEN_ADJUST;
             Y = 25;
             this.hudPosition = new Vector2(X, Y);
             //elements of the Hud will be positioned in reference to X and Y so when Hud is moved, only X and Y need to change:
@@ -97,6 +97,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
         public void Draw()
         {
+
+
             //THIS FILE NEEDS TO BE REFACTORED - I UNDERSTAND THAT IT IS WAY TOO LONG - THIS WAS JUST AN ATTEMPT
 
             //static displays:
