@@ -7,15 +7,13 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 {
     class DeathState : IGameState
     {
-        private ICommand resetGame;
         private ZeldaGame game;
 
-        private int timer = 12;
+        //private int deathAnimationTimer = 12;
 
         public DeathState(ZeldaGame game)
         {
             this.game = game;
-            resetGame = new Reset(game);
         }
 
         void IGameState.Draw()
@@ -25,33 +23,39 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.Update()
         {
-            if (timer == 0)
+            if (game.util.numLives <= 0)
             {
-                resetGame.Execute();
+                new Reset(game).Execute();
+            }
+            /*
+            if (deathAnimationTimer == 0)
+            {
+                new Reset(game).Execute();
             } else
             {
-                switch (timer % 40)
+                switch (deathAnimationTimer % 40)
                 {
                     case 0:
-                        timer--;
+                        deathAnimationTimer--;
                         this.game.link.linkState.ChangeDirection(LinkStateMachine.Direction.right);
                         break;
                     case 1:
-                        timer--;
+                        deathAnimationTimer--;
                         this.game.link.linkState.ChangeDirection(LinkStateMachine.Direction.up);
                         break;
                     case 2:
-                        timer--;
+                        deathAnimationTimer--;
                         this.game.link.linkState.ChangeDirection(LinkStateMachine.Direction.left);
                         break;
                     case 3:
-                        timer--;
+                        deathAnimationTimer--;
                         this.game.link.linkState.ChangeDirection(LinkStateMachine.Direction.down);
                         break;
                     default:
                         break;
                 }
             }
+            */
         }
 
         void IGameState.UpdateCollisions()

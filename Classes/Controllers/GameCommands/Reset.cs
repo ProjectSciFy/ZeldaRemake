@@ -52,6 +52,10 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             this.linkLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - CENTER, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + Y_ADJUST);
 
             //RESET HUD HERE
+            game.util.numLives = 3;
+            game.util.numKeys = 0;
+            game.util.numBrups = 0;
+            game.util.numYrups = 0;
             // - Jared will take care of this, planning on implementing a "reset" method inside the playerHUD.cs class
 
             //RE-PARSE ROOMS HERE

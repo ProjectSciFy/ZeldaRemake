@@ -132,6 +132,10 @@ namespace CSE3902_Game_Sprint0
             base.Update(gameTime);
             //GAME STATE
             currentGameState.Update();
+            if (util.numLives <= 0)
+            {
+                currentGameState = new DeathState(this);
+            }
         }
 
         /*
