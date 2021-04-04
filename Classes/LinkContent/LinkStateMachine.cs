@@ -39,10 +39,11 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool useArrow = false;
         public bool useBoomerang = false;
         public bool isDamaged = false;
+        public bool isGrabbed = false;
         public bool dying = false;
         public bool dead = false;
 
-        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing };
+        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
         public CurrentState currentState;
 
         public LinkStateMachine(Link link)

@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using System;
 using System.Collections.Generic;
@@ -29,10 +30,23 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 
             if (enemy is EnemyWallmaster)
             {
-                link.drawLocation = ((EnemyWallmaster)enemy).drawLocation;
-                link.linkState.currentState = LinkStateMachine.CurrentState.idleDown;
-                link.linkState.Idle();
-                link.linkState.timer = 2;
+                if (link.linkState.timer <= 0 && !(link.linkState.isGrabbed))
+                {
+                    link.drawLocation = ((EnemyWallmaster)enemy).drawLocation;
+                    link.linkState.isGrabbed = true;
+                    link.linkState.Idle();
+                    link.linkState.timer = 180;
+                }
+                else if (link.linkState.timer <= 0)
+                {
+                    link.linkState.isGrabbed = false;
+                    new Reset(link.game).Execute();
+                }
+                else if (link.linkState.isGrabbed)
+                {
+                    link.drawLocation = ((EnemyWallmaster)enemy).drawLocation;
+                    link.linkState.Idle();
+                }
             }
         }
     }
