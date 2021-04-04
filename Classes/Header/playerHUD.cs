@@ -26,6 +26,12 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         private ISprite digit;
         private int digitOffset;
 
+        //background
+        private ISprite top;
+        private ISprite bottom;
+        private ISprite right;
+        private ISprite left;
+
         private int keyOneDigit;
         private int keyTenDigit;
         private int blueOneDigit;
@@ -68,6 +74,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.heartSprite = HudFactory.livesHUD();
             this.xSprite = HudFactory.xHUD();
             this.digit = HudFactory.Digit(0);
+            this.top = HudFactory.top();
+            this.bottom = HudFactory.bottom();
+            this.right = HudFactory.right();
+            this.left = HudFactory.left();
 
             //position of top left corner of hud template is X,Y:
             X = (game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST - ParserUtility.GEN_ADJUST;
@@ -97,11 +107,15 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
         public void Draw()
         {
-
+            float windowWidthFloor = (game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
+            float windowHeightFloor = ((game.GraphicsDevice.Viewport.Height / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST - ParserUtility.GEN_ADJUST;
 
             //THIS FILE NEEDS TO BE REFACTORED - I UNDERSTAND THAT IT IS WAY TOO LONG - THIS WAS JUST AN ATTEMPT
-
             //static displays:
+            top.Draw(new Vector2(X, 0));
+            bottom.Draw(new Vector2(X, windowHeightFloor + 530));
+            right.Draw(new Vector2(windowWidthFloor + 770, windowHeightFloor));
+            left.Draw(new Vector2(0, windowHeightFloor));
             hudSprite.Draw(hudPosition);
             primWeapSprite.Draw(primWeapPos);
             secWeapSprite.Draw(secWeapPos);

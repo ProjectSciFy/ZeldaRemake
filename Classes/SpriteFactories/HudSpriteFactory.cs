@@ -57,5 +57,23 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
         }
+
+        public UniversalSprite top()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 0, 260, 82), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
+        }
+
+        public UniversalSprite bottom()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 260, 41), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
+        }
+        public UniversalSprite right()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(0, 0, 42, 178), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
+        }
+        public UniversalSprite left()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(0, 0, 42, 178), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
+        }
     }
 }
