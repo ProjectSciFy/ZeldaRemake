@@ -32,6 +32,8 @@ namespace CSE3902_Game_Sprint0.Classes
 
         // private Tool = bomb or something
 
+        public bool grabItem = false;
+        public bool isTriforce = false;
         public bool useSword = false;
         public bool useBomb = false;
         public bool useArrow = false;
@@ -40,7 +42,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool dying = false;
         public bool dead = false;
 
-        public enum CurrentState {idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying };
+        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing };
         public CurrentState currentState;
 
         public LinkStateMachine(Link link)
@@ -150,6 +152,13 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
+        public void GrabItem()
+        {
+            timer = 60;
+            grabItem = false;
+            new LinkGrabItem(link, spriteFactory, this).Execute();
+        }
+
         public void Update()
         {
             if (timer > 0)
@@ -169,7 +178,11 @@ namespace CSE3902_Game_Sprint0.Classes
             }
 
             //State calculation
-            if (dying)
+            if (grabItem)
+            {
+                GrabItem();
+            }
+            else if (dying)
             {
                 Death();
             }
