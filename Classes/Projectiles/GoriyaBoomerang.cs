@@ -36,7 +36,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.spriteFactory = game.enemySpriteFactory;
             this.drawLocation = goriya.drawLocation;
             this.SpawnLocation = goriya.drawLocation;
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             this.myState = new GoriyaBoomerangStatemachine(this);
         }
         public Rectangle CollisionRectangle()

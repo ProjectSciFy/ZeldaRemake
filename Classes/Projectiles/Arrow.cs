@@ -27,7 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Arrow(ZeldaGame game, Vector2 drawLocation, ProjectileHandler projectileHandler, Direction direction)
         {
             this.game = game;
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             this.projectileSpriteFactory = game.projectileSpriteFactory;
             this.drawLocation = drawLocation;
             this.projectileHandler = projectileHandler;

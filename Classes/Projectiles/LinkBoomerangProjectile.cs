@@ -38,7 +38,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.spriteFactory = linkState.spriteFactory;
             this.drawLocation = link.drawLocation;
             this.spawnLocation = link.drawLocation;
-            this.spriteScalar = link.game.spriteScalar;
+            this.spriteScalar = link.game.util.spriteScalar;
             this.myState = new LinkBoomerangStateMachine(this);
         }
         public Rectangle CollisionRectangle()

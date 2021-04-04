@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes.Items;
-using Microsoft.Xna.Framework;
 using CSE3902_Game_Sprint0.Classes.Doors;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
@@ -54,7 +53,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private int roomLimiter;
         private int drawOffset;
         private Collision.Collision.Direction transitionDirection;
-        //public int transitionDirection = 0;
         private int animationSpeed = 6;
        
         public TransitionState(ZeldaGame game, Room oldroom, Room nextroom, Collision.Collision.Direction transitionDirection)
@@ -199,7 +197,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             if(timer == 0)
             {
                 game.currentGameState = game.currentMainGameState;
-                game.keyPressedTempVariable = false;
+                game.util.keyPressedTempVariable = false;
                 switch (transitionDirection)
                 {
                     case Collision.Collision.Direction.up:

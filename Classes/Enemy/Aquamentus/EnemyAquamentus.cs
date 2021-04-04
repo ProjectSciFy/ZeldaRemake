@@ -32,7 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             drawLocation = spawnLocation;
             myState = new AquamentusStateMachine(this);
             //game.collisionManager.enemies.Add(this, collisionRectangle);
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
         }
         public void TakeDamage(int damage)

@@ -32,9 +32,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         private Vector2 linkLocation;
 
-        private ZeldaGame.Enemies currentEnemy;
-        private IEnemy drawnEnemy;
-
         public Reset(ZeldaGame game)
         {
             this.game = game;
@@ -46,6 +43,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         public void Execute()
         {
+            this.game.linkStateMachine.Idle();
+
             this.direction = linkState.direction;
             linkState.direction = LinkStateMachine.Direction.down;
             this.direction = LinkStateMachine.Direction.down;
@@ -55,13 +54,17 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             this.linkLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - CENTER, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + Y_ADJUST);
 
             //RESET HUD HERE
+            game.util.numLives = 3;
+            game.util.numKeys = 0;
+            game.util.numBrups = 0;
+            game.util.numYrups = 0;
             // - Jared will take care of this, planning on implementing a "reset" method inside the playerHUD.cs class
 
             //RE-PARSE ROOMS HERE
             game.collisionManager.ClearNotLink();
             game.projectileHandler.Clear();
             game.roomList = new List<Room>();
-            game.roomNumber = 2;
+            game.util.roomNumber = 2;
             for (int i = 1; i < 19; i++)
             {
                 game.roomList.Add(Parser.ParseRoomCSV(game, i));
@@ -71,8 +74,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.currentRoom.Initialize();
             game.currentMainGameState = new MainState(game, game.currentRoom);
             game.currentGameState = game.currentMainGameState;
-
-            // this.game.changeRoomInstantly(2);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
             this.position = location;
             this.tileFactory = tileFactory;
             this.tileSprite = tileFactory.WallTile();
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
         }
         public Rectangle CollisionRectangle()
         {

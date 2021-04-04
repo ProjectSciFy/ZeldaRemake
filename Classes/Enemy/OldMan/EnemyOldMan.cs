@@ -27,7 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
             this.mySprite = this.enemySpriteFactory.OldManIdle();
             drawLocation = spawnLocation;
             myState = new OldManStateMachine(this);
-            this.spriteScalar = game.spriteScalar;
+            this.spriteScalar = game.util.spriteScalar;
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
         }
         public void TakeDamage(int damage)

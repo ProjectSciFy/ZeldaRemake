@@ -24,96 +24,85 @@ namespace CSE3902_Game_Sprint0
 
     public class ZeldaGame : Game
     {
+        //GENERAL STUFF
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        //CONTROLLERS
         public List<IController> controllerList = new List<IController>();
+        //UTILITY STORAGE
+        public GameUtility util;
+        //SPRITE SHEETS
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
-        //Sprite factories
+        //SPRITE FACTORIES
         public EnemySpriteFactory enemySpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
         public HudSpriteFactory hudSpriteFactory;
-        //Link:
-        public Classes.Link link;
-        public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster, OldMan}
+        //STATE MACHINES
         public LinkStateMachine linkStateMachine;
         public BombStateMachine bombStateMachine;
-        public Classes.Projectiles.Bomb bomb;
+        //LINK
+        public Classes.Link link;
+        //COLLISIONS
         public ProjectileHandler projectileHandler;
-
         public CollisionManager collisionManager;
-
-        public int roomNumber;
+        //ROOMS
         public List<Room> roomList;
         public Dictionary<int, int[]> neighbors;
-        
-        //PASS THIS TO ENTITIES FOR UPSCALING THEM UNIFORMLY
-        public float spriteScalar = 3;
         public Room currentRoom;
         public Room oldRoom;
-
-        //Seperate scalar for all HUD entities, still needs proper implementation:
-        public float hudScalar = 1;
-        //counter variables that are displayed in HUD graphically:
-        public int numKeys;
-        public int numBrups;
-        public int numYrups;
-        public int numLives;
-
+        //GAME STATES
         public IGameState currentMainGameState;
         public IGameState currentGameState;
 
-        public bool keyPressedTempVariable = false;
-
         public ZeldaGame()
         {
+            this.util = new GameUtility();
             _graphics = new GraphicsDeviceManager(this);
+            IsMouseVisible = true;
             //SIZE OF SCREEN 
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.PreferredBackBufferHeight = 896;
+            //DIRECTORY
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
             base.Initialize();
-            //Setting up CollisionManager
+            //COLLISIONS
             collisionManager = new CollisionManager();
-            //Setting up projectileHandler
+            //PROJECTILES
             projectileSpriteFactory = new ProjectileSpriteFactory(this);
             projectileHandler = new ProjectileHandler(this);
-            /* LINK */
-            //set StateMachine and Link to be used:
+            //LINK
             link = new Classes.Link(this);
             linkStateMachine = new LinkStateMachine(link);
-            //link is now created, maintains an instance of StateMachine to be passed around for commands:
             link.SetState(linkStateMachine);
-            //Setting up playerHudSpriteFactory
+            //HUD
             hudSpriteFactory = new HudSpriteFactory(this);
-            //Initialize counter variables for HUD:
-            numKeys = 0;
-            numBrups = 0;
-            numYrups = 0;
-            numLives = 3;
-            //Setting up enemy spritefactory
+            //ENEMIES
             enemySpriteFactory = new EnemySpriteFactory(this);
+            //CONTROLLERS
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
+            //ROOMS
             neighbors = Parser.ParseNeighborCSV();
             roomList = new List<Room>();
-            roomNumber = 2;
+            /* 18 ROOMS */
             for (int i = 1; i < 19; i++)
             {
                 roomList.Add(Parser.ParseRoomCSV(this, i));
             }
+            /* SET CURRENT ROOM TO ROOM WITH CURRENT roomNumber */
             foreach (Room r in roomList)
             {
-                if (r.getRoomNumber() == roomNumber)
+                if (r.getRoomNumber() == util.roomNumber)
                 {
                     currentRoom = r;
                 }
             }
             currentRoom.Initialize();
+            //GAME STATE
             currentMainGameState = new MainState(this, currentRoom);
             currentGameState = currentMainGameState;
         }
@@ -121,7 +110,7 @@ namespace CSE3902_Game_Sprint0
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            //Loading all of our textures into a texture dictionary
+            //SPRITE SHEETS
             spriteSheets.Add("Link", Content.Load<Texture2D>("NES - The Legend of Zelda - Link"));
             spriteSheets.Add("HUD", Content.Load<Texture2D>("NES - The Legend of Zelda - HUD & Pause Screen"));
             spriteSheets.Add("ItemsAndWeapons", Content.Load<Texture2D>("NES - The Legend of Zelda - Items & Weapons"));
@@ -137,18 +126,30 @@ namespace CSE3902_Game_Sprint0
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            //COLLISIONS
             currentGameState.UpdateCollisions();
+            //GENERAL
             base.Update(gameTime);
+            //GAME STATE
             currentGameState.Update();
+            if (util.numLives <= 0)
+            {
+                currentGameState = new DeathState(this);
+            }
         }
 
+        /*
+         * Change room smooothly from room number util.roomNumber to room number newRoom
+         */
         public void changeRoom(int newRoom, Collision.Direction direction)
         {
-            keyPressedTempVariable = true;
+            util.keyPressedTempVariable = true;
             oldRoom = currentRoom;
+            //CLEAR COLLISIONS
             collisionManager.ClearNotLink();
             projectileHandler.Clear();
-            roomNumber = newRoom;
+            util.roomNumber = newRoom;
+            //FIND NEW ROOM
             foreach (Room r in roomList)
             {
                 if (r.getRoomNumber() == newRoom)
@@ -156,31 +157,18 @@ namespace CSE3902_Game_Sprint0
                     currentRoom = r;
                 }
             }
+            //TRANSITION STATE
             currentMainGameState = new MainState(this, currentRoom);
             currentGameState = new TransitionState(this, oldRoom, currentRoom, direction);
         }
 
-        public void changeRoomInstantly(int newRoom)
-        {
-            collisionManager.ClearNotLink();
-            projectileHandler.Clear();
-            roomNumber = newRoom;
-            foreach (Room r in roomList)
-            {
-                if (r.getRoomNumber() == newRoom)
-                {
-                    currentRoom = r;
-                }
-            }
-            currentMainGameState = new MainState(this, currentRoom);
-            currentGameState = currentMainGameState;
-        }
-
         protected override void Draw(GameTime gameTime)
         {
+            //BLACK BACKGROUND
             GraphicsDevice.Clear(Color.Black);
-
+            //GENERAL
             base.Draw(gameTime);
+            //GAME STATE
             currentGameState.Draw();
         }
     }

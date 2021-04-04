@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualBasic.FileIO;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using CSE3902_Game_Sprint0.Classes.Tiles;

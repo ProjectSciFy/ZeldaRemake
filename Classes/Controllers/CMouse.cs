@@ -42,13 +42,13 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers
             {
                 //keyBinds[currentQuad].Execute();
 
-                if(game.roomNumber == 18)
+                if(game.util.roomNumber == 18)
                 {
                     game.changeRoom(0, 0);
                 }
                 else
                 {
-                    game.changeRoom(game.roomNumber + 1, 0);
+                    game.changeRoom(game.util.roomNumber + 1, 0);
                 }
             }
 
