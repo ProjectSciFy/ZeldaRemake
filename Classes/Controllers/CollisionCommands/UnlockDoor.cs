@@ -58,6 +58,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
                             break;
                     }
                     currentRoom.removeDoor(door);
+                    game.sounds["doorUnlock"].CreateInstance().Play();
                 }
             }
             game.util.numKeys = game.util.numKeys - 1;
