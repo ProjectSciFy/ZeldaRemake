@@ -168,6 +168,7 @@ namespace CSE3902_Game_Sprint0
             currentGameState.Update();
             if (util.numLives <= 0 && link.linkState.currentState != LinkStateMachine.CurrentState.dying)
             {
+                MediaPlayer.Stop();
                 currentGameState = new DeathState(this);
             }
         }

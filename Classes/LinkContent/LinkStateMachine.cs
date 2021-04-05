@@ -87,6 +87,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 timer = 12;
                 new LinkSword(link, spriteFactory, this).Execute();
                 new LinkOffset(link, false).Execute();
+                link.game.sounds["swordSlash"].CreateInstance().Play();
             }
         }
 
@@ -96,6 +97,7 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 timer = 15;
                 new LinkBomb(link, spriteFactory, this).Execute();
+                link.game.sounds["bombDrop"].CreateInstance().Play();
             }
         }
 
@@ -117,6 +119,7 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 timer = 25;
                 new LinkArrow(link, spriteFactory, this).Execute();
+                link.game.sounds["arrowBoomerang"].CreateInstance().Play();
             }
         }
 
@@ -144,6 +147,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 timer = 80;
                 new LinkDeath(link, spriteFactory, this).Execute();
                 dead = true;
+                link.game.sounds["linkDie"].CreateInstance().Play();
             }
             else if (timer <= 0 && dead)
             {
