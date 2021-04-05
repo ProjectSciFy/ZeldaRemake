@@ -96,7 +96,18 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         {
             return doors;
         }
-
+        public List<ITile> getTiles()
+        {
+            return tiles;
+        }
+        public void addDoor(IDoor door)
+        {
+            doors.Add(door);
+        }
+        public void removeDoor(IDoor door)
+        {
+            doors.Remove(door);
+        }
         public void removeEnemy(IEnemy entity)
         {
             enemies.Remove(entity);

@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.GameState;
+﻿using CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands;
+using CSE3902_Game_Sprint0.Classes.GameState;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Tiles;
 using System;
@@ -24,22 +25,30 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         {
             if (tile is BlockTile || tile is WallTile || (tile is GateKeeperTile && ((GateKeeperTile)tile).locked == true))
             {
-                if (direction == Collision.Collision.Direction.down)
+                if(tile is GateKeeperTile && ((GateKeeperTile)tile).isLockedDoor == true && game.util.numKeys > 0)
                 {
-                    link.drawLocation.Y = link.drawLocation.Y - link.velocity.Y;
+                    new UnlockDoor(game).Execute();
                 }
-                else if (direction == Collision.Collision.Direction.up)
+                else
                 {
-                    link.drawLocation.Y = link.drawLocation.Y - link.velocity.Y;
+                    if (direction == Collision.Collision.Direction.down)
+                    {
+                        link.drawLocation.Y = link.drawLocation.Y - link.velocity.Y;
+                    }
+                    else if (direction == Collision.Collision.Direction.up)
+                    {
+                        link.drawLocation.Y = link.drawLocation.Y - link.velocity.Y;
+                    }
+                    else if (direction == Collision.Collision.Direction.right)
+                    {
+                        link.drawLocation.X = link.drawLocation.X - link.velocity.X;
+                    }
+                    else if (direction == Collision.Collision.Direction.left)
+                    {
+                        link.drawLocation.X = link.drawLocation.X - link.velocity.X;
+                    }
                 }
-                else if (direction == Collision.Collision.Direction.right)
-                {
-                    link.drawLocation.X = link.drawLocation.X - link.velocity.X;
-                }
-                else if (direction == Collision.Collision.Direction.left)
-                {
-                    link.drawLocation.X = link.drawLocation.X - link.velocity.X;
-                }
+
             }
             if (tile is StairsTile)
             {
@@ -60,6 +69,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     game.changeRoom(game.neighbors[game.util.roomNumber][1], direction);
                 }
             }
+            
         }
     }
 }

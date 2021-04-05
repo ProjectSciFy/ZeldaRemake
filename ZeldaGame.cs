@@ -20,6 +20,7 @@ using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.GameState;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
+using CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -161,6 +162,7 @@ namespace CSE3902_Game_Sprint0
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
             //COLLISIONS
             currentGameState.UpdateCollisions();
             //GENERAL
