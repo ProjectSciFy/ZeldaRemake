@@ -142,3 +142,30 @@ C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Spr
 C:\Users\jaden\Source\Repos\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csprojAssemblyReference.cache
 C:\Users\jaden\Source\Repos\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.genruntimeconfig.cache
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 Labyrinth.wma
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 Labyrinth.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Arrow_Boomerang.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Bomb_Blow.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Bomb_Drop.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Boss_Hit.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Boss_Scream1.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Door_Unlock.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Enemy_Die.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Enemy_Hit.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Fanfare.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Heart.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Item.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Rupee.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Key_Appear.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Link_Die.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Link_Hurt.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_LowHealth.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Refill_Loop.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Secret.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Shield.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Stairs.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Combined.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Shoot.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Slash.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Text.xnb
+G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Text_Slow.xnb

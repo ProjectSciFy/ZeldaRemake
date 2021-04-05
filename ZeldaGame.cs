@@ -18,6 +18,8 @@ using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Collision;
 using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.GameState;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -33,6 +35,9 @@ namespace CSE3902_Game_Sprint0
         public GameUtility util;
         //SPRITE SHEETS
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
+        //SOUNDS
+        public Song song;
+        public Dictionary<string, SoundEffect> sounds = new Dictionary<string, SoundEffect>();
         //SPRITE FACTORIES
         public EnemySpriteFactory enemySpriteFactory;
         public ProjectileSpriteFactory projectileSpriteFactory;
@@ -119,6 +124,32 @@ namespace CSE3902_Game_Sprint0
             spriteSheets.Add("Bosses", Content.Load<Texture2D>("NES - The Legend of Zelda - Bosses"));
             spriteSheets.Add("DungeonBackgrounds", Content.Load<Texture2D>("Level 1 (Eagle)"));
             spriteSheets.Add("DungeonTileset", Content.Load<Texture2D>("NES - The Legend of Zelda - Dungeon Tileset"));
+            song = Content.Load<Song>("04 Labyrinth");
+            sounds.Add("arrowBoomerang", Content.Load<SoundEffect>("LOZ_Arrow_Boomerang"));
+            sounds.Add("bombBlow", Content.Load<SoundEffect>("LOZ_Bomb_Blow"));
+            sounds.Add("bombDrop", Content.Load<SoundEffect>("LOZ_Bomb_Drop"));
+            sounds.Add("bossHit", Content.Load<SoundEffect>("LOZ_Boss_Hit"));
+            sounds.Add("bossScream", Content.Load<SoundEffect>("LOZ_Boss_Scream1"));
+            sounds.Add("doorUnlock", Content.Load<SoundEffect>("LOZ_Door_Unlock"));
+            sounds.Add("enemyDie", Content.Load<SoundEffect>("LOZ_Enemy_Die"));
+            sounds.Add("enemyHit", Content.Load<SoundEffect>("LOZ_Enemy_Hit"));
+            sounds.Add("fanfare", Content.Load<SoundEffect>("LOZ_Fanfare"));
+            sounds.Add("getHeart", Content.Load<SoundEffect>("LOZ_Get_Heart"));
+            sounds.Add("getItem", Content.Load<SoundEffect>("LOZ_Get_Item"));
+            sounds.Add("getRupee", Content.Load<SoundEffect>("LOZ_Get_Rupee"));
+            sounds.Add("keyAppear", Content.Load<SoundEffect>("LOZ_Key_Appear"));
+            sounds.Add("linkDie", Content.Load<SoundEffect>("LOZ_Link_Die"));
+            sounds.Add("linkHurt", Content.Load<SoundEffect>("LOZ_Link_Hurt"));
+            sounds.Add("lowHealth", Content.Load<SoundEffect>("LOZ_LowHealth"));
+            sounds.Add("refillLoop", Content.Load<SoundEffect>("LOZ_Refill_Loop"));
+            sounds.Add("secret", Content.Load<SoundEffect>("LOZ_Secret"));
+            sounds.Add("shield", Content.Load<SoundEffect>("LOZ_Shield"));
+            sounds.Add("stairs", Content.Load<SoundEffect>("LOZ_Stairs"));
+            sounds.Add("swordCombined", Content.Load<SoundEffect>("LOZ_Sword_Combined"));
+            sounds.Add("swordShoot", Content.Load<SoundEffect>("LOZ_Sword_Shoot"));
+            sounds.Add("swordSlash", Content.Load<SoundEffect>("LOZ_Sword_Slash"));
+            sounds.Add("text", Content.Load<SoundEffect>("LOZ_Text"));
+            sounds.Add("textSlow", Content.Load<SoundEffect>("LOZ_Text_Slow"));
         }
 
 
