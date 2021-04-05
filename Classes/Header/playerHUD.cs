@@ -111,7 +111,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //mini-map:
             this.minimapPos = new Vector2((X+60), (Y+60));
-            this.linkIndicatorPos = new Vector2((minimapPos.X + 57), (minimapPos.Y + 60));
         }
 
         public void Update()
@@ -147,33 +146,40 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicatorPos.Y = minimapPos.Y + 36;
                     break;
                 case 7:
-                    //pos for 1
+                    linkIndicatorPos.X = minimapPos.X + 81;
+                    linkIndicatorPos.Y = minimapPos.Y + 36;
                     break;
                 case 8:
-                    //pos for 2
+                    linkIndicatorPos.X = minimapPos.X + 9;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
                     break;
                 case 9:
-                    //pos for 3
+                    linkIndicatorPos.X = minimapPos.X + 33;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
                     break;
                 case 10:
                     linkIndicatorPos.X = minimapPos.X + 57;
                     linkIndicatorPos.Y = minimapPos.Y + 24;
                     break;
                 case 11:
-                    //pos for 2
+                    linkIndicatorPos.X = minimapPos.X + 81;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
                     break;
                 case 12:
-                    //pos for 3
+                    linkIndicatorPos.X = minimapPos.X + 105;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
                     break;
                 case 13:
                     linkIndicatorPos.X = minimapPos.X + 57;
                     linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
                 case 14:
-                    //pos for 2
+                    linkIndicatorPos.X = minimapPos.X + 105;
+                    linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
                 case 15:
-                    //pos for 3
+                    linkIndicatorPos.X = minimapPos.X + 129;
+                    linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
                 case 16:
                     linkIndicatorPos.X = minimapPos.X + 33;
