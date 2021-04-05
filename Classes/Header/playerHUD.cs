@@ -291,7 +291,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                 //display map
                 minimap.Draw(minimapPos);
                 //display where link is on map based on room number:
-                linkIndicator.Draw(linkIndicatorPos);
+                if (game.util.linkInd)
+                {
+                    linkIndicator.Draw(linkIndicatorPos);
+                }
             }
             else
             {
