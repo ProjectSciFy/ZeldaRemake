@@ -27,6 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus.AquamentusScripts
                 aquaStateMachine.currentState = AquamentusStateMachine.CurrentState.dying;
                 aquamentus.mySprite = aquaSpriteFactory.SpawnAquamentus();
                 aquamentus.game.collisionManager.collisionEntities.Remove(aquamentus);
+                aquamentus.game.sounds["enemyDie"].CreateInstance().Play();
             }
         }
     }

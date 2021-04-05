@@ -76,14 +76,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 }
             }
 
-            if (spawning)
-            {
-                Spawning();
-            }
-            else
-            {
-                Moving();
-            }
             if (stalfos.health <= 0)
             {
                 Dying();
@@ -92,6 +84,14 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 {
                     stalfos.game.currentRoom.removeEnemy(stalfos);
                 }
+            }
+            else if (spawning)
+            {
+                Spawning();
+            }
+            else
+            {
+                Moving();
             }
         }
     }

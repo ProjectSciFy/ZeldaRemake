@@ -80,14 +80,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
                 timer--;
             }
 
-            if (idle)
-            {
-                Idle();
-            }
-            else
-            {
-                Moving();
-            }
             if (wallmaster.health <= 0)
             {
                 Dying();
@@ -96,6 +88,14 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
                 {
                     wallmaster.game.currentRoom.removeEnemy(wallmaster);
                 }
+            }
+            else if (idle)
+            {
+                Idle();
+            }
+            else
+            {
+                Moving();
             }
         }
     }

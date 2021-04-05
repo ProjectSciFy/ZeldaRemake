@@ -85,7 +85,16 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 timer--;
             }
 
-            if (spawning)
+            if (goriya.health <= 0)
+            {
+                Dying();
+                deathTimer--;
+                if (deathTimer == 0)
+                {
+                    goriya.game.currentRoom.removeEnemy(goriya);
+                }
+            }
+            else if (spawning)
             {
                 Spawning();
             }
@@ -98,15 +107,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 else
                 {
                     Idle();
-                }
-            }
-            if (goriya.health <= 0)
-            {
-                Dying();
-                deathTimer--;
-                if (deathTimer == 0)
-                {
-                    goriya.game.currentRoom.removeEnemy(goriya);
                 }
             }
         }
