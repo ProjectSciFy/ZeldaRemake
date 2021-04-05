@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.png</SourceFile>
-  <SourceTime>2021-04-05T17:12:47.6105099-04:00</SourceTime>
+  <SourceTime>2021-04-05T18:00:59.8857517-04:00</SourceTime>
   <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.xnb</DestFile>
-  <DestTime>2021-04-05T17:12:56.0816147-04:00</DestTime>
+  <DestTime>2021-04-05T18:01:08.6635621-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
