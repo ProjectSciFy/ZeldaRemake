@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Key_Appear.wav</SourceFile>
   <SourceTime>2021-04-05T15:42:11.7920022-05:00</SourceTime>
   <DestFile>C:/Users/Jared/source/repos/ZeldaRemake/Content/bin/Windows/Content/LOZ_Key_Appear.xnb</DestFile>
-  <DestTime>2021-04-05T17:07:50.8720022-05:00</DestTime>
+  <DestTime>2021-04-05T18:14:19.6040022-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

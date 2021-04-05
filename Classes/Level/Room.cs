@@ -74,7 +74,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         }
         public void Update()
         {
-            this.game.util.linkInd = true;
             pHUD.Update();
             foreach (IEnemy enemy in enemies.ToArray())
             {
@@ -144,6 +143,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             else if (entity is Map)
             {
                 game.util.hasMap = true;
+            }
+            else if (entity is Compass)
+            {
+                game.util.hasCompass = true;
             }
         }
 
