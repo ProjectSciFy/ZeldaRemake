@@ -206,6 +206,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             GateKeeperTile gatekeeper;
             StairsTile stair;
             bool locked;
+            bool isLockedDoor;
             foreach (string line in lines)
             {
                 string[] segments = line.Split(new string[] { "," },
@@ -216,10 +217,16 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     {
                         doorvalue = i * 10 + int.Parse(segments[i + 1]);
                         locked = true;
+                        isLockedDoor = false;
                         if (int.Parse(segments[i + 1]) == 1)
                         {
                             locked = false;
                         }
+                        if (int.Parse(segments[i + 1]) == 2)
+                        {
+                            isLockedDoor = true;
+                        }
+
                         switch (i)
                         {
                             case 0:
