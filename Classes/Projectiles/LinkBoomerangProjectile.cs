@@ -29,6 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private static int HITBOX_OFFSET = 6;
         public bool collided = false;
         private int boomerangTimer = 30;
+        private int soundTimer = 0;
 
         public LinkBoomerangProjectile(Link link, LinkStateMachine linkState)
         {
@@ -47,6 +48,15 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public void Update()
         {
+            if (soundTimer <= 0)
+            {
+                link.game.sounds["arrowBoomerang"].CreateInstance().Play();
+                soundTimer = 10;
+            }
+            else
+            {
+                soundTimer--;
+            }
             if (boomerangTimer > 0)
             {
                 boomerangTimer--;
