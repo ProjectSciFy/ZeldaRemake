@@ -38,8 +38,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         {
             if (hurtTimer <= 0)
             {
-                hurtTimer = 60;
+                hurtTimer = 30;
                 this.health = this.health - damage;
+                game.sounds["enemyHit"].CreateInstance().Play();
             }
         }
         public Rectangle CollisionRectangle()

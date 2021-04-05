@@ -156,7 +156,6 @@ namespace CSE3902_Game_Sprint0
             sounds.Add("textSlow", Content.Load<SoundEffect>("LOZ_Text_Slow"));
         }
 
-
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
