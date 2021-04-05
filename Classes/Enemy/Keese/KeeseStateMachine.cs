@@ -43,7 +43,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     directionNumber = directionNumber - 1;
                     break;
                 case 1:
-                    //Maintain direction
                     break;
                 case 2:
                     directionNumber = directionNumber + 1;
@@ -98,8 +97,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         public void Idle()
         {
             new KeeseIdle(keese, enemySpriteFactory, this).Execute();
-            
-           
         }
 
         public void Flying()
@@ -119,7 +116,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             {
                 timer--;
             }
-
             if (directionTimer <= 0)
             {
                 directionTimer = 30;

@@ -28,7 +28,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
 
             if (collisionRectangle.Width > collisionRectangle.Height)
             {
-                //Vertical collisions
                 if (collisionRectangle.Y == entity1.Y)
                 {
                     direction = Collision.Direction.up;
@@ -41,7 +40,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
             }
             else if (collisionRectangle.Height >= collisionRectangle.Width)
             {
-                //Horizontal & diagonal collisions
                 if (collisionRectangle.X == entity1.X)
                 {
                     direction = Collision.Direction.left;
@@ -57,7 +55,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
 
         public void Update()
         {
-            //Check each collisionEntity against each collisionEntity, if they are the same skip over them, if not, get the direcetion of the collision & create a tuple for them in collisionSet
             foreach (KeyValuePair<ICollisionEntity, Rectangle> entity1 in collisionManager.collisionEntities)
             {
                 foreach (KeyValuePair<ICollisionEntity, Rectangle> entity2 in collisionManager.collisionEntities)

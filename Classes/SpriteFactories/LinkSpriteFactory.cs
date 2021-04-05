@@ -97,7 +97,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             return new UniversalSprite(game, linkTexture, new Rectangle(308, 154, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(5, 1), 3, linkLayerDepth);
         }
 
-        //Boomerang: TO DO - change sprite index for boomerang animation
+        //Boomerang
         public UniversalSprite BoomerangUp()
         {
             return new UniversalSprite(game, linkTexture, new Rectangle(342, 154, 16, 16), Color.White, SpriteEffects.None, new Vector2(5, 1), 3, linkLayerDepth);

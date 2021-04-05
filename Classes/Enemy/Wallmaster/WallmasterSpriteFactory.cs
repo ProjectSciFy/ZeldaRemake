@@ -5,7 +5,6 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-/*This file is a sprite-factory which will contain otherwise frowned upon "magic numbers".*/
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 {
     public class WallmasterSpriteFactory
@@ -21,8 +20,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             game.spriteSheets.TryGetValue("DungeonEnemies", out enemySpriteSheet);
             game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
         }
-
-        //Wallmaster methods
         public UniversalSprite WallmasterIdle()
         {
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, enemyLayerDepth);

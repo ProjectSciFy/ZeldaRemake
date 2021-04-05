@@ -40,8 +40,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers
             }
             else if (mouseState.LeftButton == ButtonState.Pressed)
             {
-                //keyBinds[currentQuad].Execute();
-
                 if(game.util.roomNumber == 18)
                 {
                     game.changeRoom(0, 0);
@@ -51,7 +49,6 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers
                     game.changeRoom(game.util.roomNumber + 1, 0);
                 }
             }
-
             currentQuad = 1;
         }
     }

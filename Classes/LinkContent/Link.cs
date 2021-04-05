@@ -21,8 +21,6 @@ namespace CSE3902_Game_Sprint0.Classes
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         public float spriteScalar;
         
-
-        //Initialize Link's default state(s) in a new stateMachine
         public Link(ZeldaGame game)
         {
             this.Y_ADJUST = (game.GraphicsDevice.Viewport.Bounds.Height / 4) - 2 * CENTER;
@@ -44,20 +42,6 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             drawLocation = newLocation;
         }
-
-        //Set Link to be using an item
-        public void UseItem()
-        {
-            //Call statemachine & have it use its currently selected item
-        }
-
-        //Set Link to be using his sword
-        public void UseSword()
-        {
-            //Call statemachine & have it use Link's sword
-        }
-
-        //TODO more state altering 
 
         public void Update()
         {

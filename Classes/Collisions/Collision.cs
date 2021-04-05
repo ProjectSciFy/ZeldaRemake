@@ -2,7 +2,6 @@
 {
     public class Collision
     {
-        //Maintains an enum definition of what kinds of collisions can occur
         public enum Direction { none, up, down, left, right };
         private Direction direction;
 

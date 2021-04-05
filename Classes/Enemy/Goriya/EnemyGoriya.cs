@@ -10,10 +10,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemyGoriya : IEnemy, ICollisionEntity
     {
-        //When defeated, can drop a heart, rupee, 5rupee or a clock
-        //Pathing is random, no sense of direction
-        //Method of attack is melee, bumping into the player
-
         public ZeldaGame game;
         public GoriyaStateMachine myState;
         public GoriyaSpriteFactory spriteFactory { get; protected set; }

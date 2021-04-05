@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 
-/*This file is a sprite-factory which will contain otherwise frowned upon "magic numbers".*/
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
     public class AquamentusSpriteFactory
