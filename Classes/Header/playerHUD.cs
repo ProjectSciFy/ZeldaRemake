@@ -56,7 +56,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         private int heartOffset;
         private int remainingHearts;
 
-        private Boolean hasMap = false;
+        private bool hasMap;
 
         public float spriteScalar;
         public Vector2 drawLocation;
@@ -78,6 +78,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.bottom = HudFactory.bottom();
             this.right = HudFactory.right();
             this.left = HudFactory.left();
+
+            this.hasMap = game.util.hasMap;
 
             //position of top left corner of hud template is X,Y:
             X = (game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST - ParserUtility.GEN_ADJUST;
@@ -203,6 +205,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             if (hasMap)
             {
                 //display map
+                //display where link is on map
             }
             else
             {

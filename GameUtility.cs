@@ -20,6 +20,9 @@ namespace CSE3902_Game_Sprint0
         public int numYrups;
         public int numLives;
 
+        //map for HUD:
+        public bool hasMap;
+
         public int roomNumber;
 
         public bool keyPressedTempVariable = false;
@@ -31,6 +34,8 @@ namespace CSE3902_Game_Sprint0
             numBrups = 0;
             numYrups = 0;
             numLives = 3;
+            //map
+            hasMap = false;
             //Initialize room number counter
             roomNumber = 2;
         }

@@ -129,6 +129,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 game.util.numLives += 10;
             }
+            else if (entity is Map)
+            {
+                game.util.hasMap = true;
+            }
         }
 
         public void Draw()
