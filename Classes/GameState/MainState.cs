@@ -13,7 +13,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         public MainState(ZeldaGame game, Room room)
         {
             this.game = game;
-            //game.collisionManager.ClearNotLink();
             this.currentRoom = room;
         }
 
@@ -36,11 +35,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         }
         public void Update()
         {
-            //foreach (IController controller in game.controllerList)
-            //{
-            //    controller.Update();
-            //}
-
             game.link.Update();
 
             currentRoom.Update();

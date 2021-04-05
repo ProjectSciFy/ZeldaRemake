@@ -72,7 +72,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             return new Vector2((windowWidth / GEN_ADJUST) - SPRITE_SIZE, windowHeightFloor + MID_ADJUST * GEN_ADJUST);
         }
 
-
         public Vector2 GetTopStairPosition(int windowWidthFloor, int windowHeightFloor, float x, float y)
         {
             float xDiff = SCALE_FACTOR * x * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + BLOCK_ADJUST + (SCALE_FACTOR * SPRITE_SIZE / GEN_ADJUST);

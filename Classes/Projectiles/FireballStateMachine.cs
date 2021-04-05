@@ -9,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
     {
         public Fireball fireball;
         private EnemySpriteFactory enemySpriteFactory;
-        private enum Direction { right, left }; // NE = North East
+        private enum Direction { right, left };
         private Direction direction = Direction.left;
         private bool fired = false;
 
