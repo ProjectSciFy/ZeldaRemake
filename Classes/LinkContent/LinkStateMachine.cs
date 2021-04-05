@@ -35,6 +35,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool isGrabbed = false;
         public bool dying = false;
         public bool dead = false;
+        public bool boomerangCaught = true;
 
         public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
         public CurrentState currentState;
@@ -199,9 +200,10 @@ namespace CSE3902_Game_Sprint0.Classes
                     Arrow();
                     useArrow = false;
                 }
-                else if (useBoomerang)
+                else if (useBoomerang && boomerangCaught)
                 {
                     Boomerang();
+                    boomerangCaught = false;
                 }
                 else
                 {
@@ -228,9 +230,10 @@ namespace CSE3902_Game_Sprint0.Classes
                     Arrow();
                     useArrow = false;
                 }
-                else if (useBoomerang)
+                else if (useBoomerang && boomerangCaught)
                 {
                     Boomerang();
+                    boomerangCaught = false;
                 }
                 else
                 {

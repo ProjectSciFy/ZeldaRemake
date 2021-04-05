@@ -51,9 +51,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     ((Arrow)projectile).myState.hit = true;
                 }
             }
-            if (projectile is LinkBoomerangProjectile)
+            if (projectile is LinkBoomerangProjectile && ((LinkBoomerangProjectile)projectile).myState.returning)
             {
                 ((LinkBoomerangProjectile)projectile).collided = true;
+                link.linkState.boomerangCaught = true;
             }
         }
     }
