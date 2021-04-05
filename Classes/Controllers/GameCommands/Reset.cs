@@ -50,22 +50,14 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
             //RESET LINK
             this.game.linkStateMachine.Idle();
-
-            this.direction = linkState.direction;
             linkState.direction = LinkStateMachine.Direction.down;
-            this.direction = LinkStateMachine.Direction.down;
-
-            this.linkLocation = game.link.drawLocation;
             game.link.drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - CENTER, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + Y_ADJUST);
-            this.linkLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - CENTER, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + Y_ADJUST);
-
 
             //RESET HUD
             game.util.numLives = 3;
             game.util.numKeys = 0;
             game.util.numBrups = 0;
             game.util.numYrups = 0;
-
 
             //RE-PARSE ROOMS HERE
             game.collisionManager.ClearNotLink();
