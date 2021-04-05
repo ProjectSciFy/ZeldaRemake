@@ -25,6 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             if (timer == -1)
             {
                 this.game.link.linkState.dying = true;
+                //Time it takes for both animations to play out
                 timer = 80 + 180;
             }
             game.link.Update();
