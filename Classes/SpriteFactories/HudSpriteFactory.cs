@@ -88,7 +88,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
         public UniversalSprite left()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(0, 0, 43, 178), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(0, 0, 42, 178), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
         }
     }
 }
