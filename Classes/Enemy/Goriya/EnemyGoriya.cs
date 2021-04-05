@@ -84,7 +84,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             }
             if (timer <= 0 && myState.currentState != GoriyaStateMachine.CurrentState.spawning)
             {
-                timer = 600;
+                timer = 300;
                 game.projectileHandler.Add(new GoriyaBoomerang(game, this, myState));
                 throwing = true;
                 myState.moving = false;
