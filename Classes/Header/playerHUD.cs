@@ -62,8 +62,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         private int heartOffset;
         private int remainingHearts;
 
-        private bool hasMap;
-
         public float spriteScalar;
         public Vector2 drawLocation;
 
@@ -85,7 +83,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.right = HudFactory.right();
             this.left = HudFactory.left();
 
-            this.hasMap = game.util.hasMap;
             this.minimap = HudFactory.mapHUD();
             this.linkIndicator = HudFactory.linkOnMap();
 
@@ -285,20 +282,21 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             digit.Draw(new Vector2(digitYrupPos.X + 24, digitYrupPos.Y));
             //----------------------------------------------------------
 
-            //Map:
-            if (hasMap)
+
+            if (this.game.util.hasMap)
             {
-                //display map
                 minimap.Draw(minimapPos);
-                //display where link is on map based on room number:
-                if (game.util.linkInd)
+                if (this.game.util.linkInd)
                 {
                     linkIndicator.Draw(linkIndicatorPos);
                 }
             }
             else
             {
-                //dont display map
+                if (this.game.util.linkInd)
+                {
+                    linkIndicator.Draw(linkIndicatorPos);
+                }
             }
         }
     }
