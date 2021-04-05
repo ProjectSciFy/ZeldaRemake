@@ -29,6 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts
                 gelStateMachine.currentState = GelStateMachine.CurrentState.dying;
                 gel.mySprite = gelSpriteFactory.SpawnGel();
                 gel.game.collisionManager.collisionEntities.Remove(gel);
+                gel.game.sounds["enemyDie"].CreateInstance().Play();
             }
         }
     }

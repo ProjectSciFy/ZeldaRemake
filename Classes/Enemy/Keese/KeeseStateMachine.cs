@@ -163,7 +163,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             }
             else if (spawned)
             {
-                if (moving)
+
+                if (keese.health <= 0)
+                {
+                    Dying();
+                    deathTimer--;
+                    if (deathTimer == 0)
+                    {
+                        keese.game.collisionManager.collisionEntities.Remove(keese);
+                        keese.game.currentRoom.removeEnemy(keese);
+                    }
+                }
+                else if (moving)
                 {
                     if (landing || takeOff)
                     {
@@ -177,16 +188,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                 else
                 {
                     Idle();
-                }
-                if (keese.health <= 0)
-                {
-                    Dying();
-                    deathTimer--;
-                    if (deathTimer == 0)
-                    {
-                        keese.game.collisionManager.collisionEntities.Remove(keese);
-                        keese.game.currentRoom.removeEnemy(keese);
-                    }
                 }
             }
         }

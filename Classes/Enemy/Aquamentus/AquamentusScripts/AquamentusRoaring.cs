@@ -44,7 +44,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus.AquamentusScripts
                 default:
                     break;
             }
-
+            aquamentus.game.sounds["bossScream"].CreateInstance().Play();
         }
     }
 }

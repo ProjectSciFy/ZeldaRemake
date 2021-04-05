@@ -30,6 +30,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts
                 wallmasterStateMachine.currentState = WallmasterStateMachine.CurrentState.dying;
                 wallmaster.mySprite = wallmasterSpriteFactory.KillWallmaster();
                 wallmaster.game.collisionManager.collisionEntities.Remove(wallmaster);
+                wallmaster.game.sounds["enemyDie"].CreateInstance().Play();
             }
         }
     }

@@ -47,6 +47,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 bomb.collisionRectangle.Width = (int)(bomb.spriteSize.X * bomb.spriteScalar * 2);
                 bomb.collisionRectangle.Height = (int)(bomb.spriteSize.Y * bomb.spriteScalar * 2);
                 bomb.game.collisionManager.collisionEntities[bomb] = bomb.CollisionRectangle();
+                bomb.game.sounds["bombBlow"].CreateInstance().Play();
             }
             if (currentState == CurrentState.exploding && timer == 29)
             {

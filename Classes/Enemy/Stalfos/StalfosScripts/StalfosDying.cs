@@ -30,6 +30,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts
                 stalfosStateMachine.currentState = StalfosStateMachine.CurrentState.dying;
                 stalfos.mySprite = spriteFactory.SpawnStalfos();
                 stalfos.game.collisionManager.collisionEntities.Remove(stalfos);
+                stalfos.game.sounds["enemyDie"].CreateInstance().Play();
             }
         }
     }
