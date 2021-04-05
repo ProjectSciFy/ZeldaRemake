@@ -18,6 +18,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.GameState;
+using Microsoft.Xna.Framework.Media;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
@@ -43,6 +44,10 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         public void Execute()
         {
+            //RESET MUSIC
+            MediaPlayer.Play(game.song);
+            MediaPlayer.IsRepeating = true;
+
             //RESET LINK
             this.game.linkStateMachine.Idle();
 
