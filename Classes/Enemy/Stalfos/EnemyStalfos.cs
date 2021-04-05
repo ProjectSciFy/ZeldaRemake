@@ -10,10 +10,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemyStalfos : IEnemy, ICollisionEntity
     {
-        //When defeated, can drop a heart, rupee, 5rupee or a clock
-        //Pathing is random, no sense of direction
-        //Method of attack is melee, bumping into the player
-
         public ZeldaGame game;
         private StalfosStateMachine myState;
         public StalfosSpriteFactory enemySpriteFactory;
@@ -35,7 +31,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             this.mySprite = this.enemySpriteFactory.StalfosIdle();
             drawLocation = spawnLocation;
             myState = new StalfosStateMachine(this);
-            //game.collisionManager.enemies.Add(this, collisionRectangle);
             game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
         }
         public void TakeDamage(int damage)
@@ -60,7 +55,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             myState.Update();
             mySprite.Update();
 
-            //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
 
@@ -87,14 +81,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
 
-            //game.collisionManager.enemies[this] = collisionRectangle;
-
             if (myState.currentState != StalfosStateMachine.CurrentState.dying)
             {
                 game.collisionManager.collisionEntities[this] = collisionRectangle;
             }
         }
-
         public void Draw()
         {
             mySprite.Draw(drawLocation);

@@ -30,7 +30,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             this.mySprite = this.enemySpriteFactory.GelIdle();
             drawLocation = spawnLocation;
             myState = new GelStateMachine(this);
-            //game.collisionManager.enemies.Add(this, collisionRectangle);
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
         }
         public void TakeDamage(int damage)

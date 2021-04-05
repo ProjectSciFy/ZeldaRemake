@@ -5,7 +5,6 @@ using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-/*This file is a sprite-factory which will contain otherwise frowned upon "magic numbers".*/
 namespace CSE3902_Game_Sprint0.Classes.Enemy.BladeTrap
 {
     public class BladeTrapSpriteFactory
@@ -20,7 +19,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.BladeTrap
             game.spriteSheets.TryGetValue("DungeonEnemies", out enemySpriteSheet);
             game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
         }
-        //Blade trap methods
         public UniversalSprite SpawnBladeTrap()
         {
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
@@ -34,7 +32,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.BladeTrap
 
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, enemyLayerDepth);
         }
-
         public UniversalSprite BladeTrapDown()
         {
            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, enemyLayerDepth);
@@ -47,7 +44,5 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.BladeTrap
         {
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(164, 59, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, enemyLayerDepth);
         }
-
-
     }
 }

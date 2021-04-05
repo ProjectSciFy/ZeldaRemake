@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-/*This file is a sprite-factory which will contain otherwise frowned upon "magic numbers".*/
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos
 {
     public class StalfosSpriteFactory
@@ -34,27 +33,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos
 
         public UniversalSprite StalfosMovingDown()
         {
-           
-           // stalfos.velocity.X = 0;
-           // stalfos.velocity.Y = 1;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite StalfosMovingLeft()
         {
-           /* stalfos.velocity.X = -1;
-            stalfos.velocity.Y = 0;*/
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite StalfosMovingRight()
         {
-           
-           // stalfos.velocity.X = 1;
-            //stalfos.velocity.Y = 0;
            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
-
         public UniversalSprite StalfosIdle()
         {
            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 146, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);

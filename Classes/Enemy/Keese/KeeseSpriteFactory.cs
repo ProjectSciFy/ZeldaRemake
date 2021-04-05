@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-/*This file is a sprite-factory which will contain otherwise frowned upon "magic numbers".*/
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
     public class KeeseSpriteFactory
@@ -32,117 +31,81 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
         public UniversalSprite KeeseFlyingNorth()
         {
-            //keese.velocity.X = 0;
-            //keese.velocity.Y = -2;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingNorthEast()
         {
-            //keese.velocity.X = 2;
-            //keese.velocity.Y = -2;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingEast()
         {
-            
-            //keese.velocity.X = 2;
-            //keese.velocity.Y = 0;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingSouthEast()
         {
-            //keese.velocity.X = 2;
-            //keese.velocity.Y = 2;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingSouth()
         {
-            //keese.velocity.X = 0;
-            //keese.velocity.Y = 2;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingSouthWest()
         {
-            //keese.velocity.X = -2;
-            //keese.velocity.Y = 2;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingWest()
         {
-            //keese.velocity.X = -2;
-            //keese.velocity.Y = 0;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseFlyingNorthWest()
         {
-           
-            //keese.velocity.X = -2;
-            //keese.velocity.Y = -2;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingNorth()
         {
-            //keese.velocity.X = 0;
-            //keese.velocity.Y = -1;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingNorthEast()
         {
-            //keese.velocity.X = 1;
-            //keese.velocity.Y = -1;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingEast()
         {
-            //keese.velocity.X = 1;
-            //keese.velocity.Y = 0;
            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingSouthEast()
         {
-          
-            //keese.velocity.X = 1;
-            //keese.velocity.Y = 1;
            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingSouth()
         {
-            //keese.velocity.X = 0;
-            //keese.velocity.Y = 1;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingSouthWest()
         {
-            //keese.velocity.X = -1;
-            //keese.velocity.Y = 1;
            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingWest()
         {
-           
-            //keese.velocity.X = -1;
-            //keese.velocity.Y = 0;
            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingNorthWest()
         {
-            //keese.velocity.X = -1;
-            //keese.velocity.Y = -1;
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
     }

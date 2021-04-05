@@ -29,7 +29,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         {
             game=aquamentus.game;
             this.aquamentus = aquamentus;
-            /*enemySpriteFactory = aquamentus.enemySpriteFactory;*/
             enemySpriteFactory = new AquamentusSpriteFactory(game);
         }
         public Rectangle CollisionRectangle()

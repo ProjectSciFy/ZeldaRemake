@@ -31,7 +31,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             this.mySprite = this.enemySpriteFactory.SpawnAquamentus();
             drawLocation = spawnLocation;
             myState = new AquamentusStateMachine(this);
-            //game.collisionManager.enemies.Add(this, collisionRectangle);
             this.spriteScalar = game.util.spriteScalar;
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
         }
@@ -61,7 +60,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             myState.Update();
             mySprite.Update();
 
-            //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
 
@@ -82,7 +80,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             {
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
-
             if (timer <= 0)
             {
                 timer = 300;
@@ -90,7 +87,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
                 game.projectileHandler.Add(new Fireball(game, this, myState, new Vector2(-1, (float)0.15)));
                 game.projectileHandler.Add(new Fireball(game, this, myState, new Vector2(-1, (float)-0.15)));
             }
-
             collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
@@ -101,7 +97,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
                 game.collisionManager.collisionEntities[this] = collisionRectangle;
             }
         }
-
         public void Draw()
         {
             mySprite.Draw(drawLocation);

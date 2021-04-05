@@ -39,7 +39,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Update()
         {
         }
-
         public void Draw()
         {
             topDoorSprite.Draw(position);

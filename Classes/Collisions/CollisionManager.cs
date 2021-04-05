@@ -11,19 +11,8 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
 {
     public class CollisionManager
     {
-        //Created in main
-        //Has HashSet for each major object type {Link, enemy, projectile, block, item, etc}
-        //Is passed to every object created henceforth so they can add themselves to their respective sets in their constructors, & later to the removeSet when unloaded
-        //Has a deletion HashSet, either general with data type "type" that checks for correct typage before removing from a set in all sets when the object is unloaded, or a HashSet for each major object type used for deletion.
-
-        //Update
-        //Checks major object types against eachother by use of CollisionChecker
-        //If a collision is detected, a tuple is created of the colliding objects & from which direction, then sent to collisionHandler
-        //At the end, removeSet clears unloaded entities from respective lists
         public CollisionChecker collisionChecker;
         public CollisionHandler collisionHandler;
-
-        //Set of detected collisions
         public HashSet<Tuple<Object, Object, Collision.Direction>> collisionSet = new HashSet<Tuple<Object, Object, Collision.Direction>>();
 
         public void ClearNotLink()
@@ -45,10 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
 
             deleteSet.Clear();
         }
-
-        //Dictionary of all collision entities loaded
         public Dictionary<ICollisionEntity, Rectangle> collisionEntities = new Dictionary<ICollisionEntity, Rectangle>();
-
         public CollisionManager()
         {
             collisionChecker = new CollisionChecker(this);

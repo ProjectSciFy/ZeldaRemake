@@ -12,7 +12,6 @@ using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-/*This file is a sprite-factory which will contain otherwise frowned upon "magic numbers".*/
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Gel
 {
     public class GelSpriteFactory
@@ -28,7 +27,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Gel
             game.spriteSheets.TryGetValue("DungeonEnemies", out enemySpriteSheet);
             game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
         }
-        //Gel methods
         public UniversalSprite SpawnGel()
         {
            return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, enemyLayerDepth);
@@ -53,7 +51,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Gel
         {
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(1, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 2, enemyLayerDepth);
         }
-
         public UniversalSprite GelMovingRight()
         {
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(1, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 2, enemyLayerDepth);
