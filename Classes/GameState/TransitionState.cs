@@ -65,7 +65,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             this.oldroom = oldroom;
             this.nextroom = nextroom;
             timer = 128;
-            this.game.util.linkInd = false;
 
             RoomTextureStorage roomTextures = new RoomTextureStorage(this.game);
             game.spriteSheets.TryGetValue("DungeonTileset", out itemSpriteSheet);
@@ -195,6 +194,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         }
         public void Update()
         {
+            this.game.util.linkInd = false;
+
             int windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
             int windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
             timer--;
