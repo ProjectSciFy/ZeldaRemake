@@ -171,3 +171,32 @@ G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Text_Slow.xnb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 LabyrinthLooped.wma
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 LabyrinthLooped.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 Labyrinth.wma
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 Labyrinth.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 LabyrinthLooped.wma
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 LabyrinthLooped.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Arrow_Boomerang.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Bomb_Blow.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Bomb_Drop.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Boss_Hit.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Boss_Scream1.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Door_Unlock.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Enemy_Die.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Enemy_Hit.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Fanfare.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Heart.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Item.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Rupee.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Key_Appear.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Link_Die.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Link_Hurt.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_LowHealth.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Refill_Loop.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Secret.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Shield.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Stairs.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Combined.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Shoot.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Slash.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Text.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Text_Slow.xnb
