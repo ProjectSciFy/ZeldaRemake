@@ -131,6 +131,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 {
                     invincibilityFrames = 60;
                     game.util.numLives -= 1;
+                    link.game.sounds["linkHurt"].CreateInstance().Play();
                 }
             }
         }
