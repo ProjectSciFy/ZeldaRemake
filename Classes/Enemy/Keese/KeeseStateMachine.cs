@@ -43,7 +43,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     directionNumber = directionNumber - 1;
                     break;
                 case 1:
-                    //Maintain direction
                     break;
                 case 2:
                     directionNumber = directionNumber + 1;
@@ -89,13 +88,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             timer=90;
             spawning=false;
             new KeeseSpawning(keese, enemySpriteFactory, this).Execute();
-            
-
-          /*  if (timer <= 0)
-            {
-                spawning = false;
-                currentState = CurrentState.none;
-            }*/
         }
         public void Dying()
         {
@@ -105,8 +97,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         public void Idle()
         {
             new KeeseIdle(keese, enemySpriteFactory, this).Execute();
-            
-           
         }
 
         public void Flying()
@@ -118,8 +108,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         public void Landing()
         {
             new KeeseLanding(keese, enemySpriteFactory, this, landing, takeOff).Execute();
-                
-           
         }
 
         public void Update()
@@ -128,7 +116,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             {
                 timer--;
             }
-
             if (directionTimer <= 0)
             {
                 directionTimer = 30;
@@ -176,7 +163,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             }
             else if (spawned)
             {
-                if (moving)
+
+                if (keese.health <= 0)
+                {
+                    Dying();
+                    deathTimer--;
+                    if (deathTimer == 0)
+                    {
+                        keese.game.collisionManager.collisionEntities.Remove(keese);
+                        keese.game.currentRoom.removeEnemy(keese);
+                    }
+                }
+                else if (moving)
                 {
                     if (landing || takeOff)
                     {
@@ -190,16 +188,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                 else
                 {
                     Idle();
-                }
-                if (keese.health <= 0)
-                {
-                    Dying();
-                    deathTimer--;
-                    if (deathTimer == 0)
-                    {
-                        keese.game.collisionManager.collisionEntities.Remove(keese);
-                        keese.game.currentRoom.removeEnemy(keese);
-                    }
                 }
             }
         }

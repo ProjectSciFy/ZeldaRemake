@@ -117,7 +117,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //static displays:
             top.Draw(new Vector2(X, 0));
             bottom.Draw(new Vector2(X, windowHeightFloor + 530));
-            right.Draw(new Vector2(windowWidthFloor + 770, windowHeightFloor));
+            right.Draw(new Vector2(windowWidthFloor + 768, windowHeightFloor));
             left.Draw(new Vector2(0, windowHeightFloor));
             hudSprite.Draw(hudPosition);
             primWeapSprite.Draw(primWeapPos);
@@ -212,7 +212,5 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                 //dont display map
             }
         }
-
-
     }
 }

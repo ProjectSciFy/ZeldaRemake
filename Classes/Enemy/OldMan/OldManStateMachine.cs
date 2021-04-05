@@ -37,7 +37,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 
         public void Moving()
         {
-            //OldMen don't move :|
+
         }
 
         public void Update()

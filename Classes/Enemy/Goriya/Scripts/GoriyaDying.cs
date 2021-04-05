@@ -28,6 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
                 goriyaStateMachine.currentState = GoriyaStateMachine.CurrentState.dying;
                 goriya.mySprite = goriyaSpriteFactory.SpawnGoriya();
                 goriya.game.collisionManager.collisionEntities.Remove(goriya);
+                goriya.game.sounds["enemyDie"].CreateInstance().Play();
             }
         }
     }

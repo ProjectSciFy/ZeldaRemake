@@ -8,10 +8,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemyBladeTrap : IEnemy, ICollisionEntity
     {
-        //When link walks parallel to one it attacks
-        //waits on link
-        //Method of attack is collision.
-
         public ZeldaGame game;
         private BladeTrapStateMachine myState;
         public ISprite mySprite;
@@ -33,7 +29,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             myState = new BladeTrapStateMachine(this, link);
             this.spriteScalar = game.util.spriteScalar;
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
-            //game.collisionManager.enemies.Add(this, collisionRectangle);
         }
         public void TakeDamage(int damage)
         {
@@ -53,7 +48,6 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             myState.Update();
             mySprite.Update();
 
-            //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
 

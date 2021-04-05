@@ -18,6 +18,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.GameState;
+using Microsoft.Xna.Framework.Media;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
@@ -43,6 +44,11 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
         public void Execute()
         {
+            //RESET MUSIC
+            MediaPlayer.Play(game.song);
+            MediaPlayer.IsRepeating = true;
+
+            //RESET LINK
             this.game.linkStateMachine.Idle();
 
             this.direction = linkState.direction;
@@ -53,13 +59,13 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.link.drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - CENTER, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + Y_ADJUST);
             this.linkLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - CENTER, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + Y_ADJUST);
 
-            //RESET HUD HERE
+
+            //RESET HUD
             game.util.numLives = 3;
             game.util.numKeys = 0;
             game.util.numBrups = 0;
             game.util.numYrups = 0;
-            game.util.hasMap = false;
-            // - Jared will take care of this, planning on implementing a "reset" method inside the playerHUD.cs class
+
 
             //RE-PARSE ROOMS HERE
             game.collisionManager.ClearNotLink();

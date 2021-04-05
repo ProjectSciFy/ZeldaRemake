@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
+using Microsoft.Xna.Framework.Media;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
@@ -25,6 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             if (timer == -1)
             {
                 this.game.link.linkState.dying = true;
+                //Time it takes for both animations to play out
                 timer = 80 + 180;
             }
             game.link.Update();
@@ -38,6 +40,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             if (timer <= 0)
             {
                 new Reset(game).Execute();
+                MediaPlayer.Play(game.song);
             }
         }
 

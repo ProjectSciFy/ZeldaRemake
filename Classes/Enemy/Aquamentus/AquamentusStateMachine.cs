@@ -29,7 +29,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         {
             game=aquamentus.game;
             this.aquamentus = aquamentus;
-            /*enemySpriteFactory = aquamentus.enemySpriteFactory;*/
             enemySpriteFactory = new AquamentusSpriteFactory(game);
         }
         public Rectangle CollisionRectangle()
@@ -106,14 +105,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
                 timer--;
             }
 
-            if (spawning)
-            {
-                Spawning();
-            }
-            else
-            {
-                Moving();
-            }
             if (aquamentus.health <= 0)
             {
                 Dying();
@@ -122,6 +113,14 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
                 {
                     aquamentus.game.currentRoom.removeEnemy(aquamentus);
                 }
+            }
+            else if (spawning)
+            {
+                Spawning();
+            }
+            else
+            {
+                Moving();
             }
         }
     }

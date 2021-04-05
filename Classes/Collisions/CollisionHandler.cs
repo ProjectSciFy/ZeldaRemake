@@ -24,33 +24,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
         {
             this.collisionManager = collisionManager;
         }
-
-        //DO WE STILL NEED THIS?
-        private bool IsLinkHurt(Link link)
-        {
-            bool result = false;
-
-            switch (link.linkState.currentState)
-            {
-                case LinkStateMachine.CurrentState.damagedUp:
-                    result = true;
-                    break;
-                case LinkStateMachine.CurrentState.damagedDown:
-                    result = true;
-                    break;
-                case LinkStateMachine.CurrentState.damagedLeft:
-                    result = true;
-                    break;
-                case LinkStateMachine.CurrentState.damagedRight:
-                    result = true;
-                    break;
-                default:
-                    break;
-            }
-
-            return result;
-        }
-
         public void Update()
         {
             foreach (Tuple<object, object, Collision.Collision.Direction> tuple in collisionManager.collisionSet)
@@ -104,8 +77,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                     }
                 }
             }
-
-            //Clear the collision set
             collisionManager.collisionSet.Clear();
         }
     }

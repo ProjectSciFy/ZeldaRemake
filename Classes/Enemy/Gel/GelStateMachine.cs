@@ -88,7 +88,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                 moving = !moving;
             }
 
-            if (spawning)
+            if (gel.health <= 0)
+            {
+                Dying();
+                deathTimer--;
+                if (deathTimer == 0)
+                {
+                    gel.game.currentRoom.removeEnemy(gel);
+                }
+            }
+            else if (spawning)
             {
                 Spawning();
             }
@@ -101,15 +110,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                 else
                 {
                     Idle();
-                }
-            }
-            if (gel.health <= 0)
-            {
-                Dying();
-                deathTimer--;
-                if (deathTimer == 0)
-                {
-                    gel.game.currentRoom.removeEnemy(gel);
                 }
             }
         }
