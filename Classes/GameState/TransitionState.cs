@@ -65,6 +65,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             this.oldroom = oldroom;
             this.nextroom = nextroom;
             timer = 128;
+
             this.game.util.linkInd = false;
 
             RoomTextureStorage roomTextures = new RoomTextureStorage(this.game);

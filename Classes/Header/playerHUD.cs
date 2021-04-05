@@ -35,6 +35,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         //mini-map:
         private ISprite minimap;
         private ISprite linkIndicator;
+        private ISprite boss;
 
         private int keyOneDigit;
         private int keyTenDigit;
@@ -55,6 +56,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 heartPos;
         public Vector2 minimapPos;
         public Vector2 linkIndicatorPos;
+        public Vector2 bossPos;
 
         public Vector2 YellowCounterPos;
         public Vector2 BlueCounterPos;
@@ -85,6 +87,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             this.minimap = HudFactory.mapHUD();
             this.linkIndicator = HudFactory.linkOnMap();
+            this.boss = HudFactory.compassBoss();
 
             //position of top left corner of hud template is X,Y:
             X = (game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST - ParserUtility.GEN_ADJUST;
@@ -108,6 +111,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //mini-map:
             this.minimapPos = new Vector2((X+60), (Y+60));
+            this.bossPos = new Vector2(minimapPos.X + 105, minimapPos.Y + 12);
         }
 
         public void Update()
@@ -171,6 +175,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
                 case 14:
+                    //aquamentus room:
                     linkIndicatorPos.X = minimapPos.X + 105;
                     linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
@@ -282,7 +287,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             digit.Draw(new Vector2(digitYrupPos.X + 24, digitYrupPos.Y));
             //----------------------------------------------------------
 
-
+            //mini-map & link indicator
             if (this.game.util.hasMap)
             {
                 minimap.Draw(minimapPos);
@@ -297,6 +302,12 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                 {
                     linkIndicator.Draw(linkIndicatorPos);
                 }
+            }
+
+            //compass showing location of aquamentus:
+            if (this.game.util.hasCompass)
+            {
+                boss.Draw(bossPos);
             }
         }
     }

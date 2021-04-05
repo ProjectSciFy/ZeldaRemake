@@ -18,6 +18,7 @@ namespace CSE3902_Game_Sprint0
 
         //map for HUD:
         public bool hasMap;
+        public bool hasCompass;
         public bool linkInd;
 
         public int roomNumber;
@@ -34,6 +35,8 @@ namespace CSE3902_Game_Sprint0
             //map
             hasMap = false;
             linkInd = true;
+            //compass
+            hasCompass = false;
             //Initialize room number counter
             roomNumber = 2;
         }
