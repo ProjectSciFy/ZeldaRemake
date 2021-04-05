@@ -14,6 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         {
             this.game = game;
             this.currentRoom = room;
+            this.game.util.linkInd = true;
         }
 
         public void Draw()
@@ -35,6 +36,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         }
         public void Update()
         {
+            game.util.linkInd = true;
+
             game.link.Update();
 
             currentRoom.Update();

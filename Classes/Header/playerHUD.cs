@@ -32,6 +32,11 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         private ISprite right;
         private ISprite left;
 
+        //mini-map:
+        private ISprite minimap;
+        private ISprite linkIndicator;
+        private ISprite boss;
+
         private int keyOneDigit;
         private int keyTenDigit;
         private int blueOneDigit;
@@ -49,14 +54,15 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 secWeapPos;
         public Vector2 levelPos;
         public Vector2 heartPos;
+        public Vector2 minimapPos;
+        public Vector2 linkIndicatorPos;
+        public Vector2 bossPos;
 
         public Vector2 YellowCounterPos;
         public Vector2 BlueCounterPos;
         public Vector2 KeyCounterPos;
         private int heartOffset;
         private int remainingHearts;
-
-        private bool hasMap;
 
         public float spriteScalar;
         public Vector2 drawLocation;
@@ -79,7 +85,9 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.right = HudFactory.right();
             this.left = HudFactory.left();
 
-            this.hasMap = game.util.hasMap;
+            this.minimap = HudFactory.mapHUD();
+            this.linkIndicator = HudFactory.linkOnMap();
+            this.boss = HudFactory.compassBoss();
 
             //position of top left corner of hud template is X,Y:
             X = (game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST - ParserUtility.GEN_ADJUST;
@@ -100,12 +108,90 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //Yellow rupees:
             this.digitYrupPos = new Vector2((X+312), (Y+48));
             this.YellowCounterPos = new Vector2((X + 288), (Y + 48));
+
+            //mini-map:
+            this.minimapPos = new Vector2((X+60), (Y+60));
+            this.bossPos = new Vector2(minimapPos.X + 105, minimapPos.Y + 12);
         }
 
         public void Update()
         {
             //this is where a keystate can be accessed to either show/not show the HUD or other functionalities.
             secWeapSprite = HudFactory.secondaryWeaponHUD();
+
+            //map correspondence:
+            switch (game.util.roomNumber)
+            {
+                case 1:
+                    linkIndicatorPos.X = minimapPos.X + 33; 
+                    linkIndicatorPos.Y = minimapPos.Y + 60;
+                    break;
+                case 2:
+                    linkIndicatorPos.X = minimapPos.X + 57;
+                    linkIndicatorPos.Y = minimapPos.Y + 60;
+                    break;
+                case 3:
+                    linkIndicatorPos.X = minimapPos.X + 81;
+                    linkIndicatorPos.Y = minimapPos.Y + 60;
+                    break;
+                case 4:
+                    linkIndicatorPos.X = minimapPos.X + 57;
+                    linkIndicatorPos.Y = minimapPos.Y + 48;
+                    break;
+                case 5:
+                    linkIndicatorPos.X = minimapPos.X + 33;
+                    linkIndicatorPos.Y = minimapPos.Y + 36;
+                    break;
+                case 6:
+                    linkIndicatorPos.X = minimapPos.X + 57;
+                    linkIndicatorPos.Y = minimapPos.Y + 36;
+                    break;
+                case 7:
+                    linkIndicatorPos.X = minimapPos.X + 81;
+                    linkIndicatorPos.Y = minimapPos.Y + 36;
+                    break;
+                case 8:
+                    linkIndicatorPos.X = minimapPos.X + 9;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
+                    break;
+                case 9:
+                    linkIndicatorPos.X = minimapPos.X + 33;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
+                    break;
+                case 10:
+                    linkIndicatorPos.X = minimapPos.X + 57;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
+                    break;
+                case 11:
+                    linkIndicatorPos.X = minimapPos.X + 81;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
+                    break;
+                case 12:
+                    linkIndicatorPos.X = minimapPos.X + 105;
+                    linkIndicatorPos.Y = minimapPos.Y + 24;
+                    break;
+                case 13:
+                    linkIndicatorPos.X = minimapPos.X + 57;
+                    linkIndicatorPos.Y = minimapPos.Y + 12;
+                    break;
+                case 14:
+                    //aquamentus room:
+                    linkIndicatorPos.X = minimapPos.X + 105;
+                    linkIndicatorPos.Y = minimapPos.Y + 12;
+                    break;
+                case 15:
+                    linkIndicatorPos.X = minimapPos.X + 129;
+                    linkIndicatorPos.Y = minimapPos.Y + 12;
+                    break;
+                case 16:
+                    linkIndicatorPos.X = minimapPos.X + 33;
+                    linkIndicatorPos.Y = minimapPos.Y;
+                    break;
+                case 17:
+                    linkIndicatorPos.X = minimapPos.X + 57;
+                    linkIndicatorPos.Y = minimapPos.Y;
+                    break;
+            }
         }
 
         public void Draw()
@@ -201,17 +287,27 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             digit.Draw(new Vector2(digitYrupPos.X + 24, digitYrupPos.Y));
             //----------------------------------------------------------
 
-            //Map:
-            if (hasMap)
+            //mini-map & link indicator
+            if (this.game.util.hasMap)
             {
-                //display map
-
-                //display where link is on map
-
+                minimap.Draw(minimapPos);
+                if (this.game.util.linkInd)
+                {
+                    linkIndicator.Draw(linkIndicatorPos);
+                }
             }
             else
             {
-                //dont display map
+                if (this.game.util.linkInd)
+                {
+                    linkIndicator.Draw(linkIndicatorPos);
+                }
+            }
+
+            //compass showing location of aquamentus:
+            if (this.game.util.hasCompass)
+            {
+                boss.Draw(bossPos);
             }
         }
     }

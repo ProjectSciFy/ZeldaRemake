@@ -144,6 +144,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 game.util.hasMap = true;
             }
+            else if (entity is Compass)
+            {
+                game.util.hasCompass = true;
+            }
         }
 
         public void Draw()

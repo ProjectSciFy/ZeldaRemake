@@ -24,9 +24,20 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 260, 55), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
         }
 
-        //public UniversalSprite mapHUD()
-        //{
-        //}
+        public UniversalSprite mapHUD()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(694, 30, 49, 25), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
+        public UniversalSprite linkOnMap()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(683, 23, 3, 5), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
+        public UniversalSprite compassBoss()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(683, 23, 3, 5), Color.Red, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
 
         public UniversalSprite Digit(int offset)
         {
