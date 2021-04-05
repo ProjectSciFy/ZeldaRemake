@@ -11,6 +11,14 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Classes\Controllers\ItemCommands\**" />
+    <Compile Remove="Classes\Controllers\TileCommands\**" />
+    <EmbeddedResource Remove="Classes\Controllers\ItemCommands\**" />
+    <EmbeddedResource Remove="Classes\Controllers\TileCommands\**" />
+    <None Remove="Classes\Controllers\ItemCommands\**" />
+    <None Remove="Classes\Controllers\TileCommands\**" />
+  </ItemGroup>
+  <ItemGroup>
     <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />
   </ItemGroup>
   <ItemGroup>
@@ -21,8 +29,6 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\Controllers\ItemCommands\" />
-    <Folder Include="Classes\Controllers\TileCommands\" />
     <Folder Include="Classes\READMEs\Sprint 3\" />
   </ItemGroup>
 </Project>
