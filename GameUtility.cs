@@ -31,7 +31,7 @@ namespace CSE3902_Game_Sprint0
             numYrups = 0;
             numLives = 3;
             //map
-            hasMap = false;
+            hasMap = true;
             //Initialize room number counter
             roomNumber = 2;
         }
