@@ -10,9 +10,6 @@ namespace CSE3902_Game_Sprint0.Classes
 {
     public class LinkStateMachine
     {
-
-        // comment
-
         private ZeldaGame game;
         private Link link;
         public LinkSpriteFactory spriteFactory;
@@ -22,15 +19,11 @@ namespace CSE3902_Game_Sprint0.Classes
         public Direction direction = Direction.down;
         public bool moving = false;
 
-        //enum for item selected?
-        //Starting condition should be bomb
         public enum Weapon {none, sword, bomb, arrow, boomerang};
         public Weapon weaponSelected = Weapon.bomb;
 
         public int timer = 0;
         private int invincibilityFrames = 0;
-
-        // private Tool = bomb or something
 
         public bool grabItem = false;
         public bool isTriforce = false;
@@ -54,13 +47,11 @@ namespace CSE3902_Game_Sprint0.Classes
             this.projectileHandler = game.projectileHandler;
         }
 
-        // Call this method in Keyboard class when a key that changes direction is pressed
         public void ChangeDirection(Direction toThis)
         {
             this.direction = toThis;
         }
 
-        //Sets link to an idle state based on the value of direction var
         public void Idle()
         {
             if (timer == 0)
@@ -69,7 +60,6 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
-        //Sets link to a moving state based on the value of direction var
         public void Moving()
         {
             if (timer == 0)
@@ -78,7 +68,6 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
-        //Sets link to an animated state using sword based on the value of direction var
         public void Sword()
         {
             useSword = false;
@@ -87,6 +76,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 timer = 12;
                 new LinkSword(link, spriteFactory, this).Execute();
                 new LinkOffset(link, false).Execute();
+                link.game.sounds["swordSlash"].CreateInstance().Play();
             }
         }
 
@@ -96,10 +86,10 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 timer = 15;
                 new LinkBomb(link, spriteFactory, this).Execute();
+                link.game.sounds["bombDrop"].CreateInstance().Play();
             }
         }
 
-        //Sets link to an animated state using boomerang based on the value of direction var
         public void Boomerang()
         {
             if (timer == 0)
@@ -110,13 +100,13 @@ namespace CSE3902_Game_Sprint0.Classes
             }
         }
 
-        //Sets link to an animated state using arrow based on the value of direction var
         public void Arrow()
         {
             if (timer == 0)
             {
                 timer = 25;
                 new LinkArrow(link, spriteFactory, this).Execute();
+                link.game.sounds["arrowBoomerang"].CreateInstance().Play();
             }
         }
 
@@ -144,6 +134,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 timer = 80;
                 new LinkDeath(link, spriteFactory, this).Execute();
                 dead = true;
+                link.game.sounds["linkDie"].CreateInstance().Play();
             }
             else if (timer <= 0 && dead)
             {
