@@ -27,6 +27,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 
             if(item is Triforce)
             {
+                link.game.sounds["fanfare"].CreateInstance().Play();
+                link.game.sounds["getItem"].CreateInstance().Play();
+
                 link.linkState.grabItem = true;
                 link.linkState.isTriforce = true;
                 ((Triforce)item).position.X = link.drawLocation.X;
@@ -37,6 +40,20 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             else if (item is Bow)
             {
                 link.linkState.grabItem = true;
+                link.game.sounds["fanfare"].CreateInstance().Play();
+                link.game.sounds["getItem"].CreateInstance().Play();
+            }
+            else if (item is Key)
+            {
+                link.game.sounds["getHeart"].CreateInstance().Play();
+            }
+            else if (item is Boomerang || item is Compass || item is Fairy || item is HeartContainer || item is Map || item is Triforce)
+            {
+                link.game.sounds["getItem"].CreateInstance().Play();
+            }
+            else if (item is BlueRupee || item is YellowRupee)
+            {
+                link.game.sounds["getRupee"].CreateInstance().Play();
             }
         }
     }

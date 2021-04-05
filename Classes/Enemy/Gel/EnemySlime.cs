@@ -35,6 +35,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         public void TakeDamage(int damage)
         {
             this.health = this.health - damage;
+            game.sounds["enemyHit"].CreateInstance().Play();
         }
         public Rectangle CollisionRectangle()
         {

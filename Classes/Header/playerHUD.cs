@@ -205,7 +205,9 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             if (hasMap)
             {
                 //display map
+
                 //display where link is on map
+
             }
             else
             {

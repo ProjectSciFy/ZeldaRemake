@@ -54,6 +54,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         {
             if (currentState != CurrentState.hitting)
             {
+                timer = 15;
                 currentState = CurrentState.hitting;
                 projectileSpriteFactory.ArrowStrike(arrow);
                 arrow.game.collisionManager.collisionEntities.Remove(arrow);
