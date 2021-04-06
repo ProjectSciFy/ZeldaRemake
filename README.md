@@ -5,7 +5,6 @@ Known Bugs:
 	-Rare situtation in which enemies block doorways upon leaving rooms makes it impossible to re-enter room.
 	-Attempts to door mouse to transition through rooms may cause Link to get stuck in door; fix this by pressing [K].
 	-Clicking on segments of wall where a door goes (but the texture is that of a wall) sometimes attempts to transition in that direction. Only happens if there is an actual room that way.
-	-Room 17 (Top left) on the minimap does not show Link's position indicator.
 	-Confusion surrounding ItemSelectionState scrolling made implementation difficult; therefore this has not been fully implemented.
 
 Program Controls:
