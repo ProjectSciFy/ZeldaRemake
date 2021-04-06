@@ -127,7 +127,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //responds to currently selected secondary weapon:
             secWeapSprite = HudFactory.secondaryWeaponHUD();
 
-            //map correspondence:
+            //link on map correspondence:
             switch (game.util.roomNumber)
             {
                 case 1:
@@ -255,6 +255,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             }
             //-----------------------------------------------------------
             //Keys:
+            if (game.util.numKeys > 99)
+            {
+                game.util.numKeys = 99;
+            }
             //digits:
             keyOneDigit = game.util.numKeys % 10;
             keyTenDigit = (game.util.numKeys - keyOneDigit) / 10;
@@ -269,6 +273,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //---------------------------------------------------------
             //Blue Rupees:
+            if (game.util.numBrups > 99)
+            {
+                game.util.numBrups = 99;
+            }
             //digits:
             blueOneDigit = game.util.numBrups % 10;
             blueTenDigit = (game.util.numBrups - blueOneDigit) / 10;
@@ -283,6 +291,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //-----------------------------------------------------------
             //Yellow Rupees:
+            if (game.util.numYrups > 99)
+            {
+                game.util.numYrups = 99;
+            }
             //digits:
             yellowOneDigit = game.util.numYrups % 10;
             yellowTenDigit = (game.util.numYrups - yellowOneDigit) / 10;
