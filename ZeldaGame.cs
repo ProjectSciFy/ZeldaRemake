@@ -49,6 +49,7 @@ namespace CSE3902_Game_Sprint0
         public IGameState currentMainGameState;
         public IGameState currentGameState;
         public bool paused = false;
+        public bool inventory = false;
 
         public ZeldaGame()
         {
@@ -162,6 +163,15 @@ namespace CSE3902_Game_Sprint0
                 MediaPlayer.Resume();
                 currentGameState = currentMainGameState;
             }
+
+            //if (util.selecting)
+            //{
+            //    currentGameState = new ItemSelectState(this);
+            //}
+            //else if (!util.selecting && currentGameState.GetType() == typeof(ItemSelectState))
+            //{
+            //    currentGameState = currentMainGameState;
+            //}
 
             //link indicator:
             if (currentGameState.GetType() == typeof(MainState))

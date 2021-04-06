@@ -20,6 +20,9 @@ namespace CSE3902_Game_Sprint0
         public bool hasMap;
         public bool hasCompass;
         public bool linkInd;
+        //public bool selecting;
+        //public bool finishSelecting;
+        //public int selectSpeed;
 
         public int roomNumber;
 
@@ -39,6 +42,10 @@ namespace CSE3902_Game_Sprint0
             hasCompass = false;
             //Initialize room number counter
             roomNumber = 2;
+            // not selecting
+            //selecting = false;
+            //selectSpeed = 6;
+            //finishSelecting = false;
         }
     }
 }
