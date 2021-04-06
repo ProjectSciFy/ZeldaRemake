@@ -27,6 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
             {
                 KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.dying;
                 keese.mySprite = enemySpriteFactory.SpawnKeese();
+                keese.game.collisionManager.collisionEntities.Remove(keese);
                 keese.game.sounds["enemyDie"].CreateInstance().Play();
             }
         }

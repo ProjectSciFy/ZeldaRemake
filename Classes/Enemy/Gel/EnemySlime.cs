@@ -21,6 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         private float spriteScalar;
         private static int HITBOX_OFFSET = 6;
         public int health = 1;
+        private int hurtTimer = 0;
 
         public EnemySlime(ZeldaGame game, Vector2 spawnLocation)
         {
@@ -34,8 +35,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         }
         public void TakeDamage(int damage)
         {
-            this.health = this.health - damage;
-            game.sounds["enemyHit"].CreateInstance().Play();
+            if (hurtTimer <= 0)
+            {
+                hurtTimer = 30;
+                this.health = this.health - damage;
+                game.sounds["enemyHit"].CreateInstance().Play();
+            }
         }
         public Rectangle CollisionRectangle()
         {
