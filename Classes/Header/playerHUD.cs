@@ -331,5 +331,21 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             }
             //---------------------------------------------------------
         }
+
+        public void SlideUp()
+        {
+            //draw HUD
+            this.Draw();
+            //update hudPosition.Y
+            this.hudPosition.Y -= game.util.selectSpeed;
+        }
+
+        public void SlideDown()
+        {
+            //draw HUD
+            this.Draw();
+            //update hudPosition.Y
+            this.hudPosition.Y += game.util.selectSpeed;
+        }
     }
 }
