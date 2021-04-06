@@ -18,37 +18,41 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
         //heart sprite:
         private ISprite heartSprite;
-        private ISprite halfheartSprite;
-        private ISprite emptyheartSprite;
 
         //counter sprites:
         private ISprite xSprite;
         private ISprite digit;
         private int digitOffset;
 
-        //background
+        //background sprites:
         private ISprite top;
         private ISprite bottom;
         private ISprite right;
         private ISprite left;
 
-        //mini-map:
+        //mini-map sprites:
         private ISprite minimap;
         private ISprite linkIndicator;
         private ISprite boss;
 
+        //digit sprites for counters:
         private int keyOneDigit;
         private int keyTenDigit;
         private int blueOneDigit;
         private int blueTenDigit;
         private int yellowOneDigit;
         private int yellowTenDigit;
+        //digit positions:
         public Vector2 digitKeyPos;
         public Vector2 digitBrupPos;
         public Vector2 digitYrupPos;
-
+        public Vector2 YellowCounterPos;
+        public Vector2 BlueCounterPos;
+        public Vector2 KeyCounterPos;
 
         private HudSpriteFactory HudFactory;
+
+        //general hud positions:
         public Vector2 hudPosition;
         public Vector2 primWeapPos;
         public Vector2 secWeapPos;
@@ -58,18 +62,18 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 linkIndicatorPos;
         public Vector2 bossPos;
 
-        public Vector2 YellowCounterPos;
-        public Vector2 BlueCounterPos;
-        public Vector2 KeyCounterPos;
         private int heartOffset;
         private int remainingHearts;
 
         public float spriteScalar;
         public Vector2 drawLocation;
 
+        //top left corner coordinates of HUD:
         private int X, Y;
+
         public playerHUD(ZeldaGame game, HudSpriteFactory hudFactory)
         {
+            //general:
             this.game = game;
             this.spriteScalar = game.util.hudScalar;
             this.HudFactory = hudFactory;
@@ -78,13 +82,18 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.secWeapSprite = HudFactory.secondaryWeaponHUD();
             this.levelSprite = HudFactory.levelHUD();
             this.heartSprite = HudFactory.livesHUD();
+
+            //counters:
             this.xSprite = HudFactory.xHUD();
             this.digit = HudFactory.Digit(0);
+
+            //background:
             this.top = HudFactory.top();
             this.bottom = HudFactory.bottom();
             this.right = HudFactory.right();
             this.left = HudFactory.left();
 
+            //mini-map:
             this.minimap = HudFactory.mapHUD();
             this.linkIndicator = HudFactory.linkOnMap();
             this.boss = HudFactory.compassBoss();
@@ -93,33 +102,32 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             X = (game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST - ParserUtility.GEN_ADJUST;
             Y = 25;
             this.hudPosition = new Vector2(X, Y);
-            //elements of the Hud will be positioned in reference to X and Y so when Hud is moved, only X and Y need to change:
-            this.primWeapPos = new Vector2((X + 456), (Y + 72));
-            this.secWeapPos = new Vector2((X + 384),(Y + 72));
-            this.levelPos = new Vector2((X + 47), (Y + 24));
-            this.heartPos = new Vector2((X + 528), (Y + 96));
 
-            //keys:
-            this.digitKeyPos = new Vector2((X + 312), (Y + 96));
-            this.KeyCounterPos = new Vector2((X + 288), (Y + 96));
-            //Blue rupees:
-            this.digitBrupPos = new Vector2((X+312), (Y+120));
-            this.BlueCounterPos = new Vector2((X + 288), (Y + 120));
-            //Yellow rupees:
-            this.digitYrupPos = new Vector2((X+312), (Y+48));
-            this.YellowCounterPos = new Vector2((X + 288), (Y + 48));
-
-            //mini-map:
-            this.minimapPos = new Vector2((X+60), (Y+60));
+            //elements of the Hud will be positioned in reference to hudPosition.X and hudPosition.Y so when Hud is moved, only X and Y need to change:
+            this.primWeapPos = new Vector2((hudPosition.X + 456), (hudPosition.Y + 72));
+            this.secWeapPos = new Vector2((hudPosition.X + 384),(hudPosition.Y + 72));
+            this.levelPos = new Vector2((hudPosition.X + 47), (hudPosition.Y + 24));
+            this.heartPos = new Vector2((hudPosition.X + 528), (hudPosition.Y + 96));
+            //counter related positions:
+            this.digitKeyPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 96));
+            this.KeyCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 96));
+            this.digitBrupPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 120));
+            this.BlueCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 120));
+            this.digitYrupPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 48));
+            this.YellowCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 48));
+            //mini-map positions:
+            this.minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
             this.bossPos = new Vector2(minimapPos.X + 105, minimapPos.Y + 12);
+            //makes it so the link indicator does not show on screen until mainstate is achieved:
+            this.linkIndicatorPos = new Vector2((-30), (-15));
         }
 
         public void Update()
         {
-            //this is where a keystate can be accessed to either show/not show the HUD or other functionalities.
+            //responds to currently selected secondary weapon:
             secWeapSprite = HudFactory.secondaryWeaponHUD();
 
-            //map correspondence:
+            //link on map correspondence:
             switch (game.util.roomNumber)
             {
                 case 1:
@@ -175,7 +183,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
                 case 14:
-                    //aquamentus room:
+                    //aquamentus "boss" room:
                     linkIndicatorPos.X = minimapPos.X + 105;
                     linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
@@ -184,11 +192,11 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
                 case 16:
-                    linkIndicatorPos.X = minimapPos.X + 33;
+                    linkIndicatorPos.X = minimapPos.X + 57;
                     linkIndicatorPos.Y = minimapPos.Y;
                     break;
                 case 17:
-                    linkIndicatorPos.X = minimapPos.X + 57;
+                    linkIndicatorPos.X = minimapPos.X + 33;
                     linkIndicatorPos.Y = minimapPos.Y;
                     break;
             }
@@ -199,12 +207,13 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             float windowWidthFloor = (game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
             float windowHeightFloor = ((game.GraphicsDevice.Viewport.Height / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST - ParserUtility.GEN_ADJUST;
 
-            //THIS FILE NEEDS TO BE REFACTORED - I UNDERSTAND THAT IT IS WAY TOO LONG - THIS WAS JUST AN ATTEMPT
-            //static displays:
-            top.Draw(new Vector2(X, 0));
-            bottom.Draw(new Vector2(X, windowHeightFloor + 530));
+            //background displays:
+            top.Draw(new Vector2(hudPosition.X, 0));
+            bottom.Draw(new Vector2(hudPosition.X, windowHeightFloor + 530));
             right.Draw(new Vector2(windowWidthFloor + 768, windowHeightFloor));
             left.Draw(new Vector2(0, windowHeightFloor));
+
+            //static displays:
             hudSprite.Draw(hudPosition);
             primWeapSprite.Draw(primWeapPos);
             secWeapSprite.Draw(secWeapPos);
@@ -246,6 +255,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             }
             //-----------------------------------------------------------
             //Keys:
+            if (game.util.numKeys > 99)
+            {
+                game.util.numKeys = 99;
+            }
             //digits:
             keyOneDigit = game.util.numKeys % 10;
             keyTenDigit = (game.util.numKeys - keyOneDigit) / 10;
@@ -260,6 +273,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //---------------------------------------------------------
             //Blue Rupees:
+            if (game.util.numBrups > 99)
+            {
+                game.util.numBrups = 99;
+            }
             //digits:
             blueOneDigit = game.util.numBrups % 10;
             blueTenDigit = (game.util.numBrups - blueOneDigit) / 10;
@@ -274,6 +291,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //-----------------------------------------------------------
             //Yellow Rupees:
+            if (game.util.numYrups > 99)
+            {
+                game.util.numYrups = 99;
+            }
             //digits:
             yellowOneDigit = game.util.numYrups % 10;
             yellowTenDigit = (game.util.numYrups - yellowOneDigit) / 10;
@@ -286,7 +307,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             digit = HudFactory.Digit(digitOffset);
             digit.Draw(new Vector2(digitYrupPos.X + 24, digitYrupPos.Y));
             //----------------------------------------------------------
-
             //mini-map & link indicator
             if (this.game.util.hasMap)
             {
@@ -303,12 +323,29 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicator.Draw(linkIndicatorPos);
                 }
             }
-
+            //---------------------------------------------------------
             //compass showing location of aquamentus:
             if (this.game.util.hasCompass)
             {
                 boss.Draw(bossPos);
             }
+            //---------------------------------------------------------
+        }
+
+        public void SlideUp()
+        {
+            //draw HUD
+            this.Draw();
+            //update hudPosition.Y
+            this.hudPosition.Y -= game.util.selectSpeed;
+        }
+
+        public void SlideDown()
+        {
+            //draw HUD
+            this.Draw();
+            //update hudPosition.Y
+            this.hudPosition.Y += game.util.selectSpeed;
         }
     }
 }

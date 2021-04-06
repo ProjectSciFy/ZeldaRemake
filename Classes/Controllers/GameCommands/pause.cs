@@ -5,18 +5,16 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
     namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands{
-    public class pause : ICommand
+    public class Pause : ICommand
     {
-        public pause()
+        private ZeldaGame game;
+        public Pause(ZeldaGame game)
         {
-
+            this.game = game;
         }
         public void Execute()
         {
-
+            game.paused = !game.paused;
         }
-
     }
-
-
 }
