@@ -10,8 +10,11 @@ Program Controls:
 	-[P] pauses the game; clicking [P] again will resume the game. 
 	-[Q] and [esc] quit the game instantly.
 	-[R] resets game to starting state. This is for testing purposes and will be removed in the final version of the game.
+	-[K] gives Link 5 keys instantly. This is for testing purposes and will be removed in the final version of the game.
+
 	-MOUSE CONTROLS:
 		+Left clicking doors will cycle through rooms in the direction of the door clicked.
+
 
 Program Future Implementations:
 	-Implement a fully operational Bow (loot) room (room number 16 with our numbering system).
