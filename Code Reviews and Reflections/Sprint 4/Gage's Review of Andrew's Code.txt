@@ -1,19 +1,23 @@
 ﻿READABILITY OF ANDREW'S :
 -Author of review: Gage Odom
--Date of review: 
+-Date of review: 4/3/2021
 -Sprint Number: 4
--File Name: 
+-File Name: UnlockDoor.cs
 -Author of file: Andrew Lewandowski
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 4 minutes
+-Comments: The readability is pretty good. The variables names in use give an understanding on what information they hold. The 
+only thing not obvious is the getDoorValue() conditional in the if statement onl line 41. After asking you then I understand what it
+means but on first glance its almost impossible to know wht that calculation gives. 
 
 
 MAINTAINABILITY OF ANDREW'S :
 -Author of review: Gage Odom
--Date of review: 
+-Date of review: 4/3/2021
 -Sprint Number: 4
--File Name: 
+-File Name: UnlockDoor.cs
 -Author of file: Andrew Lewandowski
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 6
+-Comments: The maintainablity of this class is good assuming rooms of similar structures are added. If a room where there were more 
+than 4 doors in different cardinal directions then problems may arise.
+-Hypitheitcal changes: Come up with a more obvious system than using mod 10 as a way to identify doors. Maybe with enums so a reader 
+will understand better. Other than that code looks great.
