@@ -103,7 +103,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             Y = 25;
             this.hudPosition = new Vector2(X, Y);
 
-            //elements of the Hud will be positioned in reference to X and Y so when Hud is moved, only X and Y need to change:
+            //elements of the Hud will be positioned in reference to hudPosition.X and hudPosition.Y so when Hud is moved, only X and Y need to change:
             this.primWeapPos = new Vector2((hudPosition.X + 456), (hudPosition.Y + 72));
             this.secWeapPos = new Vector2((hudPosition.X + 384),(hudPosition.Y + 72));
             this.levelPos = new Vector2((hudPosition.X + 47), (hudPosition.Y + 24));

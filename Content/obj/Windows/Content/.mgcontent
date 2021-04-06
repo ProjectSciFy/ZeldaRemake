@@ -9,6 +9,7 @@
     <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/Credits.spritefont</File>
     <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.png</File>
     <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/game-over.jpeg</File>
     <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/Level 1 (Eagle).png</File>
     <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Arrow_Boomerang.wav</File>
     <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Bomb_Blow.wav</File>
@@ -45,6 +46,7 @@
     <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - NPCs.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
