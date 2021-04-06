@@ -5,7 +5,9 @@
 -File Name: playerHUD.cs
 -Author of file: Jared Zahn
 -Number of minutes taken to review: 
--Comments: 
+-Comments: Although the class is rather lengthy, it is well documented with comments sectioning off related code & giving enough description to understand what's going on.
+Although the amount of variables are necessary for this implementation of the HUD, the sheer quantity makes it rather difficult to keep track of everything unless tracking references.
+There are a lot of magic numbers in the setup of the switch case for managing the minimap location of Link, without further insight about the games window size it's difficult to understand what the numbers mean.
 
 
 MAINTAINABILITY OF JARED'S :
@@ -15,5 +17,7 @@ MAINTAINABILITY OF JARED'S :
 -File Name: playerHUD.cs
 -Author of file: Jared Zahn
 -Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Comments: As mentioned in readability, the amount of magic numbers is not very maintainable, especially if we decide to adjust the window size later on (we absolutely won't)
+On the flip-side, another large portion of the code relies on methods & set values that are far easier to maintain.
+-Hypotheitcal changes: Setup a Dictionary of minimap locations for link, that way you could associate a specific room number or name to a location & index it for assigning link's location.
+Figure out some way to reuse code from room transitions to scroll the inventory HUD onto the screen.
