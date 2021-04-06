@@ -43,7 +43,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 MediaPlayer.Play(game.song);
             }
         }
-
         void IGameState.UpdateCollisions()
         {
 
