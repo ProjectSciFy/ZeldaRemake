@@ -1,7 +1,10 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands;
+using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.GameState;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Tiles;
+using CSE3902_Game_Sprint0.Interfaces;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,7 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         }
         public void Execute()
         {
-            if (tile is BlockTile || tile is WallTile || (tile is GateKeeperTile && ((GateKeeperTile)tile).locked == true))
+            if ((tile is BlockTile || tile is WallTile || (tile is GateKeeperTile && ((GateKeeperTile)tile).locked == true)) && !link.linkState.isGrabbed)
             {
                 if(tile is GateKeeperTile && ((GateKeeperTile)tile).isLockedDoor == true && game.util.numKeys > 0)
                 {
@@ -50,7 +53,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 }
 
             }
-            if (tile is StairsTile)
+            if (tile is StairsTile && !link.linkState.isGrabbed)
             {
                 if (direction == Collision.Collision.Direction.down && !game.util.keyPressedTempVariable)
                 {
@@ -70,6 +73,60 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 }
             }
             
+            if (tile is WallTile && !link.linkState.isGrabbed)
+            {
+                foreach (KeyValuePair<ICollisionEntity, Rectangle> entity1 in link.game.collisionManager.collisionEntities)
+                {
+                    if (entity1.Key is EnemyWallmaster)
+                    {
+                        if (!((EnemyWallmaster)entity1.Key).myState.activating && !((EnemyWallmaster)entity1.Key).myState.active && link.linkState.wallmasterDeployedTimer <= 0)
+                        {
+                            link.linkState.wallmasterDeployedTimer = 60;
+                            WallmasterStateMachine.Direction wallmasterDirection = WallmasterStateMachine.Direction.up;
+                            float drawLocationX = 0;
+                            float drawLocationY = 0;
+                            switch (direction)
+                            {
+                                case Collision.Collision.Direction.up:
+                                    wallmasterDirection = WallmasterStateMachine.Direction.down;
+                                    drawLocationX = link.drawLocation.X + (2 * 16 * link.spriteScalar);
+                                    drawLocationY = link.drawLocation.Y - (16 * link.spriteScalar);
+                                    break;
+                                case Collision.Collision.Direction.down:
+                                    wallmasterDirection = WallmasterStateMachine.Direction.up;
+                                    drawLocationX = link.drawLocation.X - (2 * 16 * link.spriteScalar);
+                                    drawLocationY = link.drawLocation.Y + (16 * link.spriteScalar);
+                                    break;
+                                case Collision.Collision.Direction.left:
+                                    wallmasterDirection = WallmasterStateMachine.Direction.right;
+                                    drawLocationX = link.drawLocation.X - (16 * link.spriteScalar);
+                                    drawLocationY = link.drawLocation.Y - (2 * 16 * link.spriteScalar);
+                                    break;
+                                case Collision.Collision.Direction.right:
+                                    wallmasterDirection = WallmasterStateMachine.Direction.left;
+                                    drawLocationX = link.drawLocation.X + (16 * link.spriteScalar);
+                                    drawLocationY = link.drawLocation.Y + (2 * 16 * link.spriteScalar);
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            var random = new Random();
+
+                            switch (random.Next(1))
+                            {
+                                case 0:
+                                    ((EnemyWallmaster)entity1.Key).myState.direction = wallmasterDirection;
+                                    ((EnemyWallmaster)entity1.Key).myState.activating = true;
+                                    ((EnemyWallmaster)entity1.Key).drawLocation = new Vector2(drawLocationX, drawLocationY);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

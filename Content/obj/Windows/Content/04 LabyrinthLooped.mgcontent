@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/04 LabyrinthLooped.mp3</SourceFile>
-  <SourceTime>2021-04-05T16:47:05.9386201-04:00</SourceTime>
-  <DestFile>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/bin/Windows/Content/04 LabyrinthLooped.xnb</DestFile>
-  <DestTime>2021-04-05T19:06:44.9442115-04:00</DestTime>
+  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/04 LabyrinthLooped.mp3</SourceFile>
+  <SourceTime>2021-04-05T16:35:43.7729803-04:00</SourceTime>
+  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/04 LabyrinthLooped.xnb</DestFile>
+  <DestTime>2021-04-05T19:15:56.7581506-04:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/Andrew/Source/Repos/ProjectSciFy/ZeldaRemake/Content/bin/Windows/Content/04 LabyrinthLooped.wma</string>
+    <string>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/04 LabyrinthLooped.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

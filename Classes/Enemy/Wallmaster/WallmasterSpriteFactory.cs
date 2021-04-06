@@ -47,5 +47,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         {
             return new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, enemyLayerDepth);
         }
+
+        public UniversalSprite WallmasterHiding()
+        {
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(0, 0, 0, 0), Color.White, SpriteEffects.None, new Vector2(1, 1), 60, enemyLayerDepth);
+        }
     }
 }
