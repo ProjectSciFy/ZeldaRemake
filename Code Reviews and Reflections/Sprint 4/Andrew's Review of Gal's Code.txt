@@ -1,19 +1,27 @@
 ﻿READABILITY OF GAL'S :
 -Author of review: Andrew Lewandowski
--Date of review: 
+-Date of review: 4/5/2020
 -Sprint Number: 4
--File Name: 
+-File Name: Reset.cs
 -Author of file: Gal Pinhasi
--Number of minutes taken to review: 
+-Number of minutes taken to review: 15
 -Comments: 
+The overall is quite easy to read. There's not any complex loops or logic. It's clear what this file does. I can go line by line fairly easily
+and understand what each line is doing. Each section is split nicely to understand in order what is reset for the method. Nothing too complex and each
+method is easy to understand how they connect.
 
 
 MAINTAINABILITY OF GAL'S :
 -Author of review: Andrew Lewandowski
 -Date of review: 
 -Sprint Number: 4
--File Name: 
+-File Name: Reset.cs
 -Author of file: Gal Pinhasi 
--Number of minutes taken to review: 
+-Number of minutes taken to review: 15
 -Comments: 
+My initial thoughts are that this code is very maintainable. It seems obvious that the more you add, the more you reset. This code does a good job
+of centralizing everything that needs to be reset at the core. In addition, it is clear that you can continue to reset what you add. Gal does a nice job
+of making sure you can reset everything from this file. 
 -Hypitheitcal changes: 
+I would add a method for all values that need to be reset, and a list of all initial values. That way, if you add something that, for example, has a counter, you
+can easily add it and then reset it from the method that resets everything. This could separate the code from, for example, recreating rooms.
