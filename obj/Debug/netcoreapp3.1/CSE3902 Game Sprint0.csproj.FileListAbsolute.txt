@@ -277,3 +277,4 @@ C:\Users\Andrew\Source\Repos\ProjectSciFy\ZeldaRemake\obj\Debug\netcoreapp3.1\CS
 C:\Users\Andrew\Source\Repos\ProjectSciFy\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CoreCompileInputs.cache
 C:\Users\Andrew\Source\Repos\ProjectSciFy\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CopyComplete
 C:\Users\Andrew\Source\Repos\ProjectSciFy\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.genruntimeconfig.cache
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\game-over.xnb
