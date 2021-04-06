@@ -118,6 +118,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //mini-map positions:
             this.minimapPos = new Vector2((X+60), (Y+60));
             this.bossPos = new Vector2(minimapPos.X + 105, minimapPos.Y + 12);
+            //makes it so the link indicator does not show on screen until mainstate is achieved:
+            this.linkIndicatorPos = new Vector2((-30), (-15));
         }
 
         public void Update()
@@ -125,7 +127,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //responds to currently selected secondary weapon:
             secWeapSprite = HudFactory.secondaryWeaponHUD();
 
-            //map correspondence:
+            //link on map correspondence:
             switch (game.util.roomNumber)
             {
                 case 1:
@@ -253,6 +255,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             }
             //-----------------------------------------------------------
             //Keys:
+            if (game.util.numKeys > 99)
+            {
+                game.util.numKeys = 99;
+            }
             //digits:
             keyOneDigit = game.util.numKeys % 10;
             keyTenDigit = (game.util.numKeys - keyOneDigit) / 10;
@@ -267,6 +273,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //---------------------------------------------------------
             //Blue Rupees:
+            if (game.util.numBrups > 99)
+            {
+                game.util.numBrups = 99;
+            }
             //digits:
             blueOneDigit = game.util.numBrups % 10;
             blueTenDigit = (game.util.numBrups - blueOneDigit) / 10;
@@ -281,6 +291,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //-----------------------------------------------------------
             //Yellow Rupees:
+            if (game.util.numYrups > 99)
+            {
+                game.util.numYrups = 99;
+            }
             //digits:
             yellowOneDigit = game.util.numYrups % 10;
             yellowTenDigit = (game.util.numYrups - yellowOneDigit) / 10;
