@@ -24,6 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public int timer = 0;
         private int invincibilityFrames = 0;
+        public int wallmasterDeployedTimer = 0;
 
         public bool grabItem = false;
         public bool isTriforce = false;
@@ -170,6 +171,7 @@ namespace CSE3902_Game_Sprint0.Classes
             {
                 invincibilityFrames--;
             }
+            wallmasterDeployedTimer--;
 
             //State calculation
             if (grabItem)

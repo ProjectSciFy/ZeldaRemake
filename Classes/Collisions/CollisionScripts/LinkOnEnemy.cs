@@ -35,16 +35,17 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     link.drawLocation = ((EnemyWallmaster)enemy).drawLocation;
                     link.linkState.isGrabbed = true;
                     link.linkState.Idle();
-                    link.linkState.timer = 180;
+                    link.linkState.timer = 96;
                 }
                 else if (link.linkState.timer <= 0)
                 {
-                    link.linkState.isGrabbed = false;
                     new Reset(link.game).Execute();
+                    link.linkState.isGrabbed = false;
                 }
                 else if (link.linkState.isGrabbed)
                 {
                     link.drawLocation = ((EnemyWallmaster)enemy).drawLocation;
+                    link.linkState.currentState = LinkStateMachine.CurrentState.grabbed;
                     link.linkState.Idle();
                 }
             }

@@ -103,20 +103,20 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             Y = 25;
             this.hudPosition = new Vector2(X, Y);
 
-            //elements of the Hud will be positioned in reference to X and Y so when Hud is moved, only X and Y need to change:
-            this.primWeapPos = new Vector2((X + 456), (Y + 72));
-            this.secWeapPos = new Vector2((X + 384),(Y + 72));
-            this.levelPos = new Vector2((X + 47), (Y + 24));
-            this.heartPos = new Vector2((X + 528), (Y + 96));
+            //elements of the Hud will be positioned in reference to hudPosition.X and hudPosition.Y so when Hud is moved, only X and Y need to change:
+            this.primWeapPos = new Vector2((hudPosition.X + 456), (hudPosition.Y + 72));
+            this.secWeapPos = new Vector2((hudPosition.X + 384),(hudPosition.Y + 72));
+            this.levelPos = new Vector2((hudPosition.X + 47), (hudPosition.Y + 24));
+            this.heartPos = new Vector2((hudPosition.X + 528), (hudPosition.Y + 96));
             //counter related positions:
-            this.digitKeyPos = new Vector2((X + 312), (Y + 96));
-            this.KeyCounterPos = new Vector2((X + 288), (Y + 96));
-            this.digitBrupPos = new Vector2((X+312), (Y+120));
-            this.BlueCounterPos = new Vector2((X + 288), (Y + 120));
-            this.digitYrupPos = new Vector2((X+312), (Y+48));
-            this.YellowCounterPos = new Vector2((X + 288), (Y + 48));
+            this.digitKeyPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 96));
+            this.KeyCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 96));
+            this.digitBrupPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 120));
+            this.BlueCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 120));
+            this.digitYrupPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 48));
+            this.YellowCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 48));
             //mini-map positions:
-            this.minimapPos = new Vector2((X+60), (Y+60));
+            this.minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
             this.bossPos = new Vector2(minimapPos.X + 105, minimapPos.Y + 12);
             //makes it so the link indicator does not show on screen until mainstate is achieved:
             this.linkIndicatorPos = new Vector2((-30), (-15));
@@ -192,11 +192,11 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicatorPos.Y = minimapPos.Y + 12;
                     break;
                 case 16:
-                    linkIndicatorPos.X = minimapPos.X + 33;
+                    linkIndicatorPos.X = minimapPos.X + 57;
                     linkIndicatorPos.Y = minimapPos.Y;
                     break;
                 case 17:
-                    linkIndicatorPos.X = minimapPos.X + 57;
+                    linkIndicatorPos.X = minimapPos.X + 33;
                     linkIndicatorPos.Y = minimapPos.Y;
                     break;
             }
@@ -208,8 +208,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             float windowHeightFloor = ((game.GraphicsDevice.Viewport.Height / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST - ParserUtility.GEN_ADJUST;
 
             //background displays:
-            top.Draw(new Vector2(X, 0));
-            bottom.Draw(new Vector2(X, windowHeightFloor + 530));
+            top.Draw(new Vector2(hudPosition.X, 0));
+            bottom.Draw(new Vector2(hudPosition.X, windowHeightFloor + 530));
             right.Draw(new Vector2(windowWidthFloor + 768, windowHeightFloor));
             left.Draw(new Vector2(0, windowHeightFloor));
 
@@ -331,5 +331,21 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             }
             //---------------------------------------------------------
         }
+
+        //public void SlideUp()
+        //{
+            //draw HUD
+        //    this.Draw();
+            //update hudPosition.Y
+        //    this.hudPosition.Y -= game.util.selectSpeed;
+        //}
+
+        //public void SlideDown()
+        //{
+            //draw HUD
+        //    this.Draw();
+            //update hudPosition.Y
+        //    this.hudPosition.Y += game.util.selectSpeed;
+        //}
     }
 }

@@ -111,6 +111,7 @@ namespace CSE3902_Game_Sprint0
             spriteSheets.Add("DungeonBackgrounds", Content.Load<Texture2D>("Level 1 (Eagle)"));
             spriteSheets.Add("DungeonTileset", Content.Load<Texture2D>("NES - The Legend of Zelda - Dungeon Tileset"));
             spriteSheets.Add("Fonts", Content.Load<Texture2D>("NES - The Legend of Zelda - Fonts"));
+            spriteSheets.Add("GameOver", Content.Load<Texture2D>("game-over"));
 
             song = Content.Load<Song>("04 LabyrinthLooped");
             sounds.Add("arrowBoomerang", Content.Load<SoundEffect>("LOZ_Arrow_Boomerang"));

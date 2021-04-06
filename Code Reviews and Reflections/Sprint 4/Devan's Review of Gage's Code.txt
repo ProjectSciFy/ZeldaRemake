@@ -1,19 +1,20 @@
 ﻿READABILITY OF GAGE'S :
 -Author of review: Devan
--Date of review: 
+-Date of review: 4/5/2021
 -Sprint Number: 4
--File Name: 
+-File Name: ProjectileOnLink
 -Author of file: Gage Odom
--Number of minutes taken to review: 
+-Number of minutes taken to review: 5
 -Comments: 
-
+File is easy to read with if statements well spaced out and variables easy to understand.
 
 MAINTAINABILITY OF GAGE'S :
 -Author of review: Devan
--Date of review: 
+-Date of review: 4/5/2021
 -Sprint Number: 4
--File Name: 
+-File Name: ProjectileOnLink
 -Author of file: Gage Odom
--Number of minutes taken to review: 
+-Number of minutes taken to review: 7
 -Comments: 
+This function is maintainable because it has good cohension, calling on a small amount of specific functions
 -Hypitheitcal changes: 

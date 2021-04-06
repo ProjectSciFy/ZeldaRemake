@@ -16,10 +16,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 
         public enum Direction { right, up, left, down };
         public Direction direction = Direction.up;
-        bool emerging = false;
-        bool hiding = false;
-        bool idle = true;
-        private int timer = 0;
+        private int staging = 0;
+        public bool activating = false;
+        public bool active = false;
+        public int timer = 0;
         private int deathTimer = 30;
         public enum CurrentState { none, emerging, hiding, idle, movingUp, movingDown, movingLeft, movingRight, dying };
         public CurrentState currentState = CurrentState.none;
@@ -29,7 +29,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             this.wallmaster = wallmaster;
             game = wallmaster.game;
             wallmasterSpriteFactory = new WallmasterSpriteFactory(game);
-            this.wallmaster.mySprite = wallmasterSpriteFactory.WallmasterIdle();
         }
         public void Dying()
         {
@@ -45,41 +44,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             new WallmasterMoving(wallmaster, wallmasterSpriteFactory, this).Execute();
         }
 
-        public void Update()
+        public void Hiding()
         {
             if (timer <= 0)
             {
-                if (idle)
-                {
-                    direction = Direction.up;
-                    idle = false;
-                    emerging = true;
-                    timer = 32;
-
-                }
-                else if (emerging)
-                {
-                    direction = Direction.right;
-                    emerging = false;
-                    timer = 64;
-                } else if (!emerging && !idle && !hiding)
-                {
-                    direction = Direction.down;
-                    hiding = true;
-                    timer = 32;
-                }
-                else if (hiding)
-                {
-                    idle = true;
-                    hiding = false;
-                    timer = 180;
-                }
+                new WallmasterHiding(wallmaster, wallmasterSpriteFactory).Execute();
             }
-            else
-            {
-                timer--;
-            }
+        }
 
+        public void Update()
+        {
             if (wallmaster.health <= 0)
             {
                 Dying();
@@ -89,13 +63,43 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
                     wallmaster.game.currentRoom.removeEnemy(wallmaster);
                 }
             }
-            else if (idle)
+            if (timer <= 0)
             {
-                Idle();
+                if (activating && !active)
+                {
+                    timer = 32;
+                    activating = false;
+                    active = true;
+                    Moving();
+                }
+                else if (active)
+                {
+                    switch (staging)
+                    {
+                        case 0:
+                            timer = 64;
+                            new WallmasterTurnClockwise(this).Execute();
+                            Moving();
+                            break;
+                        case 1:
+                            timer = 128;
+                            new WallmasterTurnClockwise(this).Execute();
+                            Moving();
+                            break;
+                        case 2:
+                            Hiding();
+                            active = false;
+                            staging = -1;
+                            break;
+                        default:
+                            break;
+                    }
+                    staging++;
+                }
             }
             else
             {
-                Moving();
+                timer--;
             }
         }
     }
