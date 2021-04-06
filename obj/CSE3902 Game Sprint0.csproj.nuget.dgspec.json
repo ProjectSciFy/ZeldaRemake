@@ -25,10 +25,10 @@
         "projectPath": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
         "packagesPath": "C:\\Users\\Jared\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\obj\\",
->>>>>>> d084bc9eaeab30e2404cb07cfc2cbbcb5065b9cc
+>>>>>>> 0a0063ab2adb82d92a30b0ded96bc7344d840ae2
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
 <<<<<<< HEAD
@@ -38,7 +38,7 @@
 =======
           "C:\\Users\\Jared\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> d084bc9eaeab30e2404cb07cfc2cbbcb5065b9cc
+>>>>>>> 0a0063ab2adb82d92a30b0ded96bc7344d840ae2
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -90,7 +90,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
