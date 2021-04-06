@@ -1,1 +1,8 @@
-﻿
+﻿Sprint 4 Reflection
+
+Our group began planning for and working on this sprint far earlier than for previous sprints. This resulted in a more organized
+approach and time management to solve issues with code readability and maintainability from earlier sprints. We were able to work 
+together early to resolve many code quality concerns and refactor legacy code. This resulted in a much more successful attempt at
+meeting the requirements for sprint 4, both in terms of code quality and in terms of code functionality. We are very proud of the
+effort and corresponding success we have had during this sprint with the refactoring of code, the production of functional visual
+results, and with our implementation of aspects of the game.
