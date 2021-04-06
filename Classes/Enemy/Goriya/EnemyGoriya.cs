@@ -16,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Vector2 drawLocation;
         public Vector2 velocity;
         public Vector2 spriteSize = new Vector2(16, 16);
-        private GoriyaBoomerang boomerang;
+        public GoriyaBoomerang boomerang;
         public ISprite mySprite;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         private float spriteScalar;
@@ -82,9 +82,14 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             if (timer <= 0 && myState.currentState != GoriyaStateMachine.CurrentState.spawning)
             {
                 timer = 300;
-                game.projectileHandler.Add(new GoriyaBoomerang(game, this, myState));
+                boomerang = new GoriyaBoomerang(game, this, myState);
+                game.projectileHandler.Add(boomerang);
                 throwing = true;
                 myState.moving = false;
+            }
+            if (health <= 0)
+            {
+                boomerang.collided = true;
             }
             collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
