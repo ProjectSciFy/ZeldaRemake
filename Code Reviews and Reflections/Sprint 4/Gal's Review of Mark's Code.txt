@@ -1,19 +1,25 @@
-﻿READABILITY OF MARK'S :
+﻿READABILITY OF MARK'S LinkOnTile.cs:
 -Author of review: Gal Pinhasi
--Date of review: 
+-Date of review: 4/5/2021
 -Sprint Number: 4
--File Name: 
+-File Name: LinkOnTile.cs
 -Author of file: Mark Maher
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 5
+-Comments: This file only has a constructor and an Execute() method, meaning the general complexity of the file isn't large. Field names
+		   are coherent and constructor parameters are obvious as to why they are necessary -- Link, the tile he's colliding with, and the
+		   direction the collision happens in. The execute method is slightly long, with 2 if loops each containing several if-else loops.
+		   While the code is slightly complex to look at, the readability of it is very high: logic flows smoothly and since variable names
+		   are clear, the idea behind the method and its purpose is also clear.
 
 
-MAINTAINABILITY OF MARK'S :
+MAINTAINABILITY OF MARK'S LinkOnTile.cs:
 -Author of review: Gal Pinhasi
--Date of review: 
+-Date of review: 4/5/2021
 -Sprint Number: 4
--File Name: 
+-File Name: LinkOnTile.cs
 -Author of file: Mark Maher
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 4
+-Comments: While fields are private, providing higher cohesion, and parameters provide looser coupling, code maintainability is fairly high due
+		   to the fact that if-else loops are hard coded to specific tiles and intended reactions. 
+-Hypitheitcal changes: There is not much to be done about this, as collisions mostly have to be hard-coded in due to the pre-determined scenarios
+					   and intended reactions.

@@ -1,19 +1,23 @@
 ﻿READABILITY OF DEVAN'S :
 -Author of review: Jared Zahn
--Date of review: 
+-Date of review: 04/05/2021
 -Sprint Number: 4
--File Name: 
+-File Name: PauseState.cs
 -Author of file: Devan
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 5
+-Comments: The file as a whole is easily understood and variable names are kept concise and beneficial to each respective purpose. Each state for the game itself follows the same form
+as it implements the IGameState interface. This allows the audience to not only understand PauseState, but also apply the structural understanding of the code to any of the game states.
+This file has high readabililty and without the presence of comments, still conveys its purpose logically. 
 
 
 MAINTAINABILITY OF DEVAN'S :
 -Author of review: Jared Zahn
--Date of review: 
+-Date of review: 04/05/2021
 -Sprint Number: 4
--File Name: 
+-File Name: PauseState.cs
 -Author of file: Devan
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 4
+-Comments: The maintainablity of this code file also lies within the IGameState interface that it implements. There are very few magic numbers, most being taken care of by initialized
+variables. In addition to this, the file is under 50 lines total which helps the viewer see every aspect of the class without having to parse through too many lines of code. 
+-Hypotheitcal changes: The complexity of the class is meant to be very simple, so my changes would be focused on beefing up the graphical output of the "pause" screen and
+adding other functionalities found in most pause screens: quit game option, save game option, etc.
