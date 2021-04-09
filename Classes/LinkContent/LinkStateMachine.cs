@@ -26,6 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes
         private int invincibilityFrames = 0;
         public int wallmasterDeployedTimer = 0;
 
+        public bool isRolling = false;
         public bool grabItem = false;
         public bool isTriforce = false;
         public bool useSword = false;
@@ -38,7 +39,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool dead = false;
         public bool boomerangCaught = true;
 
-        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
+        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, rollingUp, rollingDown, rollingLeft, rollingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
         public CurrentState currentState;
 
         public LinkStateMachine(Link link)
@@ -67,6 +68,15 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer == 0)
             {
                 new LinkMoving(link, spriteFactory, this).Execute();
+            }
+        }
+
+        public void Roll()
+        {
+            if (timer == 0)
+            {
+                timer = 20;
+                new LinkRoll(link, spriteFactory, this).Execute();
             }
         }
 
@@ -181,6 +191,11 @@ namespace CSE3902_Game_Sprint0.Classes
             else if (dying)
             {
                 Death();
+            }
+            else if (isRolling)
+            {
+                Roll();
+                isRolling = false;
             }
             else if (moving)
             {

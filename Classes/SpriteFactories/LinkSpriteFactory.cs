@@ -57,6 +57,23 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             return new UniversalSprite(game, linkTexture, new Rectangle(35, 11, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(1, 2), 10, linkLayerDepth);
         }
 
+        public UniversalSprite RollUp()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(160, 206, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), 5, linkLayerDepth);
+        }
+        public UniversalSprite RollDown()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(342, 237, 16, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 5, linkLayerDepth);
+        }
+        public UniversalSprite RollLeft()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(325, 237, 16, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 5, linkLayerDepth);
+        }
+        public UniversalSprite RollRight()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(325, 237, 16, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 5, linkLayerDepth);
+        }
+
         //item sprites:
         //Sword:
         public UniversalSprite SwordUp()
