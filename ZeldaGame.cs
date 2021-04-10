@@ -130,6 +130,8 @@ namespace CSE3902_Game_Sprint0
             sounds.Add("linkDie", Content.Load<SoundEffect>("LOZ_Link_Die"));
             sounds.Add("linkHurt", Content.Load<SoundEffect>("LOZ_Link_Hurt"));
             sounds.Add("lowHealth", Content.Load<SoundEffect>("LOZ_LowHealth"));
+            sounds.Add("redeadIdle", Content.Load<SoundEffect>("OOT_ReDead_Moan"));
+            sounds.Add("redeadScream", Content.Load<SoundEffect>("OOT_ReDead_Scream"));
             sounds.Add("refillLoop", Content.Load<SoundEffect>("LOZ_Refill_Loop"));
             sounds.Add("secret", Content.Load<SoundEffect>("LOZ_Secret"));
             sounds.Add("shield", Content.Load<SoundEffect>("LOZ_Shield"));

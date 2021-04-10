@@ -18,6 +18,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -195,6 +196,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     case "Wallmaster":
                         position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyWallmaster(game, position));
+                        break;
+                    case "Redead":
+                        position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
+                        enemies.Add(new EnemyRedead(game, position));
                         break;
 
                     default:

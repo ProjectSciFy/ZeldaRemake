@@ -1,6 +1,8 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
+using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,6 +24,19 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 
         public void Execute()
         {
+            if (enemy is EnemyRedead && ((EnemyRedead)enemy).myState.idle)
+            {
+                link.linkState.timer = 0;
+                link.linkState.Idle();
+                link.linkState.timer = 120;
+                new LinkOffset(link, true).Execute();
+                link.drawOffset.X = 0;
+                link.drawOffset.Y = 0;
+                ((EnemyRedead)enemy).myState.idle = false;
+                ((EnemyRedead)enemy).myState.shriekTimer = 360;
+                ((EnemyRedead)enemy).game.sounds["redeadScream"].CreateInstance().Play();
+            }
+
             //If link's timer has expired, set his stateMachine to be damaged
             if (link.linkState.timer <= 0)
             {

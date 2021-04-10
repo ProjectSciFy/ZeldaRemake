@@ -2,6 +2,7 @@
 using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
+using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Tiles;
@@ -121,6 +122,25 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 else if (direction == Collision.Collision.Direction.left)
                 {
                     ((EnemyStalfos)enemy).drawLocation.X = ((EnemyStalfos)enemy).drawLocation.X - ((EnemyStalfos)enemy).velocity.X;
+                }
+            }
+            else if (enemy is EnemyRedead)
+            {
+                if (direction == Collision.Collision.Direction.down)
+                {
+                    ((EnemyRedead)enemy).drawLocation.Y = ((EnemyRedead)enemy).drawLocation.Y - ((EnemyRedead)enemy).velocity.Y;
+                }
+                else if (direction == Collision.Collision.Direction.up)
+                {
+                    ((EnemyRedead)enemy).drawLocation.Y = ((EnemyRedead)enemy).drawLocation.Y - ((EnemyRedead)enemy).velocity.Y;
+                }
+                else if (direction == Collision.Collision.Direction.right)
+                {
+                    ((EnemyRedead)enemy).drawLocation.X = ((EnemyRedead)enemy).drawLocation.X - ((EnemyRedead)enemy).velocity.X;
+                }
+                else if (direction == Collision.Collision.Direction.left)
+                {
+                    ((EnemyRedead)enemy).drawLocation.X = ((EnemyRedead)enemy).drawLocation.X - ((EnemyRedead)enemy).velocity.X;
                 }
             }
         }

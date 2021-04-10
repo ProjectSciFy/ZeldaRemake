@@ -326,3 +326,15 @@
 /processorParam:TextureFormat=Color
 /build:NES - The Legend of Zelda - NPCs.png
 
+#begin OOT_ReDead_Moan.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:OOT_ReDead_Moan.wav
+
+#begin OOT_ReDead_Scream.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:OOT_ReDead_Scream.wav
+
