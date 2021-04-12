@@ -93,6 +93,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         tiles.Add(block = new BlockTile(game, new TileSpriteFactory(game), position));
                         block.drawLocation = position;
                         break;
+                    case "Stair":
+                        position = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
+                        TPTile stair;
+                        tiles.Add(stair = new TPTile(game, new TileSpriteFactory(game), position));
+                        stair.drawLocation = position;
+                        break;
                     case "Compass":
                         position = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         Compass compass;
