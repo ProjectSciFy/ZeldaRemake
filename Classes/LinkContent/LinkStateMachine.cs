@@ -104,10 +104,10 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public void Boomerang()
         {
+            useBoomerang = false;
             if (timer == 0)
             {
                 timer = 15;
-                useBoomerang = false;
                 new LinkContent.LinkScripts.LinkBoomerang(link, spriteFactory, this).Execute();
             }
         }
@@ -251,6 +251,10 @@ namespace CSE3902_Game_Sprint0.Classes
                 {
                     Boomerang();
                     boomerangCaught = false;
+                }
+                else if (useBoomerang && !boomerangCaught)
+                {
+                    useBoomerang = false;
                 }
                 else
                 {

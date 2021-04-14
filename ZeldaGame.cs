@@ -21,6 +21,7 @@ using CSE3902_Game_Sprint0.Classes.GameState;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
 using CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands;
+using CSE3902_Game_Sprint0.Classes.LittleHelper;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -40,6 +41,8 @@ namespace CSE3902_Game_Sprint0
         public LinkStateMachine linkStateMachine;
         public BombStateMachine bombStateMachine;
         public Classes.Link link;
+        public LittleHelper littleHelper;
+        public bool twoPlayer = false;
         public ProjectileHandler projectileHandler;
         public CollisionManager collisionManager;
         public List<Room> roomList;

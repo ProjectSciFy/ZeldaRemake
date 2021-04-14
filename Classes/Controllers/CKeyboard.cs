@@ -42,6 +42,7 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.D, new MoveLink(linkState, LinkStateMachine.Direction.right));
 
             keyBinds.Add(Keys.LeftShift, new RollLink(linkState));
+            keyBinds.Add(Keys.T, new TwoPlayer(game));
 
             keyBinds.Add(Keys.N, new PrimaryWeaponLink(linkState));
             keyBinds.Add(Keys.Z, new PrimaryWeaponLink(linkState));
