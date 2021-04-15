@@ -43,7 +43,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
             collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET + X_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y;
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET - X_OFFSET;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 4 * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 4 * HITBOX_OFFSET - 2;
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
         }
