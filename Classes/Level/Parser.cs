@@ -93,6 +93,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         tiles.Add(block = new BlockTile(game, new TileSpriteFactory(game), position));
                         block.drawLocation = position;
                         break;
+                    case "Pushable":
+                        position = utility.GetPushablePosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
+                        PushableTile pushable;
+                        tiles.Add(pushable = new PushableTile(game, new TileSpriteFactory(game), position));
+                        pushable.drawLocation = position;
+                        break;
                     case "Stair":
                         position = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         TPTile stair;

@@ -32,6 +32,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             return new Vector2(windowWidthFloor + xDiff, windowHeightFloor + yDiff);
         }
 
+        public Vector2 GetPushablePosition(int windowWidthFloor, int windowHeightFloor, float x, float y)
+        {
+            float xDiff = SCALE_FACTOR * x * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE;
+            float yDiff = SCALE_FACTOR * y * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE;
+            return new Vector2(windowWidthFloor + xDiff, windowHeightFloor + yDiff);
+        }
+
         public Vector2 GetHeartPosition(int windowWidthFloor, int windowHeightFloor, float x, float y)
         {
             float xDiff = SCALE_FACTOR * x * SPRITE_SIZE + SCALE_FACTOR * SPRITE_SIZE + LARGE_ADJUST;

@@ -72,7 +72,47 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     game.changeRoom(game.neighbors[game.util.roomNumber][1], direction);
                 }
             }
-            
+            if (tile is PushableTile)
+            {
+                if (((PushableTile)tile).pushed) 
+                {
+                    if (direction == Collision.Collision.Direction.down)
+                    {
+                        link.drawLocation.Y = link.drawLocation.Y - link.velocity.Y;
+                    }
+                    else if (direction == Collision.Collision.Direction.up)
+                    {
+                        link.drawLocation.Y = link.drawLocation.Y - link.velocity.Y;
+                    }
+                    else if (direction == Collision.Collision.Direction.right)
+                    {
+                        link.drawLocation.X = link.drawLocation.X - link.velocity.X;
+                    }
+                    else if (direction == Collision.Collision.Direction.left)
+                    {
+                        link.drawLocation.X = link.drawLocation.X - link.velocity.X;
+                    }
+                }
+                else
+                {
+                    if (direction is Collision.Collision.Direction.down)
+                    {
+                        new PushTileUp(game, tile).Execute();
+                    }
+                    else if (direction is Collision.Collision.Direction.up)
+                    {
+                        new PushTileDown(game, tile).Execute();
+                    }
+                    else if (direction == Collision.Collision.Direction.right)
+                    {
+                        link.drawLocation.X = link.drawLocation.X - link.velocity.X;
+                    }
+                    else if (direction == Collision.Collision.Direction.left)
+                    {
+                        link.drawLocation.X = link.drawLocation.X - link.velocity.X;
+                    }
+                }
+            }
             if (tile is WallTile && !link.linkState.isGrabbed)
             {
                 foreach (KeyValuePair<ICollisionEntity, Rectangle> entity1 in link.game.collisionManager.collisionEntities)
