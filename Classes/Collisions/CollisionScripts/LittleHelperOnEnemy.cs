@@ -30,11 +30,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 littleHelper.myState.interacting = true;
                 ((EnemyAquamentus)enemy).velocity = new Vector2(0, 0);
             }
-            else if (enemy is EnemyBladeTrap)
-            {
-                littleHelper.myState.interacting = true;
-                ((EnemyBladeTrap)enemy).velocity = new Vector2(0, 0);
-            }
             else if (enemy is EnemySlime)
             {
                 littleHelper.myState.interacting = true;
