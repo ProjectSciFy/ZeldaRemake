@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using Microsoft.Xna.Framework.Input;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
@@ -60,30 +61,33 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.Update()
         {
-            if (game.util.itemSelectSpeed < 0)
+            //if (game.util.upSelectSpeed < 0)
+            //{
+            if (!game.util.finishTransition)
             {
-                if (pHUD.hudPosition.Y == 25)
+                if (pHUD.hudPosition.Y <= 612)
                 {
-                    game.util.selectSpeed = 6;
-                } 
+                    ItemScreenPositionalUpdate(game.util.downSelectSpeed);
+                }
                 else
                 {
-                    pHUD.hudPosition.Y += game.util.itemSelectSpeed;
-                    midPos.Y += game.util.itemSelectSpeed;
-                    topPos.Y += game.util.itemSelectSpeed;
+                    //freeze graphics:
+                    game.util.downSelectSpeed = 0;
                 }
             }
+            //}
             else
             {
-                if (pHUD.hudPosition.Y >= 612)
+                if (pHUD.hudPosition.Y >= 25)
                 {
-                    game.util.selectSpeed = -6;
+                    ItemScreenPositionalUpdate(game.util.upSelectSpeed);
                 }
                 else
                 {
-                    pHUD.hudPosition.Y += game.util.itemSelectSpeed;
-                    midPos.Y += game.util.itemSelectSpeed;
-                    topPos.Y += game.util.itemSelectSpeed;
+                    //freeze graphics and go back to main game state:
+                    game.util.upSelectSpeed = 0;
+                    //set itemScreen flag to false so currentGameState goes back to mainGameState.
+                    //game.itemScreen = false;
                 }
             }
 
@@ -91,6 +95,27 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         void IGameState.UpdateCollisions()
         {
             
+        }
+
+        void ItemScreenPositionalUpdate(int speed)
+        {
+            //hud update:
+            pHUD.hudPosition.Y += speed;
+            pHUD.YellowCounterPos.Y += speed;
+            pHUD.BlueCounterPos.Y += speed;
+            pHUD.KeyCounterPos.Y += speed;
+            pHUD.digitKeyPos.Y += speed;
+            pHUD.digitBrupPos.Y += speed;
+            pHUD.digitYrupPos.Y += speed;
+            pHUD.primWeapPos.Y += speed;
+            pHUD.secWeapPos.Y += speed;
+            pHUD.heartPos.Y += speed;
+            //sprite for "Level 1" text is apart of hudPosition.Y, no need to update it manually.
+            pHUD.minimapPos.Y += speed;
+            pHUD.levelPos.Y += speed;
+            //item screen update:
+            midPos.Y += speed;
+            topPos.Y += speed;
         }
     }
 }
