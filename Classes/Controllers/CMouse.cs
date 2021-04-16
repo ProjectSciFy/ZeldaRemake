@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 namespace CSE3902_Game_Sprint0.Classes.Controllers

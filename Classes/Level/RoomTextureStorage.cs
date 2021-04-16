@@ -11,11 +11,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class RoomTextureStorage
     {
-        public ZeldaGame game;
-        private Texture2D roomSpriteSheet;
-        private static int INTERIOR_WIDTH = 192;
-        private static int INTERIOR_LENGTH = 112;
-        private static int DOOR_SIZE = 32;
+        public ZeldaGame game { get; set; }
+        private static int INTERIOR_WIDTH { get; set; } = 192;
+        private static int INTERIOR_LENGTH { get; set; } = 112;
+        private static int DOOR_SIZE { get; set; } = 32;
 
         public static Dictionary<int, Rectangle> INTERIOR_DIMENSIONS = new Dictionary<int, Rectangle>()
         {
@@ -60,9 +59,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         };
 
         public Texture2D tileSpriteSheet;
-
         public Texture2D itemSpriteSheet;
-        
+        private Texture2D roomSpriteSheet;
 
         public RoomTextureStorage(ZeldaGame game)
         {
@@ -72,9 +70,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             game.spriteSheets.TryGetValue("ItemsAndWeapons", out itemSpriteSheet);
 
         }
-
-
-
 
         public UniversalSprite getRoom(int roomNumber)
         {

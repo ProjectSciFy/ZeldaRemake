@@ -11,16 +11,16 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     class Background
     {
-        public ZeldaGame game;
-        public Vector2 drawLocationInterior;
-        public Vector2 drawLocationExterior;
-        public ISprite roominterior;
-        public ISprite roomexterior;
-        private int windowWidth;
-        private int windowHeight;
+        public ZeldaGame game { get; set; }
+        public Vector2 drawLocationInterior { get; set; }
+        public Vector2 drawLocationExterior { get; set; }
+        public ISprite roominterior { get; set; }
+        public ISprite roomexterior { get; set; }
+        private int windowWidth { get; set; }
+        private int windowHeight { get; set; }
         private Texture2D itemSpriteSheet;
-        private int roomLimiter;
-        private int drawOffset;
+        private int roomLimiter { get; set; }
+        private int drawOffset { get; set; }
         public Background(ZeldaGame game, int roomNumber)
         {
             this.game = game;

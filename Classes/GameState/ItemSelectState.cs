@@ -20,12 +20,10 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private Vector2 topPos;
         private float itemDepth = 0.4f;
         private int x, y;
-        private int counter;
 
         //player hud related variables:
         private playerHUD pHUD;
         private HudSpriteFactory hudFactory;
-        private int maxLives = 16;
         private int keyCounter;
         private int bluerupeeCounter;
         private int yellowrupeeCounter;
@@ -37,7 +35,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             mid = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(164, 42, 259, 87), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             x = game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR / ParserUtility.GEN_ADJUST - ParserUtility.GEN_ADJUST;
             y = -186;
-            counter = 1;
             midPos = new Vector2(x, y);
             topPos = new Vector2(x, y - 87 * 3);
 

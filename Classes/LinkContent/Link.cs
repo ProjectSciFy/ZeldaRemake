@@ -8,19 +8,19 @@ namespace CSE3902_Game_Sprint0.Classes
 {
     public class Link : IPlayer, ICollisionEntity
     {
-        private static int CENTER = 24;
-        private int Y_ADJUST = 0;
+        private static int CENTER { get; set; } = 24;
+        private int Y_ADJUST { get; set; } = 0;
 
-        public ZeldaGame game;
-        public LinkStateMachine linkState;
+        public ZeldaGame game { get; set; }
+        public LinkStateMachine linkState { get; set; }
         public ISprite linkSprite;
         public Vector2 drawLocation;
         public Vector2 drawOffset = new Vector2(0, 0);
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public float spriteScalar;
-        
+        public float spriteScalar { get; set; }
+
         public Link(ZeldaGame game)
         {
             this.Y_ADJUST = (game.GraphicsDevice.Viewport.Bounds.Height / 4) - 2 * CENTER;
