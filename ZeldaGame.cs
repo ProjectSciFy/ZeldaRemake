@@ -30,6 +30,7 @@ namespace CSE3902_Game_Sprint0
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
         public List<IController> controllerList = new List<IController>();
         public GameUtility util;
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();

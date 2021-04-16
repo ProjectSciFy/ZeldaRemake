@@ -43,12 +43,12 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         private int yellowOneDigit { get; set; }
         private int yellowTenDigit { get; set; }
         //digit positions:
-        public Vector2 digitKeyPos { get; set; }
-        public Vector2 digitBrupPos { get; set; }
-        public Vector2 digitYrupPos { get; set; }
-        public Vector2 YellowCounterPos { get; set; }
-        public Vector2 BlueCounterPos { get; set; }
-        public Vector2 KeyCounterPos { get; set; }
+        public Vector2 digitKeyPos;
+        public Vector2 digitBrupPos;
+        public Vector2 digitYrupPos;
+        public Vector2 YellowCounterPos;
+        public Vector2 BlueCounterPos;
+        public Vector2 KeyCounterPos; 
 
         private HudSpriteFactory HudFactory { get; set; }
 
