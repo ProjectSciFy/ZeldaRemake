@@ -31,26 +31,26 @@ namespace CSE3902_Game_Sprint0
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         public List<IController> controllerList = new List<IController>();
-        public GameUtility util;
+        public GameUtility util { get; set; }
         public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
-        public Song song;
+        public Song song { get; set; }
         public Dictionary<string, SoundEffect> sounds = new Dictionary<string, SoundEffect>();
-        public EnemySpriteFactory enemySpriteFactory;
-        public ProjectileSpriteFactory projectileSpriteFactory;
-        public HudSpriteFactory hudSpriteFactory;
-        public LinkStateMachine linkStateMachine;
-        public BombStateMachine bombStateMachine;
-        public Classes.Link link;
-        public LittleHelper littleHelper;
+        public EnemySpriteFactory enemySpriteFactory { get; set; }
+        public ProjectileSpriteFactory projectileSpriteFactory { get; set; }
+        public HudSpriteFactory hudSpriteFactory { get; set; }
+        public LinkStateMachine linkStateMachine { get; set; }
+        public BombStateMachine bombStateMachine { get; set; }
+        public Classes.Link link { get; set; }
+        public LittleHelper littleHelper { get; set; }
         public bool twoPlayer = false;
-        public ProjectileHandler projectileHandler;
-        public CollisionManager collisionManager;
-        public List<Room> roomList;
-        public Dictionary<int, int[]> neighbors;
-        public Room currentRoom;
-        public Room oldRoom;
-        public IGameState currentMainGameState;
-        public IGameState currentGameState;
+    public ProjectileHandler projectileHandler { get; set; }
+        public CollisionManager collisionManager { get; set; }
+        public List<Room> roomList { get; set; }
+        public Dictionary<int, int[]> neighbors { get; set; }
+        public Room currentRoom { get; set; }
+        public Room oldRoom { get; set; }
+        public IGameState currentMainGameState { get; set; }
+    public IGameState currentGameState { get; set; }
         public bool paused = false;
         public bool inventory = false;
 
@@ -167,16 +167,6 @@ namespace CSE3902_Game_Sprint0
             else if (!paused && currentGameState.GetType() == typeof(PauseState))
             {
                 MediaPlayer.Resume();
-                currentGameState = currentMainGameState;
-            }
-            //item select state:
-
-            if (util.selecting)
-            {
-                currentGameState = new ItemSelectState(this);
-            }
-            else if (!util.selecting && currentGameState.GetType() == typeof(ItemSelectState))
-            {
                 currentGameState = currentMainGameState;
             }
 

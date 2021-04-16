@@ -21,9 +21,9 @@ namespace CSE3902_Game_Sprint0
         public bool hasCompass;
         public bool linkInd;
         //item select state code:
-        public bool selecting;
-        public bool finishSelecting;
+        public int itemSelectSpeed;
         public int selectSpeed;
+        public bool selectMoving;
 
         public int roomNumber;
 
@@ -46,9 +46,8 @@ namespace CSE3902_Game_Sprint0
 
             //item select state code:
             // not selecting
-            selecting = false;
-            selectSpeed = 6;
-            finishSelecting = false;
+            itemSelectSpeed = 6;
+            selectMoving = false;
         }
     }
 }
