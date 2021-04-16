@@ -17,7 +17,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
         }
         public void Execute()
         {
-            game.itemScreen = true;
+            //game.itemScreen = true;
             game.util.finishTransition = !game.util.finishTransition;
             game.currentGameState = new ItemSelectState(game);
         }

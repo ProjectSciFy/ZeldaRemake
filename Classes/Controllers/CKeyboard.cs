@@ -59,7 +59,7 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.Q, new ShutDownGame(game));
             keyBinds.Add(Keys.R, new Reset(game));
             keyBinds.Add(Keys.P, new Pause(game));
-            //keyBinds.Add(Keys.I, new Select(game));
+            keyBinds.Add(Keys.I, new Select(game));
 
             keyBinds.Add(Keys.K, new GiveKeys(game));
         }

@@ -64,25 +64,27 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             {
                 if (pHUD.hudPosition.Y <= 612)
                 {
-                    ItemScreenPositionalUpdate(game.util.downSelectSpeed);
+                    ItemScreenPositionalUpdate(game.util.selectSpeed);
                 }
                 else
                 {
                     //freeze graphics:
-                    game.util.downSelectSpeed = 0;
+                    game.util.selectSpeed = 0;
                 }
             }
             //}
             else
             {
+                game.util.selectSpeed = -6;
+
                 if (pHUD.hudPosition.Y >= 25)
                 {
-                    ItemScreenPositionalUpdate(game.util.upSelectSpeed);
+                    ItemScreenPositionalUpdate(game.util.selectSpeed);
                 }
                 else
                 {
                     //freeze graphics and go back to main game state:
-                    game.util.upSelectSpeed = 0;
+                    game.util.selectSpeed = 0;
                     //set itemScreen flag to false so currentGameState goes back to mainGameState.
                     //game.itemScreen = false;
                 }
@@ -109,6 +111,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             pHUD.heartPos.Y += speed;
             //sprite for "Level 1" text is apart of hudPosition.Y, no need to update it manually.
             pHUD.minimapPos.Y += speed;
+            //pHUD.linkIndicatorPos.Y += speed; (will be tedious because I was using portions of screen that window does not see to hide the link indicator between transitions.
             pHUD.levelPos.Y += speed;
             //item screen update:
             midPos.Y += speed;

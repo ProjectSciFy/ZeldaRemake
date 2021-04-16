@@ -22,8 +22,7 @@ namespace CSE3902_Game_Sprint0
         public bool linkInd;
         //item select state code:
         public bool finishTransition;
-        public int upSelectSpeed;
-        public int downSelectSpeed;
+        public int selectSpeed;
         public bool selecting;
 
         public int roomNumber;
@@ -48,8 +47,7 @@ namespace CSE3902_Game_Sprint0
             //item select state code:
             // not selecting
             selecting = false;
-            upSelectSpeed = -6;
-            downSelectSpeed = 6;
+            selectSpeed = 6;
             finishTransition = true;
         }
     }
