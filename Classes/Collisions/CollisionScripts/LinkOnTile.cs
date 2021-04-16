@@ -13,10 +13,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class LinkOnTile : ICommand
     {
-        private Link link;
-        private ITile tile;
-        private Collision.Collision.Direction direction;
-        private ZeldaGame game;
+        private Link link { get; set; }
+        private ITile tile { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
+        private ZeldaGame game { get; set; }
         public LinkOnTile(Link link, ITile tile, Collision.Collision.Direction direction)
         {
             this.game = link.game;

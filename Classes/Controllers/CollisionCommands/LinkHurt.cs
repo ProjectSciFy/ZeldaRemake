@@ -6,8 +6,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
 {
     public class LinkHurt : ICommand
     {
-        public Link link;
-        private Collision.Collision.Direction direction;
+        public Link link { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
 
         public LinkHurt(Link link, Collision.Collision.Direction direction)
         {

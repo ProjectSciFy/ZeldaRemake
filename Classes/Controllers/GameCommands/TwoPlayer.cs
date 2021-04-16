@@ -6,7 +6,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
     public class TwoPlayer : ICommand
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
         public TwoPlayer(ZeldaGame game)
         {
             this.game = game;

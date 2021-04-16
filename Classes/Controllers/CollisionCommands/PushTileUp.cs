@@ -8,9 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
 {
     class PushTileUp :ICommand
     {
-        private ZeldaGame game;
-        private PushableTile tile;
-        private int timer;
+        private ZeldaGame game { get; set; }
+        private PushableTile tile { get; set; }
+        private int timer { get; set; }
         public PushTileUp(ZeldaGame game, ITile tile)
         {
             this.game = game;

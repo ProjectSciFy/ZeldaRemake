@@ -9,9 +9,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class LinkOnItem : ICommand
     {
-        private Link link;
-        private IItem item;
-        private Collision.Collision.Direction direction;
+        private Link link { get; set; }
+        private IItem item { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
 
         public LinkOnItem(Link link, IItem item, Collision.Collision.Direction direction)
         {

@@ -3,7 +3,7 @@
     public class Collision
     {
         public enum Direction { none, up, down, left, right };
-        private Direction direction;
+        private Direction direction { get; set; }
 
         public Collision(Direction direction)
         {

@@ -13,11 +13,11 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class ProjectileOnEnemy : ICommand
     {
-        private IEnemy enemy;
-        private IProjectile projectile;
-        private Collision.Collision.Direction direction;
-        private int arrowDamage = 1;
-        private int bombDamage = 3;
+        private IEnemy enemy { get; set; }
+        private IProjectile projectile { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
+        private int arrowDamage { get; set; } = 1;
+        private int bombDamage { get; set; } = 3;
 
         public ProjectileOnEnemy(IProjectile projectile, IEnemy enemy, Collision.Collision.Direction direction)
         {
