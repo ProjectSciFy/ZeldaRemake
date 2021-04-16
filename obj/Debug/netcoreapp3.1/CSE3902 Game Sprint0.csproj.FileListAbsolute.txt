@@ -281,3 +281,5 @@ C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\game-ove
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\game-over.xnb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Moan.xnb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Scream.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Moan.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Scream.xnb

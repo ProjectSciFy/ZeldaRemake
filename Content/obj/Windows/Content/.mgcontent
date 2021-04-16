@@ -4,48 +4,48 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/04 Labyrinth.mp3</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/04 LabyrinthLooped.mp3</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Credits.spritefont</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/game-over.jpeg</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Level 1 (Eagle).png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Arrow_Boomerang.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Bomb_Blow.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Bomb_Drop.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Boss_Hit.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Boss_Scream1.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Door_Unlock.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Enemy_Die.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Enemy_Hit.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Fanfare.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Get_Heart.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Get_Item.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Get_Rupee.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Key_Appear.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Link_Die.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Link_Hurt.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_LowHealth.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Refill_Loop.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Secret.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Shield.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Stairs.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Sword_Combined.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Sword_Shoot.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Sword_Slash.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Text.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Text_Slow.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Bosses.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Enemies.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Tileset.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Fonts.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Items &amp; Weapons.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - Link.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/NES - The Legend of Zelda - NPCs.png</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/OOT_ReDead_Moan.wav</File>
-    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/OOT_ReDead_Scream.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/04 Labyrinth.mp3</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/04 LabyrinthLooped.mp3</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/Credits.spritefont</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/game-over.jpeg</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/Level 1 (Eagle).png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Arrow_Boomerang.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Bomb_Blow.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Bomb_Drop.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Boss_Hit.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Boss_Scream1.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Door_Unlock.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Enemy_Die.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Enemy_Hit.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Fanfare.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Get_Heart.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Get_Item.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Get_Rupee.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Key_Appear.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Link_Die.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Link_Hurt.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_LowHealth.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Refill_Loop.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Secret.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Shield.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Stairs.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Sword_Combined.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Sword_Shoot.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Sword_Slash.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Text.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/LOZ_Text_Slow.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Bosses.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Enemies.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Dungeon Tileset.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Fonts.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Items &amp; Weapons.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - Link.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/NES - The Legend of Zelda - NPCs.png</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/OOT_ReDead_Moan.wav</File>
+    <File>C:/Users/Jared/source/repos/ZeldaRemake/Content/OOT_ReDead_Scream.wav</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

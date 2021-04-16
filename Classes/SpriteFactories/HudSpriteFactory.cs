@@ -18,7 +18,6 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             this.game = game;
             game.spriteSheets.TryGetValue("HUD", out hudSpriteSheet);
         }
-        //this is just the base template sprite. HUD still needs life, map, level, counters to be implemented and updated in real time.
         public UniversalSprite baseHud()
         {
             return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 260, 55), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
