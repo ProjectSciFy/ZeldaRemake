@@ -8,15 +8,15 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class BombStateMachine : IProjectileStateMachine
     {
-        private Bomb bomb;
-        private ProjectileSpriteFactory projectileSpriteFactory;
-        public ProjectileHandler projectileHandler;
-        public bool fuse = true;
+        private Bomb bomb { get; set; }
+        private ProjectileSpriteFactory projectileSpriteFactory { get; set; }
+        public ProjectileHandler projectileHandler { get; set; }
+        public bool fuse { get; set; } = true;
 
-        public int timer = 90;
+        public int timer { get; set; } = 90;
 
         public enum CurrentState { none, spawning, exploding };
-        public CurrentState currentState = CurrentState.none;
+        public CurrentState currentState { get; set; } = CurrentState.none;
 
         public BombStateMachine(Bomb bomb)
         {

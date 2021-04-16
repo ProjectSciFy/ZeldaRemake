@@ -11,17 +11,17 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public GoriyaBoomerang boomerang { get; set; }
         public EnemySpriteFactory spriteFactory { get; set; }
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none };
-        public Direction direction;
+        public Direction direction { get; set; }
         public enum CurrentState { movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW, none };
-        public CurrentState currentState;
-        public Direction returnDirection = Direction.none;
+        public CurrentState currentState { get; set; }
+        public Direction returnDirection { get; set; } = Direction.none;
         private const int RANGE = 175;
         private const int RETURN_WINDOW = 30;
         private const int DESPAWN_DISTANCE = 5;
         private const float BASE_SPEED = (float)3.0, PIVOT_SPEED = (float)2.0;
         public Boolean returning = false, newItem = true, brake = false;
-        private GoriyaBoomerangDirectionalCalulation directionalCalc;
-        private GoriyaBoomerangMovementCalculation movementCalc;
+        private GoriyaBoomerangDirectionalCalulation directionalCalc { get; set; }
+        private GoriyaBoomerangMovementCalculation movementCalc { get; set; }
 
         public GoriyaBoomerangStatemachine(GoriyaBoomerang boomerang)
         {

@@ -9,13 +9,13 @@ namespace CSE3902_Game_Sprint0.Classes.LittleHelper
 {
     public class LittleHelper : IPlayer, ICollisionEntity
     {
-        public ZeldaGame game;
-        public LittleHelperStateMachine myState;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        public LittleHelperStateMachine myState { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public float spriteScalar;
+        public float spriteScalar { get; set; }
 
         public LittleHelper(ZeldaGame game)
         {

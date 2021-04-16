@@ -11,25 +11,25 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class LinkBoomerangProjectile : IProjectile, ICollisionEntity
     {
-        private ZeldaGame game;
-        public Classes.Link link;
-        public LinkStateMachine linkState;
+        private ZeldaGame game { get; set; }
+        public Classes.Link link { get; set; }
+        public LinkStateMachine linkState { get; set; }
 
-        public LinkSpriteFactory spriteFactory;
-        public ISprite mySprite;
-        public LinkBoomerangStateMachine myState;
+        public LinkSpriteFactory spriteFactory { get; set; }
+        public ISprite mySprite { get; set; }
+        public LinkBoomerangStateMachine myState { get; set; }
         public Vector2 drawLocation;
         public Vector2 spawnLocation;
-        public Vector2 velocity = new Vector2(0, 0);
-        public Vector2 spriteSize = new Vector2(0, 0);
-        public bool newItem;
-        public Vector2 trajectory = new Vector2(0, 0);
+        public Vector2 velocity { get; set; } = new Vector2(0, 0);
+        public Vector2 spriteSize { get; set; } = new Vector2(0, 0);
+        public bool newItem { get; set; }
+        public Vector2 trajectory { get; set; } = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public bool collided = false;
-        private int boomerangTimer = 30;
-        private int soundTimer = 0;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
+        public bool collided { get; set; } = false;
+        private int boomerangTimer { get; set; } = 30;
+        private int soundTimer { get; set; } = 0;
 
         public LinkBoomerangProjectile(Link link, LinkStateMachine linkState)
         {

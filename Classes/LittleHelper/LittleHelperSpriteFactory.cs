@@ -9,10 +9,10 @@ namespace CSE3902_Game_Sprint0.Classes.LittleHelper
 {
     public class LittleHelperSpriteFactory
     {
-        private ZeldaGame game;
-        private LittleHelper littleHelper;
+        private ZeldaGame game { get; set; }
+        private LittleHelper littleHelper { get; set; }
         private Texture2D helperTexture;
-        private float littleHelperLayerDepth = 1.0f;
+        private float littleHelperLayerDepth { get; set; } = 1.0f;
         public LittleHelperSpriteFactory(LittleHelper littleHelper)
         {
             game = littleHelper.game;
