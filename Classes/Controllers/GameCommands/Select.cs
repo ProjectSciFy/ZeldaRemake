@@ -17,7 +17,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
         }
         public void Execute()
         {
-            game.util.selecting = !game.util.selecting;
+            game.currentGameState = new ItemSelectState(game);
         }
     }
 }

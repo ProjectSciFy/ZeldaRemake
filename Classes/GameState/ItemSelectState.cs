@@ -16,6 +16,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         public Room currentRoom;
         private Texture2D inventorySpriteSheet;
         private ISprite top, mid;
+        private Vector2 midPos;
+        private Vector2 topPos;
         private float itemDepth = 0.4f;
         private int x, y;
         private int counter;
@@ -36,6 +38,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             x = game.GraphicsDevice.Viewport.Width / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR / ParserUtility.GEN_ADJUST - ParserUtility.GEN_ADJUST;
             y = -186;
             counter = 1;
+            midPos = new Vector2(x, y);
+            topPos = new Vector2(x, y - 87 * 3);
 
             //player HUD:
             this.keyCounter = game.util.numKeys;
@@ -47,35 +51,42 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.Draw()
         {
-            //game.currentRoom.Draw();
-            //game.link.Draw();
-            //mid.Draw(new Vector2(x, y));
-            //top.Draw(new Vector2(x, y - 87 * 3));
-            //pHUD.Draw();
+            game.currentRoom.Draw();
+            game.link.Draw();
+            mid.Draw(midPos);
+            top.Draw(topPos);
+            pHUD.Draw();
         }
 
         void IGameState.Update()
         {
-            
-            //if (!game.util.finishSelecting)
-            //{
+            if (game.util.itemSelectSpeed < 0)
+            {
+                if (pHUD.hudPosition.Y == 25)
+                {
+                    game.util.selectSpeed = 6;
+                } 
+                else
+                {
+                    pHUD.hudPosition.Y += game.util.itemSelectSpeed;
+                    midPos.Y += game.util.itemSelectSpeed;
+                    topPos.Y += game.util.itemSelectSpeed;
+                }
+            }
+            else
+            {
+                if (pHUD.hudPosition.Y >= 612)
+                {
+                    game.util.selectSpeed = -6;
+                }
+                else
+                {
+                    pHUD.hudPosition.Y += game.util.itemSelectSpeed;
+                    midPos.Y += game.util.itemSelectSpeed;
+                    topPos.Y += game.util.itemSelectSpeed;
+                }
+            }
 
-            //    if (y == -186 && counter > 1)
-            //    {
-            //        game.util.finishSelecting = true;
-            //        counter = 1;
-            //    }
-            //    if (counter < 186)
-            //    {
-            //        y += game.util.selectSpeed;
-            //        counter++;
-            //    }
-            //    else if (counter > 186)
-            //    {
-            //        y -= game.util.selectSpeed;
-            //        counter++;
-            //    }
-            //}
         }
         void IGameState.UpdateCollisions()
         {
