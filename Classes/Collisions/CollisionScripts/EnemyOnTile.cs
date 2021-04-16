@@ -14,9 +14,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class EnemyOnTile : ICommand
     {
-        private IEnemy enemy;
-        private ITile tile;
-        private Collision.Collision.Direction direction;
+        private IEnemy enemy { get; set; }
+        private ITile tile { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
 
         public EnemyOnTile(IEnemy enemy, ITile tile, Collision.Collision.Direction direction)
         {

@@ -7,9 +7,9 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
 {
     public class LinkOffset : ICommand
     {
-        private Link link;
-        private Vector2 drawOffset;
-        private bool reverse;
+        private Link link { get; set; }
+        private Vector2 drawOffset { get; set; }
+        private bool reverse { get; set; }
         public LinkOffset(Link link, bool reverse)
         {
             this.link = link;

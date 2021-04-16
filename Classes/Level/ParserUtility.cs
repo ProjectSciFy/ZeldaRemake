@@ -7,17 +7,17 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class ParserUtility
     {
-        public static int GAME_FRAME_ADJUST = 128;
+        public static int GAME_FRAME_ADJUST { get; set; } = 128;
 
-        public static int WINDOW_X_ADJUST = 176;
-        public static int WINDOW_Y_ADJUST = 256;
-        public static int SCALE_FACTOR = 3;
-        public static int GEN_ADJUST = 2;
-        public static int SPRITE_SIZE = 16;
-        private static int BLOCK_ADJUST = 6;
-        private static int LARGE_ADJUST = 12;
-        private static int CONTAINER_ADJUST = 4;
-        private static int MID_ADJUST = 129;
+        public static int WINDOW_X_ADJUST { get; set; } = 176;
+        public static int WINDOW_Y_ADJUST { get; set; } = 256;
+        public static int SCALE_FACTOR { get; set; } = 3;
+        public static int GEN_ADJUST { get; set; } = 2;
+        public static int SPRITE_SIZE { get; set; } = 16;
+        private static int BLOCK_ADJUST { get; set; } = 6;
+        private static int LARGE_ADJUST { get; set; } = 12;
+        private static int CONTAINER_ADJUST { get; set; } = 4;
+        private static int MID_ADJUST { get; set; } = 129;
 
         private ZeldaGame game;
         public ParserUtility(ZeldaGame game)

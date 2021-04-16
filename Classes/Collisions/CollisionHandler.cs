@@ -18,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
 {
     public class CollisionHandler
     {
-        public CollisionManager collisionManager;
+        public CollisionManager collisionManager { get; set; }
 
         public CollisionHandler(CollisionManager collisionManager)
         {

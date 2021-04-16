@@ -11,11 +11,11 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 {
     class DeathState : IGameState
     {
-        private ZeldaGame game;
-        private int timer = -1;
-        private ISprite texture;
+        private ZeldaGame game { get; set; }
+        private int timer { get; set; } = -1;
+        private ISprite texture { get; set; }
         private Texture2D gameOverSpriteSheet;
-        private float itemDepth = 0.4f;
+        private float itemDepth { get; set; } = 0.4f;
         private const int HEIGHT = 60;
         private const int WIDTH = 360;
 

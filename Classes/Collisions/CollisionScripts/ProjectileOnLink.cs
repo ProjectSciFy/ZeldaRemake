@@ -8,9 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class ProjectileOnLink : ICommand
     {
-        private Link link;
-        private IProjectile projectile;
-        private Collision.Collision.Direction direction;
+        private Link link { get; set; }
+        private IProjectile projectile { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
 
         public ProjectileOnLink(IProjectile projectile, Link link, Collision.Collision.Direction direction)
         {

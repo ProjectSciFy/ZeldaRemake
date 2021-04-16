@@ -12,13 +12,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class BottomDoor : IDoor
     {
-        private ZeldaGame game;
-        private ISprite topDoorSprite;
+        private ZeldaGame game { get; set; }
+        private ISprite topDoorSprite { get; set; }
         public Vector2 position;
         private RoomTextureStorage topDoorTexture;
-        private int windowWidth;
-        private int windowHeight;
-        private int doorValue;
+        private int windowWidth { get; set; }
+        private int windowHeight { get; set; }
+        private int doorValue { get; set; }
         public BottomDoor(ZeldaGame game, RoomTextureStorage textures, int doorValue)
         {
             this.game = game;

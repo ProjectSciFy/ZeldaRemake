@@ -15,39 +15,39 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 {
     public class TransitionState : IGameState
     {
-        private ZeldaGame game;
-        private PushableTile oldTile;
-        private PushableTile nextTile;
-        private Room oldroom;
+        private ZeldaGame game { get; set; }
+        private PushableTile oldTile { get; set; }
+        private PushableTile nextTile { get; set; }
+        private Room oldroom { get; set; }
 
-        private bool foundOldTile = false;
-        private bool foundNextTile = false;
+        private bool foundOldTile { get; set; } = false;
+        private bool foundNextTile { get; set; } = false;
 
-        private Room nextroom;
-        int timer = 0;
+        private Room nextroom { get; set; }
+        private int timer { get; set; } = 0;
         private Vector2 drawLocationInteriorOld;
         private Vector2 drawLocationExteriorOld;
         private Vector2 drawLocationInteriorNext;
         private Vector2 drawLocationExteriorNext;
 
-        private ISprite roominteriorOld;
-        private ISprite roomexteriorOld;
+        private ISprite roominteriorOld { get; set; }
+        private ISprite roomexteriorOld { get; set; }
 
-        private ISprite roominteriorNext;
-        private ISprite roomexteriorNext;
+        private ISprite roominteriorNext { get; set; }
+        private ISprite roomexteriorNext { get; set; }
 
-        private ISprite topDoorOld;
-        private ISprite leftDoorOld;
-        private ISprite rightDoorOld;
-        private ISprite bottomDoorOld;
+        private ISprite topDoorOld { get; set; }
+        private ISprite leftDoorOld { get; set; }
+        private ISprite rightDoorOld { get; set; }
+        private ISprite bottomDoorOld { get; set; }
 
-        private ISprite topDoorNext;
-        private ISprite leftDoorNext;
-        private ISprite rightDoorNext;
-        private ISprite bottomDoorNext;
+        private ISprite topDoorNext { get; set; }
+        private ISprite leftDoorNext { get; set; }
+        private ISprite rightDoorNext { get; set; }
+        private ISprite bottomDoorNext { get; set; }
 
-        private ISprite oldPushableTile;
-        private ISprite nextPushableTile;
+        private ISprite oldPushableTile { get; set; }
+        private ISprite nextPushableTile { get; set; }
 
         private Vector2 drawLocationTopDoorOld;
         private Vector2 drawLocationLeftDoorOld;
@@ -61,13 +61,13 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private Vector2 drawLocationOldPushableTile;
         private Vector2 drawLocationNextPushableTile;
 
-        private int windowWidth;
-        private int windowHeight;
+        private int windowWidth { get; set; }
+        private int windowHeight { get; set; }
         private Texture2D itemSpriteSheet;
-        private int roomLimiter;
-        private int drawOffset;
-        private Collision.Collision.Direction transitionDirection;
-        private int animationSpeed = 6;
+        private int roomLimiter { get; set; }
+        private int drawOffset { get; set; }
+        private Collision.Collision.Direction transitionDirection { get; set; }
+        private int animationSpeed { get; set; } = 6;
 
         private playerHUD pHUD;
        

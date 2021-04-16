@@ -10,8 +10,8 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class HudSpriteFactory
     {
-        private ZeldaGame game;
-        private float itemDepth = .4f;
+        private ZeldaGame game { get; set; }
+        private float itemDepth { get; set; } = .4f;
         private Texture2D hudSpriteSheet;
         public HudSpriteFactory(ZeldaGame game)
         {

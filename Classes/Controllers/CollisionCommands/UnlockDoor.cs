@@ -10,7 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
 {
     public class UnlockDoor
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
         public UnlockDoor(ZeldaGame game)
         {
             this.game = game;

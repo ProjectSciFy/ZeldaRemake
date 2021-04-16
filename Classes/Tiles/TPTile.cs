@@ -11,15 +11,15 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 {
     public class TPTile : ITile, ICollisionEntity
     {
-        private ZeldaGame game;
-        private ISprite tileSprite;
-        private TileSpriteFactory tileFactory;
+        private ZeldaGame game { get; set; }
+        private ISprite tileSprite { get; set; }
+        private TileSpriteFactory tileFactory { get; set; }
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public Vector2 position;
-        public float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public Vector2 drawLocation;
-        public Vector2 spriteSize = new Vector2(16, 16);
+        public Vector2 position { get; set; }
+        public float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; } = 6;
+        public Vector2 drawLocation { get; set; }
+        public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
 
         public TPTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {

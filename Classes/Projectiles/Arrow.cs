@@ -11,18 +11,18 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class Arrow : IProjectile, ICollisionEntity
     {
-        public ZeldaGame game;
-        public ProjectileSpriteFactory projectileSpriteFactory;
-        public ProjectileHandler projectileHandler;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        public ProjectileSpriteFactory projectileSpriteFactory { get; set; }
+        public ProjectileHandler projectileHandler { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 velocity;
         public Vector2 spriteSize;
         public enum Direction { up, down, left, right};
-        public Direction direction;
-        public ArrowStateMachine myState;
+        public Direction direction { get; set; }
+        public ArrowStateMachine myState { get; set; }
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public float spriteScalar;
+        public float spriteScalar { get; set; }
 
         public Arrow(ZeldaGame game, Vector2 drawLocation, ProjectileHandler projectileHandler, Direction direction)
         {

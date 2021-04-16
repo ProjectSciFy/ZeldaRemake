@@ -10,47 +10,47 @@ namespace CSE3902_Game_Sprint0.Classes.Header
     public class playerHUD
     {
         //static sprites:
-        private ZeldaGame game;
-        private ISprite hudSprite;
-        private ISprite primWeapSprite;
-        private ISprite secWeapSprite;
-        private ISprite levelSprite;
+        private ZeldaGame game { get; set; }
+        private ISprite hudSprite { get; set; }
+        private ISprite primWeapSprite { get; set; }
+        private ISprite secWeapSprite { get; set; }
+        private ISprite levelSprite { get; set; }
 
         //heart sprite:
-        private ISprite heartSprite;
+        private ISprite heartSprite { get; set; }
 
         //counter sprites:
-        private ISprite xSprite;
-        private ISprite digit;
-        private int digitOffset;
+        private ISprite xSprite { get; set; }
+        private ISprite digit { get; set; }
+        private int digitOffset { get; set; }
 
         //background sprites:
-        private ISprite top;
-        private ISprite bottom;
-        private ISprite right;
-        private ISprite left;
+        private ISprite top { get; set; }
+        private ISprite bottom { get; set; }
+        private ISprite right { get; set; }
+        private ISprite left { get; set; }
 
         //mini-map sprites:
-        private ISprite minimap;
-        private ISprite linkIndicator;
-        private ISprite boss;
+        private ISprite minimap { get; set; }
+        private ISprite linkIndicator { get; set; }
+        private ISprite boss { get; set; }
 
         //digit sprites for counters:
-        private int keyOneDigit;
-        private int keyTenDigit;
-        private int blueOneDigit;
-        private int blueTenDigit;
-        private int yellowOneDigit;
-        private int yellowTenDigit;
+        private int keyOneDigit { get; set; }
+        private int keyTenDigit { get; set; }
+        private int blueOneDigit { get; set; }
+        private int blueTenDigit { get; set; }
+        private int yellowOneDigit { get; set; }
+        private int yellowTenDigit { get; set; }
         //digit positions:
-        public Vector2 digitKeyPos;
-        public Vector2 digitBrupPos;
-        public Vector2 digitYrupPos;
-        public Vector2 YellowCounterPos;
-        public Vector2 BlueCounterPos;
-        public Vector2 KeyCounterPos;
+        public Vector2 digitKeyPos { get; set; }
+        public Vector2 digitBrupPos { get; set; }
+        public Vector2 digitYrupPos { get; set; }
+        public Vector2 YellowCounterPos { get; set; }
+        public Vector2 BlueCounterPos { get; set; }
+        public Vector2 KeyCounterPos { get; set; }
 
-        private HudSpriteFactory HudFactory;
+        private HudSpriteFactory HudFactory { get; set; }
 
         //general hud positions:
         public Vector2 hudPosition;
@@ -62,10 +62,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 linkIndicatorPos;
         public Vector2 bossPos;
 
-        private int heartOffset;
-        private int remainingHearts;
+        private int heartOffset { get; set; }
+        private int remainingHearts { get; set; }
 
-        public float spriteScalar;
+        public float spriteScalar { get; set; }
         public Vector2 drawLocation;
 
         //top left corner coordinates of HUD:

@@ -13,9 +13,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class LittleHelperOnEnemy : ICommand
     {
-        private LittleHelper.LittleHelper littleHelper;
-        private IEnemy enemy;
-        private Collision.Collision.Direction direction;
+        private LittleHelper.LittleHelper littleHelper { get; set; }
+        private IEnemy enemy { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
         public LittleHelperOnEnemy(LittleHelper.LittleHelper littleHelper, IEnemy enemy, Collision.Collision.Direction direction)
         {
             this.littleHelper = littleHelper;

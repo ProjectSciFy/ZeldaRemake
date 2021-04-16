@@ -7,9 +7,9 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
 {
     public class LinkMoving : ICommand
     {
-        private Link link;
-        private LinkSpriteFactory spriteFactory;
-        private LinkStateMachine linkStateMachine;
+        private Link link { get; set; }
+        private LinkSpriteFactory spriteFactory { get; set; }
+        private LinkStateMachine linkStateMachine { get; set; }
 
         public LinkMoving(Link link, LinkSpriteFactory spriteFactory, LinkStateMachine linkStateMachine)
         {

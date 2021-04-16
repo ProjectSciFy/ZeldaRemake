@@ -12,18 +12,18 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class Bomb : IProjectile, ICollisionEntity
     {
-        public ZeldaGame game;
-        public ProjectileSpriteFactory projectileSpriteFactory;
-        public ProjectileHandler projectileHandler;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        public ProjectileSpriteFactory projectileSpriteFactory { get; set; }
+        public ProjectileHandler projectileHandler { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 spriteSize;
-        private BombStateMachine myState;
-        public bool exploding = false;
-        private int explosionTimer = 6;
-        private bool explosionMirror = false;
+        private BombStateMachine myState { get; set; }
+        public bool exploding { get; set; } = false;
+        private int explosionTimer { get; set; } = 6;
+        private bool explosionMirror { get; set; } = false;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public float spriteScalar;
+        public float spriteScalar { get; set; }
 
         public Bomb(ZeldaGame game, Vector2 drawLocation, ProjectileHandler projectileHandler)
         {

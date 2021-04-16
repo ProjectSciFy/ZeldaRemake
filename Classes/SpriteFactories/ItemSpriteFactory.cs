@@ -11,10 +11,10 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class ItemSpriteFactory
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
         private Texture2D itemSpriteSheet;
-        private float itemDepth = .4f;
-        private int itemLimiter = 10;
+        private float itemDepth { get; set; } = .4f;
+        private int itemLimiter { get; set; } = 10;
         
         public ItemSpriteFactory(ZeldaGame game)
         {

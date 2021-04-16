@@ -10,9 +10,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class ProjectileOnTile : ICommand
     {
-        private IProjectile projectile;
-        private ITile tile;
-        private Collision.Collision.Direction direction;
+        private IProjectile projectile { get; set; }
+        private ITile tile { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
 
         public ProjectileOnTile(IProjectile projectile, ITile tile, Collision.Collision.Direction direction)
         {

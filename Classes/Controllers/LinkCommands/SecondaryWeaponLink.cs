@@ -8,8 +8,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
     public class SecondaryWeaponLink : ICommand
     {
-        private LinkStateMachine linkState;
-        private LinkStateMachine.Weapon weaponSelected;
+        private LinkStateMachine linkState { get; set; }
+        private LinkStateMachine.Weapon weaponSelected { get; set; }
 
         public SecondaryWeaponLink(LinkStateMachine linkState)
         {

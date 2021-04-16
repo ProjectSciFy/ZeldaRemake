@@ -8,9 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class ProjectileOnLittleHelper : ICommand
     {
-        private LittleHelper.LittleHelper littleHelper;
-        private IProjectile projectile;
-        private Collision.Collision.Direction direction;
+        private LittleHelper.LittleHelper littleHelper { get; set; }
+        private IProjectile projectile { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
         public ProjectileOnLittleHelper(IProjectile projectile, LittleHelper.LittleHelper littleHelper, Collision.Collision.Direction direction)
         {
             this.littleHelper = littleHelper;

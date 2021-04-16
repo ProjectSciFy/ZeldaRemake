@@ -11,21 +11,21 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class Fireball : IProjectile, ICollisionEntity
     {
-        private ZeldaGame game;
-        private EnemyAquamentus aquamentus;
-        private AquamentusStateMachine aquamentusState;
+        private ZeldaGame game { get; set; }
+        private EnemyAquamentus aquamentus { get; set; }
+        private AquamentusStateMachine aquamentusState { get; set; }
         public EnemySpriteFactory spriteFactory { get; set; }
-        private FireballStateMachine myState;
+        private FireballStateMachine myState { get; set; }
         public ISprite mySprite { get; set; }
         private Vector2 drawLocation;
         public Vector2 velocity { get; set; }  = new Vector2(0, 0);
         public Vector2 spriteSize { get; set; }  = new Vector2(0, 0);
         public Vector2 trajectory { get; set; }
-        private bool newItem = true;
+        private bool newItem { get; set; } = true;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public bool collided = false;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
+        public bool collided { get; set; } = false;
 
         public Fireball(ZeldaGame game, EnemyAquamentus aquamentus, AquamentusStateMachine aquamentusState, Vector2 trajectory)
         {
