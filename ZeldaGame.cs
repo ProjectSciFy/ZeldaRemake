@@ -30,11 +30,11 @@ namespace CSE3902_Game_Sprint0
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        public List<IController> controllerList = new List<IController>();
+        public List<IController> controllerList { get; set; } = new List<IController>();
         public GameUtility util { get; set; }
-        public Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
+        public Dictionary<string, Texture2D> spriteSheets { get; set; } = new Dictionary<string, Texture2D>();
         public Song song { get; set; }
-        public Dictionary<string, SoundEffect> sounds = new Dictionary<string, SoundEffect>();
+        public Dictionary<string, SoundEffect> sounds { get; set; } = new Dictionary<string, SoundEffect>();
         public EnemySpriteFactory enemySpriteFactory { get; set; }
         public ProjectileSpriteFactory projectileSpriteFactory { get; set; }
         public HudSpriteFactory hudSpriteFactory { get; set; }
@@ -42,7 +42,7 @@ namespace CSE3902_Game_Sprint0
         public BombStateMachine bombStateMachine { get; set; }
         public Classes.Link link { get; set; }
         public LittleHelper littleHelper { get; set; }
-        public bool twoPlayer = false;
+        public bool twoPlayer { get; set; } = false;
     public ProjectileHandler projectileHandler { get; set; }
         public CollisionManager collisionManager { get; set; }
         public List<Room> roomList { get; set; }
@@ -51,8 +51,8 @@ namespace CSE3902_Game_Sprint0
         public Room oldRoom { get; set; }
         public IGameState currentMainGameState { get; set; }
     public IGameState currentGameState { get; set; }
-        public bool paused = false;
-        public bool inventory = false;
+        public bool paused { get; set; } = false;
+        public bool inventory { get; set; } = false;
 
         public ZeldaGame()
         {

@@ -8,18 +8,18 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
 {
     public class UniversalSprite : ISprite
     {
-        private int fpsBrakes;
-        private int frame;
-        private int frameCount;
-        private Vector2 frameGrid;
+        private int fpsBrakes { get; set; }
+        private int frame { get; set; }
+        private int frameCount { get; set; }
+        private Vector2 frameGrid { get; set; }
         private Rectangle frameIndex;
-        private Rectangle spriteIndex;
-        private SpriteBatch mySpriteBatch;
-        private Texture2D myTexture;
-        private Color color;
-        private SpriteEffects spriteEffects;
-        private int fpsLimiter;
-        private float layerDepth;
+        private Rectangle spriteIndex { get; set; }
+        private SpriteBatch mySpriteBatch { get; set; }
+        private Texture2D myTexture { get; set; }
+        private Color color { get; set; }
+        private SpriteEffects spriteEffects { get; set; }
+        private int fpsLimiter { get; set; }
+        private float layerDepth { get; set; }
 
         public UniversalSprite(ZeldaGame game, Texture2D texture, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid, int fpsLimiter, float layerDepth)
         {

@@ -11,16 +11,16 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
 {
     public class PushableTile : ITile, ICollisionEntity
     {
-        private ZeldaGame game;
-        private ISprite tileSprite;
-        private TileSpriteFactory tileFactory;
+        private ZeldaGame game { get; set; }
+        private ISprite tileSprite { get; set; }
+        private TileSpriteFactory tileFactory { get; set; }
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public float spriteScalar;
-        private static int HITBOX_OFFSET = 7;
-        private static int X_OFFSET = 6;
+        public float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; } = 7;
+        private static int X_OFFSET { get; } = 6;
         public Vector2 drawLocation;
-        public Vector2 spriteSize = new Vector2(16, 16);
-        public bool pushed;
+        public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
+        public bool pushed { get; set; }
         public PushableTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
             this.game = game;

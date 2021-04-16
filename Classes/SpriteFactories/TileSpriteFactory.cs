@@ -10,9 +10,9 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class TileSpriteFactory
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
         private Texture2D tileSpriteSheet;
-        private float tileLayerDepth = .3f;
+        private float tileLayerDepth { get; set; } = .3f;
         public TileSpriteFactory(ZeldaGame game)
         {
             this.game = game;
