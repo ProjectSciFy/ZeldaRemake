@@ -9,13 +9,12 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 {
     public class Heart : IItem, ICollisionEntity
     {
-        private ZeldaGame game;
-        private ISprite itemSprite;
-        private ItemSpriteFactory itemFactory;
+        private ZeldaGame game { get; set; }
+        private ISprite itemSprite { get; set; }
+        private ItemSpriteFactory itemFactory { get; set; }
         public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
-        public Vector2 drawLocation;
-        public float spriteScalar;
-        public Vector2 position;
+        public float spriteScalar { get; set; }
+        public Vector2 position { get; set; }
         public Heart(ZeldaGame game, ItemSpriteFactory itemFactory, Vector2 location)
         {
             this.game = game;

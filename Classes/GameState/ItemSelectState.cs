@@ -12,21 +12,21 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 {
     public class ItemSelectState : IGameState
     {
-        private ZeldaGame game;
-        public Room currentRoom;
+        private ZeldaGame game { get; set; }
+        public Room currentRoom { get; set; }
         private Texture2D inventorySpriteSheet;
         private ISprite top, mid;
         private Vector2 midPos;
         private Vector2 topPos;
-        private float itemDepth = 0.4f;
+        private float itemDepth { get; set; } = 0.4f;
         private int x, y;
 
         //player hud related variables:
-        private playerHUD pHUD;
-        private HudSpriteFactory hudFactory;
-        private int keyCounter;
-        private int bluerupeeCounter;
-        private int yellowrupeeCounter;
+        private playerHUD pHUD { get; set; }
+        private HudSpriteFactory hudFactory { get; set; }
+        private int keyCounter { get; set; }
+        private int bluerupeeCounter { get; set; }
+        private int yellowrupeeCounter { get; set; }
         public ItemSelectState(ZeldaGame game)
         {
             this.game = game;

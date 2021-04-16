@@ -7,7 +7,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 {
     public class WinState : IGameState
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
 
         public WinState(ZeldaGame game)
         {
