@@ -9,9 +9,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
 {
     public class BladeTrapTrajectoryCalc : ICommand
     {
-        private Link link;
-        private EnemyBladeTrap BladeTrap;
-        private BladeTrapStateMachine state;
+        private Link link { get; set; }
+        private EnemyBladeTrap BladeTrap { get; set; }
+        private BladeTrapStateMachine state { get; set; }
         public BladeTrapTrajectoryCalc(Link link, EnemyBladeTrap bladetrap, BladeTrapStateMachine state)
         {
             this.link = link;

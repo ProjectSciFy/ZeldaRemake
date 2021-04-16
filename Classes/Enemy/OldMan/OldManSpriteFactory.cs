@@ -10,8 +10,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
     public class OldManSpriteFactory 
     {
         private Texture2D NPCSpriteSheet;
-        private ZeldaGame game;
-        private float linkLayerDepth = 0.2f;
+        private ZeldaGame game { get; set; }
+        private float linkLayerDepth { get; set; } = 0.2f;
         public OldManSpriteFactory(ZeldaGame game)
         {
             this.game = game;

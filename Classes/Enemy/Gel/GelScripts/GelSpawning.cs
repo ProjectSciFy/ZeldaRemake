@@ -6,9 +6,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts
 {
     public class GelSpawning : ICommand
     {
-        private EnemySlime gel;
-        private GelSpriteFactory gelSpriteFactory;
-        private GelStateMachine gelStateMachine;
+        private EnemySlime gel { get; set; }
+        private GelSpriteFactory gelSpriteFactory { get; set; }
+        private GelStateMachine gelStateMachine { get; set; }
 
         public GelSpawning(EnemySlime gel, GelSpriteFactory gelSpriteFactory, GelStateMachine gelStateMachine)
         {

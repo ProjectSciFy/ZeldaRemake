@@ -9,18 +9,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
 {
     public class EnemyRedead : IEnemy, ICollisionEntity
     {
-        public ZeldaGame game;
-        public RedeadStateMachine myState;
-        public RedeadSpriteFactory enemySpriteFactory;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        public RedeadStateMachine myState { get; set; }
+        public RedeadSpriteFactory enemySpriteFactory { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public int health = 2;
-        private int hurtTimer = 0;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
+        public int health { get; set; } = 2;
+        private int hurtTimer { get; set; } = 0;
 
         public EnemyRedead(ZeldaGame game, Vector2 spawnLocation)
         {

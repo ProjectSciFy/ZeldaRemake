@@ -6,9 +6,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster.WallmasterScripts
 {
     public class WallmasterMoving : ICommand
     {
-        private EnemyWallmaster wallmaster;
-        private WallmasterSpriteFactory wallmasterSpriteFactory;
-        private WallmasterStateMachine wallmasterStateMachine;
+        private EnemyWallmaster wallmaster { get; set; }
+        private WallmasterSpriteFactory wallmasterSpriteFactory { get; set; }
+        private WallmasterStateMachine wallmasterStateMachine { get; set; }
 
         public WallmasterMoving(EnemyWallmaster wallmaster, WallmasterSpriteFactory wallmasterSpriteFactory, WallmasterStateMachine wallmasterStateMachine)
         {

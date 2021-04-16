@@ -10,19 +10,19 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 {
     public class WallmasterStateMachine : IEnemyStateMachine
     {
-        private ZeldaGame game;
-        private EnemyWallmaster wallmaster;
-        private WallmasterSpriteFactory wallmasterSpriteFactory;
+        private ZeldaGame game { get; set; }
+        private EnemyWallmaster wallmaster { get; set; }
+        private WallmasterSpriteFactory wallmasterSpriteFactory { get; set; }
 
         public enum Direction { right, up, left, down };
-        public Direction direction = Direction.up;
-        private int staging = 0;
-        public bool activating = false;
-        public bool active = false;
-        public int timer = 0;
-        private int deathTimer = 30;
+        public Direction direction { get; set; } = Direction.up;
+        private int staging { get; set; } = 0;
+        public bool activating { get; set; } = false;
+        public bool active { get; set; } = false;
+        public int timer { get; set; } = 0;
+        private int deathTimer { get; set; } = 30;
         public enum CurrentState { none, emerging, hiding, idle, movingUp, movingDown, movingLeft, movingRight, dying };
-        public CurrentState currentState = CurrentState.none;
+        public CurrentState currentState { get; set; } = CurrentState.none;
 
         public WallmasterStateMachine(EnemyWallmaster wallmaster)
         {

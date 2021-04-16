@@ -7,9 +7,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 {
     public class KeeseDying : ICommand
     {
-        private EnemyKeese keese;
-        private KeeseSpriteFactory enemySpriteFactory;
-        private KeeseStateMachine KeeseStateMachine;
+        private EnemyKeese keese { get; set; }
+        private KeeseSpriteFactory enemySpriteFactory { get; set; }
+        private KeeseStateMachine KeeseStateMachine { get; set; }
         public KeeseDying(EnemyKeese keese, KeeseSpriteFactory enemySpriteFactory, KeeseStateMachine KeeseStateMachine)
         {
             this.keese = keese;

@@ -9,17 +9,17 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class StalfosStateMachine : IEnemyStateMachine
     {
-        private ZeldaGame game;
-        private EnemyStalfos stalfos;
-        private StalfosSpriteFactory stalfosSpriteFactory;
+        private ZeldaGame game { get; set; }
+        private EnemyStalfos stalfos { get; set; }
+        private StalfosSpriteFactory stalfosSpriteFactory { get; set; }
 
         public enum Direction { right, up, left, down };
-        public Direction direction = Direction.down;
-        bool spawning = true;
-        public int timer = 0;
-        private int deathTimer = 30;
+        public Direction direction { get; set; } = Direction.down;
+        bool spawning { get; set; } = true;
+        public int timer { get; set; } = 0;
+        private int deathTimer { get; set; } = 30;
         public enum CurrentState {none, idle, movingUp, movingDown, movingLeft, movingRight, spawning, dying};
-        public CurrentState currentState = CurrentState.none;
+        public CurrentState currentState { get; set; } = CurrentState.none;
 
         public StalfosStateMachine(EnemyStalfos stalfos)
         {

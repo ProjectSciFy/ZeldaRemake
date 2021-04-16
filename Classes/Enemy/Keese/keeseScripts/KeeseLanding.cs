@@ -7,12 +7,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 {
     public class KeeseLanding : ICommand
     {
-        private float landingTurn = (float).02;
-        private EnemyKeese keese;
-        private KeeseSpriteFactory enemySpriteFactory;
-        private KeeseStateMachine KeeseStateMachine;
-        bool landing;
-        bool takeOff;
+        private float landingTurn { get; set; } = (float).02;
+        private EnemyKeese keese { get; set; }
+        private KeeseSpriteFactory enemySpriteFactory { get; set; }
+        private KeeseStateMachine KeeseStateMachine { get; set; }
+        bool landing { get; set; }
+        bool takeOff { get; set; }
         public KeeseLanding(EnemyKeese keese, KeeseSpriteFactory enemySpriteFactory, KeeseStateMachine KeeseStateMachine,
             bool landing, bool takeOff)
         {

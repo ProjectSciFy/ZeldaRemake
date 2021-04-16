@@ -9,18 +9,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
     public class EnemyKeese : IEnemy, ICollisionEntity
     {
-        public ZeldaGame game;
-        private KeeseStateMachine myState;
-        public KeeseSpriteFactory enemySpriteFactory;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        private KeeseStateMachine myState { get; set; }
+        public KeeseSpriteFactory enemySpriteFactory { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public int health = 1;
-        private int hurtTimer = 0;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
+        public int health { get; set; } = 1;
+        private int hurtTimer { get; set; } = 0;
 
         public EnemyKeese(ZeldaGame game, Vector2 spawnLocation)
         {

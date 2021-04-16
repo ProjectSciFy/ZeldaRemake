@@ -9,10 +9,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.BladeTrap
 {
     public class BladeTrapSpriteFactory
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
         private Texture2D enemySpriteSheet;
         private Texture2D linkSpriteSheet;
-        private float enemyLayerDepth = 0.2f;
+        private float enemyLayerDepth { get; set; } = 0.2f;
         public BladeTrapSpriteFactory(ZeldaGame game)
         {
             this.game = game;

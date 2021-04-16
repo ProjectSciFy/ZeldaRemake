@@ -9,10 +9,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
 {
     public class BladeTrapAttackDirection : ICommand
     {
-        private Link link;
-        private EnemyBladeTrap BladeTrap;
-        private BladeTrapStateMachine state;
-        private float speed;
+        private Link link { get; set; }
+        private EnemyBladeTrap BladeTrap { get; set; }
+        private BladeTrapStateMachine state { get; set; }
+        private float speed { get; set; }
         public BladeTrapAttackDirection(Link link, EnemyBladeTrap bladetrap, BladeTrapStateMachine state, float speed)
         {
             this.link = link;

@@ -9,23 +9,23 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
     public class KeeseStateMachine : IEnemyStateMachine
     {
-        private ZeldaGame game;
-        private EnemyKeese keese;
-        private KeeseSpriteFactory enemySpriteFactory;
+        private ZeldaGame game { get; set; }
+        private EnemyKeese keese { get; set; }
+        private KeeseSpriteFactory enemySpriteFactory { get; set; }
 
         public enum Direction { north, northEast, east, southEast, south, southWest, west, northWest };
-        public Direction direction = Direction.north;
+        public Direction direction { get; set; } = Direction.north;
         private int directionNumber = 0;
-        bool moving = false;
-        bool landing = false;
-        bool takeOff = false;
-        bool spawning = true;
-        bool spawned = false;
-        private int timer = 3;
-        private int deathTimer = 30;
-        private int directionTimer = 0;
+        bool moving { get; set; } = false;
+        bool landing { get; set; } = false;
+        bool takeOff { get; set; } = false;
+        bool spawning { get; set; } = true;
+        bool spawned { get; set; } = false;
+        private int timer { get; set; } = 3;
+        private int deathTimer { get; set; } = 30;
+        private int directionTimer { get; set; } = 0;
         public enum CurrentState { none, idle, flyingNorth, flyingNorthEast, flyingEast, flyingSouthEast, flyingSouth, flyingSouthWest, flyingWest, flyingNorthWest, landingNorth, landingNorthEast, landingEast, landingSouthEast, landingSouth, landingSouthWest, landingWest, landingNorthWest, spawning, dying };
-        public CurrentState currentState = CurrentState.none;
+        public CurrentState currentState { get; set; } = CurrentState.none;
 
         public KeeseStateMachine(EnemyKeese keese)
         {

@@ -9,16 +9,16 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 {
     public class OldManStateMachine : IEnemyStateMachine
     {
-        private ZeldaGame game;
-        private EnemyOldMan oldMan;
-        private OldManSpriteFactory enemySpriteFactory;
+        private ZeldaGame game { get; set; }
+        private EnemyOldMan oldMan { get; set; }
+        private OldManSpriteFactory enemySpriteFactory { get; set; }
 
         public enum Direction { right, up, left, down };
-        public Direction direction = Direction.down;
-        bool moving = false;
-        private int timer = 0;
+        public Direction direction { get; set; } = Direction.down;
+        bool moving { get; set; } = false;
+        private int timer { get; set; } = 0;
         public enum CurrentState { none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight };
-        public CurrentState currentState = CurrentState.none;
+        public CurrentState currentState { get; set; } = CurrentState.none;
 
         public OldManStateMachine(EnemyOldMan oldMan)
         {

@@ -8,17 +8,17 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemyBladeTrap : IEnemy, ICollisionEntity
     {
-        public ZeldaGame game;
-        private BladeTrapStateMachine myState;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        private BladeTrapStateMachine myState { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 spawnLocation;
         public Vector2 range;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
 
         public EnemyBladeTrap(ZeldaGame game, Vector2 spawnLocation, Vector2 range, Link link)
         {

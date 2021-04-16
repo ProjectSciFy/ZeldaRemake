@@ -9,18 +9,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 {
     public class EnemyWallmaster : IEnemy, ICollisionEntity
     {
-        public ZeldaGame game;
-        public WallmasterStateMachine myState;
-        public WallmasterSpriteFactory enemySpriteFactory;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        public WallmasterStateMachine myState { get; set; }
+        public WallmasterSpriteFactory enemySpriteFactory { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public int health = 3;
-        private int hurtTimer = 0;
+        public float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
+        public int health { get; set; } = 3;
+        private int hurtTimer { get; set; } = 0;
         public EnemyWallmaster(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;

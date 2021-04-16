@@ -9,15 +9,15 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class BladeTrapStateMachine
     {
-        private ZeldaGame game;
-        private EnemyBladeTrap BladeTrap;
-        public BladeTrapSpriteFactory spriteFactory;
-        private Link link;
+        private ZeldaGame game { get; set; }
+        private EnemyBladeTrap BladeTrap { get; set; }
+        public BladeTrapSpriteFactory spriteFactory { get; set; }
+        private Link link { get; set; }
         public enum Direction { right, up, left, down };
-        public Direction direction = Direction.down;
+        public Direction direction { get; set; } = Direction.down;
         public Boolean attacking = false, nested = true, returning = false, pivot = false;
         public enum CurrentState { idle, attackingUp, attackingDown, attackingRight, attackingLeft, retractingUp, retractingDown, retractingRight, retractingLeft };
-        public CurrentState currentState = CurrentState.idle;
+        public CurrentState currentState { get; set; } = CurrentState.idle;
         public const int TRAP_WIDTH = 16;
         private const float attackVelocity = (float)3.0;
         private const float returnVelocity = (float)1.5;

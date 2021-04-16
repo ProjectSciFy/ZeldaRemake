@@ -6,8 +6,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster.WallmasterScripts
 {
     public class WallmasterHiding : ICommand
     {
-        private EnemyWallmaster wallmaster;
-        private WallmasterSpriteFactory wallmasterSpriteFactory;
+        private EnemyWallmaster wallmaster { get; set; }
+        private WallmasterSpriteFactory wallmasterSpriteFactory { get; set; }
 
         public WallmasterHiding(EnemyWallmaster wallmaster, WallmasterSpriteFactory wallmasterSpriteFactory)
         {
