@@ -6,27 +6,28 @@ namespace CSE3902_Game_Sprint0
 {
     public class GameUtility
     {
-        public float spriteScalar { get; set; } = 3;
-        public float hudScalar { get; set; } = 1;
+        public enum Enemies { Stalfos, Gel, Keese, BladeTrap, Goriya, Aquamentus, Wallmaster, OldMan }
+        public float spriteScalar = 3;
+        public float hudScalar = 1;
 
         //counter variables that are displayed in HUD graphically:
-        public int numKeys { get; set; }
-        public int numBrups { get; set; }
-        public int numYrups { get; set; }
-        public int numLives { get; set; }
+        public int numKeys;
+        public int numBrups;
+        public int numYrups;
+        public int numLives;
 
         //map for HUD:
-        public bool hasMap { get; set; }
-        public bool hasCompass { get; set; }
-        public bool linkInd { get; set; }
+        public bool hasMap;
+        public bool hasCompass;
+        public bool linkInd;
         //item select state code:
-        public int itemSelectSpeed { get; set; }
-        public int selectSpeed { get; set; }
-        public bool selectMoving { get; set; }
+        public bool finishTransition;
+        public int selectSpeed;
+        public bool selecting;
 
-        public int roomNumber { get; set; }
+        public int roomNumber;
 
-        public bool keyPressedTempVariable { get; set; } = false;
+        public bool keyPressedTempVariable = false;
 
         public GameUtility()
         {
@@ -45,8 +46,9 @@ namespace CSE3902_Game_Sprint0
 
             //item select state code:
             // not selecting
-            itemSelectSpeed = 6;
-            selectMoving = false;
+            selecting = false;
+            selectSpeed = 6;
+            finishTransition = true;
         }
     }
 }
