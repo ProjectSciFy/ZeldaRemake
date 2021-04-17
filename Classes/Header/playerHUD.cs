@@ -119,7 +119,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             this.minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
             this.bossPos = new Vector2(minimapPos.X + 105, minimapPos.Y + 12);
             //makes it so the link indicator does not show on screen until mainstate is achieved:
-            this.linkIndicatorPos = new Vector2((-30), (-15));
+            this.linkIndicatorPos = new Vector2(-30, -15);
         }
 
         public void Update()
