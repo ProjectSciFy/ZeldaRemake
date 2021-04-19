@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy.Goriya;
 using CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts;
+using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
@@ -91,6 +92,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 deathTimer--;
                 if (deathTimer == 0)
                 {
+                    new DropMinorItem(goriya.game, goriya.drawLocation).Execute();
                     goriya.game.currentRoom.removeEnemy(goriya);
                 }
             }

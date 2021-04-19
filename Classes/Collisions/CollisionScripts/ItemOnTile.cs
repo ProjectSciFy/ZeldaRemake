@@ -22,9 +22,25 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         }
         public void Execute()
         {
-            if (tile is WallTile || tile is GateKeeperTile)
+            if (item is Fairy && (tile is WallTile || tile is GateKeeperTile))
             {
-                ((Fairy)item).velocity = Vector2.Negate(((Fairy)item).velocity);
+                if (direction == Collision.Collision.Direction.down)
+                {
+                    ((Fairy)item).position.Y = ((Fairy)item).position.Y - ((Fairy)item).velocity.Y;
+                }
+                else if (direction == Collision.Collision.Direction.up)
+                {
+                    ((Fairy)item).position.Y = ((Fairy)item).position.Y - ((Fairy)item).velocity.Y;
+                }
+                else if (direction == Collision.Collision.Direction.right)
+                {
+                    ((Fairy)item).position.X = ((Fairy)item).position.X - ((Fairy)item).velocity.X;
+                }
+                else if (direction == Collision.Collision.Direction.left)
+                {
+                    ((Fairy)item).position.X = ((Fairy)item).position.X - ((Fairy)item).velocity.X;
+                }
+                //((Fairy)item).velocity = Vector2.Negate(((Fairy)item).velocity);
             }
         }
     }

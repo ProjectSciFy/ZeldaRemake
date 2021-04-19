@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts;
+using CSE3902_Game_Sprint0.Classes.Items;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy
 {
@@ -94,6 +95,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
                 deathTimer--;
                 if (deathTimer == 0)
                 {
+                    new DropMinorItem(gel.game, gel.drawLocation).Execute();
                     gel.game.currentRoom.removeEnemy(gel);
                 }
             }

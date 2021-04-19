@@ -45,7 +45,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 link.game.sounds["getItem"].CreateInstance().Play();
                 link.game.ResumeMusic();
             }
-            else if (item is Key)
+            else if (item is Key || item is Heart || item is Bomb)
             {
                 link.game.sounds["getHeart"].CreateInstance().Play();
             }

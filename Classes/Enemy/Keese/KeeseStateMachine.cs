@@ -4,6 +4,7 @@ using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CSE3902_Game_Sprint0.Classes.Items;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
@@ -170,6 +171,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
                     deathTimer--;
                     if (deathTimer == 0)
                     {
+                        new DropMinorItem(keese.game, keese.drawLocation).Execute();
                         keese.game.collisionManager.collisionEntities.Remove(keese);
                         keese.game.currentRoom.removeEnemy(keese);
                     }
