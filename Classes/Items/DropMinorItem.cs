@@ -45,6 +45,10 @@ namespace CSE3902_Game_Sprint0.Classes.Items
                 // 1/100 drop fairy
                 game.currentRoom.items.Add(new Fairy(game, new SpriteFactories.ItemSpriteFactory(game), location));
             }
+            else
+            {
+                game.currentRoom.items.Add(new XP(game, new SpriteFactories.ItemSpriteFactory(game), location));
+            }
         }
     }
 }

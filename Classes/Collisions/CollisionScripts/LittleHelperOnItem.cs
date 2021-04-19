@@ -40,6 +40,11 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 littleHelper.myState.interacting = true;
                 ((Heart)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y);
             }
+            else if (item is XP)
+            {
+                littleHelper.myState.interacting = true;
+                ((XP)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y);
+            }
             else if (item is YellowRupee)
             {
                 littleHelper.myState.interacting = true;

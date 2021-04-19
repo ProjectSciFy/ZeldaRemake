@@ -32,27 +32,27 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             {
                 if (enemy is EnemyAquamentus)
                 {
-                    ((EnemyAquamentus)enemy).TakeDamage(arrowDamage);
+                    ((EnemyAquamentus)enemy).TakeDamage(arrowDamage + (((EnemyAquamentus)enemy).game.util.numXP / ((EnemyAquamentus)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemySlime)
                 {
-                    ((EnemySlime)enemy).TakeDamage(arrowDamage);
+                    ((EnemySlime)enemy).TakeDamage(arrowDamage + (((EnemySlime)enemy).game.util.numXP / ((EnemySlime)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemyGoriya)
                 {
-                    ((EnemyGoriya)enemy).TakeDamage(arrowDamage);
+                    ((EnemyGoriya)enemy).TakeDamage(arrowDamage + (((EnemyGoriya)enemy).game.util.numXP / ((EnemyGoriya)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemyKeese)
                 {
-                    ((EnemyKeese)enemy).TakeDamage(arrowDamage);
+                    ((EnemyKeese)enemy).TakeDamage(arrowDamage + (((EnemyKeese)enemy).game.util.numXP / ((EnemyKeese)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemyStalfos)
                 {
-                    ((EnemyStalfos)enemy).TakeDamage(arrowDamage);
+                    ((EnemyStalfos)enemy).TakeDamage(arrowDamage + (((EnemyStalfos)enemy).game.util.numXP / ((EnemyStalfos)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemyWallmaster)
                 {
-                    ((EnemyWallmaster)enemy).TakeDamage(arrowDamage);
+                    ((EnemyWallmaster)enemy).TakeDamage(arrowDamage + (((EnemyWallmaster)enemy).game.util.numXP / ((EnemyWallmaster)enemy).game.util.XPPerLevel));
                 }
 
                 ((Arrow)projectile).myState.hit = true;
@@ -61,59 +61,59 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             {
                 if (enemy is EnemyAquamentus)
                 {
-                    ((EnemyAquamentus)enemy).TakeDamage(bombDamage);
+                    ((EnemyAquamentus)enemy).TakeDamage(bombDamage + (((EnemyAquamentus)enemy).game.util.numXP / ((EnemyAquamentus)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemySlime)
                 {
-                    ((EnemySlime)enemy).TakeDamage(bombDamage);
+                    ((EnemySlime)enemy).TakeDamage(bombDamage + (((EnemySlime)enemy).game.util.numXP / ((EnemySlime)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemyGoriya)
                 {
-                    ((EnemyGoriya)enemy).TakeDamage(bombDamage);
+                    ((EnemyGoriya)enemy).TakeDamage(bombDamage + (((EnemyGoriya)enemy).game.util.numXP / ((EnemyGoriya)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemyKeese)
                 {
-                    ((EnemyKeese)enemy).TakeDamage(bombDamage);
+                    ((EnemyKeese)enemy).TakeDamage(bombDamage + (((EnemyKeese)enemy).game.util.numXP / ((EnemyKeese)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemyStalfos)
                 {
-                    ((EnemyStalfos)enemy).TakeDamage(bombDamage);
+                    ((EnemyStalfos)enemy).TakeDamage(bombDamage + (((EnemyStalfos)enemy).game.util.numXP / ((EnemyStalfos)enemy).game.util.XPPerLevel));
                 }
                 else if (enemy is EnemyWallmaster)
                 {
-                    ((EnemyWallmaster)enemy).TakeDamage(bombDamage);
+                    ((EnemyWallmaster)enemy).TakeDamage(bombDamage + (((EnemyWallmaster)enemy).game.util.numXP / ((EnemyWallmaster)enemy).game.util.XPPerLevel));
                 }
             }
             else if (projectile is LinkBoomerangProjectile)
             {
                 if (enemy is EnemyAquamentus)
                 {
-                    ((EnemyAquamentus)enemy).TakeDamage(arrowDamage);
+                    ((EnemyAquamentus)enemy).TakeDamage(arrowDamage + (((EnemyAquamentus)enemy).game.util.numXP / ((EnemyAquamentus)enemy).game.util.XPPerLevel));
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemySlime)
                 {
-                    ((EnemySlime)enemy).TakeDamage(arrowDamage);
+                    ((EnemySlime)enemy).TakeDamage(arrowDamage + (((EnemySlime)enemy).game.util.numXP / ((EnemySlime)enemy).game.util.XPPerLevel));
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemyGoriya)
                 {
-                    ((EnemyGoriya)enemy).TakeDamage(arrowDamage);
+                    ((EnemyGoriya)enemy).TakeDamage(arrowDamage + (((EnemyGoriya)enemy).game.util.numXP / ((EnemyGoriya)enemy).game.util.XPPerLevel));
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemyKeese)
                 {
-                    ((EnemyKeese)enemy).TakeDamage(arrowDamage);
+                    ((EnemyKeese)enemy).TakeDamage(arrowDamage + (((EnemyKeese)enemy).game.util.numXP / ((EnemyKeese)enemy).game.util.XPPerLevel));
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemyStalfos)
                 {
-                    ((EnemyStalfos)enemy).TakeDamage(arrowDamage);
+                    ((EnemyStalfos)enemy).TakeDamage(arrowDamage + (((EnemyStalfos)enemy).game.util.numXP / ((EnemyStalfos)enemy).game.util.XPPerLevel));
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
                 else if (enemy is EnemyWallmaster)
                 {
-                    ((EnemyWallmaster)enemy).TakeDamage(arrowDamage);
+                    ((EnemyWallmaster)enemy).TakeDamage(arrowDamage + (((EnemyWallmaster)enemy).game.util.numXP / ((EnemyWallmaster)enemy).game.util.XPPerLevel));
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
             }

@@ -48,6 +48,15 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             {
                 link.game.sounds["getHeart"].CreateInstance().Play();
             }
+            else if (item is XP)
+            {
+                link.game.sounds["getHeart"].CreateInstance().Play();
+                link.game.util.numXP++;
+                if (link.game.util.numXP % link.game.util.XPPerLevel == 0)
+                {
+                    link.game.sounds["fanfare"].CreateInstance().Play();
+                }
+            }
             else if (item is Boomerang || item is Compass || item is Fairy || item is HeartContainer || item is Map || item is Triforce)
             {
                 link.game.sounds["getItem"].CreateInstance().Play();
