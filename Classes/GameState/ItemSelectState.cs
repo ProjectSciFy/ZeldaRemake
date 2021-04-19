@@ -48,6 +48,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.Update()
         {
+            game.util.inSelect = true;
             pHUD = game.currentRoom.pHUD;
             if (game.util.selectSpeed < 0)
             {
@@ -58,6 +59,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 else
                 {
                     game.currentGameState = game.currentMainGameState;
+                    game.util.inSelect = false;
                 }
             }
             else
@@ -68,7 +70,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 }
                 else
                 {
-                    //don't move
+                    //dont move
                 }
             }
             foreach (IController controller in game.controllerList)
