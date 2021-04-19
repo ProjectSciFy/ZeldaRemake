@@ -48,6 +48,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.Update()
         {
+            pHUD = game.currentRoom.pHUD;
             if (game.util.selectSpeed < 0)
             {
                 if (pHUD.hudPosition.Y > 25)
