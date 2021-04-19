@@ -27,6 +27,7 @@ namespace CSE3902_Game_Sprint0
         public Vector2 midPos;
         public Vector2 topPos;
         private int x, y;
+        public bool inSelect { get; set; }
 
         public int roomNumber { get; set; }
 
@@ -59,7 +60,7 @@ namespace CSE3902_Game_Sprint0
             y = -186;
             midPos = new Vector2(x, y - 82);
             topPos = new Vector2(x, y - 87 * 3 - 120);
-
+            inSelect = false;
         }
     }
 }

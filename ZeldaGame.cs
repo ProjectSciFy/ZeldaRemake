@@ -158,7 +158,7 @@ namespace CSE3902_Game_Sprint0
                 MediaPlayer.Stop();
                 currentGameState = new DeathState(this);
             }
-            if (util.paused)
+            if (util.paused && !util.inSelect)
             {
                 MediaPlayer.Pause();
                 currentGameState = new PauseState(this);
