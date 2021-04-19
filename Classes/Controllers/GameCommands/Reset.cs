@@ -59,6 +59,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.util.numBrups = 0;
             game.util.numYrups = 0;
             game.util.hasMap = false;
+            game.util.hasCompass = false;
+            game.util.linkInd = true;
 
             //RE-PARSE ROOMS HERE
             game.collisionManager.ClearNotLink();
