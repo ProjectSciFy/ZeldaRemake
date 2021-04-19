@@ -168,26 +168,6 @@ namespace CSE3902_Game_Sprint0
                 MediaPlayer.Resume();
                 currentGameState = currentMainGameState;
             }
-            ////item select state:
-            //---------------------------------------------------------------------------------------------
-            //if (util.selecting)
-            //{
-            //    currentGameState = new ItemSelectState(this);
-            //}
-            //else if (!util.selecting && currentGameState.GetType() == typeof(ItemSelectState))
-            //{
-            //    currentGameState = currentMainGameState;
-            //}
-            //---------------------------------------------------------------------------------------------
-            //if (itemScreen)
-            //{
-            //    currentGameState = new ItemSelectState(this);
-            //}
-            //else if (!itemScreen && currentGameState.GetType() == typeof(ItemSelectState))
-            //{
-            //    currentGameState = currentMainGameState;
-            //    util.selectSpeed = 6;
-            //}
 
 
             //link indicator:

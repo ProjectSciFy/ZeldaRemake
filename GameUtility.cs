@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSE3902_Game_Sprint0.Classes.Level;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,9 +23,11 @@ namespace CSE3902_Game_Sprint0
         public bool hasCompass { get; set; }
         public bool linkInd { get; set; }
         //item select state code:
-        public bool finishTransition { get; set; }
         public int selectSpeed { get; set; }
-        public bool selecting { get; set; }
+        public Vector2 midPos;
+        public Vector2 topPos;
+        private int x, y;
+
         public int roomNumber { get; set; }
 
         public bool keyPressedTempVariable { get; set; } = false;
@@ -50,9 +54,12 @@ namespace CSE3902_Game_Sprint0
 
             //item select state code:
             // not selecting
-            selecting = false;
-            selectSpeed = 6;
-            finishTransition = true;
+            selectSpeed = -6;
+            x = 128;
+            y = -186;
+            midPos = new Vector2(x, y - 82);
+            topPos = new Vector2(x, y - 87 * 3 - 120);
+
         }
     }
 }

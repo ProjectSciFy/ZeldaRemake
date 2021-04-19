@@ -217,10 +217,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             hudSprite.Draw(hudPosition);
             primWeapSprite.Draw(primWeapPos);
             secWeapSprite.Draw(secWeapPos);
-            levelSprite.Draw(levelPos);
             xSprite.Draw(KeyCounterPos);
             xSprite.Draw(YellowCounterPos);
             xSprite.Draw(BlueCounterPos);
+            levelSprite.Draw(levelPos);
 
             //Lives Graphical Displays:
 
@@ -311,18 +311,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             if (this.game.util.hasMap)
             {
                 minimap.Draw(minimapPos);
-                if (this.game.util.linkInd)
-                {
-                    linkIndicator.Draw(linkIndicatorPos);
-                }
             }
-            else
-            {
-                if (this.game.util.linkInd)
-                {
-                    linkIndicator.Draw(linkIndicatorPos);
-                }
-            }
+            linkIndicator.Draw(linkIndicatorPos);
             //---------------------------------------------------------
             //compass showing location of aquamentus:
             if (this.game.util.hasCompass)
@@ -330,25 +320,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                 boss.Draw(bossPos);
             }
             //---------------------------------------------------------
-        }
-
-        public void SlideUp()
-        {
-            //draw HUD
-            //this.Draw();
-            //update hudPosition.Y
-            //this.hudPosition.Y -= game.util.selectSpeed;
-        }
-
-        public void SlideDown()
-        {
-            //draw HUD
-            //this.Draw();
-            //update hudPosition.Y
-            //if (hudPosition.Y < 500)
-            //{
-            //    hudPosition.Y += game.util.selectSpeed;
-            //}
         }
     }
 }

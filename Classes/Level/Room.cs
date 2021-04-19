@@ -32,7 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private ZeldaGame game { get; set; }
 
         //player hud related variables:
-        private playerHUD pHUD { get; set; }
+        public playerHUD pHUD { get; set; }
         private HudSpriteFactory hudFactory { get; set; }
         private int maxLives { get; set; } = 16;
         private int keyCounter { get; set; }
