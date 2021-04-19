@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Graphics;
         }
         public void Execute()
         {
-            game.paused = !game.paused;
+            game.util.paused = !game.util.paused;
         }
     }
 }
