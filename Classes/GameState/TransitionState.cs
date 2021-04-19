@@ -114,12 +114,36 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             int oldRoomNumber = this.oldroom.getRoomNumber();
             roominteriorOld = roomTextures.getRoom(oldRoomNumber);
-            roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
 
             int nextRoomNumber = nextroom.getRoomNumber();
             roominteriorNext = roomTextures.getRoom(nextRoomNumber);
 
             roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+
+            if (this.oldroom.getRoomNumber() == 16)
+            {
+                roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                drawLocationInteriorOld = drawLocationInteriorOld - new Vector2(0, 33);
+                roominteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                //drawLocationExterior = drawLocationExterior - new Vector2(0, 13 * 3);
+            }
+            else
+            {
+                roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            }
+
+            if (this.nextroom.getRoomNumber() == 16)
+            {
+                roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                drawLocationInteriorNext = drawLocationInteriorNext - new Vector2(0, 33);
+                roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            }
+            else
+            {
+                roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            }
+            //roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+
 
             drawLocationTopDoorOld = new Vector2(windowWidthFloor + 112 * ParserUtility.SCALE_FACTOR, windowHeightFloor);
             drawLocationLeftDoorOld = new Vector2(windowWidthFloor, windowHeightFloor + 72 * ParserUtility.SCALE_FACTOR);
@@ -202,6 +226,17 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             {
                 game.currentGameState = game.currentMainGameState;
                 game.util.keyPressedTempVariable = false;
+                if(game.util.roomNumber == 17) { 
+                    game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
+                    game.link.SetLocation(new Vector2(windowWidthFloor + (112-24) * ParserUtility.SCALE_FACTOR + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (144-34) * ParserUtility.SCALE_FACTOR));
+                    goto Skip;
+                }
+                else if(game.util.roomNumber == 16)
+                {
+                    game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
+                    game.link.SetLocation(new Vector2(windowWidthFloor + (112-70) * 3 + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (-8 * 3) + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR));
+                    goto Skip;
+                }
                 switch (transitionDirection)
                 {
                     case Collision.Collision.Direction.up:
@@ -224,7 +259,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             }
 
 
-
+            Skip:
             Vector2 animationShift = new Vector2(0, 0);
 
             switch (transitionDirection)

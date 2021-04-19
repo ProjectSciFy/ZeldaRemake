@@ -21,8 +21,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private Texture2D itemSpriteSheet;
         private int roomLimiter;
         private int drawOffset;
+        private int roomNumber;
         public Background(ZeldaGame game, int roomNumber)
         {
+            this.roomNumber = roomNumber;
             this.game = game;
             RoomTextureStorage roomTextures = new RoomTextureStorage(this.game);
             game.spriteSheets.TryGetValue("DungeonTileset", out itemSpriteSheet);
@@ -40,14 +42,27 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             drawLocationExterior = new Vector2(windowWidthFloor, windowHeightFloor);
 
             roominterior = roomTextures.getRoom(roomNumber);
-            roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter,0.0f);
+            if(roomNumber == 16)
+            {
+                roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            }
+            else
+            {
+                roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            }
+            
 
             
         }
         public void Draw()
         {
             roomexterior.Draw(drawLocationExterior);
-            roominterior.Draw(drawLocationInterior);
+            if(roomNumber != 16)
+            {
+                roominterior.Draw(drawLocationInterior);
+            }
+           
         }
     }
 }

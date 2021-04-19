@@ -213,7 +213,14 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             string cwdPath = Directory.GetCurrentDirectory();
             cwdPath = Directory.GetCurrentDirectory();
             cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
-            cwdPath = Path.Combine(cwdPath, "walls.csv");
+            if(roomNumber == 16)
+            {
+                cwdPath = Path.Combine(cwdPath, "walls16.csv");
+            }
+            else
+            {
+                cwdPath = Path.Combine(cwdPath, "walls.csv");
+            }
             string[] lines = System.IO.File.ReadAllLines(cwdPath);
             lines = System.IO.File.ReadAllLines(cwdPath);
             Vector2 wallPos = new Vector2(0, 0);
@@ -238,6 +245,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             lines = System.IO.File.ReadAllLines(cwdPath);
             Vector2 wallPos = new Vector2(0, 0);
             Vector2 stairPos = new Vector2(0, 0);
+            Vector2 tpPos = new Vector2(0, 0);
             GateKeeperTile gatekeeper;
             StairsTile stair;
             bool locked;
@@ -266,7 +274,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 case 0:
                     doors.Add(new TopDoor(game, new RoomTextureStorage(game), doorvalue));
-
                     wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 6, 0);
 
                     tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked, isLockedDoor));
@@ -276,9 +283,29 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked, isLockedDoor));
                     gatekeeper.drawLocation = wallPos;
 
-                    stairPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 6, 0);
-                    tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
-                    stair.drawLocation = stairPos;
+                    if(roomNumber == 16)
+                    {
+                        tpPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 1, -1);
+                        tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), tpPos));
+                        stair.drawLocation = tpPos;
+                        wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 2, -1);
+                        tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, false, false));
+                        gatekeeper.drawLocation = wallPos;
+
+                    }
+                    else if (roomNumber == 17){
+                        tpPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 6, 5);
+                        tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), tpPos));
+                        stair.drawLocation = tpPos;
+
+                    }
+                    else
+                    {
+                        stairPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 6, 0);
+                        tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
+                        stair.drawLocation = stairPos;
+                    }
+
                     break;
                 case 1: //4,0 4,13
                     doors.Add(new LeftDoor(game, new RoomTextureStorage(game), doorvalue));
@@ -319,6 +346,17 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
                     stair.drawLocation = stairPos;
                     break;
+                case 5:
+                    //TopDoor Room16Door = new TopDoor(game, new RoomTextureStorage(game), doorvalue);
+                    //Room16Door.position = Room16Door.position - new Vector2(0, 8 * 3 * 4 * 5);
+                    //Room16Door.position = new Vector2(0, 0);
+                    //Room16Door.changePosition(new Vector2(0, 0));
+                    //doors.Add(Room16Door);
+
+
+                    //wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 0, 1);
+                    break;
+
                 default:
                     break;
             }

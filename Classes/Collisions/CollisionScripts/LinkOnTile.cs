@@ -26,6 +26,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         }
         public void Execute()
         {
+            if((tile is TPTile))
+            {
+                game.changeRoom(16, Collision.Collision.Direction.left);
+            }
             if ((tile is BlockTile || tile is WallTile || (tile is GateKeeperTile && ((GateKeeperTile)tile).locked == true)) && !link.linkState.isGrabbed)
             {
                 if(tile is GateKeeperTile && ((GateKeeperTile)tile).isLockedDoor == true && game.util.numKeys > 0)
@@ -55,7 +59,15 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             }
             if (tile is StairsTile && !link.linkState.isGrabbed)
             {
-                if (direction == Collision.Collision.Direction.down && !game.util.keyPressedTempVariable)
+                if (game.util.roomNumber == 16 && !game.util.keyPressedTempVariable)
+                {
+                    game.changeRoom(game.neighbors[game.util.roomNumber][0], Collision.Collision.Direction.right);
+                }
+                else if (game.util.roomNumber == 17 && !game.util.keyPressedTempVariable)
+                {
+                    game.changeRoom(16, Collision.Collision.Direction.left);
+                }
+                else if (direction == Collision.Collision.Direction.down && !game.util.keyPressedTempVariable)
                 {
                     game.changeRoom(game.neighbors[game.util.roomNumber][3], direction);
                 }
