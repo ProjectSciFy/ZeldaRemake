@@ -24,12 +24,12 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
     public class Reset : ICommand
     {
-        private static int CENTER = 24;
-        private int Y_ADJUST = 0;
+        private static int CENTER { get; set; } = 24;
+        private int Y_ADJUST { get; set; } = 0;
 
-        private ZeldaGame game;
-        private LinkStateMachine linkState;
-        private LinkStateMachine.Direction direction;
+        private ZeldaGame game { get; set; }
+        private LinkStateMachine linkState { get; set; }
+        private LinkStateMachine.Direction direction { get; set; }
 
         private Vector2 linkLocation;
 
@@ -59,6 +59,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.util.numBrups = 0;
             game.util.numYrups = 0;
             game.util.hasMap = false;
+            game.util.hasCompass = false;
+            game.util.linkInd = true;
 
             //RE-PARSE ROOMS HERE
             game.collisionManager.ClearNotLink();

@@ -8,8 +8,8 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
 {
     public class MoveLink : ICommand
     {
-        private LinkStateMachine linkState;
-        private LinkStateMachine.Direction direction;
+        private LinkStateMachine linkState { get; set; }
+        private LinkStateMachine.Direction direction { get; set; }
 
         public MoveLink(LinkStateMachine linkState, LinkStateMachine.Direction direction)
         {

@@ -10,11 +10,11 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class ProjectileSpriteFactory
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
         private Texture2D bossSpriteSheet;
         private Texture2D enemySpriteSheet;
         private Texture2D linkSpriteSheet;
-        private float projectileLayerDepth = .5f;
+        private float projectileLayerDepth { get; set; } = .5f;
 
         public ProjectileSpriteFactory(ZeldaGame game)
         {

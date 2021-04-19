@@ -8,8 +8,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 {
    public class MainState : IGameState
     {
-        public ZeldaGame game;
-        public Room currentRoom;
+        public ZeldaGame game { get; set; }
+        public Room currentRoom { get; set; }
         public MainState(ZeldaGame game, Room room)
         {
             this.game = game;
@@ -23,6 +23,10 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             currentRoom.Draw();
 
             game.link.Draw();
+            if (game.twoPlayer)
+            {
+                game.littleHelper.Draw();
+            }
 
             game.projectileHandler.Draw();
         }
@@ -36,6 +40,10 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         public void Update()
         {
             game.link.Update();
+            if (game.twoPlayer)
+            {
+                game.littleHelper.Update();
+            }
 
             currentRoom.Update();
 

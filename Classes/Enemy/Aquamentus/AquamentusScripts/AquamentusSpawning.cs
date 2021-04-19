@@ -6,9 +6,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus.AquamentusScripts
 {
     public class AquamentusSpawning : ICommand
     {
-        private EnemyAquamentus aquamentus;
-        private AquamentusSpriteFactory aquaSpriteFactory;
-        private AquamentusStateMachine aquaStateMachine;
+        private EnemyAquamentus aquamentus { get; set; }
+        private AquamentusSpriteFactory aquaSpriteFactory { get; set; }
+        private AquamentusStateMachine aquaStateMachine { get; set; }
         public AquamentusSpawning(EnemyAquamentus aquamentus, AquamentusSpriteFactory aquaSpriteFactory, AquamentusStateMachine aquaStateMachine)
         {
             this.aquamentus = aquamentus;

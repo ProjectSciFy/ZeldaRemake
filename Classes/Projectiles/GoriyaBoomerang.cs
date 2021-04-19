@@ -11,22 +11,22 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class GoriyaBoomerang : IProjectile, ICollisionEntity
     {
-        private ZeldaGame game;
-        public EnemyGoriya goriya;
-        public GoriyaStateMachine goriyaState;
-        public EnemySpriteFactory spriteFactory;
-        public ISprite mySprite;
-        public GoriyaBoomerangStatemachine myState;
+        private ZeldaGame game { get; set; }
+        public EnemyGoriya goriya { get; set; }
+        public GoriyaStateMachine goriyaState { get; set; }
+        public EnemySpriteFactory spriteFactory { get; set; }
+        public ISprite mySprite { get; set; }
+        public GoriyaBoomerangStatemachine myState { get; set; }
         public Vector2 drawLocation;
         public Vector2 SpawnLocation;
-        public Vector2 velocity = new Vector2 (0,0);
-        public Vector2 spriteSize = new Vector2(16, 16);
-        public bool newItem;
-        public Vector2 trajectory = new Vector2(0, 0);
+        public Vector2 velocity { get; set; } = new Vector2 (0,0);
+        public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
+        public bool newItem { get; set; }
+        public Vector2 trajectory { get; set; } = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public bool collided = false;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
+        public bool collided { get; set; } = false;
 
         public GoriyaBoomerang(ZeldaGame game, EnemyGoriya goriya, GoriyaStateMachine goriyaState)
         {

@@ -16,20 +16,16 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemySpriteFactory
     {
-        private ZeldaGame game;
-        private EnemyStalfos stalfos;
-        private IEnemy enemy;
+        private ZeldaGame game { get; set; }
         private Texture2D bossSpriteSheet;
         private Texture2D enemySpriteSheet;
         private Texture2D linkSpriteSheet;
         private Texture2D NPCSpriteSheet;
-        private float linkLayerDepth = 0.2f;
+        private float linkLayerDepth { get; set; } = 0.2f;
 
         // fps limiters:
-        private int spawningLimiter = 30;
-        private int enemyLimiter = 10;
-        private int fireballLimiter = 5;
-        private int wallmasterLimiter = 20;
+        private int enemyLimiter { get; set; } = 10;
+        private int fireballLimiter { get; set; } = 5;
 
         public EnemySpriteFactory(ZeldaGame game)
         {

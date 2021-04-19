@@ -10,21 +10,21 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class EnemyGoriya : IEnemy, ICollisionEntity
     {
-        public ZeldaGame game;
-        public GoriyaStateMachine myState;
+        public ZeldaGame game { get; set; }
+        public GoriyaStateMachine myState { get; set; }
         public GoriyaSpriteFactory spriteFactory { get; protected set; }
         public Vector2 drawLocation;
         public Vector2 velocity;
         public Vector2 spriteSize = new Vector2(16, 16);
-        public GoriyaBoomerang boomerang;
-        public ISprite mySprite;
+        public GoriyaBoomerang boomerang { get; set; }
+        public ISprite mySprite { get; set; }
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public int health = 2;
-        private int hurtTimer = 0;
-        private int timer = 0;
-        public bool throwing = false;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
+        public int health { get; set; } = 2;
+        private int hurtTimer { get; set; } = 0;
+        private int timer { get; set; } = 0;
+        public bool throwing { get; set; } = false;
 
         public EnemyGoriya(ZeldaGame game, Vector2 spawnLocation)
         {

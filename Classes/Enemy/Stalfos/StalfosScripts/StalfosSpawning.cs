@@ -7,9 +7,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts
 {
     public class StalfosSpawning : ICommand
     {
-        private EnemyStalfos stalfos;
-        private StalfosSpriteFactory spriteFactory;
-        private StalfosStateMachine stalfosStateMachine;
+        private EnemyStalfos stalfos { get; set; }
+        private StalfosSpriteFactory spriteFactory { get; set; }
+        private StalfosStateMachine stalfosStateMachine { get; set; }
 
         public StalfosSpawning(EnemyStalfos stalfos, StalfosSpriteFactory spriteFactory, StalfosStateMachine stalfosStateMachine)
         {

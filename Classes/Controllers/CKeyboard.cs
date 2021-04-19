@@ -15,13 +15,13 @@ namespace CSE3902_Game_Sprint0
 {
     public class CKeyboard : IController
     {
-        private LinkStateMachine linkState;
-        private BombStateMachine bombState;
+        private LinkStateMachine linkState { get; set; }
+        private BombStateMachine bombState { get; set; }
         Dictionary<Keys, ICommand> keyBinds = new Dictionary<Keys, ICommand>();
         HashSet<Keys> heldKeys = new HashSet<Keys>();
         Dictionary<Keys, int> movementKeys = new Dictionary<Keys, int>();
-        private ZeldaGame game;
-       
+        private ZeldaGame game { get; set; }
+
         public CKeyboard(ZeldaGame game)
         {
 
@@ -42,6 +42,7 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.D, new MoveLink(linkState, LinkStateMachine.Direction.right));
 
             keyBinds.Add(Keys.LeftShift, new RollLink(linkState));
+            keyBinds.Add(Keys.T, new TwoPlayer(game));
 
             keyBinds.Add(Keys.N, new PrimaryWeaponLink(linkState));
             keyBinds.Add(Keys.Z, new PrimaryWeaponLink(linkState));
@@ -58,7 +59,7 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.Q, new ShutDownGame(game));
             keyBinds.Add(Keys.R, new Reset(game));
             keyBinds.Add(Keys.P, new Pause(game));
-            //keyBinds.Add(Keys.I, new Select(game));
+            keyBinds.Add(Keys.I, new Select(game));
 
             keyBinds.Add(Keys.K, new GiveKeys(game));
         }

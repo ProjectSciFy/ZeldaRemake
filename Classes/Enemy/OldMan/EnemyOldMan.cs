@@ -9,15 +9,15 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 {
     public class EnemyOldMan : IEnemy, ICollisionEntity
     {
-        public ZeldaGame game;
-        private OldManStateMachine myState;
-        public OldManSpriteFactory enemySpriteFactory;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        private OldManStateMachine myState { get; set; }
+        public OldManSpriteFactory enemySpriteFactory { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(16, 16);
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
         public EnemyOldMan(ZeldaGame game, Vector2 spawnLocation)

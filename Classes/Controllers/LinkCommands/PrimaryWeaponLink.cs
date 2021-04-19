@@ -8,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
     public class PrimaryWeaponLink : ICommand
     {
-        private LinkStateMachine linkState;
+        private LinkStateMachine linkState { get; set; }
 
         public PrimaryWeaponLink(LinkStateMachine linkState)
         {

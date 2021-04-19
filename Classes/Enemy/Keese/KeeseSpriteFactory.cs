@@ -9,10 +9,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
     public class KeeseSpriteFactory
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
         private Texture2D enemySpriteSheet;
         private Texture2D linkSpriteSheet;
-        private float linkLayerDepth = 0.2f;
+        private float linkLayerDepth { get; set; } = 0.2f;
         public KeeseSpriteFactory(ZeldaGame game)
         {
             this.game = game;

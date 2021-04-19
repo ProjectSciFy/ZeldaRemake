@@ -9,16 +9,14 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 {
     public class Fairy : IItem, ICollisionEntity
     {
-        private ZeldaGame game;
-        private ISprite itemSprite;
-        private ItemSpriteFactory itemFactory;
+        private ZeldaGame game { get; set; }
+        private ISprite itemSprite { get; set; }
+        private ItemSpriteFactory itemFactory { get; set; }
         public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
         public Vector2 position;
-        public float spriteScalar;
-        public Vector2 drawLocation;
+        public float spriteScalar { get; set; }
         public Vector2 velocity = new Vector2(0, 0);
-        private int timer = 0;
-        private int direction = 0;
+        private int timer { get; set; } = 0;
 
         public Fairy(ZeldaGame game, ItemSpriteFactory itemFactory, Vector2 location)
         {

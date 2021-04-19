@@ -24,20 +24,20 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class Room
     {
-        private Background background;
+        private Background background { get; set; }
         private List<ITile> tiles;
         private List<IItem> items;
         private List<IEnemy> enemies;
         private List<IDoor> doors;
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
 
         //player hud related variables:
-        private playerHUD pHUD;
-        private HudSpriteFactory hudFactory;
-        private int maxLives = 16;
-        private int keyCounter;
-        private int bluerupeeCounter;
-        private int yellowrupeeCounter;
+        public playerHUD pHUD { get; set; }
+        private HudSpriteFactory hudFactory { get; set; }
+        private int maxLives { get; set; } = 16;
+        private int keyCounter { get; set; }
+        private int bluerupeeCounter { get; set; }
+        private int yellowrupeeCounter { get; set; }
 
 
         public int roomNumber;

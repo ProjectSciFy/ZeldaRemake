@@ -12,17 +12,15 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public LinkBoomerangProjectile boomerang { get; set; }
         public LinkSpriteFactory spriteFactory { get; set; }
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none }; // NE = North East
-        public Direction direction = Direction.down;
-        public enum CurrentState { movingUp, movingDown, movingLeft, movingRight, movingNE, movingSE, movingSW, movingNW, none };
-        public CurrentState currentState;
-        public Direction returnDirection;
+        public Direction direction { get; set; } = Direction.down;
+        public Direction returnDirection { get; set; }
         private const int RANGE = 175;
         private const int RETURN_WINDOW = 30;
         private const int DESPAWN_DISTANCE = 5;
         private const float BASE_SPEED = (float)3, PIVOT_SPEED = (float) 2.0;
         public Boolean returning = false, newItem = true, brake = false;
-        private LinkBoomerangDirectionCalculation directionCalc;
-        private LinkBoomerangMovementCalculation movementCalc;
+        private LinkBoomerangDirectionCalculation directionCalc { get; set; }
+        private LinkBoomerangMovementCalculation movementCalc { get; set; }
         public LinkBoomerangStateMachine(LinkBoomerangProjectile boomerang)
         {
             this.boomerang = boomerang;

@@ -8,36 +8,46 @@ using System.Text;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.Doors;
 using CSE3902_Game_Sprint0.Classes.Header;
+using CSE3902_Game_Sprint0.Classes.Tiles;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
     public class TransitionState : IGameState
     {
-        private ZeldaGame game;
-        private Room oldroom;
+        private ZeldaGame game { get; set; }
+        private PushableTile oldTile { get; set; }
+        private PushableTile nextTile { get; set; }
+        private Room oldroom { get; set; }
 
-        private Room nextroom;
-        int timer = 0;
+        private bool foundOldTile { get; set; } = false;
+        private bool foundNextTile { get; set; } = false;
+
+        private Room nextroom { get; set; }
+        private int timer { get; set; } = 0;
         private Vector2 drawLocationInteriorOld;
         private Vector2 drawLocationExteriorOld;
         private Vector2 drawLocationInteriorNext;
         private Vector2 drawLocationExteriorNext;
 
-        private ISprite roominteriorOld;
-        private ISprite roomexteriorOld;
+        private ISprite roominteriorOld { get; set; }
+        private ISprite roomexteriorOld { get; set; }
 
-        private ISprite roominteriorNext;
-        private ISprite roomexteriorNext;
+        private ISprite roominteriorNext { get; set; }
+        private ISprite roomexteriorNext { get; set; }
 
-        private ISprite topDoorOld;
-        private ISprite leftDoorOld;
-        private ISprite rightDoorOld;
-        private ISprite bottomDoorOld;
+        private ISprite topDoorOld { get; set; }
+        private ISprite leftDoorOld { get; set; }
+        private ISprite rightDoorOld { get; set; }
+        private ISprite bottomDoorOld { get; set; }
 
-        private ISprite topDoorNext;
-        private ISprite leftDoorNext;
-        private ISprite rightDoorNext;
-        private ISprite bottomDoorNext;
+        private ISprite topDoorNext { get; set; }
+        private ISprite leftDoorNext { get; set; }
+        private ISprite rightDoorNext { get; set; }
+        private ISprite bottomDoorNext { get; set; }
+
+        private ISprite oldPushableTile { get; set; }
+        private ISprite nextPushableTile { get; set; }
 
         private Vector2 drawLocationTopDoorOld;
         private Vector2 drawLocationLeftDoorOld;
@@ -48,13 +58,16 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private Vector2 drawLocationRightDoorNext;
         private Vector2 drawLocationBottomDoorNext;
 
-        private int windowWidth;
-        private int windowHeight;
+        private Vector2 drawLocationOldPushableTile;
+        private Vector2 drawLocationNextPushableTile;
+
+        private int windowWidth { get; set; }
+        private int windowHeight { get; set; }
         private Texture2D itemSpriteSheet;
-        private int roomLimiter;
-        private int drawOffset;
-        private Collision.Collision.Direction transitionDirection;
-        private int animationSpeed = 6;
+        private int roomLimiter { get; set; }
+        private int drawOffset { get; set; }
+        private Collision.Collision.Direction transitionDirection { get; set; }
+        private int animationSpeed { get; set; } = 6;
 
         private playerHUD pHUD;
        
@@ -65,7 +78,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             this.oldroom = oldroom;
             this.nextroom = nextroom;
             timer = 128;
-
 
             RoomTextureStorage roomTextures = new RoomTextureStorage(this.game);
             game.spriteSheets.TryGetValue("DungeonTileset", out itemSpriteSheet);
@@ -195,6 +207,37 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 }
             }
 
+            foreach (ITile tile in oldroom.getTiles())
+            {
+                if (tile.GetType() == typeof(PushableTile))
+                {
+                    this.oldTile = (PushableTile)tile;
+                    foundOldTile = true;
+                }
+            }
+
+            foreach (ITile tile in nextroom.getTiles())
+            {
+                if (tile.GetType() == typeof(PushableTile))
+                {
+                    this.nextTile = (PushableTile)tile;
+                    foundNextTile = true;
+                }
+            }
+
+            if (foundOldTile)
+            {
+                oldTile.pushed = false;
+                drawLocationOldPushableTile = oldTile.drawLocation;
+                oldPushableTile = new UniversalSprite(game, itemSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            }
+            if (foundNextTile)
+            {
+                drawLocationNextPushableTile = nextTile.drawLocation + newRoomShift;
+                nextTile.pushed = false;
+                nextPushableTile = new UniversalSprite(game, itemSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            }
+            
         }
 
         public void Draw()
@@ -211,6 +254,14 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             leftDoorNext.Draw(drawLocationLeftDoorNext);
             rightDoorNext.Draw(drawLocationRightDoorNext);
             bottomDoorNext.Draw(drawLocationBottomDoorNext);
+            if (foundOldTile)
+            {
+                oldPushableTile.Draw(drawLocationOldPushableTile);
+            }
+            if (foundNextTile)
+            {
+                nextPushableTile.Draw(drawLocationNextPushableTile);
+            }
             pHUD.Draw();
         }
         public void UpdateCollisions()
@@ -294,6 +345,14 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             drawLocationRightDoorNext = drawLocationRightDoorNext + animationShift;
             drawLocationBottomDoorNext = drawLocationBottomDoorNext + animationShift;
 
+            if (foundOldTile)
+            {
+                drawLocationOldPushableTile = drawLocationOldPushableTile + animationShift;
+            }
+            if (foundNextTile)
+            {
+                drawLocationNextPushableTile = drawLocationNextPushableTile + animationShift;
+            }
         }
 }
 }

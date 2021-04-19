@@ -11,8 +11,8 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
 {
     public class CollisionManager
     {
-        public CollisionChecker collisionChecker;
-        public CollisionHandler collisionHandler;
+        public CollisionChecker collisionChecker { get; set; }
+        public CollisionHandler collisionHandler { get; set; }
         public HashSet<Tuple<Object, Object, Collision.Direction>> collisionSet = new HashSet<Tuple<Object, Object, Collision.Direction>>();
 
         public void ClearNotLink()

@@ -10,9 +10,9 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class TileSpriteFactory
     {
-        private ZeldaGame game;
+        private ZeldaGame game { get; set; }
         private Texture2D tileSpriteSheet;
-        private float tileLayerDepth = .3f;
+        private float tileLayerDepth { get; set; } = .3f;
         public TileSpriteFactory(ZeldaGame game)
         {
             this.game = game;
@@ -25,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
         public UniversalSprite StairsTile()
         {
-            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 28, 16, 16), Color.Green, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1035, 28, 16, 16), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
         public UniversalSprite WallTile()
         {
@@ -35,9 +35,9 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 12, 12), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
-        public UniversalSprite TPTile()
+        public UniversalSprite PushableTile()
         {
-            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1055, 12, 12, 12), Color.Green, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
+            return new UniversalSprite(game, tileSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, tileLayerDepth);
         }
     }
 }

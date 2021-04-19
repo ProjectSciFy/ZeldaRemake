@@ -7,9 +7,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts
 {
     public class StalfosIdle : ICommand
     {
-        private EnemyStalfos stalfos;
-        private StalfosSpriteFactory stalfosSpriteFactory;
-        private StalfosStateMachine stalfosStateMachine;
+        private EnemyStalfos stalfos { get; set; }
+        private StalfosSpriteFactory stalfosSpriteFactory { get; set; }
+        private StalfosStateMachine stalfosStateMachine { get; set; }
         public StalfosIdle(EnemyStalfos stalfos, StalfosSpriteFactory stalfosSpriteFactory, StalfosStateMachine stalfosStateMachine)
         {
             this.stalfos = stalfos;

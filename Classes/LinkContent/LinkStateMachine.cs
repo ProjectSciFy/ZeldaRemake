@@ -10,34 +10,34 @@ namespace CSE3902_Game_Sprint0.Classes
 {
     public class LinkStateMachine
     {
-        private ZeldaGame game;
-        private Link link;
-        public LinkSpriteFactory spriteFactory;
-        public ProjectileHandler projectileHandler;
-        
+        private ZeldaGame game { get; set; }
+        private Link link { get; set; }
+        public LinkSpriteFactory spriteFactory { get; set; }
+        public ProjectileHandler projectileHandler { get; set; }
+
         public enum Direction {right, up, left, down};
-        public Direction direction = Direction.down;
-        public bool moving = false;
+        public Direction direction { get; set; } = Direction.down;
+        public bool moving { get; set; } = false;
 
         public enum Weapon {none, sword, bomb, arrow, boomerang};
-        public Weapon weaponSelected = Weapon.bomb;
+        public Weapon weaponSelected { get; set; } = Weapon.bomb;
 
-        public int timer = 0;
-        private int invincibilityFrames = 0;
-        public int wallmasterDeployedTimer = 0;
+        public int timer { get; set; } = 0;
+        private int invincibilityFrames { get; set; } = 0;
+        public int wallmasterDeployedTimer { get; set; } = 0;
 
-        public bool isRolling = false;
-        public bool grabItem = false;
+        public bool isRolling { get; set; } = false;
+        public bool grabItem { get; set; } = false;
         public bool isTriforce = false;
-        public bool useSword = false;
-        public bool useBomb = false;
-        public bool useArrow = false;
-        public bool useBoomerang = false;
-        public bool isDamaged = false;
-        public bool isGrabbed = false;
-        public bool dying = false;
-        public bool dead = false;
-        public bool boomerangCaught = true;
+        public bool useSword { get; set; } = false;
+        public bool useBomb { get; set; } = false;
+        public bool useArrow { get; set; } = false;
+        public bool useBoomerang { get; set; } = false;
+        public bool isDamaged { get; set; } = false;
+        public bool isGrabbed { get; set; } = false;
+        public bool dying { get; set; } = false;
+        public bool dead { get; set; } = false;
+        public bool boomerangCaught { get; set; } = true;
 
         public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, rollingUp, rollingDown, rollingLeft, rollingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
         public CurrentState currentState;
@@ -104,10 +104,10 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public void Boomerang()
         {
+            useBoomerang = false;
             if (timer == 0)
             {
                 timer = 15;
-                useBoomerang = false;
                 new LinkContent.LinkScripts.LinkBoomerang(link, spriteFactory, this).Execute();
             }
         }
@@ -251,6 +251,10 @@ namespace CSE3902_Game_Sprint0.Classes
                 {
                     Boomerang();
                     boomerangCaught = false;
+                }
+                else if (useBoomerang && !boomerangCaught)
+                {
+                    useBoomerang = false;
                 }
                 else
                 {

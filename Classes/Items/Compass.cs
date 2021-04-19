@@ -9,14 +9,14 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 {
     public class Compass : IItem, ICollisionEntity
     {
-        private ZeldaGame game;
-        private ISprite itemSprite;
-        private ItemSpriteFactory itemFactory;
-        public Vector2 spriteSize = new Vector2(10, 10);
+        private ZeldaGame game { get; set; }
+        private ISprite itemSprite { get; set; }
+        private ItemSpriteFactory itemFactory { get; set; }
         public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
-        public Vector2 position;
-        public Vector2 drawLocation;
-        public float spriteScalar;
+        public Vector2 position { get; set; }
+        public float spriteScalar { get; set; }
+        public Vector2 drawLocation { get; set; }
+        public Vector2 spriteSize;
         public Compass(ZeldaGame game, ItemSpriteFactory itemFactory, Vector2 location)
         {
             this.game = game;

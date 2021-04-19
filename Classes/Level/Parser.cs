@@ -24,20 +24,20 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class Parser
     {
-        private static int roomNumber;
-        private static int windowWidth;
-        private static int windowHeight;
+        private static int roomNumber { get; set; }
+        private static int windowWidth { get; set; }
+        private static int windowHeight { get; set; }
 
-        private static int windowHeightFloor;
-        private static int windowWidthFloor;
+        private static int windowHeightFloor { get; set; }
+        private static int windowWidthFloor { get; set; }
 
         private static List<ITile> tiles = new List<ITile>();
         private static List<IItem> items = new List<IItem>();
         private static List<IEnemy> enemies = new List<IEnemy>();
         private static List<IDoor> doors = new List<IDoor>();
 
-        private static ZeldaGame game;
-        private static ParserUtility utility;
+        private static ZeldaGame game { get; set; }
+        private static ParserUtility utility { get; set; }
 
         public static Room ParseRoomCSV(ZeldaGame game2, int RoomNumber)
         {
@@ -92,6 +92,18 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         BlockTile block;
                         tiles.Add(block = new BlockTile(game, new TileSpriteFactory(game), position));
                         block.drawLocation = position;
+                        break;
+                    case "Pushable":
+                        position = utility.GetPushablePosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
+                        PushableTile pushable;
+                        tiles.Add(pushable = new PushableTile(game, new TileSpriteFactory(game), position));
+                        pushable.drawLocation = position;
+                        break;
+                    case "Stair":
+                        position = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
+                        TPTile stair;
+                        tiles.Add(stair = new TPTile(game, new TileSpriteFactory(game), position));
+                        stair.drawLocation = position;
                         break;
                     case "Compass":
                         position = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));

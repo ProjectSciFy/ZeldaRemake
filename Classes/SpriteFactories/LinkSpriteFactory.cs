@@ -10,15 +10,13 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class LinkSpriteFactory
     {
-        private ZeldaGame game;
-        private Link link;
+        private ZeldaGame game { get; set; }
         private Texture2D linkTexture;
-        private float linkLayerDepth = 1.0f;
+        private float linkLayerDepth { get; set; } = 1.0f;
         public LinkSpriteFactory(Link link)
         {
             game = link.game;
             game.spriteSheets.TryGetValue("Link", out linkTexture);
-            this.link = link;
         }
 
         public UniversalSprite IdleUp()

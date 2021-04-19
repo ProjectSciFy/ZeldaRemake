@@ -8,12 +8,12 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class GoriyaBoomerangMovementCalculation
     {
-        private GoriyaBoomerangStatemachine boomerangState;
-        private GoriyaBoomerang boomerang;
+        private GoriyaBoomerangStatemachine boomerangState { get; set; }
+        private GoriyaBoomerang boomerang { get; set; }
         private enum Direction { right, up, left, down, NE, SE, SW, NW, none}; // NE = North East
-        private Direction returnDirection;
-        private Direction direction;
-        private EnemySpriteFactory spriteFactory;
+        private Direction returnDirection { get; set; }
+        private Direction direction { get; set; }
+        private EnemySpriteFactory spriteFactory { get; set; }
         public GoriyaBoomerangMovementCalculation(GoriyaBoomerangStatemachine boomerangState)
         {
             this.boomerangState = boomerangState;

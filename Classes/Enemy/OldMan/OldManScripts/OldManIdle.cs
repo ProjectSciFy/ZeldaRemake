@@ -6,10 +6,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan.OldManScripts
 {
     public class OldManIdle : ICommand
     {
-        private EnemyOldMan oldMan;
-        private OldManSpriteFactory oldManSpriteFactory;
-        private OldManStateMachine oldManStateMachine;
-        
+        private EnemyOldMan oldMan { get; set; }
+        private OldManSpriteFactory oldManSpriteFactory { get; set; }
+        private OldManStateMachine oldManStateMachine { get; set; }
+
         public OldManIdle(EnemyOldMan oldMan, OldManSpriteFactory oldManSpriteFactory, OldManStateMachine oldManStateMachine)
         {
             this.oldMan = oldMan;

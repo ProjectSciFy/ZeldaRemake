@@ -10,9 +10,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
     public class AquamentusStateMachine : IEnemyStateMachine
     {
-        private ZeldaGame game;
-        private EnemyAquamentus aquamentus;
-        private AquamentusSpriteFactory enemySpriteFactory;
+        private ZeldaGame game { get; set; }
+        private EnemyAquamentus aquamentus { get; set; }
+        private AquamentusSpriteFactory enemySpriteFactory { get; set; }
 
         public enum Direction { right, left };
         public Direction direction = Direction.right;

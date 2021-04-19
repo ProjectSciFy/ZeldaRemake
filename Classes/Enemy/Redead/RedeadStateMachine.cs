@@ -8,19 +8,19 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
 {
     public class RedeadStateMachine
     {
-        private ZeldaGame game;
-        private EnemyRedead redead;
-        private RedeadSpriteFactory redeadSpriteFactory;
+        private ZeldaGame game { get; set; }
+        private EnemyRedead redead { get; set; }
+        private RedeadSpriteFactory redeadSpriteFactory { get; set; }
 
         public enum Direction { right, up, left, down };
-        public Direction direction = Direction.down;
-        bool spawning = true;
-        public bool idle = true;
-        public int timer = 0;
-        private int deathTimer = 30;
-        public int shriekTimer = 0;
+        public Direction direction { get; set; } = Direction.down;
+        bool spawning { get; set; } = true;
+        public bool idle { get; set; } = true;
+        public int timer { get; set; } = 0;
+        private int deathTimer { get; set; } = 30;
+        public int shriekTimer { get; set; } = 0;
         public enum CurrentState { none, idle, movingUp, movingDown, movingLeft, movingRight, spawning, dying };
-        public CurrentState currentState = CurrentState.none;
+        public CurrentState currentState { get; set; } = CurrentState.none;
 
         public RedeadStateMachine(EnemyRedead redead)
         {

@@ -8,9 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
 {
     public class GoriyaIdle : ICommand
     {
-        private EnemyGoriya goriya;
-        private GoriyaSpriteFactory enemySpriteFactory;
-        private GoriyaStateMachine GoriyaStateMachine;
+        private EnemyGoriya goriya { get; set; }
+        private GoriyaSpriteFactory enemySpriteFactory { get; set; }
+        private GoriyaStateMachine GoriyaStateMachine { get; set; }
         public GoriyaIdle(EnemyGoriya goriya, GoriyaSpriteFactory enemySpriteFactory, GoriyaStateMachine GoriyaStateMachine)
         {
             this.goriya = goriya;

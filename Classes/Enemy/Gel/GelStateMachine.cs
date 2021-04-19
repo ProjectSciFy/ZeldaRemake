@@ -10,18 +10,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
 {
     public class GelStateMachine : IEnemyStateMachine
     {
-        private ZeldaGame game;
-        private EnemySlime gel;
-        private GelSpriteFactory gelSpriteFactory;
+        private ZeldaGame game { get; set; }
+        private EnemySlime gel { get; set; }
+        private GelSpriteFactory gelSpriteFactory { get; set; }
 
         public enum Direction { right, up, left, down };
-        public Direction direction = Direction.down;
-        bool moving = true;
-        bool spawning = true;
-        private int timer = 0;
-        private int deathTimer = 30;
+        public Direction direction { get; set; } = Direction.down;
+        bool moving { get; set; } = true;
+        bool spawning { get; set; } = true;
+        private int timer { get; set; } = 0;
+        private int deathTimer { get; set; } = 30;
         public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, spawning, dying };
-        public CurrentState currentState = CurrentState.none;
+        public CurrentState currentState { get; set; } = CurrentState.none;
 
         public GelStateMachine(EnemySlime gel)
         {

@@ -8,10 +8,9 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
 {
     public class LinkBoomerang : ICommand
     {
-        private Link link;
-        private LinkSpriteFactory spriteFactory;
-        private LinkStateMachine linkStateMachine;
-        private LinkBoomerangProjectile boomerang;
+        private Link link { get; set; }
+        private LinkSpriteFactory spriteFactory { get; set; }
+        private LinkStateMachine linkStateMachine { get; set; }
 
         public LinkBoomerang(Link link, LinkSpriteFactory spriteFactory, LinkStateMachine linkStateMachine)
         {

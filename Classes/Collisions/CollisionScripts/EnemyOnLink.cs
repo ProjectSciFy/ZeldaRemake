@@ -7,9 +7,9 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class EnemyOnLink : ICommand
     {
-        private IEnemy enemy;
-        private Link link;
-        private Collision.Collision.Direction direction;
+        private IEnemy enemy { get; set; }
+        private Link link { get; set; }
+        private Collision.Collision.Direction direction { get; set; }
 
         public EnemyOnLink(IEnemy enemy, Link link, Collision.Collision.Direction direciton)
         {

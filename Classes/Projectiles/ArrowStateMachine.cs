@@ -8,14 +8,14 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class ArrowStateMachine
     {
-        private Arrow arrow;
-        private ProjectileSpriteFactory projectileSpriteFactory;
-        public ProjectileHandler projectileHandler;
-        public bool hit = false;
+        private Arrow arrow { get; set; }
+        private ProjectileSpriteFactory projectileSpriteFactory { get; set; }
+        public ProjectileHandler projectileHandler { get; set; }
+        public bool hit { get; set; } = false;
 
-        private int timer = 180;
+        private int timer { get; set; } = 180;
         public enum CurrentState { none, soaring, hitting };
-        public CurrentState currentState = CurrentState.none;
+        public CurrentState currentState { get; set; } = CurrentState.none;
 
         public ArrowStateMachine(Arrow arrow)
         {

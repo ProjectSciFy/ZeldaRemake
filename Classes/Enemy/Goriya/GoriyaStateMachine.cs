@@ -10,16 +10,16 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
     public class GoriyaStateMachine : IEnemyStateMachine
     {
-        private ZeldaGame game;
-        private EnemyGoriya goriya;
+        private ZeldaGame game { get; set; }
+        private EnemyGoriya goriya { get; set; }
         private GoriyaSpriteFactory enemySpriteFactory;
 
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none };
-        public Direction direction { get; set; }  = Direction.down;
+        public Direction direction = Direction.down;
         public bool moving { get; set; } = false;
-        public bool spawning = true;
-        private int timer = 90;
-        private int deathTimer = 30;
+        public bool spawning { get; set; } = true;
+        private int timer { get; set; } = 90;
+        private int deathTimer { get; set; } = 30;
         public enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning, dying};
         public CurrentState currentState = CurrentState.none;
         public GoriyaStateMachine(EnemyGoriya goriya)

@@ -18,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
 {
     public class CollisionHandler
     {
-        public CollisionManager collisionManager;
+        public CollisionManager collisionManager { get; set; }
 
         public CollisionHandler(CollisionManager collisionManager)
         {
@@ -43,6 +43,17 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                         new LinkOnTile((Link)tuple.Item1, (ITile)tuple.Item2, tuple.Item3).Execute();
                     }
                 }
+                if (tuple.Item1 is LittleHelper.LittleHelper)
+                {
+                    if (tuple.Item2 is IEnemy)
+                    {
+                        new LittleHelperOnEnemy((LittleHelper.LittleHelper)tuple.Item1, (IEnemy)tuple.Item2, tuple.Item3).Execute();
+                    }
+                    else if (tuple.Item2 is IItem)
+                    {
+                        new LittleHelperOnItem((LittleHelper.LittleHelper)tuple.Item1, (IItem)tuple.Item2, tuple.Item3).Execute();
+                    }
+                }
                 if (tuple.Item1 is IEnemy)
                 {
                     if (tuple.Item2 is ITile)
@@ -59,6 +70,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions
                     if (tuple.Item2 is Link)
                     {
                         new ProjectileOnLink((IProjectile)tuple.Item1, (Link)tuple.Item2, tuple.Item3).Execute();
+                    }
+                    else if (tuple.Item2 is LittleHelper.LittleHelper)
+                    {
+                        new ProjectileOnLittleHelper((IProjectile)tuple.Item1, (LittleHelper.LittleHelper)tuple.Item2, tuple.Item3).Execute();
                     }
                     else if (tuple.Item2 is IEnemy)
                     {

@@ -10,19 +10,19 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
     public class EnemyAquamentus : IEnemy, ICollisionEntity
     {
-        public ZeldaGame game;
-        private AquamentusStateMachine myState;
-        public AquamentusSpriteFactory enemySpriteFactory;
-        public ISprite mySprite;
+        public ZeldaGame game { get; set; }
+        private AquamentusStateMachine myState { get; set; }
+        public AquamentusSpriteFactory enemySpriteFactory { get; set; }
+        public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
-        public int timer = 0;
-        private float spriteScalar;
-        private static int HITBOX_OFFSET = 6;
-        public int health = 20;
-        private int hurtTimer = 0;
+        public int timer { get; set; } = 0;
+        private float spriteScalar { get; set; }
+        private static int HITBOX_OFFSET { get; set; } = 6;
+        public int health { get; set; } = 20;
+        private int hurtTimer { get; set; } = 0;
 
         public EnemyAquamentus(ZeldaGame game, Vector2 spawnLocation)
         {

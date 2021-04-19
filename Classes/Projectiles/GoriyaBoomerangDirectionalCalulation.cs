@@ -6,10 +6,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
     public class GoriyaBoomerangDirectionalCalulation
     {
-        private GoriyaBoomerangStatemachine boomerangState;
-        private GoriyaBoomerang boomerang;
+        private GoriyaBoomerangStatemachine boomerangState { get; set; }
+        private GoriyaBoomerang boomerang { get; set; }
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none }; // NE = North East
-        public Direction returnDirection;
+        public Direction returnDirection { get; set; }
         public GoriyaBoomerangDirectionalCalulation(GoriyaBoomerangStatemachine boomerangState)
         {
             this.boomerangState = boomerangState;

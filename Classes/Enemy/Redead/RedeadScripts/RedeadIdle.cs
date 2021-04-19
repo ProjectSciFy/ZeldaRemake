@@ -6,9 +6,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead.RedeadScripts
 {
     public class RedeadIdle : ICommand
     {
-        private EnemyRedead redead;
-        private RedeadSpriteFactory redeadSpriteFactory;
-        private RedeadStateMachine redeadStateMachine;
+        private EnemyRedead redead { get; set; }
+        private RedeadSpriteFactory redeadSpriteFactory { get; set; }
+        private RedeadStateMachine redeadStateMachine { get; set; }
         public RedeadIdle(EnemyRedead redead, RedeadSpriteFactory redeadSpriteFactory, RedeadStateMachine redeadStateMachine)
         {
             this.redead = redead;

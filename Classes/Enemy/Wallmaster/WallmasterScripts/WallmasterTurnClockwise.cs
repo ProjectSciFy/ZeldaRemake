@@ -6,7 +6,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster.WallmasterScripts
 {
     public class WallmasterTurnClockwise : ICommand
     {
-        WallmasterStateMachine wallmasterStateMachine;
+        WallmasterStateMachine wallmasterStateMachine { get; set; }
         public WallmasterTurnClockwise(WallmasterStateMachine wallmasterStateMachine)
         {
             this.wallmasterStateMachine = wallmasterStateMachine;
