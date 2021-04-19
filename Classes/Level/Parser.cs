@@ -260,6 +260,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             Vector2 tpPos = new Vector2(0, 0);
             GateKeeperTile gatekeeper;
             StairsTile stair;
+            TPTile tptile;
             bool locked;
             bool isLockedDoor;
             foreach (string line in lines)
@@ -306,9 +307,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
                     }
                     else if (roomNumber == 17){
-                        tpPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 6, 5);
-                        tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), tpPos));
-                        stair.drawLocation = tpPos;
+                        tpPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 7, 4);
+                        tiles.Add(tptile = new TPTile(game, new TileSpriteFactory(game), tpPos));
+                        tptile.drawLocation = tpPos;
 
                     }
                     else

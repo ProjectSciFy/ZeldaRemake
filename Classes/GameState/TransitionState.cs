@@ -146,9 +146,11 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             if (this.nextroom.getRoomNumber() == 16)
             {
+
                 roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
-                drawLocationInteriorNext = drawLocationInteriorNext - new Vector2(0, 33);
-                roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                roominteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                //drawLocationInteriorNext = drawLocationInteriorNext - new Vector2(0, 33);
+                //roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
             else
             {
@@ -277,12 +279,12 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             {
                 game.currentGameState = game.currentMainGameState;
                 game.util.keyPressedTempVariable = false;
-                if(game.util.roomNumber == 17) { 
+                if(nextroom.getRoomNumber() == 17 && oldroom.getRoomNumber() == 16) { 
                     game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
                     game.link.SetLocation(new Vector2(windowWidthFloor + (112-24) * ParserUtility.SCALE_FACTOR + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (144-34) * ParserUtility.SCALE_FACTOR));
                     goto Skip;
                 }
-                else if(game.util.roomNumber == 16)
+                else if(nextroom.getRoomNumber() == 16)
                 {
                     game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
                     game.link.SetLocation(new Vector2(windowWidthFloor + (112-70) * 3 + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (-8 * 3) + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR));

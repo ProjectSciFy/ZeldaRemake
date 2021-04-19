@@ -21,6 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         public Vector2 drawLocation { get; set; }
         public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
 
+        
         public StairsTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
             this.game = game;

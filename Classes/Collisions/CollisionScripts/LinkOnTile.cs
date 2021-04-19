@@ -65,7 +65,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 }
                 else if (game.util.roomNumber == 17 && !game.util.keyPressedTempVariable)
                 {
-                    game.changeRoom(16, Collision.Collision.Direction.left);
+                    game.changeRoom(18, Collision.Collision.Direction.right);
                 }
                 else if (direction == Collision.Collision.Direction.down && !game.util.keyPressedTempVariable)
                 {
