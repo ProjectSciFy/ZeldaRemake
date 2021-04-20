@@ -14,10 +14,14 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         private ISprite hudSprite { get; set; }
         private ISprite primWeapSprite { get; set; }
         private ISprite secWeapSprite { get; set; }
-        private ISprite levelSprite { get; set; }
+        private ISprite gameLevelSprite { get; set; }
 
         //heart sprite:
         private ISprite heartSprite { get; set; }
+
+        //XP sprites:
+        private ISprite xpSprite { get; set; }
+        private ISprite xpBarSprite { get; set; }
 
         //counter sprites:
         private ISprite xSprite { get; set; }
@@ -56,7 +60,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 hudPosition;
         public Vector2 primWeapPos;
         public Vector2 secWeapPos;
-        public Vector2 levelPos;
+        public Vector2 gameLevelPos;
         public Vector2 heartPos;
         public Vector2 minimapPos;
         public Vector2 linkIndicatorPos;
@@ -80,7 +84,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             hudSprite = HudFactory.baseHud();
             primWeapSprite = HudFactory.primaryWeaponHUD();
             secWeapSprite = HudFactory.secondaryWeaponHUD();
-            levelSprite = HudFactory.levelHUD();
+            gameLevelSprite = HudFactory.levelHUD();
             heartSprite = HudFactory.livesHUD();
 
             //counters:
@@ -106,7 +110,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //elements of the Hud will be positioned in reference to hudPosition.X and hudPosition.Y so when Hud is moved, only X and Y need to change:
             primWeapPos = new Vector2((hudPosition.X + 456), (hudPosition.Y + 72));
             secWeapPos = new Vector2((hudPosition.X + 384),(hudPosition.Y + 72));
-            levelPos = new Vector2((hudPosition.X + 47), (hudPosition.Y + 24));
+            gameLevelPos = new Vector2((hudPosition.X + 47), (hudPosition.Y + 24));
             heartPos = new Vector2((hudPosition.X + 528), (hudPosition.Y + 96));
             //counter related positions:
             digitKeyPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 96));
@@ -220,7 +224,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             xSprite.Draw(KeyCounterPos);
             xSprite.Draw(YellowCounterPos);
             xSprite.Draw(BombCounterPos);
-            levelSprite.Draw(levelPos);
+            gameLevelSprite.Draw(gameLevelPos);
 
             //Lives Graphical Displays:
 
@@ -319,7 +323,19 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             {
                 boss.Draw(bossPos);
             }
-            //---------------------------------------------------------
+            //--------------------------------------------------------------------------------
+            //xp & level graphics
+            //Hearts/Lives:
+
+            if (game.util.numXP < 10)
+            {
+                for (int i = 0; i < game.util.numXP; i++)
+                {
+                    heartOffset = (i) * (24);
+                    heartSprite.Draw(new Vector2(heartPos.X + heartOffset, heartPos.Y));
+                }
+            }
+            //-------------------------------------------------------------------------------
         }
     }
 }

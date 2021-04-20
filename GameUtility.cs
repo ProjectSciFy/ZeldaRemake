@@ -20,6 +20,7 @@ namespace CSE3902_Game_Sprint0
 
         public int numXP { get; set; }
         public int XPPerLevel { get; set; } = 10;
+        public int linkXPlevel { get; set; } 
 
         //map for HUD:
         public bool hasMap { get; set; }
@@ -48,6 +49,8 @@ namespace CSE3902_Game_Sprint0
             numBombs = 0;
             numYrups = 0;
             numLives = 3;
+            numXP = 0;
+            linkXPlevel = 1;
             //map
             hasMap = false;
             linkInd = true;

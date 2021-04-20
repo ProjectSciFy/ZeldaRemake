@@ -99,7 +99,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             //sprite for "Level 1" text is apart of hudPosition.Y, no need to update it manually.
             pHUD.minimapPos.Y += speed;
             pHUD.bossPos.Y += speed;
-            pHUD.levelPos.Y += speed;
+            pHUD.gameLevelPos.Y += speed;
             pHUD.linkIndicatorPos.Y += speed;
             //item screen update:
             game.util.midPos.Y += speed;
