@@ -88,10 +88,10 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             //hud update:
             pHUD.hudPosition.Y += speed;
             pHUD.YellowCounterPos.Y += speed;
-            pHUD.BlueCounterPos.Y += speed;
+            pHUD.BombCounterPos.Y += speed;
             pHUD.KeyCounterPos.Y += speed;
             pHUD.digitKeyPos.Y += speed;
-            pHUD.digitBrupPos.Y += speed;
+            pHUD.digitBombPos.Y += speed;
             pHUD.digitYrupPos.Y += speed;
             pHUD.primWeapPos.Y += speed;
             pHUD.secWeapPos.Y += speed;

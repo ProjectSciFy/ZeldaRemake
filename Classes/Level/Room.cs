@@ -148,6 +148,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 game.util.hasCompass = true;
             }
+            else if (entity is Bomb)
+            {
+                game.util.numBombs += 1;
+            }
         }
 
         public void Draw()

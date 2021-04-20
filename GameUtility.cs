@@ -14,7 +14,7 @@ namespace CSE3902_Game_Sprint0
 
         //counter variables that are displayed in HUD graphically:
         public int numKeys { get; set; }
-        public int numBrups { get; set; }
+        public int numBombs { get; set; }
         public int numYrups { get; set; }
         public int numLives { get; set; }
 
@@ -45,7 +45,7 @@ namespace CSE3902_Game_Sprint0
         {
             //Initialize counter variables for HUD:
             numKeys = 0;
-            numBrups = 0;
+            numBombs = 0;
             numYrups = 0;
             numLives = 3;
             //map
