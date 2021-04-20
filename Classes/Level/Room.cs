@@ -120,6 +120,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 game.util.numKeys += 1;
             }
+            else if (entity is BlueRupee)
+            {
+                game.util.numYrups += 5;
+            }
             else if (entity is YellowRupee)
             {
                 game.util.numYrups += 1;
