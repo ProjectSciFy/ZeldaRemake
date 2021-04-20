@@ -24,6 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         //player hud related variables:
         private playerHUD pHUD { get; set; }
+        private ISprite holdingMap; 
 
         public ItemSelectState(ZeldaGame game)
         {
@@ -32,6 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             top = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(1, 11, 260, 100), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             mid = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(258, 111, 260, 99), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            holdingMap=new UniversalSprite(game,inventorySpriteSheet, new Rectangle(598, 154, 17, 100), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             //164 42 259 87
             pHUD = game.currentRoom.pHUD; 
 
@@ -44,6 +46,11 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             pHUD.Draw();
             mid.Draw(game.util.midPos);
             top.Draw(game.util.topPos);
+            //if (game.util.hasMap)
+            //{
+
+            //    holdingMap.Draw();
+            //}
         }
 
         void IGameState.Update()
