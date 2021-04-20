@@ -46,7 +46,7 @@ namespace CSE3902_Game_Sprint0
         {
             //Initialize counter variables for HUD:
             numKeys = 0;
-            numBombs = 0;
+            numBombs = 3;
             numYrups = 0;
             numLives = 3;
             numXP = 0;
