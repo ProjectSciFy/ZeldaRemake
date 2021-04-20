@@ -53,7 +53,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             //player HUD:
             this.keyCounter = game.util.numKeys;
-            this.bluerupeeCounter = game.util.numBrups;
+            this.bluerupeeCounter = game.util.numBombs;
             this.yellowrupeeCounter = game.util.numYrups;
             this.hudFactory = game.hudSpriteFactory;
             pHUD = new playerHUD(game, hudFactory);
@@ -122,7 +122,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             }
             else if (entity is BlueRupee)
             {
-                game.util.numBrups += 1;
+                game.util.numYrups += 5;
             }
             else if (entity is YellowRupee)
             {
@@ -147,6 +147,14 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             else if (entity is Compass)
             {
                 game.util.hasCompass = true;
+            }
+            else if (entity is Bomb)
+            {
+                game.util.numBombs += 1;
+            }
+            else if (entity is XP)
+            {
+                game.util.numXP += 1;
             }
         }
 

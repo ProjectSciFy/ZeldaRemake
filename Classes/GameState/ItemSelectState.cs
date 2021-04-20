@@ -95,10 +95,10 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             //hud update:
             pHUD.hudPosition.Y += speed;
             pHUD.YellowCounterPos.Y += speed;
-            pHUD.BlueCounterPos.Y += speed;
+            pHUD.BombCounterPos.Y += speed;
             pHUD.KeyCounterPos.Y += speed;
             pHUD.digitKeyPos.Y += speed;
-            pHUD.digitBrupPos.Y += speed;
+            pHUD.digitBombPos.Y += speed;
             pHUD.digitYrupPos.Y += speed;
             pHUD.primWeapPos.Y += speed;
             pHUD.secWeapPos.Y += speed;
@@ -106,7 +106,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             //sprite for "Level 1" text is apart of hudPosition.Y, no need to update it manually.
             pHUD.minimapPos.Y += speed;
             pHUD.bossPos.Y += speed;
-            pHUD.levelPos.Y += speed;
+            pHUD.gameLevelPos.Y += speed;
             pHUD.linkIndicatorPos.Y += speed;
             //item screen update:
             game.util.midPos.Y += speed;
