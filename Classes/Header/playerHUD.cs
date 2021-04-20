@@ -22,6 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         //XP sprites:
         private ISprite xpSprite { get; set; }
         private ISprite xpBarSprite { get; set; }
+        private ISprite linkLevelSprite { get; set; }
 
         //counter sprites:
         private ISprite xSprite { get; set; }
@@ -62,12 +63,19 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 secWeapPos;
         public Vector2 gameLevelPos;
         public Vector2 heartPos;
+
+        public Vector2 xpPos;
+        public Vector2 xpBarPos;
+        public Vector2 linkLevelPos;
+
         public Vector2 minimapPos;
         public Vector2 linkIndicatorPos;
         public Vector2 bossPos;
 
         private int heartOffset { get; set; }
         private int remainingHearts { get; set; }
+
+        private int xpOffset { get; set; }
 
         public float spriteScalar { get; set; }
         public Vector2 drawLocation;
@@ -86,6 +94,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             secWeapSprite = HudFactory.secondaryWeaponHUD();
             gameLevelSprite = HudFactory.levelHUD();
             heartSprite = HudFactory.livesHUD();
+            //xp & leveling:
+            //xpSprite = HudFactory.xpSegment();
+            //xpBarSprite = HudFactory.xpBarOutline();
+            //linkLevelSprite = HudFactory.linkLevel();
 
             //counters:
             xSprite = HudFactory.xHUD();
@@ -119,6 +131,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             BombCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 120));
             digitYrupPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 48));
             YellowCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 48));
+            //xp & leveling:
+            
+
+
             //mini-map positions:
             minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
             bossPos = new Vector2(minimapPos.X + 105, minimapPos.Y + 12);
@@ -327,14 +343,16 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //xp & level graphics
             //Hearts/Lives:
 
-            if (game.util.numXP < 10)
-            {
-                for (int i = 0; i < game.util.numXP; i++)
-                {
-                    heartOffset = (i) * (24);
-                    heartSprite.Draw(new Vector2(heartPos.X + heartOffset, heartPos.Y));
-                }
-            }
+            //linkLevel.Draw(linkLevelPos);
+
+            //if (game.util.numXP < 10)
+            //{
+            //    for (int i = 0; i < game.util.numXP; i++)
+            //    {
+            //        xpOffset = (i) * (24);
+            //        xpSprite.Draw(new Vector2(xpPos.X + xpOffset, xpPos.Y));
+            //    }
+            //}
             //-------------------------------------------------------------------------------
         }
     }
