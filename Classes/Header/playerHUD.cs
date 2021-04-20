@@ -272,14 +272,14 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             digit.Draw(new Vector2(digitKeyPos.X + 24, digitKeyPos.Y));
 
             //---------------------------------------------------------
-            //Blue Rupees:
-            if (game.util.numBrups > 99)
+            //Bombs:
+            if (game.util.numBombs > 99)
             {
-                game.util.numBrups = 99;
+                game.util.numBombs = 99;
             }
             //digits:
-            bombOneDigit = game.util.numBrups % 10;
-            bombTenDigit = (game.util.numBrups - bombOneDigit) / 10;
+            bombOneDigit = game.util.numBombs % 10;
+            bombTenDigit = (game.util.numBombs - bombOneDigit) / 10;
             //tens place:
             digitOffset = bombTenDigit * 9;
             digit = HudFactory.Digit(digitOffset);

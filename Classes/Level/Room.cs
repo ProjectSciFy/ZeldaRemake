@@ -53,7 +53,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             //player HUD:
             this.keyCounter = game.util.numKeys;
-            this.bluerupeeCounter = game.util.numBrups;
+            this.bluerupeeCounter = game.util.numBombs;
             this.yellowrupeeCounter = game.util.numYrups;
             this.hudFactory = game.hudSpriteFactory;
             pHUD = new playerHUD(game, hudFactory);
@@ -119,10 +119,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             if (entity is Key)
             {
                 game.util.numKeys += 1;
-            }
-            else if (entity is BlueRupee)
-            {
-                game.util.numBrups += 1;
             }
             else if (entity is YellowRupee)
             {
