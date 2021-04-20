@@ -243,8 +243,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             xSprite.Draw(YellowCounterPos);
             xSprite.Draw(BombCounterPos);
             gameLevelSprite.Draw(gameLevelPos);
-            //xpBarSprite.Draw(xpBarPos);
-            //linkLevelSprite.Draw(linkLevelPos);
 
             //Lives Graphical Displays:
 
@@ -347,7 +345,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //xp & level graphics
             //Hearts/Lives:
 
-            //linkLevel.Draw(linkLevelPos);
+            //xpBarSprite.Draw(xpBarPos);
+            //linkLevelSprite.Draw(linkLevelPos);
 
             //if (game.util.numXP < 10)
             //{
