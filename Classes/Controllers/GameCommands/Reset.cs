@@ -54,7 +54,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.util.numLives = 3;
             game.util.numXP = 0;
             game.util.numKeys = 0;
-            game.util.numBombs = 0;
+            game.util.numBombs = 3;
             game.util.numYrups = 0;
             game.util.hasMap = false;
             game.util.hasCompass = false;
