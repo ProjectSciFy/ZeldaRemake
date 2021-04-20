@@ -131,9 +131,11 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             BombCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 120));
             digitYrupPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 48));
             YellowCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 48));
-            //xp & leveling:
-            
 
+            //xp & leveling:
+            //xpPos = new Vector2();
+            //xpBarPos = new Vector2();
+            //linkLevelPos = new Vector2();
 
             //mini-map positions:
             minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
@@ -241,6 +243,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             xSprite.Draw(YellowCounterPos);
             xSprite.Draw(BombCounterPos);
             gameLevelSprite.Draw(gameLevelPos);
+            //xpBarSprite.Draw(xpBarPos);
+            //linkLevelSprite.Draw(linkLevelPos);
 
             //Lives Graphical Displays:
 
