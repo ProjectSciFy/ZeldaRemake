@@ -50,6 +50,10 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, itemSpriteSheet, new Rectangle(0, 0, 7, 8), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);
         }
+        public UniversalSprite XP()
+        {
+            return new UniversalSprite(game, itemSpriteSheet, new Rectangle(0, 25, 8, 8), Color.White, SpriteEffects.None, new Vector2(1, 4), itemLimiter, itemDepth);
+        }
         public UniversalSprite HeartContainer()
         {
             return new UniversalSprite(game, itemSpriteSheet, new Rectangle(25, 1, 13, 13), Color.White, SpriteEffects.None, new Vector2(1, 1), itemLimiter, itemDepth);

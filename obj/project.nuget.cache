@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jaaNTTKJzYnEDaVokF0oxp2mqexSkBmU4ZvTwpqKWQqPzfrF3M+E41S9EXSJC1F3UhzhdMMoYewrVKu4Bd3oOw==",
+  "dgSpecHash": "8uKuVXX9buxhji+Lv2INxjwz5v+Xxa9pPpPSPEOa5tfMkyBn2mN7dX4WDfWp2dw2W4OcBFJ/5eUT04jAsV9Wlw==",
   "success": true,
   "projectFilePath": "G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
   "expectedPackageFiles": [
@@ -124,14 +124,8 @@
     "C:\\Users\\Mark\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\Mark\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\Mark\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\Mark\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\Mark\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\Mark\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file G:\\Visual Studio Stuff\\CSE 3902\\Group Project\\ZeldaRemake\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

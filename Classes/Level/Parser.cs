@@ -364,17 +364,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), stairPos));
                     stair.drawLocation = stairPos;
                     break;
-                case 5:
-                    //TopDoor Room16Door = new TopDoor(game, new RoomTextureStorage(game), doorvalue);
-                    //Room16Door.position = Room16Door.position - new Vector2(0, 8 * 3 * 4 * 5);
-                    //Room16Door.position = new Vector2(0, 0);
-                    //Room16Door.changePosition(new Vector2(0, 0));
-                    //doors.Add(Room16Door);
-
-
-                    //wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, 0, 1);
-                    break;
-
                 default:
                     break;
             }

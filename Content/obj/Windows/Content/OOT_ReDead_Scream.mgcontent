@@ -3,7 +3,7 @@
   <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/OOT_ReDead_Scream.wav</SourceFile>
   <SourceTime>2021-04-10T12:32:22.9590784-04:00</SourceTime>
   <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/OOT_ReDead_Scream.xnb</DestFile>
-  <DestTime>2021-04-10T12:38:10.8510529-04:00</DestTime>
+  <DestTime>2021-04-19T15:06:13.2969342-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

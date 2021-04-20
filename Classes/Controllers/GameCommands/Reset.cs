@@ -55,6 +55,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
             //RESET HUD
             game.util.numLives = 3;
+            game.util.numXP = 0;
             game.util.numKeys = 0;
             game.util.numBrups = 0;
             game.util.numYrups = 0;

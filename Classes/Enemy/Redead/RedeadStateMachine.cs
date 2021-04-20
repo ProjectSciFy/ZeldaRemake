@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy.Redead.RedeadScripts;
+using CSE3902_Game_Sprint0.Classes.Items;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -98,6 +99,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
                 deathTimer--;
                 if (deathTimer == 0)
                 {
+                    new DropMinorItem(redead.game, redead.drawLocation).Execute();
                     redead.game.currentRoom.removeEnemy(redead);
                 }
             }

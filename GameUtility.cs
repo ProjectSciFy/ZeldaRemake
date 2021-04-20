@@ -18,6 +18,9 @@ namespace CSE3902_Game_Sprint0
         public int numYrups { get; set; }
         public int numLives { get; set; }
 
+        public int numXP { get; set; }
+        public int XPPerLevel { get; set; } = 10;
+
         //map for HUD:
         public bool hasMap { get; set; }
         public bool hasCompass { get; set; }

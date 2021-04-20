@@ -146,21 +146,6 @@ namespace CSE3902_Game_Sprint0
             sounds.Add("textSlow", Content.Load<SoundEffect>("LOZ_Text_Slow"));
         }
 
-        public void PauseMusic()
-        {
-            MediaPlayer.Pause();
-        }
-
-        public void ResumeMusic()
-        {
-            MediaPlayer.Resume();
-        }
-
-        public void StopMusic()
-        {
-            MediaPlayer.Stop();
-        }
-
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -171,17 +156,17 @@ namespace CSE3902_Game_Sprint0
             currentGameState.Update();
             if (util.numLives <= 0 && link.linkState.currentState != LinkStateMachine.CurrentState.dying)
             {
-                StopMusic();
+                MediaPlayer.Stop();
                 currentGameState = new DeathState(this);
             }
             if (util.paused && !util.inSelect)
             {
-                PauseMusic();
+                MediaPlayer.Pause();
                 currentGameState = new PauseState(this);
             }
             else if (!util.paused && currentGameState.GetType() == typeof(PauseState))
             {
-                ResumeMusic();
+                MediaPlayer.Resume();
                 currentGameState = currentMainGameState;
             }
 

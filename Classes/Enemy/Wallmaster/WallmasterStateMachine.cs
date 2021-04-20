@@ -1,6 +1,7 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster.WallmasterScripts;
+using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -60,6 +61,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
                 deathTimer--;
                 if (deathTimer == 0)
                 {
+                    new DropMinorItem(wallmaster.game, wallmaster.drawLocation).Execute();
                     wallmaster.game.currentRoom.removeEnemy(wallmaster);
                 }
             }

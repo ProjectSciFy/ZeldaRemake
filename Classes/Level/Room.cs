@@ -26,7 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
     {
         private Background background { get; set; }
         private List<ITile> tiles;
-        private List<IItem> items;
+        public List<IItem> items { get; set; }
         private List<IEnemy> enemies;
         private List<IDoor> doors;
         private ZeldaGame game { get; set; }

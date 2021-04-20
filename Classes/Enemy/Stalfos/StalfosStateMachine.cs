@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy.Stalfos;
 using CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts;
+using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -82,6 +83,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 deathTimer--;
                 if (deathTimer == 0)
                 {
+                    new DropMinorItem(stalfos.game, stalfos.drawLocation).Execute();
                     stalfos.game.currentRoom.removeEnemy(stalfos);
                 }
             }

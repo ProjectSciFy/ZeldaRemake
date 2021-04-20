@@ -2,6 +2,7 @@
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -159,7 +160,7 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public void GrabItem()
         {
-            timer = 60;
+            timer = 120;
             grabItem = false;
             new LinkGrabItem(link, spriteFactory, this).Execute();
         }
@@ -176,6 +177,7 @@ namespace CSE3902_Game_Sprint0.Classes
                 new LinkOffset(link, true).Execute();
                 link.drawOffset.X = 0;
                 link.drawOffset.Y = 0;
+                MediaPlayer.Resume();
             }
             if (invincibilityFrames > 0)
             {
@@ -187,6 +189,7 @@ namespace CSE3902_Game_Sprint0.Classes
             if (grabItem)
             {
                 GrabItem();
+                MediaPlayer.Pause();
             }
             else if (dying)
             {
