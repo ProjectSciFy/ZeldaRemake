@@ -36,7 +36,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         }
         public void TakeDamage(int damage)
         {
-            if (hurtTimer <= 0 && myState.attackTimer < 870 && myState.attackTimer != 0)
+            if (hurtTimer <= 0 && myState.attackTimer < 870 && myState.attackTimer != 0 && !myState.spawning)
             {
                 hurtTimer = 30;
                 this.health = this.health - damage;

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.png</SourceFile>
-  <SourceTime>2021-04-20T00:40:07.703999-05:00</SourceTime>
-  <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.xnb</DestFile>
-  <DestTime>2021-04-20T00:40:29.3417277-05:00</DestTime>
+  <SourceFile>C:/Users/jaden/Downloads/ZeldaRemake-1/ZeldaRemake/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.png</SourceFile>
+  <SourceTime>2021-04-19T15:13:16.734971-04:00</SourceTime>
+  <DestFile>C:/Users/jaden/Downloads/ZeldaRemake-1/ZeldaRemake/Content/bin/Windows/Content/NES - The Legend of Zelda - HUD &amp; Pause Screen.xnb</DestFile>
+  <DestTime>2021-04-20T16:36:09.7733319-04:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
+  <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2020-08-10T16:17:54-05:00</ProcessorTime>
+  <ProcessorTime>2020-08-10T16:17:54-04:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

@@ -21,8 +21,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         public bool spawning { get; set; } = true;
         public bool moving { get; set; } = false;
         public bool damaged { get; set; } = false;
-        public int timer { get; set; } = 120;
-        public int attackTimer { get; set; } = 100;
+        public int timer { get; set; } = 180;
+        public int attackTimer { get; set; } = 179;
         public int deathTimer { get; set; } = 330;
         public enum CurrentState { none, movingUp, movingDown, spawning, dying, damaged, kiBlast, kamehameha };
         public CurrentState currentState = CurrentState.none;

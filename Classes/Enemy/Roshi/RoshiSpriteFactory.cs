@@ -22,12 +22,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         //Aquamentus methods
         public UniversalSprite SpawnRoshi()
         {
-            return new UniversalSprite(game, spriteSheet, new Rectangle(88, 350, 44, 42), Color.White, SpriteEffects.None, new Vector2(1, 4), 30, enemyLayerDepth);
+            return new UniversalSprite(game, spriteSheet, new Rectangle(88, 350, 44, 42), Color.White, SpriteEffects.None, new Vector2(1, 6), 30, enemyLayerDepth);
         }
 
         public UniversalSprite RoshiMoving()
         {
-            return new UniversalSprite(game, spriteSheet, new Rectangle(264, 350, 44, 42), Color.White, SpriteEffects.None, new Vector2(1, 1), 15, enemyLayerDepth);
+            return new UniversalSprite(game, spriteSheet, new Rectangle(596, 347, 44, 42), Color.White, SpriteEffects.None, new Vector2(1, 1), 15, enemyLayerDepth);
         }
 
         public UniversalSprite RoshiKiBlast()
@@ -41,7 +41,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         }
         public UniversalSprite KamehamehaProjectile()
         {
-            return new UniversalSprite(game, spriteSheet, new Rectangle(385, 319, 315, 80), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, enemyLayerDepth);
+            return new UniversalSprite(game, spriteSheet, new Rectangle(264, 570, 315, 80), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, enemyLayerDepth);
         }
         public UniversalSprite RoshiDamaged()
         {
