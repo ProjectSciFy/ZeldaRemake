@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -22,6 +24,13 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
             roshi.spriteSize.Y = 41;
             roshi.velocity.X = 0;
             roshi.velocity.Y = 0;
+
+            roshiState.timer = 60;
+            roshiState.moving = false;
+            roshiState.attackTimer--; 
+            Vector2 trajectory = Vector2.Multiply(Vector2.Normalize(Vector2.Subtract(roshi.game.link.drawLocation, Vector2.Add(roshi.drawLocation, new Vector2(40 * 3, 5 * 3)))), new Vector2(20, 20));
+            roshiState.kiBlast = new KiBlast(roshi.game, roshi, roshiState, trajectory);
+            roshi.game.projectileHandler.Add(roshiState.kiBlast);
 
             if (roshiState.currentState != RoshiStateMachine.CurrentState.kiBlast)
             {

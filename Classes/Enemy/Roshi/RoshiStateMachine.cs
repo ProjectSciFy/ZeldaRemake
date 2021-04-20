@@ -18,16 +18,18 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
 
         public enum Direction { up, down };
         public Direction direction = Direction.up;
-        bool spawning = true;
-        bool moving = false;
-        private int timer = 120;
-        private int attackTimer = 100;
-        private int deathTimer = 30;
+        public bool spawning { get; set; } = true;
+        public bool moving { get; set; } = false;
+        public bool damaged { get; set; } = false;
+        public int timer { get; set; } = 120;
+        public int attackTimer { get; set; } = 100;
+        public int deathTimer { get; set; } = 330;
         public enum CurrentState { none, movingUp, movingDown, spawning, dying, damaged, kiBlast, kamehameha };
         public CurrentState currentState = CurrentState.none;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         public float spriteScalar;
-        private Kamehameha kamehameha;
+        public Kamehameha kamehameha { get; set; }
+        public KiBlast kiBlast { get; set; }
 
         public RoshiStateMachine(EnemyRoshi roshi)
         {
@@ -42,13 +44,15 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
 
         public void Spawning()
         {
-            timer = 90;
-            spawning = false;
             new RoshiSpawning(roshi, spriteFactory, this).Execute();
         }
         public void Dying()
         {
-            //new RoshiDying(roshi, spriteFactory, this).Execute();
+            new RoshiDying(roshi, spriteFactory, this).Execute();
+        }
+        public void Damaged()
+        {
+            new RoshiDamaged(roshi, spriteFactory, this).Execute();
         }
         public void Moving()
         {
@@ -57,24 +61,17 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
 
         public void KiBlast()
         {
-            // executes one ki blast toward link
-            // if under 50% health fires 3 ki blasts
             new RoshiKiBlast(roshi, spriteFactory, this).Execute();
-            Vector2 trajectory = Vector2.Multiply(Vector2.Normalize(Vector2.Subtract(game.link.drawLocation, Vector2.Add(roshi.drawLocation, new Vector2(40 * 3, 5 * 3)))), new Vector2(20,20));
-            game.projectileHandler.Add(new KiBlast(game, roshi, this, trajectory));
         }
 
         public void Kamehameha()
         {
-            //fires big kamehameha blast
             new RoshiKamehameha(roshi, spriteFactory, this).Execute();
-            kamehameha = new Kamehameha(game, roshi, this);
-            game.projectileHandler.Add(kamehameha);
         }
 
         public void Update()
         {
-            if (!spawning)
+            if (!spawning && !damaged)
             {
                 if (timer <= 0)
                 {
@@ -101,10 +98,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
 
                 if (attackTimer == 0)
                 {
-                    timer = 130;
-                    moving = false;
                     Kamehameha();
-                    attackTimer = 1000;
                 }
                 else if (attackTimer == 870)
                 {
@@ -113,10 +107,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
                 }
                 else if (attackTimer == 800 || attackTimer == 600 || attackTimer == 400 || attackTimer == 200)
                 {
-                    timer = 60;
-                    moving = false;
-                    KiBlast();
-                    attackTimer--;
+                    KiBlast(); 
                 }
             }
             else
@@ -136,6 +127,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
             else if (spawning)
             {
                 Spawning();
+            }
+            else if (damaged)
+            {
+                Damaged();
             }
             else if (moving)
             {

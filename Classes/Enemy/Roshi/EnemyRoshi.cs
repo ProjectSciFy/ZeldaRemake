@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         public int timer { get; set; } = 0;
         private float spriteScalar { get; set; }
         private static int HITBOX_OFFSET { get; set; } = 6;
-        public int health { get; set; } = 50;
+        public int health { get; set; } = 5;
         private int hurtTimer { get; set; } = 0;
 
         public EnemyRoshi(ZeldaGame game, Vector2 spawnLocation)
@@ -36,11 +36,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         }
         public void TakeDamage(int damage)
         {
-            if (hurtTimer <= 0)
+            if (hurtTimer <= 0 && myState.attackTimer < 870 && myState.attackTimer != 0)
             {
                 hurtTimer = 30;
                 this.health = this.health - damage;
                 game.sounds["enemyHit"].CreateInstance().Play();
+                myState.damaged = true;
             }
         }
         public Rectangle CollisionRectangle()

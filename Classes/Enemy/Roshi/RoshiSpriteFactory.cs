@@ -43,5 +43,13 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         {
             return new UniversalSprite(game, spriteSheet, new Rectangle(385, 319, 315, 80), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, enemyLayerDepth);
         }
+        public UniversalSprite RoshiDamaged()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(78, 522, 44, 42), Color.White, SpriteEffects.None, new Vector2(1, 3), 10, enemyLayerDepth);
+        }
+        public UniversalSprite RoshiDying()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(254, 522, 44, 42), Color.White, SpriteEffects.None, new Vector2(1, 11), 30, enemyLayerDepth);
+        }
     }
 }

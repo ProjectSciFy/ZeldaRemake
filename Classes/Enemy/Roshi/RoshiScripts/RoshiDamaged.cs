@@ -5,12 +5,12 @@ using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
 {
-    public class RoshiKamehameha : ICommand
+    public class RoshiDamaged : ICommand
     {
         private EnemyRoshi roshi { get; set; }
         private RoshiSpriteFactory spriteFactory { get; set; }
         private RoshiStateMachine roshiState { get; set; }
-        public RoshiKamehameha(EnemyRoshi roshi, RoshiSpriteFactory spriteFactory, RoshiStateMachine roshiState)
+        public RoshiDamaged(EnemyRoshi roshi, RoshiSpriteFactory spriteFactory, RoshiStateMachine roshiState)
         {
             this.roshi = roshi;
             this.spriteFactory = spriteFactory;
@@ -22,19 +22,20 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
             roshi.spriteSize.X = 43;
             roshi.spriteSize.Y = 41;
             roshi.velocity.X = 0;
-            roshi.velocity.Y = 0; 
-            roshiState.timer = 130;
+            roshi.velocity.Y = 0;
+            roshiState.timer = 30;
             roshiState.moving = false;
-            roshiState.attackTimer = 1000;
-            roshiState.kamehameha = new Kamehameha(roshi.game, roshi, roshiState);
-            roshi.game.projectileHandler.Add(roshiState.kamehameha);
-
-            if (roshiState.currentState != RoshiStateMachine.CurrentState.kamehameha)
+            roshiState.damaged = false; 
+            if (roshiState.kiBlast != null)
             {
-                roshiState.currentState = RoshiStateMachine.CurrentState.kamehameha;
-                roshi.mySprite = spriteFactory.RoshiKamehameha();
+                roshi.game.projectileHandler.Remove(roshiState.kiBlast);
+                roshi.game.collisionManager.collisionEntities.Remove(roshiState.kiBlast);
             }
-
+            if (roshiState.currentState != RoshiStateMachine.CurrentState.damaged)
+            {
+                roshiState.currentState = RoshiStateMachine.CurrentState.damaged;
+                roshi.mySprite = spriteFactory.RoshiDamaged();
+            }
         }
     }
 }

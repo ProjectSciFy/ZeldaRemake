@@ -21,6 +21,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
             roshi.spriteSize.Y = 41;
             roshi.velocity.X = 0;
             roshi.velocity.Y = 0;
+            roshiState.timer = 90;
+            roshiState.spawning = false;
 
             if (roshiState.currentState != RoshiStateMachine.CurrentState.spawning)
             {
