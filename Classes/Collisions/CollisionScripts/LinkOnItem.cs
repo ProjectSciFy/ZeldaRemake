@@ -33,9 +33,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 
                 link.linkState.grabItem = true;
                 link.linkState.isTriforce = true;
-                ((Triforce)item).position.X = link.drawLocation.X;
-                ((Triforce)item).position.Y = link.drawLocation.Y - (16 * link.spriteScalar);
-
                 link.game.currentGameState = new WinState(link.game);
             }
             else if (item is Bow)
