@@ -95,11 +95,15 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public void Bomb()
         {
-            if (timer == 0)
+            if (game.util.numBombs > 0)
             {
-                timer = 15;
-                new LinkBomb(link, spriteFactory, this).Execute();
-                link.game.sounds["bombDrop"].CreateInstance().Play();
+                if (timer == 0)
+                {
+                    timer = 15;
+                    new LinkBomb(link, spriteFactory, this).Execute();
+                    link.game.sounds["bombDrop"].CreateInstance().Play();
+                    game.util.numBombs -= 1;
+                }
             }
         }
 

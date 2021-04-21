@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using CSE3902_Game_Sprint0.Classes.Scripts;
+using CSE3902_Game_Sprint0.Classes.Level;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
@@ -24,12 +25,13 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             this.game = game;
             game.spriteSheets.TryGetValue("GameOver", out gameOverSpriteSheet);
             texture = new UniversalSprite(game, gameOverSpriteSheet, new Rectangle(36, 126, WIDTH, HEIGHT), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            this.game.link.drawLocation = new Vector2(this.game.GraphicsDevice.Viewport.Width / 2, this.game.GraphicsDevice.Viewport.Height / 2 + ParserUtility.GAME_FRAME_ADJUST);
         }
 
         void IGameState.Draw()
         {
-            this.game.link.Draw();
             texture.Draw(new Vector2(game.GraphicsDevice.Viewport.Width / 3 - WIDTH, game.GraphicsDevice.Viewport.Height / 2 - HEIGHT));
+            game.link.Draw();
         }
 
         void IGameState.Update()
@@ -41,8 +43,6 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 timer = 80 + 180;
             }
             game.link.Update();
-            game.link.Draw();
-
 
             if (timer > 0)
             {

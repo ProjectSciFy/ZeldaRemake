@@ -24,6 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         //player hud related variables:
         private playerHUD pHUD { get; set; }
+        private ISprite holdingMap; 
 
         public ItemSelectState(ZeldaGame game)
         {
@@ -32,6 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             top = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(1, 11, 260, 100), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             mid = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(258, 111, 260, 99), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            holdingMap=new UniversalSprite(game,inventorySpriteSheet, new Rectangle(598, 154, 17, 100), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             //164 42 259 87
             pHUD = game.currentRoom.pHUD; 
 
@@ -44,6 +46,11 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             pHUD.Draw();
             mid.Draw(game.util.midPos);
             top.Draw(game.util.topPos);
+            //if (game.util.hasMap)
+            //{
+
+            //    holdingMap.Draw();
+            //}
         }
 
         void IGameState.Update()
@@ -88,10 +95,10 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             //hud update:
             pHUD.hudPosition.Y += speed;
             pHUD.YellowCounterPos.Y += speed;
-            pHUD.BlueCounterPos.Y += speed;
+            pHUD.BombCounterPos.Y += speed;
             pHUD.KeyCounterPos.Y += speed;
             pHUD.digitKeyPos.Y += speed;
-            pHUD.digitBrupPos.Y += speed;
+            pHUD.digitBombPos.Y += speed;
             pHUD.digitYrupPos.Y += speed;
             pHUD.primWeapPos.Y += speed;
             pHUD.secWeapPos.Y += speed;
@@ -99,7 +106,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             //sprite for "Level 1" text is apart of hudPosition.Y, no need to update it manually.
             pHUD.minimapPos.Y += speed;
             pHUD.bossPos.Y += speed;
-            pHUD.levelPos.Y += speed;
+            pHUD.gameLevelPos.Y += speed;
             pHUD.linkIndicatorPos.Y += speed;
             //item screen update:
             game.util.midPos.Y += speed;

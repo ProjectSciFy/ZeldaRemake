@@ -2,6 +2,7 @@
 using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
+using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
@@ -54,6 +55,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 {
                     ((EnemyWallmaster)enemy).TakeDamage(arrowDamage + (((EnemyWallmaster)enemy).game.util.numXP / ((EnemyWallmaster)enemy).game.util.XPPerLevel));
                 }
+                else if (enemy is EnemyRoshi)
+                {
+                    ((EnemyRoshi)enemy).TakeDamage(arrowDamage + (((EnemyRoshi)enemy).game.util.numXP / ((EnemyRoshi)enemy).game.util.XPPerLevel));
+                }
 
                 ((Arrow)projectile).myState.hit = true;
             }
@@ -82,6 +87,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 else if (enemy is EnemyWallmaster)
                 {
                     ((EnemyWallmaster)enemy).TakeDamage(bombDamage + (((EnemyWallmaster)enemy).game.util.numXP / ((EnemyWallmaster)enemy).game.util.XPPerLevel));
+                }
+                else if (enemy is EnemyRoshi)
+                {
+                    ((EnemyRoshi)enemy).TakeDamage(bombDamage + (((EnemyRoshi)enemy).game.util.numXP / ((EnemyRoshi)enemy).game.util.XPPerLevel));
                 }
             }
             else if (projectile is LinkBoomerangProjectile)
@@ -114,6 +123,11 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 else if (enemy is EnemyWallmaster)
                 {
                     ((EnemyWallmaster)enemy).TakeDamage(arrowDamage + (((EnemyWallmaster)enemy).game.util.numXP / ((EnemyWallmaster)enemy).game.util.XPPerLevel));
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyRoshi)
+                {
+                    ((EnemyRoshi)enemy).TakeDamage(arrowDamage + (((EnemyRoshi)enemy).game.util.numXP / ((EnemyRoshi)enemy).game.util.XPPerLevel));
                     ((LinkBoomerangProjectile)projectile).myState.returning = true;
                 }
             }

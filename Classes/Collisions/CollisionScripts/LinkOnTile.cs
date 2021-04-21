@@ -13,7 +13,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
     public class LinkOnTile : ICommand
     {
-        private Link link { get; set; }
+        private Link link;
         private ITile tile { get; set; }
         private Collision.Collision.Direction direction { get; set; }
         private ZeldaGame game { get; set; }
@@ -26,7 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         }
         public void Execute()
         {
-            if((tile is TPTile))
+            if((tile is TPTile) && link.linkState.useSword is false && link.linkState.timer == 0)
             {
                 game.changeRoom(16, Collision.Collision.Direction.left);
             }
@@ -83,6 +83,11 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 {
                     game.changeRoom(game.neighbors[game.util.roomNumber][1], direction);
                 }
+            }
+            if(tile is EventTile && game.currentRoom.roomNumber == 8)
+            {
+                game.currentRoom.closeDoorways();
+                game.currentRoom.lockDoor(2);
             }
             if (tile is PushableTile)
             {

@@ -281,5 +281,94 @@ C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\game-ove
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\game-over.xnb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Moan.xnb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Scream.xnb
+<<<<<<< HEAD
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Portal2_sfx_portal_gun_fire_blue.xnb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Portal2_sfx_portal_gun_fire_orange.xnb
+=======
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\roshi.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Moan.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Scream.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\roshi 2.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\roshi.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 Labyrinth.wma
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 Labyrinth.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 LabyrinthLooped.wma
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\04 LabyrinthLooped.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Credits.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\game-over.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Level 1 (Eagle).xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Arrow_Boomerang.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Bomb_Blow.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Bomb_Drop.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Boss_Hit.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Boss_Scream1.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Door_Unlock.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Enemy_Die.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Enemy_Hit.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Fanfare.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Heart.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Item.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Get_Rupee.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Key_Appear.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Link_Die.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Link_Hurt.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_LowHealth.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Refill_Loop.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Secret.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Shield.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Stairs.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Combined.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Shoot.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Sword_Slash.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Text.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\LOZ_Text_Slow.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Bosses.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Dungeon Enemies.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Dungeon Tileset.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Fonts.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - HUD & Pause Screen.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Items & Weapons.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - Link.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\NES - The Legend of Zelda - NPCs.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Moan.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\OOT_ReDead_Scream.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\roshi 2.xnb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.exe
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.deps.json
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.runtimeconfig.json
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.runtimeconfig.dev.json
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\CSE3902 Game Sprint0.pdb
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\Microsoft.VisualBasic.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Direct2D1.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Direct3D11.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Direct3D9.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.DXGI.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.Mathematics.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.MediaFoundation.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.XAudio2.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\SharpDX.XInput.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\debian-x64\native\libuv.so
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\fedora-x64\native\libuv.so
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\opensuse-x64\native\libuv.so
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\osx\native\libuv.dylib
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\rhel-x64\native\libuv.so
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\win7-arm\native\libuv.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\libuv.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\libuv.dll
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csprojAssemblyReference.cache
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.AssemblyInfoInputs.cache
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.AssemblyInfo.cs
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CoreCompileInputs.cache
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.csproj.CopyComplete
+C:\Users\jaden\Downloads\ZeldaRemake-1\ZeldaRemake\obj\Debug\netcoreapp3.1\CSE3902 Game Sprint0.genruntimeconfig.cache
+>>>>>>> 8fa144d0ec08f4de3b0615eeeb4c8e5e8bdf741e

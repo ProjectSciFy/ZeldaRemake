@@ -28,7 +28,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     link.linkState.isDamaged = true;
                 }
             }
-            else if (projectile is GoriyaBoomerang || projectile is Fireball)
+            else if (projectile is GoriyaBoomerang || projectile is Fireball || projectile is KiBlast || projectile is Kamehameha)
             {
                 if (link.linkState.timer <= 0)
                 {
@@ -37,6 +37,14 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 if (projectile is Fireball)
                 {
                     ((Fireball)projectile).collided = true;
+                }
+                else if (projectile is KiBlast)
+                {
+                    ((KiBlast)projectile).collided = true;
+                }
+                else if (projectile is Kamehameha)
+                {
+                    link.game.util.numLives = 0;
                 }
                 else
                 {

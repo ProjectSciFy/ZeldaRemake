@@ -53,7 +53,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             //player HUD:
             this.keyCounter = game.util.numKeys;
-            this.bluerupeeCounter = game.util.numBrups;
+            this.bluerupeeCounter = game.util.numBombs;
             this.yellowrupeeCounter = game.util.numYrups;
             this.hudFactory = game.hudSpriteFactory;
             pHUD = new playerHUD(game, hudFactory);
@@ -122,7 +122,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             }
             else if (entity is BlueRupee)
             {
-                game.util.numBrups += 1;
+                game.util.numYrups += 5;
             }
             else if (entity is YellowRupee)
             {
@@ -148,8 +148,45 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 game.util.hasCompass = true;
             }
+            else if (entity is Bomb)
+            {
+                game.util.numBombs += 1;
+            }
+            else if (entity is XP)
+            {
+                game.util.numXP += 1;
+            }
         }
-
+        public void closeDoorways()
+        {
+            foreach (ITile tile in tiles)
+            {
+                if (tile is GateKeeperTile)
+                {
+                    ((GateKeeperTile)tile).locked = true;
+                }
+            }
+        }
+        public void lockDoor(int doorDirection)
+        {
+            switch (doorDirection)
+            {
+                case 0: //TOP DOOR
+                    doors[0] = new TopDoor(game, new RoomTextureStorage(game), 2);
+                    break;
+                case 1: //LEFT DOOR
+                    doors[1] = new LeftDoor(game, new RoomTextureStorage(game), 12);
+                    break;
+                case 2: //RIGHT DOOR
+                    doors[2] = new RightDoor(game, new RoomTextureStorage(game), 22);
+                    break;
+                case 3: //BOTTOM DOOR
+                    doors[3] = new BottomDoor(game, new RoomTextureStorage(game), 32);
+                    break;
+                default:
+                    break;
+            }
+        }
         public void Draw()
         {
             background.Draw();

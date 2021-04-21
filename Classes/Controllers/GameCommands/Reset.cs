@@ -28,16 +28,12 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
         private int Y_ADJUST { get; set; } = 0;
 
         private ZeldaGame game { get; set; }
-        private LinkStateMachine linkState { get; set; }
-        private LinkStateMachine.Direction direction { get; set; }
 
         private Vector2 linkLocation;
 
         public Reset(ZeldaGame game)
         {
             this.game = game;
-            linkState = game.linkStateMachine;
-            direction = game.linkStateMachine.direction;
             linkLocation = game.link.drawLocation;
             this.Y_ADJUST = (game.GraphicsDevice.Viewport.Bounds.Height / 4) - 2 * CENTER;
         }
@@ -49,15 +45,16 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             MediaPlayer.IsRepeating = true;
 
             //RESET LINK
-            this.game.linkStateMachine.Idle();
-            linkState.direction = LinkStateMachine.Direction.down;
             game.link.drawLocation = new Vector2((game.GraphicsDevice.Viewport.Bounds.Width / 2) - CENTER, (game.GraphicsDevice.Viewport.Bounds.Height / 2) + Y_ADJUST);
+            game.link.linkState.ChangeDirection(LinkStateMachine.Direction.down);
+            game.linkStateMachine.Idle();
+            game.link.linkState.timer = 0;
 
             //RESET HUD
             game.util.numLives = 3;
             game.util.numXP = 0;
             game.util.numKeys = 0;
-            game.util.numBrups = 0;
+            game.util.numBombs = 3;
             game.util.numYrups = 0;
             game.util.hasMap = false;
             game.util.hasCompass = false;

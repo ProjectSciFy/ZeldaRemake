@@ -47,5 +47,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             fireball.velocity = new Vector2(fireball.trajectory.X, fireball.trajectory.Y);
             fireball.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(101, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 4), fireballLimiter, linkLayerDepth);
         }
+        public void KiBlastAttack(KiBlast kiBlast)
+        {
+            kiBlast.spriteSize = new Vector2(16, 16);
+            kiBlast.velocity = new Vector2(kiBlast.trajectory.X, kiBlast.trajectory.Y);
+            kiBlast.mySprite = new UniversalSprite(game, bossSpriteSheet, new Rectangle(125, 11, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), fireballLimiter, linkLayerDepth);
+        }
     }
 }
