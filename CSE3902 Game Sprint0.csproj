@@ -19,6 +19,10 @@
     <None Remove="Classes\Controllers\TileCommands\**" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Content\Portal2_sfx_portal_gun_fire_blue.m4a" />
+    <None Remove="Content\Portal2_sfx_portal_gun_fire_orange.m4r" />
+  </ItemGroup>
+  <ItemGroup>
     <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />
   </ItemGroup>
   <ItemGroup>
