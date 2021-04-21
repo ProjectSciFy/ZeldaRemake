@@ -84,6 +84,11 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     game.changeRoom(game.neighbors[game.util.roomNumber][1], direction);
                 }
             }
+            if(tile is EventTile && game.currentRoom.roomNumber == 8)
+            {
+                game.currentRoom.closeDoorways();
+                game.currentRoom.lockDoor(2);
+            }
             if (tile is PushableTile)
             {
                 if (((PushableTile)tile).pushed) 

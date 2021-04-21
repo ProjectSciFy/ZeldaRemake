@@ -94,6 +94,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         tiles.Add(block = new BlockTile(game, new TileSpriteFactory(game), position));
                         block.drawLocation = position;
                         break;
+                    case "Event":
+                        position = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
+                        EventTile eventTile;
+                        tiles.Add(eventTile = new EventTile(game, new TileSpriteFactory(game), position));
+                        eventTile.drawLocation = position;
+                        break;
                     case "Pushable":
                         position = utility.GetPushablePosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         PushableTile pushable;
