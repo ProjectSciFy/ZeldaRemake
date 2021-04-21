@@ -3,6 +3,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
+using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Tiles;
@@ -141,6 +142,25 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 else if (direction == Collision.Collision.Direction.left)
                 {
                     ((EnemyRedead)enemy).drawLocation.X = ((EnemyRedead)enemy).drawLocation.X - ((EnemyRedead)enemy).velocity.X;
+                }
+            }
+            else if (enemy is EnemyRoshi)
+            {
+                if (direction == Collision.Collision.Direction.down)
+                {
+                    ((EnemyRoshi)enemy).drawLocation.Y = ((EnemyRoshi)enemy).drawLocation.Y - ((EnemyRoshi)enemy).velocity.Y;
+                }
+                else if (direction == Collision.Collision.Direction.up)
+                {
+                    ((EnemyRoshi)enemy).drawLocation.Y = ((EnemyRoshi)enemy).drawLocation.Y - ((EnemyRoshi)enemy).velocity.Y;
+                }
+                else if (direction == Collision.Collision.Direction.right)
+                {
+                    ((EnemyRoshi)enemy).drawLocation.X = ((EnemyRoshi)enemy).drawLocation.X - ((EnemyRoshi)enemy).velocity.X;
+                }
+                else if (direction == Collision.Collision.Direction.left)
+                {
+                    ((EnemyRoshi)enemy).drawLocation.X = ((EnemyRoshi)enemy).drawLocation.X - ((EnemyRoshi)enemy).velocity.X;
                 }
             }
         }
