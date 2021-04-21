@@ -1,4 +1,6 @@
-﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
+﻿using CSE3902_Game_Sprint0.Classes.Items;
+using Microsoft.Xna.Framework;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,6 +36,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
                 roshi.mySprite = spriteFactory.RoshiDying();
                 roshi.game.collisionManager.collisionEntities.Remove(roshi);
                 roshi.game.sounds["enemyDie"].CreateInstance().Play();
+                new DropKey(roshi.game, Vector2.Add(roshi.drawLocation, roshi.spriteSize) , roshiState.deathTimer).Execute();
             }
         }
     }
