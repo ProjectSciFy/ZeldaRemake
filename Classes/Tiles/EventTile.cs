@@ -21,6 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         private static int HITBOX_OFFSET { get; } = 6;
         public Vector2 drawLocation { get; set; }
         public Vector2 spriteSize = new Vector2(16, 16);
+        public bool used { get; set; }
         public EventTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
             this.game = game;
@@ -28,6 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
             this.tileFactory = tileFactory;
             this.tileSprite = tileFactory.BlockTile();
             this.spriteScalar = game.util.spriteScalar;
+            this.used = false;
         }
         public Rectangle CollisionRectangle()
         {

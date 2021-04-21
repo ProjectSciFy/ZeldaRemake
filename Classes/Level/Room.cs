@@ -161,9 +161,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         {
             foreach (ITile tile in tiles)
             {
-                if (tile is GateKeeperTile)
+                if (tile is GateKeeperTile && ((GateKeeperTile)tile).locked == false)
                 {
                     ((GateKeeperTile)tile).locked = true;
+                    ((GateKeeperTile)tile).isLockedDoor = true;
                 }
             }
         }
