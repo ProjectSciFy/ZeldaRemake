@@ -14,7 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private ISprite texture { get; set; }
         private Texture2D pausedSpriteSheet;
         private float itemDepth { get; set; } = 0.4f;
-        private const  int HEIGHT = 7;
+        private const int HEIGHT = 7;
         private const int WIDTH = 47;
         public PauseState(ZeldaGame game)
         {
