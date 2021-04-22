@@ -162,7 +162,7 @@ namespace CSE3902_Game_Sprint0
             int newRoomPortalNumber = 0;
             Room tempRoom;
 
-            if(Keyboard.GetState().IsKeyDown(Keys.O))
+            if(Keyboard.GetState().IsKeyDown(Keys.C))
                 foreach (IDoor door in currentRoom.getDoors())
                 {
                     thisDoorValue = door.getDoorValue();
