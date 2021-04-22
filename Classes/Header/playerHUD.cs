@@ -146,15 +146,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
         public void Update()
         {
-            //xp hitbox adds 2 each time:
-            if (game.util.numXP <= 20)
-            {
-                xpCount = game.util.numXP / 2;
-            }
-            else
-            {
-                xpCount = (game.util.numXP / 2) % 10;
-            }
+            xpCount = game.util.numXP % game.util.XPPerLevel;
 
             //responds to currently selected secondary weapon:
             secWeapSprite = HudFactory.secondaryWeaponHUD();
@@ -363,7 +355,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //linkLevelDigit = HudFactory.Digit(linkLevelOffset);
             //linkLevelDigit.Draw(linkLevelPos);
 
-            //hitbox with xp adds 2 to game.util.numXP right now:
             for (int i = 0; i < xpCount; i++)
             {
                 xpOffset = (i) * (12);

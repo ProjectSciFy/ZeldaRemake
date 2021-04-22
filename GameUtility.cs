@@ -19,7 +19,7 @@ namespace CSE3902_Game_Sprint0
         public int numLives { get; set; }
 
         public int numXP { get; set; }
-        public int XPPerLevel { get; set; } = 20;
+        public int XPPerLevel { get; set; } = 10;
         public int linkXPlevel { get; set; }
         public int difficultyMult { get; set; } = 1;
 
