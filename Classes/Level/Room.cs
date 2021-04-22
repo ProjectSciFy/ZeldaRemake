@@ -211,8 +211,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 bowSprite.Draw(new Vector2(game.link.drawLocation.X - 20, game.link.drawLocation.Y - 30));
             }
-            
-            
+
             foreach (IDoor door in doors)
             {
                 door.Draw();
