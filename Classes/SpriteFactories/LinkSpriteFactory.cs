@@ -91,6 +91,24 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             return new UniversalSprite(game, linkTexture, new Rectangle(66, 47, 27, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 3, linkLayerDepth);
         }
 
+        //Portal gun
+        public UniversalSprite PortalUp()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(94, 75, 16, 28), Color.White, SpriteEffects.None, new Vector2(1, 4), 3, linkLayerDepth);
+        }
+        public UniversalSprite PortalDown()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(94, 47, 16, 27), Color.White, SpriteEffects.None, new Vector2(1, 4), 3, linkLayerDepth);
+        }
+        public UniversalSprite PortalRight()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(159, 47, 27, 16), Color.White, SpriteEffects.None, new Vector2(4, 1), 3, linkLayerDepth);
+        }
+        public UniversalSprite PortalLeft()
+        {
+            return new UniversalSprite(game, linkTexture, new Rectangle(159, 47, 27, 16), Color.White, SpriteEffects.FlipHorizontally, new Vector2(4, 1), 3, linkLayerDepth);
+        }
+
         //Bomb:
         public UniversalSprite BombUp()
         {
