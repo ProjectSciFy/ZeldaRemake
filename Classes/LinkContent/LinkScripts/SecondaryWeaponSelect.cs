@@ -15,22 +15,6 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
         }
         public void Execute() 
         {
-            //switch (weapon)
-            //{
-            //    case LinkStateMachine.Weapon.bomb:
-            //        state.weaponSelected = weapon;
-            //        break;
-            //    case LinkStateMachine.Weapon.boomerang:
-            //        state.weaponSelected = weapon;
-            //        break;
-            //    case LinkStateMachine.Weapon.arrow:
-            //        if (state.useArrow)
-            //        {
-            //            state.weaponSelected = weapon;
-            //        }
-            //        break;
-
-            //}
             state.weaponSelected = weapon;
         }
     }
