@@ -30,6 +30,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
             myState = new WallmasterStateMachine(this);
             game.collisionManager.collisionEntities.Add(this, collisionRectangle);
             this.spriteScalar = game.util.spriteScalar;
+            health = health * game.util.difficultyMult;
         }
         public void TakeDamage(int damage)
         {

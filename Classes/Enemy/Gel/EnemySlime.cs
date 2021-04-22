@@ -32,6 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
             drawLocation = spawnLocation;
             myState = new GelStateMachine(this);
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
+            health = health * game.util.difficultyMult;
         }
         public void TakeDamage(int damage)
         {

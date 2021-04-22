@@ -33,6 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
             myState = new RoshiStateMachine(this);
             this.spriteScalar = game.util.spriteScalar;
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
+            health = health * game.util.difficultyMult;
         }
         public void TakeDamage(int damage)
         {

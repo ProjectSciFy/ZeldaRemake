@@ -36,6 +36,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             game.collisionManager.collisionEntities.Add(this, collisionRectangle);
             boomerang = new GoriyaBoomerang(game, this, myState);
             this.spriteScalar = game.util.spriteScalar;
+            health = health * game.util.difficultyMult;
         }
         public void TakeDamage(int damage)
         {

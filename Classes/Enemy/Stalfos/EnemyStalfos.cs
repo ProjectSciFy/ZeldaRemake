@@ -32,6 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
             drawLocation = spawnLocation;
             myState = new StalfosStateMachine(this);
             game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
+            health = health * game.util.difficultyMult;
         }
         public void TakeDamage(int damage)
         {

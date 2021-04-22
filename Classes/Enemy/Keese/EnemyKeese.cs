@@ -31,6 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
             drawLocation = spawnLocation;
             myState = new KeeseStateMachine(this);
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
+            health = health * game.util.difficultyMult;
         }
         public void TakeDamage(int damage)
         {

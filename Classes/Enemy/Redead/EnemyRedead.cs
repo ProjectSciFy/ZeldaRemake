@@ -31,6 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
             drawLocation = spawnLocation;
             myState = new RedeadStateMachine(this);
             game.collisionManager.collisionEntities.Add(this, this.CollisionRectangle());
+            health = health * game.util.difficultyMult;
         }
         public void TakeDamage(int damage)
         {

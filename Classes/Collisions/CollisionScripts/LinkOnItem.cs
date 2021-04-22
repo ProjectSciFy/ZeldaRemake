@@ -49,7 +49,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             {
                 link.game.sounds["getHeart"].CreateInstance().Play();
                 link.game.util.numXP++;
-                if (link.game.util.numXP % link.game.util.XPPerLevel == 0)
+                if (link.game.util.numXP % link.game.util.XPPerLevel * link.game.util.difficultyMult == 0)
                 {
                     link.game.sounds["fanfare"].CreateInstance().Play();
                 }
