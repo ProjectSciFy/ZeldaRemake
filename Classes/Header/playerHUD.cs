@@ -370,24 +370,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                 xpSprite.Draw(new Vector2(xpPos.X, xpPos.Y - xpOffset));
             }
 
-            if (game.util.numXP <= 20)
-            {
-                xpCount = game.util.numXP / 2;
-                    for (int i = 0; i < xpCount; i++)
-                    {
-                        xpOffset = (i) * (12);
-                        xpSprite.Draw(new Vector2(xpPos.X, xpPos.Y - xpOffset));
-                    }
-            }
-            else
-            {
-                xpCount = (game.util.numXP / 2) % 10;
-                for (int i = 0; i < xpCount; i++)
-                {
-                    xpOffset = (i) * (12);
-                    xpSprite.Draw(new Vector2(xpPos.X, xpPos.Y - xpOffset));
-                }
-            }
             //-------------------------------------------------------------------------------
         }
     }
