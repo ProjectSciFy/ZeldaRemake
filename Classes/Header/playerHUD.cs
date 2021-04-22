@@ -223,6 +223,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicatorPos.X = minimapPos.X + 57;
                     linkIndicatorPos.Y = minimapPos.Y;
                     break;
+                case 19:
+                    linkIndicatorPos.X = minimapPos.X + 81;
+                    linkIndicatorPos.Y = minimapPos.Y;
+                    break;
             }
         }
 
