@@ -31,6 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool grabItem { get; set; } = false;
         public bool isTriforce = false;
         public bool useSword { get; set; } = false;
+        public bool usePortal { get; set; } = false;
         public bool useBomb { get; set; } = false;
         public bool useArrow { get; set; } = false;
         public bool useBoomerang { get; set; } = false;
@@ -40,7 +41,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool dead { get; set; } = false;
         public bool boomerangCaught { get; set; } = true;
 
-        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, rollingUp, rollingDown, rollingLeft, rollingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
+        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, rollingUp, rollingDown, rollingLeft, rollingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, portalUp, portalRight, portalDown, portalLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
         public CurrentState currentState;
 
         public LinkStateMachine(Link link)
@@ -90,6 +91,18 @@ namespace CSE3902_Game_Sprint0.Classes
                 new LinkSword(link, spriteFactory, this).Execute();
                 new LinkOffset(link, false).Execute();
                 link.game.sounds["swordSlash"].CreateInstance().Play();
+            }
+        }
+
+        public void Portal()
+        {
+            usePortal = false;
+            if (timer == 0)
+            {
+                timer = 12;
+                new LinkPortal(link, spriteFactory, this).Execute();
+                new LinkOffset(link, false).Execute();
+                link.game.sounds["swordShoot"].CreateInstance().Play();
             }
         }
 
@@ -214,6 +227,10 @@ namespace CSE3902_Game_Sprint0.Classes
                 {
                     Sword();
                 }
+                else if (usePortal)
+                {
+                    Portal();
+                }
                 else if (useBomb)
                 {
                     Bomb();
@@ -243,6 +260,10 @@ namespace CSE3902_Game_Sprint0.Classes
                 else if (useSword)
                 {
                     Sword();
+                }
+                else if (usePortal)
+                {
+                    Portal();
                 }
                 else if (useBomb)
                 {
