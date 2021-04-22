@@ -15,7 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private static int INTERIOR_WIDTH { get; set; } = 192;
         private static int INTERIOR_LENGTH { get; set; } = 112;
         private static int DOOR_SIZE { get; set; } = 32;
-        private static int PORTAL_SIZE { get; set; } = 16;
+        private static int PORTAL_SIZE { get; set; } = 32;
 
         public static Dictionary<int, Rectangle> INTERIOR_DIMENSIONS = new Dictionary<int, Rectangle>()
         {
@@ -60,12 +60,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             [19] = new Rectangle(),
             [29] = new Rectangle(),
             [5] = new Rectangle(),
-            [7] = new Rectangle(94, 104, PORTAL_SIZE, PORTAL_SIZE),
-            [8] = new Rectangle(94, 121, PORTAL_SIZE, PORTAL_SIZE),
-            [37] = new Rectangle(94, 104, PORTAL_SIZE, PORTAL_SIZE),
-            [38] = new Rectangle(94, 121, PORTAL_SIZE, PORTAL_SIZE),
-            [6] = new Rectangle(94, 138, PORTAL_SIZE, PORTAL_SIZE),
-            [36] = new Rectangle(94, 138, PORTAL_SIZE, PORTAL_SIZE),
+            [7] = new Rectangle(980, 77, PORTAL_SIZE, PORTAL_SIZE),
+            [8] = new Rectangle(980, 110, PORTAL_SIZE, PORTAL_SIZE),
+            [37] = new Rectangle(980, 77, PORTAL_SIZE, PORTAL_SIZE),
+            [38] = new Rectangle(980, 110, PORTAL_SIZE, PORTAL_SIZE),
+            [6] = new Rectangle(815, 11, DOOR_SIZE, DOOR_SIZE),
+            [36] = new Rectangle(815, 110, DOOR_SIZE, DOOR_SIZE),
 
         };
 
@@ -90,8 +90,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         }
         public UniversalSprite getDoor(int doorValue)
         {
-            if(doorValue % 10 == 7 || doorValue % 10 == 8 || doorValue % 10 == 6)
-                return new UniversalSprite(game, portalSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(4, 1), 10, 0.0f);
+            //if(doorValue % 10 == 7 || doorValue % 10 == 8 || doorValue % 10 == 6)
+             //   return new UniversalSprite(game, portalSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(4, 1), 10, 0.0f);
             return new UniversalSprite(game, tileSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
         }
         public UniversalSprite getPortalDoor(int doorValue)

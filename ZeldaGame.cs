@@ -85,7 +85,7 @@ namespace CSE3902_Game_Sprint0
             roomList = new List<Room>();
             /* 18 ROOMS */
 
-            util.roomNumber = 6;
+            util.roomNumber = 2;
             for (int i = 1; i < 19; i++)
             {
                 roomList.Add(Parser.ParseRoomCSV(this, i));
@@ -159,7 +159,6 @@ namespace CSE3902_Game_Sprint0
                 Exit();
 
             int thisDoorValue;
-            int thisRoomNumber;
             int newRoomPortalNumber = 0;
             Room tempRoom;
 
