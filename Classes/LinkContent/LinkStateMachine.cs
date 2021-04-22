@@ -102,7 +102,16 @@ namespace CSE3902_Game_Sprint0.Classes
                 timer = 12;
                 new LinkPortal(link, spriteFactory, this).Execute();
                 new LinkOffset(link, false).Execute();
-                link.game.sounds["swordShoot"].CreateInstance().Play();
+                var random = new Random();
+                switch (random.Next(2))
+                {
+                    case 0:
+                        link.game.sounds["portalBlue"].CreateInstance().Play();
+                        break;
+                    default:
+                        link.game.sounds["portalOrange"].CreateInstance().Play();
+                        break;
+                }
             }
         }
 
