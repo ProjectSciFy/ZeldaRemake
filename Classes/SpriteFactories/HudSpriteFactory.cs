@@ -83,6 +83,11 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             }
         }
 
+        public UniversalSprite xpSegment()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(486,100,10,4), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
         public UniversalSprite top()
         {
             return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 0, 260, 82), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
@@ -100,16 +105,6 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             return new UniversalSprite(game, hudSpriteSheet, new Rectangle(0, 0, 42, 178), Color.Black, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
         }
-
-        //public UniversalSprite xpSegment()
-        //{
-
-        //}
-
-        //public UniversalSprite xpBarOutline()
-        //{
-
-        //}
 
     }
 }

@@ -24,6 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         //player hud related variables:
         private playerHUD pHUD { get; set; }
+
         private ISprite holdingMap; 
 
         public ItemSelectState(ZeldaGame game)

@@ -36,8 +36,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private HudSpriteFactory hudFactory { get; set; }
         private int maxLives { get; set; } = 16;
         private int keyCounter { get; set; }
-        private int bluerupeeCounter { get; set; }
+        private int bombCounter { get; set; }
         private int yellowrupeeCounter { get; set; }
+
+        private int linkLevelCount { get; set; }
+
+        private int xpCounter { get; set; }
 
 
         public int roomNumber;
@@ -53,7 +57,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             //player HUD:
             this.keyCounter = game.util.numKeys;
-            this.bluerupeeCounter = game.util.numBombs;
+            this.bombCounter = game.util.numBombs;
             this.yellowrupeeCounter = game.util.numYrups;
             this.hudFactory = game.hudSpriteFactory;
             pHUD = new playerHUD(game, hudFactory);

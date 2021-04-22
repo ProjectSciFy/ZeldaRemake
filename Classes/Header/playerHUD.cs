@@ -21,8 +21,11 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
         //XP sprites:
         private ISprite xpSprite { get; set; }
-        private ISprite xpBarSprite { get; set; }
-        private ISprite linkLevelSprite { get; set; }
+        private ISprite linkLevelDigit { get; set; }
+
+        private int linkLevelOffset;
+
+        private int xpCount;
 
         //counter sprites:
         private ISprite xSprite { get; set; }
@@ -65,7 +68,6 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 heartPos;
 
         public Vector2 xpPos;
-        public Vector2 xpBarPos;
         public Vector2 linkLevelPos;
 
         public Vector2 minimapPos;
@@ -95,9 +97,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             gameLevelSprite = HudFactory.levelHUD();
             heartSprite = HudFactory.livesHUD();
             //xp & leveling:
-            //xpSprite = HudFactory.xpSegment();
-            //xpBarSprite = HudFactory.xpBarOutline();
-            //linkLevelSprite = HudFactory.linkLevel();
+            xpSprite = HudFactory.xpSegment();
+            linkLevelDigit = HudFactory.Digit(linkLevelOffset);
 
             //counters:
             xSprite = HudFactory.xHUD();
@@ -123,7 +124,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             primWeapPos = new Vector2((hudPosition.X + 456), (hudPosition.Y + 72));
             secWeapPos = new Vector2((hudPosition.X + 384),(hudPosition.Y + 72));
             gameLevelPos = new Vector2((hudPosition.X + 47), (hudPosition.Y + 24));
-            heartPos = new Vector2((hudPosition.X + 528), (hudPosition.Y + 96));
+            heartPos = new Vector2((hudPosition.X + 516), (hudPosition.Y + 96));
             //counter related positions:
             digitKeyPos = new Vector2((hudPosition.X + 312), (hudPosition.Y + 96));
             KeyCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 96));
@@ -133,9 +134,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             YellowCounterPos = new Vector2((hudPosition.X + 288), (hudPosition.Y + 48));
 
             //xp & leveling:
-            //xpPos = new Vector2();
-            //xpBarPos = new Vector2();
-            //linkLevelPos = new Vector2();
+            xpPos = new Vector2(hudPosition.X + (729), hudPosition.Y + 121);
+            linkLevelPos = new Vector2(hudPosition.X + (227*3), hudPosition.Y + 15);
 
             //mini-map positions:
             minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
@@ -146,6 +146,16 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
         public void Update()
         {
+            //xp hitbox adds 2 each time:
+            if (game.util.numXP <= 20)
+            {
+                xpCount = game.util.numXP / 2;
+            }
+            else
+            {
+                xpCount = (game.util.numXP / 2) % 10;
+            }
+
             //responds to currently selected secondary weapon:
             secWeapSprite = HudFactory.secondaryWeaponHUD();
 
@@ -343,19 +353,41 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             }
             //--------------------------------------------------------------------------------
             //xp & level graphics
-            //Hearts/Lives:
 
-            //xpBarSprite.Draw(xpBarPos);
-            //linkLevelSprite.Draw(linkLevelPos);
-
-            //if (game.util.numXP < 10)
+            //links current level:
+            //linkLevelOffset = game.util.linkXPlevel * 9;
+            //if ((game.util.numXP % 10) == 0)
             //{
-            //    for (int i = 0; i < game.util.numXP; i++)
-            //    {
-            //        xpOffset = (i) * (24);
-            //        xpSprite.Draw(new Vector2(xpPos.X + xpOffset, xpPos.Y));
-            //    }
+            //    linkLevelOffset = (game.util.linkXPlevel + (game.util.numXP / 10)) * 9;
             //}
+            //linkLevelDigit = HudFactory.Digit(linkLevelOffset);
+            //linkLevelDigit.Draw(linkLevelPos);
+
+            //hitbox with xp adds 2 to game.util.numXP right now:
+            for (int i = 0; i < xpCount; i++)
+            {
+                xpOffset = (i) * (12);
+                xpSprite.Draw(new Vector2(xpPos.X, xpPos.Y - xpOffset));
+            }
+
+            if (game.util.numXP <= 20)
+            {
+                xpCount = game.util.numXP / 2;
+                    for (int i = 0; i < xpCount; i++)
+                    {
+                        xpOffset = (i) * (12);
+                        xpSprite.Draw(new Vector2(xpPos.X, xpPos.Y - xpOffset));
+                    }
+            }
+            else
+            {
+                xpCount = (game.util.numXP / 2) % 10;
+                for (int i = 0; i < xpCount; i++)
+                {
+                    xpOffset = (i) * (12);
+                    xpSprite.Draw(new Vector2(xpPos.X, xpPos.Y - xpOffset));
+                }
+            }
             //-------------------------------------------------------------------------------
         }
     }

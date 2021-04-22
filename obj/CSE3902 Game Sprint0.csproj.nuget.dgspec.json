@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jaden\\Downloads\\ZeldaRemake-1\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {}
+    "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jaden\\Downloads\\ZeldaRemake-1\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {
+    "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jaden\\Downloads\\ZeldaRemake-1\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
+        "projectUniqueName": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
         "projectName": "CSE3902 Game Sprint0",
-        "projectPath": "C:\\Users\\jaden\\Downloads\\ZeldaRemake-1\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
-        "packagesPath": "C:\\Users\\jaden\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jaden\\Downloads\\ZeldaRemake-1\\ZeldaRemake\\obj\\",
+        "projectPath": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\CSE3902 Game Sprint0.csproj",
+        "packagesPath": "C:\\Users\\Jared\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jared\\source\\repos\\ZeldaRemake\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jaden\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Jared\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -71,7 +70,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

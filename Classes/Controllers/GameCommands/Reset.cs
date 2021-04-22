@@ -52,6 +52,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 
             //RESET HUD
             game.util.numLives = 3;
+            game.util.linkXPlevel = 1;
             game.util.numXP = 0;
             game.util.numKeys = 0;
             game.util.numBombs = 3;

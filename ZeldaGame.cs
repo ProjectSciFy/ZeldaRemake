@@ -138,8 +138,8 @@ namespace CSE3902_Game_Sprint0
             sounds.Add("linkDie", Content.Load<SoundEffect>("LOZ_Link_Die"));
             sounds.Add("linkHurt", Content.Load<SoundEffect>("LOZ_Link_Hurt"));
             sounds.Add("lowHealth", Content.Load<SoundEffect>("LOZ_LowHealth"));
-            sounds.Add("portalBlue", Content.Load<SoundEffect>("Portal2_sfx_portal_gun_fire_blue"));
-            sounds.Add("portalOrange", Content.Load<SoundEffect>("Portal2_sfx_portal_gun_fire_orange"));
+            //sounds.Add("portalBlue", Content.Load<SoundEffect>("Portal2_sfx_portal_gun_fire_blue"));
+            //sounds.Add("portalOrange", Content.Load<SoundEffect>("Portal2_sfx_portal_gun_fire_orange"));
             sounds.Add("redeadIdle", Content.Load<SoundEffect>("OOT_ReDead_Moan"));
             sounds.Add("redeadScream", Content.Load<SoundEffect>("OOT_ReDead_Scream"));
             sounds.Add("refillLoop", Content.Load<SoundEffect>("LOZ_Refill_Loop"));
