@@ -160,7 +160,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             pHUD.gameLevelPos.Y += speed;
             pHUD.linkIndicatorPos.Y += speed;
             pHUD.xpPos.Y += speed;
-            //pHUD.linkLevelPos.Y += speed;
+            pHUD.linkLevelPos.Y += speed;
             //item screen update:
             game.util.midPos.Y += speed;
             game.util.topPos.Y += speed;
