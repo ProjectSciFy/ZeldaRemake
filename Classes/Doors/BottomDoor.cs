@@ -13,9 +13,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
     public class BottomDoor : IDoor
     {
         private ZeldaGame game { get; set; }
-        private ISprite topDoorSprite { get; set; }
+        private ISprite bottomDoorSprite { get; set; }
         public Vector2 position;
-        private RoomTextureStorage topDoorTexture;
+        private RoomTextureStorage bottomDoorTexture;
         private int windowWidth { get; set; }
         private int windowHeight { get; set; }
         private int doorValue { get; set; }
@@ -33,15 +33,16 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             
             this.position = new Vector2(windowWidthFloor, windowHeightFloor);
-            this.topDoorTexture = textures;
-            this.topDoorSprite = this.topDoorTexture.getDoor(doorValue);
+            this.bottomDoorTexture = textures;
+            this.bottomDoorSprite = this.bottomDoorTexture.getDoor(doorValue);
         }
         public void Update()
         {
+            this.bottomDoorSprite.Update();
         }
         public void Draw()
         {
-            topDoorSprite.Draw(position);
+            bottomDoorSprite.Draw(position);
         }
         public int getDoorValue()
         {

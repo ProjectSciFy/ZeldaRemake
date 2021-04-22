@@ -90,13 +90,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         }
         public UniversalSprite getDoor(int doorValue)
         {
-            //if(doorValue % 10 == 7 || doorValue % 10 == 8 || doorValue % 10 == 6)
-             //   return new UniversalSprite(game, portalSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(4, 1), 10, 0.0f);
+            if(doorValue % 10 == 7 || doorValue % 10 == 8)
+                return new UniversalSprite(game, tileSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 4), 10, 0.0f);
             return new UniversalSprite(game, tileSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
-        }
-        public UniversalSprite getPortalDoor(int doorValue)
-        {
-            return new UniversalSprite(game, portalSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
         }
     }
 }
