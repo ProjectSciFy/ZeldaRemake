@@ -34,12 +34,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             [13] = new Rectangle(547, 210, INTERIOR_WIDTH, INTERIOR_LENGTH),//
             [14] = new Rectangle(1061, 210, INTERIOR_WIDTH, INTERIOR_LENGTH),//
             [15] = new Rectangle(1318, 210, INTERIOR_WIDTH, INTERIOR_LENGTH),//
-            //[16] = new Rectangle(33, 32, INTERIOR_WIDTH, INTERIOR_LENGTH),
-            [16] = new Rectangle(33, 32, INTERIOR_WIDTH, INTERIOR_LENGTH),
-            //[16] = new Rectangle(290, 918, INTERIOR_WIDTH, INTERIOR_LENGTH),
-            [17] = new Rectangle(290, 33, INTERIOR_WIDTH, INTERIOR_LENGTH),
-            [18] = new Rectangle(547, 33, INTERIOR_WIDTH, INTERIOR_LENGTH),
-
+            [16] = new Rectangle(33, 32, INTERIOR_WIDTH, INTERIOR_LENGTH),//
+            [17] = new Rectangle(290, 33, INTERIOR_WIDTH, INTERIOR_LENGTH),//
+            [18] = new Rectangle(547, 33, INTERIOR_WIDTH, INTERIOR_LENGTH),//
+            [19] = new Rectangle(33, 387, INTERIOR_WIDTH, INTERIOR_LENGTH),//
         };
         public static Dictionary<int, Rectangle> DOOR_DIMENSIONS = new Dictionary<int, Rectangle>()
         {
@@ -55,18 +53,17 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             [30] = new Rectangle(815, 110, DOOR_SIZE, DOOR_SIZE),//
             [31] = new Rectangle(848, 110, DOOR_SIZE, DOOR_SIZE),//
             [32] = new Rectangle(881, 110, DOOR_SIZE, DOOR_SIZE),//
-            [-1] = new Rectangle(),
-            [9] = new Rectangle(),
-            [19] = new Rectangle(),
-            [29] = new Rectangle(),
-            [5] = new Rectangle(),
-            [7] = new Rectangle(980, 77, PORTAL_SIZE, PORTAL_SIZE),
-            [8] = new Rectangle(980, 110, PORTAL_SIZE, PORTAL_SIZE),
-            [37] = new Rectangle(980, 77, PORTAL_SIZE, PORTAL_SIZE),
-            [38] = new Rectangle(980, 110, PORTAL_SIZE, PORTAL_SIZE),
-            [6] = new Rectangle(815, 11, DOOR_SIZE, DOOR_SIZE),
-            [36] = new Rectangle(815, 110, DOOR_SIZE, DOOR_SIZE),
-
+            [-1] = new Rectangle(),//
+            [9] = new Rectangle(),//
+            [19] = new Rectangle(),//
+            [29] = new Rectangle(),//
+            [5] = new Rectangle(),//
+            [7] = new Rectangle(980, 77, PORTAL_SIZE, PORTAL_SIZE),//
+            [8] = new Rectangle(980, 110, PORTAL_SIZE, PORTAL_SIZE),//
+            [37] = new Rectangle(980, 77, PORTAL_SIZE, PORTAL_SIZE),//
+            [38] = new Rectangle(980, 110, PORTAL_SIZE, PORTAL_SIZE),//
+            [6] = new Rectangle(815, 11, DOOR_SIZE, DOOR_SIZE),//
+            [36] = new Rectangle(815, 110, DOOR_SIZE, DOOR_SIZE),//
         };
 
         public Texture2D tileSpriteSheet;

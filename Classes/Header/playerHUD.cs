@@ -22,10 +22,8 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         //XP sprites:
         private ISprite xpSprite { get; set; }
         private ISprite linkLevelDigit { get; set; }
-
-        private int linkLevelOffset;
-
-        private int xpCount;
+        private int linkLevelOffset { get; set; }
+        private int xpCount { get; set; }
 
         //counter sprites:
         private ISprite xSprite { get; set; }

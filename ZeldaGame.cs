@@ -86,7 +86,7 @@ namespace CSE3902_Game_Sprint0
             /* 18 ROOMS */
 
             util.roomNumber = 2;
-            for (int i = 1; i < 19; i++)
+            for (int i = 1; i < 20; i++)
             {
                 roomList.Add(Parser.ParseRoomCSV(this, i));
             }
