@@ -34,6 +34,8 @@ namespace CSE3902_Game_Sprint0
         private int x, y;
         public bool inSelect { get; set; }
 
+        public bool hasBow { get; set; }
+
         public int roomNumber { get; set; }
 
         public bool keyPressedTempVariable { get; set; } = false;
@@ -55,6 +57,7 @@ namespace CSE3902_Game_Sprint0
             //map
             hasMap = false;
             linkInd = true;
+            hasBow = false;
             //compass
             hasCompass = false;
             //Initialize room number counter

@@ -58,28 +58,57 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
             return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 1, 64, 7), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
         }
 
+        public UniversalSprite staticBomb()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
+        public UniversalSprite staticBow()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
+        public UniversalSprite staticBoomerang()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
+        public UniversalSprite blankBox()
+        {
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(654, 116, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+        }
+
         public UniversalSprite primaryWeaponHUD()
         {
             return new UniversalSprite(game, hudSpriteSheet, new Rectangle(555, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
         }
 
+        //this logic is used in ItemSelectState to reduce code, can be transferred over if we want to go back to just returning sprites. I felt that this logic was okay
+        //to include since it only deals with returning the correct sprites, which a spriteFactory should do.
         public UniversalSprite secondaryWeaponHUD()
         {
             if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.bomb)
             {
-                return new UniversalSprite(game, hudSpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                return staticBomb();
             }
             else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.arrow)
             {
-                return new UniversalSprite(game, hudSpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                if (game.util.hasBow)
+                {
+                    return staticBow();
+                }
+                else
+                {
+                    return blankBox();
+                }
             }
             else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.boomerang)
             {
-                return new UniversalSprite(game, hudSpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                return staticBoomerang();
             }
             else
             {
-                return new UniversalSprite(game, hudSpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                return blankBox();
             }
         }
 

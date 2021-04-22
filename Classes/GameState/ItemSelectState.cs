@@ -46,30 +46,35 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.bomb)
             {
-                //bomb
-                secweaponHolding = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-                //arrow
-                secweaponOne = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-                //boomerang
-                secweaponTwo = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                secweaponHolding = HudFactory.secondaryWeaponHUD();
+                secweaponOne = HudFactory.staticBoomerang();
+                if (game.util.hasBow)
+                {
+                    secweaponTwo = HudFactory.staticBow();
+                }
+                else
+                {
+                    secweaponTwo = HudFactory.blankBox();
+                }
             }
-            else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.arrow)
+            else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.boomerang)
             {
-                //arrow
-                secweaponHolding = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-                //bomb
-                secweaponOne = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-                //boomerang
-                secweaponTwo = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                secweaponHolding = HudFactory.secondaryWeaponHUD();
+                secweaponOne = HudFactory.staticBomb();
+                if (game.util.hasBow)
+                {
+                    secweaponTwo = HudFactory.staticBow();
+                }
+                else
+                {
+                    secweaponTwo = HudFactory.blankBox();
+                }
             }
             else
             {
-                //boomerang
-                secweaponHolding = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-                //bomb
-                secweaponOne = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-                //arrow
-                secweaponTwo = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                secweaponHolding = HudFactory.secondaryWeaponHUD();
+                secweaponOne = HudFactory.staticBomb();
+                secweaponTwo = HudFactory.staticBoomerang();
             }
                  
 

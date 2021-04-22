@@ -3,7 +3,7 @@
   <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Portal2_sfx_portal_gun_fire_orange.wav</SourceFile>
   <SourceTime>2021-04-21T19:03:57.6762886-04:00</SourceTime>
   <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/Portal2_sfx_portal_gun_fire_orange.xnb</DestFile>
-  <DestTime>2021-04-22T13:50:14.7152303-04:00</DestTime>
+  <DestTime>2021-04-22T16:50:28.3332042-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

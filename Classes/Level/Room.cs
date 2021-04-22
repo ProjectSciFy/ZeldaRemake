@@ -161,6 +161,10 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 game.util.numBombs += 1;
             }
+            else if (entity is Bow)
+            {
+                game.util.hasBow = true;
+            }
         }
         public void closeDoorways()
         {
