@@ -82,9 +82,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
             {
                 drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
             }
-            collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
+            collisionRectangle.X = (int)drawLocation.X + 10 * HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 10 * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
 
             if (myState.currentState != RoshiStateMachine.CurrentState.dying)

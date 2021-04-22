@@ -1,13 +1,11 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
-using CSE3902_Game_Sprint0.Classes.GameState;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Tiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
@@ -26,13 +24,13 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         }
         public void Execute()
         {
-            if((tile is TPTile) && link.linkState.useSword is false && link.linkState.timer == 0)
+            if ((tile is TPTile) && link.linkState.useSword is false && link.linkState.timer == 0)
             {
                 game.changeRoom(16, Collision.Collision.Direction.left);
             }
             if ((tile is BlockTile || tile is WallTile || (tile is GateKeeperTile && ((GateKeeperTile)tile).locked == true)) && !link.linkState.isGrabbed)
             {
-                if(tile is GateKeeperTile && ((GateKeeperTile)tile).isLockedDoor == true && game.util.numKeys > 0)
+                if (tile is GateKeeperTile && ((GateKeeperTile)tile).isLockedDoor == true && game.util.numKeys > 0)
                 {
                     new UnlockDoor(game).Execute();
                 }
@@ -84,9 +82,15 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     game.changeRoom(game.neighbors[game.util.roomNumber][1], direction);
                 }
             }
+            if (tile is EventTile && game.currentRoom.roomNumber == 8 && ((EventTile)tile).used == false)
+            {
+                game.currentRoom.closeDoorways();
+                game.currentRoom.lockDoor(2);
+                ((EventTile)tile).used = true;
+            }
             if (tile is PushableTile)
             {
-                if (((PushableTile)tile).pushed) 
+                if (((PushableTile)tile).pushed)
                 {
                     if (direction == Collision.Collision.Direction.down)
                     {
