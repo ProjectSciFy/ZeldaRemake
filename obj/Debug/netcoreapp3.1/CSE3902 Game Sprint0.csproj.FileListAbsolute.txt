@@ -371,3 +371,5 @@ G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\roshi 2.xnb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Portal2_sfx_portal_gun_fire_blue.xnb
 G:\Visual Studio Stuff\CSE 3902\Group Project\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Portal2_sfx_portal_gun_fire_orange.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Portal2_sfx_portal_gun_fire_blue.xnb
+C:\Users\Jared\source\repos\ZeldaRemake\bin\Debug\netcoreapp3.1\Content\Portal2_sfx_portal_gun_fire_orange.xnb

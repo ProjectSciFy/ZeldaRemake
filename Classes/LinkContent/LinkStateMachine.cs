@@ -132,11 +132,18 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public void Arrow()
         {
-            if (timer == 0)
+            if (game.util.hasBow)
             {
-                timer = 25;
-                new LinkArrow(link, spriteFactory, this).Execute();
-                link.game.sounds["arrowBoomerang"].CreateInstance().Play();
+                if (game.util.numYrups > 0)
+                {
+                    if (timer == 0)
+                    {
+                        timer = 25;
+                        new LinkArrow(link, spriteFactory, this).Execute();
+                        link.game.sounds["arrowBoomerang"].CreateInstance().Play();
+                        game.util.numYrups -= 1;
+                    }
+                }
             }
         }
 
