@@ -177,16 +177,6 @@ namespace CSE3902_Game_Sprint0
                 currentGameState = currentMainGameState;
             }
 
-
-            //link indicator:
-            if (currentGameState.GetType() == typeof(MainState))
-            {
-                util.linkInd = true;
-            }
-            else
-            {
-                util.linkInd = false;
-            }
         }
         public void changeRoom(int newRoom, Collision.Direction direction)
         {
