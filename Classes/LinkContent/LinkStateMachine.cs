@@ -24,12 +24,15 @@ namespace CSE3902_Game_Sprint0.Classes
         public Weapon weaponSelected { get; set; } = Weapon.bomb;
 
         public int timer { get; set; } = 0;
+
+        public int bowTimer { get; set; }
         private int invincibilityFrames { get; set; } = 0;
         public int wallmasterDeployedTimer { get; set; } = 0;
 
         public bool isRolling { get; set; } = false;
         public bool grabItem { get; set; } = false;
         public bool isTriforce = false;
+        public bool isBow = false;
         public bool useSword { get; set; } = false;
         public bool usePortal { get; set; } = false;
         public bool useBomb { get; set; } = false;
@@ -194,6 +197,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public void GrabItem()
         {
             timer = 120;
+            bowTimer = 120;
             grabItem = false;
             new LinkGrabItem(link, spriteFactory, this).Execute();
         }
@@ -203,6 +207,10 @@ namespace CSE3902_Game_Sprint0.Classes
             if (timer > 0)
             {
                 timer--;
+            }
+            if (bowTimer > 0)
+            {
+                bowTimer--;
             }
             if (timer == 0)
             {

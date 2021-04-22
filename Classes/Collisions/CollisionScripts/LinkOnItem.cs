@@ -38,6 +38,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             else if (item is Bow)
             {
                 link.linkState.grabItem = true;
+                link.linkState.isBow = true;
                 link.game.sounds["fanfare"].CreateInstance().Play();
                 link.game.sounds["getItem"].CreateInstance().Play();
             }
