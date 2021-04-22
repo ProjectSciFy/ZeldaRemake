@@ -89,14 +89,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         {
             if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.bomb)
             {
-                if (game.util.numBombs > 0)
-                {
-                    return staticBomb();
-                }
-                else
-                {
-                    return blankBox();
-                }
+                return staticBomb();
             }
             else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.arrow)
             {

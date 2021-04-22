@@ -46,10 +46,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.bomb)
             {
-                
                 secweaponHolding = HudFactory.secondaryWeaponHUD();
                 secweaponOne = HudFactory.staticBoomerang();
-
                 if (game.util.hasBow)
                 {
                     secweaponTwo = HudFactory.staticBow();
@@ -62,14 +60,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.boomerang)
             {
                 secweaponHolding = HudFactory.secondaryWeaponHUD();
-                if (game.util.numBombs > 0)
-                {
-                    secweaponOne = HudFactory.staticBomb();
-                }
-                else
-                {
-                    secweaponOne = HudFactory.blankBox();
-                }
+                secweaponOne = HudFactory.staticBomb();
                 if (game.util.hasBow)
                 {
                     secweaponTwo = HudFactory.staticBow();
@@ -82,14 +73,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             else
             {
                 secweaponHolding = HudFactory.secondaryWeaponHUD();
-                if (game.util.numBombs > 0)
-                {
-                    secweaponOne = HudFactory.staticBomb();
-                }
-                else
-                {
-                    secweaponOne = HudFactory.blankBox();
-                }
+                secweaponOne = HudFactory.staticBomb();
                 secweaponTwo = HudFactory.staticBoomerang();
             }
                  
