@@ -133,7 +133,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //xp & leveling:
             xpPos = new Vector2(hudPosition.X + (729), hudPosition.Y + 121);
-            linkLevelPos = new Vector2(hudPosition.X + (227*3), hudPosition.Y + 15);
+            linkLevelPos = new Vector2(hudPosition.X + (232*3), hudPosition.Y + 15);
 
             //mini-map positions:
             minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
@@ -345,13 +345,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             //xp & level graphics
 
             //links current level:
-            //linkLevelOffset = game.util.linkXPlevel * 9;
-            //if ((game.util.numXP % 10) == 0)
-            //{
-            //    linkLevelOffset = (game.util.linkXPlevel + (game.util.numXP / 10)) * 9;
-            //}
-            //linkLevelDigit = HudFactory.Digit(linkLevelOffset);
-            //linkLevelDigit.Draw(linkLevelPos);
+            linkLevelOffset = game.util.linkXPlevel * 9;
+            linkLevelDigit = HudFactory.Digit(linkLevelOffset);
+            linkLevelDigit.Draw(linkLevelPos);
+            
 
             for (int i = 0; i < xpCount; i++)
             {
