@@ -32,7 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             }
             if ((tile is BlockTile || tile is WallTile || (tile is GateKeeperTile && ((GateKeeperTile)tile).locked == true)) && !link.linkState.isGrabbed)
             {
-                if(tile is GateKeeperTile && ((GateKeeperTile)tile).isLockedDoor == true && game.util.numKeys > 0)
+                if (tile is GateKeeperTile && ((GateKeeperTile)tile).isLockedDoor == true && game.util.numKeys > 0 && ((GateKeeperTile)tile).isPortal == false)
                 {
                     new UnlockDoor(game).Execute();
                 }

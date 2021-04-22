@@ -22,7 +22,8 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
         public Boolean locked { get; set; } = true;
         public Boolean isLockedDoor { get; set; } = true;
-        public GateKeeperTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location, Boolean locked, Boolean isLockedDoor)
+        public Boolean isPortal { get; set; } = false;
+        public GateKeeperTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location, Boolean locked, Boolean isLockedDoor, Boolean isPortal)
         {
             this.game = game;
             this.position = location;
@@ -31,6 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
             this.spriteScalar = game.util.spriteScalar;
             this.locked = locked;
             this.isLockedDoor = isLockedDoor;
+            this.isPortal = isPortal;
         }
         public Rectangle CollisionRectangle()
         {

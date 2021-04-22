@@ -48,7 +48,7 @@ namespace CSE3902_Game_Sprint0
             keyBinds.Add(Keys.Z, new PrimaryWeaponLink(linkState));
             keyBinds.Add(Keys.X, new SecondaryWeaponLink(linkState));
             keyBinds.Add(Keys.M, new SecondaryWeaponLink(linkState));
-            keyBinds.Add(Keys.C, new PortalGunLink(linkState));
+            keyBinds.Add(Keys.C, new PortalGunLink(game, linkState));
 
             keyBinds.Add(Keys.D2, new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.bomb));
             keyBinds.Add(Keys.NumPad2, new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.bomb));
