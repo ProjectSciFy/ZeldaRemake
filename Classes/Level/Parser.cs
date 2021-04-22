@@ -283,7 +283,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                         {
                             locked = false;
                         }
-                        if (int.Parse(segments[i + 1]) == 2)
+                        if (int.Parse(segments[i + 1]) == 2 || int.Parse(segments[i + 1]) == 6)
                         {
                             isLockedDoor = true;
                         }

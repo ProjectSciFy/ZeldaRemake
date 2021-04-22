@@ -15,6 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private static int INTERIOR_WIDTH { get; set; } = 192;
         private static int INTERIOR_LENGTH { get; set; } = 112;
         private static int DOOR_SIZE { get; set; } = 32;
+        private static int PORTAL_SIZE { get; set; } = 16;
 
         public static Dictionary<int, Rectangle> INTERIOR_DIMENSIONS = new Dictionary<int, Rectangle>()
         {
@@ -59,13 +60,19 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             [19] = new Rectangle(),
             [29] = new Rectangle(),
             [5] = new Rectangle(),
-
+            [7] = new Rectangle(94, 104, PORTAL_SIZE, PORTAL_SIZE),
+            [8] = new Rectangle(94, 121, PORTAL_SIZE, PORTAL_SIZE),
+            [37] = new Rectangle(94, 104, PORTAL_SIZE, PORTAL_SIZE),
+            [38] = new Rectangle(94, 121, PORTAL_SIZE, PORTAL_SIZE),
+            [6] = new Rectangle(94, 138, PORTAL_SIZE, PORTAL_SIZE),
+            [36] = new Rectangle(94, 138, PORTAL_SIZE, PORTAL_SIZE),
 
         };
 
         public Texture2D tileSpriteSheet;
         public Texture2D itemSpriteSheet;
         private Texture2D roomSpriteSheet;
+        private Texture2D portalSpriteSheet;
 
         public RoomTextureStorage(ZeldaGame game)
         {
@@ -73,6 +80,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             game.spriteSheets.TryGetValue("DungeonBackgrounds", out roomSpriteSheet);
             game.spriteSheets.TryGetValue("DungeonTileset", out tileSpriteSheet);
             game.spriteSheets.TryGetValue("ItemsAndWeapons", out itemSpriteSheet);
+            game.spriteSheets.TryGetValue("Link", out portalSpriteSheet);
 
         }
 
@@ -82,7 +90,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         }
         public UniversalSprite getDoor(int doorValue)
         {
+            if(doorValue % 10 == 7 || doorValue % 10 == 8 || doorValue % 10 == 6)
+                return new UniversalSprite(game, portalSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(4, 1), 10, 0.0f);
             return new UniversalSprite(game, tileSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
+        }
+        public UniversalSprite getPortalDoor(int doorValue)
+        {
+            return new UniversalSprite(game, portalSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
         }
     }
 }
