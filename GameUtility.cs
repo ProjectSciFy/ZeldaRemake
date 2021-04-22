@@ -64,6 +64,8 @@ namespace CSE3902_Game_Sprint0
             selectSpeed = -6;
             x = 128;
             y = -186;
+
+            //mid and top pos are used in the itemSelectState as a reference point for a couple of sprites, be careful if refactoring this code:
             midPos = new Vector2(x, y - 82);
             topPos = new Vector2(x, y - 87 * 3 - 120);
             inSelect = false;

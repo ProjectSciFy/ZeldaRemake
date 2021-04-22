@@ -25,16 +25,54 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         //player hud related variables:
         private playerHUD pHUD { get; set; }
 
-        private ISprite holdingMap; 
+        private HudSpriteFactory HudFactory { get; set; }
+
+        private ISprite holdingMap;
+        private ISprite holdingCompass;
+        private ISprite secweaponHolding;
+        private ISprite secweaponOne;
+        private ISprite secweaponTwo;
 
         public ItemSelectState(ZeldaGame game)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("HUD", out inventorySpriteSheet);
+            HudFactory = game.hudSpriteFactory;
 
             top = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(1, 11, 260, 100), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             mid = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(258, 111, 260, 99), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-            holdingMap=new UniversalSprite(game,inventorySpriteSheet, new Rectangle(598, 154, 17, 100), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            holdingMap=new UniversalSprite(game,inventorySpriteSheet, new Rectangle(601, 156, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            holdingCompass = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(613, 157, 13, 14), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+
+            if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.bomb)
+            {
+                //bomb
+                secweaponHolding = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                //arrow
+                secweaponOne = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                //boomerang
+                secweaponTwo = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            }
+            else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.arrow)
+            {
+                //arrow
+                secweaponHolding = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                //bomb
+                secweaponOne = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                //boomerang
+                secweaponTwo = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            }
+            else
+            {
+                //boomerang
+                secweaponHolding = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(584, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                //bomb
+                secweaponOne = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(604, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+                //arrow
+                secweaponTwo = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(633, 137, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            }
+                 
+
             //164 42 259 87
             pHUD = game.currentRoom.pHUD; 
 
@@ -47,11 +85,18 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             pHUD.Draw();
             mid.Draw(game.util.midPos);
             top.Draw(game.util.topPos);
-            //if (game.util.hasMap)
-            //{
+            if (game.util.hasMap)
+            {
+               holdingMap.Draw(new Vector2(game.util.midPos.X + 142,game.util.midPos.Y+ 70));
+            }
+            if (game.util.hasCompass)
+            {
+                holdingCompass.Draw(new Vector2(game.util.midPos.X + 136, game.util.midPos.Y + 190));
+            }
 
-            //    holdingMap.Draw();
-            //}
+            secweaponHolding.Draw(new Vector2(game.util.topPos.X + 201, game.util.topPos.Y + 144));
+            secweaponOne.Draw(new Vector2(game.util.topPos.X + 390, game.util.topPos.Y + 144));
+            secweaponTwo.Draw(new Vector2(game.util.topPos.X + 460, game.util.topPos.Y + 144));
         }
 
         void IGameState.Update()
