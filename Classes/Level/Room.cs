@@ -91,6 +91,11 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 item.Update();
             }
+            foreach (IDoor door in doors.ToArray())
+            {
+                door.Update();
+            }
+
         }
         public int getRoomNumber()
         {
