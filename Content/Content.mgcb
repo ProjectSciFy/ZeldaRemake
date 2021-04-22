@@ -338,6 +338,18 @@
 /processorParam:Quality=Best
 /build:OOT_ReDead_Scream.wav
 
+#begin Portal2_sfx_portal_gun_fire_blue.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Portal2_sfx_portal_gun_fire_blue.wav
+
+#begin Portal2_sfx_portal_gun_fire_orange.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Portal2_sfx_portal_gun_fire_orange.wav
+
 #begin roshi 2.png
 /importer:TextureImporter
 /processor:TextureProcessor
