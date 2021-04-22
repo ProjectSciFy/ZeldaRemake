@@ -1,0 +1,18 @@
+﻿READABILITY OF GAGE'S CODE:
+-Author of review: Devan
+-Date of review: 4/23/2021
+-Sprint Number: 5
+-File Name: 
+-Author of file: Gage Odom
+-Number of minutes taken to review: 5
+-Comments: 
+
+MAINTAINABILITY OF GAGE'S CODE:
+-Author of review: Devan
+-Date of review: 4/23/2021
+-Sprint Number: 4
+-File Name: 
+-Author of file: 
+-Number of minutes taken to review: 5
+-Comments: 
+-Hypitheitcal changes: 
