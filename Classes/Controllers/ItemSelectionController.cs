@@ -20,10 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers
         public void Update()
         {
             MouseState mouseState = Mouse.GetState();
-            if (mouseState.RightButton == ButtonState.Pressed)
-            {
-                keyBinds[0].Execute();
-            }
+            if (mouseState.RightButton == ButtonState.Pressed) keyBinds[0].Execute();
             if (mouseState.LeftButton == ButtonState.Pressed && !game.util.keyPressedTempVariable)
             {
                 float ValueX = mouseState.X;
