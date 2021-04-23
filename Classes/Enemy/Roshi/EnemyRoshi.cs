@@ -20,7 +20,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         private static int HITBOX_OFFSET { get; set; } = 6;
         public int health { get; set; } = 15;
         private int hurtTimer { get; set; } = 0;
-
         public EnemyRoshi(ZeldaGame game, Vector2 spawnLocation)
         {
             this.game = game;
@@ -63,10 +62,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
             }
             myState.Update();
             mySprite.Update();
-
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
-
             if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
             {
                 drawLocation.X = 0 - spriteSize.X;
