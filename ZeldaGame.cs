@@ -56,7 +56,6 @@ namespace CSE3902_Game_Sprint0
             //DIRECTORY
             Content.RootDirectory = "Content";
         }
-
         protected override void Initialize()
         {
             base.Initialize();
@@ -73,32 +72,23 @@ namespace CSE3902_Game_Sprint0
             controllerList.Add(new ItemSelectionController(this));
             neighbors = Parser.ParseNeighborCSV();
             roomList = new List<Room>();
-            /* 18 ROOMS */
-
-            util.roomNumber = 2;
-            for (int i = 1; i < 20; i++)
+            util.roomNumber = util.startingRoomNumber();
+            for (int i = 1; i < util.numberOfRooms() + 1; i++)
             {
                 roomList.Add(Parser.ParseRoomCSV(this, i));
             }
-            /* SET CURRENT ROOM TO ROOM WITH CURRENT roomNumber */
             foreach (Room r in roomList)
             {
-                if (r.getRoomNumber() == util.roomNumber)
-                {
-                    currentRoom = r;
-                }
+                if (r.getRoomNumber() == util.roomNumber) currentRoom = r;
             }
             currentRoom.Initialize();
             currentMainGameState = new MainState(this, currentRoom);
             currentGameState = currentMainGameState;
-            //BACKGROUND MUSIC
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
         }
-
-        protected override void LoadContent()
+        protected void LoadSpriteSheets()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteSheets.Add("FogOfWar", Content.Load<Texture2D>("Fog of War"));
             spriteSheets.Add("Link", Content.Load<Texture2D>("NES - The Legend of Zelda - Link"));
             spriteSheets.Add("HUD", Content.Load<Texture2D>("NES - The Legend of Zelda - HUD & Pause Screen"));
@@ -111,7 +101,9 @@ namespace CSE3902_Game_Sprint0
             spriteSheets.Add("Fonts", Content.Load<Texture2D>("NES - The Legend of Zelda - Fonts"));
             spriteSheets.Add("GameOver", Content.Load<Texture2D>("game-over"));
             spriteSheets.Add("Roshi", Content.Load<Texture2D>("roshi 2"));
-
+        }
+        protected void LoadSounds()
+        {
             song = Content.Load<Song>("04 LabyrinthLooped");
             sounds.Add("arrowBoomerang", Content.Load<SoundEffect>("LOZ_Arrow_Boomerang"));
             sounds.Add("bombBlow", Content.Load<SoundEffect>("LOZ_Bomb_Blow"));
@@ -143,31 +135,11 @@ namespace CSE3902_Game_Sprint0
             sounds.Add("text", Content.Load<SoundEffect>("LOZ_Text"));
             sounds.Add("textSlow", Content.Load<SoundEffect>("LOZ_Text_Slow"));
         }
-
-        protected override void Update(GameTime gameTime)
+        protected override void LoadContent()
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            currentGameState.UpdateCollisions();
-            base.Update(gameTime);
-            currentGameState.Update();
-            if (util.numLives <= 0 && link.linkState.currentState != LinkStateMachine.CurrentState.dying)
-            {
-                MediaPlayer.Stop();
-                currentGameState = new DeathState(this);
-            }
-            if (util.paused && !util.inSelect)
-            {
-                MediaPlayer.Pause();
-                currentGameState = new PauseState(this);
-            }
-            else if (!util.paused && currentGameState.GetType() == typeof(PauseState))
-            {
-                MediaPlayer.Resume();
-                currentGameState = currentMainGameState;
-            }
-
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            LoadSpriteSheets();
+            LoadSounds();
         }
         public void changeRoom(int newRoom, Collision.Direction direction)
         {
@@ -186,7 +158,33 @@ namespace CSE3902_Game_Sprint0
             currentMainGameState = new MainState(this, currentRoom);
             currentGameState = new TransitionState(this, oldRoom, currentRoom, direction);
         }
-
+        protected void updateState()
+        {
+            if (util.numLives <= 0 && link.linkState.currentState != LinkStateMachine.CurrentState.dying)
+            {
+                MediaPlayer.Stop();
+                currentGameState = new DeathState(this);
+            }
+            if (util.paused && !util.inSelect)
+            {
+                MediaPlayer.Pause();
+                currentGameState = new PauseState(this);
+            }
+            else if (!util.paused && currentGameState.GetType() == typeof(PauseState))
+            {
+                MediaPlayer.Resume();
+                currentGameState = currentMainGameState;
+            }
+        }
+        protected override void Update(GameTime gameTime)
+        {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
+            currentGameState.UpdateCollisions();
+            base.Update(gameTime);
+            currentGameState.Update();
+            updateState();
+        }
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
