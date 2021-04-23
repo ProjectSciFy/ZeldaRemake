@@ -10,6 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
         private ISprite itemSprite { get; set; }
         private ItemSpriteFactory itemFactory { get; set; }
         public Rectangle hitbox = new Rectangle(0, 0, 0, 0);
+        public Vector2 spriteSize = new Vector2(8, 16);
         public float spriteScalar { get; set; }
         public Vector2 position { get; set; }
         public Heart(ZeldaGame game, ItemSpriteFactory itemFactory, Vector2 location)
@@ -30,8 +31,8 @@ namespace CSE3902_Game_Sprint0.Classes.Items
         {
             hitbox.X = (int)position.X;
             hitbox.Y = (int)position.Y;
-            hitbox.Width = (int)(8 * spriteScalar);
-            hitbox.Height = (int)(16 * spriteScalar);
+            hitbox.Width = (int)(spriteSize.X * spriteScalar);
+            hitbox.Height = (int)(spriteSize.Y * spriteScalar);
 
             game.collisionManager.collisionEntities[this] = hitbox;
         }
