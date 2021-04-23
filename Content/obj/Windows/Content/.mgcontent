@@ -9,6 +9,7 @@
     <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Credits.spritefont</File>
     <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.png</File>
     <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</File>
+    <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Fog of War2.png</File>
     <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/game-over.jpeg</File>
     <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Level 1 (Eagle).png</File>
     <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/LOZ_Arrow_Boomerang.wav</File>
@@ -51,6 +52,7 @@
     <File>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/roshi 2.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

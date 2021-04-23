@@ -19,6 +19,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Header;
+using CSE3902_Game_Sprint0.Classes.LinkContent;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -200,8 +201,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
-            pHUD.Draw();
-            
             foreach (IDoor door in doors)
             {
                 door.Draw();
@@ -216,8 +215,20 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             }
             foreach (IEnemy enemy in enemies)
             {
-                enemy.Draw();
+                if (!(enemy is FogOfWar))
+                {
+                    enemy.Draw();
+                }
             }
+            foreach (IEnemy enemy in enemies)
+            {
+                if (enemy is FogOfWar)
+                {
+                    ((FogOfWar)enemy).Draw();
+                }
+            }
+            pHUD.Draw();
+            
         }
     }
 }

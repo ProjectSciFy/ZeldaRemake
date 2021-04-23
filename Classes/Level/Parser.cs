@@ -20,6 +20,7 @@ using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
 using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
+using CSE3902_Game_Sprint0.Classes.LinkContent;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -223,6 +224,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     case "Redead":
                         position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyRedead(game, position));
+                        break;
+                    case "FogOfWar":
+                        enemies.Add(new FogOfWar(game));
                         break;
 
                     default:
