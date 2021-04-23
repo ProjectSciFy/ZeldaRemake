@@ -17,36 +17,12 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 
         public void Execute()
         {
-            if (item is BlueRupee)
-            {
-                littleHelper.myState.interacting = true;
-                ((BlueRupee)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y);
-            }
-            else if (item is Bomb)
-            {
-                littleHelper.myState.interacting = true;
-                ((Bomb)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y);
-            }
-            else if (item is Fairy)
-            {
-                littleHelper.myState.interacting = true;
-                ((Fairy)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y);
-            }
-            else if (item is Heart)
-            {
-                littleHelper.myState.interacting = true;
-                ((Heart)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y);
-            }
-            else if (item is XP)
-            {
-                littleHelper.myState.interacting = true;
-                ((XP)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y);
-            }
-            else if (item is YellowRupee)
-            {
-                littleHelper.myState.interacting = true;
-                ((YellowRupee)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y);
-            }
+            if (item is BlueRupee) { littleHelper.myState.interacting = true; ((BlueRupee)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y); }
+            else if (item is Bomb) { littleHelper.myState.interacting = true; ((Bomb)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y); }
+            else if (item is Fairy) { littleHelper.myState.interacting = true; ((Fairy)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y); }
+            else if (item is Heart) { littleHelper.myState.interacting = true; ((Heart)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y); }
+            else if (item is XP) { littleHelper.myState.interacting = true; ((XP)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y); }
+            else if (item is YellowRupee) { littleHelper.myState.interacting = true; ((YellowRupee)item).position = new Vector2(littleHelper.drawLocation.X, littleHelper.drawLocation.Y); }
         }
     }
 }

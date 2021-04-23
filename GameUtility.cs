@@ -51,7 +51,7 @@ namespace CSE3902_Game_Sprint0
             numXP = 0;
             linkXPlevel = 1;
             //map
-            hasMap = true;
+            hasMap = false;
             linkInd = true;
             hasBow = false;
             //compass

@@ -22,41 +22,13 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 
         public void Execute()
         {
-            if (enemy is EnemyAquamentus)
-            {
-                littleHelper.myState.interacting = true;
-                ((EnemyAquamentus)enemy).velocity = new Vector2(0, 0);
-            }
-            else if (enemy is EnemySlime)
-            {
-                littleHelper.myState.interacting = true;
-                ((EnemySlime)enemy).velocity = new Vector2(0, 0);
-            }
-            else if (enemy is EnemyGoriya)
-            {
-                littleHelper.myState.interacting = true;
-                ((EnemyGoriya)enemy).velocity = new Vector2(0, 0);
-            }
-            else if (enemy is EnemyKeese)
-            {
-                littleHelper.myState.interacting = true;
-                ((EnemyKeese)enemy).velocity = new Vector2(0, 0);
-            }
-            else if (enemy is EnemyRedead)
-            {
-                littleHelper.myState.interacting = true;
-                ((EnemyRedead)enemy).velocity = new Vector2(0, 0);
-            }
-            else if (enemy is EnemyStalfos)
-            {
-                littleHelper.myState.interacting = true;
-                ((EnemyStalfos)enemy).velocity = new Vector2(0, 0);
-            }
-            else if (enemy is EnemyWallmaster)
-            {
-                littleHelper.myState.interacting = true;
-                ((EnemyWallmaster)enemy).velocity = new Vector2(0, 0);
-            }
+            if (enemy is EnemyAquamentus) { littleHelper.myState.interacting = true; ((EnemyAquamentus)enemy).velocity = new Vector2(0, 0); }
+            else if (enemy is EnemySlime) { littleHelper.myState.interacting = true; ((EnemySlime)enemy).velocity = new Vector2(0, 0); }
+            else if (enemy is EnemyGoriya) { littleHelper.myState.interacting = true; ((EnemyGoriya)enemy).velocity = new Vector2(0, 0); }
+            else if (enemy is EnemyKeese) { littleHelper.myState.interacting = true; ((EnemyKeese)enemy).velocity = new Vector2(0, 0); }
+            else if (enemy is EnemyRedead) { littleHelper.myState.interacting = true; ((EnemyRedead)enemy).velocity = new Vector2(0, 0); }
+            else if (enemy is EnemyStalfos) { littleHelper.myState.interacting = true; ((EnemyStalfos)enemy).velocity = new Vector2(0, 0); }
+            else if (enemy is EnemyWallmaster) { littleHelper.myState.interacting = true; ((EnemyWallmaster)enemy).velocity = new Vector2(0, 0); }
         }
     }
 }

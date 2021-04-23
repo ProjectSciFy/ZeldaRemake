@@ -19,14 +19,8 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         {
             if (projectile is GoriyaBoomerang || projectile is Fireball)
             {
-                if (projectile is Fireball)
-                {
-                    ((Fireball)projectile).collided = true;
-                }
-                else
-                {
-                    ((GoriyaBoomerang)projectile).myState.returning = true;
-                }
+                if (projectile is Fireball) ((Fireball)projectile).collided = true;
+                else ((GoriyaBoomerang)projectile).myState.returning = true;
                 littleHelper.game.sounds["shield"].CreateInstance().Play();
             }
             else if (projectile is Arrow)
