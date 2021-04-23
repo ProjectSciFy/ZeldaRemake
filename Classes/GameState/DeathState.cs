@@ -28,13 +28,13 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             this.game.link.drawLocation = new Vector2(this.game.GraphicsDevice.Viewport.Width / 2, this.game.GraphicsDevice.Viewport.Height / 2 + ParserUtility.GAME_FRAME_ADJUST);
         }
 
-        void IGameState.Draw()
+        public void Draw()
         {
             texture.Draw(new Vector2(game.GraphicsDevice.Viewport.Width / 3 - WIDTH, game.GraphicsDevice.Viewport.Height / 2 - HEIGHT));
             game.link.Draw();
         }
 
-        void IGameState.Update()
+        public void Update()
         {
             if (timer == -1)
             {
@@ -55,7 +55,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 MediaPlayer.Play(game.song);
             }
         }
-        void IGameState.UpdateCollisions()
+        public void UpdateCollisions()
         {
 
         }
