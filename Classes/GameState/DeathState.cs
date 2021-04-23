@@ -16,6 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private float itemDepth { get; set; } = 0.4f;
         private const int HEIGHT = 60;
         private const int WIDTH = 360;
+        private const int ANIMATION_TIMER = 260;
 
         public DeathState(ZeldaGame game)
         {
@@ -37,7 +38,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             {
                 this.game.link.linkState.dying = true;
                 //Time it takes for both animations to play out
-                timer = 80 + 180;
+                timer = ANIMATION_TIMER;
             }
             game.link.Update();
 
