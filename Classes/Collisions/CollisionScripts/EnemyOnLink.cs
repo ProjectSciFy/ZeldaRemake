@@ -20,16 +20,16 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             switch (link.linkState.currentState)
             {
                 case (LinkStateMachine.CurrentState.swordDown):
-                    enemy.TakeDamage(1 + (link.game.util.numXP / 20));
+                    enemy.TakeDamage(1 + (link.game.util.numXP / link.game.util.XPPerLevel));
                     break;
                 case LinkStateMachine.CurrentState.swordLeft:
-                    enemy.TakeDamage(1 + (link.game.util.numXP / 20));
+                    enemy.TakeDamage(1 + (link.game.util.numXP / link.game.util.XPPerLevel));
                     break;
                 case LinkStateMachine.CurrentState.swordRight:
-                    enemy.TakeDamage(1 + (link.game.util.numXP / 20));
+                    enemy.TakeDamage(1 + (link.game.util.numXP / link.game.util.XPPerLevel));
                     break;
                 case LinkStateMachine.CurrentState.swordUp:
-                    enemy.TakeDamage(1 + (link.game.util.numXP / 20));
+                    enemy.TakeDamage(1 + (link.game.util.numXP / link.game.util.XPPerLevel));
                     break;
                 default:
                     break;

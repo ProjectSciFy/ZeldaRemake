@@ -153,6 +153,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             pHUD.minimapPos.Y += speed;
             pHUD.bossPos.Y += speed;
             pHUD.gameLevelPos.Y += speed;
+            //link mini-map indicator is no longer sliding down....I DONT KNOW WHY. 
             pHUD.linkIndicatorPos.Y += speed;
             pHUD.xpPos.Y += speed;
             pHUD.linkLevelPos.Y += speed;

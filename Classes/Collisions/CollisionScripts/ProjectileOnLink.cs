@@ -20,41 +20,19 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         {
             if (projectile is Bomb)
             {
-                if (link.linkState.timer <= 0)
-                {
-                    link.linkState.isDamaged = true;
-                }
+                if (link.linkState.timer <= 0) link.linkState.isDamaged = true;
             }
             else if (projectile is GoriyaBoomerang || projectile is Fireball || projectile is KiBlast || projectile is Kamehameha)
             {
-                if (link.linkState.timer <= 0)
-                {
-                    link.linkState.isDamaged = true;
-                }
-                if (projectile is Fireball)
-                {
-                    ((Fireball)projectile).collided = true;
-                }
-                else if (projectile is KiBlast)
-                {
-                    ((KiBlast)projectile).collided = true;
-                }
-                else if (projectile is Kamehameha)
-                {
-                    link.game.util.numLives = 0;
-                }
-                else
-                {
-                    ((GoriyaBoomerang)projectile).myState.returning = true;
-                }
+                if (link.linkState.timer <= 0) link.linkState.isDamaged = true;
+                if (projectile is Fireball) ((Fireball)projectile).collided = true;
+                else if (projectile is KiBlast) ((KiBlast)projectile).collided = true;
+                else if (projectile is Kamehameha) link.game.util.numLives = 0;
+                else ((GoriyaBoomerang)projectile).myState.returning = true;
             }
             else if (projectile is Arrow)
             {
-                if (link.linkState.timer <= 0)
-                {
-                    link.linkState.isDamaged = true;
-                    ((Arrow)projectile).myState.hit = true;
-                }
+                if (link.linkState.timer <= 0) { link.linkState.isDamaged = true; ((Arrow)projectile).myState.hit = true; }
             }
             if (projectile is LinkBoomerangProjectile && ((LinkBoomerangProjectile)projectile).myState.returning)
             {
