@@ -1,7 +1,12 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
+using CSE3902_Game_Sprint0.Classes.Projectiles.FireballUtility;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -14,13 +19,12 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private FireballStateMachine myState { get; set; }
         public ISprite mySprite { get; set; }
         private Vector2 drawLocation;
-        public Vector2 velocity { get; set; } = new Vector2(0, 0);
-        public Vector2 spriteSize { get; set; } = new Vector2(0, 0);
+        public Vector2 velocity { get; set; } = Vector2.Zero;
+        public Vector2 spriteSize { get; set; } = Vector2.Zero;
         public Vector2 trajectory { get; set; }
         private bool newItem { get; set; } = true;
-        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public Rectangle collisionRectangle = Rectangle.Empty;
         private float spriteScalar { get; set; }
-        private static int HITBOX_OFFSET { get; set; } = 6;
         public bool collided { get; set; } = false;
 
         public Fireball(ZeldaGame game, EnemyAquamentus aquamentus, AquamentusStateMachine aquamentusState, Vector2 trajectory)
@@ -45,10 +49,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 
             drawLocation = drawLocation + velocity;
 
-            collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
-            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.X = (int)drawLocation.X + FireballStorage.DOUBLE_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + FireballStorage.HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - FireballStorage.TRIPLE_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - FireballStorage.DOUBLE_OFFSET;
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
 

@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Interfaces;
+﻿using CSE3902_Game_Sprint0.Classes.LinkContent.LinkUtility;
+using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes
@@ -7,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes
     {
         private static int CENTER { get; set; } = 24;
         private int Y_ADJUST { get; set; } = 0;
-
+        public LinkHelper helper { get; set; }
         public ZeldaGame game { get; set; }
         public LinkStateMachine linkState { get; set; }
         public ISprite linkSprite;
@@ -20,6 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes
 
         public Link(ZeldaGame game)
         {
+            helper = new LinkHelper();
             this.Y_ADJUST = (game.GraphicsDevice.Viewport.Bounds.Height / 4) - 2 * CENTER;
             this.game = game;
             this.spriteScalar = game.util.spriteScalar;
@@ -45,7 +47,6 @@ namespace CSE3902_Game_Sprint0.Classes
             linkState.Update();
             linkSprite.Update();
 
-            //Update the position of Link here
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
 

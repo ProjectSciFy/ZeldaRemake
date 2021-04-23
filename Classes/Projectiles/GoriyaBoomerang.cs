@@ -1,4 +1,10 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Projectiles.GoriyaBoomerangUtility;
+using CSE3902_Game_Sprint0.Classes.Scripts;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 
@@ -14,13 +20,12 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public GoriyaBoomerangStatemachine myState { get; set; }
         public Vector2 drawLocation;
         public Vector2 SpawnLocation;
-        public Vector2 velocity { get; set; } = new Vector2(0, 0);
-        public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
+        public Vector2 velocity { get; set; } = Vector2.Zero;
+        public Vector2 spriteSize { get; set; } = GoriyaBoomerangStorage.SPRITE_SIZE_VECTOR;
         public bool newItem { get; set; }
-        public Vector2 trajectory { get; set; } = new Vector2(0, 0);
-        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public Vector2 trajectory { get; set; } = Vector2.Zero;
+        public Rectangle collisionRectangle = Rectangle.Empty;
         private float spriteScalar { get; set; }
-        private static int HITBOX_OFFSET { get; set; } = 6;
         public bool collided { get; set; } = false;
 
         public GoriyaBoomerang(ZeldaGame game, EnemyGoriya goriya, GoriyaStateMachine goriyaState)
@@ -47,10 +52,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             //Update position of boomerang
             drawLocation = drawLocation + velocity;
 
-            collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
-            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.X = (int)drawLocation.X + GoriyaBoomerangStorage.DOUBLE_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + GoriyaBoomerangStorage.HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - GoriyaBoomerangStorage.TRIPLE_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - GoriyaBoomerangStorage.DOUBLE_OFFSET;
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
 

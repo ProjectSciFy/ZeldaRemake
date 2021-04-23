@@ -17,54 +17,36 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
 
         public void Execute()
         {
-            link.velocity.X = 0;
-            link.velocity.Y = 0;
-
-            switch (linkStateMachine.direction)
-            {
+            link.velocity.X = 0; link.velocity.Y = 0;
+            switch (linkStateMachine.direction) {
                 case LinkStateMachine.Direction.right:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.portalRight)
-                    {
-                        link.spriteSize.X = 27;
-                        link.spriteSize.Y = 16;
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.portalRight) {
+                        link.spriteSize.X = 27; link.spriteSize.Y = 16;
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.portalRight;
-                        link.linkSprite = spriteFactory.PortalRight();
-                    }
+                        link.linkSprite = spriteFactory.PortalRight(); }
                     break;
                 case LinkStateMachine.Direction.up:
-                    link.drawOffset.X = 0 * link.spriteScalar;
-                    link.drawOffset.Y = -12 * link.spriteScalar;
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.portalUp)
-                    {
-                        link.spriteSize.X = 16;
-                        link.spriteSize.Y = 28;
+                    link.drawOffset.X = 0 * link.spriteScalar; link.drawOffset.Y = -12 * link.spriteScalar;
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.portalUp) {
+                        link.spriteSize.X = 16; link.spriteSize.Y = 28;
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.portalUp;
-                        link.linkSprite = spriteFactory.PortalUp();
-                    }
+                        link.linkSprite = spriteFactory.PortalUp(); }
                     break;
                 case LinkStateMachine.Direction.left:
-                    link.drawOffset.X = -11 * link.spriteScalar;
-                    link.drawOffset.Y = 0 * link.spriteScalar;
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.portalLeft)
-                    {
-                        link.spriteSize.X = 27;
-                        link.spriteSize.Y = 16;
+                    link.drawOffset.X = -11 * link.spriteScalar; link.drawOffset.Y = 0 * link.spriteScalar;
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.portalLeft) {
+                        link.spriteSize.X = 27; link.spriteSize.Y = 16;
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.portalLeft;
-                        link.linkSprite = spriteFactory.PortalLeft();
-                    }
+                        link.linkSprite = spriteFactory.PortalLeft(); }
                     break;
                 case LinkStateMachine.Direction.down:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.portalDown)
-                    {
-                        link.spriteSize.X = 16;
-                        link.spriteSize.Y = 27;
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.portalDown) {
+                        link.spriteSize.X = 16; link.spriteSize.Y = 27;
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.portalDown;
-                        link.linkSprite = spriteFactory.PortalDown();
-                    }
+                        link.linkSprite = spriteFactory.PortalDown(); }
                     break;
                 default:
-                    break;
-            }
+                    break; }
         }
     }
 }
