@@ -159,109 +159,6 @@ namespace CSE3902_Game_Sprint0
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            int thisDoorValue;
-            int newRoomPortalNumber = 0;
-            Room tempRoom;
-
-            if(Keyboard.GetState().IsKeyDown(Keys.C))
-                foreach (IDoor door in currentRoom.getDoors())
-                {
-                    thisDoorValue = door.getDoorValue();
-                    if (door.GetType() == typeof(TopDoor))
-                    {
-                        if (thisDoorValue % 10 == 6)
-                        {
-
-                            currentRoom.addDoor(new TopDoor(this, new RoomTextureStorage(this), (door.getDoorValue() / 10 + 7)));
-                            currentRoom.removeDoor(door);
-                            if (currentRoom.getRoomNumber() == 6)
-                            {
-                                newRoomPortalNumber = 10;
-                            }
-                            else
-                            {
-                                newRoomPortalNumber = 11;
-                            }
-                        }
-                    }
-                    else if (door.GetType() == typeof(BottomDoor))
-                    {
-                        if (thisDoorValue % 10 == 6)
-                        {
-                            currentRoom.addDoor(new BottomDoor(this, new RoomTextureStorage(this), (7)));
-                            currentRoom.removeDoor(door);
-                            if (currentRoom.getRoomNumber() == 10)
-                            {
-                                newRoomPortalNumber = 6;
-                            }
-                            else
-                            {
-                                newRoomPortalNumber = 7;
-                            }
-                        }
-                    }
-                    if(newRoomPortalNumber != 0)
-                    {
-                        foreach (ITile tile in currentRoom.getTiles())
-                        {
-                            if (tile.GetType() == typeof(GateKeeperTile))
-                            {
-                                if (((GateKeeperTile)tile).isLockedDoor)
-                                {
-                                    ((GateKeeperTile)tile).locked = false;
-                                }
-                            }
-                        }
-                        this.sounds["doorUnlock"].CreateInstance().Play();
-
-                        tempRoom = currentRoom;
-                        foreach (Room r in roomList)
-                        {
-                            if (r.getRoomNumber() == newRoomPortalNumber)
-                            {
-                                tempRoom = r;
-                            }
-                        }
-                        foreach (IDoor door2 in tempRoom.getDoors())
-                        {
-                            thisDoorValue = door2.getDoorValue();
-                            if (door2.GetType() == typeof(TopDoor))
-                            {
-                                if (thisDoorValue % 10 == 6)
-                                {
-
-                                    tempRoom.addDoor(new TopDoor(this, new RoomTextureStorage(this), (8)));
-                                    tempRoom.removeDoor(door2);
-                                    break;
-                                }
-
-
-                            }
-                            else if (door2.GetType() == typeof(BottomDoor))
-                            {
-                                if (thisDoorValue % 10 == 6)
-                                {
-                                    tempRoom.addDoor(new BottomDoor(this, new RoomTextureStorage(this), (8)));
-                                    tempRoom.removeDoor(door2);
-                                    break;
-                                }
-                            }
-                            
-                        }
-                        foreach (ITile tile in tempRoom.getTiles())
-                        {
-                            if (tile.GetType() == typeof(GateKeeperTile))
-                            {
-                                if (((GateKeeperTile)tile).isLockedDoor)
-                                {
-                                    ((GateKeeperTile)tile).locked = false;
-                                }
-                            }
-                        }
-                        break;
-                    }
-                }
-
             currentGameState.UpdateCollisions();
             base.Update(gameTime);
             currentGameState.Update();
@@ -281,16 +178,6 @@ namespace CSE3902_Game_Sprint0
                 currentGameState = currentMainGameState;
             }
 
-
-            //link indicator:
-            if (currentGameState.GetType() == typeof(MainState))
-            {
-                util.linkInd = true;
-            }
-            else
-            {
-                util.linkInd = false;
-            }
         }
         public void changeRoom(int newRoom, Collision.Direction direction)
         {

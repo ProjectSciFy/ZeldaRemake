@@ -38,6 +38,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             else if (item is Bow)
             {
                 link.linkState.grabItem = true;
+                link.linkState.isBow = true;
                 link.game.sounds["fanfare"].CreateInstance().Play();
                 link.game.sounds["getItem"].CreateInstance().Play();
             }
@@ -52,6 +53,10 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 if (link.game.util.numXP % link.game.util.XPPerLevel * link.game.util.difficultyMult == 0)
                 {
                     link.game.sounds["fanfare"].CreateInstance().Play();
+                    if (link.game.util.linkXPlevel <= 9)
+                    {
+                        link.game.util.linkXPlevel += 1;
+                    }
                 }
             }
             else if (item is Boomerang || item is Compass || item is Fairy || item is HeartContainer || item is Map || item is Triforce)

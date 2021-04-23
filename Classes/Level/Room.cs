@@ -35,6 +35,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         //player hud related variables:
         public playerHUD pHUD { get; set; }
         private HudSpriteFactory hudFactory { get; set; }
+
+        private ISprite bowSprite { get; set; }
         private int maxLives { get; set; } = 16;
         private int keyCounter { get; set; }
         private int bombCounter { get; set; }
@@ -62,6 +64,9 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             this.yellowrupeeCounter = game.util.numYrups;
             this.hudFactory = game.hudSpriteFactory;
             pHUD = new playerHUD(game, hudFactory);
+
+            //bow pick-up workaround:
+            bowSprite = hudFactory.staticBow();
         }
         public void Initialize()
         {
@@ -201,6 +206,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
+            pHUD.Draw();
+            
+            if (game.linkStateMachine.bowTimer > 0)
+            {
+                bowSprite.Draw(new Vector2(game.link.drawLocation.X - 20, game.link.drawLocation.Y - 30));
+            }
+
             foreach (IDoor door in doors)
             {
                 door.Draw();

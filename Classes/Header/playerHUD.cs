@@ -133,7 +133,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //xp & leveling:
             xpPos = new Vector2(hudPosition.X + (729), hudPosition.Y + 121);
-            linkLevelPos = new Vector2(hudPosition.X + (227*3), hudPosition.Y + 15);
+            linkLevelPos = new Vector2(hudPosition.X + (232*3), hudPosition.Y + 15);
 
             //mini-map positions:
             minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
@@ -144,6 +144,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
         public void Update()
         {
+            //xp dummy variable to run loop based on current level progress:
             xpCount = game.util.numXP % game.util.XPPerLevel;
 
             //responds to currently selected secondary weapon:
@@ -157,6 +158,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicatorPos.Y = minimapPos.Y + 60;
                     break;
                 case 2:
+                    //starting room:
                     linkIndicatorPos.X = minimapPos.X + 57;
                     linkIndicatorPos.Y = minimapPos.Y + 60;
                     break;
@@ -221,6 +223,10 @@ namespace CSE3902_Game_Sprint0.Classes.Header
                     linkIndicatorPos.X = minimapPos.X + 57;
                     linkIndicatorPos.Y = minimapPos.Y;
                     break;
+                case 19:
+                    linkIndicatorPos.X = minimapPos.X + 81;
+                    linkIndicatorPos.Y = minimapPos.Y;
+                    break;
             }
         }
 
@@ -234,7 +240,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             bottom.Draw(new Vector2(hudPosition.X, windowHeightFloor + 530));
             right.Draw(new Vector2(windowWidthFloor + 768, windowHeightFloor));
             left.Draw(new Vector2(0, windowHeightFloor));
-
+            //-----------------------------------------------------------------------------------------
             //static displays:
             hudSprite.Draw(hudPosition);
             primWeapSprite.Draw(primWeapPos);
@@ -243,7 +249,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             xSprite.Draw(YellowCounterPos);
             xSprite.Draw(BombCounterPos);
             gameLevelSprite.Draw(gameLevelPos);
-
+            //-------------------------------------------------------------------------------------
             //Lives Graphical Displays:
 
             //Hearts/Lives:
@@ -343,22 +349,15 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             }
             //--------------------------------------------------------------------------------
             //xp & level graphics
-
-            //links current level:
-            //linkLevelOffset = game.util.linkXPlevel * 9;
-            //if ((game.util.numXP % 10) == 0)
-            //{
-            //    linkLevelOffset = (game.util.linkXPlevel + (game.util.numXP / 10)) * 9;
-            //}
-            //linkLevelDigit = HudFactory.Digit(linkLevelOffset);
-            //linkLevelDigit.Draw(linkLevelPos);
-
+            linkLevelOffset = game.util.linkXPlevel * 9;
+            linkLevelDigit = HudFactory.Digit(linkLevelOffset);
+            linkLevelDigit.Draw(linkLevelPos);
+            //xp loop:
             for (int i = 0; i < xpCount; i++)
             {
                 xpOffset = (i) * (12);
                 xpSprite.Draw(new Vector2(xpPos.X, xpPos.Y - xpOffset));
             }
-
             //-------------------------------------------------------------------------------
         }
     }
