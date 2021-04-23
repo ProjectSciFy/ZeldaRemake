@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/jaden/Downloads/ZeldaRemake-1/ZeldaRemake/Content/spiritbomb.jpg</SourceFile>
-  <SourceTime>2021-04-22T19:32:49.7297045-04:00</SourceTime>
-  <DestFile>C:/Users/jaden/Downloads/ZeldaRemake-1/ZeldaRemake/Content/bin/Windows/Content/spiritbomb.xnb</DestFile>
-  <DestTime>2021-04-22T19:33:52.706528-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
