@@ -36,7 +36,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 {
                     ((Fairy)item).position.X = ((Fairy)item).position.X - ((Fairy)item).velocity.X;
                 }
-                //((Fairy)item).velocity = Vector2.Negate(((Fairy)item).velocity);
             }
         }
     }
