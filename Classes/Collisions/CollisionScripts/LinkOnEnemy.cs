@@ -27,19 +27,12 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 link.linkState.Idle();
                 link.linkState.timer = 120;
                 new LinkOffset(link, true).Execute();
-                link.drawOffset.X = 0;
-                link.drawOffset.Y = 0;
+                link.drawOffset.X = 0; link.drawOffset.Y = 0;
                 ((EnemyRedead)enemy).myState.idle = false;
                 ((EnemyRedead)enemy).myState.shriekTimer = 360;
                 ((EnemyRedead)enemy).game.sounds["redeadScream"].CreateInstance().Play();
             }
-
-            //If link's timer has expired, set his stateMachine to be damaged
-            if (link.linkState.timer <= 0)
-            {
-                link.linkState.isDamaged = true;
-            }
-
+            if (link.linkState.timer <= 0) link.linkState.isDamaged = true;
             if (enemy is EnemyWallmaster)
             {
                 if (link.linkState.timer <= 0 && !(link.linkState.isGrabbed))
@@ -49,11 +42,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     link.linkState.Idle();
                     link.linkState.timer = 96;
                 }
-                else if (link.linkState.timer <= 0)
-                {
-                    new Reset(link.game).Execute();
-                    link.linkState.isGrabbed = false;
-                }
+                else if (link.linkState.timer <= 0) { new Reset(link.game).Execute(); link.linkState.isGrabbed = false; }
                 else if (link.linkState.isGrabbed)
                 {
                     link.drawLocation = ((EnemyWallmaster)enemy).drawLocation;
