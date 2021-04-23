@@ -52,7 +52,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.projectileHandler.Clear();
             game.roomList = new List<Room>();
             game.util.roomNumber = 2;
-            for (int i = 1; i < 19; i++)
+            for (int i = 1; i < 20; i++)
             {
                 game.roomList.Add(Parser.ParseRoomCSV(game, i));
             }
