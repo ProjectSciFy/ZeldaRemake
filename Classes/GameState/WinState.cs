@@ -2,16 +2,13 @@
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
     public class WinState : IGameState
     {
         private ZeldaGame game { get; set; }
-        private Triforce triforce;
+        private readonly Triforce triforce;
         private Vector2 position;
 
         public WinState(ZeldaGame game)
@@ -41,7 +38,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.UpdateCollisions()
         {
-            
+
         }
     }
 }

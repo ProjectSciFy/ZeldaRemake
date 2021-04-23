@@ -1,7 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Scripts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -10,8 +7,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
     public class WallmasterSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D enemySpriteSheet;
-        private Texture2D linkSpriteSheet;
+        private readonly Texture2D enemySpriteSheet;
+        private readonly Texture2D linkSpriteSheet;
         private float enemyLayerDepth { get; set; } = 0.2f;
 
         public WallmasterSpriteFactory(ZeldaGame game)
@@ -30,7 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         }
         public UniversalSprite WallmasterMovingUp()
         {
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, enemyLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(393, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, enemyLayerDepth);
         }
 
         public UniversalSprite WallmasterMovingRight()

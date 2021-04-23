@@ -1,8 +1,3 @@
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 {
     public class KeeseFlying : ICommand
@@ -10,7 +5,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
         private EnemyKeese keese { get; set; }
         private KeeseSpriteFactory enemySpriteFactory { get; set; }
         private KeeseStateMachine KeeseStateMachine { get; set; }
-        private float flightTurn = (float).02;
+        private readonly float flightTurn = (float).02;
         public KeeseFlying(EnemyKeese keese, KeeseSpriteFactory enemySpriteFactory, KeeseStateMachine KeeseStateMachine)
         {
             this.keese = keese;
@@ -83,7 +78,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
                     if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.flyingEast)
                     {
                         KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.flyingEast;
-                       keese.mySprite = enemySpriteFactory.KeeseFlyingEast();
+                        keese.mySprite = enemySpriteFactory.KeeseFlyingEast();
                     }
                     break;
 
@@ -123,7 +118,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
                     if (KeeseStateMachine.currentState != KeeseStateMachine.CurrentState.flyingSouth)
                     {
                         KeeseStateMachine.currentState = KeeseStateMachine.CurrentState.flyingSouth;
-                       keese.mySprite = enemySpriteFactory.KeeseFlyingSouth();
+                        keese.mySprite = enemySpriteFactory.KeeseFlyingSouth();
                     }
                     break;
 

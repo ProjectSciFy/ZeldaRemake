@@ -1,12 +1,8 @@
 ﻿using CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
 namespace CSE3902_Game_Sprint0.Classes
 {
     public class LinkStateMachine
@@ -16,11 +12,11 @@ namespace CSE3902_Game_Sprint0.Classes
         public LinkSpriteFactory spriteFactory { get; set; }
         public ProjectileHandler projectileHandler { get; set; }
 
-        public enum Direction {right, up, left, down};
+        public enum Direction { right, up, left, down };
         public Direction direction { get; set; } = Direction.down;
         public bool moving { get; set; } = false;
 
-        public enum Weapon {none, sword, bomb, arrow, boomerang};
+        public enum Weapon { none, sword, bomb, arrow, boomerang };
         public Weapon weaponSelected { get; set; } = Weapon.bomb;
 
         public int timer { get; set; } = 0;
@@ -44,7 +40,7 @@ namespace CSE3902_Game_Sprint0.Classes
         public bool dead { get; set; } = false;
         public bool boomerangCaught { get; set; } = true;
 
-        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, rollingUp, rollingDown, rollingLeft, rollingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, portalUp, portalRight, portalDown, portalLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
+        public enum CurrentState { none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, rollingUp, rollingDown, rollingLeft, rollingRight, damagedUp, damagedDown, damagedLeft, damagedRight, swordUp, swordRight, swordDown, swordLeft, portalUp, portalRight, portalDown, portalLeft, boomerangUp, boomerangRight, boomerangDown, boomerangLeft, bombUp, bombRight, bombDown, bombLeft, arrowUp, arrowRight, arrowDown, arrowLeft, dying, grabbing, grabbed };
         public CurrentState currentState;
 
         public LinkStateMachine(Link link)

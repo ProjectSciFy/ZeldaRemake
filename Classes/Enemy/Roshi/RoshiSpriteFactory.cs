@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CSE3902_Game_Sprint0.Classes.Scripts;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
 {
     public class RoshiSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D spriteSheet;
+        private readonly Texture2D spriteSheet;
         private float enemyLayerDepth { get; set; } = 0.2f;
 
         public RoshiSpriteFactory(ZeldaGame game)

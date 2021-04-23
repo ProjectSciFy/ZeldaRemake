@@ -1,11 +1,8 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy.Goriya;
 using CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts;
 using CSE3902_Game_Sprint0.Classes.Items;
-using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
@@ -13,7 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
     {
         private ZeldaGame game { get; set; }
         private EnemyGoriya goriya { get; set; }
-        private GoriyaSpriteFactory enemySpriteFactory;
+        private readonly GoriyaSpriteFactory enemySpriteFactory;
 
         public enum Direction { right, up, left, down, NE, SE, SW, NW, none };
         public Direction direction = Direction.down;
@@ -21,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public bool spawning { get; set; } = true;
         private int timer { get; set; } = 90;
         private int deathTimer { get; set; } = 30;
-        public enum CurrentState {none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning, dying};
+        public enum CurrentState { none, idleRight, idleLeft, idleUp, idleDown, movingUp, movingDown, movingLeft, movingRight, spawning, dying };
         public CurrentState currentState = CurrentState.none;
         public GoriyaStateMachine(EnemyGoriya goriya)
         {

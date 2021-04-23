@@ -1,17 +1,13 @@
-﻿using CSE3902_Game_Sprint0.Classes.NewBlocks;
-using CSE3902_Game_Sprint0.Classes.Scripts;
+﻿using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class TileSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D tileSpriteSheet;
+        private readonly Texture2D tileSpriteSheet;
         private float tileLayerDepth { get; set; } = .3f;
         public TileSpriteFactory(ZeldaGame game)
         {

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
-using Microsoft.Xna.Framework;
+﻿using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using Microsoft.Xna.Framework.Graphics;
 using CSE3902_Game_Sprint0.Interfaces;
+using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes.Tiles
 {
@@ -21,7 +17,7 @@ namespace CSE3902_Game_Sprint0.Classes.Tiles
         public Vector2 drawLocation { get; set; }
         public Vector2 spriteSize { get; set; } = new Vector2(16, 16);
 
-        
+
         public StairsTile(ZeldaGame game, TileSpriteFactory tileFactory, Vector2 location)
         {
             this.game = game;

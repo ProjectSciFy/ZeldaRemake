@@ -1,26 +1,21 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualBasic.FileIO;
-using System.Diagnostics;
-using System.IO;
-using CSE3902_Game_Sprint0.Classes.Tiles;
-using CSE3902_Game_Sprint0.Classes.Items;
-using CSE3902_Game_Sprint0.Classes.Enemy;
-using CSE3902_Game_Sprint0.Interfaces;
-
-using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
-using CSE3902_Game_Sprint0.Classes._21._2._13;
+﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Doors;
+using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
-using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
 using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
+using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
+using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.LinkContent;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using CSE3902_Game_Sprint0.Classes.Tiles;
+using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -52,13 +47,13 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
             windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
-            
+
 
             tiles = new List<ITile>();
             items = new List<IItem>();
             enemies = new List<IEnemy>();
             doors = new List<IDoor>();
-            
+
             ParseRoomCSVFile();
             ParseWallsCSVFile();
             ParseDoorsCSVFile();
@@ -240,7 +235,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             string cwdPath = Directory.GetCurrentDirectory();
             cwdPath = Directory.GetCurrentDirectory();
             cwdPath = cwdPath.Replace(@"\bin\Debug\netcoreapp3.1", @"\Classes\Level\RoomCSV");
-            if(roomNumber == 16)
+            if (roomNumber == 16)
             {
                 cwdPath = Path.Combine(cwdPath, "walls16.csv");
             }
@@ -317,7 +312,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                                 tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked, isLockedDoor, isPortal));
                                 gatekeeper.drawLocation = wallPos;
 
-                                if(roomNumber == 16)
+                                if (roomNumber == 16)
                                 {
                                     tpPos = utility.GetTopStairPosition(windowWidthFloor, windowHeightFloor, 1, -1);
                                     tiles.Add(stair = new StairsTile(game, new TileSpriteFactory(game), tpPos));

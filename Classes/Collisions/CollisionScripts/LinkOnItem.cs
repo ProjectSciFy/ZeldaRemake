@@ -1,10 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes.GameState;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Interfaces;
-using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
@@ -20,13 +16,13 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
             this.item = item;
             this.direction = direction;
         }
-        
+
         public void Execute()
         {
             link.game.collisionManager.collisionEntities.Remove((ICollisionEntity)item);
             link.game.currentRoom.removeItem(item);
 
-            if(item is Triforce)
+            if (item is Triforce)
             {
                 link.game.sounds["fanfare"].CreateInstance().Play();
                 link.game.sounds["getItem"].CreateInstance().Play();

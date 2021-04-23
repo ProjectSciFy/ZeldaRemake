@@ -1,13 +1,9 @@
-﻿using CSE3902_Game_Sprint0.Classes.Scripts;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Header;
+﻿using CSE3902_Game_Sprint0.Classes.Header;
+using CSE3902_Game_Sprint0.Classes.Level;
+using CSE3902_Game_Sprint0.Classes.Scripts;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CSE3902_Game_Sprint0.Classes.Level;
-using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using Microsoft.Xna.Framework.Input;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
@@ -15,10 +11,10 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
     {
         private ZeldaGame game { get; set; }
         public Room currentRoom { get; set; }
-        private Texture2D inventorySpriteSheet;
+        private readonly Texture2D inventorySpriteSheet;
 
 
-        private ISprite top, mid;
+        private readonly ISprite top, mid;
 
         private float itemDepth { get; set; } = 0.4f;
 
@@ -27,8 +23,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         private HudSpriteFactory HudFactory { get; set; }
 
-        private ISprite holdingMap;
-        private ISprite holdingCompass;
+        private readonly ISprite holdingMap;
+        private readonly ISprite holdingCompass;
         private ISprite secweaponHolding;
         private ISprite secweaponOne;
         private ISprite secweaponTwo;
@@ -41,7 +37,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             HudFactory = game.hudSpriteFactory;
             top = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(1, 11, 260, 100), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             mid = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(258, 111, 260, 99), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-            holdingMap=new UniversalSprite(game,inventorySpriteSheet, new Rectangle(601, 156, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            holdingMap = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(601, 156, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             holdingCompass = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(613, 157, 13, 14), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             pHUD = game.currentRoom.pHUD;
             secweaponHolding = HudFactory.blankBox();
@@ -59,7 +55,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             top.Draw(game.util.topPos);
             if (game.util.hasMap)
             {
-               holdingMap.Draw(new Vector2(game.util.midPos.X + 142,game.util.midPos.Y+ 70));
+                holdingMap.Draw(new Vector2(game.util.midPos.X + 142, game.util.midPos.Y + 70));
             }
             if (game.util.hasCompass)
             {
@@ -98,7 +94,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             game.controllerList[0].Update();
             game.controllerList[2].Update();
             secweaponHolding = HudFactory.secondaryWeaponHUD();
-            switch (game.link.linkState.weaponSelected) {
+            switch (game.link.linkState.weaponSelected)
+            {
                 case LinkStateMachine.Weapon.bomb:
                     secweaponOne = HudFactory.blankBox();
                     secweaponTwo = HudFactory.staticBoomerang();
@@ -137,7 +134,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         }
         void IGameState.UpdateCollisions()
         {
-            
+
         }
         void ItemScreenPositionalUpdate(int speed)
         {

@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
+﻿namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
 {
     public class KeeseDying : ICommand
     {

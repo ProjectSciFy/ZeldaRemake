@@ -1,8 +1,4 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.LittleHelper.LittleHelperScripts;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CSE3902_Game_Sprint0.Classes.LittleHelper.LittleHelperScripts;
 
 namespace CSE3902_Game_Sprint0.Classes.LittleHelper
 {
@@ -13,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.LittleHelper
         public LittleHelperSpriteFactory spriteFactory { get; set; }
 
         public bool interacting { get; set; } = false;
-        public enum CurrentState { none, flying, interacting}
+        public enum CurrentState { none, flying, interacting }
         public CurrentState currentState { get; set; } = CurrentState.none;
         public LittleHelperStateMachine(LittleHelper littleHelper)
         {

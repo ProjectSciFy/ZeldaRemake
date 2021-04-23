@@ -1,11 +1,7 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster.WallmasterScripts;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 {

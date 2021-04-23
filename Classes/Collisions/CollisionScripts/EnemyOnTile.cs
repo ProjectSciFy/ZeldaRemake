@@ -4,12 +4,8 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
 using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
-using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Tiles;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {
@@ -33,7 +29,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                 {
                     if (direction == Collision.Collision.Direction.down)
                     {
-                        ((EnemyKeese) enemy).drawLocation.Y = ((EnemyKeese)enemy).drawLocation.Y - ((EnemyKeese)enemy).velocity.Y;
+                        ((EnemyKeese)enemy).drawLocation.Y = ((EnemyKeese)enemy).drawLocation.Y - ((EnemyKeese)enemy).velocity.Y;
                     }
                     else if (direction == Collision.Collision.Direction.up)
                     {
@@ -68,7 +64,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
                     ((EnemyAquamentus)enemy).drawLocation.X = ((EnemyAquamentus)enemy).drawLocation.X - ((EnemyAquamentus)enemy).velocity.X;
                 }
             }
-            else if(enemy is EnemySlime) 
+            else if (enemy is EnemySlime)
             {
                 if (direction == Collision.Collision.Direction.down)
                 {

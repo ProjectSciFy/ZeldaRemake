@@ -1,11 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CSE3902_Game_Sprint0.Classes.Scripts;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Items;
-using CSE3902_Game_Sprint0.Classes.Scripts;
-using CSE3902_Game_Sprint0.Classes.Projectiles;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -16,12 +11,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public Vector2 drawLocationExterior;
         public ISprite roominterior;
         public ISprite roomexterior;
-        private int windowWidth;
-        private int windowHeight;
-        private Texture2D itemSpriteSheet;
-        private int roomLimiter;
-        private int drawOffset;
-        private int roomNumber;
+        private readonly int windowWidth;
+        private readonly int windowHeight;
+        private readonly Texture2D itemSpriteSheet;
+        private readonly int roomLimiter;
+        private readonly int drawOffset;
+        private readonly int roomNumber;
         public Background(ZeldaGame game, int roomNumber)
         {
             this.roomNumber = roomNumber;
@@ -42,7 +37,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             drawLocationExterior = new Vector2(windowWidthFloor, windowHeightFloor);
 
             roominterior = roomTextures.getRoom(roomNumber);
-            if(roomNumber == 16)
+            if (roomNumber == 16)
             {
                 roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
                 roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
@@ -51,18 +46,18 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             {
                 roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
-            
 
-            
+
+
         }
         public void Draw()
         {
             roomexterior.Draw(drawLocationExterior);
-            if(roomNumber != 16)
+            if (roomNumber != 16)
             {
                 roominterior.Draw(drawLocationInterior);
             }
-           
+
         }
     }
 }

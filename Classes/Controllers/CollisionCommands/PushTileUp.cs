@@ -1,12 +1,9 @@
 ﻿using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Tiles;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
 {
-    class PushTileUp :ICommand
+    class PushTileUp : ICommand
     {
         private ZeldaGame game { get; set; }
         private PushableTile tile { get; set; }

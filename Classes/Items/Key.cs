@@ -1,13 +1,10 @@
 ﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Items
 {
-    public class Key : IItem , ICollisionEntity
+    public class Key : IItem, ICollisionEntity
     {
         private ZeldaGame game { get; set; }
         private ISprite itemSprite { get; set; }

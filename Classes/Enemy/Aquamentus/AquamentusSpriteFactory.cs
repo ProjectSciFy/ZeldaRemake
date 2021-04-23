@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CSE3902_Game_Sprint0.Classes.Scripts;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
     public class AquamentusSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D bossSpriteSheet;
-        private Texture2D linkSpriteSheet;
+        private readonly Texture2D bossSpriteSheet;
+        private readonly Texture2D linkSpriteSheet;
         private float enemyLayerDepth { get; set; } = 0.2f;
 
         public AquamentusSpriteFactory(ZeldaGame game)

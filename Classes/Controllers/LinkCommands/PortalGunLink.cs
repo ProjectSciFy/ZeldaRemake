@@ -1,13 +1,7 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Doors;
-using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
-using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Tiles;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
@@ -16,7 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
         private LinkStateMachine linkState { get; set; }
         private ZeldaGame game { get; set; }
 
-        public PortalGunLink(ZeldaGame game,  LinkStateMachine linkState)
+        public PortalGunLink(ZeldaGame game, LinkStateMachine linkState)
         {
             this.game = game;
             this.linkState = linkState;

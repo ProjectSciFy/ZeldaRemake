@@ -1,12 +1,9 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Level;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
-   public class MainState : IGameState
+    public class MainState : IGameState
     {
         public ZeldaGame game { get; set; }
         public Room currentRoom { get; set; }

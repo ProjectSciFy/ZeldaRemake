@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using CSE3902_Game_Sprint0.Classes.Level;
+using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes.Header
 {
@@ -54,7 +51,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 digitYrupPos;
         public Vector2 YellowCounterPos;
         public Vector2 BombCounterPos;
-        public Vector2 KeyCounterPos; 
+        public Vector2 KeyCounterPos;
 
         private HudSpriteFactory HudFactory { get; set; }
 
@@ -81,7 +78,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
         public Vector2 drawLocation;
 
         //top left corner coordinates of HUD:
-        private int X, Y;
+        private readonly int X, Y;
 
         public playerHUD(ZeldaGame game, HudSpriteFactory hudFactory)
         {
@@ -120,7 +117,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //elements of the Hud will be positioned in reference to hudPosition.X and hudPosition.Y so when Hud is moved, only X and Y need to change:
             primWeapPos = new Vector2((hudPosition.X + 456), (hudPosition.Y + 72));
-            secWeapPos = new Vector2((hudPosition.X + 384),(hudPosition.Y + 72));
+            secWeapPos = new Vector2((hudPosition.X + 384), (hudPosition.Y + 72));
             gameLevelPos = new Vector2((hudPosition.X + 47), (hudPosition.Y + 24));
             heartPos = new Vector2((hudPosition.X + 516), (hudPosition.Y + 96));
             //counter related positions:
@@ -133,7 +130,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
 
             //xp & leveling:
             xpPos = new Vector2(hudPosition.X + (729), hudPosition.Y + 121);
-            linkLevelPos = new Vector2(hudPosition.X + (232*3), hudPosition.Y + 15);
+            linkLevelPos = new Vector2(hudPosition.X + (232 * 3), hudPosition.Y + 15);
 
             //mini-map positions:
             minimapPos = new Vector2((hudPosition.X + 60), (hudPosition.Y + 60));
@@ -154,7 +151,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header
             switch (game.util.roomNumber)
             {
                 case 1:
-                    linkIndicatorPos.X = minimapPos.X + 33; 
+                    linkIndicatorPos.X = minimapPos.X + 33;
                     linkIndicatorPos.Y = minimapPos.Y + 60;
                     break;
                 case 2:

@@ -1,24 +1,8 @@
-﻿using CSE3902_Game_Sprint0.Classes;
-using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
-using CSE3902_Game_Sprint0.Classes.Scripts;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Items;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
-using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
-using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
-using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Controllers;
-using CSE3902_Game_Sprint0.Classes.Enemy;
-using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
-using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+﻿using CSE3902_Game_Sprint0.Classes.GameState;
 using CSE3902_Game_Sprint0.Classes.Level;
-using CSE3902_Game_Sprint0.Classes.GameState;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
+using System.Collections.Generic;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
@@ -72,7 +56,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
                 game.roomList.Add(Parser.ParseRoomCSV(game, i));
             }
             game.currentRoom = game.roomList[1];
-            
+
             game.currentRoom.Initialize();
             game.currentMainGameState = new MainState(game, game.currentRoom);
             game.currentGameState = game.currentMainGameState;

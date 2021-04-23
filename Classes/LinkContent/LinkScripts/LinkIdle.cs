@@ -1,7 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
 {
@@ -24,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
             link.spriteSize.Y = 16;
             link.velocity.X = 0;
             link.velocity.Y = 0;
-            
+
             switch (linkStateMachine.direction)
             {
                 case LinkStateMachine.Direction.right:

@@ -1,9 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.LinkContent
 {
@@ -12,8 +9,8 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent
         public ZeldaGame game { get; set; }
         private Vector2 drawLocation;
         private Vector2 spriteSize = new Vector2(1544, 352);
-        private UniversalSprite mySprite;
-        private FogOfWarSpriteFactory fogOfWarSpriteFactory;
+        private readonly UniversalSprite mySprite;
+        private readonly FogOfWarSpriteFactory fogOfWarSpriteFactory;
         public float spriteScalar { get; set; }
 
         public FogOfWar(ZeldaGame game)

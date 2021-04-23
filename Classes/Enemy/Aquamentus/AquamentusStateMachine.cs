@@ -1,11 +1,8 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus.AquamentusScripts;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus.AquamentusScripts;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
@@ -28,7 +25,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 
         public AquamentusStateMachine(EnemyAquamentus aquamentus)
         {
-            game=aquamentus.game;
+            game = aquamentus.game;
             this.aquamentus = aquamentus;
             enemySpriteFactory = new AquamentusSpriteFactory(game);
         }
@@ -36,7 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         {
             return collisionRectangle;
         }
-        
+
         public void Spawning()
         {
             timer = 90;

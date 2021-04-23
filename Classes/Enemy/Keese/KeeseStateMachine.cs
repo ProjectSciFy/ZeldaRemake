@@ -1,10 +1,7 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts;
-using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Items;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
@@ -86,8 +83,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
         public void Spawning()
         {
-            timer=90;
-            spawning=false;
+            timer = 90;
+            spawning = false;
             new KeeseSpawning(keese, enemySpriteFactory, this).Execute();
         }
         public void Dying()
@@ -103,7 +100,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         public void Flying()
         {
             new KeeseFlying(keese, enemySpriteFactory, this).Execute();
-                
+
         }
 
         public void Landing()

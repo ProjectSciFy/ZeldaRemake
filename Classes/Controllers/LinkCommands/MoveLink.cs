@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CSE3902_Game_Sprint0.Classes.Scripts
+﻿namespace CSE3902_Game_Sprint0.Classes.Scripts
 {
     public class MoveLink : ICommand
     {
@@ -20,7 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
         public void Execute()
         {
             linkState.moving = true;
-            
+
 
             switch (direction)
             {

@@ -1,35 +1,23 @@
-﻿using System;
+﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Doors;
+using CSE3902_Game_Sprint0.Classes.Header;
+using CSE3902_Game_Sprint0.Classes.Items;
+using CSE3902_Game_Sprint0.Classes.LinkContent;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using CSE3902_Game_Sprint0.Classes.Tiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualBasic.FileIO;
-using System.Diagnostics;
-using System.IO;
-using CSE3902_Game_Sprint0.Classes.Tiles;
-using CSE3902_Game_Sprint0.Classes.Items;
-using CSE3902_Game_Sprint0.Classes.Enemy;
-using CSE3902_Game_Sprint0.Interfaces;
-
-using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
-using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Doors;
-using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
-using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
-using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
-using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
-using CSE3902_Game_Sprint0.Classes.Header;
-using CSE3902_Game_Sprint0.Classes.LinkContent;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
     public class Room
     {
         private Background background { get; set; }
-        private List<ITile> tiles;
+        private readonly List<ITile> tiles;
         public List<IItem> items { get; set; }
-        private List<IEnemy> enemies;
-        private List<IDoor> doors;
+        private readonly List<IEnemy> enemies;
+        private readonly List<IDoor> doors;
         private ZeldaGame game { get; set; }
 
         //player hud related variables:
@@ -206,7 +194,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
-            
+
             if (game.linkStateMachine.bowTimer > 0)
             {
                 bowSprite.Draw(new Vector2(game.link.drawLocation.X - 20, game.link.drawLocation.Y - 30));
@@ -239,7 +227,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                 }
             }
             pHUD.Draw();
-            
+
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Scripts;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Header;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -12,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
     {
         private ZeldaGame game { get; set; }
         private ISprite texture { get; set; }
-        private Texture2D roshiDialog;
+        private readonly Texture2D roshiDialog;
         private float itemDepth { get; set; } = 0.4f;
         private const int HEIGHT = 53;
         private const int WIDTH = 263;

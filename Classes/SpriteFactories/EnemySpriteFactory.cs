@@ -1,15 +1,7 @@
-﻿using CSE3902_Game_Sprint0.Classes.Enemy;
-using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
-using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
-using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
-using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
-using CSE3902_Game_Sprint0.Classes.Projectiles;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /*This file is a sprite-factory which will contain otherwise frowned upon "magic numbers".*/
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
@@ -17,10 +9,10 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
     public class EnemySpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D bossSpriteSheet;
-        private Texture2D enemySpriteSheet;
-        private Texture2D linkSpriteSheet;
-        private Texture2D NPCSpriteSheet;
+        private readonly Texture2D bossSpriteSheet;
+        private readonly Texture2D enemySpriteSheet;
+        private readonly Texture2D linkSpriteSheet;
+        private readonly Texture2D NPCSpriteSheet;
         private float linkLayerDepth { get; set; } = 0.2f;
 
         // fps limiters:

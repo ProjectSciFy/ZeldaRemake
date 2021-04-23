@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
+﻿namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
 {
     public class SecondaryWeaponSelect : ICommand
     {
@@ -13,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
             this.state = state;
             this.weapon = weapon;
         }
-        public void Execute() 
+        public void Execute()
         {
             state.weaponSelected = weapon;
         }

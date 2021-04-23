@@ -1,15 +1,11 @@
-﻿using CSE3902_Game_Sprint0.Classes.Level;
+﻿using CSE3902_Game_Sprint0.Classes.Doors;
+using CSE3902_Game_Sprint0.Classes.Header;
+using CSE3902_Game_Sprint0.Classes.Level;
+using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Scripts;
+using CSE3902_Game_Sprint0.Classes.Tiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Items;
-using CSE3902_Game_Sprint0.Classes.Doors;
-using CSE3902_Game_Sprint0.Classes.Header;
-using CSE3902_Game_Sprint0.Classes.Tiles;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
@@ -63,14 +59,14 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         private int windowWidth { get; set; }
         private int windowHeight { get; set; }
-        private Texture2D itemSpriteSheet;
+        private readonly Texture2D itemSpriteSheet;
         private int roomLimiter { get; set; }
         private int drawOffset { get; set; }
         private Collision.Collision.Direction transitionDirection { get; set; }
         private int animationSpeed { get; set; } = 6;
 
-        private playerHUD pHUD;
-       
+        private readonly playerHUD pHUD;
+
         public TransitionState(ZeldaGame game, Room oldroom, Room nextroom, Collision.Collision.Direction transitionDirection)
         {
             this.game = game;
@@ -96,8 +92,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             Vector2 newRoomShift = new Vector2(0, 0);
 
             //SLIDE
-            switch(transitionDirection)
-            { 
+            switch (transitionDirection)
+            {
                 case Collision.Collision.Direction.up:
                     newRoomShift = new Vector2(0, -176 * 3);
                     timer = 176 * 3 / animationSpeed;
@@ -107,7 +103,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                     timer = 256 * 3 / animationSpeed;
                     break;
                 case Collision.Collision.Direction.right:
-                    newRoomShift = new Vector2(256 * 3,0);
+                    newRoomShift = new Vector2(256 * 3, 0);
                     timer = 256 * 3 / animationSpeed;
                     break;
                 case Collision.Collision.Direction.down:
@@ -175,7 +171,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 {
                     topDoorOld = roomTextures.getDoor(door.getDoorValue());
                 }
-                else if(door.GetType() == typeof(LeftDoor))
+                else if (door.GetType() == typeof(LeftDoor))
                 {
                     leftDoorOld = roomTextures.getDoor(door.getDoorValue());
                 }
@@ -239,7 +235,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 nextTile.pushed = false;
                 nextPushableTile = new UniversalSprite(game, itemSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
-            
+
         }
 
         public void Draw()
@@ -275,19 +271,20 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             int windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
             int windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
             timer--;
-            if(timer == 0)
+            if (timer == 0)
             {
                 game.currentGameState = game.currentMainGameState;
                 game.util.keyPressedTempVariable = false;
-                if(nextroom.getRoomNumber() == 17 && oldroom.getRoomNumber() == 16) { 
-                    game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
-                    game.link.SetLocation(new Vector2(windowWidthFloor + (112-24) * ParserUtility.SCALE_FACTOR + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (144-34) * ParserUtility.SCALE_FACTOR));
-                    goto Skip;
-                }
-                else if(nextroom.getRoomNumber() == 16)
+                if (nextroom.getRoomNumber() == 17 && oldroom.getRoomNumber() == 16)
                 {
                     game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
-                    game.link.SetLocation(new Vector2(windowWidthFloor + (112-70) * 3 + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (-8 * 3) + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR));
+                    game.link.SetLocation(new Vector2(windowWidthFloor + (112 - 24) * ParserUtility.SCALE_FACTOR + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (144 - 34) * ParserUtility.SCALE_FACTOR));
+                    goto Skip;
+                }
+                else if (nextroom.getRoomNumber() == 16)
+                {
+                    game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
+                    game.link.SetLocation(new Vector2(windowWidthFloor + (112 - 70) * 3 + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (-8 * 3) + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR));
                     goto Skip;
                 }
                 switch (transitionDirection)
@@ -312,7 +309,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             }
 
 
-            Skip:
+        Skip:
             Vector2 animationShift = new Vector2(0, 0);
 
             switch (transitionDirection)
@@ -358,5 +355,5 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
             pHUD.Update();
         }
-}
+    }
 }
