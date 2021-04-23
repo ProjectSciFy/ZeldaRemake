@@ -21,9 +21,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
             int windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
             int windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
-            windowWidthFloor = windowWidthFloor + 112 * ParserUtility.SCALE_FACTOR;
-            windowHeightFloor = windowHeightFloor + 144 * ParserUtility.SCALE_FACTOR;
-
+            windowWidthFloor = windowWidthFloor + DoorUtility.bottomDoorXAdjust * ParserUtility.SCALE_FACTOR;
+            windowHeightFloor = windowHeightFloor + DoorUtility.bottomDoorYAdjust * ParserUtility.SCALE_FACTOR;
 
             this.position = new Vector2(windowWidthFloor, windowHeightFloor);
             this.bottomDoorTexture = textures;
