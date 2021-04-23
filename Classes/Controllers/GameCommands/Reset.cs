@@ -33,6 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
             game.link.linkState.ChangeDirection(LinkStateMachine.Direction.down);
             game.linkStateMachine.Idle();
             game.link.linkState.timer = 0;
+            game.link.linkState.isGrabbed = false;
 
             //RESET HUD
             game.util.numLives = 3;
