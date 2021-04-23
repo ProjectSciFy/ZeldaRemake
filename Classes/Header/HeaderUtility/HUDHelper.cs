@@ -12,13 +12,11 @@ namespace CSE3902_Game_Sprint0.Classes.Header.HeaderUtility
         public HUDStorage storage { get; set; }
         public HudSpriteFactory HudFactory { get; set; }
         private ZeldaGame game;
-
         private int heartOffset;
         private ISprite heartSprite { get; set; }
         private ISprite minimap { get; set; }
         private ISprite linkIndicator { get; set; }
         private ISprite boss { get; set; }
-
         private ISprite linkLevelDigit { get; set; }
 
         private int digitOffset;
