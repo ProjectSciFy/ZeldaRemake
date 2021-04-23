@@ -37,7 +37,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             [16] = new Rectangle(33, 32, INTERIOR_WIDTH, INTERIOR_LENGTH),//
             [17] = new Rectangle(290, 33, INTERIOR_WIDTH, INTERIOR_LENGTH),//
             [18] = new Rectangle(547, 33, INTERIOR_WIDTH, INTERIOR_LENGTH),//
-            [19] = new Rectangle(33, 387, INTERIOR_WIDTH, INTERIOR_LENGTH),//
+            [19] = new Rectangle(804, 33, INTERIOR_WIDTH, INTERIOR_LENGTH),//
         };
         public static Dictionary<int, Rectangle> DOOR_DIMENSIONS = new Dictionary<int, Rectangle>()
         {

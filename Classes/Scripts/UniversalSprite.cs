@@ -23,7 +23,7 @@ namespace CSE3902_Game_Sprint0.Classes.Scripts
 
         public UniversalSprite(ZeldaGame game, Texture2D texture, Rectangle spriteIndex, Color color, SpriteEffects spriteEffects, Vector2 frameGrid, int fpsLimiter, float layerDepth)
         {
-            mySpriteBatch = new SpriteBatch(game.GraphicsDevice);
+            mySpriteBatch = game._spriteBatch;
             myTexture = texture;
             this.spriteIndex = spriteIndex;
             frameIndex = new Rectangle(spriteIndex.X, spriteIndex.Y, spriteIndex.Width, spriteIndex.Height);

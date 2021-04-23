@@ -19,6 +19,7 @@
     <None Remove="Classes\Controllers\TileCommands\**" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Content\Fog of War.png" />
     <None Remove="Content\Portal2_sfx_portal_gun_fire_blue.m4a" />
     <None Remove="Content\Portal2_sfx_portal_gun_fire_orange.m4r" />
   </ItemGroup>

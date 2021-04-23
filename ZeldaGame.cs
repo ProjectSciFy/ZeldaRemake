@@ -32,7 +32,7 @@ namespace CSE3902_Game_Sprint0
     public class ZeldaGame : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public SpriteBatch _spriteBatch {get; set;}
 
         public List<IController> controllerList = new List<IController>();
         public GameUtility util { get; set; }
@@ -110,6 +110,7 @@ namespace CSE3902_Game_Sprint0
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteSheets.Add("FogOfWar", Content.Load<Texture2D>("Fog of War"));
             spriteSheets.Add("Link", Content.Load<Texture2D>("NES - The Legend of Zelda - Link"));
             spriteSheets.Add("HUD", Content.Load<Texture2D>("NES - The Legend of Zelda - HUD & Pause Screen"));
             spriteSheets.Add("ItemsAndWeapons", Content.Load<Texture2D>("NES - The Legend of Zelda - Items & Weapons"));
@@ -178,16 +179,6 @@ namespace CSE3902_Game_Sprint0
                 currentGameState = currentMainGameState;
             }
 
-
-            //link indicator:
-            if (currentGameState.GetType() == typeof(MainState))
-            {
-                util.linkInd = true;
-            }
-            else
-            {
-                util.linkInd = false;
-            }
         }
         public void changeRoom(int newRoom, Collision.Direction direction)
         {
