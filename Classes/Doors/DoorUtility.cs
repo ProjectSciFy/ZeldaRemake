@@ -9,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.Doors
         public static readonly int bottomDoorXAdjust = 112;
         public static readonly int bottomDoorYAdjust = 144;
         public static readonly int leftDoorAdjust = 72;
-        public static readonly int rightDoorXAdjust = 244;
+        public static readonly int rightDoorXAdjust = 224;
         public static readonly int rightDoorYAdjust = 72;
         public static readonly int topDoorAdjust = 112;
     }

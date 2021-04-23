@@ -33,7 +33,7 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
         {
             foreach (KeyValuePair<ICollisionEntity, Rectangle> entity1 in collisionManager.collisionEntities) {
                 foreach (KeyValuePair<ICollisionEntity, Rectangle> entity2 in collisionManager.collisionEntities) {
-                    if (!entity1.Equals(entity2) {
+                    if (!entity1.Equals(entity2)) {
                         if (entity1.Value.Intersects(entity2.Value)) {
                             collisionManager.collisionSet.Add(new Tuple<object, object, Collision.Direction>(entity1.Key, entity2.Key, CollisionDirection(entity1.Value, entity2.Value)));
                         }
