@@ -2,9 +2,9 @@
 -Author of review: Gal Pinhasi
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: 
+-File Name: LinkStateMachine.cs
 -Author of file: Mark Maher
--Number of minutes taken to review: 
+-Number of minutes taken to review: 5
 -Comments: 
 
 
@@ -12,8 +12,8 @@ MAINTAINABILITY OF MARK'S CODE:
 -Author of review: Gal Pinhasi
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: 
+-File Name: LinkStateMachine.cs
 -Author of file: Mark Maher
--Number of minutes taken to review: 
+-Number of minutes taken to review: 6
 -Comments: 
 -Hypitheitcal changes: 

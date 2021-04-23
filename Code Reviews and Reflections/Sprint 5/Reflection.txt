@@ -1,2 +1,6 @@
 ﻿Sprint 5 Reflection
 
+We made a considerable effort to catch up on sprint 4 features. Once we finished implementing previously desired features,
+we developed new additions to the game. After these additions, we cleaned up the code heavily and refactored long files to 
+increase readability and cohesion. Overall, we managed to make impressive changes to the game despite being a bit behind 
+from sprint 4. We got to know each other super well and we are very happy with our final result. 
