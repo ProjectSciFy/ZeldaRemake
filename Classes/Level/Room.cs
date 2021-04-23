@@ -206,7 +206,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
-            pHUD.Draw();
             
             if (game.linkStateMachine.bowTimer > 0)
             {
