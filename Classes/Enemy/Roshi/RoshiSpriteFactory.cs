@@ -48,5 +48,33 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         {
             return new UniversalSprite(game, spriteSheet, new Rectangle(254, 522, 44, 42), Color.White, SpriteEffects.None, new Vector2(1, 11), 30, enemyLayerDepth);
         }
+        public UniversalSprite RoshiLift()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(689, 465, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+        }
+        public UniversalSprite RoshiCharge()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(733, 465, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+        }
+        public UniversalSprite RoshiThrow()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(777, 465, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+        }
+        public UniversalSprite RoshiRest()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(821, 465, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+        }
+        public UniversalSprite SpiritBombCharge()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(536, 224, 91, 91), Color.White, SpriteEffects.None, new Vector2(1, 5), 136, enemyLayerDepth);
+        }
+        public UniversalSprite SpiritBombProjectile()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(890, 224, 91, 91), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+        }
+        public UniversalSprite Explosion()
+        {
+            return new UniversalSprite(game, spriteSheet, new Rectangle(1011, 240, 76, 62), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+        }
     }
 }

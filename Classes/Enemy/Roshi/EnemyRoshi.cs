@@ -11,13 +11,14 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         public RoshiSpriteFactory spriteFactory { get; set; }
         public ISprite mySprite { get; set; }
         public Vector2 drawLocation;
+        public Vector2 spawnLocation;
         public Vector2 velocity = new Vector2(0, 0);
         public Vector2 spriteSize = new Vector2(0, 0);
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         public int timer { get; set; } = 0;
         private float spriteScalar { get; set; }
         private static int HITBOX_OFFSET { get; set; } = 6;
-        public int health { get; set; } = 5;
+        public int health { get; set; } = 15;
         private int hurtTimer { get; set; } = 0;
 
         public EnemyRoshi(ZeldaGame game, Vector2 spawnLocation)
@@ -26,6 +27,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
             this.spriteFactory = new RoshiSpriteFactory(game);
             this.mySprite = this.spriteFactory.SpawnRoshi();
             drawLocation = spawnLocation;
+            this.spawnLocation = spawnLocation;
             myState = new RoshiStateMachine(this);
             this.spriteScalar = game.util.spriteScalar;
             game.collisionManager.collisionEntities.Add(this, CollisionRectangle());
@@ -38,7 +40,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
                 hurtTimer = 30;
                 this.health = this.health - damage;
                 game.sounds["enemyHit"].CreateInstance().Play();
-                myState.damaged = true;
+                if (health >= 10)
+                {
+                    myState.damaged = true;
+                }
             }
         }
         public Rectangle CollisionRectangle()
