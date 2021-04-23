@@ -50,23 +50,23 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         }
         public UniversalSprite RoshiLift()
         {
-            return new UniversalSprite(game, spriteSheet, new Rectangle(689, 465, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+            return new UniversalSprite(game, spriteSheet, new Rectangle(689, 464, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
         }
         public UniversalSprite RoshiCharge()
         {
-            return new UniversalSprite(game, spriteSheet, new Rectangle(733, 465, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+            return new UniversalSprite(game, spriteSheet, new Rectangle(733, 464, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
         }
         public UniversalSprite RoshiThrow()
         {
-            return new UniversalSprite(game, spriteSheet, new Rectangle(777, 465, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+            return new UniversalSprite(game, spriteSheet, new Rectangle(777, 464, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
         }
         public UniversalSprite RoshiRest()
         {
-            return new UniversalSprite(game, spriteSheet, new Rectangle(821, 465, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
+            return new UniversalSprite(game, spriteSheet, new Rectangle(821, 464, 44, 45), Color.White, SpriteEffects.None, new Vector2(1, 1), 30, enemyLayerDepth);
         }
         public UniversalSprite SpiritBombCharge()
         {
-            return new UniversalSprite(game, spriteSheet, new Rectangle(536, 224, 91, 91), Color.White, SpriteEffects.None, new Vector2(1, 5), 136, enemyLayerDepth);
+            return new UniversalSprite(game, spriteSheet, new Rectangle(526, 224, 91, 91), Color.White, SpriteEffects.None, new Vector2(1, 5), 136, enemyLayerDepth);
         }
         public UniversalSprite SpiritBombProjectile()
         {

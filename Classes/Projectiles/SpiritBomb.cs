@@ -35,7 +35,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.roshi = roshi;
             this.roshiState = roshiState;
             this.spriteFactory = roshi.spriteFactory;
-            this.drawLocation = Vector2.Add(roshi.drawLocation,  new Vector2(-40, -250));
+            this.drawLocation = Vector2.Add(roshi.drawLocation,  new Vector2(-45, -250));
             this.myState = new SpiritBombStateMachine(this);
             this.spriteScalar = game.util.spriteScalar;
             this.trajectory = trajectory;

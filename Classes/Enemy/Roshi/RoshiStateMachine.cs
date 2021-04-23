@@ -96,7 +96,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
                 Charge();
                 enrageTimer--;
             }
-            else if (enrageTimer == 180)
+            else if (enrageTimer == 230)
             {
                 Throw();
                 enrageTimer--;

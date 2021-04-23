@@ -11,6 +11,8 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public bool fire { get; set; } = false;
         public bool charging { get; set; } = true;
         public bool explode { get; set; } = true;
+        public enum CurrentState { none, charge };
+        CurrentState currentState = CurrentState.none;
 
         public SpiritBombStateMachine(SpiritBomb spiritBomb)
         {
@@ -19,7 +21,11 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public void Charge()
         {
-            spiritBomb.mySprite =  spriteFactory.SpiritBombCharge();
+            if (currentState != CurrentState.charge)
+            {
+                currentState = CurrentState.charge;
+                spiritBomb.mySprite = spriteFactory.SpiritBombCharge();
+            }
         }
         public void Attack()
         {
