@@ -1,6 +1,13 @@
-﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Projectiles.BombUtility;
+using CSE3902_Game_Sprint0.Classes.Scripts;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -14,9 +21,9 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Vector2 spriteSize;
         private BombStateMachine myState { get; set; }
         public bool exploding { get; set; } = false;
-        private int explosionTimer { get; set; } = 6;
+        private int explosionTimer { get; set; } = BombStorage.EXPLOSION_TIMER;
         private bool explosionMirror { get; set; } = false;
-        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public Rectangle collisionRectangle = Rectangle.Empty;
         public float spriteScalar { get; set; }
 
         public Bomb(ZeldaGame game, Vector2 drawLocation, ProjectileHandler projectileHandler)
@@ -37,7 +44,6 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         {
             myState.Update();
             mySprite.Update();
-
         }
 
         public void Draw()
@@ -50,23 +56,23 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             {
                 if (explosionMirror)
                 {
-                    mySprite.Draw(new Vector2(drawLocation.X - 8 * spriteScalar, drawLocation.Y - 16 * spriteScalar));
-                    mySprite.Draw(new Vector2(drawLocation.X + 16 * spriteScalar, drawLocation.Y));
+                    mySprite.Draw(new Vector2(drawLocation.X - BombStorage.POSITION_OFFSET_ONE * spriteScalar, drawLocation.Y - BombStorage.POSITION_OFFSET_TWO * spriteScalar));
+                    mySprite.Draw(new Vector2(drawLocation.X + BombStorage.POSITION_OFFSET_TWO * spriteScalar, drawLocation.Y));
                     mySprite.Draw(drawLocation);
-                    mySprite.Draw(new Vector2(drawLocation.X + 8 * spriteScalar, drawLocation.Y + 16 * spriteScalar));
+                    mySprite.Draw(new Vector2(drawLocation.X + BombStorage.POSITION_OFFSET_ONE * spriteScalar, drawLocation.Y + BombStorage.POSITION_OFFSET_TWO * spriteScalar));
                 }
                 else
                 {
-                    mySprite.Draw(new Vector2(drawLocation.X + 8 * spriteScalar, drawLocation.Y - 16 * spriteScalar));
-                    mySprite.Draw(new Vector2(drawLocation.X - 16 * spriteScalar, drawLocation.Y));
+                    mySprite.Draw(new Vector2(drawLocation.X + BombStorage.POSITION_OFFSET_ONE * spriteScalar, drawLocation.Y - BombStorage.POSITION_OFFSET_TWO * spriteScalar));
+                    mySprite.Draw(new Vector2(drawLocation.X - BombStorage.POSITION_OFFSET_TWO * spriteScalar, drawLocation.Y));
                     mySprite.Draw(drawLocation);
-                    mySprite.Draw(new Vector2(drawLocation.X - 8 * spriteScalar, drawLocation.Y + 16 * spriteScalar));
+                    mySprite.Draw(new Vector2(drawLocation.X - BombStorage.POSITION_OFFSET_ONE * spriteScalar, drawLocation.Y + BombStorage.POSITION_OFFSET_TWO * spriteScalar));
                 }
 
-                if (explosionTimer <= 0)
+                if (explosionTimer <= BombStorage.ZERO)
                 {
                     explosionMirror = !explosionMirror;
-                    explosionTimer = 6;
+                    explosionTimer = BombStorage.EXPLOSION_TIMER;
                 }
                 else
                 {

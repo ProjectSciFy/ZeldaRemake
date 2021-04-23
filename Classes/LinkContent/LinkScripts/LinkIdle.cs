@@ -25,32 +25,16 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
             switch (linkStateMachine.direction)
             {
                 case LinkStateMachine.Direction.right:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.idleRight)
-                    {
-                        linkStateMachine.currentState = LinkStateMachine.CurrentState.idleRight;
-                        link.linkSprite = spriteFactory.IdleRight();
-                    }
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.idleRight) { linkStateMachine.currentState = LinkStateMachine.CurrentState.idleRight; link.linkSprite = spriteFactory.IdleRight(); }
                     break;
                 case LinkStateMachine.Direction.up:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.idleUp)
-                    {
-                        linkStateMachine.currentState = LinkStateMachine.CurrentState.idleUp;
-                        link.linkSprite = spriteFactory.IdleUp();
-                    }
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.idleUp) { linkStateMachine.currentState = LinkStateMachine.CurrentState.idleUp; link.linkSprite = spriteFactory.IdleUp(); }
                     break;
                 case LinkStateMachine.Direction.left:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.idleLeft)
-                    {
-                        linkStateMachine.currentState = LinkStateMachine.CurrentState.idleLeft;
-                        link.linkSprite = spriteFactory.IdleLeft();
-                    }
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.idleLeft) { linkStateMachine.currentState = LinkStateMachine.CurrentState.idleLeft; link.linkSprite = spriteFactory.IdleLeft(); }
                     break;
                 case LinkStateMachine.Direction.down:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.idleDown)
-                    {
-                        linkStateMachine.currentState = LinkStateMachine.CurrentState.idleDown;
-                        link.linkSprite = spriteFactory.IdleDown();
-                    }
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.idleDown) { linkStateMachine.currentState = LinkStateMachine.CurrentState.idleDown; link.linkSprite = spriteFactory.IdleDown(); }
                     break;
                 default:
                     break;
