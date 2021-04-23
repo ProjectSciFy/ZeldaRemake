@@ -21,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public enum Direction { up, down, left, right};
         public Direction direction { get; set; }
         public ArrowStateMachine myState { get; set; }
-        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public Rectangle collisionRectangle = Rectangle.Empty;
         public float spriteScalar { get; set; }
 
         public Arrow(ZeldaGame game, Vector2 drawLocation, ProjectileHandler projectileHandler, Direction direction)

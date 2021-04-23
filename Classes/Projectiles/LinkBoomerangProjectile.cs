@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Projectiles.LinkBoomerangProjectileUtility;
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Interfaces;
@@ -20,15 +21,14 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public LinkBoomerangStateMachine myState { get; set; }
         public Vector2 drawLocation;
         public Vector2 spawnLocation;
-        public Vector2 velocity { get; set; } = new Vector2(0, 0);
-        public Vector2 spriteSize { get; set; } = new Vector2(0, 0);
+        public Vector2 velocity { get; set; } = Vector2.Zero;
+        public Vector2 spriteSize { get; set; } = Vector2.Zero;
         public bool newItem { get; set; }
-        public Vector2 trajectory { get; set; } = new Vector2(0, 0);
-        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public Vector2 trajectory { get; set; } = Vector2.Zero;
+        public Rectangle collisionRectangle = Rectangle.Empty;
         private float spriteScalar { get; set; }
-        private static int HITBOX_OFFSET { get; set; } = 6;
         public bool collided { get; set; } = false;
-        private int boomerangTimer { get; set; } = 30;
+        private int boomerangTimer { get; set; } = LinkBoomerangProjectileStorage.BOOMERANG_TIMER_STARTING_VALUE;
         private int soundTimer { get; set; } = 0;
 
         public LinkBoomerangProjectile(Link link, LinkStateMachine linkState)
@@ -51,7 +51,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             if (soundTimer <= 0)
             {
                 link.game.sounds["arrowBoomerang"].CreateInstance().Play();
-                soundTimer = 10;
+                soundTimer = LinkBoomerangProjectileStorage.SOUND_TIMER_VALUE;
             }
             else
             {
@@ -68,10 +68,10 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             //Update position of boomerang
             drawLocation = drawLocation + velocity;
 
-            collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
-            collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.X = (int)drawLocation.X + LinkBoomerangProjectileStorage.DOUBLE_OFFSET;
+            collisionRectangle.Y = (int)drawLocation.Y + LinkBoomerangProjectileStorage.HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - LinkBoomerangProjectileStorage.TRIPLE_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - LinkBoomerangProjectileStorage.DOUBLE_OFFSET;
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
 

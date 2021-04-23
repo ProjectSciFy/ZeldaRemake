@@ -10,6 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private LinkBoomerangProjectile boomerang { get; set; }
         public enum Direction { right, up, left, down, NE, SE, SW, NW }; // NE = North East
         public Direction returnDirection { get; set; }
+        private const int BOUND = 5;
         public LinkBoomerangDirectionCalculation (LinkBoomerangStateMachine boomerangState)
         {
             this.boomerangState = boomerangState;
@@ -17,19 +18,19 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         }
         public Direction CalculateReturnDireciton()
         {
-            if (Math.Abs(boomerang.drawLocation.X - boomerang.link.drawLocation.X) < 5 && boomerang.drawLocation.Y > boomerang.link.drawLocation.Y)
+            if (Math.Abs(boomerang.drawLocation.X - boomerang.link.drawLocation.X) < BOUND && boomerang.drawLocation.Y > boomerang.link.drawLocation.Y)
             {
                 returnDirection = Direction.up;
             }
-            else if (Math.Abs(boomerang.drawLocation.X - boomerang.link.drawLocation.X) < 5 && boomerang.drawLocation.Y < boomerang.link.drawLocation.Y)
+            else if (Math.Abs(boomerang.drawLocation.X - boomerang.link.drawLocation.X) < BOUND && boomerang.drawLocation.Y < boomerang.link.drawLocation.Y)
             {
                 returnDirection = Direction.down;
             }
-            else if (boomerang.drawLocation.X < boomerang.link.drawLocation.X && Math.Abs(boomerang.drawLocation.Y - boomerang.link.drawLocation.Y) < 5)
+            else if (boomerang.drawLocation.X < boomerang.link.drawLocation.X && Math.Abs(boomerang.drawLocation.Y - boomerang.link.drawLocation.Y) < BOUND)
             {
                 returnDirection = Direction.right;
             }
-            else if (boomerang.drawLocation.X > boomerang.link.drawLocation.X && Math.Abs(boomerang.drawLocation.Y - boomerang.link.drawLocation.Y) < 5)
+            else if (boomerang.drawLocation.X > boomerang.link.drawLocation.X && Math.Abs(boomerang.drawLocation.Y - boomerang.link.drawLocation.Y) < BOUND)
             {
                 returnDirection = Direction.left;
             }

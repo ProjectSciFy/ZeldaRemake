@@ -1,4 +1,5 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Projectiles.ArrowStateMachineUtility;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public ProjectileHandler projectileHandler { get; set; }
         public bool hit { get; set; } = false;
 
-        private int timer { get; set; } = 180;
+        private int timer { get; set; } = ArrowStateMachineStorage.STARTING_TIMER;
         public enum CurrentState { none, soaring, hitting };
         public CurrentState currentState { get; set; } = CurrentState.none;
 
@@ -54,7 +55,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         {
             if (currentState != CurrentState.hitting)
             {
-                timer = 15;
+                timer = ArrowStateMachineStorage.RESET_TIMER;
                 currentState = CurrentState.hitting;
                 projectileSpriteFactory.ArrowStrike(arrow);
                 arrow.game.collisionManager.collisionEntities.Remove(arrow);
@@ -66,7 +67,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             if (timer <= 0 && !hit)
             {
                 hit = true;
-                timer = 15;
+                timer = ArrowStateMachineStorage.RESET_TIMER;
             }
             else if (timer <= 0 && hit)
             {
