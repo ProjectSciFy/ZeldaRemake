@@ -1,17 +1,14 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya
 {
     public class GoriyaSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D enemySpriteSheet;
-        private Texture2D linkSpriteSheet;
+        private readonly Texture2D enemySpriteSheet;
+        private readonly Texture2D linkSpriteSheet;
         private float enemyLayerDepth { get; set; } = 0.2f;
         public GoriyaSpriteFactory(ZeldaGame game)
         {
@@ -21,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya
         }
         public UniversalSprite SpawnGoriya()
         {
-           return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, enemyLayerDepth);
+            return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, enemyLayerDepth);
         }
         public UniversalSprite GoriyaMovingUp()
         {
@@ -29,7 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya
         }
         public UniversalSprite GoriyaMovingDown()
         {
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, enemyLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, enemyLayerDepth);
         }
         public UniversalSprite GoriyaMovingRight()
         {
@@ -41,7 +38,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya
         }
         public UniversalSprite GoriyaIdleDown()
         {
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, enemyLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(290, 28, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, enemyLayerDepth);
         }
         public UniversalSprite GoriyaIdleUp()
         {

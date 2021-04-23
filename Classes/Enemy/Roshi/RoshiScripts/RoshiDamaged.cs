@@ -1,9 +1,4 @@
-﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
+﻿namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
 {
     public class RoshiDamaged : ICommand
     {
@@ -25,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
             roshi.velocity.Y = 0;
             roshiState.timer = 30;
             roshiState.moving = false;
-            roshiState.damaged = false; 
+            roshiState.damaged = false;
             if (roshiState.kiBlast != null)
             {
                 roshi.game.projectileHandler.Remove(roshiState.kiBlast);

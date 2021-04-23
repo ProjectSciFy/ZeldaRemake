@@ -5,9 +5,6 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
 using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
 {

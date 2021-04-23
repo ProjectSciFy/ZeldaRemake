@@ -1,7 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -19,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private static int CONTAINER_ADJUST { get; set; } = 4;
         private static int MID_ADJUST { get; set; } = 129;
 
-        private ZeldaGame game;
+        private readonly ZeldaGame game;
         public ParserUtility(ZeldaGame game)
         {
             this.game = game;

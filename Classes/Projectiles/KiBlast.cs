@@ -1,12 +1,7 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -35,7 +30,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             this.roshi = roshi;
             this.roshiState = roshiState;
             this.spriteFactory = game.enemySpriteFactory;
-            this.drawLocation = Vector2.Add(roshi.drawLocation, new Vector2(40 * 3,16 * 3));
+            this.drawLocation = Vector2.Add(roshi.drawLocation, new Vector2(40 * 3, 16 * 3));
             this.myState = new KiBlastStateMachine(this);
             this.spriteScalar = game.util.spriteScalar;
             this.trajectory = trajectory;

@@ -1,8 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Scripts;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Header;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -12,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
     {
         private ZeldaGame game { get; set; }
         private ISprite texture { get; set; }
-        private Texture2D pausedSpriteSheet;
+        private readonly Texture2D pausedSpriteSheet;
         private float itemDepth { get; set; } = 0.4f;
         private const int HEIGHT = 7;
         private const int WIDTH = 47;
@@ -25,7 +21,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.Draw()
         {
-            texture.Draw(new Vector2(game.GraphicsDevice.Viewport.Width /2 - WIDTH, game.GraphicsDevice.Viewport.Height / 2 - HEIGHT));
+            texture.Draw(new Vector2(game.GraphicsDevice.Viewport.Width / 2 - WIDTH, game.GraphicsDevice.Viewport.Height / 2 - HEIGHT));
         }
         void IGameState.Update()
         {
@@ -35,7 +31,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
 
         void IGameState.UpdateCollisions()
         {
-            
+
         }
     }
 }

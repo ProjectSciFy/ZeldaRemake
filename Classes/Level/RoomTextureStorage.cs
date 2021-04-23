@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
-using CSE3902_Game_Sprint0.Classes.Scripts;
+using System.Collections.Generic;
 
 /*This file is used for storage and will therefore contain otherwise frowned upon "magic numbers"*/
 namespace CSE3902_Game_Sprint0.Classes.Level
@@ -68,8 +65,8 @@ namespace CSE3902_Game_Sprint0.Classes.Level
 
         public Texture2D tileSpriteSheet;
         public Texture2D itemSpriteSheet;
-        private Texture2D roomSpriteSheet;
-        private Texture2D portalSpriteSheet;
+        private readonly Texture2D roomSpriteSheet;
+        private readonly Texture2D portalSpriteSheet;
 
         public RoomTextureStorage(ZeldaGame game)
         {
@@ -87,7 +84,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         }
         public UniversalSprite getDoor(int doorValue)
         {
-            if(doorValue % 10 == 7 || doorValue % 10 == 8)
+            if (doorValue % 10 == 7 || doorValue % 10 == 8)
                 return new UniversalSprite(game, tileSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 4), 10, 0.0f);
             return new UniversalSprite(game, tileSpriteSheet, DOOR_DIMENSIONS[doorValue], Color.White, SpriteEffects.None, new Vector2(1, 1), 10, 0.0f);
         }

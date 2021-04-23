@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
+﻿using CSE3902_Game_Sprint0.Classes.Doors;
 using Microsoft.Xna.Framework;
-using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using Microsoft.Xna.Framework.Graphics;
-using CSE3902_Game_Sprint0.Classes.Scripts;
-using CSE3902_Game_Sprint0.Classes.Doors;
 
 namespace CSE3902_Game_Sprint0.Classes.Level
 {
@@ -15,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private ZeldaGame game { get; set; }
         private ISprite leftDoorSprite { get; set; }
         public Vector2 position;
-        private RoomTextureStorage leftDoorTexture;
+        private readonly RoomTextureStorage leftDoorTexture;
         private int windowWidth { get; set; }
         private int windowHeight { get; set; }
         private int doorValue { get; set; }

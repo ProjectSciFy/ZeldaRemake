@@ -1,12 +1,7 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
+﻿using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace CSE3902_Game_Sprint0.Classes.Tiles
 {

@@ -1,8 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -76,7 +74,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > DESPAWN_DISTANCE && returning)
             {
                 if (!brake) brake = true;
-                returnDirection = (Direction) directionalCalc.CalculateReturnDirection();
+                returnDirection = (Direction)directionalCalc.CalculateReturnDirection();
                 Inward();
             }
         }

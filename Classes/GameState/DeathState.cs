@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
-using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using CSE3902_Game_Sprint0.Classes.Scripts;
+﻿using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
 using CSE3902_Game_Sprint0.Classes.Level;
+using CSE3902_Game_Sprint0.Classes.Scripts;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace CSE3902_Game_Sprint0.Classes.GameState
 {
@@ -15,7 +12,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private ZeldaGame game { get; set; }
         private int timer { get; set; } = -1;
         private ISprite texture { get; set; }
-        private Texture2D gameOverSpriteSheet;
+        private readonly Texture2D gameOverSpriteSheet;
         private float itemDepth { get; set; } = 0.4f;
         private const int HEIGHT = 60;
         private const int WIDTH = 360;

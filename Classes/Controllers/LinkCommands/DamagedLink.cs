@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
+﻿namespace CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands
 {
     class DamagedLink : ICommand
     {

@@ -1,15 +1,11 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
-using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
-using CSE3902_Game_Sprint0.Classes.Scripts;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands;
-using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.Controllers.LinkCommands;
 using CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.Scripts;
+using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -17,9 +13,10 @@ namespace CSE3902_Game_Sprint0
     {
         private LinkStateMachine linkState { get; set; }
         private BombStateMachine bombState { get; set; }
-        Dictionary<Keys, ICommand> keyBinds = new Dictionary<Keys, ICommand>();
-        HashSet<Keys> heldKeys = new HashSet<Keys>();
-        Dictionary<Keys, int> movementKeys = new Dictionary<Keys, int>();
+
+        readonly Dictionary<Keys, ICommand> keyBinds = new Dictionary<Keys, ICommand>();
+        readonly HashSet<Keys> heldKeys = new HashSet<Keys>();
+        readonly Dictionary<Keys, int> movementKeys = new Dictionary<Keys, int>();
         private ZeldaGame game { get; set; }
 
         public CKeyboard(ZeldaGame game)
@@ -124,7 +121,7 @@ namespace CSE3902_Game_Sprint0
             foreach (Keys releasedKey in releasedKeys)
             {
                 heldKeys.Remove(releasedKey);
-                
+
                 if (movementKeys.ContainsKey(releasedKey))
                 {
                     int movePriority = movementKeys[releasedKey];
@@ -183,7 +180,7 @@ namespace CSE3902_Game_Sprint0
                 else if (movementKeys.ContainsKey(Keys.D) && movementKeys[Keys.D] == 1)
                 {
                     currentMoveKey = Keys.D;
-                } 
+                }
                 else if (movementKeys.ContainsKey(Keys.Up) && movementKeys[Keys.Up] == 1)
                 {
                     currentMoveKey = Keys.Up;

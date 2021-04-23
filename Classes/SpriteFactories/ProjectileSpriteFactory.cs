@@ -2,18 +2,15 @@
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class ProjectileSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D bossSpriteSheet;
-        private Texture2D enemySpriteSheet;
-        private Texture2D linkSpriteSheet;
+        private readonly Texture2D bossSpriteSheet;
+        private readonly Texture2D enemySpriteSheet;
+        private readonly Texture2D linkSpriteSheet;
         private float projectileLayerDepth { get; set; } = .5f;
 
         public ProjectileSpriteFactory(ZeldaGame game)

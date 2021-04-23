@@ -1,14 +1,7 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Enemy;
-using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
-using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
-using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
-using CSE3902_Game_Sprint0.Interfaces;
+﻿using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Collision
 {

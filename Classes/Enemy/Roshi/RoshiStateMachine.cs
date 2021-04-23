@@ -1,12 +1,8 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus.AquamentusScripts;
-using CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
 {
@@ -107,7 +103,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
                 }
                 else if (attackTimer == 800 || attackTimer == 600 || attackTimer == 400 || attackTimer == 200)
                 {
-                    KiBlast(); 
+                    KiBlast();
                 }
             }
             else

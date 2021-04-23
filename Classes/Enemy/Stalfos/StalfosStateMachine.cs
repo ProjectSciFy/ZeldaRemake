@@ -3,8 +3,6 @@ using CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts;
 using CSE3902_Game_Sprint0.Classes.Items;
 using CSE3902_Game_Sprint0.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
@@ -19,7 +17,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         bool spawning { get; set; } = true;
         public int timer { get; set; } = 0;
         private int deathTimer { get; set; } = 30;
-        public enum CurrentState {none, idle, movingUp, movingDown, movingLeft, movingRight, spawning, dying};
+        public enum CurrentState { none, idle, movingUp, movingDown, movingLeft, movingRight, spawning, dying };
         public CurrentState currentState { get; set; } = CurrentState.none;
 
         public StalfosStateMachine(EnemyStalfos stalfos)

@@ -1,8 +1,4 @@
-﻿using CSE3902_Game_Sprint0.Classes.Level;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0
 {
@@ -31,7 +27,7 @@ namespace CSE3902_Game_Sprint0
         public int selectSpeed { get; set; }
         public Vector2 midPos;
         public Vector2 topPos;
-        private int x, y;
+        private readonly int x, y;
         public bool inSelect { get; set; }
 
         public bool hasBow { get; set; }

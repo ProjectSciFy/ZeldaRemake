@@ -2,9 +2,6 @@
 using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes._21._2._13
 {
@@ -62,7 +59,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 hurtTimer--;
             }
             myState.Update();
-            mySprite.Update(); 
+            mySprite.Update();
             drawLocation = drawLocation + velocity;
             if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
             {

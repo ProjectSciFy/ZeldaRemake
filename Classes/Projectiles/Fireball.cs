@@ -2,10 +2,6 @@
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -18,8 +14,8 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private FireballStateMachine myState { get; set; }
         public ISprite mySprite { get; set; }
         private Vector2 drawLocation;
-        public Vector2 velocity { get; set; }  = new Vector2(0, 0);
-        public Vector2 spriteSize { get; set; }  = new Vector2(0, 0);
+        public Vector2 velocity { get; set; } = new Vector2(0, 0);
+        public Vector2 spriteSize { get; set; } = new Vector2(0, 0);
         public Vector2 trajectory { get; set; }
         private bool newItem { get; set; } = true;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);

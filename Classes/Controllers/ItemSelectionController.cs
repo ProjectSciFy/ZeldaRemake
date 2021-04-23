@@ -1,21 +1,14 @@
-﻿using CSE3902_Game_Sprint0.Classes.Scripts;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts;
 using Microsoft.Xna.Framework.Input;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Diagnostics;
-using System.IO;
-using CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers
 {
     class ItemSelectionController : IController
     {
-        Dictionary<int, ICommand> keyBinds = new Dictionary<int, ICommand>();
+        readonly Dictionary<int, ICommand> keyBinds = new Dictionary<int, ICommand>();
         private ZeldaGame game { get; set; }
-        private LinkStateMachine linkState;
+        private readonly LinkStateMachine linkState;
 
         public ItemSelectionController(ZeldaGame game)
         {
@@ -41,7 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers
                 {
                     new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.bomb).Execute();
                 }
-                if (ValueX > (game.util.topPos.X + 460) && ValueX < (game.util.topPos.X + 460 + Xscalar) && ValueY > (game.util.topPos.Y + 144) && ValueY < game.util.topPos.Y + 144 + Yscalar) 
+                if (ValueX > (game.util.topPos.X + 460) && ValueX < (game.util.topPos.X + 460 + Xscalar) && ValueY > (game.util.topPos.Y + 144) && ValueY < game.util.topPos.Y + 144 + Yscalar)
                 {
                     new SecondaryWeaponSelect(linkState, LinkStateMachine.Weapon.boomerang).Execute();
                 }

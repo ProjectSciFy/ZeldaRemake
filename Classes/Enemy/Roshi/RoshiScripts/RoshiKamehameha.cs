@@ -1,7 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
 {
@@ -22,7 +19,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
             roshi.spriteSize.X = 43;
             roshi.spriteSize.Y = 41;
             roshi.velocity.X = 0;
-            roshi.velocity.Y = 0; 
+            roshi.velocity.Y = 0;
             roshiState.timer = 130;
             roshiState.moving = false;
             roshiState.attackTimer = 1000;

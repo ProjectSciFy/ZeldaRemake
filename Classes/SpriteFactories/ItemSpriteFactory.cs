@@ -1,21 +1,16 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Items;
+﻿using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
-using CSE3902_Game_Sprint0.Classes.Scripts;
-using CSE3902_Game_Sprint0.Classes.Projectiles;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class ItemSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D itemSpriteSheet;
+        private readonly Texture2D itemSpriteSheet;
         private float itemDepth { get; set; } = .4f;
         private int itemLimiter { get; set; } = 10;
-        
+
         public ItemSpriteFactory(ZeldaGame game)
         {
             this.game = game;

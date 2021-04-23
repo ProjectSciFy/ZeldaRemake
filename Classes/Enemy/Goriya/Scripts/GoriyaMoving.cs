@@ -1,12 +1,8 @@
 using CSE3902_Game_Sprint0.Classes._21._2._13;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
 {
-    public class GoriyaMoving: ICommand
+    public class GoriyaMoving : ICommand
     {
         private EnemyGoriya goriya { get; set; }
         private GoriyaSpriteFactory enemySpriteFactory { get; set; }
@@ -66,6 +62,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
             }
         }
     }
-     
+
 
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Header;
+﻿using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CSE3902_Game_Sprint0.Classes.Scripts;
 
 namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
@@ -12,7 +8,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
     {
         private ZeldaGame game { get; set; }
         private float itemDepth { get; set; } = .4f;
-        private Texture2D hudSpriteSheet;
+        private readonly Texture2D hudSpriteSheet;
         public HudSpriteFactory(ZeldaGame game)
         {
             this.game = game;
@@ -20,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         }
         public UniversalSprite baseHud()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 260, 55), Color.White, SpriteEffects.None, new Vector2(1,1), 10, itemDepth);
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(258, 11, 260, 55), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
         }
 
         public UniversalSprite mapHUD()
@@ -114,7 +110,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 
         public UniversalSprite xpSegment()
         {
-            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(486,100,10,4), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
+            return new UniversalSprite(game, hudSpriteSheet, new Rectangle(486, 100, 10, 4), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
         }
 
         public UniversalSprite top()

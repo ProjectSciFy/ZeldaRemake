@@ -1,29 +1,18 @@
 ﻿using CSE3902_Game_Sprint0.Classes;
 using CSE3902_Game_Sprint0.Classes._21._2._13;
+using CSE3902_Game_Sprint0.Classes.Collision;
 using CSE3902_Game_Sprint0.Classes.Controllers;
-using CSE3902_Game_Sprint0.Classes.Enemy;
-using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
-using CSE3902_Game_Sprint0.Classes.Scripts;
+using CSE3902_Game_Sprint0.Classes.GameState;
+using CSE3902_Game_Sprint0.Classes.Level;
+using CSE3902_Game_Sprint0.Classes.LittleHelper;
+using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Collections.Generic;
-using CSE3902_Game_Sprint0.Classes.Items;
-using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
-using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
-using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
-using CSE3902_Game_Sprint0.Classes.Projectiles;
-using CSE3902_Game_Sprint0.Classes.Collision;
-using CSE3902_Game_Sprint0.Classes.Level;
-using CSE3902_Game_Sprint0.Classes.GameState;
 using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Audio;
-using CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands;
-using CSE3902_Game_Sprint0.Classes.LittleHelper;
-using CSE3902_Game_Sprint0.Classes.Doors;
-using CSE3902_Game_Sprint0.Classes.Tiles;
+using System.Collections.Generic;
 
 
 namespace CSE3902_Game_Sprint0
@@ -31,8 +20,8 @@ namespace CSE3902_Game_Sprint0
 
     public class ZeldaGame : Game
     {
-        private GraphicsDeviceManager _graphics;
-        public SpriteBatch _spriteBatch {get; set;}
+        private readonly GraphicsDeviceManager _graphics;
+        public SpriteBatch _spriteBatch { get; set; }
 
         public List<IController> controllerList = new List<IController>();
         public GameUtility util { get; set; }

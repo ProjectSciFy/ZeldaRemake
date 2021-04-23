@@ -1,11 +1,8 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Interfaces;
-using CSE3902_Game_Sprint0.Classes.Enemy.Gel;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Gel;
 using CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts;
 using CSE3902_Game_Sprint0.Classes.Items;
+using CSE3902_Game_Sprint0.Interfaces;
+using System;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy
 {
@@ -21,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy
         bool spawning { get; set; } = true;
         private int timer { get; set; } = 0;
         private int deathTimer { get; set; } = 30;
-        public enum CurrentState {none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, spawning, dying };
+        public enum CurrentState { none, idleUp, idleDown, idleLeft, idleRight, movingUp, movingDown, movingLeft, movingRight, spawning, dying };
         public CurrentState currentState { get; set; } = CurrentState.none;
 
         public GelStateMachine(EnemySlime gel)

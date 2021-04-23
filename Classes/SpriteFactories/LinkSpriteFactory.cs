@@ -2,16 +2,13 @@
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
 {
     public class LinkSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D linkTexture;
+        private readonly Texture2D linkTexture;
         private float linkLayerDepth { get; set; } = 1.0f;
         public LinkSpriteFactory(Link link)
         {
@@ -76,7 +73,7 @@ namespace CSE3902_Game_Sprint0.Classes.SpriteFactories
         //Sword:
         public UniversalSprite SwordUp()
         {
-            return new UniversalSprite(game, linkTexture, new Rectangle(1, 83, 16, 28), Color.White, SpriteEffects.None, new Vector2(1,4), 3, linkLayerDepth);
+            return new UniversalSprite(game, linkTexture, new Rectangle(1, 83, 16, 28), Color.White, SpriteEffects.None, new Vector2(1, 4), 3, linkLayerDepth);
         }
         public UniversalSprite SwordDown()
         {

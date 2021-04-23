@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Enemy;
+﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy
 {

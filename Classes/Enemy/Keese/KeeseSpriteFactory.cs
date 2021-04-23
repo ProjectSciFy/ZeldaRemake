@@ -1,17 +1,14 @@
 using CSE3902_Game_Sprint0.Classes.Scripts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 {
     public class KeeseSpriteFactory
     {
         private ZeldaGame game { get; set; }
-        private Texture2D enemySpriteSheet;
-        private Texture2D linkSpriteSheet;
+        private readonly Texture2D enemySpriteSheet;
+        private readonly Texture2D linkSpriteSheet;
         private float linkLayerDepth { get; set; } = 0.2f;
         public KeeseSpriteFactory(ZeldaGame game)
         {
@@ -81,12 +78,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
         public UniversalSprite KeeseLandingEast()
         {
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingSouthEast()
         {
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingSouth()
@@ -96,12 +93,12 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
         public UniversalSprite KeeseLandingSouthWest()
         {
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingWest()
         {
-           return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(183, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 20, linkLayerDepth);
         }
 
         public UniversalSprite KeeseLandingNorthWest()

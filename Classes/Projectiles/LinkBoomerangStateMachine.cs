@@ -1,9 +1,6 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
-using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+using System;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -17,7 +14,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         private const int RANGE = 175;
         private const int RETURN_WINDOW = 30;
         private const int DESPAWN_DISTANCE = 5;
-        private const float BASE_SPEED = (float)3, PIVOT_SPEED = (float) 2.0;
+        private const float BASE_SPEED = 3, PIVOT_SPEED = (float)2.0;
         public Boolean returning = false, newItem = true, brake = false;
         private LinkBoomerangDirectionCalculation directionCalc { get; set; }
         private LinkBoomerangMovementCalculation movementCalc { get; set; }
@@ -68,13 +65,13 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             }
             else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > (RANGE - RETURN_WINDOW) && returning)
             {
-                returnDirection = (Direction) directionCalc.CalculateReturnDireciton();
+                returnDirection = (Direction)directionCalc.CalculateReturnDireciton();
                 InwardReturnWindow();
             }
             else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (RANGE - RETURN_WINDOW) && (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > DESPAWN_DISTANCE && returning)
             {
                 if (!brake) brake = true;
-                returnDirection = (Direction) directionCalc.CalculateReturnDireciton();
+                returnDirection = (Direction)directionCalc.CalculateReturnDireciton();
                 Inward();
             }
         }

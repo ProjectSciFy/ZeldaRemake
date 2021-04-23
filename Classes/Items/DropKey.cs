@@ -1,7 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Items
 {
@@ -9,7 +6,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
     {
         private ZeldaGame game { get; set; }
         private Vector2 location { get; set; }
-        private int deathTimer;
+        private readonly int deathTimer;
         public DropKey(ZeldaGame game, Vector2 location, int deathTimer)
         {
             this.game = game;

@@ -1,11 +1,6 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -18,7 +13,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public Vector2 drawLocation;
         public Vector2 velocity;
         public Vector2 spriteSize;
-        public enum Direction { up, down, left, right};
+        public enum Direction { up, down, left, right };
         public Direction direction { get; set; }
         public ArrowStateMachine myState { get; set; }
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);

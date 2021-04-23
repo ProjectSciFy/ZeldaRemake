@@ -2,16 +2,13 @@
 using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.NewBlocks;
 using CSE3902_Game_Sprint0.Classes.Tiles;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
 {
     public class UnlockDoor
     {
         private ZeldaGame game { get; set; }
-        private Collision.Collision.Direction direction;
+        private readonly Collision.Collision.Direction direction;
         public UnlockDoor(ZeldaGame game, Collision.Collision.Direction direction)
         {
             this.game = game;
@@ -105,7 +102,7 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
             }
             foreach (IDoor door in currentRoom.getDoors().ToArray())
             {
-                if(door.getDoorValue() % 10 == 2)
+                if (door.getDoorValue() % 10 == 2)
                 {
                     switch (door.getDoorValue() / 10)
                     {
