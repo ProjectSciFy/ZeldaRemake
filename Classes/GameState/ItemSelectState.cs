@@ -32,55 +32,22 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private ISprite secweaponHolding;
         private ISprite secweaponOne;
         private ISprite secweaponTwo;
+        private ISprite secweaponThree;
 
         public ItemSelectState(ZeldaGame game)
         {
             this.game = game;
             game.spriteSheets.TryGetValue("HUD", out inventorySpriteSheet);
             HudFactory = game.hudSpriteFactory;
-
             top = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(1, 11, 260, 100), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             mid = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(258, 111, 260, 99), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             holdingMap=new UniversalSprite(game,inventorySpriteSheet, new Rectangle(601, 156, 8, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
             holdingCompass = new UniversalSprite(game, inventorySpriteSheet, new Rectangle(613, 157, 13, 14), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, itemDepth);
-
-            if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.bomb)
-            {
-                secweaponHolding = HudFactory.secondaryWeaponHUD();
-                secweaponOne = HudFactory.staticBoomerang();
-                if (game.util.hasBow)
-                {
-                    secweaponTwo = HudFactory.staticBow();
-                }
-                else
-                {
-                    secweaponTwo = HudFactory.blankBox();
-                }
-            }
-            else if (game.link.linkState.weaponSelected == LinkStateMachine.Weapon.boomerang)
-            {
-                secweaponHolding = HudFactory.secondaryWeaponHUD();
-                secweaponOne = HudFactory.staticBomb();
-                if (game.util.hasBow)
-                {
-                    secweaponTwo = HudFactory.staticBow();
-                }
-                else
-                {
-                    secweaponTwo = HudFactory.blankBox();
-                }
-            }
-            else
-            {
-                secweaponHolding = HudFactory.secondaryWeaponHUD();
-                secweaponOne = HudFactory.staticBomb();
-                secweaponTwo = HudFactory.staticBoomerang();
-            }
-                 
-
-            //164 42 259 87
-            pHUD = game.currentRoom.pHUD; 
-
+            pHUD = game.currentRoom.pHUD;
+            secweaponHolding = HudFactory.blankBox();
+            secweaponOne = HudFactory.blankBox();
+            secweaponTwo = HudFactory.blankBox();
+            secweaponThree = HudFactory.blankBox();
         }
 
         void IGameState.Draw()
@@ -98,14 +65,15 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             {
                 holdingCompass.Draw(new Vector2(game.util.midPos.X + 136, game.util.midPos.Y + 190));
             }
-
             secweaponHolding.Draw(new Vector2(game.util.topPos.X + 201, game.util.topPos.Y + 144));
             secweaponOne.Draw(new Vector2(game.util.topPos.X + 390, game.util.topPos.Y + 144));
             secweaponTwo.Draw(new Vector2(game.util.topPos.X + 460, game.util.topPos.Y + 144));
+            secweaponThree.Draw(new Vector2(game.util.topPos.X + 530, game.util.topPos.Y + 144));
         }
 
         void IGameState.Update()
         {
+            pHUD.Update();
             game.util.inSelect = true;
             pHUD = game.currentRoom.pHUD;
             if (game.util.selectSpeed < 0)
@@ -126,21 +94,51 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
                 {
                     ItemScreenPositionalUpdate(game.util.selectSpeed);
                 }
-                else
-                {
-                    //dont move
-                }
             }
-            foreach (IController controller in game.controllerList)
-            {
-                controller.Update();
+            game.controllerList[0].Update();
+            game.controllerList[2].Update();
+            secweaponHolding = HudFactory.secondaryWeaponHUD();
+            switch (game.link.linkState.weaponSelected) {
+                case LinkStateMachine.Weapon.bomb:
+                    secweaponOne = HudFactory.blankBox();
+                    secweaponTwo = HudFactory.staticBoomerang();
+                    if (game.util.hasBow)
+                    {
+                        secweaponThree = HudFactory.staticBow();
+                    }
+                    else
+                    {
+                        secweaponThree = HudFactory.blankBox();
+                    }
+                    break;
+                case LinkStateMachine.Weapon.boomerang:
+                    secweaponOne = HudFactory.staticBomb();
+                    secweaponTwo = HudFactory.blankBox();
+                    if (game.util.hasBow)
+                    {
+                        secweaponThree = HudFactory.staticBow();
+                    }
+                    else
+                    {
+                        secweaponThree = HudFactory.blankBox();
+                    }
+                    break;
+                case LinkStateMachine.Weapon.arrow:
+                    secweaponOne = HudFactory.staticBomb();
+                    secweaponTwo = HudFactory.staticBoomerang();
+                    if (game.util.hasBow)
+                    {
+                        secweaponThree = HudFactory.blankBox();
+                    }
+                    break;
+                default:
+                    break;
             }
         }
         void IGameState.UpdateCollisions()
         {
             
         }
-
         void ItemScreenPositionalUpdate(int speed)
         {
             //hud update:

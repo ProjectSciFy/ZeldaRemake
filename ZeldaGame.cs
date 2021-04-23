@@ -81,6 +81,7 @@ namespace CSE3902_Game_Sprint0
             enemySpriteFactory = new EnemySpriteFactory(this);
             controllerList.Add(new CKeyboard(this));
             controllerList.Add(new CMouse(this));
+            controllerList.Add(new ItemSelectionController(this));
             neighbors = Parser.ParseNeighborCSV();
             roomList = new List<Room>();
             /* 18 ROOMS */

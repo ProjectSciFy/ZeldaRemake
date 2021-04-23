@@ -57,7 +57,7 @@ namespace CSE3902_Game_Sprint0
             //map
             hasMap = false;
             linkInd = true;
-            hasBow = false;
+            hasBow = true;
             //compass
             hasCompass = false;
             //Initialize room number counter

@@ -32,10 +32,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         }
         public void UpdateCollisions()
         {
-            foreach (IController controller in game.controllerList)
-            {
-                controller.Update();
-            }
+            game.controllerList[0].Update();
+            game.controllerList[1].Update();
         }
         public void Update()
         {
