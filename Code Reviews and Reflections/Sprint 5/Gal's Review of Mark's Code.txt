@@ -5,7 +5,9 @@
 -File Name: LinkStateMachine.cs
 -Author of file: Mark Maher
 -Number of minutes taken to review: 5
--Comments: 
+-Comments: This file has fairly high readability. Despite being long and containing multiple methods and fields, all the names of variables,
+		   methods, and fields were apt and concise and allowed for easy understanding of logic. The code in each method was short and conditional
+		   logic was made easy to understand by the good naming conventions.
 
 
 MAINTAINABILITY OF MARK'S CODE:
@@ -15,5 +17,7 @@ MAINTAINABILITY OF MARK'S CODE:
 -File Name: LinkStateMachine.cs
 -Author of file: Mark Maher
 -Number of minutes taken to review: 6
--Comments: 
--Hypitheitcal changes: 
+-Comments: The maintainability of this file is fairly low. The file is long and unwieldy, having a multitude of methods and public fields which 
+		   make for high coupling and low cohesion. Despite apt names, the Update() method is very dense and would be difficult to maintain.
+-Hypitheitcal changes: Decouple class by removing fields and methods from the file into helper methods and files. Also, reducing the number of 
+					   public fields possibly.
