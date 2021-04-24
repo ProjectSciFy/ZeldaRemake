@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/LOZ_Link_Hurt.wav</SourceFile>
   <SourceTime>2021-04-05T17:07:42.0092341-05:00</SourceTime>
   <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/LOZ_Link_Hurt.xnb</DestFile>
-  <DestTime>2021-04-23T20:11:19.5029708-05:00</DestTime>
+  <DestTime>2021-04-23T20:16:35.1718818-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

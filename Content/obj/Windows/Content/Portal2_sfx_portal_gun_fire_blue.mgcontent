@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/Portal2_sfx_portal_gun_fire_blue.wav</SourceFile>
   <SourceTime>2021-04-22T18:01:36.3006844-05:00</SourceTime>
   <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/Portal2_sfx_portal_gun_fire_blue.xnb</DestFile>
-  <DestTime>2021-04-23T20:11:22.1835862-05:00</DestTime>
+  <DestTime>2021-04-23T20:16:37.9222695-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

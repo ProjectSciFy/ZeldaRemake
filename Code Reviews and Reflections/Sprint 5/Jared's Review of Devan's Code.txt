@@ -2,18 +2,22 @@
 -Author of review: Jared Zahn
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: AquamentusSpriteFactory.cs
+-File Name: ItemSelectState.cs
 -Author of file: Devan
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 5
+-Comments: The readability of the code file is very straight forward as the file itself has existed within the project since sprint 4, giving ample time to refactor
+the code and clean up any unneccessary or repeated blocks. Variable names are concise and descriptive making the flow very smooth and easy for the reader to understand. 
 
 
 MAINTAINABILITY OF DEVAN'S CODE:
 -Author of review: Jared Zahn
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: AquamentusSpriteFactory.cs
+-File Name: ItemSelectState.cs
 -Author of file: Devan
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 5
+-Comments: The maintainability of the code is solid as the game state follows a similar design pattern to the other gamestates created for this project. Incorporating portions
+of the pause state and main game state in order to freeze graphics, but also be interactive with the mouse and keyboard controller. The file itself not having very many magic
+numbers if at all, as well as being refactored and cleaned up helps with being able to apply this code in other portions of the game. 
+-Hypothetical Changes: I would try to break this game state up a little bit more into seperate files giving it a more precise focus for each file, correlating to the 3 general
+rows of the itemSelectState (top, mid, bottom/playerHUD).
