@@ -47,7 +47,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         }
         public void Update()
         {
-            if (timer > 0){ timer--; }
+            if (timer > 0) { timer--; }
             if (hurtTimer > 0) { hurtTimer--; }
             myState.Update();
             mySprite.Update();
@@ -68,6 +68,6 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             { game.collisionManager.collisionEntities[this] = collisionRectangle; }
         }
         public void Draw()
-        {  mySprite.Draw(drawLocation); }
+        { mySprite.Draw(drawLocation); }
     }
 }

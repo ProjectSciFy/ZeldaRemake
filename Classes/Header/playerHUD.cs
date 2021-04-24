@@ -1,5 +1,4 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Header.HeaderUtility;
-using CSE3902_Game_Sprint0.Classes.Level;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
 

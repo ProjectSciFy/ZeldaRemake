@@ -1,7 +1,4 @@
-﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
-using Microsoft.Xna.Framework;
-
-namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
+﻿namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts
 {
     public class RoshiCharge : ICommand
     {

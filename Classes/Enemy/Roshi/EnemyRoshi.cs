@@ -52,8 +52,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
 
         public void Update()
         {
-            if (timer > 0) {  timer--; }
-            if (hurtTimer > 0) { hurtTimer--;  }
+            if (timer > 0) { timer--; }
+            if (hurtTimer > 0) { hurtTimer--; }
             myState.Update();
             mySprite.Update();
             drawLocation.X = drawLocation.X + velocity.X;

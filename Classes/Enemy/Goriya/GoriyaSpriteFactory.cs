@@ -32,7 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya
         }
         public UniversalSprite GoriyaMovingRight()
         {
-            return new UniversalSprite(game, enemySpriteSheet,goriya.leftOrRight, Color.White, SpriteEffects.None, goriya.movingFrame, goriya.movementLimiter, enemyLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, goriya.leftOrRight, Color.White, SpriteEffects.None, goriya.movingFrame, goriya.movementLimiter, enemyLayerDepth);
         }
         public UniversalSprite GoriyaMovingLeft()
         {

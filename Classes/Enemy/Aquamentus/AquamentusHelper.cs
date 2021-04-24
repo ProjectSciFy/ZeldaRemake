@@ -2,7 +2,7 @@
 
 namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
 {
-    
+
     public class AquamentusHelper
     {
         public Rectangle spawn;
@@ -24,7 +24,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             moving = new Rectangle(49, 11, 24, 32);
             roaring = new Rectangle(1, 11, 24, 32);
             spawnFrame = new Vector2(1, 3);
-            movingFrame= new Vector2(1, 2);
+            movingFrame = new Vector2(1, 2);
         }
     }
 }

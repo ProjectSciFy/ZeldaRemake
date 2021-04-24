@@ -21,33 +21,43 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
         {
             link.spriteSize.X = 16; link.spriteSize.Y = 16;
             link.velocity.X = 0; link.velocity.Y = 0;
-            switch (linkStateMachine.direction) {
+            switch (linkStateMachine.direction)
+            {
                 case LinkStateMachine.Direction.right:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowRight) {
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowRight)
+                    {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.arrowRight;
                         link.linkSprite = spriteFactory.ArrowRight();
-                        linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.right)); }
+                        linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.right));
+                    }
                     break;
                 case LinkStateMachine.Direction.up:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowUp) {
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowUp)
+                    {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.arrowUp;
                         link.linkSprite = spriteFactory.ArrowUp();
-                        linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y - 16), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.up)); }
+                        linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y - 16), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.up));
+                    }
                     break;
                 case LinkStateMachine.Direction.left:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowLeft) {
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowLeft)
+                    {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.arrowLeft;
                         link.linkSprite = spriteFactory.ArrowLeft();
-                        linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.left)); }
+                        linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.left));
+                    }
                     break;
                 case LinkStateMachine.Direction.down:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowDown) {
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.arrowDown)
+                    {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.arrowDown;
                         link.linkSprite = spriteFactory.ArrowDown();
-                        linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y + 16), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.down)); }
+                        linkStateMachine.projectileHandler.Add(new Arrow(link.game, new Vector2(link.drawLocation.X + 4, link.drawLocation.Y + 16), linkStateMachine.projectileHandler, Projectiles.Arrow.Direction.down));
+                    }
                     break;
                 default:
-                    break; }
+                    break;
+            }
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -11,7 +9,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public enum Direction { right, up, left, down, NE, SE, SW, NW }; // NE = North East
         public Direction returnDirection { get; set; }
         private const int BOUND = 5;
-        public LinkBoomerangDirectionCalculation (LinkBoomerangStateMachine boomerangState)
+        public LinkBoomerangDirectionCalculation(LinkBoomerangStateMachine boomerangState)
         {
             this.boomerangState = boomerangState;
             this.boomerang = boomerangState.boomerang;

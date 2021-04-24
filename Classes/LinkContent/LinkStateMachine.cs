@@ -55,35 +55,47 @@ namespace CSE3902_Game_Sprint0.Classes
         public void Idle() { if (timer == 0) new LinkIdle(link, spriteFactory, this).Execute(); }
         public void Moving() { if (timer == 0) new LinkMoving(link, spriteFactory, this).Execute(); }
         public void Roll() { if (timer == 0) { timer = link.helper.ONESECOND / 3; new LinkRoll(link, spriteFactory, this).Execute(); } }
-        public void Sword() 
+        public void Sword()
         {
             useSword = false;
-            if (timer == 0) {
+            if (timer == 0)
+            {
                 timer = link.helper.ONESECOND / 5;
                 new LinkSword(link, spriteFactory, this).Execute(); new LinkOffset(link, false).Execute();
-                link.game.sounds["swordSlash"].CreateInstance().Play(); } 
+                link.game.sounds["swordSlash"].CreateInstance().Play();
+            }
         }
-        public void Portal() 
+        public void Portal()
         {
             usePortal = false;
-            if (timer == 0) {
+            if (timer == 0)
+            {
                 timer = link.helper.ONESECOND / 5;
                 new LinkPortal(link, spriteFactory, this).Execute(); new LinkOffset(link, false).Execute();
                 var random = new Random();
-                switch (random.Next(2)) {
-                    case 0: link.game.sounds["portalBlue"].CreateInstance().Play();
+                switch (random.Next(2))
+                {
+                    case 0:
+                        link.game.sounds["portalBlue"].CreateInstance().Play();
                         break;
-                    default: link.game.sounds["portalOrange"].CreateInstance().Play();
-                        break; } }
+                    default:
+                        link.game.sounds["portalOrange"].CreateInstance().Play();
+                        break;
+                }
+            }
         }
         public void Bomb()
         {
-            if (game.util.numBombs > 0) {
-                if (timer == 0) {
+            if (game.util.numBombs > 0)
+            {
+                if (timer == 0)
+                {
                     timer = link.helper.ONESECOND / 4;
                     new LinkBomb(link, spriteFactory, this).Execute();
                     link.game.sounds["bombDrop"].CreateInstance().Play();
-                    game.util.numBombs -= 1; } }
+                    game.util.numBombs -= 1;
+                }
+            }
         }
         public void Boomerang()
         {
@@ -92,37 +104,51 @@ namespace CSE3902_Game_Sprint0.Classes
         }
         public void Arrow()
         {
-            if (game.util.hasBow) {
-                if (game.util.numYrups > 0) {
-                    if (timer == 0) {
+            if (game.util.hasBow)
+            {
+                if (game.util.numYrups > 0)
+                {
+                    if (timer == 0)
+                    {
                         timer = (link.helper.ONESECOND / 12) * 5;
                         new LinkArrow(link, spriteFactory, this).Execute();
                         link.game.sounds["arrowBoomerang"].CreateInstance().Play();
-                        game.util.numYrups -= 1; } } }
+                        game.util.numYrups -= 1;
+                    }
+                }
+            }
         }
         public void Damaged()
         {
-            if (timer == 0) {
+            if (timer == 0)
+            {
                 timer = link.helper.ONESECOND / 5;
                 isDamaged = false;
                 new LinkDamaged(link, spriteFactory, this).Execute();
-                if (invincibilityFrames <= 0) {
+                if (invincibilityFrames <= 0)
+                {
                     invincibilityFrames = link.helper.ONESECOND;
                     game.util.numLives -= 1;
-                    link.game.sounds["linkHurt"].CreateInstance().Play(); } }
+                    link.game.sounds["linkHurt"].CreateInstance().Play();
+                }
+            }
         }
         public void Death()
         {
-            if (!dead) {
+            if (!dead)
+            {
                 currentState = CurrentState.dying;
                 timer = link.helper.ONESECOND + (link.helper.ONESECOND / 3);
                 new LinkDeath(link, spriteFactory, this).Execute();
                 dead = true;
-                link.game.sounds["linkDie"].CreateInstance().Play(); }
-            else if (timer <= 0 && dead) {
+                link.game.sounds["linkDie"].CreateInstance().Play();
+            }
+            else if (timer <= 0 && dead)
+            {
                 timer = link.helper.ONESECOND * 3;
                 new LinkDeath(link, spriteFactory, this).Execute();
-                dying = false; dead = false; }
+                dying = false; dead = false;
+            }
         }
         public void GrabItem()
         {
@@ -134,25 +160,30 @@ namespace CSE3902_Game_Sprint0.Classes
         {
             if (timer > 0) timer--;
             if (bowTimer > 0) bowTimer--;
-            if (timer == 0) {
+            if (timer == 0)
+            {
                 new LinkOffset(link, true).Execute();
                 link.drawOffset.X = 0;
                 link.drawOffset.Y = 0;
-                MediaPlayer.Resume(); }
+                MediaPlayer.Resume();
+            }
             if (invincibilityFrames > 0) invincibilityFrames--;
             wallmasterDeployedTimer--;
             if (grabItem) { GrabItem(); MediaPlayer.Pause(); }
             else if (dying) Death();
             else if (isRolling) { Roll(); isRolling = false; }
-            else if (moving) {
+            else if (moving)
+            {
                 if (isDamaged) Damaged();
                 else if (useSword) Sword();
                 else if (usePortal) Portal();
                 else if (useBomb) { Bomb(); useBomb = false; }
                 else if (useArrow) { Arrow(); useArrow = false; }
                 else if (useBoomerang && boomerangCaught) { Boomerang(); boomerangCaught = false; }
-                else Moving(); }
-            else {
+                else Moving();
+            }
+            else
+            {
                 if (isDamaged) Damaged();
                 else if (useSword) Sword();
                 else if (usePortal) Portal();
@@ -160,7 +191,8 @@ namespace CSE3902_Game_Sprint0.Classes
                 else if (useArrow) { Arrow(); useArrow = false; }
                 else if (useBoomerang && boomerangCaught) { Boomerang(); boomerangCaught = false; }
                 else if (useBoomerang && !boomerangCaught) useBoomerang = false;
-                else Idle(); }
+                else Idle();
+            }
         }
     }
 }

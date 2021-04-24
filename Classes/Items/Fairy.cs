@@ -7,7 +7,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 {
     public class Fairy : IItem, ICollisionEntity
     {
-        private ItemUtility util = new ItemUtility();
+        private readonly ItemUtility util = new ItemUtility();
         private ZeldaGame game { get; set; }
         private ISprite itemSprite { get; set; }
         private ItemSpriteFactory itemFactory { get; set; }

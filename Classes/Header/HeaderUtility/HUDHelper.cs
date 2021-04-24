@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CSE3902_Game_Sprint0.Classes.Header.HeaderUtility;
-using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes.Header.HeaderUtility
@@ -11,7 +7,7 @@ namespace CSE3902_Game_Sprint0.Classes.Header.HeaderUtility
     {
         public HUDStorage storage { get; set; }
         public HudSpriteFactory HudFactory { get; set; }
-        private ZeldaGame game;
+        private readonly ZeldaGame game;
         private int heartOffset;
         private ISprite heartSprite { get; set; }
         private ISprite minimap { get; set; }

@@ -20,7 +20,8 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
             int nextRoomNumber = 0;
             Room currentRoom = null;
             //FIND NEXT ROOM NUMBER
-            switch (direction) {
+            switch (direction)
+            {
                 case (Collision.Collision.Direction.up):
                     nextRoomNumber = game.neighbors[game.util.roomNumber][0];
                     break;
@@ -37,16 +38,21 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
                     break;
             }
             //FIND NEXT ROOM
-            foreach (Room r in game.roomList) {
-                if (r.getRoomNumber() == nextRoomNumber) nextRoom = r; 
+            foreach (Room r in game.roomList)
+            {
+                if (r.getRoomNumber() == nextRoomNumber) nextRoom = r;
             }
             //UNLCOK NEXT ROOM DOOR
-            foreach (ITile tile in nextRoom.getTiles()) {
+            foreach (ITile tile in nextRoom.getTiles())
+            {
                 if (tile.GetType() == typeof(GateKeeperTile) && ((GateKeeperTile)tile).isLockedDoor) ((GateKeeperTile)tile).locked = false;
             }
-            foreach (IDoor door in nextRoom.getDoors().ToArray()) {
-                if (door.getDoorValue() % 10 == 2) {
-                    switch (door.getDoorValue() / 10) {
+            foreach (IDoor door in nextRoom.getDoors().ToArray())
+            {
+                if (door.getDoorValue() % 10 == 2)
+                {
+                    switch (door.getDoorValue() / 10)
+                    {
                         case 0:
                             nextRoom.addDoor(new TopDoor(game, new RoomTextureStorage(game), door.getDoorValue() - 1));
                             break;
@@ -67,16 +73,21 @@ namespace CSE3902_Game_Sprint0.Classes.Controllers.CollisionCommands
                 }
             }
             //FIND CURRENT ROOM
-            foreach (Room r in game.roomList) {
+            foreach (Room r in game.roomList)
+            {
                 if (r.getRoomNumber() == game.util.roomNumber) currentRoom = r;
             }
             //UNLCOK CURRENT ROOM DOOR
-            foreach (ITile tile in currentRoom.getTiles()) {
+            foreach (ITile tile in currentRoom.getTiles())
+            {
                 if (tile.GetType() == typeof(GateKeeperTile) && ((GateKeeperTile)tile).isLockedDoor) ((GateKeeperTile)tile).locked = false;
             }
-            foreach (IDoor door in currentRoom.getDoors().ToArray()) {
-                if (door.getDoorValue() % 10 == 2) {
-                    switch (door.getDoorValue() / 10) {
+            foreach (IDoor door in currentRoom.getDoors().ToArray())
+            {
+                if (door.getDoorValue() % 10 == 2)
+                {
+                    switch (door.getDoorValue() / 10)
+                    {
                         case 0:
                             currentRoom.addDoor(new TopDoor(game, new RoomTextureStorage(game), door.getDoorValue() - 1));
                             break;

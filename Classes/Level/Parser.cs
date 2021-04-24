@@ -50,7 +50,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
             windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
 
-            
+
             tiles = new List<ITile>();
             items = new List<IItem>();
             enemies = new List<IEnemy>();

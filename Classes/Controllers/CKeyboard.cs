@@ -58,12 +58,15 @@ namespace CSE3902_Game_Sprint0
             HashSet<Keys> releasedKeys = new HashSet<Keys>(heldKeys);
             Keys[] pressedKeys = keyState.GetPressedKeys();
             int lastMoveKeyCount = movementKeys.Count;
-            for (int i = 0; i < pressedKeys.Length; i++) {
+            for (int i = 0; i < pressedKeys.Length; i++)
+            {
                 releasedKeys.Remove(pressedKeys[i]);
-                if (keyBinds.ContainsKey(pressedKeys[i]) && !heldKeys.Contains(pressedKeys[i])) {
+                if (keyBinds.ContainsKey(pressedKeys[i]) && !heldKeys.Contains(pressedKeys[i]))
+                {
                     keyBinds[pressedKeys[i]].Execute();
                     heldKeys.Add(pressedKeys[i]);
-                    if (pressedKeys[i] == Keys.W || pressedKeys[i] == Keys.A || pressedKeys[i] == Keys.S || pressedKeys[i] == Keys.D || pressedKeys[i] == Keys.Up || pressedKeys[i] == Keys.Left || pressedKeys[i] == Keys.Down || pressedKeys[i] == Keys.Right) {
+                    if (pressedKeys[i] == Keys.W || pressedKeys[i] == Keys.A || pressedKeys[i] == Keys.S || pressedKeys[i] == Keys.D || pressedKeys[i] == Keys.Up || pressedKeys[i] == Keys.Left || pressedKeys[i] == Keys.Down || pressedKeys[i] == Keys.Right)
+                    {
                         movementKeys.Add(pressedKeys[i], 0);
                         if (movementKeys.ContainsKey(Keys.W)) movementKeys[Keys.W] = movementKeys[Keys.W] + 1;
                         if (movementKeys.ContainsKey(Keys.A)) movementKeys[Keys.A] = movementKeys[Keys.A] + 1;
@@ -79,7 +82,8 @@ namespace CSE3902_Game_Sprint0
             foreach (Keys releasedKey in releasedKeys)
             {
                 heldKeys.Remove(releasedKey);
-                if (movementKeys.ContainsKey(releasedKey)) {
+                if (movementKeys.ContainsKey(releasedKey))
+                {
                     int movePriority = movementKeys[releasedKey];
                     if (movementKeys.ContainsKey(Keys.W) && movementKeys[Keys.W] > movePriority) movementKeys[Keys.W] = movementKeys[Keys.W] - 1;
                     if (movementKeys.ContainsKey(Keys.A) && movementKeys[Keys.A] > movePriority) movementKeys[Keys.A] = movementKeys[Keys.A] - 1;
@@ -92,7 +96,8 @@ namespace CSE3902_Game_Sprint0
                     movementKeys.Remove(releasedKey);
                 }
             }
-            if (movementKeys.Count > 0) {
+            if (movementKeys.Count > 0)
+            {
                 int newMoveKeyCount = movementKeys.Count;
                 Keys currentMoveKey;
                 if (movementKeys.ContainsKey(Keys.W) && movementKeys[Keys.W] == 1) currentMoveKey = Keys.W;

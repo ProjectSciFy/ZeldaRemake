@@ -1,9 +1,7 @@
 ﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Xna.Framework;
 using CSE3902_Game_Sprint0.Classes.Projectiles.GoriyaBoomerangStateMachineUtility;
+using Microsoft.Xna.Framework;
+using System;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -57,7 +55,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 Outward();
                 newItem = false;
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > (GoriyaBoomerangStateMachineStorage.RANGE - GoriyaBoomerangStateMachineStorage.RETURN_WINDOW) && 
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > (GoriyaBoomerangStateMachineStorage.RANGE - GoriyaBoomerangStateMachineStorage.RETURN_WINDOW) &&
                 (int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < GoriyaBoomerangStateMachineStorage.RANGE && !returning)
             {
                 OutwardReturnWindow();
@@ -71,11 +69,11 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 returnDirection = (Direction)directionalCalc.CalculateReturnDirection();
                 InwardReturnWindow();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < (GoriyaBoomerangStateMachineStorage.RANGE - GoriyaBoomerangStateMachineStorage.RETURN_WINDOW) && 
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) < (GoriyaBoomerangStateMachineStorage.RANGE - GoriyaBoomerangStateMachineStorage.RETURN_WINDOW) &&
                 (int)Vector2.Distance(boomerang.drawLocation, boomerang.SpawnLocation) > GoriyaBoomerangStateMachineStorage.DESPAWN_DISTANCE && returning)
             {
                 if (!brake) brake = true;
-                returnDirection = (Direction) directionalCalc.CalculateReturnDirection();
+                returnDirection = (Direction)directionalCalc.CalculateReturnDirection();
                 Inward();
             }
         }

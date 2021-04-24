@@ -1,6 +1,4 @@
-﻿using CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts;
-using CSE3902_Game_Sprint0.Classes.Projectiles;
-using CSE3902_Game_Sprint0.Classes.Projectiles.SpiritBombStateMachineUtility;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
@@ -28,7 +26,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         public KiBlast kiBlast { get; set; }
         public SpiritBomb spiritBomb { get; set; }
         public int enrageTimer { get; set; } = RoshiStateMachineStorage.ENRAGE_TIMER;
-        private RoshiStateMachineHelper helper;
+        private readonly RoshiStateMachineHelper helper;
         public RoshiStateMachine(EnemyRoshi roshi)
         {
             game = roshi.game;
@@ -39,7 +37,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         public Rectangle CollisionRectangle() { return collisionRectangle; }
         public void Update()
         {
-            if (roshi.health < RoshiStateMachineStorage.ENRAGE_HEALTH_TRIGGER) 
+            if (roshi.health < RoshiStateMachineStorage.ENRAGE_HEALTH_TRIGGER)
             {
                 moving = false;
                 helper.Enrage();
@@ -77,9 +75,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
                         game.projectileHandler.Remove(kamehameha);
                         game.collisionManager.collisionEntities.Remove(kamehameha);
                     }
-                    else if (attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_ONE || attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_TWO || 
+                    else if (attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_ONE || attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_TWO ||
                         attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_THREE || attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_FOUR)
-                    {  helper.KiBlast();  }
+                    { helper.KiBlast(); }
                 }
                 else { timer--; }
             }
@@ -88,9 +86,9 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
                 helper.Dying();
                 deathTimer--;
                 spiritBomb.collided = true;
-                if (deathTimer == 5)  { roshi.game.currentRoom.removeEnemy(roshi); }
+                if (deathTimer == 5) { roshi.game.currentRoom.removeEnemy(roshi); }
             }
-            else if (spawning) { helper.Spawning();} 
+            else if (spawning) { helper.Spawning(); }
             else if (damaged) { helper.Damaged(); }
             else if (moving) { helper.Moving(); }
         }

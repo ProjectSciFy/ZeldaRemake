@@ -18,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         private float spriteScalar { get; set; }
         private static int HITBOX_OFFSET { get; set; } = 6;
-        private static int HITBOX_SUBTRACT{ get; set; } = 2;
+        private static int HITBOX_SUBTRACT { get; set; } = 2;
         public int health { get; set; } = 2;
         private int hurtTimer { get; set; } = 0;
         private int timer { get; set; } = 0;

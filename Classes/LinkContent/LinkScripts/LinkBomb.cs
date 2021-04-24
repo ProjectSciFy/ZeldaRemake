@@ -21,33 +21,43 @@ namespace CSE3902_Game_Sprint0.Classes.LinkContent.LinkScripts
         {
             link.spriteSize.X = 16; link.spriteSize.Y = 16;
             link.velocity.X = 0; link.velocity.Y = 0;
-            switch (linkStateMachine.direction) {
+            switch (linkStateMachine.direction)
+            {
                 case LinkStateMachine.Direction.right:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.bombRight) {
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.bombRight)
+                    {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.bombRight;
                         link.linkSprite = spriteFactory.BombRight();
-                        linkStateMachine.projectileHandler.Add(new Bomb(link.game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), linkStateMachine.projectileHandler)); }
+                        linkStateMachine.projectileHandler.Add(new Bomb(link.game, new Vector2(link.drawLocation.X + 16, link.drawLocation.Y), linkStateMachine.projectileHandler));
+                    }
                     break;
                 case LinkStateMachine.Direction.up:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.bombUp) {
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.bombUp)
+                    {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.bombUp;
                         link.linkSprite = spriteFactory.BombUp();
-                        linkStateMachine.projectileHandler.Add(new Bomb(link.game, new Vector2(link.drawLocation.X, link.drawLocation.Y - 16), linkStateMachine.projectileHandler)); }
+                        linkStateMachine.projectileHandler.Add(new Bomb(link.game, new Vector2(link.drawLocation.X, link.drawLocation.Y - 16), linkStateMachine.projectileHandler));
+                    }
                     break;
                 case LinkStateMachine.Direction.left:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.bombLeft) {
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.bombLeft)
+                    {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.bombLeft;
                         link.linkSprite = spriteFactory.BombLeft();
-                        linkStateMachine.projectileHandler.Add(new Bomb(link.game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), linkStateMachine.projectileHandler)); }
+                        linkStateMachine.projectileHandler.Add(new Bomb(link.game, new Vector2(link.drawLocation.X - 16, link.drawLocation.Y), linkStateMachine.projectileHandler));
+                    }
                     break;
                 case LinkStateMachine.Direction.down:
-                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.bombDown) {
+                    if (linkStateMachine.currentState != LinkStateMachine.CurrentState.bombDown)
+                    {
                         linkStateMachine.currentState = LinkStateMachine.CurrentState.bombDown;
                         link.linkSprite = spriteFactory.BombDown();
-                        linkStateMachine.projectileHandler.Add(new Bomb(link.game, new Vector2(link.drawLocation.X, link.drawLocation.Y + 16), linkStateMachine.projectileHandler)); }
+                        linkStateMachine.projectileHandler.Add(new Bomb(link.game, new Vector2(link.drawLocation.X, link.drawLocation.Y + 16), linkStateMachine.projectileHandler));
+                    }
                     break;
                 default:
-                    break; }
+                    break;
+            }
         }
     }
 }

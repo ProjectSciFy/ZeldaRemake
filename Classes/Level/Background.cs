@@ -16,7 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         private readonly int windowHeight;
         private readonly Texture2D itemSpriteSheet;
         private readonly int roomNumber;
-        private BackgroundStorage storage = new BackgroundStorage();
+        private readonly BackgroundStorage storage = new BackgroundStorage();
         public Background(ZeldaGame game, int roomNumber)
         {
             this.roomNumber = roomNumber;

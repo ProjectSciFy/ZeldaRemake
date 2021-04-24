@@ -149,7 +149,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             {
                 roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.exteriorTemp, Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
-            
+
             drawLocationTopDoorOld = new Vector2(windowWidthFloor + TransitionStateStorage.verticalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor);
             drawLocationLeftDoorOld = new Vector2(windowWidthFloor, windowHeightFloor + TransitionStateStorage.smallAdjust * ParserUtility.SCALE_FACTOR);
             drawLocationRightDoorOld = new Vector2(windowWidthFloor + TransitionStateStorage.horizontalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.smallAdjust * ParserUtility.SCALE_FACTOR);

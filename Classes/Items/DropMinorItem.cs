@@ -5,7 +5,7 @@ namespace CSE3902_Game_Sprint0.Classes.Items
 {
     public class DropMinorItem : ICommand
     {
-        private ItemUtility util = new ItemUtility();
+        private readonly ItemUtility util = new ItemUtility();
         private ZeldaGame game { get; set; }
         private Vector2 location { get; set; }
         public DropMinorItem(ZeldaGame game, Vector2 location)

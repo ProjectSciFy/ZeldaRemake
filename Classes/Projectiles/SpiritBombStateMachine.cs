@@ -1,5 +1,4 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
+﻿using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
 using Microsoft.Xna.Framework;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles

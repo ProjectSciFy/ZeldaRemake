@@ -1,10 +1,7 @@
-﻿using CSE3902_Game_Sprint0.Classes._21._2._13;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles.LinkBoomerangStateMachineUtility;
 using CSE3902_Game_Sprint0.Classes.SpriteFactories;
-using CSE3902_Game_Sprint0.Classes.Projectiles.LinkBoomerangStateMachineUtility;
+using Microsoft.Xna.Framework;
+using System;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
 {
@@ -55,7 +52,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 Outward();
                 newItem = false;
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > (LinkBoomerangStateMachineStorage.RANGE - LinkBoomerangStateMachineStorage.RETURN_WINDOW) && 
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > (LinkBoomerangStateMachineStorage.RANGE - LinkBoomerangStateMachineStorage.RETURN_WINDOW) &&
                 (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < LinkBoomerangStateMachineStorage.RANGE && !returning)
             {
                 OutwardReturnWindow();
@@ -66,14 +63,14 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
             }
             else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > (LinkBoomerangStateMachineStorage.RANGE - LinkBoomerangStateMachineStorage.RETURN_WINDOW) && returning)
             {
-                returnDirection = (Direction) directionCalc.CalculateReturnDireciton();
+                returnDirection = (Direction)directionCalc.CalculateReturnDireciton();
                 InwardReturnWindow();
             }
-            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (LinkBoomerangStateMachineStorage.RANGE - LinkBoomerangStateMachineStorage.RETURN_WINDOW) && 
+            else if ((int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) < (LinkBoomerangStateMachineStorage.RANGE - LinkBoomerangStateMachineStorage.RETURN_WINDOW) &&
                 (int)Vector2.Distance(boomerang.drawLocation, boomerang.spawnLocation) > LinkBoomerangStateMachineStorage.DESPAWN_DISTANCE && returning)
             {
                 if (!brake) brake = true;
-                returnDirection = (Direction) directionCalc.CalculateReturnDireciton();
+                returnDirection = (Direction)directionCalc.CalculateReturnDireciton();
                 Inward();
             }
         }

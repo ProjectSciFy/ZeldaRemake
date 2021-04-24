@@ -48,7 +48,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
         {
             if (hurtTimer > 0) { hurtTimer--; }
             myState.Update();
-            mySprite.Update(); 
+            mySprite.Update();
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
             if (myState.idle)
@@ -64,7 +64,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
                 collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
                 collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - RedeadHelper.two * HITBOX_OFFSET;
                 collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - RedeadHelper.two * HITBOX_OFFSET;
-            } 
+            }
             if (myState.currentState != RedeadStateMachine.CurrentState.dying) { game.collisionManager.collisionEntities[this] = collisionRectangle; }
         }
         public void Draw()

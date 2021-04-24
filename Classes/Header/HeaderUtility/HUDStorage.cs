@@ -1,14 +1,11 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Level;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSE3902_Game_Sprint0.Classes.Header.HeaderUtility
 {
     public class HUDStorage
     {
-        private ZeldaGame game;
+        private readonly ZeldaGame game;
         public int HUD_Main_X;
         public int HUD_Main_Y;
         public Vector2 primaryWeaponPosition;

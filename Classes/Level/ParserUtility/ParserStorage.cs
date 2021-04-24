@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CSE3902_Game_Sprint0.Classes.Level.BackgroundUtility
+﻿namespace CSE3902_Game_Sprint0.Classes.Level.BackgroundUtility
 {
     public class ParserStorage
     {
@@ -26,7 +22,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level.BackgroundUtility
         public int undergroundWallXPos = 2;
         public int outsideStairX = 7;
         public int outsideStairY = 4;
-        public int topDoorX = 6; 
+        public int topDoorX = 6;
         public int leftDoorY = 4;
         public int rightDoorX = 13;
         public int rightDoorY = 4;

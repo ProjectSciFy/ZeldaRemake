@@ -20,7 +20,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
             spawn = new Rectangle(138, 185, 16, 16);
             moving = new Rectangle(383, 164, 16, 16);
             idle = new Rectangle(416, 164, 16, 16);
-           spawnFrame = new Vector2(1, 3);
+            spawnFrame = new Vector2(1, 3);
             movingFrame = new Vector2(1, 2);
         }
     }

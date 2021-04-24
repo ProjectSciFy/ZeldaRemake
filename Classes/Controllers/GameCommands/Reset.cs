@@ -1,15 +1,11 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Controllers.GameCommands.ResetUtility;
-using CSE3902_Game_Sprint0.Classes.GameState;
-using CSE3902_Game_Sprint0.Classes.Level;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Media;
-using System.Collections.Generic;
 
 namespace CSE3902_Game_Sprint0.Classes.Controllers.GameCommands
 {
     public class Reset : ICommand
     {
-        
+
         private ZeldaGame game { get; set; }
 
         private Vector2 linkLocation;

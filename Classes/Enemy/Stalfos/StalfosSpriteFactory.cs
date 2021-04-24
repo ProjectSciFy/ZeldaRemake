@@ -10,7 +10,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos
         private readonly Texture2D linkSpriteSheet;
         private readonly Texture2D enemySpriteSheet;
         private float linkLayerDepth { get; set; } = 0.2f;
-        private StalfosHelper stalfos{get;set;}
+        private StalfosHelper stalfos { get; set; }
         public StalfosSpriteFactory(ZeldaGame game)
         {
             this.stalfos = new StalfosHelper();

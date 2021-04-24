@@ -68,14 +68,17 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             pHUD = game.currentRoom.pHUD;
             pHUD.Update();
             game.util.inSelect = true;
-            if (game.util.selectSpeed < 0) {
+            if (game.util.selectSpeed < 0)
+            {
                 if (pHUD.hudPosition.Y > storage.hudTopPos) { ItemScreenPositionalUpdate(game.util.selectSpeed); }
-                else { game.currentGameState = game.currentMainGameState; game.util.inSelect = false; } }
+                else { game.currentGameState = game.currentMainGameState; game.util.inSelect = false; }
+            }
             else { if (pHUD.hudPosition.Y < storage.hudBotPos) ItemScreenPositionalUpdate(game.util.selectSpeed); }
             game.controllerList[0].Update();
             game.controllerList[2].Update();
             secweaponHolding = HudFactory.secondaryWeaponHUD();
-            switch (game.link.linkState.weaponSelected) {
+            switch (game.link.linkState.weaponSelected)
+            {
                 case LinkStateMachine.Weapon.bomb:
                     secweaponOne = HudFactory.blankBox();
                     secweaponTwo = HudFactory.staticBoomerang();
