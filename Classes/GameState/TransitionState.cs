@@ -63,7 +63,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
         private int roomLimiter { get; set; }
         private int drawOffset { get; set; }
         private Collision.Collision.Direction transitionDirection { get; set; }
-        private int animationSpeed { get; set; } = 6;
+        private int animationSpeed { get; set; } = TransitionStateStorage.animationSpeed;
 
         private readonly playerHUD pHUD;
 
@@ -73,7 +73,7 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             this.pHUD = new playerHUD(game, game.hudSpriteFactory);
             this.oldroom = oldroom;
             this.nextroom = nextroom;
-            timer = 128;
+            timer = TransitionStateStorage.timer;
 
             RoomTextureStorage roomTextures = new RoomTextureStorage(this.game);
             game.spriteSheets.TryGetValue("DungeonTileset", out itemSpriteSheet);
@@ -84,8 +84,8 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             int windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
             int windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
 
-            roomLimiter = 10;
-            drawOffset = 96;
+            roomLimiter = TransitionStateStorage.roomLimiter;
+            drawOffset = TransitionStateStorage.drawOffset;
 
             this.transitionDirection = transitionDirection;
 
@@ -95,20 +95,20 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             switch (transitionDirection)
             {
                 case Collision.Collision.Direction.up:
-                    newRoomShift = new Vector2(0, -176 * 3);
-                    timer = 176 * 3 / animationSpeed;
+                    newRoomShift = new Vector2(0, -TransitionStateStorage.roomTransitionY * ParserUtility.SCALE_FACTOR);
+                    timer = TransitionStateStorage.roomTransitionY * ParserUtility.SCALE_FACTOR / animationSpeed;
                     break;
                 case Collision.Collision.Direction.left:
-                    newRoomShift = new Vector2(-256 * 3, 0);
-                    timer = 256 * 3 / animationSpeed;
+                    newRoomShift = new Vector2(-TransitionStateStorage.roomTransitionX * ParserUtility.SCALE_FACTOR, 0);
+                    timer = TransitionStateStorage.roomTransitionX * ParserUtility.SCALE_FACTOR / animationSpeed;
                     break;
                 case Collision.Collision.Direction.right:
-                    newRoomShift = new Vector2(256 * 3, 0);
-                    timer = 256 * 3 / animationSpeed;
+                    newRoomShift = new Vector2(TransitionStateStorage.roomTransitionX * ParserUtility.SCALE_FACTOR, 0);
+                    timer = TransitionStateStorage.roomTransitionX * ParserUtility.SCALE_FACTOR / animationSpeed;
                     break;
                 case Collision.Collision.Direction.down:
-                    newRoomShift = new Vector2(0, 176 * 3);
-                    timer = 176 * 3 / animationSpeed;
+                    newRoomShift = new Vector2(0, TransitionStateStorage.roomTransitionY * ParserUtility.SCALE_FACTOR);
+                    timer = TransitionStateStorage.roomTransitionY * ParserUtility.SCALE_FACTOR / animationSpeed;
                     break;
             }
 
@@ -126,44 +126,39 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             int nextRoomNumber = nextroom.getRoomNumber();
             roominteriorNext = roomTextures.getRoom(nextRoomNumber);
 
-            roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.exteriorTemp, Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
 
-            if (this.oldroom.getRoomNumber() == 16)
+            if (this.oldroom.getRoomNumber() == TransitionStateStorage.specialRoomNumber)
             {
-                roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
-                drawLocationInteriorOld = drawLocationInteriorOld - new Vector2(0, 33);
-                roominteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
-                //drawLocationExterior = drawLocationExterior - new Vector2(0, 13 * 3);
+                roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.exteriorActual, Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                drawLocationInteriorOld = drawLocationInteriorOld - new Vector2(0, TransitionStateStorage.interiorPosAdjust);
+                roominteriorOld = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.exteriorActual, Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
             else
             {
-                roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.exteriorTemp, Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
 
-            if (this.nextroom.getRoomNumber() == 16)
+            if (this.nextroom.getRoomNumber() == TransitionStateStorage.specialRoomNumber)
             {
 
-                roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
-                roominteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
-                //drawLocationInteriorNext = drawLocationInteriorNext - new Vector2(0, 33);
-                //roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.exteriorActual, Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                roominteriorNext = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.exteriorActual, Color.Transparent, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
             else
             {
-                roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                roomexteriorNext = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.exteriorTemp, Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
-            //roomexteriorOld = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+            
+            drawLocationTopDoorOld = new Vector2(windowWidthFloor + TransitionStateStorage.verticalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor);
+            drawLocationLeftDoorOld = new Vector2(windowWidthFloor, windowHeightFloor + TransitionStateStorage.smallAdjust * ParserUtility.SCALE_FACTOR);
+            drawLocationRightDoorOld = new Vector2(windowWidthFloor + TransitionStateStorage.horizontalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.smallAdjust * ParserUtility.SCALE_FACTOR);
+            drawLocationBottomDoorOld = new Vector2(windowWidthFloor + TransitionStateStorage.verticalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.largeAdjust * ParserUtility.SCALE_FACTOR);
 
-
-            drawLocationTopDoorOld = new Vector2(windowWidthFloor + 112 * ParserUtility.SCALE_FACTOR, windowHeightFloor);
-            drawLocationLeftDoorOld = new Vector2(windowWidthFloor, windowHeightFloor + 72 * ParserUtility.SCALE_FACTOR);
-            drawLocationRightDoorOld = new Vector2(windowWidthFloor + 224 * ParserUtility.SCALE_FACTOR, windowHeightFloor + 72 * ParserUtility.SCALE_FACTOR);
-            drawLocationBottomDoorOld = new Vector2(windowWidthFloor + 112 * ParserUtility.SCALE_FACTOR, windowHeightFloor + 144 * ParserUtility.SCALE_FACTOR);
-
-            drawLocationTopDoorNext = new Vector2(windowWidthFloor + 112 * ParserUtility.SCALE_FACTOR, windowHeightFloor) + newRoomShift;
-            drawLocationLeftDoorNext = new Vector2(windowWidthFloor, windowHeightFloor + 72 * ParserUtility.SCALE_FACTOR) + newRoomShift;
-            drawLocationRightDoorNext = new Vector2(windowWidthFloor + 224 * ParserUtility.SCALE_FACTOR, windowHeightFloor + 72 * ParserUtility.SCALE_FACTOR) + newRoomShift;
-            drawLocationBottomDoorNext = new Vector2(windowWidthFloor + 112 * ParserUtility.SCALE_FACTOR, windowHeightFloor + 144 * ParserUtility.SCALE_FACTOR) + newRoomShift;
+            drawLocationTopDoorNext = new Vector2(windowWidthFloor + TransitionStateStorage.verticalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor) + newRoomShift;
+            drawLocationLeftDoorNext = new Vector2(windowWidthFloor, windowHeightFloor + TransitionStateStorage.smallAdjust * ParserUtility.SCALE_FACTOR) + newRoomShift;
+            drawLocationRightDoorNext = new Vector2(windowWidthFloor + TransitionStateStorage.horizontalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.smallAdjust * ParserUtility.SCALE_FACTOR) + newRoomShift;
+            drawLocationBottomDoorNext = new Vector2(windowWidthFloor + TransitionStateStorage.verticalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.largeAdjust * ParserUtility.SCALE_FACTOR) + newRoomShift;
 
             foreach (IDoor door in oldroom.getDoors())
             {
@@ -227,13 +222,13 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             {
                 oldTile.pushed = false;
                 drawLocationOldPushableTile = oldTile.drawLocation;
-                oldPushableTile = new UniversalSprite(game, itemSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                oldPushableTile = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.pushableTile, Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
             if (foundNextTile)
             {
                 drawLocationNextPushableTile = nextTile.drawLocation + newRoomShift;
                 nextTile.pushed = false;
-                nextPushableTile = new UniversalSprite(game, itemSpriteSheet, new Rectangle(1001, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
+                nextPushableTile = new UniversalSprite(game, itemSpriteSheet, TransitionStateStorage.pushableTile, Color.White, SpriteEffects.None, new Vector2(1, 1), roomLimiter, 0.0f);
             }
 
         }
@@ -271,39 +266,40 @@ namespace CSE3902_Game_Sprint0.Classes.GameState
             int windowHeightFloor = ((windowHeight / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_X_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST) + ParserUtility.GAME_FRAME_ADJUST;
             int windowWidthFloor = (windowWidth / ParserUtility.SCALE_FACTOR - ParserUtility.WINDOW_Y_ADJUST / ParserUtility.SCALE_FACTOR) / ParserUtility.GEN_ADJUST;
             timer--;
+            int adj = TransitionStateStorage.adjust;
             if (timer == 0)
             {
                 game.currentGameState = game.currentMainGameState;
                 game.util.keyPressedTempVariable = false;
-                if (nextroom.getRoomNumber() == 17 && oldroom.getRoomNumber() == 16)
+                if (nextroom.getRoomNumber() == TransitionStateStorage.specialRoomNumber + 1 && oldroom.getRoomNumber() == TransitionStateStorage.specialRoomNumber)
                 {
                     game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
-                    game.link.SetLocation(new Vector2(windowWidthFloor + (112 - 24) * ParserUtility.SCALE_FACTOR + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (144 - 34) * ParserUtility.SCALE_FACTOR));
+                    game.link.SetLocation(new Vector2(windowWidthFloor + TransitionStateStorage.linkAdjust * ParserUtility.SCALE_FACTOR + adj * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.temp * ParserUtility.SCALE_FACTOR));
                     goto Skip;
                 }
-                else if (nextroom.getRoomNumber() == 16)
+                else if (nextroom.getRoomNumber() == TransitionStateStorage.specialRoomNumber)
                 {
                     game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
-                    game.link.SetLocation(new Vector2(windowWidthFloor + (112 - 70) * 3 + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + (-8 * 3) + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR));
+                    game.link.SetLocation(new Vector2(windowWidthFloor + TransitionStateStorage.linkSmallAdjust * ParserUtility.SCALE_FACTOR + adj * ParserUtility.SCALE_FACTOR, windowHeightFloor + (-adj * ParserUtility.SCALE_FACTOR) + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR));
                     goto Skip;
                 }
                 switch (transitionDirection)
                 {
                     case Collision.Collision.Direction.up:
                         game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.up);
-                        game.link.SetLocation(new Vector2(windowWidthFloor + 112 * ParserUtility.SCALE_FACTOR + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + 144 * ParserUtility.SCALE_FACTOR));
+                        game.link.SetLocation(new Vector2(windowWidthFloor + TransitionStateStorage.verticalDoorAdjust * ParserUtility.SCALE_FACTOR + adj * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.largeAdjust * ParserUtility.SCALE_FACTOR));
                         break;
                     case Collision.Collision.Direction.left:
                         game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.left);
-                        game.link.SetLocation(new Vector2(windowWidthFloor + 224 * ParserUtility.SCALE_FACTOR, windowHeightFloor + 72 * ParserUtility.SCALE_FACTOR + 8 * ParserUtility.SCALE_FACTOR));
+                        game.link.SetLocation(new Vector2(windowWidthFloor + TransitionStateStorage.horizontalDoorAdjust * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.smallAdjust * ParserUtility.SCALE_FACTOR + adj * ParserUtility.SCALE_FACTOR));
                         break;
                     case Collision.Collision.Direction.right:
                         game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.right);
-                        game.link.SetLocation(new Vector2(windowWidthFloor + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR, windowHeightFloor + 72 * ParserUtility.SCALE_FACTOR + 8 * ParserUtility.SCALE_FACTOR));
+                        game.link.SetLocation(new Vector2(windowWidthFloor + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR, windowHeightFloor + TransitionStateStorage.smallAdjust * ParserUtility.SCALE_FACTOR + adj * ParserUtility.SCALE_FACTOR));
                         break;
                     case Collision.Collision.Direction.down:
                         game.linkStateMachine.ChangeDirection(LinkStateMachine.Direction.down);
-                        game.link.SetLocation(new Vector2(windowWidthFloor + 112 * 3 + 8 * ParserUtility.SCALE_FACTOR, windowHeightFloor + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR));
+                        game.link.SetLocation(new Vector2(windowWidthFloor + TransitionStateStorage.verticalDoorAdjust * ParserUtility.SCALE_FACTOR + adj * ParserUtility.SCALE_FACTOR, windowHeightFloor + ParserUtility.SPRITE_SIZE * ParserUtility.SCALE_FACTOR));
                         break;
                 }
             }
