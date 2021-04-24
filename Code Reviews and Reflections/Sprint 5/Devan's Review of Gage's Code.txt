@@ -2,18 +2,20 @@
 -Author of review: Devan
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: 
+-File Name: RoshiStateMachine
 -Author of file: Gage Odom
--Number of minutes taken to review: 
+-Number of minutes taken to review: 2
 -Comments: 
+The code is very readable and clear how the functions are being used.
 
 
 MAINTAINABILITY OF GAGE'S CODE:
 -Author of review: Devan
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: 
+-File Name: RoshiStateMachine
 -Author of file: Gage Odom
--Number of minutes taken to review: 
+-Number of minutes taken to review: 5 
 -Comments: 
 -Hypitheitcal changes: 
+The code is short and calls other functions which will make it easy to maintain.

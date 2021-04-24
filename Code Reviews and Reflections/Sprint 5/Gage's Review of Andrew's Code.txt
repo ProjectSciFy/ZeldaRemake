@@ -2,18 +2,17 @@
 -Author of review: Gage Odom
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: 
+-File Name: Background.cs
 -Author of file: Andrew Lewandowski
--Number of minutes taken to review: 
--Comments: 
-
+-Number of minutes taken to review: 8
+-Comments: Code is readable, the variable names make sense with the flow of logic, storage class is used to help reduce magic numbers. 
 
 MAINTAINABILITY OF ANDREW'S CODE:
 -Author of review: Gage Odom
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: 
+-File Name: Background.cs
 -Author of file: Andrew Lewandowski
 -Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Comments: Alot of code in the constuctor. Looks like its required though so thats okay. Background is only depends on its storage class along with game so thats good. Storage class gives easy point of access to changes.
+-Hypitheitcal changes: Maybe reduce amount of conditionals in constructor. Also putting the entirety of the variable values into the storage class instead of just bits and pieces may help readablity too.
