@@ -4,8 +4,9 @@
 -Sprint Number: 5
 -File Name: 
 -Author of file: Gal Pinhasi
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 3
+-Comments: This file is super readable. The file itself is extremely short and every method is clean and concise. The fields, methods, and command
+		   names are clear and self-explanatory.
 
 
 MAINTAINABILITY OF GAL'S CODE:
@@ -14,6 +15,7 @@ MAINTAINABILITY OF GAL'S CODE:
 -Sprint Number: 5
 -File Name: 
 -Author of file: Gal Pinhasi 
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 6
+-Comments: The maintainability of this file is very high. The shortness of the methods and the lack of public fields makes cohesion high and coupling
+		   low. Each of the commands called also has very high cohesion and fairly low coupling. Overall, super easy to maintain this file.
 -Hypitheitcal changes: 
