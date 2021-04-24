@@ -1,33 +1,45 @@
 # ZeldaRemake
 README Document for Sprint 3:
 
-Known Bugs:
-	-Rare situtation in which enemies block doorways upon leaving rooms makes it impossible to re-enter room.
-	-Attempts to door mouse to transition through rooms may cause Link to get stuck in door; fix this by pressing [K].
-	-Clicking on segments of wall where a door goes (but the texture is that of a wall) sometimes attempts to transition in that direction. Only happens if there is an actual room that way.
-	-Confusion surrounding ItemSelectionState scrolling made implementation difficult; therefore this has not been fully implemented.
-
 Program Controls:
-	-[WASD] and [Arrows] keys control vertical and horizontal movement.
-		+No diagonal movement. Key priority-based movement (i.e.: last key pressed is the direction link moves; if key is held and another is pressed, he moves in the new direction).	
+	-[WASD] and [Arrows] keys control vertical and horizontal movement.	
+	-[LShift] causes Link to lunge/roll in the direction he is looking. Lunging/rolling through enemies will make Link invulnerable.
 	-[N] and [Z] cause Link to attack with his sword.
 	-[X] and [M] cause Link to attack with his selected secondary weapon (bomb/bow and arrow/boomerang).
+	-[C] causes Link to use his portal gun. If Link is in a room with a hidden portal, using the portal gun will reveal the portal.
+	-[T] causes a red keese to spawn. This is Link's little helper.
+		+The little helper is controlled by the mouse cursor. It will follow the cursor where it is in the game.
+		+The little helper can block enemy movement as well as pick up items and carry them to Link. 
+		+The little helper can deflect and break projectiles.
+	-[I] enters the item selection screen; pressing [I] again leaves this state.
+		-[P] pauses the game; clicking [P] again will resume the game. 
 	-[2]...[4] cycle through Link's secondary weapons and update HUD to reflect current secondary weapon.
-	-[P] pauses the game; clicking [P] again will resume the game. 
+		+Left clicking on items in the item selection screen ([I]) has the same effect.
 	-[Q] and [esc] quit the game instantly.
 	-[R] resets game to starting state. This is for testing purposes and will be removed in the final version of the game.
-	-[K] gives Link 5 keys instantly. This is for testing purposes and will be removed in the final version of the game.
-
-	-MOUSE CONTROLS:
-		+Left clicking doors will cycle through rooms in the direction of the door clicked.
+	-[K] gives Link 5 keys instantly. This is for testing purposes, or if you want an easy way out.
+	-Left clicking doors will cycle through rooms in the direction of the door clicked.
 
 
-Program Future Implementations:
-	-Implement ItemSelectionState and visuals, caused by pressing [I].
-	-Implement a fully operational Bow (loot) room (room number 16 with our numbering system).
-	-Implement hidden doors that appear after Link explodes a bomb near them.
-	-Implement sliding blocks.
-
-
-Program Extra Implmenetations:
-	-We have developed a Fairy item that flies around the room and can give link an extra healthy boost.
+Game Features (Sprint 5 Extra Features):
+	-Added a new room for Redead enemies and Fog of War.
+	-New type of enemy: Redead enemies.
+		+Redead enemies spawn in only one room.
+		+Redead enemies stun Link for a short time.
+	-Added Fog of War in the room with Redead enemies. There is no way to toggle this.
+	-Added little helper. Behavior described above in Program Controls under [T].
+	-Added portals and portal gun.
+		+Portals can be used as doors once discovered and opened.
+	-Added lunge/roll.
+	-Added XP and leveling.
+		+After killing enemies, either a random item drops or an XP orb.
+		+Picking up 10 XP orbs will allow Link to level up. 
+		+Leveling up allows Link to deal more damage to enemies.
+	-Removed Old Man and replaced him with Roshi boss.
+		+Roshi shoots a horizontal blast that kills Link instantly if it hits.
+		+Roshi occasionally shoots fast small fireballs at Link. These can be easily dodged.
+		+After getting Roshi to a certain HP, Roshi charges up an explosion that will instantly kill Link unless Roshi is killed.
+		+Roshi drops a key when killed.
+	-Added an Event tile in Roshi's room.
+		+Once triggered, all doors in Roshi's room are locked.
+		+Once triggered, the Event cannot be trigged again unless game is reset.
