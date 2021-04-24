@@ -306,7 +306,7 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                                 tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked, isLockedDoor, isPortal));
                                 gatekeeper.drawLocation = wallPos;
 
-                                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, storage.topDoorRightPos, 0);
+                                wallPos = utility.GetBlockSecondaryItemPosition(windowWidthFloor, windowHeightFloor, storage.topDoorRightPos + 1, 0);
                                 tiles.Add(gatekeeper = new GateKeeperTile(game, new TileSpriteFactory(game), wallPos, locked, isLockedDoor, isPortal));
                                 gatekeeper.drawLocation = wallPos;
 
