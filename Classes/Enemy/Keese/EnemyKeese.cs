@@ -16,6 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         private float spriteScalar { get; set; }
         private static int HITBOX_OFFSET { get; set; } = 6;
+        private static int HITBOX_SUBRACT { get; set; } = 2;
         public int health { get; set; } = 1;
         private int hurtTimer { get; set; } = 0;
 
@@ -72,8 +73,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
 
             collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - HITBOX_SUBRACT * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - HITBOX_SUBRACT * HITBOX_OFFSET;
             if (health > 0)
             {
                 game.collisionManager.collisionEntities[this] = collisionRectangle;

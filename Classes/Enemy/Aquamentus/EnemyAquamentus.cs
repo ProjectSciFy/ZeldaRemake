@@ -86,10 +86,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
                 game.projectileHandler.Add(new Fireball(game, this, myState, new Vector2(-1, (float)0.15)));
                 game.projectileHandler.Add(new Fireball(game, this, myState, new Vector2(-1, (float)-0.15)));
             }
-            collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
+            collisionRectangle.X = (int)drawLocation.X + AquamentusHelper.two * HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 3 * HITBOX_OFFSET;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - AquamentusHelper.three * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - AquamentusHelper.two * HITBOX_OFFSET;
 
             if (myState.currentState != AquamentusStateMachine.CurrentState.dying)
             {

@@ -14,8 +14,8 @@
 
         public void Execute()
         {
-            redead.spriteSize.X = 16;
-            redead.spriteSize.Y = 16;
+            redead.spriteSize.X = RedeadHelper.size;
+            redead.spriteSize.Y = RedeadHelper.size;
 
             switch (redeadStateMachine.direction)
             {
@@ -32,7 +32,7 @@
                     if (redeadStateMachine.currentState != RedeadStateMachine.CurrentState.movingUp)
                     {
                         redead.velocity.X = 0;
-                        redead.velocity.Y = -1;
+                        redead.velocity.Y = RedeadHelper.nvelocity;
                         redeadStateMachine.currentState = RedeadStateMachine.CurrentState.movingUp;
                         redead.mySprite = redeadSpriteFactory.RedeadMoving();
                     }
@@ -40,7 +40,7 @@
                 case RedeadStateMachine.Direction.left:
                     if (redeadStateMachine.currentState != RedeadStateMachine.CurrentState.movingLeft)
                     {
-                        redead.velocity.X = -1;
+                        redead.velocity.X = RedeadHelper.nvelocity;
                         redead.velocity.Y = 0;
                         redeadStateMachine.currentState = RedeadStateMachine.CurrentState.movingLeft;
                         redead.mySprite = redeadSpriteFactory.RedeadMoving();

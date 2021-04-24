@@ -5,6 +5,7 @@
         private EnemyOldMan oldMan { get; set; }
         private OldManSpriteFactory oldManSpriteFactory { get; set; }
         private OldManStateMachine oldManStateMachine { get; set; }
+        private int size = 16;
 
         public OldManIdle(EnemyOldMan oldMan, OldManSpriteFactory oldManSpriteFactory, OldManStateMachine oldManStateMachine)
         {
@@ -14,8 +15,8 @@
         }
         public void Execute()
         {
-            oldMan.spriteSize.X = 16;
-            oldMan.spriteSize.Y = 16;
+            oldMan.spriteSize.X = size;
+            oldMan.spriteSize.Y = size;
             oldMan.velocity.X = 0;
             oldMan.velocity.Y = 0;
 

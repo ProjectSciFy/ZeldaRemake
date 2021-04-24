@@ -16,8 +16,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts
 
         public void Execute()
         {
-            stalfos.spriteSize.X = 16;
-            stalfos.spriteSize.Y = 16;
+            stalfos.spriteSize.X = StalfosHelper.size;
+            stalfos.spriteSize.Y = StalfosHelper.size;
 
             switch (stalfosStateMachine.direction)
             {
@@ -34,7 +34,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts
                     if (stalfosStateMachine.currentState != StalfosStateMachine.CurrentState.movingUp)
                     {
                         stalfos.velocity.X = 0;
-                        stalfos.velocity.Y = -1;
+                        stalfos.velocity.Y = StalfosHelper.nvelocity;
                         stalfosStateMachine.currentState = StalfosStateMachine.CurrentState.movingUp;
                         stalfos.mySprite = stalfosSpriteFactory.StalfosMovingUp();
                     }
@@ -42,7 +42,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts
                 case StalfosStateMachine.Direction.left:
                     if (stalfosStateMachine.currentState != StalfosStateMachine.CurrentState.movingLeft)
                     {
-                        stalfos.velocity.X = -1;
+                        stalfos.velocity.X = StalfosHelper.nvelocity;
                         stalfos.velocity.Y = 0;
                         stalfosStateMachine.currentState = StalfosStateMachine.CurrentState.movingLeft;
                         stalfos.mySprite = stalfosSpriteFactory.StalfosMovingLeft();

@@ -8,6 +8,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
     {
         private readonly Texture2D NPCSpriteSheet;
         private ZeldaGame game { get; set; }
+        private int idlelimiter = 10;
+        private Rectangle idle = new Rectangle(18, 11, 16, 16);
         private float linkLayerDepth { get; set; } = 0.2f;
         public OldManSpriteFactory(ZeldaGame game)
         {
@@ -16,7 +18,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
         }
         public UniversalSprite OldManIdle()
         {
-            return new UniversalSprite(game, NPCSpriteSheet, new Rectangle(18, 11, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
+            return new UniversalSprite(game, NPCSpriteSheet, idle, Color.White, SpriteEffects.None, new Vector2(1, 1), idlelimiter, linkLayerDepth);
         }
     }
 }

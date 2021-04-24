@@ -13,8 +13,8 @@
         }
         public void Execute()
         {
-            aquamentus.spriteSize.X = 24;
-            aquamentus.spriteSize.Y = 32;
+            aquamentus.spriteSize.X = AquamentusHelper.xsize;
+            aquamentus.spriteSize.Y = AquamentusHelper.ysize;
             aquamentus.velocity.X = 0;
             aquamentus.velocity.Y = 0;
 

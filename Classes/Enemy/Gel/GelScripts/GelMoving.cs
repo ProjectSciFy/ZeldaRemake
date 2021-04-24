@@ -15,15 +15,15 @@
 
         public void Execute()
         {
-            gel.spriteSize.X = 16;
-            gel.spriteSize.Y = 16;
+            gel.spriteSize.X = GelHelper.size;
+            gel.spriteSize.Y = GelHelper.size;
 
             switch (gelStateMachine.direction)
             {
                 case GelStateMachine.Direction.right:
                     if (gelStateMachine.currentState != GelStateMachine.CurrentState.movingRight)
                     {
-                        gel.velocity.X = 2;
+                        gel.velocity.X = GelHelper.pvelocity;
                         gel.velocity.Y = 0;
                         gelStateMachine.currentState = GelStateMachine.CurrentState.movingRight;
                         gel.mySprite = gelSpriteFactory.GelMovingRight();
@@ -33,7 +33,7 @@
                     if (gelStateMachine.currentState != GelStateMachine.CurrentState.movingUp)
                     {
                         gel.velocity.X = 0;
-                        gel.velocity.Y = -2;
+                        gel.velocity.Y = GelHelper.nvelocity;
                         gelStateMachine.currentState = GelStateMachine.CurrentState.movingUp;
                         gel.mySprite = gelSpriteFactory.GelMovingUp();
                     }
@@ -41,7 +41,7 @@
                 case GelStateMachine.Direction.left:
                     if (gelStateMachine.currentState != GelStateMachine.CurrentState.movingLeft)
                     {
-                        gel.velocity.X = -2;
+                        gel.velocity.X = GelHelper.nvelocity;
                         gel.velocity.Y = 0;
                         gelStateMachine.currentState = GelStateMachine.CurrentState.movingLeft;
                         gel.mySprite = gelSpriteFactory.GelMovingLeft();
@@ -51,7 +51,7 @@
                     if (gelStateMachine.currentState != GelStateMachine.CurrentState.movingDown)
                     {
                         gel.velocity.X = 0;
-                        gel.velocity.Y = 2;
+                        gel.velocity.Y = GelHelper.pvelocity;
                         gelStateMachine.currentState = GelStateMachine.CurrentState.movingDown;
                         gel.mySprite = gelSpriteFactory.GelMovingDown();
                     }

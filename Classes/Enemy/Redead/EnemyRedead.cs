@@ -78,15 +78,15 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
             {
                 collisionRectangle.X = (int)drawLocation.X - (int)(spriteSize.X * spriteScalar);
                 collisionRectangle.Y = (int)drawLocation.Y - (int)(spriteSize.Y * spriteScalar);
-                collisionRectangle.Width = ((int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET) * 3;
-                collisionRectangle.Height = ((int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET) * 3;
+                collisionRectangle.Width = ((int)(spriteSize.X * spriteScalar) - RedeadHelper.two * HITBOX_OFFSET) * RedeadHelper.three;
+                collisionRectangle.Height = ((int)(spriteSize.Y * spriteScalar) - RedeadHelper.two * HITBOX_OFFSET) * RedeadHelper.three;
             }
             else
             {
                 collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
                 collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-                collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
-                collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+                collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - RedeadHelper.two * HITBOX_OFFSET;
+                collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - RedeadHelper.two * HITBOX_OFFSET;
             }
 
             if (myState.currentState != RedeadStateMachine.CurrentState.dying)

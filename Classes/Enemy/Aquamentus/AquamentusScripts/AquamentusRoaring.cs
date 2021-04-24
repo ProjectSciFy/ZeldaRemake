@@ -14,8 +14,8 @@
 
         public void Execute()
         {
-            aquamentus.spriteSize.X = 24;
-            aquamentus.spriteSize.Y = 32;
+            aquamentus.spriteSize.X = AquamentusHelper.xsize;
+            aquamentus.spriteSize.Y = AquamentusHelper.ysize;
 
             switch (aquaStateMachine.direction)
             {
@@ -23,7 +23,7 @@
                     if (aquaStateMachine.currentState != AquamentusStateMachine.CurrentState.movingRight)
                     {
                         aquaStateMachine.currentState = AquamentusStateMachine.CurrentState.movingRight;
-                        aquamentus.velocity.X = 2;
+                        aquamentus.velocity.X = AquamentusHelper.two;
                         aquamentus.velocity.Y = 0;
                         aquamentus.mySprite = aquaSpriteFactory.AquamentusRoaringRight();
                     }
@@ -32,7 +32,7 @@
                     if (aquaStateMachine.currentState != AquamentusStateMachine.CurrentState.movingLeft)
                     {
                         aquaStateMachine.currentState = AquamentusStateMachine.CurrentState.movingLeft;
-                        aquamentus.velocity.X = -2;
+                        aquamentus.velocity.X = AquamentusHelper.minustwo;
                         aquamentus.velocity.Y = 0;
                         aquamentus.mySprite = aquaSpriteFactory.AquamentusRoaringLeft();
                     }

@@ -17,8 +17,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Stalfos.StalfosScripts
 
         public void Execute()
         {
-            stalfos.spriteSize.X = 16;
-            stalfos.spriteSize.Y = 16;
+            stalfos.spriteSize.X = StalfosHelper.size;
+            stalfos.spriteSize.Y = StalfosHelper.size;
             stalfos.velocity.X = 0;
             stalfos.velocity.Y = 0;
 

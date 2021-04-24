@@ -15,8 +15,8 @@
 
         public void Execute()
         {
-            redead.spriteSize.X = 16;
-            redead.spriteSize.Y = 16;
+            redead.spriteSize.X = RedeadHelper.size;
+            redead.spriteSize.Y = RedeadHelper.size;
             redead.velocity.X = 0;
             redead.velocity.Y = 0;
 
