@@ -2,18 +2,23 @@
 -Author of review: Mark Maher
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: 
+-File Name: playerHUD.cs
 -Author of file: Jared Zahn
--Number of minutes taken to review: 
--Comments: 
+-Number of minutes taken to review: 10
+-Comments:
++ Despite the scope of this particular class, it boasts fairly high readability in my opinion.
++ The orginization by use of comment segments aids considerably, cordoning off different parts of initialization with each step within these sections labeled with understandable variable names to follow what's happening.
 
 
 MAINTAINABILITY OF JARED'S CODE:
 -Author of review: Mark Maher
 -Date of review: 4/23/2021
 -Sprint Number: 5
--File Name: 
+-File Name: playerHUD.cs
 -Author of file: Jared Zahn
--Number of minutes taken to review: 
--Comments: 
--Hypitheitcal changes: 
+-Number of minutes taken to review: 10
+-Comments:
++ The maintainability of this particular file seems very high, this is mostly attributed to its fields being populated by method calls, allowing for the core function of this file to rely on the output of other objects, regardless of how they create their results.
++ The only flipside is that there are numerous fields within this class due to its relative complexity, which may be more difficult to manage if the overall structure of the class needs to be rewritten or heavily edited.
+-Hypotheitcal changes:
++ Maybe creating some of the local fields of the same object type in groups, instead of declaring each on its own seperate line to save some space.
