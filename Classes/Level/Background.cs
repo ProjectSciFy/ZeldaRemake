@@ -36,12 +36,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
             roominterior = roomTextures.getRoom(roomNumber);
             if (roomNumber == storage.specialRoomNumber)
             {
-                roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), storage.roomLimiter, 0.0f);
-                roominterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(421, 1011, 256, 176), Color.Transparent, SpriteEffects.None, new Vector2(1, 1), storage.roomLimiter, 0.0f);
+                roomexterior = new UniversalSprite(game, itemSpriteSheet, storage.ROOM_RECTANGLE, Color.White, SpriteEffects.None, Vector2.One, storage.roomLimiter, storage.LAYERDEPTH);
+                roominterior = new UniversalSprite(game, itemSpriteSheet, storage.ROOM_RECTANGLE, Color.Transparent, SpriteEffects.None, Vector2.One, storage.roomLimiter, storage.LAYERDEPTH);
             }
             else
             {
-                roomexterior = new UniversalSprite(game, itemSpriteSheet, new Rectangle(521, 11, 256, 176), Color.White, SpriteEffects.None, new Vector2(1, 1), storage.roomLimiter, 0.0f);
+                roomexterior = new UniversalSprite(game, itemSpriteSheet, storage.ROOM_EXTERIOR_RECTANGLE, Color.White, SpriteEffects.None, Vector2.One, storage.roomLimiter, storage.LAYERDEPTH);
             }
         }
         public void Draw()
