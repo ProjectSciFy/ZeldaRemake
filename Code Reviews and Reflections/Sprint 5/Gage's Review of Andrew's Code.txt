@@ -1,0 +1,19 @@
+﻿READABILITY OF ANDREW'S CODE:
+-Author of review: Gage Odom
+-Date of review: 4/23/2021
+-Sprint Number: 5
+-File Name: 
+-Author of file: Andrew Lewandowski
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF ANDREW'S CODE:
+-Author of review: Gage Odom
+-Date of review: 4/23/2021
+-Sprint Number: 5
+-File Name: 
+-Author of file: Andrew Lewandowski
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 

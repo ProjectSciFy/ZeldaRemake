@@ -15,7 +15,6 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
         public void ClearNotLink()
         {
             HashSet<ICollisionEntity> deleteSet = new HashSet<ICollisionEntity>();
-
             foreach (KeyValuePair<ICollisionEntity, Rectangle> pair in collisionEntities)
             {
                 if (!(pair.Key is Link))
@@ -23,15 +22,15 @@ namespace CSE3902_Game_Sprint0.Classes.Collision
                     deleteSet.Add(pair.Key);
                 }
             }
-
             foreach (ICollisionEntity mask in deleteSet)
             {
                 collisionEntities.Remove(mask);
             }
-
             deleteSet.Clear();
         }
+
         public Dictionary<ICollisionEntity, Rectangle> collisionEntities = new Dictionary<ICollisionEntity, Rectangle>();
+
         public CollisionManager()
         {
             collisionChecker = new CollisionChecker(this);

@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/LOZ_Text.wav</SourceFile>
   <SourceTime>2021-04-05T17:07:42.0152186-05:00</SourceTime>
   <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/LOZ_Text.xnb</DestFile>
-  <DestTime>2021-04-23T20:01:03.4056674-05:00</DestTime>
+  <DestTime>2021-04-23T20:11:21.0858711-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

@@ -15,25 +15,20 @@
         {
             linkState.moving = true;
 
-
             switch (direction)
             {
                 case LinkStateMachine.Direction.up:
                     linkState.direction = LinkStateMachine.Direction.up;
                     break;
-
                 case LinkStateMachine.Direction.down:
                     linkState.direction = LinkStateMachine.Direction.down;
                     break;
-
                 case LinkStateMachine.Direction.left:
                     linkState.direction = LinkStateMachine.Direction.left;
                     break;
-
                 case LinkStateMachine.Direction.right:
                     linkState.direction = LinkStateMachine.Direction.right;
                     break;
-
                 default:
                     break;
             }

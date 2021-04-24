@@ -1,5 +1,6 @@
 ﻿using CSE3902_Game_Sprint0.Classes.Enemy.Roshi.RoshiScripts;
 using CSE3902_Game_Sprint0.Classes.Projectiles;
+using CSE3902_Game_Sprint0.Classes.Projectiles.SpiritBombStateMachineUtility;
 using CSE3902_Game_Sprint0.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
@@ -11,127 +12,87 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Roshi
         private ZeldaGame game { get; set; }
         private EnemyRoshi roshi { get; set; }
         private RoshiSpriteFactory spriteFactory { get; set; }
-
         public enum Direction { up, down };
         public Direction direction = Direction.up;
         public bool spawning { get; set; } = true;
         public bool moving { get; set; } = false;
         public bool damaged { get; set; } = false;
-        public int timer { get; set; } = 180;
-        public int attackTimer { get; set; } = 179;
-        public int deathTimer { get; set; } = 330;
-        public enum CurrentState { none, movingUp, movingDown, spawning, dying, damaged, kiBlast, kamehameha };
+        public int timer { get; set; } = RoshiStateMachineStorage.INTIAL_TIMER;
+        public int attackTimer { get; set; } = RoshiStateMachineStorage.ATTACK_TIMER;
+        public int deathTimer { get; set; } = RoshiStateMachineStorage.DEATH_TIMER;
+        public enum CurrentState { none, movingUp, movingDown, spawning, dying, damaged, kiBlast, kamehameha, lift, charging, throwing, hold };
         public CurrentState currentState = CurrentState.none;
-        public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
+        public Rectangle collisionRectangle = Rectangle.Empty;
         public float spriteScalar;
         public Kamehameha kamehameha { get; set; }
         public KiBlast kiBlast { get; set; }
-
+        public SpiritBomb spiritBomb { get; set; }
+        public int enrageTimer { get; set; } = RoshiStateMachineStorage.ENRAGE_TIMER;
+        private RoshiStateMachineHelper helper;
         public RoshiStateMachine(EnemyRoshi roshi)
         {
             game = roshi.game;
             this.roshi = roshi;
             spriteFactory = new RoshiSpriteFactory(game);
+            this.helper = new RoshiStateMachineHelper(roshi, this);
         }
-        public Rectangle CollisionRectangle()
-        {
-            return collisionRectangle;
-        }
-
-        public void Spawning()
-        {
-            new RoshiSpawning(roshi, spriteFactory, this).Execute();
-        }
-        public void Dying()
-        {
-            new RoshiDying(roshi, spriteFactory, this).Execute();
-        }
-        public void Damaged()
-        {
-            new RoshiDamaged(roshi, spriteFactory, this).Execute();
-        }
-        public void Moving()
-        {
-            new RoshiMoving(roshi, spriteFactory, this).Execute();
-        }
-
-        public void KiBlast()
-        {
-            new RoshiKiBlast(roshi, spriteFactory, this).Execute();
-        }
-
-        public void Kamehameha()
-        {
-            new RoshiKamehameha(roshi, spriteFactory, this).Execute();
-        }
-
+        public Rectangle CollisionRectangle() { return collisionRectangle; }
         public void Update()
         {
-            if (!spawning && !damaged)
+            if (roshi.health < RoshiStateMachineStorage.ENRAGE_HEALTH_TRIGGER) 
             {
-                if (timer <= 0)
-                {
-                    var random = new Random();
-                    int swapDirection = random.Next(2);
-                    moving = true;
-
-                    if (swapDirection > 0)
-                    {
-                        timer = 120;
-                        direction = Direction.up;
-                    }
-                    else
-                    {
-                        timer = 120;
-                        direction = Direction.down;
-                    }
-                }
-                else
-                {
-                    timer--;
-                    attackTimer--;
-                }
-
-                if (attackTimer == 0)
-                {
-                    Kamehameha();
-                }
-                else if (attackTimer == 870)
-                {
-                    game.projectileHandler.Remove(kamehameha);
-                    game.collisionManager.collisionEntities.Remove(kamehameha);
-                }
-                else if (attackTimer == 800 || attackTimer == 600 || attackTimer == 400 || attackTimer == 200)
-                {
-                    KiBlast();
-                }
+                moving = false;
+                helper.Enrage();
             }
             else
             {
-                timer--;
-            }
+                if (!spawning && !damaged)
+                {
+                    if (timer <= 0)
+                    {
+                        var random = new Random();
+                        int swapDirection = random.Next(2);
+                        moving = true;
 
+                        if (swapDirection > 0)
+                        {
+                            timer = RoshiStateMachineStorage.TIMER_RESET;
+                            direction = Direction.up;
+                        }
+                        else
+                        {
+                            timer = RoshiStateMachineStorage.TIMER_RESET;
+                            direction = Direction.down;
+                        }
+                    }
+                    else
+                    {
+                        timer--;
+                        attackTimer--;
+                    }
+
+                    if (attackTimer == 0) { helper.Kamehameha(); }
+                    else if (attackTimer == RoshiStateMachineStorage.KAMEHAMEHA_DESPAWN_TIME)
+                    {
+                        game.projectileHandler.Remove(kamehameha);
+                        game.collisionManager.collisionEntities.Remove(kamehameha);
+                    }
+                    else if (attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_ONE || attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_TWO || 
+                        attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_THREE || attackTimer == RoshiStateMachineStorage.ATTACK_TRIGGER_FOUR)
+                    {  helper.KiBlast();  }
+                }
+                else { timer--; }
+            }
             if (roshi.health <= 0)
             {
-                Dying();
+                helper.Dying();
                 deathTimer--;
-                if (deathTimer == 0)
-                {
-                    roshi.game.currentRoom.removeEnemy(roshi);
-                }
+                spiritBomb.collided = true;
+                if (deathTimer == 5)  { roshi.game.currentRoom.removeEnemy(roshi); }
             }
-            else if (spawning)
-            {
-                Spawning();
-            }
-            else if (damaged)
-            {
-                Damaged();
-            }
-            else if (moving)
-            {
-                Moving();
-            }
+            else if (spawning) { helper.Spawning();} 
+            else if (damaged) { helper.Damaged(); }
+            else if (moving) { helper.Moving(); }
         }
     }
 }

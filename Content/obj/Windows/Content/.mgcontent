@@ -9,6 +9,7 @@
     <File>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/Credits.spritefont</File>
     <File>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.AFTER.png</File>
     <File>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</File>
+    <File>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/explosion.png</File>
     <File>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/Fog of War2.png</File>
     <File>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/game-over.jpeg</File>
     <File>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/Level 1 (Eagle).png</File>
@@ -53,6 +54,7 @@
     <File>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/spiritbomb.jpg</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

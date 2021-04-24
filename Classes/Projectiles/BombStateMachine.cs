@@ -1,4 +1,5 @@
-﻿using CSE3902_Game_Sprint0.Classes.SpriteFactories;
+﻿using CSE3902_Game_Sprint0.Classes.Projectiles.BombStateMachineUtility;
+using CSE3902_Game_Sprint0.Classes.SpriteFactories;
 using CSE3902_Game_Sprint0.Interfaces;
 
 namespace CSE3902_Game_Sprint0.Classes.Projectiles
@@ -10,7 +11,7 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
         public ProjectileHandler projectileHandler { get; set; }
         public bool fuse { get; set; } = true;
 
-        public int timer { get; set; } = 90;
+        public int timer { get; set; } = BombStateMachineStorage.STARTING_TIMER;
 
         public enum CurrentState { none, spawning, exploding };
         public CurrentState currentState { get; set; } = CurrentState.none;
@@ -39,14 +40,14 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
                 projectileSpriteFactory.BombExploding(bomb);
                 bomb.exploding = true;
 
-                bomb.collisionRectangle.X = (int)(bomb.drawLocation.X - (bomb.spriteSize.X * bomb.spriteScalar / 2));
-                bomb.collisionRectangle.Y = (int)(bomb.drawLocation.Y - (bomb.spriteSize.Y * bomb.spriteScalar / 2));
-                bomb.collisionRectangle.Width = (int)(bomb.spriteSize.X * bomb.spriteScalar * 2);
-                bomb.collisionRectangle.Height = (int)(bomb.spriteSize.Y * bomb.spriteScalar * 2);
+                bomb.collisionRectangle.X = (int)(bomb.drawLocation.X - (bomb.spriteSize.X * bomb.spriteScalar / BombStateMachineStorage.OFFSET));
+                bomb.collisionRectangle.Y = (int)(bomb.drawLocation.Y - (bomb.spriteSize.Y * bomb.spriteScalar / BombStateMachineStorage.OFFSET));
+                bomb.collisionRectangle.Width = (int)(bomb.spriteSize.X * bomb.spriteScalar * BombStateMachineStorage.OFFSET);
+                bomb.collisionRectangle.Height = (int)(bomb.spriteSize.Y * bomb.spriteScalar * BombStateMachineStorage.OFFSET);
                 bomb.game.collisionManager.collisionEntities[bomb] = bomb.CollisionRectangle();
                 bomb.game.sounds["bombBlow"].CreateInstance().Play();
             }
-            if (currentState == CurrentState.exploding && timer == 29)
+            if (currentState == CurrentState.exploding && timer == BombStateMachineStorage.TIMER_TRIGGER)
             {
                 bomb.game.collisionManager.collisionEntities.Remove(bomb);
             }
@@ -54,12 +55,12 @@ namespace CSE3902_Game_Sprint0.Classes.Projectiles
 
         public void Update()
         {
-            if (timer <= 0 && fuse)
+            if (timer <= BombStateMachineStorage.ZERO && fuse)
             {
                 fuse = false;
-                timer = 30;
+                timer = BombStateMachineStorage.TIMER_RESET;
             }
-            else if (timer <= 0 && !fuse)
+            else if (timer <= BombStateMachineStorage.ZERO && !fuse)
             {
                 projectileHandler.Remove(bomb);
             }

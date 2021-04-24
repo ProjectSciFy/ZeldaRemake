@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/LOZ_Boss_Hit.wav</SourceFile>
   <SourceTime>2021-04-05T17:07:41.9993569-05:00</SourceTime>
   <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/LOZ_Boss_Hit.xnb</DestFile>
-  <DestTime>2021-04-23T20:00:59.9239735-05:00</DestTime>
+  <DestTime>2021-04-23T20:11:17.4467528-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

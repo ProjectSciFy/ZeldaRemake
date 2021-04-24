@@ -1,0 +1,19 @@
+﻿READABILITY OF DEVAN'S CODE:
+-Author of review: Jared Zahn
+-Date of review: 4/23/2021
+-Sprint Number: 5
+-File Name: AquamentusSpriteFactory.cs
+-Author of file: Devan
+-Number of minutes taken to review: 
+-Comments: 
+
+
+MAINTAINABILITY OF DEVAN'S CODE:
+-Author of review: Jared Zahn
+-Date of review: 4/23/2021
+-Sprint Number: 5
+-File Name: AquamentusSpriteFactory.cs
+-Author of file: Devan
+-Number of minutes taken to review: 
+-Comments: 
+-Hypitheitcal changes: 

@@ -194,10 +194,12 @@ namespace CSE3902_Game_Sprint0.Classes.Level
         public void Draw()
         {
             background.Draw();
-
-            if (game.linkStateMachine.bowTimer > 0)
+            if (game.linkStateMachine.isBow)
             {
-                bowSprite.Draw(new Vector2(game.link.drawLocation.X - 20, game.link.drawLocation.Y - 30));
+                if (game.linkStateMachine.bowTimer > 0)
+                {
+                    bowSprite.Draw(new Vector2(game.link.drawLocation.X - 20, game.link.drawLocation.Y - 30));
+                }
             }
 
             foreach (IDoor door in doors)

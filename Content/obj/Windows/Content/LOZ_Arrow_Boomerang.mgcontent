@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/LOZ_Arrow_Boomerang.wav</SourceFile>
   <SourceTime>2021-04-05T17:07:41.9963313-05:00</SourceTime>
   <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/LOZ_Arrow_Boomerang.xnb</DestFile>
-  <DestTime>2021-04-23T20:00:59.3694693-05:00</DestTime>
+  <DestTime>2021-04-23T20:11:16.8618014-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
