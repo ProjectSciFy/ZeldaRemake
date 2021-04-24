@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</SourceFile>
-  <SourceTime>2021-01-18T22:03:44.0280898-05:00</SourceTime>
-  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.xnb</DestFile>
-  <DestTime>2021-04-23T10:30:47.0922852-04:00</DestTime>
+  <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.png</SourceFile>
+  <SourceTime>2021-02-19T17:36:41.7777958-06:00</SourceTime>
+  <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/DS DSi - Pokemon Mystery Dungeon Explorers of Sky - Eevee.xnb</DestFile>
+  <DestTime>2021-04-23T20:16:32.1029015-05:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
+  <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2020-08-10T16:17:54-04:00</ProcessorTime>
+  <ProcessorTime>2020-08-10T16:17:54-05:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

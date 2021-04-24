@@ -15,8 +15,8 @@
 
         public void Execute()
         {
-            gel.spriteSize.X = 16;
-            gel.spriteSize.Y = 16;
+            gel.spriteSize.X = GelHelper.size;
+            gel.spriteSize.Y = GelHelper.size;
             gel.velocity.X = 0;
             gel.velocity.Y = 0;
 

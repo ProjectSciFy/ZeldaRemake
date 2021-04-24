@@ -13,8 +13,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese.keeseScripts
         }
         public void Execute()
         {
-            keese.spriteSize.X = 16;
-            keese.spriteSize.Y = 16;
+            keese.spriteSize.X = KeeseHelper.size;
+            keese.spriteSize.Y = KeeseHelper.size;
             keese.velocity.X = 0;
             keese.velocity.Y = 0;
 

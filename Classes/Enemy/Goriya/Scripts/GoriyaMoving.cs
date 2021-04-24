@@ -32,7 +32,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
                     {
                         GoriyaStateMachine.currentState = GoriyaStateMachine.CurrentState.movingUp;
                         goriya.velocity.X = 0;
-                        goriya.velocity.Y = -1;
+                        goriya.velocity.Y = GoriyaHelper.nvelocity;
                         goriya.mySprite = enemySpriteFactory.GoriyaMovingUp();
                     }
                     break;
@@ -41,7 +41,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
                     if (GoriyaStateMachine.currentState != GoriyaStateMachine.CurrentState.movingLeft)
                     {
                         GoriyaStateMachine.currentState = GoriyaStateMachine.CurrentState.movingLeft;
-                        goriya.velocity.X = -1;
+                        goriya.velocity.X = GoriyaHelper.nvelocity;
                         goriya.velocity.Y = 0;
                         goriya.mySprite = enemySpriteFactory.GoriyaMovingLeft();
                     }

@@ -15,8 +15,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
         }
         public void Execute()
         {
-            goriya.spriteSize.X = 16;
-            goriya.spriteSize.Y = 16;
+            goriya.spriteSize.X = GoriyaHelper.xsize;
+            goriya.spriteSize.Y = GoriyaHelper.ysize;
             goriya.velocity.X = 0;
             goriya.velocity.Y = 0;
             if (GoriyaStateMachine.currentState != GoriyaStateMachine.CurrentState.spawning)

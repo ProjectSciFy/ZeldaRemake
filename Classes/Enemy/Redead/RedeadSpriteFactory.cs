@@ -10,8 +10,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
         private readonly Texture2D linkSpriteSheet;
         private readonly Texture2D enemySpriteSheet;
         private float linkLayerDepth { get; set; } = 0.2f;
+        private RedeadHelper redead { get; set; }
         public RedeadSpriteFactory(ZeldaGame game)
         {
+            this.redead = new RedeadHelper();
             this.game = game;
             game.spriteSheets.TryGetValue("DungeonEnemies", out enemySpriteSheet);
             game.spriteSheets.TryGetValue("Link", out linkSpriteSheet);
@@ -19,15 +21,15 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
         public UniversalSprite SpawnRedead()
         {
 
-            return new UniversalSprite(game, linkSpriteSheet, new Rectangle(138, 185, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 3), 30, linkLayerDepth);
+            return new UniversalSprite(game, linkSpriteSheet, redead.spawn, Color.White, SpriteEffects.None, redead.spawnFrame, redead.spawnLimiter, linkLayerDepth);
         }
         public UniversalSprite RedeadMoving()
         {
-            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(383, 164, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 2), 10, linkLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, redead.moving, Color.White, SpriteEffects.None, redead.movingFrame, redead.movementlimiter, linkLayerDepth);
         }
         public UniversalSprite RedeadIdle()
         {
-            return new UniversalSprite(game, enemySpriteSheet, new Rectangle(416, 164, 16, 16), Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
+            return new UniversalSprite(game, enemySpriteSheet, redead.idle, Color.White, SpriteEffects.None, new Vector2(1, 1), 10, linkLayerDepth);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
         public float spriteScalar { get; set; }
         private static int HITBOX_OFFSET { get; set; } = 6;
+        private static int HITBOX_SUBTRACT { get; set; } = 4;
         public int health { get; set; } = 3;
         private int hurtTimer { get; set; } = 0;
         public EnemyWallmaster(ZeldaGame game, Vector2 spawnLocation)
@@ -75,8 +76,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster
 
             collisionRectangle.X = (int)drawLocation.X + 2 * HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + 2 * HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 4 * HITBOX_OFFSET;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 4 * HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - HITBOX_SUBTRACT * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - HITBOX_SUBTRACT * HITBOX_OFFSET;
 
             if (myState.currentState != WallmasterStateMachine.CurrentState.dying)
             {

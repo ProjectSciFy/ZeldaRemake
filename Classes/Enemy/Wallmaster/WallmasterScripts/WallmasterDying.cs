@@ -17,8 +17,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Gel.GelScripts
 
         public void Execute()
         {
-            wallmaster.spriteSize.X = 16;
-            wallmaster.spriteSize.Y = 16;
+            wallmaster.spriteSize.X = WallmasterHelper.size;
+            wallmaster.spriteSize.Y = WallmasterHelper.size;
             wallmaster.velocity.X = 0;
             wallmaster.velocity.Y = 0;
 

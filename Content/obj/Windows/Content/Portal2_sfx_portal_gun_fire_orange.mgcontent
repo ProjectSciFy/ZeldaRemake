@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Portal2_sfx_portal_gun_fire_orange.wav</SourceFile>
-  <SourceTime>2021-04-21T19:03:57.6762886-04:00</SourceTime>
-  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/Portal2_sfx_portal_gun_fire_orange.xnb</DestFile>
-  <DestTime>2021-04-23T10:30:52.4210374-04:00</DestTime>
+  <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/Portal2_sfx_portal_gun_fire_orange.wav</SourceFile>
+  <SourceTime>2021-04-22T18:01:36.3016726-05:00</SourceTime>
+  <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/Portal2_sfx_portal_gun_fire_orange.xnb</DestFile>
+  <DestTime>2021-04-23T20:16:38.1254395-05:00</DestTime>
   <Importer>WavImporter</Importer>
-  <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
+  <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
-  <ProcessorTime>2020-08-10T16:17:54-04:00</ProcessorTime>
+  <ProcessorTime>2020-08-10T16:17:54-05:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>

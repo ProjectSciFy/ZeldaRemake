@@ -15,6 +15,7 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
         public Vector2 spriteSize = new Vector2(16, 16);
         private float spriteScalar { get; set; }
         private static int HITBOX_OFFSET { get; set; } = 6;
+        private static int HITBOX_SUBTRACT { get; set; } = 2;
         public Rectangle collisionRectangle = new Rectangle(0, 0, 0, 0);
 
         public EnemyOldMan(ZeldaGame game, Vector2 spawnLocation)
@@ -63,8 +64,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.OldMan
 
             collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
-            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - 2 * HITBOX_OFFSET;
-            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - 2 * HITBOX_OFFSET;
+            collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - HITBOX_SUBTRACT * HITBOX_OFFSET;
+            collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - HITBOX_SUBTRACT * HITBOX_OFFSET;
 
             game.collisionManager.collisionEntities[this] = collisionRectangle;
         }

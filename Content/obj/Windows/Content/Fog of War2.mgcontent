@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/Fog of War2.png</SourceFile>
-  <SourceTime>2021-04-22T18:34:50.8239675-04:00</SourceTime>
-  <DestFile>G:/Visual Studio Stuff/CSE 3902/Group Project/ZeldaRemake/Content/bin/Windows/Content/Fog of War2.xnb</DestFile>
-  <DestTime>2021-04-23T10:30:47.1800501-04:00</DestTime>
+  <SourceFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/Fog of War2.png</SourceFile>
+  <SourceTime>2021-04-22T20:56:37.662028-05:00</SourceTime>
+  <DestFile>C:/Users/devan/Documents/osu_files/senior spring semester/cse 3902/Zelda/Content/bin/Windows/Content/Fog of War2.xnb</DestFile>
+  <DestTime>2021-04-23T20:16:32.1787091-05:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
+  <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2020-08-10T16:17:54-04:00</ProcessorTime>
+  <ProcessorTime>2020-08-10T16:17:54-05:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
