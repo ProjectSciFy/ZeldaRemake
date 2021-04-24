@@ -15,6 +15,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya.Scripts
         }
         public void Execute()
         {
+            goriya.spriteSize.X = GoriyaHelper.xsize;
+            goriya.spriteSize.Y = GoriyaHelper.ysize;
             switch (GoriyaStateMachine.direction)
             {
                 case GoriyaStateMachine.Direction.right:

@@ -51,33 +51,11 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
         }
         public void Update()
         {
-            if (timer > 0)
-            {
-                timer--;
-            }
-            if (hurtTimer > 0)
-            {
-                hurtTimer--;
-            }
+            if (timer > 0) { timer--; }
+            if (hurtTimer > 0) { hurtTimer--; }
             myState.Update();
             mySprite.Update();
             drawLocation = drawLocation + velocity;
-            if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
-            {
-                drawLocation = new Vector2(0 - spriteSize.X, drawLocation.Y);
-            }
-            else if (drawLocation.X + spriteSize.X <= 0 && velocity.X < 0)
-            {
-                drawLocation = new Vector2(game.GraphicsDevice.Viewport.Bounds.Width, drawLocation.Y);
-            }
-            if (drawLocation.Y >= game.GraphicsDevice.Viewport.Bounds.Height && velocity.Y > 0)
-            {
-                drawLocation = new Vector2(drawLocation.X, 0 - spriteSize.Y);
-            }
-            else if (drawLocation.Y + spriteSize.Y <= 0 && velocity.Y < 0)
-            {
-                drawLocation = new Vector2(drawLocation.X, game.GraphicsDevice.Viewport.Bounds.Height);
-            }
             if (timer <= 0 && myState.currentState != GoriyaStateMachine.CurrentState.spawning)
             {
                 timer = 300;
@@ -86,23 +64,15 @@ namespace CSE3902_Game_Sprint0.Classes._21._2._13
                 throwing = true;
                 myState.moving = false;
             }
-            if (health <= 0)
-            {
-                boomerang.collided = true;
-            }
+            if (health <= 0) { boomerang.collided = true; }
             collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - HITBOX_SUBTRACT * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - HITBOX_SUBTRACT * HITBOX_OFFSET;
-
             if (myState.currentState != GoriyaStateMachine.CurrentState.dying)
-            {
-                game.collisionManager.collisionEntities[this] = collisionRectangle;
-            }
+            { game.collisionManager.collisionEntities[this] = collisionRectangle; }
         }
         public void Draw()
-        {
-            mySprite.Draw(drawLocation);
-        }
+        { mySprite.Draw(drawLocation); }
     }
 }

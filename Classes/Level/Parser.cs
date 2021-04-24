@@ -3,7 +3,6 @@ using CSE3902_Game_Sprint0.Classes.Doors;
 using CSE3902_Game_Sprint0.Classes.Enemy;
 using CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus;
 using CSE3902_Game_Sprint0.Classes.Enemy.Keese;
-using CSE3902_Game_Sprint0.Classes.Enemy.OldMan;
 using CSE3902_Game_Sprint0.Classes.Enemy.Redead;
 using CSE3902_Game_Sprint0.Classes.Enemy.Roshi;
 using CSE3902_Game_Sprint0.Classes.Enemy.Wallmaster;
@@ -206,10 +205,6 @@ namespace CSE3902_Game_Sprint0.Classes.Level
                     case "Keese":
                         position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));
                         enemies.Add(new EnemyKeese(game, position));
-                        break;
-                    case "OldMan":
-                        position = utility.GetTriforceOldPosition(windowWidth, windowHeightFloor);
-                        enemies.Add(new EnemyOldMan(game, position));
                         break;
                     case "Stalfos":
                         position = utility.GetEnemyPosition(windowWidthFloor, windowHeightFloor, float.Parse(segments[2]), float.Parse(segments[1]));

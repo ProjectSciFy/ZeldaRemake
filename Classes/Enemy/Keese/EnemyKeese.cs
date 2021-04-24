@@ -49,36 +49,13 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Keese
         {
             myState.Update();
             mySprite.Update();
-
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
-
-            if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
-            {
-                drawLocation.X = 0 - spriteSize.X;
-            }
-            else if (drawLocation.X + spriteSize.X <= 0 && velocity.X < 0)
-            {
-                drawLocation.X = game.GraphicsDevice.Viewport.Bounds.Width;
-            }
-
-            if (drawLocation.Y >= game.GraphicsDevice.Viewport.Bounds.Height && velocity.Y > 0)
-            {
-                drawLocation.Y = 0 - spriteSize.Y;
-            }
-            else if (drawLocation.Y + spriteSize.Y <= 0 && velocity.Y < 0)
-            {
-                drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
-            }
-
             collisionRectangle.X = (int)drawLocation.X + HITBOX_OFFSET;
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - HITBOX_SUBRACT * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - HITBOX_SUBRACT * HITBOX_OFFSET;
-            if (health > 0)
-            {
-                game.collisionManager.collisionEntities[this] = collisionRectangle;
-            }
+            if (health > 0) { game.collisionManager.collisionEntities[this] = collisionRectangle; }
         }
 
         public void Draw()

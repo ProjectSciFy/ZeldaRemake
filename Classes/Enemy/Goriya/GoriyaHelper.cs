@@ -12,8 +12,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Goriya
         public int movementLimiter { get; set; } = 10;
         public Vector2 spawnFrame;
         public Vector2 movingFrame;
-        public static int xsize { get; set; } =24;
-        public static int ysize { get; set; } = 32;
+        public static int xsize { get; set; } =16;
+        public static int ysize { get; set; } = 16;
         public static int nvelocity { get; set; } = -1;
         public GoriyaHelper()
         {

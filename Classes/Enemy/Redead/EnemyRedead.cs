@@ -46,34 +46,11 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
 
         public void Update()
         {
-            if (hurtTimer > 0)
-            {
-                hurtTimer--;
-            }
+            if (hurtTimer > 0) { hurtTimer--; }
             myState.Update();
-            mySprite.Update();
-
+            mySprite.Update(); 
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
-
-            if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
-            {
-                drawLocation.X = 0 - spriteSize.X;
-            }
-            else if (drawLocation.X + spriteSize.X <= 0 && velocity.X < 0)
-            {
-                drawLocation.X = game.GraphicsDevice.Viewport.Bounds.Width;
-            }
-
-            if (drawLocation.Y >= game.GraphicsDevice.Viewport.Bounds.Height && velocity.Y > 0)
-            {
-                drawLocation.Y = 0 - spriteSize.Y;
-            }
-            else if (drawLocation.Y + spriteSize.Y <= 0 && velocity.Y < 0)
-            {
-                drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
-            }
-
             if (myState.idle)
             {
                 collisionRectangle.X = (int)drawLocation.X - (int)(spriteSize.X * spriteScalar);
@@ -87,12 +64,8 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Redead
                 collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
                 collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - RedeadHelper.two * HITBOX_OFFSET;
                 collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - RedeadHelper.two * HITBOX_OFFSET;
-            }
-
-            if (myState.currentState != RedeadStateMachine.CurrentState.dying)
-            {
-                game.collisionManager.collisionEntities[this] = collisionRectangle;
-            }
+            } 
+            if (myState.currentState != RedeadStateMachine.CurrentState.dying) { game.collisionManager.collisionEntities[this] = collisionRectangle; }
         }
         public void Draw()
         {

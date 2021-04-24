@@ -45,40 +45,14 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
         {
             return collisionRectangle;
         }
-
         public void Update()
         {
-            if (timer > 0)
-            {
-                timer--;
-            }
-            if (hurtTimer > 0)
-            {
-                hurtTimer--;
-            }
+            if (timer > 0){ timer--; }
+            if (hurtTimer > 0) { hurtTimer--; }
             myState.Update();
             mySprite.Update();
-
             drawLocation.X = drawLocation.X + velocity.X;
             drawLocation.Y = drawLocation.Y + velocity.Y;
-
-            if (drawLocation.X >= game.GraphicsDevice.Viewport.Bounds.Width && velocity.X > 0)
-            {
-                drawLocation.X = 0 - spriteSize.X;
-            }
-            else if (drawLocation.X + spriteSize.X <= 0 && velocity.X < 0)
-            {
-                drawLocation.X = game.GraphicsDevice.Viewport.Bounds.Width;
-            }
-
-            if (drawLocation.Y >= game.GraphicsDevice.Viewport.Bounds.Height && velocity.Y > 0)
-            {
-                drawLocation.Y = 0 - spriteSize.Y;
-            }
-            else if (drawLocation.Y + spriteSize.Y <= 0 && velocity.Y < 0)
-            {
-                drawLocation.Y = game.GraphicsDevice.Viewport.Bounds.Height;
-            }
             if (timer <= 0)
             {
                 timer = 300;
@@ -90,15 +64,10 @@ namespace CSE3902_Game_Sprint0.Classes.Enemy.Aquamentus
             collisionRectangle.Y = (int)drawLocation.Y + HITBOX_OFFSET;
             collisionRectangle.Width = (int)(spriteSize.X * spriteScalar) - AquamentusHelper.three * HITBOX_OFFSET;
             collisionRectangle.Height = (int)(spriteSize.Y * spriteScalar) - AquamentusHelper.two * HITBOX_OFFSET;
-
             if (myState.currentState != AquamentusStateMachine.CurrentState.dying)
-            {
-                game.collisionManager.collisionEntities[this] = collisionRectangle;
-            }
+            { game.collisionManager.collisionEntities[this] = collisionRectangle; }
         }
         public void Draw()
-        {
-            mySprite.Draw(drawLocation);
-        }
+        {  mySprite.Draw(drawLocation); }
     }
 }

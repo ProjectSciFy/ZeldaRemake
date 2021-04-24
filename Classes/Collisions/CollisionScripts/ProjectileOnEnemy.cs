@@ -51,30 +51,52 @@ namespace CSE3902_Game_Sprint0.Classes.Collisions.CollisionScripts
         {
             if (projectile is Arrow) { ArrowColliding(); }
             else if (projectile is Bomb) { BombExploding(); }
-            else if (projectile is LinkBoomerangProjectile) {
-                if (enemy is EnemyAquamentus) {
+            else if (projectile is LinkBoomerangProjectile)
+            {
+                if (enemy is EnemyAquamentus)
+                {
                     ((EnemyAquamentus)enemy).TakeDamage(arrowDamage + (((EnemyAquamentus)enemy).game.util.numXP / ((EnemyAquamentus)enemy).game.util.XPPerLevel));
-                    ((LinkBoomerangProjectile)projectile).myState.returning = true; }
-                else if (enemy is EnemySlime) {
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemySlime)
+                {
                     ((EnemySlime)enemy).TakeDamage(arrowDamage + (((EnemySlime)enemy).game.util.numXP / ((EnemySlime)enemy).game.util.XPPerLevel));
-                    ((LinkBoomerangProjectile)projectile).myState.returning = true; }
-                else if (enemy is EnemyGoriya) {
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyGoriya)
+                {
                     ((EnemyGoriya)enemy).TakeDamage(arrowDamage + (((EnemyGoriya)enemy).game.util.numXP / ((EnemyGoriya)enemy).game.util.XPPerLevel));
-                    ((LinkBoomerangProjectile)projectile).myState.returning = true; }
-                else if (enemy is EnemyKeese) {
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyKeese)
+                {
                     ((EnemyKeese)enemy).TakeDamage(arrowDamage + (((EnemyKeese)enemy).game.util.numXP / ((EnemyKeese)enemy).game.util.XPPerLevel));
-                    ((LinkBoomerangProjectile)projectile).myState.returning = true; }
-                else if (enemy is EnemyStalfos) {
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyStalfos)
+                {
                     ((EnemyStalfos)enemy).TakeDamage(arrowDamage + (((EnemyStalfos)enemy).game.util.numXP / ((EnemyStalfos)enemy).game.util.XPPerLevel));
-                    ((LinkBoomerangProjectile)projectile).myState.returning = true; }
-                else if (enemy is EnemyWallmaster) {
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyWallmaster)
+                {
                     ((EnemyWallmaster)enemy).TakeDamage(arrowDamage + (((EnemyWallmaster)enemy).game.util.numXP / ((EnemyWallmaster)enemy).game.util.XPPerLevel));
-                    ((LinkBoomerangProjectile)projectile).myState.returning = true; }
-                else if (enemy is EnemyRoshi) {
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+                else if (enemy is EnemyRoshi)
+                {
                     ((EnemyRoshi)enemy).TakeDamage(arrowDamage + (((EnemyRoshi)enemy).game.util.numXP / ((EnemyRoshi)enemy).game.util.XPPerLevel));
-                    ((LinkBoomerangProjectile)projectile).myState.returning = true; } }
-            else if (projectile is GoriyaBoomerang) {
-                if (enemy is EnemyGoriya && ((GoriyaBoomerang)projectile).myState.returning) ((EnemyGoriya)enemy).throwing = false; ((GoriyaBoomerang)projectile).collided = true; }
+                    ((LinkBoomerangProjectile)projectile).myState.returning = true;
+                }
+            }
+            else if (projectile is GoriyaBoomerang)
+            {
+                if (enemy is EnemyGoriya && ((GoriyaBoomerang)projectile).myState.returning)
+                {
+                    ((EnemyGoriya)enemy).throwing = false;
+                    ((GoriyaBoomerang)projectile).collided = true;
+                }
+            }
         }
     }
 }
